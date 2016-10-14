@@ -22,8 +22,8 @@
 %	CHARACTER ENCODING
 %----------------------------------------------------------------------------------------
 
-% \PassOptionsToPackage{utf8}{inputenc} % Set the encoding of your files. UTF-8 is the only sensible encoding nowadays. If you can't read äöüßáéçèê∂åëæƒÏ€ then change the encoding setting in your editor, not the line below. If your editor does not support utf8 use another editor!
-\usepackage{inputenc}
+% Set the encoding of your files. UTF-8 is the only sensible encoding nowadays. If you can't read äöüßáéçèê∂åëæƒÏ€ then change the encoding setting in your editor, not the line below. If your editor does not support utf8 use another editor!
+\usepackage[utf8]{inputenc}
 
 %----------------------------------------------------------------------------------------
 %	DOCUMENT VARIABLES
@@ -34,7 +34,7 @@
 \WarningFilter{scrreprt}{Usage of package `titlesec' together}
 \WarningFilter{scrreprt}{Activating an ugly workaround}
 % Remove drafting to get rid of the '[ Date - classicthesis version 4.0 ]' text at the bottom of every page
-\PassOptionsToPackage{eulerchapternumbers,listings, pdfspacing, subfig,beramono,eulermath,parts}{classicthesis}
+\PassOptionsToPackage{eulerchapternumbers,listings, pdfspacing,subfig,beramono,eulermath,parts}{classicthesis}
 % Available options: drafting parts nochapters linedheaders eulerchapternumbers beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc manychapters listings floatperchapter subfig
 
 \newcommand{\myTitle}{Data are not real!\xspace}
@@ -75,10 +75,9 @@
 
 %------------------------------------------------
 
-\PassOptionsToPackage{american}{babel}  % Change this to your language(s)
 % Spanish languages need extra options in order to work with this template
 %\PassOptionsToPackage{spanish,es-lcroman}{babel}
-\usepackage{babel}
+\usepackage[american]{babel}
 
 %------------------------------------------------			
 
@@ -181,8 +180,6 @@ belowcaptionskip=.75\baselineskip % Space after the "Listing #: Desciption" text
 %	HYPERREFERENCES
 %----------------------------------------------------------------------------------------
 
-\usepackage{cleveref}
-
 \PassOptionsToPackage{pdftex,hyperfootnotes=false,pdfpagelabels}{hyperref}
 \usepackage{hyperref}  % backref linktocpage pagebackref
 \pdfcompresslevel=9
@@ -241,7 +238,7 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 \providecommand{\subfigureautorefname}{\figureautorefname} % Fix to getting autorefs for subfigures right
 }{\relax}
 \makeatother
-
+\usepackage{cleveref}
 %----------------------------------------------------------------------------------------
 
 \usepackage{commands}

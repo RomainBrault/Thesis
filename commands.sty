@@ -1,0 +1,81 @@
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator*{\sign}{sign}
+\DeclareMathOperator{\lspan}{\overline{span}\;}
+\DeclareMathOperator{\vect}{\bigoplus}
+\DeclareMathOperator*{\Vect}{\bigoplus}
+\newcommand{\ima}{\text{im}\;}
+\newcommand{\Ima}{\text{Im}\;}
+\newcommand{\Ker}{\text{Ker}\;}
+
+
+% Florence's notations.
+% \def\expectation{{\mathbb{E}}}
+% \def\variance{{\mathbb{V}}}
+% \def\probability{{\mathbb{P}}}
+%\def\covari{{\math{Cov}}
+
+% Romain's notations.
+\def\expectation{{\bf\text{E}}}
+\def\variance{{\bf\text{Var}}}
+\def\probability{{\bf\text{Pr}}}
+
+\def\param{\theta}
+\newcommand{\minimiser}{\hat\theta}
+\newcommand{\parameter}{\theta}
+\newcommand{\idim}{d}
+\newcommand{\odim}{p}
+\newcommand{\myinv}[1]{#1^{-1}}
+\newcommand{\FT}[1]{\mathcal{F}\left[#1\right]}
+\newcommand{\IFT}[1]{\mathcal{F}^{-1}\left[#1\right]}
+\newcommand{\MGF}{\text{MGF}}
+% \newcommand{\tildeDphi}{\tilde{\Phi}_D}
+\newcommand{\tildePhi}{\tilde{\Phi}_{\omega_{1,\hdots,D}}}
+\newcommand{\tildephi}{\tilde{\phi}_{\omega_{1,\hdots,D}}}
+
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+\DeclarePairedDelimiter\inner{\langle}{\rangle}
+\DeclarePairedDelimiter\pairing{(}{)}
+\DeclarePairedDelimiter\covariance{\text{Cov}_\mu[}{]}
+\DeclarePairedDelimiter\covariancenomu{\text{Cov}[}{]}
+\newcommand\dual[1]{\hat{#1}}
+% \newcommand\dual[1]{#1}
+\newcommand\conj[1]{\overline{#1}}
+\newcommand\inrange[2]{\in {\left\{#1, \ldots, #2\right\}}}
+% \newcommand\inrange[2]{\llbracket#1, #2\rrbracket}
+
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+%% functions and operators
+\def\density{p_{\mu}}
+\def\measure{\mu}
+\def\adjoint{*}
+\def\sech{\text{sech}}
+\def\groupop{\star}
+\newcommand\inv[1]{{#1}^{-1}}
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                               PROOF, THEOREM, and FRIENDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newcommand{\BlackBox}{\rule{1.5ex}{1.5ex}}  % end of proof
+% \newenvironment{proof}{\par\noindent{\bf Proof\ }}{\hfill\BlackBox\\[2mm]}
+% \newenvironment{sproof}{\par\noindent{\bf Sketch of proof\ }}{\hfill\BlackBox\\[2mm]}
+% \newtheorem{example}{Example} 
+% \newtheorem{theorem}{Theorem}
+% \newtheorem{lemma}[theorem]{Lemma} 
+% \newtheorem{proposition}[theorem]{Proposition} 
+% \newtheorem{remark}[theorem]{Remark}
+% \newtheorem{corollary}[theorem]{Corollary}
+% \newtheorem{definition}[theorem]{Definition}
+% \newtheorem{conjecture}[theorem]{Conjecture}
+% \newtheorem{axiom}[theorem]{Axiom}

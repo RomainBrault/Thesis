@@ -22,7 +22,7 @@
 %	CHARACTER ENCODING
 %----------------------------------------------------------------------------------------
 
-\PassOptionsToPackage{utf8}{inputenc} % Set the encoding of your files. UTF-8 is the only sensible encoding nowadays. If you can't read äöüßáéçèê∂åëæƒÏ€ then change the encoding setting in your editor, not the line below. If your editor does not support utf8 use another editor!
+% \PassOptionsToPackage{utf8}{inputenc} % Set the encoding of your files. UTF-8 is the only sensible encoding nowadays. If you can't read äöüßáéçèê∂åëæƒÏ€ then change the encoding setting in your editor, not the line below. If your editor does not support utf8 use another editor!
 \usepackage{inputenc}
 
 %----------------------------------------------------------------------------------------
@@ -48,14 +48,16 @@
 \newcommand{\myFaculty}{IBISC\xspace}
 \newcommand{\myDepartment}{Computer Science \xspace}
 \newcommand{\myUni}{Universit\'e d'\'Evry val d'Essonne\xspace}
-\newcommand{\myLocation}{23, Boulevard de France, 91034 - \'Evry, France\xspace}
-\newcommand{\myTime}{Mars 2016\xspace}
+\newcommand{\myLocation}{15, Rue Plumet, 75015 - Paris, France\xspace}
+\newcommand{\myTime}{Septembre 2016\xspace}
 \newcommand{\myVersion}{version 0.1\xspace}
 
 %----------------------------------------------------------------------------------------
 %	USEFUL COMMANDS
 %----------------------------------------------------------------------------------------
 
+\newcommand{\wrt}{w.\,r.\,t.}
+\newcommand{\Wrt}{W.\,r.\,t.}
 \newcommand{\ie}{i.\,e.}
 \newcommand{\Ie}{I.\,e.}
 \newcommand{\eg}{e.\,g.}
@@ -69,11 +71,11 @@
 %	PACKAGES
 %----------------------------------------------------------------------------------------
 
-\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+% \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 
 %------------------------------------------------
 
-%\PassOptionsToPackage{ngerman,american}{babel}  % Change this to your language(s)
+\PassOptionsToPackage{american}{babel}  % Change this to your language(s)
 % Spanish languages need extra options in order to work with this template
 %\PassOptionsToPackage{spanish,es-lcroman}{babel}
 \usepackage{babel}
@@ -179,6 +181,8 @@ belowcaptionskip=.75\baselineskip % Space after the "Listing #: Desciption" text
 %	HYPERREFERENCES
 %----------------------------------------------------------------------------------------
 
+\usepackage{cleveref}
+
 \PassOptionsToPackage{pdftex,hyperfootnotes=false,pdfpagelabels}{hyperref}
 \usepackage{hyperref}  % backref linktocpage pagebackref
 \pdfcompresslevel=9
@@ -237,6 +241,10 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 \providecommand{\subfigureautorefname}{\figureautorefname} % Fix to getting autorefs for subfigures right
 }{\relax}
 \makeatother
+
+%----------------------------------------------------------------------------------------
+
+\usepackage{commands}
 
 %----------------------------------------------------------------------------------------
 

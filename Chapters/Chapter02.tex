@@ -1,6 +1,40 @@
-% Chapter 1
-\chapter{Background} % Chapter title
+% Chapter 1\chapter{Background} % Chapter title
 \label{ch:background} % For referencing the chapter elsewhere, use \autoref{ch:introduction} 
+
+%----------------------------------------------------------------------------------------
+\section{Notations}
+\label{sec:notations}
+The euclidean inner product in $\mathbb{R}^d$ is denoted $\inner{\cdot, \cdot}$ and the euclidean norm is denoted $\norm{\cdot}$. The unit pure imaginary number $\sqrt{-1}$ is denoted $i$.
+$\mathcal{B}(\mathbb{R}^d)$ is the Borel $\sigma$-algebra on $\mathbb{R}^d$.
+If $\mathcal{X}$ and $\mathcal{Y}$ are two vector spaces, we denote by $\mathcal{F}(\mathcal{X};\mathcal{Y})$ the vector space of functions $f:\mathcal{X}\to\mathcal{Y}$ and $\mathcal{C}(\mathcal{X};\mathcal{Y})\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$ the subspace of continuous functions.
+If $\mathcal{H}$ is an Hilbert space we denote its scalar product by $\inner{.,.}_\mathcal{H}$ and its norm by $\norm{.}_\mathcal{H}$.
+We set $\mathcal{L}(\mathcal{H})=\mathcal{L}(\mathcal{H};\mathcal{H})$ to be the space of linear operators from $\mathcal{H}$ to itself. If $W\in\mathcal{L}(\mathcal{H})$, $\Ker W$ denotes the nullspace, $\Ima W$ the image and $W^\adjoint \in \mathcal{L}(\mathcal{H})$ the adjoint operator (transpose when $W$ is a real matrix). All these notations are summarized in \cref{table:notations}.
+
+\begin{table}[!ht]\label{table:notations}
+\centering
+\begin{tabular}{c|c}
+Symbol & Meaning \\ \hline
+$i$ & unit pure imaginary number $\sqrt{-1}$ \\
+$\inner{\cdot,\cdot}$ & Euclidean inner product \\
+$\norm{\cdot}$ & Euclidean norm \\
+$\mathcal{X}$ & Input space (LCA) \\
+$\dual{\mathcal{X}}$ & The Pontryagin dual of $\mathcal{X}$ \\
+$\mathcal{Y}$ & Output space (Hilbert space) \\
+$\mathcal{H}$ & Feature space (Hilbert space) \\
+$\inner{\cdot,\cdot}_{\mathcal{Y}}$ & The canonical inner product of the Hilbert space $\mathcal{Y}$ \\
+$\norm{\cdot}_{\mathcal{Y}}$ & The canonical norm induced by the inner product of the Hilbert space $\mathcal{Y}$ \\
+$\mathcal{F}(\mathcal{X};\mathcal{Y})$ & Vector space of function from $\mathcal{X}$ to $\mathcal{Y}$ \\
+$\mathcal{C}(\mathcal{X};\mathcal{Y})$ & The vector subspace of $\mathcal{F}$ of continuous function from $\mathcal{X}$ to $\mathcal{Y}$ \\
+$\mathcal{L}(\mathcal{H};\mathcal{Y})$ & The set of bounded linear operator from a Hilbert space $\mathcal{H}$ to a Hilbert space $\mathcal{Y}$\\
+$\mathcal{L}(\mathcal{Y})$ & The set of bounded linear operator from a Hilbert space $\mathcal{H}$ to itself \\
+$\mathcal{B}(\mathcal{X})$ & Borel $\sigma$-algebra on $\mathcal{X}$ \\
+$\mu(\mathcal{X})$ & A scalar positive measure of $\mathcal{X}$ \\
+$p_\mu(x)$ & The Radon-Nikodym derivative of $\mu$ w.r.t the Lebesgue measure \\
+$dx$, $d\omega$ & The canonical Haar measure of the LCA $(\mathcal{X},\mathcal{B}(\mathcal{X}))$ (resp. $(\dual{\mathcal{X}}, \dual{\mathcal{X}})$) \\
+$L^p(\mathcal{X},dx)$ & The Banach space of $\abs{\cdot}^p$-integrable function from $(\mathcal{X},\mathcal{B}(\mathcal{X},dx))$ to $\mathbb{C}$ \\
+$L^p(\mathcal{X},dx;\mathcal{Y})$ & The Banach space of  $\norm{\cdot}_\mathcal{Y}^p$ (Bochner)-integrable function from $(\mathcal{X},\mathcal{B}(\mathcal{X}), dx)$ to $\mathcal{Y}$ $\mathcal{Y}$
+\end{tabular}
+\end{table}
 
 %----------------------------------------------------------------------------------------
 \section{About statistical learning}

@@ -18,7 +18,7 @@ $\iu$ & Unit pure imaginary number $\sqrt{-1}$. \\
 $\ec$ & Euler constant. \\
 $\inner{\cdot,\cdot}$ & Euclidean inner product. \\
 $\norm{\cdot}$ & Euclidean norm. \\
-$\mathcal{X}$ & Input space (LCA). \\
+$\mathcal{X}$ & Input space (). \\
 $\dual{\mathcal{X}}$ & The Pontryagin dual of $\mathcal{X}$. \\
 $\mathcal{Y}$ & Output space (Hilbert space). \\
 $\mathcal{H}$ & Feature space (Hilbert space). \\
@@ -30,8 +30,8 @@ $\mathcal{L}(\mathcal{H};\mathcal{Y})$ & The set of bounded linear operator from
 $\mathcal{L}(\mathcal{Y})$ & The set of bounded linear operator from a Hilbert space $\mathcal{H}$ to itself. \\
 $\mathcal{B}(\mathcal{X})$ & Borel $\sigma$-algebra on $\mathcal{X}$. \\
 $\mu(\mathcal{X})$ & A scalar positive measure of $\mathcal{X}$. \\
-$p_\mu(x)$ & The Radon-Nikodym derivative of $\mu$ w.r.t the Lebesgue measure. \\
-$dx$, $d\omega$ & The canonical Haar measure of the LCA $(\mathcal{X},\mathcal{B}(\mathcal{X}))$. (resp. $(\dual{\mathcal{X}}, \mathcal{B}(\dual{\mathcal{X}})$). \\
+$p_\mu(x)$ & The Radon-Nikodym derivative of $\mu$ \wrt~the Lebesgue measure. \\
+$dx$, $d\omega$ & The canonical Haar measure of the \acs{LCA} group $(\mathcal{X},\mathcal{B}(\mathcal{X}))$. (resp. $(\dual{\mathcal{X}}, \mathcal{B}(\dual{\mathcal{X}})$). \\
 $L^p(\mathcal{X},dx)$ & The Banach space of $\abs{\cdot}^p$-integrable function from $(\mathcal{X},\mathcal{B}(\mathcal{X},dx))$ to $\mathbb{C}$. \\
 $L^p(\mathcal{X},dx;\mathcal{Y})$ & The Banach space of  $\norm{\cdot}_\mathcal{Y}^p$ (Bochner)-integrable function from $(\mathcal{X},\mathcal{B}(\mathcal{X}), dx)$ to $\mathcal{Y}$. \\
 \bottomrule
@@ -48,15 +48,11 @@ $L^p(\mathcal{X},dx;\mathcal{Y})$ & The Banach space of  $\norm{\cdot}_\mathcal{
 \label{sec:on_large-scale_learning}
 
 %----------------------------------------------------------------------------------------
-\section{On operator-valued kernels}
-\label{sec:background_on_operator-valued_kernels}
-
-%----------------------------------------------------------------------------------------
 \section{Elements of abstract harmonic analysis}
 \label{sec:abstract_harmonic}
 
 \subsection{Locally compact Abelian groups}
-\begin{definition}{\acl{LCA}.}
+\begin{definition}{\acl{LCA} group.}
 A group $(\mathcal{X}, \groupop)$ is said to be Locally Compact Abelian if it is a topological \emph{commutative} group $\mathcal{X}$ for which every point has a compact neighborhood and is Hausdorff. 
 \end{definition}
 \paragraph{}
@@ -82,14 +78,14 @@ $(-c;+\infty)^d$ & $\mathbb{R}^d$ & $\odot$ & $\pairing{x,\omega} =\exp\left( \i
 \end{tabularx}
 \end{table}
 \paragraph{}
-We notice that for any pairing depending of $\omega$, there exists a function $h_{\omega}: \mathcal{X} \to \mathbb{R}$ such that: $(x,\omega)= \exp(-i h_{\omega}(x))$ since any pairing maps into $\mathbb{U}$. Moreover, 
+We notice that for any pairing depending of $\omega$, there exists a function $h_{\omega}: \mathcal{X} \to \mathbb{R}$ such that: $(x,\omega)= \exp(-\iu h_{\omega}(x))$ since any pairing maps into $\mathbb{U}$. Moreover, 
 \begin{equation*}
 \begin{aligned}
-(x \groupop \inv{z},\omega) = \omega(x)\omega(\inv{z}) &=\exp(-i h_{\omega}(x))\exp(-i h_{\omega}(\inv{z})) \\
-&=\exp(-i h_{\omega}(x))\exp(+i h_{\omega}(z)).
+(x \groupop \inv{z},\omega) = \omega(x)\omega(\inv{z}) &=\exp(-\iu h_{\omega}(x))\exp(-\iu h_{\omega}(\inv{z})) \\
+&=\exp(-\iu h_{\omega}(x))\exp(+\iu h_{\omega}(z)).
 \end{aligned}
 \end{equation*}
-\Cref{tab:dual_and_pairing} provide an explicit list of pairings for various groups based on $\mathbb{R}^d$ or its subsets. We especially mention the duality pairing associated to the skewed multiplicative LCA group $\mathcal{X}=((-c;+\infty)^d, \odot)$
+\Cref{tab:dual_and_pairing} provide an explicit list of pairings for various groups based on $\mathbb{R}^d$ or its subsets. We especially mention the duality pairing associated to the skewed multiplicative \acs{LCA} group $\mathcal{X}=((-c;+\infty)^d, \odot)$
 % where the operation $\odot$ is defined component-wise as follows:
 % \begin{equation}
 % \forall k\inrange{1}{d}, \enskip (x \odot z)_k := (x_k+c)(z_k+c) - c,
@@ -114,15 +110,15 @@ Hence $h_\omega(x)=\sum_{k=1}^d\omega_k \log(x_k+c)$. This group together with t
 % % \end{proof}
 % % \end{example}
 \subsection{The Fourier transform}
-For a function with values in a separable Hilbert space $f\in L^1(\mathcal{X},dx,\mathcal{Y})$, where $dx$ is the Haar measure on $\mathcal{X}$, we denote $\FT{f}$ its Fourier transform which is defined by
+For a function with values in a separable Hilbert space $f\in L^1(\mathcal{X},dx;\mathcal{Y})$, where $dx$ is the Haar measure on $\mathcal{X}$, we denote $\FT{f}$ its Fourier transform which is defined by
 \begin{equation*}
     \forall \omega \in \dual{\mathcal{X}},\enskip \FT{f}(\omega)=\int_{\dual{\mathcal{X}}} \conj{\pairing{x,\omega}}f(x)dx.
 \end{equation*} 
-For a measure defined on $\mathcal{X}$, there exists a unique suitably normalized measure $d\omega$ on $\dual{\mathcal{X}}$ such that $\forall f \in L^1(\mathcal{X}, dx, \mathcal{Y})$ and if $\FT{f} \in L^1(\dual{\mathcal{X}}, d\omega, \mathbb{R})$ we have
+For a measure defined on $\mathcal{X}$, there exists a unique suitably normalized measure $d\omega$ on $\dual{\mathcal{X}}$ such that $\forall f \in L^1(\mathcal{X}, dx;\mathcal{Y})$ and if $\FT{f} \in L^1(\dual{\mathcal{X}}, d\omega, \mathcal{Y})$ we have
  \begin{equation}\label{fourier-l1}
  \forall x \in \mathcal{X},\enskip f(x)=\int_{\dual{\mathcal{X}}}\FT{f}(\omega)(x,\omega) d\omega.
 \end{equation}
-Moreover if $d\omega$ is normalized, $\mathcal{F}$ extends to a unitary operator from $L^2(\mathcal{X}, dx, \mathcal{Y})$ onto $L^2(\dual{\mathcal{X}}, d\omega, \mathcal{Y})$ Then the inverse Fourier transform of a function $g\in L^1(\dual{\mathcal{X}},d\omega,\mathcal{Y})$ (where $d\omega$ is a Haar measure on $\dual{\mathcal{X}}$ suitably normalize w.r.t. the Haar measure $dx$) is noted $\IFT{g}$ defined by
+Moreover if $d\omega$ is normalized, $\mathcal{F}$ extends to a unitary operator from $L^2(\mathcal{X}, dx, \mathcal{Y})$ onto $L^2(\dual{\mathcal{X}}, d\omega, \mathcal{Y})$ Then the inverse Fourier transform of a function $g\in L^1(\dual{\mathcal{X}},d\omega,\mathcal{Y})$ (where $d\omega$ is a Haar measure on $\dual{\mathcal{X}}$ suitably normalize \wrt~the Haar measure $dx$) is noted $\IFT{g}$ defined by
 \begin{equation*}
     \forall x \in \mathcal{X},\enskip \IFT{g}(x) = \int_{\dual{\mathcal{X}}} \pairing{x,\omega}g(\omega) d\omega,
 \end{equation*}
@@ -130,8 +126,92 @@ Moreover if $d\omega$ is normalized, $\mathcal{F}$ extends to a unitary operator
 % where the Haar measure $\mu=\dual{\nu}$ is called the {\it dual measure} to $\nu$.
 %\Cref{tab:dual_and_pairing} gives some examples of real Abelian groups with their associated dual and pairing. 
 %See \cite{folland1994course} for a more detailed construction of LCA, Pontryagin duality and Fourier transforms on LCA.
- For the familiar case of a scalar-valued function $f$ on the LCA $(\mathbb{R}^d, +)$, we have: 
+ For the familiar case of a scalar-valued function $f$ on the \acs{LCA} group $(\mathbb{R}^d, +)$, we have: 
  \begin{equation}\label{fourier-R-plus}
- \forall \omega \in \dual{\mathcal{X}},\enskip \FT{f}(\omega)=\int_{\mathbb{R}^d} e^{-i \inner{\omega,x - z}} dx,
+ \forall \omega \in \dual{\mathcal{X}},\enskip \FT{f}(\omega)=\int_{\mathbb{R}^d} \ec^{-\iu \inner{\omega,x - z}}f(x) dx,
 \end{equation}
 the Haar measure being here the Lebesgue measure.
+
+%----------------------------------------------------------------------------------------
+\section{On operator-valued kernels}
+\label{sec:background_on_operator-valued_kernels}
+We now introduce the theory of \acf{vv-RKHS} that provides a flexible framework to study and learn vector-valued functions.
+\subsection{Definitions and properties}
+\label{subsec:def_properties}
+An operator-valued kernel is defined here as a $\mathcal{Y}$-reproducing kernel \citet{Carmeli2010}.
+\begin{definition}
+Given $\mathcal{X}$, a Polish space and  $\mathcal{Y}$, a Hilbert Space, a map $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called a $\mathcal{Y}$-reproducing kernel if 
+\begin{equation*}
+  \sum_{i,j=1}^N\inner{K(x_i,x_j)y_j,y_i}_{\mathcal{Y}}\ge 0,
+\end{equation*} 
+for all $x_1,\hdots,x_N$ in $\mathcal{X}$, all $y_1,\hdots,y_N$ in $\mathcal{Y}$ and $N\ge1$. Given $x\in\mathcal{X}$, $K_x:\mathcal{Y}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ denotes the linear operator whose action on a vector $y$ is the function $K_xy\in\mathcal{F}(\mathcal{X};\mathcal{Y})$ defined by
+ $(K_x y)(z)=K(z,x)y$, for all $z\in\mathcal{X}$.
+ \label{def:ovk}
+ \end{definition}
+ \par
+ Additionally, given a $\mathcal{Y}$-reproducing kernel $K$, there is a unique Hilbert space $\mathcal{H}_K\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$ satisfying $K_x\in\mathcal{L}(\mathcal{Y};\mathcal{H}_K)$, for all $ x\in\mathcal{X}$ and $\forall x\in\mathcal{X}, \forall f\in\mathcal{H}_K, \enskip f(x)=K^\adjoint_x f$, where $K^\adjoint_x:\mathcal{H}_K\to\mathcal{Y}$ is the adjoint of $K_x$.
+The space $\mathcal{H}_K$ is called the \emph{\acl{vv-RKHS}} associated with $K$. The corres\-ponding product and norm are denoted by $\inner{.,.}_K$ and $\norm{.}_K$, respectively. As a consequence \citep{Carmeli2010} we have:
+\begin{equation*}
+\begin{aligned}
+K(x,z)&=K^\adjoint_x K_z \enskip\forall x,z\in\mathcal{X} \\
+\mathcal{H}_K&=\lspan\left\{ K_x y \enskip\middle|\enskip \forall x\in\mathcal{X},\enskip\forall y\in\mathcal{Y} \right\}
+\end{aligned}
+\end{equation*}
+Another way to describe functions of $\mathcal{H}_K$ consists in using a suitable feature map.
+\begin{proposition}[Feature Operator \citet{Carmeli2010}]
+\label{pr:feature_operator}
+Let $\mathcal{H}$ be a Hilbert space and $\Phi:\mathcal{X}\to\mathcal{L}(\mathcal{Y};\mathcal{H})$, with $\Phi_x := \Phi(x)$. Then the operator $W:\mathcal{H}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ defined for all $g \in\mathcal{H}$, and for all $x\in\mathcal{X}$ by $(W g)(x)=\Phi_x^\adjoint g$ is a partial isometry from $\mathcal{H}$ onto the \acs{vv-RKHS} $\mathcal{H}_K$ with reproducing kernel
+\begin{equation*}
+K(x,z)=\Phi^\adjoint_x\Phi_z, \enskip \forall x, z\in\mathcal{X}.
+\end{equation*}
+$W^\adjoint W$ is the orthogonal projection onto \begin{equation*}
+  \Ker W^\bot = \lspan\left\{ \Phi_x y \enskip\middle|\enskip \forall x\in\mathcal{X},\enskip\forall y\in\mathcal{Y} \right\}.
+\end{equation*}
+Then $\norm{f}_K=\inf\left\{ \norm{g}_\mathcal{H} \enskip\middle|\enskip \forall g \in\mathcal{H},\enskip Wg=f \right\}$.
+\end{proposition}
+We call $\Phi$ a \emph{feature map}, $W$ a \emph{feature operator} and $\mathcal{H}$ a \emph{feature space}.
+
+\subsection{Examples of operator-valued kernels}
+\label{subsec:ovk-ex}
+Operator-valued kernels have been first introduced in Machine Learning to solve multi-task regression problems. Multi-task regression is encountered in many fields such as structured classification when classes belong to a hierarchy for instance. Instead of solving independently $p$ single output regression task, one would like to take advantage of the relationships between output variables when learning and making a decision.  
+\begin{definition}[Decomposable kernel]
+\label{dec-kernel}
+Let A be a positive semi-definite operator of $\mathcal{L}(\mathcal{Y})$. $K$ is said to be a $\mathcal{Y}$-Mercer \emph{decomposable} kernel\marginpar{Some authors also refer to as \emph{separable} kernels.} if for all $(x,z) \in \mathcal{X}^2$, 
+\begin{equation*}
+K(x,z) = k(x,z)A, 
+\end{equation*}
+where $k$ is a \emph{scalar} Mercer kernel.
+\end{definition}
+When $\mathcal{Y}=\mathbb{R}^p$, the matrix $A$ is interpreted as encoding the relationships between the outputs coordinates. 
+% This can easily be seen as a consequence of \cref{eq:reg_L2}.
+% \begin{corollary}
+% Let $K$ be a decomposable shift-invariant $\mathbb{R}^p$-Mercer Kernel such that $K_e(\cdot)_{\ell m}\in L^1(\mathcal{X}, dx)$. Define $BB^* p_\mu(\omega):=\IFT{K_e(\delta)}$. Then
+% \begin{equation}
+% \norm{f}^2_K=\displaystyle\sum_{\ell, m=1}^p A_{\ell m}^\dagger \int_{\dual{\mathcal{X}}}\frac{\inner{\FT{f_\ell}(\omega), \FT{f_m}(\omega)}_{\mathcal{Y}}}{p_\mu(\omega)}d\omega=\displaystyle\sum_{\ell, m=1}^p A_{\ell m}^\dagger \inner{f_\ell, f_m}_k.
+% \end{equation}
+% \end{corollary}
+% \begin{proof}
+% Apply \cref{pr:regularization} with $A(\omega)=A$.
+% \end{proof}
+% Where $\inner{\cdot}_k$ is the inner product induced by the scalar kernel $k$ in the RKHS $\mathcal{H}_k$. Hence we recover the result of \cite{Alvarez2012}. In particular 
+If a graph coding for the proximity between tasks is known, then it is shown in \citet{Evgeniou2005,Baldassare2010,Alvarez2012} that $A$ can be chosen equal to the pseudo inverse $L^{\dagger}$ of the graph Laplacian such that the norm in $\mathcal{H}_K$ is a graph-regularizing penalty for the outputs (tasks).  When no prior knowledge is available, $A$ can be set to the empirical covariance of the output training data or learned with one of the algorithms proposed in the literature \citep{Dinuzzo2011, Sindhwani2013, Lim2015}. Another interesting property of the decomposable kernel is its universality (a kernel which may approximate an arbitrary continuous target function uniformly on any compact subset of the input space). A reproducing kernel $K$ is said \emph{universal} if the associated \acs{vv-RKHS} $\mathcal{H}_K$ is dense in the space $\mathcal{C}(\mathcal{X},\mathcal{Y})$. The conditions for a kernel to be universal have been discussed in \citet{caponnetto2008,Carmeli2010}. In particular they show that a decomposable kernel is universal provided that the scalar kernel $k$ is universal and the operator $A$ is injective.
+%We propose a randomized approximation of such a feature map using a generalization of the Bochner theorem for operator-valued functions. For this purpose, we build upon the work of \citet{Carmeli2010} that introduced the Fourier representation of shift-invariant Operator-Valued Mercer Kernels on locally compact Abelian groups $\mathcal{X}$ using the general framework of Pontryagin duality (The reader can to the excellent course of \citet{folland1994course} for details). 
+%\paragraph{Pontryagin duality} 
+\paragraph{}  
+Curl-free and divergence-free kernels provide an interesting application of operator-valued kernels \citep{Macedo2008, Baldassare2012, Micheli2013} to \emph{vector field} learning, for which input and output spaces have the same dimensions ($d=p$). %
+Applications cover shape deformation analysis \citep{Micheli2013} and magnetic fields approximations \citep{Wahlstrom2013}. %
+These kernels discussed in \citep{Fuselier2006} allow encoding input-dependent similarities between vector-fields. %
+\begin{definition}[Curl-free and Div-free kernel]\label{curl-div-free}
+Assume $\mathcal{X}=(\mathbb{R}^d, +)$ and $\mathcal{Y}=\mathbb{R}^p$ with $d=p$. %
+The \emph{divergence-free} kernel is defined as %
+\begin{equation*}\label{div-def}
+K^{div}(x,z)=K^{div}_0(\delta)
+= (\nabla\nabla^T - \Delta I) k_0(\delta)
+\end{equation*} %
+and the \emph{curl-free} kernel as %
+\begin{equation*}\label{curl-def}
+K^{curl}(x,z)=K_0^{curl}(\delta)=-\nabla\nabla^T k_0(\delta),
+\end{equation*} %
+where $\nabla\nabla^T$ is the Hessian operator and $\Delta$ is the Laplacian operator. %
+\end{definition}
+Although taken separately these kernels are not universal, a convex combination of the curl-free and divergence-free kernels allows to learn any vector field that satisfies the Helmholtz decomposition theorem \citep{Macedo2008, Baldassare2012}. %

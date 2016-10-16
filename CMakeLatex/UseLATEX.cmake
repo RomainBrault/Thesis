@@ -1176,7 +1176,7 @@ function(add_latex_targets_internal)
 
   # Some LaTeX commands may need to be modified (or may not work) if the main
   # tex file is in a subdirectory. Make a flag for that.
-  get_filename_component(LATEX_MAIN_INPUT_SUBDIR ${LATEX_MAIN_INPUT} DIRECTORY)
+  # get_filename_component(LATEX_MAIN_INPUT_SUBDIR ${LATEX_MAIN_INPUT} DIRECTORY)
 
   # Set up target names.
   set(dvi_target      ${LATEX_TARGET_NAME}_dvi)

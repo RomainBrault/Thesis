@@ -4,7 +4,8 @@ addons:
   apt:
     packages:
     - cmake
-    - texlive-bibtex-extra
+    - texlive-full
+    - biblatex
 
 install:
   - mkdir build

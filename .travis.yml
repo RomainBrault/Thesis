@@ -3,8 +3,6 @@ dist: trusty
 
 addons:
   apt:
-    sources:
-      - sourceline: 'ppa:jonathonf/texlive-2016'
     packages:
       - cmake
       - texlive
@@ -13,10 +11,7 @@ addons:
 cache:
   apt: true
 
-install:
-  - PATH=$HOME/texlive/bin/x86_64-linux:$PATH
-  - tlmgr option repository ftp://tug.org/historic/systems/texlive/2015/tlnet-final
-  - tlmgr update --self
+script:
   - mkdir build
   - cd build
   - cmake ..

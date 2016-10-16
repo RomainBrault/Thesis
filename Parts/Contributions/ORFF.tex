@@ -1,14 +1,101 @@
 %----------------------------------------------------------------------------------------
-\section{Background}
-\label{sec:ch04_background}
-
-%----------------------------------------------------------------------------------------
-\section{Fourier analysis on locally compact Abelian groups}
-\label{sec:fourier_analysis_on_locally_compact_abelian_groups}
+\section{Motivations}
+\label{sec:motivations}
+Random Fourier Features have been proved useful to implement efficiently kernel methods in the scalar case, allowing to learn a linear model based on an approximated feature map. In this work, we are interested to construct approximated operator-valued feature maps to learn vector-valued functions. With an explicit (approximated) feature map, one converts the problem of learning a function $f$ in the vector-valued Reproducing Kernel Hilbert Space $\mathcal{H}_K$ into the learning of a linear model $\tilde{f}$ defined by:
+ \begin{equation*}
+ \tilde{f}(x) = \tildePhi(x)^* \theta,
+ \end{equation*}
+ where $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{H},\mathcal{Y})$ and $\theta \in \mathcal{H}$. The methodology we propose works for operator-valued kernels defined on any \acf{LCA} group, noted ($\mathcal{X}, \groupop)$, for some operation noted $\groupop$. This allows us to use the general context of Pontryagin duality for Fourier transforms of functions on \acs{LCA} groups. Building upon a generalization of Bochner's theorem for operator-valued measures, an operator-valued kernel is seen as the \emph{Fourier transform} of an operator-valued positive measure. From that result, we extend the principle of Random Fourier Feature for scalar-valued kernels and derive a general methodology to build Operator Random Fourier Feature when operator-valued kernels are shift-invariant according to the chosen group operation.
 
 %----------------------------------------------------------------------------------------
 \section{Construction}
 \label{sec:construction}
+We present a construction of \acf{ORFF} such that $f: x\mapsto \tildePhi(x)^*\theta$ is a continuous function that maps an arbitrary \acs{LCA} group $\mathcal{X}$ as input space to an arbitrary output Hilbert space $\mathcal{Y}$. First we define a functional \emph{Fourier feature map}, and then propose a Monte-Carlo sampling from this feature map to construct an approximation of a shift-invariant $\mathcal{Y}$-Mercer kernel.
+Then, we prove the convergence of the kernel approximation $\tilde{K}(x,z)=\tildePhi(x)^*\tildePhi(z)$ with high probability on \emph{compact} subsets of the \acs{LCA} $\mathcal{X}$, when $\mathcal{Y}$ is \emph{finite dimensional}. Eventually we conclude with some numerical experiments.
+\paragraph{}
+The following proposition of \citet{Zhang2012,Carmeli2010} extends Bochner's theorem to any shift-invariant $\mathcal{Y}$-Mercer kernel. 
+\begin{proposition}[Operator-valued Bochner's theorem \citep{Zhang2012}]
+If a continuous function $K$ from $\mathcal{X} \times \mathcal{X}$ to $\mathcal{Y}$ is a shift-invariant $\mathcal{Y}$-Mercer kernel on $\mathcal{X}$, then there exists a unique positive operator-valued measure $M: \mathcal{B}(\mathcal{X}) \to \mathcal{L}_+(\mathcal{Y})$ such that:
+\begin{equation}\label{eq:bochner-gen}
+\forall x, z \in \mathcal{X}, K(x, z) = \int_{\hat{\mathcal{X}}} \conj{\pairing{x \groupop \inv{z}, \omega}} dM(\omega),
+\end{equation}
+where $M$ belongs to the set of all the $\mathcal{L}_+(\mathcal{Y})$-valued measures of bounded variation on the $\sigma$-algebra of Borel subsets of $\dual{\mathcal{X}}$. Conversely, from any positive operator-valued measure $M$, a shift-invariant kernel $K$ can be defined by \cref{eq:bochner-gen}. 
+\end{proposition}
+Although this theorem is central to the spectral decomposition of shift-invariant $\mathcal{Y}$-Mercer \acs{OVK}, the following results proved by \citet{Carmeli2010} provides insights about this decomposition that are more relevant in practise. It first shows how to build shift-invariant $\mathcal{Y}$-Mercer kernel but more importantly, also states that any operator-valued spectral decomposition of such \acs{OVK}s when $\mathcal{Y}$ is finite dimensional or $\mathcal{X}$ is compact can be written using a pair $(A, \mu)$ where $A$ is an operator-valued function on $\dual{\mathcal{X}}$ and $\mu$ is a real-valued positive measure on $\dual{\mathcal{X}}$. Note that obviously such a pair is not unique ad the choice of this paper may have an impact on theoretical properties as well as practical computations.
+\begin{proposition}[\citet{Carmeli2010}]\label{pr:mercer_kernel_bochner}
+Let $\mu$ be a positive measure on $\mathcal{B}(\mathcal{\dual{\mathcal{X}}})$ and $A: \dual{\mathcal{X}}\to \mathcal{L}(\mathcal{Y})$ such that $\inner{A(.)y,y'}\in L^1(\mathcal{X},d\mu)$ for all $y,y'\in\mathcal{Y}$ and $A(\omega)\succcurlyeq 0$ for $\mu$-almost all $\omega$. Then, for all $\delta \in \mathcal{X}$ and for all $y, y' \in \mathcal{Y}$,
+\begin{equation}
+\label{eq:AK0}
+\inner{y,K_e(\delta)y}_{\mathcal{Y}}=\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta,\omega}}\inner{y,A(\omega)y'}_{\mathcal{Y}}d\mu(\omega)
+\end{equation}
+is the kernel signature of a shift-invariant $\mathcal{Y}$-Mercer kernel $K$ such that $K(x,z)=K_e(x \groupop \inv{z})$. In other terms, each function $K_e(\cdot)$ is the Fourier transform of $A(\cdot)\density(\cdot)$ where the integral converges in the weak operator topology and $\density(\omega)=\frac{d\mu}{d\omega}$ is the Radon-Nikodym derivative (density) of the measure $\mu$. If $\mathcal{Y}$ is finite dimensional or $\mathcal{X}$ is compact, any shift-invariant kernel is of the above form for some pair $(A(\omega),\mu (\omega))$. 
+\end{proposition}
+This theorem in more interesting than \cref{eq:bochner-gen} in the sense that it shows that we are certain of the existence of a \emph{scalar} measure $\mu$ and a positive operator $A(\omega)$, provided that $\mathcal{X}$ is compact or $\mathcal{Y}$ is finite dimensional. When $p=1$ one can always assume $A$ is reduced to the scalar $1$, $\mu$ is still a bounded positive measure and we retrieve the Bochner theorem applied to the scalar case (\cref{th:bochner-scalar}).
+\paragraph{}
+While \cref{pr:bochner} gives some insights on how to build an approximation of a $\mathcal{Y}$-Mercer kernel, we need a theorem that provides an explicit construction of the pair $A(\omega), \mu(\omega)$ from the kernel signature. Proposition 14 in \citet{Carmeli2010} gives the solution, and also provide a sufficient condition for \cref{pr:mercer_kernel_bochner} to apply.
+\begin{proposition}[\citet{Carmeli2010}]
+\label{pr:inverse_ovk_Fourier_decomposition}
+Let $K$ be a shift-invariant $\mathcal{Y}$-Mercer kernel. %
+Suppose that $\forall z \in \mathcal{X}$ and $\forall y ,y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$ where $dx$ denotes the Haar measure on $(\mathcal{X}, \groupop)$. %
+Define $C$ such that for all $\omega \in \dual{\mathcal{X}}$ and for all $y$, $y'$ in $\mathcal{Y}$,
+\begin{equation}\label{eq:CK0}
+\begin{aligned}
+\inner{y,C(\omega)y'} &= \int_{\mathcal{X}} \pairing{\delta, \omega}\inner{y, K_e(\delta)y'}d\delta \\
+	&=\IFT{\inner{y, K_e(\cdot)y'}}(\omega)
+\end{aligned}
+\end{equation} %
+Then
+\begin{enumerate}[i)]
+\item $C(\omega)$ is a bounded non-negative operator for all $\omega \in \dual{\mathcal{X}}$,
+\item $\inner{y, C(.)y'}\in L^1(\dual{\mathcal{X}},d\omega)$ for all $y,y'\in\mathcal{X}$,
+\item for all $\delta\in\mathcal{X}$ and for all $y$, $y'$ in $\mathcal{Y}$,
+\begin{equation*}
+\inner{y, K_e(\delta)y'}= \int_{\dual{\mathcal{X}}}\conj{\pairing{\delta,\omega}}\inner{y, C(\omega)y'}d\omega.
+\end{equation*} %
+\end{enumerate}
+\end{proposition} %
+Gathering the two propositions, we present now the following property that allows to build a spectral decomposition of a shift-invariant $\mathcal{Y}$-Mercer kernel on a \acs{LCA} group $(\mathcal{X},\groupop)$.
+\begin{proposition}[Spectral decomposition of shift-invariant $\mathcal{Y}$-Mercer kernel]
+\label{pr:spectral}
+Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel on $(\mathcal{X}, \groupop)$.
+
+Suppose that for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$. If $\mathcal{Y}$ is of finite dimension or $\mathcal{X}$ is compact, then there exists $\mu$, a positive measure on $\mathcal{B}(\mathcal{\dual{\mathcal{X}}})$, and $A:\dual{\mathcal{X}}\to \mathcal{L}_+(\mathcal{Y})$, a operator-valued functions such that $\inner{A(.)y,y'}\in L^1(\mathcal{X},d\mu)$ for all $y,y'\in\mathcal{Y}$ and
+\begin{equation*}
+\forall (y,y')\in\mathcal{Y}^2, \enskip \inner{y, K_e(\delta)y'}=\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, A(\omega)y'}p_{\mu}(\omega)d\omega.
+\end{equation*}
+where $\inner{y, A(\omega)y'}p_{\mu}(\omega) = \IFT{\inner{y, K_e(x\groupop \inv{z})y'}}$.
+\end{proposition}
+\begin{proof}
+From \cref{eq:AK0} and \cref{eq:CK0}, if $\mathcal{X}$ is compact or $\mathcal{Y}$ is finite dimensional, we can write the following equality concerning the operator-valued kernel signature $K_e$. For all $\delta \in \mathcal{X}$ and for all $y, y'$ in $\mathcal{Y}$
+\begin{equation*}
+\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, C(\omega)y'}d\omega=\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, A(\omega)y'}d\mu(\omega).
+\end{equation*} %
+Since both sides of the equation define continuous functions, the following equality holds $\mu$-almost everywhere. For all $\omega \in \dual{\mathcal{X}}$ and for all $y$, $y'\in\mathcal{Y}$,
+\begin{equation}
+\label{eq:operator_identification}
+\inner{y, C(\omega)y'}=\inner{y, A(\omega)y'}p_{\mu}(\omega)=\IFT{\inner{y, K_e(\cdot)y'}}(\omega),
+\end{equation}
+where $p_{\mu}(\omega)=\frac{d\mu}{d\omega}$ is the Radon-Nikodym derivative of the measure $\mu$, e.g. its density. 
+\end{proof}
+In the case where $\mathcal{Y}=\mathbb{R}^p$, we rewrite \cref{eq:operator_identification} coefficient-wisely by choosing the orthonormal basis of $\mathcal{Y}$, $(e_1,\ldots, e_p)$, such that for all $ i,j\inrange{1}{p}$,
+\begin{equation}
+\label{eq:operator_identification_real}\inner{e_i,C(\omega)e_j}=C(\omega)_{ij}=A(\omega)_{ij}p_{\mu}(\omega)=\IFT{K_e(\delta)_{ij}}.
+\end{equation}
+It follows that
+\begin{equation}\label{eq:matrix-exp}
+\forall i,j \inrange{1}{p}, \enskip K_e(x\groupop \inv{z})_{ij}= \FT{A(\cdot)_{ij}}
+%\expectation_{\mu}[\conj{\pairing{x\myop \myinv{z},\omega}} A(\omega)_{ij}].
+\end{equation}
+%This leads to the following corollary of \cref{pr:spectral}:
+%\begin{proposition}\label{pr:inverseTF-kernel}
+%Let $\mathcal{Y}=\mathbb{R}^p$. In the same conditions as \ref{pr:spectral}, we have:
+
+\begin{remark}
+Note that although the inverse Fourier transform of $K_e$ yields a unique operator-valued function $C(\cdot)$, the decomposition of $C(\omega)$ into $A(\omega)p_\mu(\omega)$ is not unique. The choice of the decomposition may be justified by the computational cost or by the nature of the constants involved in the uniform convergence of the estimator.
+\end{remark}
+
+\subsection{Construction of ORFF}
+Without loss of generality we assume that $\int_{\mathcal{X}} d\mu(\omega)=1$ and thus, $\mu$ is a probability distribution and $\density$, a probability density. Note that this is always possible through an appropriate rescaling of the kernel. 
 
 %----------------------------------------------------------------------------------------
 \section{Uniform bound on the approximation}

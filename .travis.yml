@@ -12,6 +12,9 @@ cache:
   apt: true
 
 install:
+  - PATH=$HOME/texlive/bin/x86_64-linux:$PATH
+  - tlmgr option repository ftp://tug.org/historic/systems/texlive/2015/tlnet-final
+  - tlmgr update --self
   - mkdir build
   - cd build
   - cmake ..

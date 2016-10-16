@@ -1,4 +1,4 @@
-DATA ARE NOT REAL!
+DATA ARE NOT REAL! [![Build Status](https://travis-ci.org/RomainBrault/Thesis.svg?branch=master)](https://travis-ci.org/RomainBrault/Thesis)
 ==============
 
 Manuscript de thèse de l'université d'Évry val d'Essonne et Télécom-ParisTech sur l'approximation de noyaux à valeurs opérateur.

@@ -1,0 +1,24 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+*.tex diff=tex
+
+#
+# The above will handle all files NOT found below
+#
+# These files are text and should be normalized (Convert crlf => lf)
+*.gitattributes text
+.gitignore text
+*.md text
+
+CMakeLatex/ export-ignore
+FrontBackMatter/ export-ignore
+gfx/ export-ignore
+Parts/ export-ignore
+*.tex export-ignore
+*.bib export-ignore
+*.sty export-ignore
+*.txt export-ignore
+*.md export-ignore
+*.yml export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore

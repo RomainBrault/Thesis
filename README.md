@@ -5,4 +5,4 @@ Manuscript de thèse de l'université d'Évry val d'Essonne et Télécom-ParisTe
 
 My thesis at Université d'Évry val d'Essonne and Télécom-ParisTech on operator-valued kernel approximation.
 
-To download the latest version click [here](raw/master/ThesisRomainBrault.pdf).
+To download the latest version click [here](https://github.com/RomainBrault/Thesis/raw/master/ThesisRomainBrault.pdf).

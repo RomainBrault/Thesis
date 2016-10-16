@@ -3,10 +3,12 @@ dist: trusty
 
 addons:
   apt:
+    sources:
+      - sourceline: 'ppa:jonathonf/texlive-2016'
     packages:
-    - cmake
-    - texlive-full
-    - biblatex
+      - cmake
+      - texlive
+      - biblatex
 
 cache:
   apt: true

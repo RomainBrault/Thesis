@@ -5,7 +5,8 @@ addons:
     packages:
     - cmake
     - texlive-bibtex-extra
-    - biber
+    - latex2html
+    - poppler-utils
 
 install:
   - mkdir build

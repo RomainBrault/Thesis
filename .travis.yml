@@ -12,7 +12,6 @@ addons:
     packages:
       - cmake
       - texlive-full
-      - bibtex
 
 script:
   - mkdir build

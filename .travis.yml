@@ -14,13 +14,6 @@ addons:
       - texlive-full
       - bibtex
 
-before_install:
-  - sudo add-apt-repository
-  - sudo apt-get update -q
-  - sudo apt-get install texlive-full
-  - sudo apt-get install bibtex
-  - sudo apt-get install cmake
-
 script:
   - mkdir build
   - cd build

@@ -4,7 +4,7 @@ addons:
   apt:
     packages:
     - cmake
-    - texlive-bibtex-extra
+    - texlive-full
     - latex2html
     - poppler-utils
 

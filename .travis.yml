@@ -18,3 +18,12 @@ script:
   - cd build
   - cmake ..
   - make pdf
+
+deploy:
+  provider: releases
+  api_key:
+    secure: "GITHUB PERSONAL ACCESS TOKEN"
+  file: "build/ThesisRomainBrault.pdf"
+  skip_cleanup: true
+  on:
+    tags: true

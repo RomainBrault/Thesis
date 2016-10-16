@@ -1,0 +1,13 @@
+sudo: false
+
+addons:
+  apt:
+    packages:
+    - cmake
+    - texlive
+
+install:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make

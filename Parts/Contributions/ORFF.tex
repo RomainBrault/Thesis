@@ -12,7 +12,7 @@ Random Fourier Features have been proved useful to implement efficiently kernel 
 \label{sec:construction}
 We present a construction of \acf{ORFF} such that $f: x\mapsto \tildePhi(x)^*\theta$ is a continuous function that maps an arbitrary \acs{LCA} group $\mathcal{X}$ as input space to an arbitrary output Hilbert space $\mathcal{Y}$. First we define a functional \emph{Fourier feature map}, and then propose a Monte-Carlo sampling from this feature map to construct an approximation of a shift-invariant $\mathcal{Y}$-Mercer kernel.
 Then, we prove the convergence of the kernel approximation $\tilde{K}(x,z)=\tildePhi(x)^*\tildePhi(z)$ with high probability on \emph{compact} subsets of the \acs{LCA} $\mathcal{X}$, when $\mathcal{Y}$ is \emph{finite dimensional}. Eventually we conclude with some numerical experiments.
-\paragraph{}
+\subsection{Theoretical study}
 The following proposition of \citet{Zhang2012,Carmeli2010} extends Bochner's theorem to any shift-invariant $\mathcal{Y}$-Mercer kernel. 
 \begin{proposition}[Operator-valued Bochner's theorem \citep{Zhang2012}]
 If a continuous function $K$ from $\mathcal{X} \times \mathcal{X}$ to $\mathcal{Y}$ is a shift-invariant $\mathcal{Y}$-Mercer kernel on $\mathcal{X}$, then there exists a unique positive operator-valued measure $M: \mathcal{B}(\mathcal{X}) \to \mathcal{L}_+(\mathcal{Y})$ such that:
@@ -30,9 +30,9 @@ Let $\mu$ be a positive measure on $\mathcal{B}(\mathcal{\dual{\mathcal{X}}})$ a
 \end{equation}
 is the kernel signature of a shift-invariant $\mathcal{Y}$-Mercer kernel $K$ such that $K(x,z)=K_e(x \groupop \inv{z})$. In other terms, each function $K_e(\cdot)$ is the \acl{FT} of $A(\cdot)\density(\cdot)$ where the integral converges in the weak operator topology and $\density(\omega)=\frac{d\mu}{d\omega}$ is the Radon-Nikodym derivative (density) of the measure $\mu$. If $\mathcal{Y}$ is finite dimensional or $\mathcal{X}$ is compact, any shift-invariant kernel is of the above form for some pair $(A(\omega),\mu (\omega))$. 
 \end{proposition}
-This theorem in more interesting than \cref{eq:bochner-gen} in the sense that it shows that we are certain of the existence of a \emph{scalar} measure $\mu$ and a positive operator $A(\omega)$, provided that $\mathcal{X}$ is compact or $\mathcal{Y}$ is finite dimensional. When $p=1$ one can always assume $A$ is reduced to the scalar $1$, $\mu$ is still a bounded positive measure and we retrieve the Bochner theorem applied to the scalar case (\cref{th:bochner-scalar}).
+This theorem is more interesting than \cref{eq:bochner-gen} in the sense that it shows that we are certain of the existence of a \emph{scalar} measure $\mu$ and a positive operator $A(\omega)$, provided that $\mathcal{X}$ is compact or $\mathcal{Y}$ is finite dimensional. When $p=1$ one can always assume $A$ is reduced to the scalar $1$, $\mu$ is still a bounded positive measure and we retrieve the Bochner theorem applied to the scalar case (\cref{th:bochner-scalar}).
 \paragraph{}
-While \cref{pr:bochner} gives some insights on how to build an approximation of a $\mathcal{Y}$-Mercer kernel, we need a theorem that provides an explicit construction of the pair $A(\omega), \mu(\omega)$ from the kernel signature. Proposition 14 in \citet{Carmeli2010} gives the solution, and also provide a sufficient condition for \cref{pr:mercer_kernel_bochner} to apply.
+While \cref{pr:mercer_kernel_bochner} gives some insights on how to build an approximation of a $\mathcal{Y}$-Mercer kernel, we need a theorem that provides an explicit construction of the pair $A(\omega), \mu(\omega)$ from the kernel signature. Proposition 14 in \citet{Carmeli2010} gives the solution, and also provide a sufficient condition for \cref{pr:mercer_kernel_bochner} to apply.
 \begin{proposition}[\citet{Carmeli2010}]
 \label{pr:inverse_ovk_Fourier_decomposition}
 Let $K$ be a shift-invariant $\mathcal{Y}$-Mercer kernel. %
@@ -94,7 +94,45 @@ It follows that
 Note that although the \acl{IFT} of $K_e$ yields a unique operator-valued function $C(\cdot)$, the decomposition of $C(\omega)$ into $A(\omega)p_\mu(\omega)$ is not unique. The choice of the decomposition may be justified by the computational cost or by the nature of the constants involved in the uniform convergence of the estimator.
 \end{remark}
 
-\subsection{Construction of ORFF}
+\subsection{Functional Fourier feature map}
+
+\subsection{Regularization property}
+We have shown so far that it is always possible to construct a feature map that allows to approximate a shift-invariant $\mathcal{Y}$-Mercer kernel. However we could also propose a construction of such map by studying the regularization induced with respect to the Fourier transform of a target function $f\in \mathcal{H}_K$. In other words, what is the norm in $L^2(\dual{\mathcal{X}}, d\omega, \mathcal{Y}')$ induced by $\norm{\cdot}_K$?
+\begin{proposition}
+Let $K$ be a shift-invariant $\mathcal{Y}$-Mercer Kernel such that for all $y$, $y'$ in $\mathcal{Y}$, $\inner{y, K_e(\cdot)y'}\in L^1(\mathcal{X}, dx)$. 
+\paragraph{}
+If $\forall y$, $y'\in\mathcal{Y}$, $\inner{y, A(\omega)y'}p_\mu(\omega):=\IFT{\inner{y, K_e(\cdot)y'}}(\omega)$. Let $f\in\mathcal{H}_K$ then
+\begin{equation}
+\norm{f}^2_K=\displaystyle\int_{\dual{\mathcal{X}}}\frac{\inner{\FT{f}(\omega), A(\omega)^\dagger\FT{f}(\omega)}_\mathcal{Y}}{p_\mu(\omega)}d\omega.
+\label{eq:reg_L2}
+\end{equation}
+\label{pr:regularization}
+\end{proposition}
+\begin{proof}
+We first show how the Fourier transform relates to the feature operator. Since $\mathcal{Y}$ is separable and $\mathcal{H}_K$ is embed into $L^2(\dual{\mathcal{X}}, \mu, \mathcal{Y})$ by mean of the feature operator $W$, we have:
+\begin{equation*}
+\begin{aligned}
+\FT{\IFT{g}}(x)=\int_{\dual{\mathcal{X}}}\overline{\pairing{x,\omega}}\IFT{g}(\omega)d\omega &=g(x) \\
+(Wg)(x)=\int_{\dual{\mathcal{X}}}\overline{\pairing{x,\omega}}p_\mu(\omega)B(\omega)g(\omega)d\omega&=g(x).
+\end{aligned}
+\end{equation*}
+Hence, $\IFT{f}(\omega)=p_\mu(\omega)B(\omega)g(\omega)$ $\mu$-almost everywhere. From \cref{pr:feature_operator} we have,
+\begin{equation*}
+\begin{aligned}
+\norm{f}^2_K &= \inf \left\{\norm{g}^2_\mathcal{H} \enskip \middle| \forall g\in\mathcal{H}, \enskip Wg=f \right\} \\
+&= \begin{multlined}[t][0.8\textwidth]\inf \big\{\int_{\dual{\mathcal{X}}} \norm{g(\omega)}^2_\mathcal{Y}d\mu(\omega) \enskip \big| \\ \enskip \forall g\in\mathcal{H},\enskip \IFT{f}(\omega)=p_\mu(\omega)B(\omega)g(\omega) \big\}.\end{multlined}
+\end{aligned}
+\end{equation*}
+The pseudo inverse of the operator $B(\omega)$ (noted $B(\omega)^\dagger$) is the unique solution of the system $\IFT{f}(\omega)=p_\mu(\omega)B(\omega)g(\omega)$ w.r.t. to $g(\omega)$ with minimal norm. Eventually,
+\begin{equation}
+\norm{f}^2_K = \displaystyle\int_{\dual{\mathcal{X}}} \frac{\norm{B(\omega)^\dagger\IFT{f}(\omega)}^2_\mathcal{Y}}{p_\mu(\omega)^2}d\mu(\omega)
+= \displaystyle\int_{\dual{\mathcal{X}}} \frac{\norm{B(\omega)^\dagger\FT{f}(\omega)}^2_\mathcal{Y}}{p_\mu(\omega)^2}d\mu(\omega)
+\end{equation}
+Conclude the proof by taking $d\mu(\omega)=p_\mu(\omega)d\omega$.
+\end{proof}
+Note that if $K(x,z)=k(x,z)$ is a scalar kernel then for all $\omega$ in $\dual{\mathcal{X}}$, $A(\omega)=1$. Therefore we recover a well known results for kernels that is for any $f\in\mathcal{H}_k$ we have $\norm{f}_k=\int_{\dual{\mathcal{X}}}\FT{k_e}(\omega)^{-1}\FT{f}(\omega)^2d\omega$. We also note that the regularization property in $\mathcal{H}_K$ does not depends (as expected) on the decomposition of $A(\omega)$ into $B(\omega)B(\omega)^*$. Therefore the decomposition should be chosen such that it optimizes the computation cost. For instance if $A(\omega)\in\mathcal{L}(\mathbb{R}^p)$ has rank $r$, one could find an operator $B(\omega)\in\mathcal{L}(\mathbb{R}^p, \mathbb{R}^r)$ such that $A(\omega)=B(\omega)B(\omega)^*$.
+
+\subsection{Building Operator-valued Random Fourier Features}
 Without loss of generality we assume that $\int_{\mathcal{X}} d\mu(\omega)=1$ and thus, $\mu$ is a probability distribution and $\density$, a probability density. Note that this is always possible through an appropriate rescaling of the kernel.
 
 Given a $\mathcal{Y}$-Mercer shift-invariant kernel $K$ on $\mathcal{X}$, an approximation of $K$ can be obtained using a decomposition $(A, \mu)$ and a plug-in Monte-Carlo estimator instead of the expectation. However, for efficient computations, as motivated in the introduction, we are interested in finding an approximated feature map more than a kernel approximation. Indeed, an approximated feature map will allow to build linear models in regression tasks. The following proposition provides the general form of an Operator Random Fourier Feature map:
@@ -114,9 +152,30 @@ Let $\omega_1, \ldots, \omega_D$ be $D$ \iid~random vectors following the law $\
 &= \frac{1}{D} \sum_{j=1}^D \conj{\pairing{x,z}}A(\omega_j)
 \end{aligned}
 \end{equation*}
-Due to the strong law of large numbers, $ \frac{1}{D} \sum_{j=1}^D \conj{\pairing{x,z}}A(\omega_j)$ 
-converges almost-surely in the weak operator topology to $\expectation_{\mu}[\conj{\pairing{x\groupop z^{-1},\omega_j}}A(\omega) ]=K(x,z)$ when $D$ tends to infinity.
+From the strong law of large numbers, $ \frac{1}{D} \sum_{j=1}^D \conj{\pairing{x,z}}A(\omega_j)$ 
+converges almost-surely in the weak operator topology to $\expectation_{\mu}[\conj{\pairing{x\groupop z^{-1},\omega_j}}A(\omega) ]$ when $D$ tends to infinity.
 \end{proof}
+\begin{remark}
+We find a decomposition such that for all $j=1, \ldots, D$, $A(\omega_j)=B(\omega_j)B(\omega_j)^*$ either by exhibiting an analytic closed-form or using a numerical decomposition. 
+\end{remark}
+This proposition leads to the following construction algorithm.
+\SetKwInOut{Input}{Input}
+\SetKwInOut{Output}{Output}
+\begin{center}
+\begin{algorithm2e}[H]
+	\SetAlgoLined
+    \Input{$K(x, z)=K_e(\delta)$ a $\mathcal{Y}$-shift-invariant Mercer kernel such that $\forall y,y'\in\mathcal{Y},$ $\inner{y, K_e(\delta)y'}\in L^1(\mathbb{R}^d, dx)$.}
+    \Output{A random feature $\tildePhi(x)$ such that $\tildePhi(x)^\adjoint \tildePhi(z) \approx K(x,z)$}
+    \BlankLine
+	Define the pairing $\pairing{x, \omega}$ from the \acs{LCA} group $(\mathcal{X}, \groupop)$\;
+	Find a decomposition $(B(\omega)$,$\density(\omega))$ such that $B(\omega)B(\omega)^*\density(\omega)=\IFT{K_e}(\omega)$\;
+% 	Build an randomized feature map via Monte-Carlo sampling from the probability measure $\mu$ and the application $B$\;
+	Draw $D$ random vectors $\omega_j$, $j=1, \hdots, D$ from the probability distribution $\mu$\;
+   \Return $\tildePhi(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*$\;
+   \caption{Construction of ORFF}
+   \label{al:ORFF_construction}
+\end{algorithm2e}
+\end{center}
 
 %----------------------------------------------------------------------------------------
 \section{Uniform bound on the approximation}

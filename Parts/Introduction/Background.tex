@@ -28,6 +28,7 @@ $\mathcal{F}(\mathcal{X};\mathcal{Y})$ & Vector space of function from $\mathcal
 $\mathcal{C}(\mathcal{X};\mathcal{Y})$ & The vector subspace of $\mathcal{F}$ of continuous function from $\mathcal{X}$ to $\mathcal{Y}$. \\
 $\mathcal{L}(\mathcal{H};\mathcal{Y})$ & The set of bounded linear operator from a Hilbert space $\mathcal{H}$ to a Hilbert space $\mathcal{Y}$. \\
 $\mathcal{L}(\mathcal{Y})$ & The set of bounded linear operator from a Hilbert space $\mathcal{H}$ to itself. \\
+$\mathcal{L}_+(\mathcal{Y})$ & The set of non-negative bounded linear operator from a Hilbert space $\mathcal{H}$ to itself. \\
 $\mathcal{B}(\mathcal{X})$ & Borel $\sigma$-algebra on $\mathcal{X}$. \\
 $\mu(\mathcal{X})$ & A scalar positive measure of $\mathcal{X}$. \\
 $p_\mu(x)$ & The Radon-Nikodym derivative of $\mu$ \wrt~the Lebesgue measure. \\
@@ -110,7 +111,7 @@ Hence $h_\omega(x)=\sum_{k=1}^d\omega_k \log(x_k+c)$. This group together with t
 % % \end{proof}
 % % \end{example}
 \subsection{The Fourier transform}
-For a function with values in a separable Hilbert space $f\in L^1(\mathcal{X},dx;\mathcal{Y})$, where $dx$ is the Haar measure on $\mathcal{X}$, we denote $\FT{f}$ its \acf{FR} which is defined by
+For a function with values in a separable Hilbert space $f\in L^1(\mathcal{X},dx;\mathcal{Y})$, where $dx$ is the Haar measure on $\mathcal{X}$, we denote $\FT{f}$ its \acf{FT} which is defined by
 \begin{equation*}
     \forall \omega \in \dual{\mathcal{X}},\enskip \FT{f}(\omega)=\int_{\dual{\mathcal{X}}} \conj{\pairing{x,\omega}}f(x)dx.
 \end{equation*} 

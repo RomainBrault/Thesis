@@ -284,6 +284,10 @@
 % kpfonts 11pt:
 % kpfonts 12pt:
 
+\newcounter{mparcnt}
+\renewcommand\themparcnt{\textbf{\textsuperscript{\arabic{mparcnt}}}}
+\newcommand\mpar[1]{\refstepcounter{mparcnt}$\themparcnt$ \marginpar{$\themparcnt$ #1}}
+
 % ********************************************************************
 % Own Stuff
 % ********************************************************************

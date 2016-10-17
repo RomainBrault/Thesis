@@ -19,6 +19,8 @@
 %\def\covari{{\math{Cov}}
 
 % Romain's notations.
+\usepackage{mathtools}
+
 \def\expectation{{\text{\textbf{E}}}}
 \def\variance{{\text{\textbf{Var}}}}
 \def\probability{{\text{\textbf{Pr}}}}
@@ -32,11 +34,15 @@
 \newcommand{\FT}[1]{\mathcal{F}\left[#1\right]}
 \newcommand{\IFT}[1]{\mathcal{F}^{-1}\left[#1\right]}
 \newcommand{\MGF}{\text{MGF}}
-% \newcommand{\tildeDphi}{\tilde{\Phi}_D}
+
+\let\Phi\phi
+\let\phi\varphi
+
 \newcommand{\tildePhi}{\tilde{\Phi}}
 \newcommand{\tildephi}{\tilde{\phi}}
 
-\usepackage{mathtools}
+% \let\Phi\phi
+% \let\phi\varphi
 
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
@@ -47,7 +53,7 @@
 \newcommand\dual[1]{\hat{#1}}
 % \newcommand\dual[1]{#1}
 \newcommand\conj[1]{\overline{#1}}
-\newcommand\inrange[2]{\in {\left\{#1, \ldots, #2\right\}}}
+\newcommand\inrange[2]{\in \Set{#1, \ldots, #2}}
 % \newcommand\inrange[2]{\llbracket#1, #2\rrbracket}
 
 \makeatletter

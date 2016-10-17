@@ -15,5 +15,5 @@ To download the latest version click [here](https://github.com/RomainBrault/Thes
 
 ## Usage
 
-To pull the latest version and compile the thesis locally run `./compile.sh`
-To synchronize overleave, git and push back on both run `./update.sh`
+To pull the latest version and compile the thesis locally run `./compile.sh`.
+To synchronize overleave, git and push back on both run `./update.sh`.

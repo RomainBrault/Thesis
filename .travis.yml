@@ -29,7 +29,7 @@ after_success:
   - git add ThesisRomainBrault.pdf
   - git commit -m "Set build VERSION number"
   - git tag $GIT_TAG -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
-  - git push --quiet RomainBrault@github.com/RomainBrault/Thesis $GIT_TAG > /dev/null 2>&1
+  - git push --quiet git@github.com:RomainBrault/Thesis.git $GIT_TAG > /dev/null 2>&1
 
 branches:
   except:

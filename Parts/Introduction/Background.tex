@@ -64,7 +64,7 @@ Let $(\mathcal{X}, \groupop)$ be a \acs{LCA} group with $e$ its neutral element 
 \paragraph{}
 The Pontryagin duality theorem states that $\dual{\dual{\mathcal{X}}}\cong \mathcal{X}$. \Ie~there is a canonical isomorphism between any \acs{LCA} group and its double dual. To emphasize this duality the following notation is usually adopted: $\omega(x)=\pairing{x,\omega}=\pairing{\omega,x}$, where $x\in\mathcal{X}$, $\omega\in\dual{\mathcal{X}}$. Another important property involves the complex conjugate of the pairing which is defined as $\conj{\pairing{x,\omega}} = \pairing{\inv{x},\omega}$.
 \begin{table}[!ht]\label{table:pairings}
-\caption{Classification of Fourier transforms in terms of their domain and transform domain.}
+\caption{Classification of \acl{FT}s in terms of their domain and transform domain.}
 \label{tab:dual_and_pairing}
 \centering
 \begin{tabularx}{\textwidth}{cccX}
@@ -110,7 +110,7 @@ Hence $h_\omega(x)=\sum_{k=1}^d\omega_k \log(x_k+c)$. This group together with t
 % % \end{proof}
 % % \end{example}
 \subsection{The Fourier transform}
-For a function with values in a separable Hilbert space $f\in L^1(\mathcal{X},dx;\mathcal{Y})$, where $dx$ is the Haar measure on $\mathcal{X}$, we denote $\FT{f}$ its Fourier transform which is defined by
+For a function with values in a separable Hilbert space $f\in L^1(\mathcal{X},dx;\mathcal{Y})$, where $dx$ is the Haar measure on $\mathcal{X}$, we denote $\FT{f}$ its \acf{FR} which is defined by
 \begin{equation*}
     \forall \omega \in \dual{\mathcal{X}},\enskip \FT{f}(\omega)=\int_{\dual{\mathcal{X}}} \conj{\pairing{x,\omega}}f(x)dx.
 \end{equation*} 
@@ -118,15 +118,13 @@ For a measure defined on $\mathcal{X}$, there exists a unique suitably normalize
  \begin{equation}\label{fourier-l1}
  \forall x \in \mathcal{X},\enskip f(x)=\int_{\dual{\mathcal{X}}}\FT{f}(\omega)(x,\omega) d\omega.
 \end{equation}
-Moreover if $d\omega$ is normalized, $\mathcal{F}$ extends to a unitary operator from $L^2(\mathcal{X}, dx, \mathcal{Y})$ onto $L^2(\dual{\mathcal{X}}, d\omega, \mathcal{Y})$ Then the inverse Fourier transform of a function $g\in L^1(\dual{\mathcal{X}},d\omega,\mathcal{Y})$ (where $d\omega$ is a Haar measure on $\dual{\mathcal{X}}$ suitably normalize \wrt~the Haar measure $dx$) is noted $\IFT{g}$ defined by
+Moreover if $d\omega$ is normalized, $\mathcal{F}$ extends to a unitary operator from $L^2(\mathcal{X}, dx, \mathcal{Y})$ onto $L^2(\dual{\mathcal{X}}, d\omega, \mathcal{Y})$ Then the \acf{IFT} of a function $g\in L^1(\dual{\mathcal{X}},d\omega,\mathcal{Y})$ (where $d\omega$ is a Haar measure on $\dual{\mathcal{X}}$ suitably normalize \wrt~the Haar measure $dx$) is noted $\IFT{g}$ defined by
 \begin{equation*}
     \forall x \in \mathcal{X},\enskip \IFT{g}(x) = \int_{\dual{\mathcal{X}}} \pairing{x,\omega}g(\omega) d\omega,
 \end{equation*}
 % The inverse Fourier transform of $g$, an integrable function on $\dual{X}$ is defined as:
 % where the Haar measure $\mu=\dual{\nu}$ is called the {\it dual measure} to $\nu$.
-%\Cref{tab:dual_and_pairing} gives some examples of real Abelian groups with their associated dual and pairing. 
-%See \cite{folland1994course} for a more detailed construction of LCA, Pontryagin duality and Fourier transforms on LCA.
- For the familiar case of a scalar-valued function $f$ on the \acs{LCA} group $(\mathbb{R}^d, +)$, we have: 
+\Cref{table:pairings} gives some examples of real Abelian groups with their associated dual and pairing. The interested reader can refer to \citet{folland1994course} for a more detailed construction of LCA, Pontryagin duality and Fourier transforms on LCA. For the familiar case of a scalar-valued function $f$ on the \acs{LCA} group $(\mathbb{R}^d, +)$, we have: 
  \begin{equation}\label{fourier-R-plus}
  \forall \omega \in \dual{\mathcal{X}},\enskip \FT{f}(\omega)=\int_{\mathbb{R}^d} \ec^{-\iu \inner{\omega,x - z}}f(x) dx,
 \end{equation}

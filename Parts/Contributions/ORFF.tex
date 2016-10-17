@@ -43,7 +43,7 @@ Define $C$ such that for all $\omega \in \dual{\mathcal{X}}$ and for all $y$, $y
 \inner{y,C(\omega)y'} &= \int_{\mathcal{X}} \pairing{\delta, \omega}\inner{y, K_e(\delta)y'}d\delta \\
 	&=\IFT{\inner{y, K_e(\cdot)y'}}(\omega)
 \end{aligned}
-\end{equation} %
+\end{equation}
 Then
 \begin{enumerate}[i)]
 \item $C(\omega)$ is a bounded non-negative operator for all $\omega \in \dual{\mathcal{X}}$,
@@ -51,11 +51,11 @@ Then
 \item for all $\delta\in\mathcal{X}$ and for all $y$, $y'$ in $\mathcal{Y}$,
 \begin{equation*}
 \inner{y, K_e(\delta)y'}= \int_{\dual{\mathcal{X}}}\conj{\pairing{\delta,\omega}}\inner{y, C(\omega)y'}d\omega.
-\end{equation*} %
+\end{equation*}
 \end{enumerate}
-\end{proposition} %
+\end{proposition}
 Gathering the two propositions, we present now the following property that allows to build a spectral decomposition of a shift-invariant $\mathcal{Y}$-Mercer kernel on a \acs{LCA} group $(\mathcal{X},\groupop)$.
-\begin{proposition}[Spectral decomposition of shift-invariant $\mathcal{Y}$-Mercer kernel]
+\begin{proposition}[Sufficient condition for shift-invariant $\mathcal{Y}$-Mercer kernel spectral decomposition]
 \label{pr:spectral}
 Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel on $(\mathcal{X}, \groupop)$ and suppose that for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$. 
 \paragraph{}
@@ -95,6 +95,28 @@ Note that although the \acl{IFT} of $K_e$ yields a unique operator-valued functi
 \end{remark}
 
 \subsection{Functional Fourier feature map}
+Let us introduce a functional feature map, we call here \emph{Fourier Feature map}, defined by the following proposition as a direct consequence of \cref{pr:mercer_kernel_bochner}.
+
+\begin{proposition}[Fourier feature map]\label{pr:fourier_feature_map}
+Let $\mu$ be a positive measure on $\mathcal{B}(\dual{\mathcal{X}})$ and $A: \dual{\mathcal{X}}\to \mathcal{L}(\mathcal{Y})$ such that $\inner{A(.)y,y'}\in L^1(\mathcal{X},d\mu)$ for all $y$, $y'\in\mathcal{Y}$ and $A(\omega)\succcurlyeq 0$ for $\mu$-almost all $\omega$. We define $B:\dual{\mathcal{X}}\to\mathcal{L}(\mathcal{Y},\mathcal{Y}')$ such that $A(\omega) = B(\omega)B(\omega)^*$ $\mu$-almost everywhere. Then the function \marginpar{With this notation, $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{Y}; \mathcal{Y} \to L^2(\dual{\mathcal{X}}, \mu; \mathcal{Y}'))$ such that $\Phi_x\in \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \mu; \mathcal{Y}'))$.} defined as follows: for all $x \in \mathcal{X}$,  
+\begin{equation}
+\label{eq:feature_shiftinv_map}
+\forall y \in \mathcal{Y}, \enskip(\Phi_x y)(\omega)=\pairing{x,\omega}B(\omega)^*y,
+\end{equation}
+is \emph{a feature map} of the shift-invariant kernel $K$. \marginpar{\Ie~it satisfies for all $ x,z \in \mathbb{R}^d, \Phi_x^*\Phi_z=K(x,z)$.}
+\end{proposition}
+\begin{proof}
+For all $y$, $y'\in \mathcal{Y}$ and $x$, $z\in\mathcal{X}$,
+\begin{equation*}
+\begin{aligned}
+\inner{y, \Phi_x^*\Phi_z y'}_{\mathcal{Y}} &= \inner{\Phi_x y, \Phi_z y'}_{L^2(\dual{\mathcal{X}},\mu,\mathcal{Y}')} \\
+&= \int_{\dual{\mathcal{X}}}\conj{\pairing{x,\omega}}\inner{y, B(\omega)\pairing{z,\omega}B(\omega)^\adjoint y'}d\mu(\omega) \\
+&= \int_{\dual{\mathcal{X}}}\conj{\pairing{x \groupop \myinv{z},\omega}}\inner{y B(\omega)B(\omega)^\adjoint y'}d\mu(\omega) \\
+&= \int_{\dual{\mathcal{X}}}\conj{\pairing{x \groupop \inv{z},\omega}}\inner{y,A(\omega)y'}d\mu(\omega),
+\end{aligned}
+\end{equation*}
+which defines a $\mathcal{Y}$-Mercer according to \cref{pr:mercer_kernel_bochner} (of \citet{Carmeli2010}).
+\end{proof}
 
 \subsection{Regularization property}
 We have shown so far that it is always possible to construct a feature map that allows to approximate a shift-invariant $\mathcal{Y}$-Mercer kernel. However we could also propose a construction of such map by studying the regularization induced with respect to the Fourier transform of a target function $f\in \mathcal{H}_K$. In other words, what is the norm in $L^2(\dual{\mathcal{X}}, d\omega, \mathcal{Y}')$ induced by $\norm{\cdot}_K$?

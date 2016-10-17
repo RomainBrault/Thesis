@@ -98,21 +98,18 @@ Note that although the \acl{IFT} of $K_e$ yields a unique operator-valued functi
 Without loss of generality we assume that $\int_{\mathcal{X}} d\mu(\omega)=1$ and thus, $\mu$ is a probability distribution and $\density$, a probability density. Note that this is always possible through an appropriate rescaling of the kernel.
 
 Given a $\mathcal{Y}$-Mercer shift-invariant kernel $K$ on $\mathcal{X}$, an approximation of $K$ can be obtained using a decomposition $(A, \mu)$ and a plug-in Monte-Carlo estimator instead of the expectation. However, for efficient computations, as motivated in the introduction, we are interested in finding an approximated feature map more than a kernel approximation. Indeed, an approximated feature map will allow to build linear models in regression tasks. The following proposition provides the general form of an Operator Random Fourier Feature map:
-\begin{proposition}\label{pr:ORFF-map}
-Assume the signature $K_e$ ($K$) satisfies the conditions of \cref{eq:spectral}.
-
-If  for any $\omega \in \dual{\mathcal{X}}$, one can find $B: \dual{\mathcal{X}} \to \mathcal{L}(Y)$, such that $A(\omega)=B(\omega)B(\omega)^*$, then the following operator-valued function is an approximated feature map of kernel $K$:
-
+\begin{proposition}\label{pr:ORFF-map}If one can find $B: \dual{\mathcal{X}} \to \mathcal{L}(Y)$, such that for all $y$, $y'\in\mathcal{Y}$, $\inner{y, A(\omega)y'}=\inner{y, B(\omega)B(\omega)^*y'} \in L^1(\dual{\mathcal{X}}, d\mu)$, then the operator-valued function
 \begin{equation}\label{eq:phitilde}
-\tildePhi(x)= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*.
+\tildePhi(x)= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*, \qquad \omega_j \sim \mu
 \end{equation}
+is an approximated feature map of kernel $K$
 \end{proposition}
 
 \begin{proof}
-Let us draw $D$ realizations $\omega_1, \ldots, \omega_D$ according the probability distribution $\mu$. Given $(x,z) \in \mathcal{X}^2$, 
+Let $\omega_1, \ldots, \omega_D$ be $D$ \iid~random vectors following the law $\mu$. For all $(x,z) \in \mathcal{X}^2$, 
 \begin{equation*}
 \begin{aligned}
-\tildePhi(x)^*\tildePhi(z)&= \begin{multlined}[t] \left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D \exp\left(ih_{\omega_j}(x)B(\omega_j)^*\right)\right)^* \\ \left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D \exp\left(ih_{\omega_j}(z)B(\omega_j)^*\right)\right) \end{multlined}\\
+\tildePhi(x)^*\tildePhi(z)&= \!\begin{multlined}[t][.8\textwidth] \left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D \exp\left(ih_{\omega_j}(x)B(\omega_j)^*\right)\right)^* {}\\ \left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D \exp\left(ih_{\omega_j}(z)B(\omega_j)^*\right)\right) \end{multlined}\\
 &= \frac{1}{D} \sum_{j=1}^D \exp\left(-i(h_{\omega_j}(x)-h_{\omega_j}(z)\right) A(\omega_j)\\
 &= \frac{1}{D} \sum_{j=1}^D \conj{\pairing{x,z}}A(\omega_j)
 \end{aligned}

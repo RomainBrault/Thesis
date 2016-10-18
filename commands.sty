@@ -54,6 +54,7 @@
 % \newcommand\dual[1]{#1}
 \newcommand\conj[1]{\overline{#1}}
 \newcommand\inrange[2]{\in \Set{#1, \ldots, #2}}
+\newcommand\converges[2]{\xrightarrow[#2]{\text{#1}}}
 % \newcommand\inrange[2]{\llbracket#1, #2\rrbracket}
 
 \makeatletter
@@ -65,11 +66,11 @@
 \makeatother
 
 %% functions and operators
-\def\density{p_{\mu}}
-\def\measure{\mu}
-\def\adjoint{*}
-\def\sech{\text{sech}}
-\def\groupop{\star}
+\newcommand\density{p_{\mu}}
+\newcommand\measure{\mu}
+\newcommand\adjoint{*}
+\newcommand\sech{\text{sech}}
+\newcommand\groupop{\star}
 \newcommand\inv[1]{{#1}^{-1}}
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

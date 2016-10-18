@@ -175,7 +175,12 @@ where $A(\omega)=B(\omega)B(\omega)^*$. By assumption $\inner{y, A(\cdot)y'}\in 
 \end{dmath*}
 in the weak operator topology.
 \end{proof}
-We write $\tildePhi(x)^*\tildePhi(x)\approx K(x,z)$ when $\tildePhi(x)^*\tildePhi(x)\converges{\asurely}{} K(x,z)$ in the weak operator topology when $D$ tends to infinity. With mild abuse of notation we say that $\tildePhi(x)\approx \Phi_x$ when for all $y\in\mathcal{Y}$, $\inner{y, K(x,z)y'}=\inner{\Phi_x y, \Phi_z y'}\approx \inner{\tildePhi(x)y, \tildePhi(x)y'}\coloneqq \tilde{K}(x,z)$ where $\Phi_x$ is defined in the sense of \cref{pr:fourier_feature_map}.
+The approximate feature map proposed in \cref{pr:ORFF-map} has direct link with the functional feature map defined in \cref{pr:fourier_feature_map} since we have
+\begin{dmath}
+\tildePhi(x)y = \frac{1}{\sqrt{D}} \Vect_{j=1}^D (\Phi_x y)(\omega_j).
+\end{dmath}
+Therefore $\tildePhi(x)$ can be seen as an \say{operator-valued vector} corresponding the \say{stacking} of \iid~operator-valued realization of $\Phi_x$, the functional feature map. Therefore, in light of \cref{pr:regularization}, it is possible to define an approximate feature map of an operator-valued kernel.
+
 
 \begin{corollary}
 \label{cr:ORFF-map-kernel}
@@ -188,6 +193,10 @@ where $\inner{y, B(\omega)B(\omega)^*y'}p_{\mu}(\omega)=\IFT{\inner{y, K_e(\cdot
 \begin{proof}
 Find $(A(\omega), d\mu)$ from \cref{pr:spectral} and apply \cref{pr:ORFF-map}.
 \end{proof}
+
+We write $\tildePhi(x)^*\tildePhi(x)\approx K(x,z)$ when $\tildePhi(x)^*\tildePhi(x)\converges{\asurely}{} K(x,z)$ in the weak operator topology when $D$ tends to infinity. With mild abuse of notation we say that $\tildePhi(x)$ is an approximate feature map of $\Phi_x$ \ie~$\tildePhi(x)\approx \Phi_x$, when for all $y\in\mathcal{Y}$, $\inner{y, K(x,z)y'}=\inner{\Phi_x y, \Phi_z y'}\approx \inner{\tildePhi(x)y, \tildePhi(x)y'}\coloneqq \tilde{K}(x,z)$ where $\Phi_x$ is defined in the sense of \cref{pr:fourier_feature_map}. 
+\paragraph{}
+The kernel approximation $\tilde{K}$ can be seen as the sample mean of the product of functional feature map. Indeed $\tilde{K}=1/D \sum_{j=1}^{D}$.
 
 \begin{remark}
 We find a decomposition such that for all $j=1, \ldots, D$, $A(\omega_j)=B(\omega_j)B(\omega_j)^*$ either by exhibiting an analytic closed-form or using a numerical decomposition. 

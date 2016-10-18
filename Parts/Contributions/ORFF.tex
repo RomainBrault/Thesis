@@ -84,23 +84,24 @@ Gathering the two propositions, we present now the following property that allow
 \label{pr:spectral}
 Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel on $(\mathcal{X}, \groupop)$.
 \paragraph{}
-If for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$, then there exists a positive measure $\mu$ on $\mathcal{B}(\mathcal{\dual{\mathcal{X}}})$ and $A:\dual{\mathcal{X}}\to \mathcal{L}_+(\mathcal{Y})$ an operator-valued functions such that for all $y,$ $y'\in\mathcal{Y}$ $\inner{A(.)y,y'}\in L^1(\mathcal{X},d\mu)$ and for all $y$, $y'$ in $\mathcal{Y}$,
+If for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$, then there exists a positive measure $\mu$ with density $p_{\mu}$ on $\mathcal{B}(\mathcal{\dual{\mathcal{X}}})$ and $A:\dual{\mathcal{X}}\to \mathcal{L}_+(\mathcal{Y})$ an operator-valued functions such that for all $y,$ $y'\in\mathcal{Y}$ $\inner{A(.)y,y'}\in L^1(\mathcal{X},d\mu)$ and for all $y$, $y'$ in $\mathcal{Y}$,
 \begin{dmath*}
 \inner{y, K_e(\delta)y'}=\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, A(\omega)y'}p_{\mu}(\omega)d\omega.
 \end{dmath*}
 where $\inner{y, A(\omega)y'}p_{\mu}(\omega) = \IFT{\inner{y, K_e(x\groupop \inv{z})y'}}$.
 \end{proposition}
 \begin{proof}
-From \cref{eq:AK0} and \cref{eq:CK0} we can write the following equality concerning the \acs{OVK} signature $K_e$. For all $\delta \in \mathcal{X}$ and for all $y, y'$ in $\mathcal{Y}$
+From \cref{eq:AK0} and \cref{eq:CK0} we can write the following equality concerning the \acs{OVK} signature $K_e$. 
+% Suppose that $\mu$ is absolutely continuous \wrt~$d\omega$. Then for all $\delta \in \mathcal{X}$ and for all $y,$ $y'$ in $\mathcal{Y}$
 \begin{dmath*}
-\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, C(\omega)y'}d\omega=\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, A(\omega)y'}d\mu(\omega).
-\end{dmath*} %
-Since $K$ is a Mercer kernel, both integrands of the equation define continuous functions. Hence the following equality holds $\mu$-almost everywhere. For all $\omega \in \dual{\mathcal{X}}$ and for all $y$, $y'\in\mathcal{Y}$,
+\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, A(\omega)y'}d\mu(\omega)=\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, C(\omega)y'}d\omega.
+=\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, C'(\omega)p(\omega)y'}d\omega
+\end{dmath*}
+It is always possible to choose $p(\omega)$ such that $\int_{\dual{\mathcal{X}}}p(\omega)d\omega=1$ then $p(\omega)$ is the density of a probability measure $\mu$. In this case we note $p(\omega)=p_{\mu}(\omega)$. By injectivity of the \acl{FT} we have for all $y$, $y'\in\mathcal{Y}$,
 \begin{dmath}
 \label{eq:operator_identification}
-\inner{y, C(\omega)y'}\hiderel{=}\inner{y, A(\omega)y'}p_{\mu}(\omega)\hiderel{=}\IFT{\inner{y, K_e(\cdot)y'}}(\omega),
+\inner{y, C(\omega)y'}\hiderel{=}\inner{y, C'(\omega)y'}p_{\mu}(\omega)\hiderel{=}\IFT{\inner{y, K_e(\cdot)y'}}(\omega)
 \end{dmath}
-where $p_{\mu}(\omega)=\frac{d\mu}{d\omega}$ is the Radon-Nikodym derivative of the measure $\mu$, \ie~its density. 
 \end{proof}
 In the case where $\mathcal{Y}=\mathbb{R}^p$, we rewrite \cref{eq:operator_identification} coefficient-wise by choosing an orthonormal basis $(e_1,\ldots, e_p)$ of $\mathcal{Y}$, such that for all $ i,j\inrange{1}{p}$,
 \begin{dmath}
@@ -128,7 +129,7 @@ Let $\inner{y, A(\omega)y'}p_\mu(\omega)\coloneqq\IFT{\inner{y, K_e(\cdot)y'}}(\
 \label{pr:regularization}
 \end{proposition}
 \begin{proof}
-We first show how the Fourier transform relates to the feature operator. Since $\mathcal{H}_K$ is embed into $\mathcal{H}=L^2(\dual{\mathcal{X}}, \mu, \mathcal{Y})$ by mean of the feature operator $W$, we have:
+We first show how the \acl{FT} relates to the feature operator. Since $\mathcal{H}_K$ is embed into $\mathcal{H}=L^2(\dual{\mathcal{X}}, \mu, \mathcal{Y})$ by mean of the feature operator $W$, we have:
 \begin{dgroup*}
 \begin{dmath*}
 \FT{\IFT{f}}(x)\hiderel{=}\int_{\dual{\mathcal{X}}}\overline{\pairing{x,\omega}}\IFT{f}(\omega)d\omega = f(x)
@@ -137,7 +138,7 @@ We first show how the Fourier transform relates to the feature operator. Since $
 (Wg)(x)\hiderel{=}\int_{\dual{\mathcal{X}}}\overline{\pairing{x,\omega}}p_\mu(\omega)B(\omega)g(\omega)d\omega = f(x).
 \end{dmath*}
 \end{dgroup*}
-Hence, $\IFT{f}(\omega)=p_\mu(\omega)B(\omega)g(\omega)$ $\mu$-almost everywhere. From \cref{pr:feature_operator} we have
+By injectivity of the \acl{FT}, $\IFT{f}(\omega)=p_\mu(\omega)B(\omega)g(\omega)$ $\mu$-almost everywhere. From \cref{pr:feature_operator} we have
 \begin{dmath*}
 \norm{f}^2_{K} = \inf \Set{\norm{g}^2_{\mathcal{H}} | \forall g\hiderel{\in}\mathcal{H}, \enskip Wg\hiderel{=}f} = \inf \Set{\int_{\dual{\mathcal{X}}} \norm{g}^2_{\mathcal{Y}}d\mu | \forall g\hiderel{\in}\mathcal{H},\enskip \IFT{f}\hiderel{=}p_{\mu}(\cdot)B(\cdot)g(\cdot)}.
 \end{dmath*}

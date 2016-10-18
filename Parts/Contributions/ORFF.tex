@@ -157,7 +157,7 @@ Note that if $K(x,z)=k(x,z)$ is a scalar kernel then for all $\omega$ in $\dual{
 Throughout the document, without loss of generality, we assume that $\int_{\mathcal{X}} d\mu(\omega)=1$ and thus $d\mu$ is a probability measure with density $p_{\mu}$. As shown in \cref{pr:fourier_feature_map} it is always possible to find a pair $(A(\omega), d\mu)$ such that $d\mu$ is a probability measure and $\expectation_\mu{\conj{\pairing{\delta,\omega}}A(\omega)}$.
 \paragraph{}
 Given a $\mathcal{Y}$-Mercer shift-invariant kernel $K$ on $\mathcal{X}$, an approximation of $K$ can be obtained using a decomposition $(A, \mu)$ and a plug-in Monte-Carlo estimator instead of the expectation. However, for efficient computations, as motivated in the introduction, we are interested in finding an approximated feature map more than a kernel approximation. Indeed, an approximated feature map will allow to build linear models in regression tasks. The following proposition provides the general form of an \acl{ORFF}.
-\begin{proposition}\label{pr:ORFF-map}If one can find $B: \dual{\mathcal{X}} \to \mathcal{L}(Y)$ and a probability measure $\mu$ on $\mathcal{B}(\dual{\mathcal{X}})$, such that for all $y$, $y'\in\mathcal{Y}$, $\inner{y, B(\cdot)B(\cdot)^*y'} \in L^1(\dual{\mathcal{X}}, d\mu)$, then the operator-valued function
+\begin{proposition}\label{pr:ORFF-map}If one can find $B: \dual{\mathcal{X}} \to \mathcal{L}(\mathcal{Y}',\mathcal{Y})$ and a probability measure $\mu$ on $\mathcal{B}(\dual{\mathcal{X}})$, such that for all $y\in\mathcal{Y}$ and all $y'\in\mathcal{Y}'$, $\inner{y, B(\cdot)y'} \in L^2(\dual{\mathcal{X}}, d\mu)$, then the operator-valued function
 \begin{equation}\label{eq:phitilde}
 \tildePhi(x)= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*, \qquad \omega_j \sim \mu
 \end{equation}
@@ -175,11 +175,11 @@ where $A(\omega)=B(\omega)B(\omega)^*$. By assumption $\inner{y, A(\cdot)y'}\in 
 \end{dmath*}
 in the weak operator topology.
 \end{proof}
-The approximate feature map proposed in \cref{pr:ORFF-map} has direct link with the functional feature map defined in \cref{pr:fourier_feature_map} since we have
+The approximate feature map proposed in \cref{pr:ORFF-map} has direct link with the functional feature map defined in \cref{pr:fourier_feature_map} since we have for all $y\in\mathcal{Y}$
 \begin{dmath}
-\tildePhi(x)y = \frac{1}{\sqrt{D}} \Vect_{j=1}^D (\Phi_x y)(\omega_j), \qquad \omega_j \hiderel{\sim} \mu.
+\tildePhi(x)y = \frac{1}{\sqrt{D}} \Vect_{j=1}^D (\Phi_x y)(\omega_j) = \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*y, \qquad \omega_j \hiderel{\sim} \mu.
 \end{dmath}
-Therefore $\tildePhi(x)$ can be seen as an \say{operator-valued vector} corresponding the \say{stacking} of \iid~operator-valued realization of $\Phi_x$, the functional feature map. Therefore, in light of \cref{pr:regularization}, it is possible to define an approximate feature map of an operator-valued kernel.
+Therefore $\tildePhi(x)$ can be seen as an \say{operator-valued vector} corresponding the \say{stacking} of \iid~operator-valued realization of $\Phi_x$, the functional feature map. Therefore, in light of \cref{pr:regularization}, it is possible to define an approximate feature map of an \acl{OVK} from its regularization properties.
 
 
 \begin{corollary}

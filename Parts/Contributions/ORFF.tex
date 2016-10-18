@@ -102,6 +102,7 @@ It is always possible to choose $p(\omega)$ such that $\int_{\dual{\mathcal{X}}}
 \label{eq:operator_identification}
 \inner{y, C(\omega)y'}\hiderel{=}\inner{y, C'(\omega)y'}p_{\mu}(\omega)\hiderel{=}\IFT{\inner{y, K_e(\cdot)y'}}(\omega)
 \end{dmath}
+Conclude by taking $A(\omega)=C'(\omega)$ and $d\mu(\omega)=p_\mu(\omega)d\omega$.
 \end{proof}
 In the case where $\mathcal{Y}=\mathbb{R}^p$, we rewrite \cref{eq:operator_identification} coefficient-wise by choosing an orthonormal basis $(e_1,\ldots, e_p)$ of $\mathcal{Y}$, such that for all $ i,j\inrange{1}{p}$,
 \begin{dmath}
@@ -154,25 +155,21 @@ Note that if $K(x,z)=k(x,z)$ is a scalar kernel then for all $\omega$ in $\dual{
 \subsection{Building Operator-valued Random Fourier Features}
 Without loss of generality we assume that $\int_{\mathcal{X}} d\mu(\omega)=1$ and thus, $\mu$ is a probability distribution and $\density$, a probability density. Note that this is always possible through an appropriate rescaling of the kernel.
 
-Given a $\mathcal{Y}$-Mercer shift-invariant kernel $K$ on $\mathcal{X}$, an approximation of $K$ can be obtained using a decomposition $(A, \mu)$ and a plug-in Monte-Carlo estimator instead of the expectation. However, for efficient computations, as motivated in the introduction, we are interested in finding an approximated feature map more than a kernel approximation. Indeed, an approximated feature map will allow to build linear models in regression tasks. The following proposition provides the general form of an Operator Random Fourier Feature map:
-\begin{proposition}\label{pr:ORFF-map}If one can find $B: \dual{\mathcal{X}} \to \mathcal{L}(Y)$, such that for all $y$, $y'\in\mathcal{Y}$, $\inner{y, A(\omega)y'}=\inner{y, B(\omega)B(\omega)^*y'} \in L^1(\dual{\mathcal{X}}, d\mu)$, then the operator-valued function
+Given a $\mathcal{Y}$-Mercer shift-invariant kernel $K$ on $\mathcal{X}$, an approximation of $K$ can be obtained using a decomposition $(A, \mu)$ and a plug-in Monte-Carlo estimator instead of the expectation. However, for efficient computations, as motivated in the introduction, we are interested in finding an approximated feature map more than a kernel approximation. Indeed, an approximated feature map will allow to build linear models in regression tasks. The following proposition provides the general form of an Operator Random Fourier Feature map.
+\begin{proposition}\label{pr:ORFF-map}If one can find $B: \dual{\mathcal{X}} \to \mathcal{L}(Y)$ and a probability measure $\mu$ on $\mathcal{B}(\dual{\mathcal{X}})$, such that for all $y$, $y'\in\mathcal{Y}$, $\inner{y, B(\cdot)B(\cdot)^*y'} \in L^1(\dual{\mathcal{X}}, d\mu)$, then the operator-valued function
 \begin{equation}\label{eq:phitilde}
 \tildePhi(x)= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*, \qquad \omega_j \sim \mu
 \end{equation}
 is an approximated feature map of kernel $K$
 \end{proposition}
-
 \begin{proof}
-Let $\omega_1, \ldots, \omega_D$ be $D$ \iid~random vectors following the law $\mu$. For all $(x,z) \in \mathcal{X}^2$, 
-\begin{equation*}
-\begin{aligned}
-\tildePhi(x)^*\tildePhi(z)&= \!\begin{multlined}[t][.8\textwidth] \left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D \exp\left(ih_{\omega_j}(x)B(\omega_j)^*\right)\right)^* {}\\ \left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D \exp\left(ih_{\omega_j}(z)B(\omega_j)^*\right)\right) \end{multlined}\\
-&= \frac{1}{D} \sum_{j=1}^D \exp\left(-i(h_{\omega_j}(x)-h_{\omega_j}(z)\right) A(\omega_j)\\
-&= \frac{1}{D} \sum_{j=1}^D \conj{\pairing{x,z}}A(\omega_j)
-\end{aligned}
-\end{equation*}
-From the strong law of large numbers, $ \frac{1}{D} \sum_{j=1}^D \conj{\pairing{x,z}}A(\omega_j)$ 
-converges almost-surely in the weak operator topology to $\expectation_{\mu}[\conj{\pairing{x\groupop z^{-1},\omega_j}}A(\omega) ]$ when $D$ tends to infinity.
+Let $\omega_1, \ldots, \omega_D$ be $D$ \iid~random vectors following the law $\mu$. For all $x$, $z \in \mathcal{X}$ and all $y$, $y' \in \mathcal{Y}$, 
+\begin{dmath*}
+\inner*{\tildePhi(x)y,\tildePhi(z)y'}=\inner*{y,\left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{z, \omega_j}B(\omega_j)^*\right)^* \left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*\right)y'}
+= \frac{1}{D} \sum_{j=1}^D \conj{\pairing{x\groupop \inv{z}, \omega_j}}A(\omega),
+\end{dmath*}
+where $A(\omega)=B(\omega)B(\omega)^*$. By assumption $\inner{y, A(\cdot)y'}\in L^1(\dual{\mathcal{X}},\mu)$. Hence from the strong law of large numbers, $ \frac{1}{D} \sum_{j=1}^D \conj{\pairing{x,z}}A(\omega_j)$ 
+converges almost-surely in the weak operator topology to $\expectation_{\mu}[\conj{\pairing{x\groupop z^{-1},\omega_j}}A(\omega) ]$ when $D$ tends to infinity. Finally apply \cref{pr:mercer_kernel_bochner}.
 \end{proof}
 \begin{remark}
 We find a decomposition such that for all $j=1, \ldots, D$, $A(\omega_j)=B(\omega_j)B(\omega_j)^*$ either by exhibiting an analytic closed-form or using a numerical decomposition. 

@@ -179,7 +179,16 @@ $W^\adjoint W$ is the orthogonal projection onto
 \end{dmath*}
 Then $\norm{f}_K=\inf\Set{ \norm{g}_{\mathcal{H}} | \forall g \in\mathcal{H},\enskip Wg=f }$.
 \end{proposition}
-We call $\Phi$ a \emph{feature map}, $W$ a \emph{feature operator} and $\mathcal{H}$ a \emph{feature space}.
+We call $\Phi$ a \emph{feature map}, $W$ a \emph{feature operator} and $\mathcal{H}$ a \emph{feature space}. Since $W$ is a partial isometry from $(\ker W)^\bot$ onto $\mathcal{H}_K$, the map $W$ allows us to identify $\mathcal{H}_K$ with the closed subspace $(\ker W)^\bot$ of $\mathcal{H}$. With mild abuse of language, we say that $\mathcal{H}_K$ is embed into $\mathcal{H}$ by mean of the feature operator $W$. If we choose the trivial feature map $\Phi_x=K_x$ then the feature operator is the identity.
+
+\subsection{Shift-Invariant operator-valued kernels}
+The main subject of interest of \cref{ch:operator-valued_random_fourier_features} are shift-invariant \acl{OVK}. When referring to a shift-invariant \acs{OVK} $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ we assume that $\mathcal{X}$ is a locally compact second countable topological group with identity
+$e$.
+\begin{definition}[Shift-invariant \acs{OVK}] A reproducing \acl{OVK} $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called shift-invariant\mpar{Also referred to as \emph{translation-invariant} \acs{OVK}.} if for all $x$, $z$, $t\in\mathcal{X}$, 
+\begin{dmath}
+K(x\groupop t, z\groupop t) = K(x, z).
+\end{dmath}
+\end{definition}
 
 \subsection{Examples of operator-valued kernels}
 \label{subsec:ovk-ex}

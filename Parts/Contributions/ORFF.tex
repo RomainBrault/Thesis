@@ -241,7 +241,7 @@ We find a decomposition such that for all $j=1, \ldots, D$, $A(\omega_j)=B(\omeg
 \begin{center}
 \begin{algorithm2e}[H]\label{alg:ORFF_construction}
 	\SetAlgoLined
-    \Input{$K(x, z)=K_e(\delta)$ a $\mathcal{Y}$-shift-invariant Mercer kernel such that $\forall y,y'\in\mathcal{Y},$ $\inner{y, K_e(\delta)y'}\in L^1(\mathbb{R}^d, dx)$.}
+    \Input{$K(x, z)=K_e(\delta)$ a $\mathcal{Y}$-shift-invariant Mercer kernel such that $\forall y,y'\in\mathcal{Y},$ $\inner{y, K_e(\delta)y'}\in L^1(\mathbb{R}^d, dx)$.} and $D$ the number of features.
     \Output{A random feature $\tildePhi{1:D}(x)$ such that $\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(z) \approx K(x,z)$}
     \BlankLine
 	Define the pairing $\pairing{x, \omega}$ from the \acs{LCA} group $(\mathcal{X}, \groupop)$\;

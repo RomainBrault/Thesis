@@ -244,6 +244,7 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 
 
 %----------------------------------------------------------------------------------------
+\usepackage{adforn}
 \usepackage[shortlabels]{enumitem}
 \usepackage{braket}
 \usepackage{colonequals}
@@ -263,6 +264,12 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 \newlist{propenum}{enumerate}{1} % also creates a counter called 'propenumi'
 \setlist[propenum]{label=\arabic*., ref=\theproposition~item~\arabic*}
 \crefalias{propenumi}{proposition} 
+
+\newcommand{\chapterendsymbol}{
+    \par
+    \begin{center}\adforn{60}\end{center}
+    }
+\newcommand{\chapterend}{\chapterendsymbol}
 
 %----------------------------------------------------------------------------------------
 %	CHANGING TEXT AREA 

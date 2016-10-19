@@ -140,7 +140,7 @@ natbib=true % natbib compatibility mode (\citep and \citet still work)
 
 %------------------------------------------------
 
-\PassOptionsToPackage{pdftex}{graphicx}
+% \PassOptionsToPackage{pdftex}{graphicx}
 \usepackage{graphicx} 
 
 %----------------------------------------------------------------------------------------
@@ -183,10 +183,10 @@ belowcaptionskip=.75\baselineskip % Space after the "Listing #: Desciption" text
 %	HYPERREFERENCES
 %----------------------------------------------------------------------------------------
 
-\PassOptionsToPackage{pdftex,hyperfootnotes=false,pdfpagelabels}{hyperref}
+\PassOptionsToPackage{hyperfootnotes=false,pdfpagelabels}{hyperref}
 \usepackage{hyperref}  % backref linktocpage pagebackref
-\pdfcompresslevel=9
-\pdfadjustspacing=1
+% \pdfcompresslevel=9
+% \pdfadjustspacing=1
 
 \hypersetup{
 % Uncomment the line below to remove all links (to references, figures, tables, etc), useful for b/w printouts
@@ -293,3 +293,5 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 % \usepackage[urw-garamond]{mathdesign} % <-- no osf support :-(
 %\usepackage[default,osfigures]{opensans} % scale=0.95 
 \usepackage[sfdefault]{FiraSans}
+\usepackage{fontspec}
+\fontspec[Mapping=tex-text, Ligatures={Common, Rare, Historical}]{Hoefler Text}

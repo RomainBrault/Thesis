@@ -17,3 +17,9 @@ To download the latest version click [here](https://github.com/RomainBrault/Thes
 
 To pull the latest version and compile the thesis locally run `./compile.sh`.
 To synchronize Overleaf, Git and push back on both run `./update.sh`. This requires writing permission on both Overleaf and Git repository.
+
+## Contact
+
+For any questions/remarks please raise an issue to keep track of it. In case it is not possible for some reasons please contact [Romain Brault](mailto:romain.brault@telecom-paritech.fr).
+
+

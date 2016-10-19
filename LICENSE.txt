@@ -1,7 +1,6 @@
-Copyright (c) <2016> <Romain Brault,
-                      Florence d'Alche-Buc,
-                      Universite d'Evry val d'Essone,
-                      Telecom-ParisTech>
+Copyright (c) <2016> <Romain Brault romain.brault@telecom-paritech.fr,
+                      Florence d'Alche-Buc florence.dalche@telecom-paristech.fr,
+                      Universite d'Evry val d'Essone, Telecom-ParisTech>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

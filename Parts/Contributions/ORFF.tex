@@ -3,15 +3,15 @@
 \label{sec:motivations}
 Random Fourier Features have been proved useful to implement efficiently kernel methods in the scalar case, allowing to learn a linear model based on an approximated feature map. In this work, we are interested to construct approximated operator-valued feature maps to learn vector-valued functions. With an explicit (approximated) feature map, one converts the problem of learning a function $f$ in the vector-valued Reproducing Kernel Hilbert Space $\mathcal{H}_K$ into the learning of a linear model $\tilde{f}$ defined by:
  \begin{dmath*}
- \tilde{f}(x) = \tildePhi(x)^* \theta,
+ \tilde{f}(x) = \tildePhi{1:D}(x)^* \theta,
  \end{dmath*}
  where $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{H},\mathcal{Y})$ and $\theta \in \mathcal{H}$. The methodology we propose works for operator-valued kernels defined on any \acf{LCA} group, noted ($\mathcal{X}, \groupop)$, for some operation noted $\groupop$. This allows us to use the general context of Pontryagin duality for \acl{FT} of functions on \acs{LCA} groups. Building upon a generalization of Bochner's theorem for operator-valued measures, an operator-valued kernel is seen as the \emph{\acl{FT}} of an operator-valued positive measure. From that result, we extend the principle of Random Fourier Feature for scalar-valued kernels and derive a general methodology to build Operator Random Fourier Feature when operator-valued kernels are shift-invariant according to the chosen group operation.
 
 %----------------------------------------------------------------------------------------
 \section{Construction}
 \label{sec:construction}
-We present a construction of \acf{ORFF} such that $f: x\mapsto \tildePhi(x)^*\theta$ is a continuous function that maps an arbitrary \acs{LCA} group $\mathcal{X}$ as input space to an arbitrary output Hilbert space $\mathcal{Y}$. First we define a functional \emph{Fourier feature map}, and then propose a Monte-Carlo sampling from this feature map to construct an approximation of a shift-invariant $\mathcal{Y}$-Mercer kernel.
-Then, we prove the convergence of the kernel approximation $\tilde{K}(x,z)=\tildePhi(x)^*\tildePhi(z)$ with high probability on \emph{compact} subsets of the \acs{LCA} $\mathcal{X}$, when $\mathcal{Y}$ is \emph{finite dimensional}. Eventually we conclude with some numerical experiments.
+We present a construction of \acf{ORFF} such that $f: x\mapsto \tildePhi{1:D}(x)^*\theta$ is a continuous function that maps an arbitrary \acs{LCA} group $\mathcal{X}$ as input space to an arbitrary output Hilbert space $\mathcal{Y}$. First we define a functional \emph{Fourier feature map}, and then propose a Monte-Carlo sampling from this feature map to construct an approximation of a shift-invariant $\mathcal{Y}$-Mercer kernel.
+Then, we prove the convergence of the kernel approximation $\tilde{K}(x,z)=\tildePhi{1:D}(x)^*\tildePhi{1:D}(z)$ with high probability on \emph{compact} subsets of the \acs{LCA} $\mathcal{X}$, when $\mathcal{Y}$ is \emph{finite dimensional}. Eventually we conclude with some numerical experiments.
 \subsection{Theoretical study}
 The following proposition of \citet{Zhang2012,Carmeli2010} extends Bochner's theorem to any shift-invariant $\mathcal{Y}$-Mercer kernel. 
 \begin{proposition}[Operator-valued Bochner's theorem \citep{Zhang2012}]\label{eq:bochner-gen}
@@ -21,7 +21,9 @@ K(x, z) = \int_{\dual{\mathcal{X}}} \conj{\pairing{x \groupop \inv{z}, \omega}} 
 \end{dmath}
 where $M$ belongs to the set of all the $\mathcal{L}_+(\mathcal{Y})$-valued measures of bounded variation on the $\sigma$-algebra of Borel subsets of $\dual{\mathcal{X}}$. Conversely, from any positive operator-valued measure $M$, a shift-invariant kernel $K$ can be defined by \cref{eq:bochner-gen}. 
 \end{proposition}
-Although this theorem is central to the spectral decomposition of shift-invariant $\mathcal{Y}$-Mercer \acs{OVK}, the following results proved by \citet{Carmeli2010} provides insights about this decomposition that are more relevant in practice. It first shows how to build shift-invariant $\mathcal{Y}$-Mercer kernel but more importantly, also states that any operator-valued spectral decomposition of such \acs{OVK}s when $\mathcal{Y}$ is finite dimensional or $\mathcal{X}$ is compact can be written using a pair $(A, \mu)$ where $A$ is an operator-valued function on $\dual{\mathcal{X}}$ and $\mu$ is a real-valued positive measure on $\dual{\mathcal{X}}$. Note that obviously such a pair is not unique ad the choice of this paper may have an impact on theoretical properties as well as practical computations.
+Although this theorem is central to the spectral decomposition of shift-invariant $\mathcal{Y}$-Mercer \acs{OVK}, the following results proved by \citet{Carmeli2010} provides insights about this decomposition that are more relevant in practice. It first gives the necessary conditions to build shift-invariant $\mathcal{Y}$-Mercer kernel with  a pair $(A, \mu)$ where $A$ is an operator-valued function on $\dual{\mathcal{X}}$ and $\mu$ is a real-valued positive measure on $\dual{\mathcal{X}}$. Note that obviously such a pair is not unique ad the choice of this paper may have an impact on theoretical properties as well as practical computations.
+Secondly it also states that any \acs{OVK} have such a spectral decomposition when $\mathcal{Y}$ is finite dimensional or $\mathcal{X}$.
+
 \begin{proposition}[\citet{Carmeli2010}]\label{pr:mercer_kernel_bochner}
 Let $\mu$ be a positive measure on $\mathcal{B}(\mathcal{\dual{\mathcal{X}}})$ and $A: \dual{\mathcal{X}}\to \mathcal{L}(\mathcal{Y})$ such that $\inner{A(.)y,y'}\in L^1(\mathcal{X},d\mu)$ for all $y,y'\in\mathcal{Y}$ and $A(\omega)\succcurlyeq 0$ for $\mu$-almost all $\omega$. Then, for all $\delta \in \mathcal{X}$ and for all $y, y' \in \mathcal{Y}$,
 \begin{dmath}
@@ -38,11 +40,15 @@ Where $B(\omega)B(\omega)^\adjoint=A(\omega)$ and both integral converges in the
 \paragraph{}
 When $p=1$ one can always assume $A$ is reduced to the scalar $1$, $\mu$ is still a bounded positive measure and we retrieve the Bochner theorem applied to the scalar case (\cref{th:bochner-scalar}).
 \paragraph{}
-\Cref{pr:mercer_kernel_bochner} shows that a given pair $(A,d\mu)$ characterize an \acl{OVK}. Namely given a measure $d\mu$ and a function $A$ such that $\inner{A(.)y,y'}\in L^1(\mathcal{X},d\mu)$ for all $y,y'\in\mathcal{Y}$ and $A(\omega)\succcurlyeq 0$ for $\mu$-almost all $\omega$, it gives rise to an \acs{OVK}. Since $(A,d\mu)$ determine a unique kernel we can write $\mathcal{H}_{(A,\dmu)}\implies\mathcal{H}_K$ where $K$ is defined as in \cref{eq:AK0}. However the converse is to true: Given a $\mathcal{Y}$-Mercer shift invariant \acl{OVK}, there exist infinitely many pairs $(A,d\mu)$ that characterize an \acs{OVK}.
+\Cref{pr:mercer_kernel_bochner} shows that a given pair $(A,d\mu)$ characterize an \acs{OVK}. Namely given a measure $d\mu$ and a function $A$ such that $\inner{A(.)y,y'}\in L^1(\mathcal{X},d\mu)$ for all $y,y'\in\mathcal{Y}$ and $A(\omega)\succcurlyeq 0$ for $\mu$-almost all $\omega$, it gives rise to an \acs{OVK}. Since $(A,d\mu)$ determine a unique kernel we can write $\mathcal{H}_{(A,d\mu)}{\scriptstyle\implies}\mathcal{H}_K$ where $K$ is defined as in \cref{eq:AK0}. However the converse is to true: Given a $\mathcal{Y}$-Mercer shift invariant \acl{OVK}, there exist infinitely many pairs $(A,d\mu)$ that characterize an \acs{OVK}.
+\paragraph{}
+The main difference between \cref{eq:bochner-gen} and \cref{pr:mercer_kernel_bochner} is that the first one characterize an \acs{OVK} by a unique \acf{POVM}, while the second one shows that the \acs{POVM} that uniquely characterize a $\mathcal{Y}$-Mercer \acs{OVK} has an operator-valued density with respect to a \emph{scalar} measure $\mu$; and that this operator-valued density is not unique.
 \paragraph{}
 Finally \cref{pr:mercer_kernel_bochner} does not provide any \emph{constructive} way to obtain the pair $(A,d\mu)$ that characterize an \acs{OVK}.
+The following \cref{subsec:sufficient_conditions} is based on an other proposition of \citeauthor{carmeli2006vector} and show that if the kernel signature $K_e(\delta)$ of an $\acs{OVK}$ is in $L^1$ then it is possible to construct \emph{explicitly} a pair $(C,d\omega)$ from it. We show that we can always extract a scalar-valued \emph{probability} density function from $C$ such that we obtain a pair $(A,d\mu)$ where $\mu$ is a probability measure.
 
 \subsection{Sufficient conditions of existence}
+\label{subsec:sufficient_conditions}
 While \cref{pr:mercer_kernel_bochner} gives some insights on how to build an approximation of a $\mathcal{Y}$-Mercer kernel, we need a theorem that provides an explicit construction of the pair $A(\omega), \mu(\omega)$ from the kernel signature. Proposition 14 in \citet{Carmeli2010} gives the solution, and also provide a sufficient condition for \cref{pr:mercer_kernel_bochner} to apply.
 \begin{proposition}[\citet{Carmeli2010}]
 \label{pr:inverse_ovk_Fourier_decomposition}
@@ -53,21 +59,21 @@ Define $C$ such that for all $\omega \in \dual{\mathcal{X}}$ and for all $y$, $y
 \inner{y,C(\omega)y'} = \int_{\mathcal{X}} \pairing{\delta, \omega}\inner{y, K_e(\delta)y'}d\delta \hiderel{=}\IFT{\inner{y, K_e(\cdot)y'}}(\omega)
 \end{dmath}
 Then
-\begin{enumerate}[i)]
+\begin{propenum}
 \item $C(\omega)$ is a bounded non-negative operator for all $\omega \in \dual{\mathcal{X}}$,
 \item $\inner{y, C(.)y'}\in L^1(\dual{\mathcal{X}},d\omega)$ for all $y,y'\in\mathcal{X}$,
 \item for all $\delta\in\mathcal{X}$ and for all $y$, $y'$ in $\mathcal{Y}$,
 \begin{dmath*}
 \inner{y, K_e(\delta)y'}= \int_{\dual{\mathcal{X}}}\conj{\pairing{\delta,\omega}}\inner{y, C(\omega)y'}d\omega.
 \end{dmath*}
-\end{enumerate}
+\end{propenum}
 \end{proposition}
-Gathering the two propositions, we present now the following property that allows to build a spectral decomposition of a shift-invariant $\mathcal{Y}$-Mercer kernel on a \acs{LCA} group $(\mathcal{X},\groupop)$.
+The following proposition allows to build a spectral decomposition of a shift-invariant $\mathcal{Y}$-Mercer kernel on a \acs{LCA} group $(\mathcal{X},\groupop)$ with respect to a scalar probability measure, by extracting a scalar probability density from $C$.
 \begin{proposition}[Sufficient condition for shift-invariant $\mathcal{Y}$-Mercer kernel spectral decomposition]
 \label{pr:spectral}
 Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel on $(\mathcal{X}, \groupop)$.
 \paragraph{}
-If for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$, then there exists a positive measure $\mu$ with density $p_{\mu}$ on $\mathcal{B}(\mathcal{\dual{\mathcal{X}}})$ and $A:\dual{\mathcal{X}}\to \mathcal{L}_+(\mathcal{Y})$ an operator-valued functions such that for all $y,$ $y'\in\mathcal{Y}$ $\inner{A(.)y,y'}\in L^1(\mathcal{X},d\mu)$ and for all $y$, $y'$ in $\mathcal{Y}$,
+If for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$, then there exists a positive measure $\mu$ with density $p_{\mu}$ on $\mathcal{B}(\mathcal{\dual{\mathcal{X}}})$ and $A:\dual{\mathcal{X}}\to \mathcal{L}_+(\mathcal{Y})$ an operator-valued function such that for all $y,$ $y'\in\mathcal{Y}$ $\inner{A(.)y,y'}\in L^1(\mathcal{X},d\mu)$ and for all $y$, $y'$ in $\mathcal{Y}$,
 \begin{dmath*}
 \inner{y, K_e(\delta)y'}=\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, A(\omega)y'}p_{\mu}(\omega)d\omega.
 \end{dmath*}
@@ -82,7 +88,6 @@ From \cref{eq:CK0} we can write the following equality concerning the \acs{OVK} 
 \end{dmath*}
 Where $p$ is a function mapping the measured space $(\dual{\mathcal{X}}, \mathcal{B}(\dual{\mathcal{X}}), d\omega)$ to $\mathbb{R}$. It is always possible to choose $p(\omega)$ such that $\int_{\dual{\mathcal{X}}}p(\omega)d\omega=1$ in this case $p(\omega)$ is the density of a probability measure $\mu$. In this case we note $p(\omega)=p_{\mu}(\omega)$. Conclude by taking $A(\omega)=C(\omega)/p_\mu(\omega)$ and $d\mu(\omega)=p_\mu(\omega)d\omega$.
 \end{proof}
-
 \paragraph{}
 In the case where $\mathcal{Y}=\mathbb{R}^p$, we rewrite \cref{pr:spectral} coefficient-wise by choosing an orthonormal basis $(e_1,\ldots, e_p)$ of $\mathcal{Y}$, such that for all $ i,j\inrange{1}{p}$,
 \begin{dmath}
@@ -94,7 +99,7 @@ K_e(x\groupop \inv{z})_{ij} \hiderel{=} \FT{A(\cdot)_{ij}}
 \end{dmath}
 
 \begin{remark}
-Note that although the \acl{IFT} of $K_e$ yields a unique operator-valued function $C(\cdot)$, the decomposition of $C(\omega)$ into $A(\omega)p_\mu(\omega)$ is not unique. The choice of the decomposition may be justified by the computational cost or by the nature of the constants involved in the uniform convergence of the estimator.
+Note that although the \acl{IFT} of $K_e$ yields a unique operator-valued function $C(\cdot)$, the decomposition of $C(\omega)$ into $A(\omega)p_\mu(\omega)$ is again not unique. The choice of the decomposition may be justified by the computational cost or by the nature of the constants involved in the uniform convergence of the estimator.
 \end{remark}
 
 \subsection{Regularization property}
@@ -102,7 +107,7 @@ We have shown so far that it is always possible to construct a feature map that 
 \begin{proposition}
 Let $K$ be a shift-invariant $\mathcal{Y}$-Mercer Kernel such that for all $y$, $y'$ in $\mathcal{Y}$, $\inner{y, K_e(\cdot)y'}\in L^1(\mathcal{X}, dx)$ and
 \paragraph{}
-Let $\inner{y, A(\omega)y'}p_\mu(\omega)\coloneqq\IFT{\inner{y, K_e(\cdot)y'}}(\omega)$ and let $f\in\mathcal{H}_K$. Then
+Let $\inner{y, A(\omega)y'}p_\mu(\omega)\colonequals\IFT{\inner{y, K_e(\cdot)y'}}(\omega)$ and let $f\in\mathcal{H}_K$. Then
 \begin{dmath}
 \norm{f}^2_K=\displaystyle\int_{\dual{\mathcal{X}}}\frac{\inner{\FT{f}(\omega), A(\omega)^\dagger\FT{f}(\omega)}_{\mathcal{Y}}}{p_{\mu}(\omega)}d\omega.
 \label{eq:reg_L2}
@@ -153,7 +158,7 @@ For all $y$, $y'\in \mathcal{Y}$ and $x$, $z\in\mathcal{X}$,
 \end{dmath*}
 which defines a $\mathcal{Y}$-Mercer according to \cref{pr:mercer_kernel_bochner} of \citet{Carmeli2010}.
 \end{proof}
-With this notation notice that $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \mu; \mathcal{Y}'))$ such that $\Phi_x\in \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \mu; \mathcal{Y}'))$ where $\Phi_x\coloneqq\Phi(x)$.
+With this notation notice that $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \mu; \mathcal{Y}'))$ such that $\Phi_x\in \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \mu; \mathcal{Y}'))$ where $\Phi_x\colonequals\Phi(x)$.
 
 \subsection{Building Operator-valued Random Fourier Features}
 Throughout the document, without loss of generality, we assume that $\int_{\mathcal{X}} d\mu(\omega)=1$ and thus $d\mu$ is a probability measure with density $p_{\mu}$. As shown in \cref{pr:fourier_feature_map} it is always possible to find a pair $(A(\omega), d\mu)$ such that $d\mu$ is a probability measure and $\expectation_\mu{\conj{\pairing{\delta,\omega}}A(\omega)}$.
@@ -161,14 +166,14 @@ Throughout the document, without loss of generality, we assume that $\int_{\math
 Given a $\mathcal{Y}$-Mercer shift-invariant kernel $K$ on $\mathcal{X}$, an approximation of $K$ can be obtained using a decomposition $(A, \mu)$ and a plug-in Monte-Carlo estimator instead of the expectation. However, for efficient computations, as motivated in the introduction, we are interested in finding an approximated feature map more than a kernel approximation. Indeed, an approximated feature map will allow to build linear models in regression tasks. The following proposition provides the general form of an \acl{ORFF}.
 \begin{proposition}\label{pr:ORFF-map}If one can find $B: \dual{\mathcal{X}} \to \mathcal{L}(\mathcal{Y}',\mathcal{Y})$ and a probability measure $\mu$ on $\mathcal{B}(\dual{\mathcal{X}})$, such that for all $y\in\mathcal{Y}$ and all $y'\in\mathcal{Y}'$, $\inner{y, B(\cdot)y'} \in L^2(\dual{\mathcal{X}}, d\mu)$, then the operator-valued function
 \begin{equation}\label{eq:phitilde}
-\tildePhi(x)= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*, \qquad \omega_j \sim \mu
+\tildePhi{1:D}(x)= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*, \qquad \omega_j \sim \mu
 \end{equation}
-is an approximated feature map of an \acl{OVK}\mpar{\Ie~it satisfies $\tildePhi(x)^*\tildePhi(z)\converges{\asurely}{D\to\infty}K(x,z)$ where $K$ is a $\mathcal{Y}$-Mercer \acs{OVK}.}.
+is an approximated feature map of an \acl{OVK}\mpar{\Ie~it satisfies $\tildePhi{1:D}(x)^*\tildePhi{1:D}(z)\converges{\asurely}{D\to\infty}K(x,z)$ where $K$ is a $\mathcal{Y}$-Mercer \acs{OVK}.}.
 \end{proposition}
 \begin{proof}
 Let $\omega_1, \ldots, \omega_D$ be $D$ \iid~random vectors following the law $\mu$. For all $x$, $z \in \mathcal{X}$ and all $y$, $y' \in \mathcal{Y}$, 
 \begin{dmath*}
-\inner*{\tildePhi(x)y,\tildePhi(z)y'}=\inner*{y,\left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{z, \omega_j}B(\omega_j)^*\right)^* \left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*\right)y'}
+\inner*{\tildePhi{1:D}(x)y,\tildePhi{1:D}(z)y'}=\inner*{y,\left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{z, \omega_j}B(\omega_j)^*\right)^* \left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*\right)y'}
 = \frac{1}{D} \sum_{j=1}^D \conj{\pairing{x\groupop \inv{z}, \omega_j}}A(\omega_j),
 \end{dmath*}
 where $A(\omega)=B(\omega)B(\omega)^*$. By assumption $\inner{y, A(\cdot)y'}\in L^1(\dual{\mathcal{X}},\mu)$ and $\omega_j$ are \iid~. Hence from the strong law of large numbers and \cref{pr:mercer_kernel_bochner}, 
@@ -179,32 +184,43 @@ in the weak operator topology.
 \end{proof}
 The approximate feature map proposed in \cref{pr:ORFF-map} has direct link with the functional feature map defined in \cref{pr:fourier_feature_map} since we have for all $y\in\mathcal{Y}$
 \begin{dmath}
-\tildePhi(x)y = \frac{1}{\sqrt{D}} \Vect_{j=1}^D (\Phi_x y)(\omega_j) = \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*y, \qquad \omega_j \hiderel{\sim} \mu.
+\tildePhi{1:D}(x)y = \frac{1}{\sqrt{D}} \Vect_{j=1}^D (\Phi_x y)(\omega_j) = \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*y, \qquad \omega_j \hiderel{\sim} \mu.
 \end{dmath}
-Therefore $\tildePhi(x)$ can be seen as an \say{operator-valued vector} corresponding the \say{stacking} of \iid~operator-valued realization of $\Phi_x$, the functional feature map. In the same way we can define an approximate feature operator $\tildeW$.
+Therefore $\tildePhi{1:D}(x)$ can be seen as an \say{operator-valued vector} corresponding the \say{stacking} of $D$ \iid~operator-valued realization of $\Phi_x$, the functional feature map. In the same way we can define an approximate feature operator $\tildeW{D}$.
 \begin{definition}[Random Fourier feature operator]
 Let $\theta=\vect_{j=1}^D\theta_j\in\left(\mathcal{Y}'\right)^D$, where $\theta\in\mathcal{Y}'$. We call random Fourier feature operator the linear application $W:\left(\mathcal{Y}'\right)^D\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ defined as follow.
 \begin{dmath}
-(\tildeW \theta)(x) \hiderel{\coloneqq} \tildePhi(x)^*\theta\hiderel{=}\frac{1}{D}\sum_{j=1}^D \conj{\pairing{x,\omega_j}}B(\omega_j)\theta_j, \qquad \omega_j \hiderel{\sim} \mu.
+(\tildeW{D} \theta)(x) \hiderel{\colonequals} \tildePhi{1:D}(x)^*\theta\hiderel{=}\frac{1}{D}\sum_{j=1}^D \conj{\pairing{x,\omega_j}}B(\omega_j)\theta_j, \qquad \omega_j \hiderel{\sim} \mu.
 \end{dmath}
 \end{definition}
-The approximate feature operator
-\begin{proposition} Let $\theta=\vect_{j=1}^Dg(\omega_j)$, $\omega_j\sim \mu$. Then 
-\begin{enumerate}
-\item $\tildePhi(x)^*\theta \converges{\asurely}{D\to\infty} \Phi_x^*g$,
-\item $\norm{\theta}_{\mathcal{Y}}^2 \converges{\asurely}{D\to\infty} \norm{g}_{L^2\left(\dual{\mathcal{X}}, d\mu; \mathcal{Y}'\right)}^2$.
-\end{enumerate}
-
+The approximate feature operator is useful to show the relations between the approximate feature map with the functional feature map defined in \cref{pr:fourier_feature_map}.
+\begin{proposition} Let $g\in \mathcal{H}=L^2(\mathcal{\dual{X}},d\mu;\mathcal{Y})$ and let $\theta \colonequals \vect_{j=1}^Dg(\omega_j)$ where $\omega_j\sim \mu$. Then for all $g\in\mathcal{H}$,
+\begin{propenum}
+\item \label{pr:cv_feature_map_1} $\tildePhi{1:D}(x)^*\theta \converges{\asurely}{D\to\infty} \Phi_x^*g$,
+\item \label{pr:cv_feature_map_2} $\norm{\theta}_{\mathcal{Y}}^2 \converges{\asurely}{D\to\infty} \norm{g}_{L^2\left(\dual{\mathcal{X}}, d\mu; \mathcal{Y}'\right)}^2$.
+\end{propenum}
 \end{proposition}
-
-Therefore, in light of \cref{pr:regularization}, it is possible to define an approximate feature map of an \acl{OVK} from its regularization properties.
-
-
+\begin{proof}
+Proof of \cref{pr:cv_feature_map_1}: since $\omega_1, \hdots \omega_D$ are \iid~random vectors, for all $y\in \mathcal{Y}$ and for all $y'\in\mathcal{Y}'$, $\inner{y, B(\cdot)y'}\in L^2(\dual{\mathcal{X}},d\mu)$ and $g\in L^2(\dual{\mathcal{X}},d\mu);\mathcal{Y})$, from the strong law of large numbers
+\begin{dmath*}
+\tildePhi{1:D}(x)^*\theta=\frac{1}{D}\sum_{j=1}^D \conj{\pairing{x,\omega_j}}B(\omega_j)g(\omega_j), \qquad \omega_j \hiderel{\sim} \mu \\
+\converges{\asurely}{D\to\infty} \int_{\dual{\mathcal{X}}}\conj{\pairing{x,\omega}}B(\omega)g(\omega)d\mu(\omega)
+\hiderel{=} (Wg)(x) \hiderel{\colonequals} \Phi_x^*g.
+\end{dmath*}
+Proof of \cref{pr:cv_feature_map_2}: again, since $\omega_1, \hdots \omega_D$ are \iid~random vectors and $g\in L^2(\dual{\mathcal{X}},d\mu;\mathcal{Y})$, from the strong law of large numbers
+\begin{dmath*}
+\norm{\theta}^2_{\mathcal{Y}}=\sum_{j=1}^D\norm{g(\omega_j)}^2_{\mathcal{Y}}, \qquad \omega_j \hiderel{\sim} \mu \\
+\converges{\asurely}{D\to\infty} \int_{\dual{\mathcal{X}}} \norm{g(\omega)}_{\mathcal{Y}}^2d\mu(\omega)
+\colonequals \norm{g}_{L^2\left(\dual{\mathcal{X}}, d\mu; \mathcal{Y}'\right)}^2
+\end{dmath*}
+\end{proof}
+Hence the sequence of function $\tildef{D}\colonequals \tildePhi{1:D}(\cdot)^*\theta$ converges almost surely to a function $f\in\mathcal{H}_{(A,d\mu)}{\scriptstyle\implies} \mathcal{H}_K$. Therefore, in light of \cref{pr:regularization}, it is possible to define an approximate feature map of an \acl{OVK} from its regularization properties in the \acs{vv-RKHS}.
+Otherwise \cref{cr:ORFF-map-kernel} exhibit a construction of an \acs{ORFF} directly from an \acs{OVK}.
 \begin{corollary}
 \label{cr:ORFF-map-kernel}
 If $K(x,z)$ is a shift-invariant $\mathcal{Y}$-Mercer kernel such that for all $y$, $y'\in\mathcal{Y}$, $\inner{y, K_e(\delta)y'}\in L^1(\mathcal{X},dx)$. Then
 \begin{equation}
-\tildePhi(x)= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*, \qquad \omega_j \sim \mu,
+\tildePhi{1:D}(x)= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*, \qquad \omega_j \sim \mu,
 \end{equation}
 where $\inner{y, B(\omega)B(\omega)^*y'}p_{\mu}(\omega)=\IFT{\inner{y, K_e(\cdot)y'}}(\omega)$, is an approximated feature map of $K$.
 \end{corollary}
@@ -212,7 +228,7 @@ where $\inner{y, B(\omega)B(\omega)^*y'}p_{\mu}(\omega)=\IFT{\inner{y, K_e(\cdot
 Find $(A(\omega), d\mu)$ from \cref{pr:spectral} and apply \cref{pr:ORFF-map}.
 \end{proof}
 
-We write $\tildePhi(x)^*\tildePhi(x)\approx K(x,z)$ when $\tildePhi(x)^*\tildePhi(x)\converges{\asurely}{} K(x,z)$ in the weak operator topology when $D$ tends to infinity. With mild abuse of notation we say that $\tildePhi(x)$ is an approximate feature map of $\Phi_x$ \ie~$\tildePhi(x)\approx \Phi_x$, when for all $y\in\mathcal{Y}$, $\inner{y, K(x,z)y'}=\inner{\Phi_x y, \Phi_z y'}\approx \inner{\tildePhi(x)y, \tildePhi(x)y'}\coloneqq \tilde{K}(x,z)$ where $\Phi_x$ is defined in the sense of \cref{pr:fourier_feature_map}. 
+We write $\tildePhi{1:D}(x)^*\tildePhi{1:D}(x)\approx K(x,z)$ when $\tildePhi{1:D}(x)^*\tildePhi{1:D}(x)\converges{\asurely}{} K(x,z)$ in the weak operator topology when $D$ tends to infinity. With mild abuse of notation we say that $\tildePhi{1:D}(x)$ is an approximate feature map of $\Phi_x$ \ie~$\tildePhi{1:D}(x)\approx \Phi_x$, when for all $y\in\mathcal{Y}$, $\inner{y, K(x,z)y'}=\inner{\Phi_x y, \Phi_z y'}\approx \inner{\tildePhi{1:D}(x)y, \tildePhi{1:D}(x)y'}\colonequals \tilde{K}(x,z)$ where $\Phi_x$ is defined in the sense of \cref{pr:fourier_feature_map}. 
 \paragraph{}
 The kernel approximation $\tilde{K}$ can be seen as the sample mean of the product of functional feature map. Indeed $\tilde{K}=1/D \sum_{j=1}^{D}$.
 
@@ -226,13 +242,13 @@ We find a decomposition such that for all $j=1, \ldots, D$, $A(\omega_j)=B(\omeg
 \begin{algorithm2e}[H]\label{alg:ORFF_construction}
 	\SetAlgoLined
     \Input{$K(x, z)=K_e(\delta)$ a $\mathcal{Y}$-shift-invariant Mercer kernel such that $\forall y,y'\in\mathcal{Y},$ $\inner{y, K_e(\delta)y'}\in L^1(\mathbb{R}^d, dx)$.}
-    \Output{A random feature $\tildePhi(x)$ such that $\tildePhi(x)^\adjoint \tildePhi(z) \approx K(x,z)$}
+    \Output{A random feature $\tildePhi{1:D}(x)$ such that $\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(z) \approx K(x,z)$}
     \BlankLine
 	Define the pairing $\pairing{x, \omega}$ from the \acs{LCA} group $(\mathcal{X}, \groupop)$\;
 	Find a decomposition $(B(\omega)$,$\density(\omega))$ such that $B(\omega)B(\omega)^*\density(\omega)=\IFT{K_e}(\omega)$\;
 % 	Build an randomized feature map via Monte-Carlo sampling from the probability measure $\mu$ and the application $B$\;
 	Draw $D$ random vectors $\omega_j$, $j=1, \hdots, D$ from the probability distribution $\mu$\;
-   \Return $\tildePhi(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*$\;
+   \Return $\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*$\;
    \caption{Construction of \acs{ORFF} from \acs{OVK}}
    \label{al:ORFF_construction}
 \end{algorithm2e}
@@ -245,7 +261,7 @@ In the following, $K(x,z)=K_0(x-z)$ is a $\mathbb{R}^p$-Mercer matrix-valued ker
 An Operator Random Fourier feature map of an $\mathbb{R}^p$-Mercer shift-invariant matrix-valued kernel takes the general form:
 \begin{equation*}
 \begin{aligned}
-\tildePhi(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^* \\ \sin{\inner{x,\omega_j}}B(\omega_j)^*\end{pmatrix}, \enskip \omega_j \sim \mu.
+\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^* \\ \sin{\inner{x,\omega_j}}B(\omega_j)^*\end{pmatrix}, \enskip \omega_j \sim \mu.
 \end{aligned}
 \end{equation*}
 \end{example}
@@ -254,7 +270,7 @@ The (Pontryagin) dual of $\mathcal{X}=\mathbb{R}^d$
 is $\dual{\mathcal{X}}=\mathbb{R}^d$, and the duality pairing is $\pairing{x-z,\omega}=\exp(i\inner{x-z, \omega})$. A $\mathbb{R}^p$-operator-valued function has a real operator-valued Fourier transform if and only if $A(\omega)$ is even with respect to $\omega$. Taking this point into account, the kernel approximation yields:
 \begin{equation*}
 \begin{aligned}
-\tilde{K}(x,z)&=\tildePhi(x)^*\tildePhi(z) \\
+\tilde{K}(x,z)&=\tildePhi{1:D}(x)^*\tildePhi{1:D}(z) \\
 &= \frac{1}{D} \sum\nolimits_{j=1}^D \cos{\inner{x,\omega_j}}\cos{\inner{z,\omega_j}} A(\omega_j) + \sin{\inner{x,\omega_j}}\sin{\inner{z,\omega_j}} A(\omega_j) \\
 &= \frac{1}{D} \sum\nolimits_{j=1}^D \cos{\inner{x-z,\omega_j}}A(\omega_j) \\
 &= \frac{1}{D} \sum\nolimits_{j=1}^D \exp(-i\inner{x-z, \omega_j})A(\omega_j).
@@ -265,7 +281,7 @@ which tends to $\expectation_{\mu}[\exp(-i\inner{x-z, \omega})A(\omega) ]=\expec
 The second example extends scalar-valued Random Fourier Features on the skewed multiplicative group described in \cref{eq:pairing-skewed} \cite{li2010random}) to the operator-valued case.
 \begin{example}[Matrix-valued kernel on the skewed multiplicative group]
 In the following, suppose that $\mathcal{X}=(-c;+\infty)^d$, $\mathcal{Y}=\mathbb{R}^p$ and $K(x,z)=K_{1-c}(x\odot z^{-1})$ is a $\mathbb{R}^p$-Mercer matrix-valued kernel invariant w.r.t. the group operation $\odot$ defined in \cref{sec:background}. The group operation is defined coefficient-wise for all $k\inrange{1}{d}$ as $x_k\odot z_k := (x_k + c)(z_k + c)-c$. As a consequence $z^{-1}_k=1/(z_k+c)-c$.
-The following function $\tildePhi$ is an operator-valued Random Fourier Feature map built following the construction principle:
+The following function $\tildePhi{1:D}$ is an operator-valued Random Fourier Feature map built following the construction principle:
 \begin{equation*}
 \begin{aligned}
 \tildePhi(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}}B(\omega_j)^* \\ \sin{\inner{\log(x+c),\omega_j}}B(\omega_j)^*\end{pmatrix}, \enskip \omega_j \sim \mu.

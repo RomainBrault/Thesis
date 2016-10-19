@@ -242,21 +242,24 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 }{\relax}
 \makeatother
 
-%----------------------------------------------------------------------------------------
-
-\usepackage[algo2e,ruled,linesnumbered]{algorithm2e}
-\newcommand{\theHalgorithm}{\arabic{algorithm}}
 
 %----------------------------------------------------------------------------------------
-\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
 \usepackage{braket}
+\usepackage{colonequals}
 \usepackage{dirtytalk}
 \usepackage{classicthesis}
 \usepackage{breqn}
 \usepackage{amsthm}
 \usepackage{thmtools}
 \usepackage{nameref,cleveref}
+\usepackage[algo2e,ruled,linesnumbered]{algorithm2e}
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
 \usepackage{commands}
+
+\newlist{propenum}{enumerate}{1} % also creates a counter called 'propenumi'
+\setlist[propenum]{label=\arabic*., ref=\theproposition~item~\arabic*}
+\crefalias{propenumi}{proposition} 
 
 %----------------------------------------------------------------------------------------
 %	CHANGING TEXT AREA 

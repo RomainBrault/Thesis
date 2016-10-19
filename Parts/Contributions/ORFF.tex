@@ -179,7 +179,16 @@ The approximate feature map proposed in \cref{pr:ORFF-map} has direct link with 
 \begin{dmath}
 \tildePhi(x)y = \frac{1}{\sqrt{D}} \Vect_{j=1}^D (\Phi_x y)(\omega_j) = \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*y, \qquad \omega_j \hiderel{\sim} \mu.
 \end{dmath}
-Therefore $\tildePhi(x)$ can be seen as an \say{operator-valued vector} corresponding the \say{stacking} of \iid~operator-valued realization of $\Phi_x$, the functional feature map. Therefore, in light of \cref{pr:regularization}, it is possible to define an approximate feature map of an \acl{OVK} from its regularization properties.
+Therefore $\tildePhi(x)$ can be seen as an \say{operator-valued vector} corresponding the \say{stacking} of \iid~operator-valued realization of $\Phi_x$, the functional feature map. In the same way we can define an approximate feature operator $\tildeW$.
+\begin{definition}[Random Fourier feature operator]
+Let $\theta=\vect_{j=1}^Dg(\omega_j)$ where $\omega_j \sim \mu$. We call random Fourier feature operator
+\begin{dmath}
+(\tildeW \theta)(x) \hiderel{\coloneqq} \tildePhi(x)^*\theta\hiderel{=}\frac{1}{D}\sum_{j=1}^D \conj{\pairing{x,\omega_j}}B(\omega_j)g(\omega_j), \qquad \omega_j \hiderel{\sim} \mu.
+\end{dmath}
+\end{definition}
+
+
+Therefore, in light of \cref{pr:regularization}, it is possible to define an approximate feature map of an \acl{OVK} from its regularization properties.
 
 
 \begin{corollary}

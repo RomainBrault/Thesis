@@ -5,3 +5,4 @@ git pull
 git add -A
 git commit -m"Sync with Overleaf"
 git push both
+git pull overleaf master

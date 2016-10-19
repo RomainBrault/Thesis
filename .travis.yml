@@ -26,9 +26,11 @@ after_success:
   - git config --global user.email "ro.brault@gmail.com"
   - git config --global user.name "Travis CI"
   - export GIT_TAG=build-$TRAVIS_BRANCH-$(date -u "+%Y-%m-%d")-$TRAVIS_BUILD_NUMBER
+  - git checkout -b $GIT_TAG
   - git add ThesisRomainBrault.pdf
   - git commit -m "Set build VERSION number"
-  - git push origin master
+  - git checkout master
+  - git merge $GIT_TAG
   - git tag $GIT_TAG -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
   - git push --quiet git@github.com:RomainBrault/Thesis.git $GIT_TAG > /dev/null 2>&1
 

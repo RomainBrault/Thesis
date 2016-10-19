@@ -142,7 +142,7 @@ Given $\mathcal{X}$ a Polish space and  $\mathcal{Y}$ a Hilbert Space, a map $K:
 \begin{dmath*}
   \sum_{i,j=1}^N\inner{K(x_i,x_j)y_j,y_i}_{\mathcal{Y}}\ge 0,
 \end{dmath*} 
-for all $x_1,\hdots,x_N$ in $\mathcal{X}$, all $y_1,\hdots,y_N$ in $\mathcal{Y}$ and $N\ge1$.
+for all $x_1,\hdots,x_N$ in $\mathcal{X}$, all $y_1,\hdots,y_N$ in $\mathcal{Y}$ and $N\ge 1$.
  \label{def:ovk}
  \end{definition}
 Given $x\in\mathcal{X}$, $K_x:\mathcal{Y}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ denotes the linear operator whose action on a vector $y$ is the function $K_xy\in\mathcal{F}(\mathcal{X};\mathcal{Y})$ defined for all $z\in\mathcal{X}$ by
@@ -151,15 +151,20 @@ Given $x\in\mathcal{X}$, $K_x:\mathcal{Y}\to\mathcal{F}(\mathcal{X};\mathcal{Y})
 \end{dmath}
 \paragraph{}
 Additionally, given a $\mathcal{Y}$-reproducing kernel $K$, there is a unique Hilbert space $\mathcal{H}_K\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$ satisfying $K_x\in\mathcal{L}(\mathcal{Y};\mathcal{H}_K)$, for all $ x\in\mathcal{X}$ and $\forall x\in\mathcal{X}, \forall f\in\mathcal{H}_K, \enskip f(x)=K^\adjoint_x f$, where $K^\adjoint_x:\mathcal{H}_K\to\mathcal{Y}$ is the adjoint of $K_x$.
-The space $\mathcal{H}_K$ is called the \emph{\acl{vv-RKHS}} associated with $K$. The corresponding product and norm are denoted by $\inner{.,.}_K$ and $\norm{.}_K$, respectively. As a consequence \citep{Carmeli2010} we have:
+The space $\mathcal{H}_K$ is called the \emph{\acl{vv-RKHS}} associated with $K$. The corresponding product and norm are denoted by $\inner{.,.}_K$ and $\norm{.}_K$, respectively. As a consequence \citep{Carmeli2010} we have
 \begin{dgroup*}
-\begin{dmath*}
+\begin{dmath}
+\label{eq:kernel_operator_product}
 K(x,z)=K^\adjoint_x K_z \enskip\forall x,z\hiderel{\in}\mathcal{X}
-\end{dmath*},
+\end{dmath},
 \begin{dmath*}
 \mathcal{H}_K=\lspan\Set{ K_x y | \forall x\hiderel{\in}\mathcal{X},\enskip\forall y\hiderel{\in}\mathcal{Y} }.
 \end{dmath*}
 \end{dgroup*}
+From \cref{eq:kernel_operator_product} we deduce that
+\begin{dmath}
+K(x,z)^\adjoint\hiderel{=}(K^\adjoint_x K_z)^\adjoint\hiderel{=}K^\adjoint_z K_x\hiderel{=}K(z,x).
+\end{dmath}
 Another way to describe functions of $\mathcal{H}_K$ consists in using a suitable feature map.
 \begin{proposition}[Feature Operator \citet{Carmeli2010}]
 \label{pr:feature_operator}
@@ -190,7 +195,7 @@ where $k$ is a \emph{scalar} Mercer kernel.
 When $\mathcal{Y}=\mathbb{R}^p$, the matrix $A$ is interpreted as encoding the relationships between the outputs coordinates. 
 % This can easily be seen as a consequence of \cref{eq:reg_L2}.
 % \begin{corollary}
-% Let $K$ be a decomposable shift-invariant $\mathbb{R}^p$-Mercer Kernel such that $K_e(\cdot)_{\ell m}\in L^1(\mathcal{X}, dx)$. Define $BB^* p_\mu(\omega)\coloneq \IFT{K_e(\delta)}$. Then
+% Let $K$ be a decomposable shift-invariant $\mathbb{R}^p$-Mercer Kernel such that $K_e(\cdot)_{\ell m}\in L^1(\mathcal{X}, dx)$. Define $BB^\adjoint p_\mu(\omega)\coloneq \IFT{K_e(\delta)}$. Then
 % \begin{equation}
 % \norm{f}^2_K=\displaystyle\sum_{\ell, m=1}^p A_{\ell m}^\dagger \int_{\dual{\mathcal{X}}}\frac{\inner{\FT{f_\ell}(\omega), \FT{f_m}(\omega)}_{\mathcal{Y}}}{p_\mu(\omega)}d\omega=\displaystyle\sum_{\ell, m=1}^p A_{\ell m}^\dagger \inner{f_\ell, f_m}_k.
 % \end{equation}

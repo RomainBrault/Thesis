@@ -28,7 +28,7 @@ after_success:
   - export GIT_TAG=build-$TRAVIS_BRANCH-$(date -u "+%Y-%m-%d")-$TRAVIS_BUILD_NUMBER
   - git checkout -b $GIT_TAG
   - git add ThesisRomainBrault.pdf
-  - git commit -m "Set build VERSION number"
+  - git commit -m "Travis generation of ThesisRomainBrault.pdf"
   - git checkout master
   - git merge $GIT_TAG
   - git push origin master

@@ -138,16 +138,19 @@ We now introduce the theory of \acf{vv-RKHS} that provides a flexible framework 
 \label{subsec:def_properties}
 An operator-valued kernel is defined here as a $\mathcal{Y}$-reproducing kernel \citet{Carmeli2010}.
 \begin{definition}
-Given $\mathcal{X}$, a Polish space and  $\mathcal{Y}$, a Hilbert Space, a map $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called a $\mathcal{Y}$-reproducing kernel if 
+Given $\mathcal{X}$ a Polish space and  $\mathcal{Y}$ a Hilbert Space, a map $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called a $\mathcal{Y}$-reproducing kernel if 
 \begin{dmath*}
   \sum_{i,j=1}^N\inner{K(x_i,x_j)y_j,y_i}_{\mathcal{Y}}\ge 0,
 \end{dmath*} 
-for all $x_1,\hdots,x_N$ in $\mathcal{X}$, all $y_1,\hdots,y_N$ in $\mathcal{Y}$ and $N\ge1$. Given $x\in\mathcal{X}$, $K_x:\mathcal{Y}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ denotes the linear operator whose action on a vector $y$ is the function $K_xy\in\mathcal{F}(\mathcal{X};\mathcal{Y})$ defined by
- $(K_x y)(z)=K(z,x)y$, for all $z\in\mathcal{X}$.
+for all $x_1,\hdots,x_N$ in $\mathcal{X}$, all $y_1,\hdots,y_N$ in $\mathcal{Y}$ and $N\ge1$.
  \label{def:ovk}
  \end{definition}
- \par
- Additionally, given a $\mathcal{Y}$-reproducing kernel $K$, there is a unique Hilbert space $\mathcal{H}_K\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$ satisfying $K_x\in\mathcal{L}(\mathcal{Y};\mathcal{H}_K)$, for all $ x\in\mathcal{X}$ and $\forall x\in\mathcal{X}, \forall f\in\mathcal{H}_K, \enskip f(x)=K^\adjoint_x f$, where $K^\adjoint_x:\mathcal{H}_K\to\mathcal{Y}$ is the adjoint of $K_x$.
+Given $x\in\mathcal{X}$, $K_x:\mathcal{Y}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ denotes the linear operator whose action on a vector $y$ is the function $K_xy\in\mathcal{F}(\mathcal{X};\mathcal{Y})$ defined for all $z\in\mathcal{X}$ by
+\begin{dmath}
+(K_x y)(z)=K(z,x)y.
+\end{dmath}
+\paragraph{}
+Additionally, given a $\mathcal{Y}$-reproducing kernel $K$, there is a unique Hilbert space $\mathcal{H}_K\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$ satisfying $K_x\in\mathcal{L}(\mathcal{Y};\mathcal{H}_K)$, for all $ x\in\mathcal{X}$ and $\forall x\in\mathcal{X}, \forall f\in\mathcal{H}_K, \enskip f(x)=K^\adjoint_x f$, where $K^\adjoint_x:\mathcal{H}_K\to\mathcal{Y}$ is the adjoint of $K_x$.
 The space $\mathcal{H}_K$ is called the \emph{\acl{vv-RKHS}} associated with $K$. The corresponding product and norm are denoted by $\inner{.,.}_K$ and $\norm{.}_K$, respectively. As a consequence \citep{Carmeli2010} we have:
 \begin{dgroup*}
 \begin{dmath*}

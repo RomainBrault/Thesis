@@ -77,7 +77,7 @@ If for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$
 \begin{dmath*}
 \inner{y, K_e(\delta)y'}=\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, A(\omega)y'}p_{\mu}(\omega)d\omega.
 \end{dmath*}
-where $\inner{y, A(\omega)y'}p_{\mu}(\omega) = \IFT{\inner{y, K_e(x\groupop \inv{z})y'}}$.
+where $\inner{y, A(\omega)y'}p_{\mu}(\omega) = \IFT{\inner{y, K_e(\cdot)y'}}(\omega)$.
 \end{proposition}
 \begin{proof}
 From \cref{eq:CK0} we can write the following equality concerning the \acs{OVK} signature $K_e$. 
@@ -241,7 +241,7 @@ We find a decomposition such that for all $j=1, \ldots, D$, $A(\omega_j)=B(\omeg
 \begin{center}
 \begin{algorithm2e}[H]\label{alg:ORFF_construction}
 	\SetAlgoLined
-    \Input{$K(x, z)=K_e(\delta)$ a $\mathcal{Y}$-shift-invariant Mercer kernel such that $\forall y,y'\in\mathcal{Y},$ $\inner{y, K_e(\delta)y'}\in L^1(\mathbb{R}^d, dx)$.} and $D$ the number of features.
+    \Input{$K(x, z)=K_e(\delta)$ a $\mathcal{Y}$-shift-invariant Mercer kernel such that $\forall y,y'\in\mathcal{Y},$ $\inner{y, K_e(\delta)y'}\in L^1(\mathbb{R}^d, dx)$ and $D$ the number of features.}
     \Output{A random feature $\tildePhi{1:D}(x)$ such that $\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(z) \approx K(x,z)$}
     \BlankLine
 	Define the pairing $\pairing{x, \omega}$ from the \acs{LCA} group $(\mathcal{X}, \groupop)$\;

@@ -5,6 +5,10 @@ dist: trusty
 cache:
   apt: true
 
+branches:
+  only:
+  - master
+
 addons:
   apt:
     sources:
@@ -29,9 +33,7 @@ after_success:
   - git checkout -b $GIT_TAG
   - git add ThesisRomainBrault.pdf
   - git commit -m "Travis generation of ThesisRomainBrault.pdf"
-  - git checkout master
-  - git merge $GIT_TAG
-  - git push origin master
+  - git push
   - git tag $GIT_TAG -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
   - git push --quiet git@github.com:RomainBrault/Thesis.git $GIT_TAG > /dev/null 2>&1
 

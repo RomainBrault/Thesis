@@ -140,12 +140,13 @@ An operator-valued kernel is defined here as a $\mathcal{Y}$-reproducing kernel 
 \begin{definition}
 \label{def:reproducing_kernel}
 Given $\mathcal{X}$ a Polish space and  $\mathcal{Y}$ a Hilbert Space, a map $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called a $\mathcal{Y}$-reproducing kernel if 
-\begin{dmath*}
-  \sum_{i,j=1}^N\inner{K(x_i,x_j)y_j,y_i}_{\mathcal{Y}}\ge 0,
-\end{dmath*} 
+\begin{propenum}
+\item $\sum_{i,j=1}^N\inner{K(x_i,x_j)y_j,y_i}_{\mathcal{Y}}\ge 0$,
 for all $x_1,\hdots,x_N$ in $\mathcal{X}$, all $y_1,\hdots,y_N$ in $\mathcal{Y}$ and $N\ge 1$.
- \label{def:ovk}
- \end{definition}
+\item $K(x,z)=K(z,x)^*$ for all $x$, $z\in\mathcal{X}$.
+\end{propenum}
+\label{def:ovk}
+\end{definition}
 Given $x\in\mathcal{X}$, $K_x:\mathcal{Y}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ denotes the linear operator whose action on a vector $y$ is the function $K_xy\in\mathcal{F}(\mathcal{X};\mathcal{Y})$ defined for all $z\in\mathcal{X}$ by
 \begin{dmath}
 \label{eq:trivial_feature_op}
@@ -164,12 +165,12 @@ K(x,z)=K^\adjoint_x K_z \enskip\forall x,z\hiderel{\in}\mathcal{X}
 \mathcal{H}_K=\lspan\Set{ K_x y | \forall x\hiderel{\in}\mathcal{X},\enskip\forall y\hiderel{\in}\mathcal{Y} }.
 \end{dmath}
 \end{dgroup}
-From \cref{eq:kernel_operator_product} we deduce that
+We note $\Set{K_{\mathcal{X}}\mathcal{Y}}\colonequals \Set{ K_x y | \forall x\hiderel{\in}\mathcal{X},\enskip\forall y\in\mathcal{Y} }$. Besides from \cref{eq:kernel_operator_product} we deduce that
 \begin{dmath}
 K(x,z)^\adjoint\hiderel{=}(K^\adjoint_x K_z)^\adjoint\hiderel{=}K^\adjoint_z K_x\hiderel{=}K(z,x).
 \end{dmath}
 Another way to describe functions of $\mathcal{H}_K$ consists in using a suitable feature map.
-\begin{proposition}[Feature Operator \citet{Carmeli2010}]
+\begin{proposition}[Feature Operator \citep{Carmeli2010}]
 \label{pr:feature_operator}
 Let $\mathcal{H}$ be a Hilbert space and $\Phi:\mathcal{X}\to\mathcal{L}(\mathcal{Y};\mathcal{H})$, with $\Phi_x :=
  \Phi(x)$. Then the operator $W:\mathcal{H}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ defined for all $g \in\mathcal{H}$, and for all $x\in\mathcal{X}$ by $(W g)(x)=\Phi_x^\adjoint g$ is a partial isometry from $\mathcal{H}$ onto the \acs{vv-RKHS} $\mathcal{H}_K$ with reproducing kernel
@@ -182,8 +183,31 @@ $W^\adjoint W$ is the orthogonal projection onto
 \end{dmath*}
 Then $\norm{f}_K=\inf\Set{ \norm{g}_{\mathcal{H}} | \forall g \in\mathcal{H},\enskip Wg=f }$.
 \end{proposition}
-We call $\Phi$ a \emph{feature map}, $W$ a \emph{feature operator} and $\mathcal{H}$ a \emph{feature space}. Since $W$ is a partial isometry from $(\ker W)^\bot$ onto $\mathcal{H}_K$, the map $W$ allows us to identify $\mathcal{H}_K$ with the closed subspace $(\ker W)^\bot$ of $\mathcal{H}$. With mild abuse of language, we say that $\mathcal{H}_K$ is embed into $\mathcal{H}$ by mean of the feature operator $W$. If we choose the trivial feature map $\Phi_x=K_x$ then the feature operator is the identity.
+We call $\Phi$ a \emph{feature map}, $W$ a \emph{feature operator} and $\mathcal{H}$ a \emph{feature space}. Since $W$ is a partial isometry from $(\ker W)^\bot$ onto $\mathcal{H}_K$, the map $W$ allows us to identify $\mathcal{H}_K$ with the closed subspace $(\ker W)^\bot$ of $\mathcal{H}$. With mild abuse of language, we say that $\mathcal{H}_K$ is embed into $\mathcal{H}$ by mean of the feature operator $W$. If we choose the trivial feature map $\Phi_x=K_x$ then the feature operator is the identity. In this work we mainly focus on the class kernels inducing a \acs{vv-RKHS} of continuous functions. Such kernels are named $\mathcal{Y}$-Mercer kernels.
+\begin{definition}[$\mathcal{Y}$-Mercer kernel] A reproducing kernel $K:\mathcal{X}\times \mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called $\mathcal{Y}$-Mercer kernel if $\mathcal{H}_K$ is a subspace of $\mathcal{C}(\mathcal{X};\mathcal{Y})$.
+\end{definition}
+The following proposition characterize $\mathcal{Y}$-Mercer kernel in terms of the properties of a kernels rather than properties of the \acs{vv-RKHS}.
+\begin{proposition}[Characterization of $\mathcal{Y}$-Mercer kernel \citep{Carmeli2010}] 
+\label{pr:characterization_mercer_kernels}
+Let $K$ be a reproducing kernel. The kernel $K$ is Mercer if and only if the function $x\mapsto\norm{K(x,x)}$ is locally bounded and for all $x\in\mathcal{X}$ and all $y\in\mathcal{Y}$, $K_xy\in\mathcal{C}(\mathcal{X};\mathcal{Y})$.
+\end{proposition}
+\begin{proof}
+If $\mathcal{H}_K\subset\mathcal{C}(\mathcal{X};\mathcal{Y})$, then for all $x\in\mathcal{X}$ and all $y\in\mathcal{Y}$, $K_xy$ is an element of $\mathcal{C}(\mathcal{X};\mathcal{Y})$ (see \cref{eq:span_RKHS}). In addition for all $f\in\mathcal{H}_K$, $\norm{K_x}^\adjoint f$=$\norm{f(x)}\le \norm{f}_{\infty}$. Hence there exist a constant $M\in\mathbb{R}_+$ such that for all $x\in\mathcal{X}$, $\norm{K_x}\le M$. Therefore from \cref{eq:kernel_operator_product}, for all $x\in\mathcal{X}$, $\norm{K(x, x)}=\norm{K_x^*}^2\le M^2$. Conversely assume that the function $x\mapsto\norm{K(x,x)}$ is locally bounded and $K_xy\in\mathcal{C}(\mathcal{X};\mathcal{Y})$. For all $f\in\mathcal{H}_K$ and all $x\in\mathcal{X}$, 
+\begin{dmath*}
+\norm{f(x)}\hiderel{=}\norm{f}_K\sqrt{\norm{K(x,x)}}\hiderel{\le} M \norm{f}_K.
+\end{dmath*}
+Thus convergence in $\mathcal{H}_K$ implies uniform convergence. Since by assumption $\Set{K_{\mathcal{X}}\mathcal{Y}}\subset\mathcal{C}(\mathcal{X};\mathcal{Y})$, then the \acl{vv-RKHS} $\mathcal{H}_K=\lspan\Set{K_{\mathcal{X}}\mathcal{Y}}\subset\mathcal{C}$ is also a subset of $\mathcal{C}(\mathcal{X};\mathcal{Y})$ by the uniform convergence theorem.
+\end{proof}
 
+\begin{proposition}[Countable orthonormal basis for $\mathcal{Y}$-Mercer kernel \citep{carmeli2006vector}]
+\label{pr:mercer_countable_basis}
+Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{Y}$ be a reproducing kernel where $\mathcal{X}$ and $\mathcal{Y}$ are separable spaces. If $K$ is a $\mathcal{Y}$-Mercer kernel then $\mathcal{H}_K$ has a countable orthonormal basis.
+\end{proposition}
+\begin{proof}
+From \cref{pr:characterization_mercer_kernels} $K$ is a $\mathcal{Y}$-Mercer kernel if and only if $\mathcal{H}_K\subset \mathcal{C}(\mathcal{X};\mathcal{Y})$. Applying corollary 3 of \cite{carmeli2006vector}, we have that $\mathcal{H}_K$ is separable. Thus since $\mathcal{H}_K$ is also a Hilbert space it has a countable orthonormal basis.
+\end{proof}
+An important consequence is that if $K$ is a $\mathcal{Y}$-Mercer and $\mathcal{X}$ and $\mathcal{Y}$ are separable then $\mathcal{H}_K$ is isometrically isomorphic to $\ell^2$.
+%----------------------------------------------------------------------------------------
 \subsection{Shift-Invariant operator-valued kernels}
 The main subjects of interest of \cref{ch:operator-valued_random_fourier_features} are shift-invariant \acl{OVK}. When referring to a shift-invariant \acs{OVK} $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ we assume that $\mathcal{X}$ is a locally compact second countable topological group with identity
 $e$.
@@ -200,12 +224,12 @@ To study shift-invariant kernels on \acs{LCA} groups we introduce the left regul
 (\lambda_z f)(x)\colonequals f(\inv{z}\groupop x).
 \end{dmath*}
 A group representation $\lambda_z$ describe the group by making it act on a vector space (here $\mathcal{H}_K$) in a linear manner. In other word, the group representation let us see a group as a linear operator which are well studied mathematical object.
-\begin{proposition}[Kernel signature]
+\begin{proposition}[Kernel signature \citep{Carmeli2010}]
 \label{pr:kernel_signature}
 Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ be a reproducing kernel. The following conditions are equivalents.
 \begin{propenum}
 \item \label{pr:kernel_signature_1} $K$ is a shift-invariant reproducing kernel.
-\item \label{pr:kernel_signature_2} There is unique a function $K_e:\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ of completely positive type such that $K(x,z)=K_e(x\groupop \inv{z})$.
+\item \label{pr:kernel_signature_2} There is a unique function $K_e:\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ of completely positive type such that $K(x,z)=K_e(\inv{z}\groupop x)$.
 \end{propenum}
 If one of the above conditions is satisfied, then the representation $\lambda$ leaves invariant $\mathcal{H}_K$, its action on $\mathcal{H}_K$ is unitary and
 \begin{dgroup}
@@ -232,16 +256,15 @@ that is $\lambda_xK_t=K_{x\groupop t}$. Besides for all $y$, $y'\in\mathcal{Y}$ 
 \begin{dmath*}
 \inner{\lambda_xK_ty, \lambda_xK_{t'}y'}_K=\inner{K_{x\groupop t}y, K_{x \groupop t'}y'}_K\hiderel{=}\inner{K(x \groupop t', x \groupop t)y,y'}=\inner{K(t',t)y, y'}\hiderel{=}\inner{K_ty, K_{t'}y'}_K
 \end{dmath*}
-This mean that $\lambda$ leaves the set $\Set{K_xy | x\in\mathcal{X}, y\in\mathcal{Y}}$ invariant. 
-Since $\Set{K_xy | x\in\mathcal{X}, y\in\mathcal{Y}}$ is total in $\mathcal{H}_K$ (see \cref{eq:span_RKHS}), $\lambda$ is surjective and because it also leaves the inner product invariant, the firs two claims follow.
+This mean that $\lambda$ leaves the set $\Set{K_{\mathcal{X}}\mathcal{Y}}$ invariant. 
+Since $\Set{K_{\mathcal{X}}\mathcal{Y}}$ is total in $\mathcal{H}_K$ (see \cref{eq:span_RKHS}), $\lambda$ is surjective and because it also leaves the inner product invariant, the firs two claims follow.
 \end{proof}
 
-\begin{lemma}[Shift-invariant $\mathcal{Y}$-Mercer kernels]
+\begin{lemma}[Shift-invariant $\mathcal{Y}$-Mercer kernels \citep{Carmeli2010}]
 Let $K_e:\mathcal{X}\to\mathcal{Y}$ be a function of completely positive type and let $K$ be the corresponding translation invariant reproducing kernel. The following conditions are equivalent.
 \begin{propenum}
 \item The map $K$ is a $\mathcal{Y}$-Mercer kernel.
 \item For all $y\in\mathcal{Y}$, $K_e(\cdot)y\in\mathcal{C}(\mathcal{X};\mathcal{Y})$.
-\item The representation $\lambda$ is continuous on $\mathcal{H}_K$.
 \end{propenum}
 \end{lemma}
 \begin{proof}

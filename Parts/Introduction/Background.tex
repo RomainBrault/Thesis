@@ -154,15 +154,16 @@ Given $x\in\mathcal{X}$, $K_x:\mathcal{Y}\to\mathcal{F}(\mathcal{X};\mathcal{Y})
 \paragraph{}
 Additionally, given a $\mathcal{Y}$-reproducing kernel $K$, there is a unique Hilbert space $\mathcal{H}_K\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$ satisfying $K_x\in\mathcal{L}(\mathcal{Y};\mathcal{H}_K)$, for all $ x\in\mathcal{X}$ and $\forall x\in\mathcal{X}, \forall f\in\mathcal{H}_K, \enskip f(x)=K^\adjoint_x f$, where $K^\adjoint_x:\mathcal{H}_K\to\mathcal{Y}$ is the adjoint of $K_x$.
 The space $\mathcal{H}_K$ is called the \emph{\acl{vv-RKHS}} associated with $K$. The corresponding product and norm are denoted by $\inner{.,.}_K$ and $\norm{.}_K$, respectively. As a consequence \citep{Carmeli2010} we have
-\begin{dgroup*}
+\begin{dgroup}
 \begin{dmath}
 \label{eq:kernel_operator_product}
 K(x,z)=K^\adjoint_x K_z \enskip\forall x,z\hiderel{\in}\mathcal{X}
 \end{dmath},
-\begin{dmath*}
+\begin{dmath}
+\label{eq:span_RKHS}
 \mathcal{H}_K=\lspan\Set{ K_x y | \forall x\hiderel{\in}\mathcal{X},\enskip\forall y\hiderel{\in}\mathcal{Y} }.
-\end{dmath*}
-\end{dgroup*}
+\end{dmath}
+\end{dgroup}
 From \cref{eq:kernel_operator_product} we deduce that
 \begin{dmath}
 K(x,z)^\adjoint\hiderel{=}(K^\adjoint_x K_z)^\adjoint\hiderel{=}K^\adjoint_z K_x\hiderel{=}K(z,x).
@@ -196,7 +197,7 @@ A shift-invariant kernel can be characterize by a function of one variable $K_e$
 \paragraph{}
 To study shift-invariant kernels on \acs{LCA} groups we introduce the left regular representation of $\mathcal{X}$ acting on $\mathcal{H}_K$. For all $x$, $z\in\mathcal{X}$ and for all $f\in\mathcal{H}_K$,
 \begin{dmath*}
-(\lambda_z f)(x)\colonequals f(x\groupop \inv{z}).
+(\lambda_z f)(x)\colonequals f(\inv{z}\groupop x).
 \end{dmath*}
 A group representation $\lambda_z$ describe the group by making it act on a vector space (here $\mathcal{H}_K$) in a linear manner. In other word, the group representation let us see a group as a linear operator which are well studied mathematical object.
 \begin{proposition}[Kernel signature]
@@ -218,16 +219,21 @@ K(x,z)=K_e^*\lambda_{\inv{x}\groupop z}K_e \qquad \forall (x,z)\hiderel{\in}\mat
 \end{proposition}
 \begin{proof} Assume \cref{pr:kernel_signature_1} holds true. Given $x$, $z\in\mathcal{X}$, \cref{eq:trivial_feature_op} and \cref{eq:def_shift_inv} yields
 \begin{dmath*}
-K_e(x\groupop \inv{z})\hiderel{=}K(x\groupop \inv{z},e)\hiderel{=}K(x,z).
+K_e(\inv{z}\groupop x)\hiderel{=}K(\inv{z} \groupop x,e)\hiderel{=}K(x,z).
 \end{dmath*}
 Since $K$ is a reproducing kernel, $K_e$ is of completely positive type, so that \cref{pr:kernel_signature_2} holds true. Besides if \cref{pr:kernel_signature_2} holds true obviously the definition of a reproducing kernel (\cref{def:reproducing_kernel}) is fulfilled so that \label{pr:kernel_signature_1} holds true. Finally let $K_e^1(x\groupop \inv{z})=K(x\groupop \inv{z},e)$ and $K_e^2(x\groupop \inv{z})=K(x\groupop \inv{z},e)$.
 Obviously $K_e^1(x\groupop \inv{z})=K_e^2(x\groupop \inv{z})$ by transitivity of the relation equal.
 \paragraph{}
 Suppose that $K$ is a shift-invariant reproducing kernel. Given $t\in\mathcal{X}$ and $y\in\mathcal{Y}$, for all $x$, $z\in\mathcal{X}$,
 \begin{dmath*}
-(\lambda_xK_ty)(z)=(K_ty)(\inv{x}\groupop z)\hiderel{=}K(\inv{x}\groupop z,t)=K(z,x\groupop t)=(K_{x\groupop t}y)z,
+(\lambda_xK_ty)(z)=(K_ty)(\inv{x}\groupop z)\hiderel{=}K(\inv{x}\groupop z,t)\hiderel{=}K(z,x\groupop t)\hiderel{=}(K_{x\groupop t}y)z,
 \end{dmath*}
-that is $\lambda_xK_t=K_{x\groupop t}$. Besides
+that is $\lambda_xK_t=K_{x\groupop t}$. Besides for all $y$, $y'\in\mathcal{Y}$ and all $x$, $z$, $t$, $t'\in\mathcal{X}$,
+\begin{dmath*}
+\inner{\lambda_xK_ty, \lambda_xK_{t'}y'}_K=\inner{K_{x\groupop t}y, K_{x \groupop t'}y'}_K\hiderel{=}\inner{K(x \groupop t', x \groupop t)y,y'}=\inner{K(t',t)y, y'}\hiderel{=}\inner{K_ty, K_{t'}y'}_K
+\end{dmath*}
+This mean that $\lambda$ leaves the set $\Set{K_xy | x\in\mathcal{X}, y\in\mathcal{Y}}$ invariant. 
+Since $\Set{K_xy | x\in\mathcal{X}, y\in\mathcal{Y}}$ is total in $\mathcal{H}_K$ (see \cref{eq:span_RKHS}), $\lambda$ is surjective and because it also leaves the inner product invariant, the firs two claims follow.
 \end{proof}
 
 \begin{lemma}[Shift-invariant $\mathcal{Y}$-Mercer kernels]

@@ -138,6 +138,7 @@ We now introduce the theory of \acf{vv-RKHS} that provides a flexible framework 
 \label{subsec:def_properties}
 An operator-valued kernel is defined here as a $\mathcal{Y}$-reproducing kernel \citet{Carmeli2010}.
 \begin{definition}
+\label{def:reproducing_kernel}
 Given $\mathcal{X}$ a Polish space and  $\mathcal{Y}$ a Hilbert Space, a map $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called a $\mathcal{Y}$-reproducing kernel if 
 \begin{dmath*}
   \sum_{i,j=1}^N\inner{K(x_i,x_j)y_j,y_i}_{\mathcal{Y}}\ge 0,
@@ -147,6 +148,7 @@ for all $x_1,\hdots,x_N$ in $\mathcal{X}$, all $y_1,\hdots,y_N$ in $\mathcal{Y}$
  \end{definition}
 Given $x\in\mathcal{X}$, $K_x:\mathcal{Y}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ denotes the linear operator whose action on a vector $y$ is the function $K_xy\in\mathcal{F}(\mathcal{X};\mathcal{Y})$ defined for all $z\in\mathcal{X}$ by
 \begin{dmath}
+\label{eq:trivial_feature_op}
 (K_x y)(z)=K(z,x)y.
 \end{dmath}
 \paragraph{}
@@ -182,13 +184,63 @@ Then $\norm{f}_K=\inf\Set{ \norm{g}_{\mathcal{H}} | \forall g \in\mathcal{H},\en
 We call $\Phi$ a \emph{feature map}, $W$ a \emph{feature operator} and $\mathcal{H}$ a \emph{feature space}. Since $W$ is a partial isometry from $(\ker W)^\bot$ onto $\mathcal{H}_K$, the map $W$ allows us to identify $\mathcal{H}_K$ with the closed subspace $(\ker W)^\bot$ of $\mathcal{H}$. With mild abuse of language, we say that $\mathcal{H}_K$ is embed into $\mathcal{H}$ by mean of the feature operator $W$. If we choose the trivial feature map $\Phi_x=K_x$ then the feature operator is the identity.
 
 \subsection{Shift-Invariant operator-valued kernels}
-The main subject of interest of \cref{ch:operator-valued_random_fourier_features} are shift-invariant \acl{OVK}. When referring to a shift-invariant \acs{OVK} $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ we assume that $\mathcal{X}$ is a locally compact second countable topological group with identity
+The main subjects of interest of \cref{ch:operator-valued_random_fourier_features} are shift-invariant \acl{OVK}. When referring to a shift-invariant \acs{OVK} $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ we assume that $\mathcal{X}$ is a locally compact second countable topological group with identity
 $e$.
 \begin{definition}[Shift-invariant \acs{OVK}] A reproducing \acl{OVK} $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called shift-invariant\mpar{Also referred to as \emph{translation-invariant} \acs{OVK}.} if for all $x$, $z$, $t\in\mathcal{X}$, 
 \begin{dmath}
+\label{eq:def_shift_inv}
 K(x\groupop t, z\groupop t) = K(x, z).
 \end{dmath}
 \end{definition}
+A shift-invariant kernel can be characterize by a function of one variable $K_e$ called the signature of $K$. Here $e$ denotes the neutral element of the \acs{LCA} group $\mathcal{X}$ endowed with the operator $\groupop$.
+\paragraph{}
+To study shift-invariant kernels on \acs{LCA} groups we introduce the left regular representation of $\mathcal{X}$ acting on $\mathcal{H}_K$. For all $x$, $z\in\mathcal{X}$ and for all $f\in\mathcal{H}_K$,
+\begin{dmath*}
+(\lambda_z f)(x)\colonequals f(x\groupop \inv{z}).
+\end{dmath*}
+A group representation $\lambda_z$ describe the group by making it act on a vector space (here $\mathcal{H}_K$) in a linear manner. In other word, the group representation let us see a group as a linear operator which are well studied mathematical object.
+\begin{proposition}[Kernel signature]
+\label{pr:kernel_signature}
+Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ be a reproducing kernel. The following conditions are equivalents.
+\begin{propenum}
+\item \label{pr:kernel_signature_1} $K$ is a shift-invariant reproducing kernel.
+\item \label{pr:kernel_signature_2} There is unique a function $K_e:\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ of completely positive type such that $K(x,z)=K_e(x\groupop \inv{z})$.
+\end{propenum}
+If one of the above conditions is satisfied, then the representation $\lambda$ leaves invariant $\mathcal{H}_K$, its action on $\mathcal{H}_K$ is unitary and
+\begin{dgroup}
+\begin{dmath}
+K(x,z)=K_e^*\lambda_{\inv{x}\groupop z}K_e \qquad \forall (x,z)\hiderel{\in}\mathcal{X}^2.
+\end{dmath}
+\begin{dmath}
+\norm{K(x,x)}=\norm{K_e(e)} \qquad \forall x\hiderel{\in}\mathcal{X}
+\end{dmath}
+\end{dgroup}
+\end{proposition}
+\begin{proof} Assume \cref{pr:kernel_signature_1} holds true. Given $x$, $z\in\mathcal{X}$, \cref{eq:trivial_feature_op} and \cref{eq:def_shift_inv} yields
+\begin{dmath*}
+K_e(x\groupop \inv{z})\hiderel{=}K(x\groupop \inv{z},e)\hiderel{=}K(x,z).
+\end{dmath*}
+Since $K$ is a reproducing kernel, $K_e$ is of completely positive type, so that \cref{pr:kernel_signature_2} holds true. Besides if \cref{pr:kernel_signature_2} holds true obviously the definition of a reproducing kernel (\cref{def:reproducing_kernel}) is fulfilled so that \label{pr:kernel_signature_1} holds true. Finally let $K_e^1(x\groupop \inv{z})=K(x\groupop \inv{z},e)$ and $K_e^2(x\groupop \inv{z})=K(x\groupop \inv{z},e)$.
+Obviously $K_e^1(x\groupop \inv{z})=K_e^2(x\groupop \inv{z})$ by transitivity of the relation equal.
+\paragraph{}
+Suppose that $K$ is a shift-invariant reproducing kernel. Given $t\in\mathcal{X}$ and $y\in\mathcal{Y}$, for all $x$, $z\in\mathcal{X}$,
+\begin{dmath*}
+(\lambda_xK_ty)(z)=(K_ty)(\inv{x}\groupop z)\hiderel{=}K(\inv{x}\groupop z,t)=K(z,x\groupop t)=(K_{x\groupop t}y)z,
+\end{dmath*}
+that is $\lambda_xK_t=K_{x\groupop t}$. Besides
+\end{proof}
+
+\begin{lemma}[Shift-invariant $\mathcal{Y}$-Mercer kernels]
+Let $K_e:\mathcal{X}\to\mathcal{Y}$ be a function of completely positive type and let $K$ be the corresponding translation invariant reproducing kernel. The following conditions are equivalent.
+\begin{propenum}
+\item The map $K$ is a $\mathcal{Y}$-Mercer kernel.
+\item For all $y\in\mathcal{Y}$, $K_e(\cdot)y\in\mathcal{C}(\mathcal{X};\mathcal{Y})$.
+\item The representation $\lambda$ is continuous on $\mathcal{H}_K$.
+\end{propenum}
+\end{lemma}
+\begin{proof}
+
+\end{proof}
 
 \subsection{Examples of operator-valued kernels}
 \label{subsec:ovk-ex}

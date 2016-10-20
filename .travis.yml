@@ -36,7 +36,7 @@ after_success:
   - git push --quiet git@github.com:RomainBrault/Thesis.git $GIT_TAG > /dev/null 2>&1
 
   # push on publish branch
-  - git checkout github publish
+  - git checkout publish
   - cp build/ThesisRomainBrault.pdf .
   - git commit -m "Travis generation of ThesisRomainBrault.pdf"
   - git push github publish

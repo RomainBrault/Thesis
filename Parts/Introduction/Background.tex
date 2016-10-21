@@ -124,7 +124,7 @@ Moreover if $d\omega$ is normalized, $\mathcal{F}$ extends to a unitary operator
 \end{dmath*}
 % The inverse Fourier transform of $g$, an integrable function on $\dual{X}$ is defined as:
 % where the Haar measure $\mu=\dual{\nu}$ is called the {\it dual measure} to $\nu$.
-\Cref{table:pairings} gives some examples of real Abelian groups with their associated dual and pairing. The interested reader can refer to \citet{folland1994course} for a more detailed construction of LCA, Pontryagin duality and Fourier transforms on LCA. For the familiar case of a scalar-valued function $f$ on the \acs{LCA} group $(\mathbb{R}^d, +)$, we have: 
+\Cref{table:pairings} gives some examples of real Abelian groups with their associated dual and pairing. The interested reader can refer to \citet{folland1994course} for a more detailed construction of LCA, Pontryagin duality and \acl{FT}s on LCA. For the familiar case of a scalar-valued function $f$ on the \acs{LCA} group $(\mathbb{R}^d, +)$, we have: 
  \begin{dmath}\label{fourier-R-plus}
  \forall \omega \in \dual{\mathcal{X}},\enskip \FT{f}(\omega)\hiderel{=}\int_{\mathbb{R}^d} \ec^{-\iu \inner{\omega,x - z}}f(x) dx,
 \end{dmath}
@@ -143,7 +143,7 @@ Given $\mathcal{X}$ a Polish space and  $\mathcal{Y}$ a Hilbert Space, a map $K:
 \begin{propenum}
 \item $\sum_{i,j=1}^N\inner{K(x_i,x_j)y_j,y_i}_{\mathcal{Y}}\ge 0$,
 for all $x_1,\hdots,x_N$ in $\mathcal{X}$, all $y_1,\hdots,y_N$ in $\mathcal{Y}$ and $N\ge 1$.
-\item $K(x,z)=K(z,x)^*$ for all $x$, $z\in\mathcal{X}$.
+\item $K(x,z)=K(z,x)^\adjoint$ for all $x$, $z\in\mathcal{X}$.
 \end{propenum}
 \label{def:ovk}
 \end{definition}
@@ -192,7 +192,7 @@ The following proposition characterize $\mathcal{Y}$-Mercer kernel in terms of t
 Let $K$ be a reproducing kernel. The kernel $K$ is Mercer if and only if the function $x\mapsto\norm{K(x,x)}$ is locally bounded and for all $x\in\mathcal{X}$ and all $y\in\mathcal{Y}$, $K_xy\in\mathcal{C}(\mathcal{X};\mathcal{Y})$.
 \end{proposition}
 \begin{proof}
-If $\mathcal{H}_K\subset\mathcal{C}(\mathcal{X};\mathcal{Y})$, then for all $x\in\mathcal{X}$ and all $y\in\mathcal{Y}$, $K_xy$ is an element of $\mathcal{C}(\mathcal{X};\mathcal{Y})$ (see \cref{eq:span_RKHS}). In addition for all $f\in\mathcal{H}_K$, $\norm{K_x}^\adjoint f$=$\norm{f(x)}\le \norm{f}_{\infty}$. Hence there exist a constant $M\in\mathbb{R}_+$ such that for all $x\in\mathcal{X}$, $\norm{K_x}\le M$. Therefore from \cref{eq:kernel_operator_product}, for all $x\in\mathcal{X}$, $\norm{K(x, x)}=\norm{K_x^*}^2\le M^2$. Conversely assume that the function $x\mapsto\norm{K(x,x)}$ is locally bounded and $K_xy\in\mathcal{C}(\mathcal{X};\mathcal{Y})$. For all $f\in\mathcal{H}_K$ and all $x\in\mathcal{X}$, 
+If $\mathcal{H}_K\subset\mathcal{C}(\mathcal{X};\mathcal{Y})$, then for all $x\in\mathcal{X}$ and all $y\in\mathcal{Y}$, $K_xy$ is an element of $\mathcal{C}(\mathcal{X};\mathcal{Y})$ (see \cref{eq:span_RKHS}). In addition for all $f\in\mathcal{H}_K$, $\norm{K_x}^\adjoint f$=$\norm{f(x)}\le \norm{f}_{\infty}$. Hence there exist a constant $M\in\mathbb{R}_+$ such that for all $x\in\mathcal{X}$, $\norm{K_x}\le M$. Therefore from \cref{eq:kernel_operator_product}, for all $x\in\mathcal{X}$, $\norm{K(x, x)}=\norm{K_x^\adjoint}^2\le M^2$. Conversely assume that the function $x\mapsto\norm{K(x,x)}$ is locally bounded and $K_xy\in\mathcal{C}(\mathcal{X};\mathcal{Y})$. For all $f\in\mathcal{H}_K$ and all $x\in\mathcal{X}$, 
 \begin{dmath*}
 \norm{f(x)}\hiderel{=}\norm{f}_K\sqrt{\norm{K(x,x)}}\hiderel{\le} M \norm{f}_K.
 \end{dmath*}
@@ -234,9 +234,10 @@ Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ be a reproducing
 If one of the above conditions is satisfied, then the representation $\lambda$ leaves invariant $\mathcal{H}_K$, its action on $\mathcal{H}_K$ is unitary and
 \begin{dgroup}
 \begin{dmath}
-K(x,z)=K_e^*\lambda_{\inv{x}\groupop z}K_e \qquad \forall (x,z)\hiderel{\in}\mathcal{X}^2.
+K(x,z)=K_e^\adjoint\lambda_{\inv{x}\groupop z}K_e \qquad \forall (x,z)\hiderel{\in}\mathcal{X}^2.
 \end{dmath}
 \begin{dmath}
+\label{pr:kernel_signature_4}
 \norm{K(x,x)}=\norm{K_e(e)} \qquad \forall x\hiderel{\in}\mathcal{X}
 \end{dmath}
 \end{dgroup}
@@ -259,7 +260,11 @@ that is $\lambda_xK_t=K_{x\groupop t}$. Besides for all $y$, $y'\in\mathcal{Y}$ 
 This mean that $\lambda$ leaves the set $\Set{K_{\mathcal{X}}\mathcal{Y}}$ invariant. 
 Since $\Set{K_{\mathcal{X}}\mathcal{Y}}$ is total in $\mathcal{H}_K$ (see \cref{eq:span_RKHS}), $\lambda$ is surjective and because it also leaves the inner product invariant, the firs two claims follow.
 \end{proof}
-
+The notation $K_e$ for the function of completely positive type associated with the reproducing kernel $K$
+is consistent with the definition given by \cref{eq:trivial_feature_op} since for all $x\in\mathcal{X}$ and all $y\in\mathcal{Y}$
+\begin{dmath*}
+(K_ey)(x)=K_e(x)y.
+\end{dmath*}
 \begin{lemma}[Shift-invariant $\mathcal{Y}$-Mercer kernels \citep{Carmeli2010}]
 Let $K_e:\mathcal{X}\to\mathcal{Y}$ be a function of completely positive type and let $K$ be the corresponding translation invariant reproducing kernel. The following conditions are equivalent.
 \begin{propenum}
@@ -268,8 +273,28 @@ Let $K_e:\mathcal{X}\to\mathcal{Y}$ be a function of completely positive type an
 \end{propenum}
 \end{lemma}
 \begin{proof}
-
+The equivalence is a consequence of \cref{pr:characterization_mercer_kernels} observing that $(K_xy(z))=K_e(\inv{x}\groupop z)y$ and \cref{pr:kernel_signature} holds.
 \end{proof}
+Notice that if $K$ is a translation invariant kernel, \cref{pr:kernel_signature_4} implies that the elements of $\mathcal{H}_K$ are bounded functions. 
+\begin{lemma}[\acl{FT} of shift-invariant $\mathcal{Y}$-Mercer kernels] 
+\label{lm:fourier_shift_invariant}
+Let $K_e:\mathcal{X}\to\mathcal{Y}$ be a function of completely positive type and let $K$ be the corresponding translation invariant reproducing kernel. If for all $y$, $y'\in\mathcal{Y}$, $\inner{y, K_e(\cdot)y'}\in L^1(\mathcal{X},dx)$ then
+\begin{dmath}
+\IFT{\inner{y, K_e(\cdot)y'}}=\FT{\inner{y, K_e(\cdot)^\adjoint y'}}.
+\end{dmath}
+\end{lemma}
+\begin{proof}
+For any function $f\in L^1(\mathcal{X},dx)$ define the flip operator $\mathcal{R}$ by
+\begin{dmath*}
+\mathcal{R}f(x) \colonequals f(\inv{x}).
+\end{dmath*}
+Then $\IFT{f}=\mathcal{R}\FT{f}=\mathcal{F}\mathcal{R}\left[f\right]$, so that we have $\IFT{\inner{y, K_e(\cdot)y'}}=\mathcal{F}\mathcal{R}{\inner{y, K_e(\cdot)y'}}$. For a shift-invariant kernel,
+\begin{dmath*}
+\mathcal{R}\inner{y,K_e(x\groupop \inv{z})y'}\hiderel{=}\inner{y,K_e(\inv{(x\groupop \inv{z})})y'}\hiderel{=}\inner{y,K_e(\inv{x}\groupop z)y'}=\inner{y,K_e(x\groupop \inv{z})^*y'}
+\end{dmath*}
+Thus $\IFT{\inner{y, K_e(\cdot)y'}}=\mathcal{F}\mathcal{R}\left[\inner{y,K_e(\cdot)y'}\right]=\FT{\inner{y, K_e(\cdot)^\adjoint y'}}$.
+\end{proof}
+There have been a lot of confusion in the literature whether a kernel is the \acl{FT} or \acl{IFT} of a measure. However \cref{lm:fourier_shift_invariant} clarify the relation between the \acl{FT} and \acl{IFT} for a translation invariant \acl{OVK}. Notice that in the real scalar case the \acl{FT} and \acl{IFT} of a shift-invariant kernel are the same, while the difference is significant for \acs{OVK}.
 
 \subsection{Examples of operator-valued kernels}
 \label{subsec:ovk-ex}

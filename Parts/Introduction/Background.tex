@@ -303,7 +303,7 @@ Operator-valued kernels have been first introduced in Machine Learning to solve 
 \label{dec-kernel}
 Let A be a positive semi-definite operator of $\mathcal{L}(\mathcal{Y})$. $K$ is said to be a $\mathcal{Y}$-Mercer \emph{decomposable} kernel\mpar{Some authors also refer to as \emph{separable} kernels.} if for all $(x,z) \in \mathcal{X}^2$, 
 \begin{dmath*}
-K(x,z) = k(x,z)A, 
+K(x,z) \colonequals k(x,z)A, 
 \end{dmath*}
 where $k$ is a \emph{scalar} Mercer kernel.
 \end{definition}
@@ -320,8 +320,14 @@ When $\mathcal{Y}=\mathbb{R}^p$, the matrix $A$ is interpreted as encoding the r
 % \end{proof}
 % Where $\inner{\cdot}_k$ is the inner product induced by the scalar kernel $k$ in the RKHS $\mathcal{H}_k$. Hence we recover the result of \cite{Alvarez2012}. In particular 
 If a graph coding for the proximity between tasks is known, then it is shown in \citet{Evgeniou2005,Baldassare2010,Alvarez2012} that $A$ can be chosen equal to the pseudo inverse $L^{\dagger}$ of the graph Laplacian such that the norm in $\mathcal{H}_K$ is a graph-regularizing penalty for the outputs (tasks).  When no prior knowledge is available, $A$ can be set to the empirical covariance of the output training data or learned with one of the algorithms proposed in the literature \citep{Dinuzzo2011, Sindhwani2013, Lim2015}. Another interesting property of the decomposable kernel is its universality (a kernel which may approximate an arbitrary continuous target function uniformly on any compact subset of the input space). A reproducing kernel $K$ is said \emph{universal} if the associated \acs{vv-RKHS} $\mathcal{H}_K$ is dense in the space $\mathcal{C}(\mathcal{X},\mathcal{Y})$. The conditions for a kernel to be universal have been discussed in \citet{caponnetto2008,Carmeli2010}. In particular they show that a decomposable kernel is universal provided that the scalar kernel $k$ is universal and the operator $A$ is injective.
-%We propose a randomized approximation of such a feature map using a generalization of the Bochner theorem for operator-valued functions. For this purpose, we build upon the work of \citet{Carmeli2010} that introduced the Fourier representation of shift-invariant Operator-Valued Mercer Kernels on locally compact Abelian groups $\mathcal{X}$ using the general framework of Pontryagin duality (The reader can to the excellent course of \citet{folland1994course} for details). 
-%\paragraph{Pontryagin duality} 
+\begin{proposition}[Kernels and Regularizers \citep{Alvarez2012}]
+Let $K(x,z) \colonequals k(x,z)A$ for all $x$, $z\in\mathcal{X}$ be a decomposable kernel where $A$ is a matrix of size $p\times p$. Then for all $f\in\mathcal{H}_K$,
+\begin{dmath}
+\norm{f}_K = \sum_{i,j=1}^p A^\dagger_{ij}\inner{f_i,f_j}_k
+\end{dmath}
+where $f_i=\inner{f,e_i}$ (resp $f_j=\inner{f,e_j}$), denotes the $i$-th (resp $j$-th) component of $f$.
+\end{proposition}
+
 \paragraph{}  
 Curl-free and divergence-free kernels provide an interesting application of operator-valued kernels \citep{Macedo2008, Baldassare2012, Micheli2013} to \emph{vector field} learning, for which input and output spaces have the same dimensions ($d=p$). %
 Applications cover shape deformation analysis \citep{Micheli2013} and magnetic fields approximations \citep{Wahlstrom2013}. %

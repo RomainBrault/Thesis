@@ -73,29 +73,30 @@ The following proposition allows to build a spectral decomposition of a shift-in
 \label{pr:spectral}
 Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel on $(\mathcal{X}, \groupop)$.
 \paragraph{}
-If for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$, then there exists a positive measure $\mu$ with density $p_{\mu}$ on $\mathcal{B}(\mathcal{\dual{\mathcal{X}}})$ and $A:\dual{\mathcal{X}}\to \mathcal{L}_+(\mathcal{Y})$ an operator-valued function such that for all $y,$ $y'\in\mathcal{Y}$ $\inner{A(.)y,y'}\in L^1(\mathcal{X},d\mu)$ and for all $y$, $y'$ in $\mathcal{Y}$,
+If for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$ then there exists a positive measure $\mu$ with density $p_{\mu}$ on $\mathcal{B}(\mathcal{\dual{\mathcal{X}}})$ and $A:\dual{\mathcal{X}}\to \mathcal{L}_+(\mathcal{Y})$ an operator-valued function such that for all $y,$ $y'\in\mathcal{Y}$, $\inner{A(.)y,y'}\in L^1(\mathcal{X},d\mu)$ and
 \begin{dmath*}
 \inner{y, K_e(\delta)y'}=\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, A(\omega)y'}p_{\mu}(\omega)d\omega.
 \end{dmath*}
-where $\inner{y, A(\omega)y'}p_{\mu}(\omega) = \IFT{\inner{y, K_e(\cdot)y'}}(\omega)$.
+where $\inner{y, A(\omega)y'}p_{\mu}(\omega) = \FT{\inner{y, K_e(\cdot)^*y'}}(\omega)$.
 \end{proposition}
 \begin{proof}
-From \cref{eq:CK0} we can write the following equality concerning the \acs{OVK} signature $K_e$. 
+From \cref{pr:inverse_ovk_Fourier_decomposition} and \cref{lm:fourier_shift_invariant}, by taking $\inner{y,C(\omega)y'} = \FT{\inner{y, K_e(\cdot)^*y'}}(\omega)$, we can write the following equality concerning the \acs{OVK} signature $K_e$. 
 % Suppose that $\mu$ is absolutely continuous \wrt~$d\omega$. Then for all $\delta \in \mathcal{X}$ and for all $y,$ $y'$ in $\mathcal{Y}$
 \begin{dmath*}
-\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, C(\omega)y'}d\omega.
-\hiderel{=}\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner*{y, \frac{C(\omega)}{p(\omega)}y'}p(\omega)d\omega
+\inner{y, K_e(\cdot)y'}(\omega)=
+\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, C(\omega)y'}d\omega
+=\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner*{y, \frac{C(\omega)}{p(\omega)}y'}p(\omega)d\omega
 \end{dmath*}
 Where $p$ is a function mapping the measured space $(\dual{\mathcal{X}}, \mathcal{B}(\dual{\mathcal{X}}), d\omega)$ to $\mathbb{R}$. It is always possible to choose $p(\omega)$ such that $\int_{\dual{\mathcal{X}}}p(\omega)d\omega=1$ in this case $p(\omega)$ is the density of a probability measure $\mu$. In this case we note $p(\omega)=p_{\mu}(\omega)$. Conclude by taking $A(\omega)=C(\omega)/p_\mu(\omega)$ and $d\mu(\omega)=p_\mu(\omega)d\omega$.
 \end{proof}
 \paragraph{}
 In the case where $\mathcal{Y}=\mathbb{R}^p$, we rewrite \cref{pr:spectral} coefficient-wise by choosing an orthonormal basis $(e_1,\ldots, e_p)$ of $\mathcal{Y}$, such that for all $ i,j\inrange{1}{p}$,
 \begin{dmath}
-\label{eq:operator_identification_real}\inner{e_i,C(\omega)e_j}\hiderel{=}C(\omega)_{ij}\hiderel{=}A(\omega)_{ij}p_{\mu}(\omega)\hiderel{=}\IFT{K_e(\delta)_{ij}}.
+\label{eq:operator_identification_real}\inner{e_i,C(\omega)e_j}\hiderel{=}C(\omega)_{ij}\hiderel{=}A(\omega)_{ij}p_{\mu}(\omega)\hiderel{=}\FT{K_e(\delta)^*_{ij}}.
 \end{dmath}
 It follows that for all $i$, $j \inrange{1}{p}$,
 \begin{dmath}\label{eq:matrix-exp}
-K_e(x\groupop \inv{z})_{ij} \hiderel{=} \FT{A(\cdot)_{ij}}
+K_e(x\groupop \inv{z})_{ij} \hiderel{=} \FT{A(\cdot)_{ij}p_\mu(\cdot)}
 \end{dmath}
 
 \begin{remark}
@@ -105,11 +106,11 @@ Note that although the \acl{IFT} of $K_e$ yields a unique operator-valued functi
 \subsection{Regularization property}
 We have shown so far that it is always possible to construct a feature map that allows to approximate a shift-invariant $\mathcal{Y}$-Mercer kernel. However we could also propose a construction of such map by studying the regularization induced with respect to the \acl{FT} of a target function $f\in \mathcal{H}_K$. In other words, what is the norm in $L^2(\dual{\mathcal{X}}, d\omega, \mathcal{Y}')$ induced by $\norm{\cdot}_K$?
 \begin{proposition}
-Let $K$ be a shift-invariant $\mathcal{Y}$-Mercer Kernel such that for all $y$, $y'$ in $\mathcal{Y}$, $\inner{y, K_e(\cdot)y'}\in L^1(\mathcal{X}, dx)$ and
+Let $K$ be a shift-invariant $\mathcal{Y}$-Mercer Kernel such that for all $y$, $y'$ in $\mathcal{Y}$, $\inner{y, K_e(\cdot)y'}\in L^1(\mathcal{X}, dx)$.
 \paragraph{}
-Let $\inner{y, A(\omega)y'}p_\mu(\omega)\colonequals\IFT{\inner{y, K_e(\cdot)y'}}(\omega)$ and let $f\in\mathcal{H}_K$. Then
+Let $\inner{y, A(\omega)y'}p_\mu(\omega)\colonequals\FT{\inner{y, K_e(\cdot)^*y'}}(\omega)$ and let $f\in\mathcal{H}_K$. Then
 \begin{dmath}
-\norm{f}^2_K=\displaystyle\int_{\dual{\mathcal{X}}}\frac{\inner{\FT{f}(\omega), A(\omega)^\dagger\FT{f}(\omega)}_{\mathcal{Y}}}{p_{\mu}(\omega)}d\omega.
+\norm{f}^2_K=\displaystyle\int_{\dual{\mathcal{X}}}\frac{\inner*{\FT{f}(\omega), A\left(\inv{\omega}\right)^\dagger\FT{f}(\omega)}_{\mathcal{Y}}}{p_{\mu}(\omega)}d\omega.
 \label{eq:reg_L2}
 \end{dmath}
 \label{pr:regularization}
@@ -129,10 +130,13 @@ By injectivity of the \acl{FT}, $\IFT{f}(\omega)=p_\mu(\omega)B(\omega)g(\omega)
 \norm{f}^2_{K} = \inf \Set{\norm{g}^2_{\mathcal{H}} | \forall g\hiderel{\in}\mathcal{H}, \enskip Wg\hiderel{=}f} = \inf \Set{\int_{\dual{\mathcal{X}}} \norm{g}^2_{\mathcal{Y}}d\mu | \forall g\hiderel{\in}\mathcal{H},\enskip \IFT{f}\hiderel{=}p_{\mu}(\cdot)B(\cdot)g(\cdot)}.
 \end{dmath*}
 The pseudo inverse of the operator $B(\omega)$ (noted $B(\omega)^\dagger$) is the unique solution of the system $\IFT{f}(\omega)=p_\mu(\omega)B(\omega)g(\omega)$ \wrt~$g(\omega)$ with minimal norm. Eventually,
-\begin{dmath}
+\begin{dmath*}
 \norm{f}^2_K = \displaystyle\int_{\dual{\mathcal{X}}} \frac{\norm{B(\omega)^\dagger\IFT{f}(\omega)}^2_{\mathcal{Y}}}{p_{\mu}(\omega)^2}d\mu(\omega)
-= \displaystyle\int_{\dual{\mathcal{X}}} \frac{\norm{B(\omega)^\dagger\FT{f}(\omega)}^2_{\mathcal{Y}}}{p_{\mu}(\omega)^2}d\mu(\omega)
-\end{dmath}
+\end{dmath*}
+Using the fact that $\IFT{.}=\mathcal{F}\mathcal{R}[.]$ and $\mathcal{F}^2[.]=\mathcal{R}[.]$,
+\begin{dmath*}
+\norm{f}^2_K= \displaystyle\int_{\dual{\mathcal{X}}} \frac{\norm{\mathcal{R}\left[B\right](\omega)^\dagger\FT{f}(\omega)}^2_{\mathcal{Y}}}{p_{\mu}(\omega)^2}d\mu(\omega)
+\end{dmath*}
 Conclude the proof by taking $d\mu(\omega)=p_{\mu}(\omega)d\omega$ and rewriting the integral as an expectation.
 \end{proof}
 Note that if $K(x,z)=k(x,z)$ is a scalar kernel then for all $\omega$ in $\dual{\mathcal{X}}$, $A(\omega)=1$. Therefore we recover a well known results for kernels that is for any $f\in\mathcal{H}_k$ we have $\norm{f}_k=\int_{\dual{\mathcal{X}}}\FT{k_e}(\omega)^{-1}\FT{f}(\omega)^2d\omega$. We also note that the regularization property in $\mathcal{H}_K$ does not depends (as expected) on the decomposition of $A(\omega)$ into $B(\omega)B(\omega)^*$. Therefore the decomposition should be chosen such that it optimizes the computation cost. For instance if $A(\omega)\in\mathcal{L}(\mathbb{R}^p)$ has rank $r$, one could find an operator $B(\omega)\in\mathcal{L}(\mathbb{R}^p, \mathbb{R}^r)$ such that $A(\omega)=B(\omega)B(\omega)^*$.
@@ -229,8 +233,6 @@ Find $(A(\omega), d\mu)$ from \cref{pr:spectral} and apply \cref{pr:ORFF-map}.
 \end{proof}
 
 We write $\tildePhi{1:D}(x)^*\tildePhi{1:D}(x)\approx K(x,z)$ when $\tildePhi{1:D}(x)^*\tildePhi{1:D}(x)\converges{\asurely}{} K(x,z)$ in the weak operator topology when $D$ tends to infinity. With mild abuse of notation we say that $\tildePhi{1:D}(x)$ is an approximate feature map of $\Phi_x$ \ie~$\tildePhi{1:D}(x)\approx \Phi_x$, when for all $y\in\mathcal{Y}$, $\inner{y, K(x,z)y'}=\inner{\Phi_x y, \Phi_z y'}\approx \inner{\tildePhi{1:D}(x)y, \tildePhi{1:D}(x)y'}\colonequals \tilde{K}(x,z)$ where $\Phi_x$ is defined in the sense of \cref{pr:fourier_feature_map}. 
-\paragraph{}
-The kernel approximation $\tilde{K}$ can be seen as the sample mean of the product of functional feature map. Indeed $\tilde{K}=1/D \sum_{j=1}^{D}$.
 
 \begin{remark}
 We find a decomposition such that for all $j=1, \ldots, D$, $A(\omega_j)=B(\omega_j)B(\omega_j)^*$ either by exhibiting an analytic closed-form or using a numerical decomposition. 
@@ -257,8 +259,8 @@ We find a decomposition such that for all $j=1, \ldots, D$, $A(\omega_j)=B(\omeg
 \subsection{Examples of Operator Random Fourier Feature maps}
 We now give two examples of operator-valued random Fourier feature map when $\mathcal{Y}\subset\mathbb{R}^p$. First we introduce the general form of an approximated feature map for a matrix-valued kernel on the additive group $(\mathbb{R}^d,+)$.
 \begin{example}[Matrix-valued kernel on the additive group]\label{ex:additive_group}
-In the following, $K(x,z)=K_0(x-z)$ is a $\mathbb{R}^p$-Mercer matrix-valued kernel invariant w.r.t. the group operation $+$. %
-An Operator Random Fourier feature map of an $\mathbb{R}^p$-Mercer shift-invariant matrix-valued kernel takes the general form:
+In the following, $K(x,z)=K_0(x-z)$ is a $\mathbb{R}^p$-Mercer matrix-valued kernel on $\mathcal{X}=\mathbb{R}^d$ invariant w.r.t. the group operation $+$. %
+Then the function $\tildePhi{1:D}$ defined as follow is an \acl{ORFF} of $K_{0}$.
 \begin{equation*}
 \begin{aligned}
 \tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^* \\ \sin{\inner{x,\omega_j}}B(\omega_j)^*\end{pmatrix}, \enskip \omega_j \sim \mu.
@@ -280,8 +282,7 @@ which tends to $\expectation_{\mu}[\exp(-i\inner{x-z, \omega})A(\omega) ]=\expec
 \end{proof}
 The second example extends scalar-valued Random Fourier Features on the skewed multiplicative group described in \cref{eq:pairing-skewed} \cite{li2010random}) to the operator-valued case.
 \begin{example}[Matrix-valued kernel on the skewed multiplicative group]
-In the following, suppose that $\mathcal{X}=(-c;+\infty)^d$, $\mathcal{Y}=\mathbb{R}^p$ and $K(x,z)=K_{1-c}(x\odot z^{-1})$ is a $\mathbb{R}^p$-Mercer matrix-valued kernel invariant w.r.t. the group operation $\odot$ defined in \cref{sec:background}. The group operation is defined coefficient-wise for all $k\inrange{1}{d}$ as $x_k\odot z_k := (x_k + c)(z_k + c)-c$. As a consequence $z^{-1}_k=1/(z_k+c)-c$.
-The following function $\tildePhi{1:D}$ is an operator-valued Random Fourier Feature map built following the construction principle:
+In the following, $K(x,z)=K_{1-c}(x\odot z)$ is a $\mathbb{R}^p$-Mercer matrix-valued kernel on $\mathcal{X}=(-c;+\infty)^d$ invariant w.r.t. the group operation\mpar{The group operation $\odot$ is defined in \cref{sec:background}.} $\odot$. Then the function $\tildePhi{1:D}$ defined as follow is an \acl{ORFF} of $K_{1-c}$.
 \begin{equation*}
 \begin{aligned}
 \tildePhi(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}}B(\omega_j)^* \\ \sin{\inner{\log(x+c),\omega_j}}B(\omega_j)^*\end{pmatrix}, \enskip \omega_j \sim \mu.
@@ -296,7 +297,7 @@ is $\dual{\mathcal{X}}=\mathbb{R}^d$, and the duality pairing is $\pairing{x \od
 \tilde{K}(x,z)&= \frac{1}{D} \sum\nolimits_{j=1}^D e^{i\inner*{\log\left(\frac{x+c}{z+c}\right), \omega_j}}A(\omega_j).
 \end{aligned}
 \end{equation*}
-which tends to $\expectation_{\mu}[\exp(-i\inner*{\log(x\odot z^{-1}+c)})A(\omega) ]=\expectation_{\mu}[\conj{\pairing{x\odot z^{-1},\omega}}A(\omega)]=K(x, z)$ when $D$ tends to infinity.
+which converges almost surely to $\expectation_{\mu}[\exp(-i\inner*{\log(x\odot z^{-1}+c)})A(\omega) ]=\expectation_{\mu}[\conj{\pairing{x\odot z^{-1},\omega}}A(\omega)]=K(x, z)$ when $D$ tends to infinity.
 \end{proof}
 
 %----------------------------------------------------------------------------------------

@@ -53,7 +53,7 @@ While \cref{pr:mercer_kernel_bochner} gives some insights on how to build an app
 \begin{proposition}[\citet{Carmeli2010}]
 \label{pr:inverse_ovk_Fourier_decomposition}
 Let $K$ be a shift-invariant $\mathcal{Y}$-Mercer kernel. %
-Suppose that $\forall z \in \mathcal{X}$ and $\forall y ,y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$ where $dx$ denotes the Haar measure on $(\mathcal{X}, \groupop)$. %
+Suppose that $\forall z \in \mathcal{X}$ and $\forall y ,y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$ where $dx$ denotes the Haar measure on $\mathcal{X}$ endowed with the group law $\groupop$. %
 Define $C$ such that for all $\omega \in \dual{\mathcal{X}}$ and for all $y$, $y'$ in $\mathcal{Y}$,
 \begin{dmath}\label{eq:CK0}
 \inner{y,C(\omega)y'} = \int_{\mathcal{X}} \pairing{\delta, \omega}\inner{y, K_e(\delta)y'}d\delta \hiderel{=}\IFT{\inner{y, K_e(\cdot)y'}}(\omega)
@@ -68,10 +68,33 @@ Then
 \end{dmath*}
 \end{propenum}
 \end{proposition}
-The following proposition allows to build a spectral decomposition of a shift-invariant $\mathcal{Y}$-Mercer kernel on a \acs{LCA} group $(\mathcal{X},\groupop)$ with respect to a scalar probability measure, by extracting a scalar probability density from $C$.
+The following proposition allows to build a spectral decomposition of a shift-invariant $\mathcal{Y}$-Mercer kernel on a \acs{LCA} group $\mathcal{X}$ endowed with the group law $\groupop$ with respect to a scalar probability measure, by extracting a scalar probability density from $C$.
+
+% The following lemma is a direct consequence of the definition of $C(\omega)$ as the \acl{FT} of the adjoint of $K_e$ and helps simplifying the definition of \acs{ORFF}.
+% \begin{lemma}
+% \label{lm:C_characterization}
+% Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel and let $C(\omega)=\FT{K_e(\cdot)^\adjoint}(\omega)$. Then $C(\omega)$ is Hermitian and $C$ is even. As a consequence $K_e$ is even and
+
+% \end{lemma}
+% \begin{proof}
+% Suppose that $\mathcal{Y}$ is a real Hilbert space. Then by definition for all $x$, $z\in\mathcal{X}$, $K(x,z)=K(z,x)=K(z,x)^\adjoint$ so that $K_e(-\delta)=K_e(\delta)=K_e(\delta)^\adjoint$. Taking the Fourier transform yields
+% \begin{dmath*}
+% \mathcal{F}\mathcal{R}\left[\inner{y,K_e(\cdot)y'}\right]\hiderel{=}\IFT{\inner{y,K_e(\cdot)y'}}\hiderel{=}\IFT{\inner{y,K_e(\cdot)^\adjoint}
+% \end{dmath*}
+% Hence using the fact that $\mathcal{F}^{-1}=\mathcal{F}\mathcal{R}$ and $\mathcal{R}K_e=K_e$ we have
+% \begin{dmath*}
+% \FT{\inner{y,K_e(\cdot)y'}}\hiderel{=}\IFT{\inner{y,K_e(\cdot)y'}}\hiderel{=}\IFT{\inner{y,K_e(\cdot)^\adjoint}y'}.
+% \end{dmath*}
+% Eventually we conclude $C(\omega)\hiderel{=}c(\omega)\hiderel{=}C(\omega)^\adjoint$.
+
+% Suppose that $\mathcal{Y}$ is a complex Hilbert space. Since $C(\omega)$ is non-negative, $C(\omega)$ is Hermitian.
+
+% \end{proof}
+
+
 \begin{proposition}[Sufficient condition for shift-invariant $\mathcal{Y}$-Mercer kernel spectral decomposition]
 \label{pr:spectral}
-Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel on $(\mathcal{X}, \groupop)$.
+Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel on $\mathcal{X}$ endowed with the group law $\groupop$.
 \paragraph{}
 If for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$ then there exists a positive measure $\mu$ with density $p_{\mu}$ on $\mathcal{B}(\mathcal{\dual{\mathcal{X}}})$ and $A:\dual{\mathcal{X}}\to \mathcal{L}_+(\mathcal{Y})$ an operator-valued function such that for all $y,$ $y'\in\mathcal{Y}$, $\inner{A(.)y,y'}\in L^1(\mathcal{X},d\mu)$ and
 \begin{dmath*}

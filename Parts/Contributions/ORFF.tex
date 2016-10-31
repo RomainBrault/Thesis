@@ -56,7 +56,7 @@ Let $K$ be a shift-invariant $\mathcal{Y}$-Mercer kernel. %
 Suppose that $\forall z \in \mathcal{X}$ and $\forall y ,y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$ where $dx$ denotes the Haar measure on $\mathcal{X}$ endowed with the group law $\groupop$. %
 Define $C$ such that for all $\omega \in \dual{\mathcal{X}}$ and for all $y$, $y'$ in $\mathcal{Y}$,
 \begin{dmath}\label{eq:CK0}
-\inner{y,C(\omega)y'} = \int_{\mathcal{X}} \pairing{\delta, \omega}\inner{y, K_e(\delta)y'}d\delta \hiderel{=}\IFT{\inner{y, K_e(\cdot)y'}}(\omega)
+\inner{y,C(\omega)y'} = \int_{\mathcal{X}} \pairing{\delta, \omega}\inner{y, K_e(\delta)y'}d\delta = \IFT{\inner{y, K_e(\cdot)y'}}(\omega)
 \end{dmath}
 Then
 \begin{propenum}
@@ -64,33 +64,48 @@ Then
 \item $\inner{y, C(.)y'}\in L^1(\dual{\mathcal{X}},d\omega)$ for all $y,y'\in\mathcal{X}$,
 \item for all $\delta\in\mathcal{X}$ and for all $y$, $y'$ in $\mathcal{Y}$,
 \begin{dmath*}
-\inner{y, K_e(\delta)y'}= \int_{\dual{\mathcal{X}}}\conj{\pairing{\delta,\omega}}\inner{y, C(\omega)y'}d\omega.
+\inner{y, K_e(\delta)y'}= \int_{\dual{\mathcal{X}}}\conj{\pairing{\delta,\omega}}\inner{y, C(\omega)y'}d\omega
+=\FT{\inner{y, C(\cdot)y'}}(\delta).
 \end{dmath*}
 \end{propenum}
 \end{proposition}
 The following proposition allows to build a spectral decomposition of a shift-invariant $\mathcal{Y}$-Mercer kernel on a \acs{LCA} group $\mathcal{X}$ endowed with the group law $\groupop$ with respect to a scalar probability measure, by extracting a scalar probability density from $C$.
-
-The following lemma is a direct consequence of the definition of $C(\omega)$ as the \acl{FT} of the adjoint of $K_e$ and helps simplifying the definition of \acs{ORFF}.
+\paragraph{}
+There have been a lot of confusion in the literature whether a kernel is the \acl{FT} or \acl{IFT} of a measure. However \cref{lm:fourier_shift_invariant} clarify the relation between the \acl{FT} and \acl{IFT} for a translation invariant \acl{OVK}. Notice that in the real scalar case the \acl{FT} and \acl{IFT} of a shift-invariant kernel are the same, while the difference is significant for \acs{OVK}.
+\paragraph{}
+The following lemma is a direct consequence of the definition of $C(\omega)$ as the \acl{FT} of the adjoint of $K_e$ and also helps simplifying the definition of \acs{ORFF}.
 \begin{lemma}
 \label{lm:C_characterization}
-Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel and let $C(\omega)=\FT{K_e(\cdot)^\adjoint}(\omega)$. Then $C(\omega)$ is self-adjoint and $C$ is even.
+Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel and let $\inner{y, C(\cdot)y'}=\IFT{\inner{y, K_e(\cdot)y'}}$ for all $y$. $y'\in\mathcal{Y}$. Then 
+\begin{propenum}
+\item \label{lm:C_characterization_1} $C(\omega)$ is self-adjoint and $C$ is even.
+\item \label{lm:C_characterization_2} $\IFT{\inner{y, K_e(\cdot)y'}} = \FT{\inner{y, K_e(\cdot)y'}}$.
+\item \label{lm:C_characterization_3} $K_e(\delta)$ is self-adjoint and $K_e$ is even.
+\end{propenum}
 \end{lemma}
 \begin{proof}
-For any shift invariant $\mathcal{Y}$-Mercer kernel, we have $K_e(\delta)=K_e(\inv{\delta})^*$. From \cref{} and \cref{}, $\inner{y,C(\omega)y'}=\IFT{\inner{y,K_e(\delta)}}=\FT{\inner{y,K_e(\delta)^*}}$
-Hence $C(\omega)=C(\inv{\omega})^*$.
-
-
-% Suppose that $\mathcal{Y}$ is a real Hilbert space. Then by definition for all $x$, $z\in\mathcal{X}$, $K(x,z)=K(z,x)=K(z,x)^\adjoint$ so that $K_e(-\delta)=K_e(\delta)=K_e(\delta)^\adjoint$. Taking the Fourier transform yields
-% \begin{dmath*}
-% \mathcal{F}\mathcal{R}\left[\inner{y,K_e(\cdot)y'}\right]\hiderel{=}\IFT{\inner{y,K_e(\cdot)y'}}\hiderel{=}\IFT{\inner{y,K_e(\cdot)^\adjoint}
-% \end{dmath*}
-% Hence using the fact that $\mathcal{F}^{-1}=\mathcal{F}\mathcal{R}$ and $\mathcal{R}K_e=K_e$ we have
-% \begin{dmath*}
-% \FT{\inner{y,K_e(\cdot)y'}}\hiderel{=}\IFT{\inner{y,K_e(\cdot)y'}}\hiderel{=}\IFT{\inner{y,K_e(\cdot)^\adjoint}y'}.
-% \end{dmath*}
-% Eventually we conclude $C(\omega)\hiderel{=}c(\omega)\hiderel{=}C(\omega)^\adjoint$.
-
-% Suppose that $\mathcal{Y}$ is a complex Hilbert space. Since for all $\omega\in\mathcal{\dual{X}}$ $C(\omega)$ is bounded and non-negative so $C(\omega)$ is self-adjoint. Besides we have $C(\omega)=C(-\omega)^*$ to $C$ must be pair.
+For any function $f\in L^1(\mathcal{X},dx)$ define the flip operator $\mathcal{R}$ by
+\begin{dmath*}
+\mathcal{R}f(x) \colonequals f(\inv{x}).
+\end{dmath*}
+for any shift invariant $\mathcal{Y}$-Mercer kernel, we have for all $\delta\in\mathcal{X}$,  $K_e(\delta)=K_e(\inv{\delta})^\adjoint$. Indeed,
+\begin{dmath*}
+\mathcal{R}\inner{y,K_e(x\groupop \inv{z})y'}\hiderel{=}\inner{y,K_e(\inv{(x\groupop \inv{z})})y'}\hiderel{=}\inner{y,K_e(\inv{x}\groupop z)y'}=\inner{y,K_e(x\groupop \inv{z})^\adjoint y'}.
+\end{dmath*}
+\Cref{lm:C_characterization_1}: taking the Fourier transform yields,
+\begin{dmath*}
+\IFT{\inner{y, K_e(\cdot)y'}}=\mathcal{F}^{-1}\mathcal{R}\left[\inner{K_e(\cdot)y, y'}\right]
+\hiderel{=}\mathcal{R}\inner{C(\cdot)y, y'}.
+\end{dmath*}
+Hence $C(\omega)=C(\inv{\omega})^\adjoint$.
+\paragraph{}
+Suppose that $\mathcal{Y}$ is a complex Hilbert space. Since for all $\omega\in\mathcal{\dual{X}}$ $C(\omega)$ is bounded and non-negative so $C(\omega)$ is self-adjoint. Besides we have $C(\omega)=C(\inv{\omega})^*$ to $C$ must be pair.
+\paragraph{}
+Suppose that $\mathcal{Y}$ is a real Hilbert space. Then we have the additional hypothesis that $K_e(\delta)=K_e(\delta)^\adjoint$. Taking the \acl{FT} yields that $C(\omega)=C(\omega)^\adjoint$. Since for any shift invariant $\mathcal{Y}$-Mercer kernel $C(\omega)=C(\inv{\omega})^\adjoint$ we also conclude that $C(\inv{\omega})=C(\omega)$.
+\paragraph{}
+\Cref{lm:C_characterization_2}: simply, for all $y$. $y'\in\mathcal{Y}$, $\inner{y, C(\inv{\omega})y'}=\inner{y, C(\omega)y'}$ thus $\IFT{\inner{y, C(\cdot)y'}}=\mathcal{F}\mathcal{R}\left[\inner{y, C(\cdot)y'}\right]=\FT{\inner{y, C(\cdot)y'}}$.
+\paragraph{}
+\Cref{lm:C_characterization_3}: from \cref{lm:C_characterization_2}, $\IFT{\inner{y, K_e(\cdot)y'}} = \mathcal{F}^{-1}\mathcal{R}{\inner{y, K_e(\cdot)y'}}$. By injectivity of the \acl{FT}, $K_e$ is even. Since $K_e(\delta)=K_e(\inv{\delta})^*$, we must have $K_e(\delta)=K_e(\delta)^*$. 
 \end{proof}
 
 
@@ -102,10 +117,10 @@ If for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$
 \begin{dmath*}
 \inner{y, K_e(\delta)y'}=\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, A(\omega)y'}p_{\mu}(\omega)d\omega.
 \end{dmath*}
-where $\inner{y, A(\omega)y'}p_{\mu}(\omega) = \FT{\inner{y, K_e(\cdot)^*y'}}(\omega)$.
+where $\inner{y, A(\omega)y'}p_{\mu}(\omega) = \FT{\inner{y, K_e(\cdot)y'}}(\omega)$.
 \end{proposition}
 \begin{proof}
-From \cref{pr:inverse_ovk_Fourier_decomposition} and \cref{lm:fourier_shift_invariant}, by taking $\inner{y,C(\omega)y'} = \FT{\inner{y, K_e(\cdot)^*y'}}(\omega)$, we can write the following equality concerning the \acs{OVK} signature $K_e$. 
+From \cref{pr:inverse_ovk_Fourier_decomposition} and \cref{lm:C_characterization}, by taking $\inner{y,C(\omega)y'} = \IFT{\inner{y, K_e(\cdot)y'}}(\omega)=\FT{\inner{y, K_e(\cdot)y'}}(\omega)$, we can write the following equality concerning the \acs{OVK} signature $K_e$. 
 % Suppose that $\mu$ is absolutely continuous \wrt~$d\omega$. Then for all $\delta \in \mathcal{X}$ and for all $y,$ $y'$ in $\mathcal{Y}$
 \begin{dmath*}
 \inner{y, K_e(\cdot)y'}(\omega)=
@@ -117,7 +132,7 @@ Where $p$ is a function mapping the measured space $(\dual{\mathcal{X}}, \mathca
 \paragraph{}
 In the case where $\mathcal{Y}=\mathbb{R}^p$, we rewrite \cref{pr:spectral} coefficient-wise by choosing an orthonormal basis $(e_1,\ldots, e_p)$ of $\mathcal{Y}$, such that for all $ i,j\inrange{1}{p}$,
 \begin{dmath}
-\label{eq:operator_identification_real}\inner{e_i,C(\omega)e_j}\hiderel{=}C(\omega)_{ij}\hiderel{=}A(\omega)_{ij}p_{\mu}(\omega)\hiderel{=}\FT{K_e(\delta)^*_{ij}}.
+\label{eq:operator_identification_real}\inner{e_i,C(\omega)e_j}\hiderel{=}C(\omega)_{ij}\hiderel{=}A(\omega)_{ij}p_{\mu}(\omega)\hiderel{=}\FT{K_e(\delta)_{ij}}.
 \end{dmath}
 It follows that for all $i$, $j \inrange{1}{p}$,
 \begin{dmath}\label{eq:matrix-exp}
@@ -160,9 +175,9 @@ The pseudo inverse of the operator $B(\omega)$ (noted $B(\omega)^\dagger$) is th
 \end{dmath*}
 Using the fact that $\IFT{.}=\mathcal{F}\mathcal{R}[.]$ and $\mathcal{F}^2[.]=\mathcal{R}[.]$,
 \begin{dmath*}
-\norm{f}^2_K= \displaystyle\int_{\dual{\mathcal{X}}} \frac{\norm{\mathcal{R}\left[B\right](\omega)^\dagger\FT{f}(\omega)}^2_{\mathcal{Y}}}{p_{\mu}(\omega)^2}d\mu(\omega)
+\norm{f}^2_K= \displaystyle\int_{\dual{\mathcal{X}}} \frac{\norm{\mathcal{R}\left[B(\cdot)p_\mu(\cdot)\right](\omega)^\dagger\FT{f}(\omega)}^2_{\mathcal{Y}}}{p_{\mu}(\omega)^2}d\omega
 \end{dmath*}
-Conclude the proof by taking $d\mu(\omega)=p_{\mu}(\omega)d\omega$ and rewriting the integral as an expectation.
+Conclude the proof by taking $d\mu(\omega)=p_{\mu}(\omega)d\omega$ and rewriting the integral as an expectation and using the fact that $A(\omega)p_\mu(\omega)=C(\omega)=C(\inv{\omega})$.
 \end{proof}
 Note that if $K(x,z)=k(x,z)$ is a scalar kernel then for all $\omega$ in $\dual{\mathcal{X}}$, $A(\omega)=1$. Therefore we recover a well known results for kernels that is for any $f\in\mathcal{H}_k$ we have $\norm{f}_k=\int_{\dual{\mathcal{X}}}\FT{k_e}(\omega)^{-1}\FT{f}(\omega)^2d\omega$. We also note that the regularization property in $\mathcal{H}_K$ does not depends (as expected) on the decomposition of $A(\omega)$ into $B(\omega)B(\omega)^*$. Therefore the decomposition should be chosen such that it optimizes the computation cost. For instance if $A(\omega)\in\mathcal{L}(\mathbb{R}^p)$ has rank $r$, one could find an operator $B(\omega)\in\mathcal{L}(\mathbb{R}^p, \mathbb{R}^r)$ such that $A(\omega)=B(\omega)B(\omega)^*$.
 

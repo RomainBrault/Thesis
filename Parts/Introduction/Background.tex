@@ -462,36 +462,6 @@ is consistent with the definition given by \cref{eq:trivial_feature_op} since fo
 \begin{dmath*}
 (K_ey)(x)=K_e(x)y.
 \end{dmath*}
-\begin{lemma}[Shift-invariant $\mathcal{Y}$-Mercer kernels \citep{Carmeli2010}]
-Let $K_e:\mathcal{X}\to\mathcal{Y}$ be a function of completely positive type and let $K$ be the corresponding translation invariant reproducing kernel. The following conditions are equivalent.
-\begin{propenum}
-\item The map $K$ is a $\mathcal{Y}$-Mercer kernel.
-\item For all $y\in\mathcal{Y}$, $K_e(\cdot)y\in\mathcal{C}(\mathcal{X};\mathcal{Y})$.
-\end{propenum}
-\end{lemma}
-\begin{proof}
-The equivalence is a consequence of \cref{pr:characterization_mercer_kernels} observing that $(K_xy)(z)=K_e(\inv{x}\groupop z)y$ and \cref{pr:kernel_signature} holds.
-\end{proof}
-Notice that if $K$ is a translation invariant kernel, \cref{pr:kernel_signature_4} implies that the elements of $\mathcal{H}_K$ are bounded functions. 
-\begin{lemma}[\acl{FT} of shift-invariant $\mathcal{Y}$-Mercer kernels] 
-\label{lm:fourier_shift_invariant}
-Let $K_e:\mathcal{X}\to\mathcal{Y}$ be a function of completely positive type and let $K$ be the corresponding translation invariant reproducing kernel. If for all $y$, $y'\in\mathcal{Y}$, $\inner{y, K_e(\cdot)y'}\in L^1(\mathcal{X},dx)$ then
-\begin{dmath}
-\IFT{\inner{y, K_e(\cdot)y'}}=\FT{\inner{y, K_e(\cdot)^\adjoint y'}}.
-\end{dmath}
-\end{lemma}
-\begin{proof}
-For any function $f\in L^1(\mathcal{X},dx)$ define the flip operator $\mathcal{R}$ by
-\begin{dmath*}
-\mathcal{R}f(x) \colonequals f(\inv{x}).
-\end{dmath*}
-Then $\IFT{f}=\mathcal{R}\FT{f}=\mathcal{F}\mathcal{R}\left[f\right]$, so that we have $\IFT{\inner{y, K_e(\cdot)y'}}=\mathcal{F}\mathcal{R}{\inner{y, K_e(\cdot)y'}}$. For a shift-invariant kernel,
-\begin{dmath*}
-\mathcal{R}\inner{y,K_e(x\groupop \inv{z})y'}\hiderel{=}\inner{y,K_e(\inv{(x\groupop \inv{z})})y'}\hiderel{=}\inner{y,K_e(\inv{x}\groupop z)y'}=\inner{y,K_e(x\groupop \inv{z})^\adjoint y'}
-\end{dmath*}
-Thus $\IFT{\inner{y, K_e(\cdot)y'}}=\mathcal{F}\mathcal{R}\left[\inner{y,K_e(\cdot)y'}\right]=\FT{\inner{y, K_e(\cdot)^\adjoint y'}}$.
-\end{proof}
-There have been a lot of confusion in the literature whether a kernel is the \acl{FT} or \acl{IFT} of a measure. However \cref{lm:fourier_shift_invariant} clarify the relation between the \acl{FT} and \acl{IFT} for a translation invariant \acl{OVK}. Notice that in the real scalar case the \acl{FT} and \acl{IFT} of a shift-invariant kernel are the same, while the difference is significant for \acs{OVK}.
 
 \subsection{Examples of operator-valued kernels}
 \label{subsec:ovk-ex}

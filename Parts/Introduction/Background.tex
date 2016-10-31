@@ -328,7 +328,6 @@ K(x,z)=K^\adjoint_x K_z \enskip\forall x,z\hiderel{\in}\mathcal{X}
 \mathcal{H}_K=\lspan\Set{ K_x y | \forall x\hiderel{\in}\mathcal{X},\enskip\forall y\hiderel{\in}\mathcal{Y} }.
 \end{dmath}
 \end{dgroup}
-
 % Additionally, given a $\mathcal{Y}$-reproducing kernel $K$, there is a unique Hilbert space $\mathcal{H}_K\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$ satisfying $K_x\in\mathcal{L}(\mathcal{Y};\mathcal{H}_K)$, for all $ x\in\mathcal{X}$ and $\forall x\in\mathcal{X}, \forall f\in\mathcal{H}_K, \enskip f(x)=K^\adjoint_x f$, where $K^\adjoint_x:\mathcal{H}_K\to\mathcal{Y}$ is the adjoint of $K_x$.
 % The space $\mathcal{H}_K$ is called the \emph{\acl{vv-RKHS}} associated with $K$.
 Another way to describe functions of $\mathcal{H}_K$ consists in using a suitable feature map.
@@ -405,6 +404,7 @@ Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{Y}$ be a reproducing kernel where
 From \cref{pr:characterization_mercer_kernels} $K$ is a $\mathcal{Y}$-Mercer kernel if and only if $\mathcal{H}_K\subset \mathcal{C}(\mathcal{X};\mathcal{Y})$. Applying \cref{lm:separability} of \cite{carmeli2006vector}, we have that $\mathcal{H}_K$ is separable. Thus since $\mathcal{H}_K$ is also a Hilbert space it has a countable orthonormal basis.
 \end{proof}
 An important consequence is that if $K$ is a $\mathcal{Y}$-Mercer and $\mathcal{X}$ and $\mathcal{Y}$ are separable then $\mathcal{H}_K$ is isometrically isomorphic to $\ell^2$.
+
 %----------------------------------------------------------------------------------------
 \subsection{Shift-Invariant operator-valued kernels}
 The main subjects of interest of \cref{ch:operator-valued_random_fourier_features} are shift-invariant \acl{OVK}. When referring to a shift-invariant \acs{OVK} $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ we assume that $\mathcal{X}$ is a locally compact second countable topological group with identity

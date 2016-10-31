@@ -70,13 +70,16 @@ Then
 \end{proposition}
 The following proposition allows to build a spectral decomposition of a shift-invariant $\mathcal{Y}$-Mercer kernel on a \acs{LCA} group $\mathcal{X}$ endowed with the group law $\groupop$ with respect to a scalar probability measure, by extracting a scalar probability density from $C$.
 
-% The following lemma is a direct consequence of the definition of $C(\omega)$ as the \acl{FT} of the adjoint of $K_e$ and helps simplifying the definition of \acs{ORFF}.
-% \begin{lemma}
-% \label{lm:C_characterization}
-% Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel and let $C(\omega)=\FT{K_e(\cdot)^\adjoint}(\omega)$. Then $C(\omega)$ is Hermitian and $C$ is even. As a consequence $K_e$ is even and
+The following lemma is a direct consequence of the definition of $C(\omega)$ as the \acl{FT} of the adjoint of $K_e$ and helps simplifying the definition of \acs{ORFF}.
+\begin{lemma}
+\label{lm:C_characterization}
+Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel and let $C(\omega)=\FT{K_e(\cdot)^\adjoint}(\omega)$. Then $C(\omega)$ is self-adjoint and $C$ is even.
+\end{lemma}
+\begin{proof}
+For any shift invariant $\mathcal{Y}$-Mercer kernel, we have $K_e(\delta)=K_e(\inv{\delta})^*$. From \cref{} and \cref{}, $\inner{y,C(\omega)y'}=\IFT{\inner{y,K_e(\delta)}}=\FT{\inner{y,K_e(\delta)^*}}$
+Hence $C(\omega)=C(\inv{\omega})^*$.
 
-% \end{lemma}
-% \begin{proof}
+
 % Suppose that $\mathcal{Y}$ is a real Hilbert space. Then by definition for all $x$, $z\in\mathcal{X}$, $K(x,z)=K(z,x)=K(z,x)^\adjoint$ so that $K_e(-\delta)=K_e(\delta)=K_e(\delta)^\adjoint$. Taking the Fourier transform yields
 % \begin{dmath*}
 % \mathcal{F}\mathcal{R}\left[\inner{y,K_e(\cdot)y'}\right]\hiderel{=}\IFT{\inner{y,K_e(\cdot)y'}}\hiderel{=}\IFT{\inner{y,K_e(\cdot)^\adjoint}
@@ -87,9 +90,8 @@ The following proposition allows to build a spectral decomposition of a shift-in
 % \end{dmath*}
 % Eventually we conclude $C(\omega)\hiderel{=}c(\omega)\hiderel{=}C(\omega)^\adjoint$.
 
-% Suppose that $\mathcal{Y}$ is a complex Hilbert space. Since $C(\omega)$ is non-negative, $C(\omega)$ is Hermitian.
-
-% \end{proof}
+% Suppose that $\mathcal{Y}$ is a complex Hilbert space. Since for all $\omega\in\mathcal{\dual{X}}$ $C(\omega)$ is bounded and non-negative so $C(\omega)$ is self-adjoint. Besides we have $C(\omega)=C(-\omega)^*$ to $C$ must be pair.
+\end{proof}
 
 
 \begin{proposition}[Sufficient condition for shift-invariant $\mathcal{Y}$-Mercer kernel spectral decomposition]

@@ -344,9 +344,20 @@ which converges almost surely to $\expectation_{\mu}[\exp(-i\inner*{\log(x\odot 
 \end{proof}
 
 %----------------------------------------------------------------------------------------
-\section{Learning with operator-valued random-Fourier features}
+\section{Learning with ORFF}
 \label{sec:learning_with_operator-valued_random-fourier_features}
-
+We now turn our attention to learning function with an ORFF model that approximate an OVK model. In particular we study the case of Ridge regression.
+\subsection{Ridge regression}
+Let $\mathcal{S} = \Set{(x_i,y_i) | \forall i\inrange{1}{N}, \forall x_i\in\mathcal{X}, \forall y_i\in\mathcal{Y}}$ be a collection of i.i.d training samples.
+Given a local loss function $L: \mathcal{S}\to \mathbb{R}^+$, we are interested in finding a \emph{vector-valued function} $f_*:\mathcal{X}\to\mathcal{Y}$, that lives in a RKHS and minimize a tradeoff between a data fitting term $L$ and a regularization term to prevent from overfitting. Namely finding $f_*\in\mathcal{H}_K$ such that
+\begin{equation}
+f_* = \argmin_{f\in\mathcal{H}_K}  \frac{1}{2N}\displaystyle\sum_{i=1}^NL(f(x_i), y_i) + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K},
+\label{eq:learning_rkhs}
+\end{equation}
+where $\lambda\in\mathbb{R}_+$ is a regularization parameter. Regression in \acl{vv-RKHS} has been well studied and a cornerstone of learning in \acs{vv-RKHS} is the representer theorem.
+\begin{theorem}
+Let $K$ be a $\mathcal{Y}$-Mercer Kernel
+\end{theorem}
 \chapterend
 
 %----------------------------------------------------------------------------------------

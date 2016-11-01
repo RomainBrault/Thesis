@@ -262,8 +262,11 @@ K:\mathcal{X}\times\mathcal{X}\hiderel{\to}\mathcal{L}(\mathcal{Y}) \qquad K(x,z
 \end{dmath*}
 Since for all $y_i$, $y_j\in\mathcal{Y}$,
 \begin{dmath*}
-\sum_{i,j=1}^N\inner{K(x_i,x_j)y_j,y_i}_{\mathcal{Y}}\hiderel{=}
-\inner*{\sum_{i=1}^N\text{ev}^\adjoint_{x_i}y_i, \sum_{j=1}^N\text{ev}^\adjoint_{x_j}y_j}_{\mathcal{Y}} \ge 0,
+\sum_{i,j=1}^N\inner{K(x_i,x_j)y_j,y_i}_{\mathcal{Y}}
+=\sum_{i,j=1}^N\inner{\text{ev}^\adjoint_{x_j}y_j,\text{ev}^\adjoint_{x_i}y_i}_{\mathcal{Y}}
+=\inner*{\sum_{i=1}^N\text{ev}^\adjoint_{x_i}y_i, \sum_{i=1}^N\text{ev}^\adjoint_{x_i}y_i}_{\mathcal{Y}} 
+=\norm{\sum_{i=1}^N\text{ev}^\adjoint_{x_i}y_i}_{\mathcal{Y}}
+\hiderel{\ge} 0,
 \end{dmath*}
 the map $K$ is of positive type.
 \end{proof}
@@ -288,7 +291,7 @@ Additionally given an \acl{OVK} of positive type, it defines a unique \acs{vv-RK
 Given an \acl{OVK} of positive type there $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$, there is a unique \acl{vv-RKHS} $\mathcal{H}$ on $\mathcal{X}$ with reproducing kernel $K$.
 \end{proposition}
 \begin{proof}
-Let $K_{x,y}=K(\cdot, x)y\in\mathcal{F}(\mathcal{X};\mathcal{Y})$. Let $\mathcal{H}_0=\text{span}\Set{K_{x,y}|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$. If $f=\sum_{i=1}^Nc_iK_{x_i,y_i}$ and $g=\sum_{i=1}^Nd_iK_{z_i,y_i'}$ are elements of $\mathcal{H}_0$ we have that 
+Let $K_{x,y}=K(\cdot, x)y\in\mathcal{F}(\mathcal{X};\mathcal{Y})$ and let $\mathcal{H}_0=\text{span}\Set{K_{x,y}|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$. If $f=\sum_{i=1}^Nc_iK_{x_i,y_i}$ and $g=\sum_{i=1}^Nd_iK_{z_i,y_i'}$ are elements of $\mathcal{H}_0$ we have that 
 \begin{dmath*}
 \sum_{j=1}^N\conj{d_j}\inner{f(z_j),y_j'}_{\mathcal{Y}}\hiderel{=}\sum_{i,j=1}^Nc_i\conj{d_j}\inner{K(z_j,x_i)y_i,y_j'}_{\mathcal{Y}}\hiderel{=}\sum_{i=1}^Nc_i\inner{y_i,g(x_i)}_{\mathcal{Y}},
 \end{dmath*}
@@ -296,7 +299,7 @@ so that the sesquilinear form on $\mathcal{H}_0\times\mathcal{H}_0$
 \begin{dmath*}
 \inner{f,g}_{\mathcal{H}_0}=\sum_{i,j=1}^Nc_i\conj{d_j}\inner{K(z_j,x_i)y_i,y_j'}_{\mathcal{Y}}
 \end{dmath*}
-is well defined. Since $K$ is an \acl{OVK} of positive type, we have for all $f\in\mathcal{H}_0$ that $\inner{f,f}\ge 0$. Since the sesquilinear form is positive, it is also Hermitian. Choosing $g=K_{x,y}$ in the above definition yields for all $x\in \mathcal{X}$, all $f\in\mathcal{H}_0$ and all $y\in \mathcal{Y}$
+is well defined. Since $K$ is an \acl{OVK} of positive type, we have for all $f\in\mathcal{H}_0$ that $\inner{f,f}\ge 0$. Moreover the sesquilinear form is positive, so that it is also Hermitian. Choosing $g=K_{x,y}$ in the above definition yields for all $x\in \mathcal{X}$, all $f\in\mathcal{H}_0$ and all $y\in \mathcal{Y}$
 \begin{dmath*}
 \inner{f,K_{x,y}}_{\mathcal{H}_0}=\inner{f(x),y}_{\mathcal{Y}}.
 \end{dmath*}
@@ -309,7 +312,7 @@ which implies that
 \begin{dmath*}
 \norm{f(x)}_{\mathcal{Y}} \le \norm{f}_{\mathcal{H}_0}\sqrt{\norm{K(x,x)}_{\mathcal{Y},\mathcal{Y}}}
 \end{dmath*}
-Hence if $\inner{f,f}_{\mathcal{H}_0}$ then $f=0$. Eventually we deduce that $\inner{\cdot,\cdot}_{\mathcal{H}_0}$ is a scalar product on $\mathcal{H}_0$. Hence $\mathcal{H}_0$ is a pre-Hilbert space. To make it a (complete) Hilbert space we need to take the completion of this space. Let $\mathcal{H}$ be the completion of $\mathcal{H}_0$. Moreover let $K_x:\mathcal{Y}\to\mathcal{H}$ where $K_xy=K_{x,y}$. By construction $K_x$ is bounded and let $W:\mathcal{H}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ where $(Wf)(x)=K_x^\adjoint f$. The operator $W$ is injective. Indeed if $Wf=0$ then for all $x\in\mathcal{X}$, $f\in\Ker K_x^\adjoint=(\Ima f)^{\bot}$. since the set $\cup_{x\in\mathcal{X}}\Ima K_x=\Set{K_xy|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}$ generates by definition $\mathcal{H}_0$, we have $f=0$. Since $W$ is injective, we have for all $f_1$, $f_2\in\mathcal{H}_0$ $(Wf_1)(x)=(Wf_2)(x){\scriptstyle\implies} f_1(x)=f_2(x)$ pointwise in $\mathcal{H}$ so that we can identify $\mathcal{H}$ with a \emph{subspace} of $\mathcal{F}(\mathcal{X};\mathcal{Y})$. Hence $K_x^\adjoint f=(Wf)(x)=f(x)=\text{ev}_xf$, showing that $\mathcal{H}$ is a \acl{vv-RKHS} with reproducing kernel
+Therefore if $\inner{f,f}_{\mathcal{H}_0}$ then $f=0$. Eventually we deduce that $\inner{\cdot,\cdot}_{\mathcal{H}_0}$ is a scalar product on $\mathcal{H}_0$. Hence $\mathcal{H}_0$ is a pre-Hilbert space. To make it a (complete) Hilbert space we need to take the completion of this space. Let $\mathcal{H}$ be the completion of $\mathcal{H}_0$. Moreover let $K_x:\mathcal{Y}\to\mathcal{H}$ where $K_xy=K_{x,y}$. By construction $K_x$ is bounded and let $W:\mathcal{H}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ where $(Wf)(x)=K_x^\adjoint f$. The operator $W$ is injective. Indeed if $Wf=0$ then for all $x\in\mathcal{X}$, $f\in\Ker K_x^\adjoint=(\Ima f)^{\bot}$. since the set $\cup_{x\in\mathcal{X}}\Ima K_x=\Set{K_xy|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}$ generates by definition $\mathcal{H}_0$, we have $f=0$. Besides, as $W$ is injective, we have for all $f_1$, $f_2\in\mathcal{H}_0$ $(Wf_1)(x)=(Wf_2)(x){\scriptstyle\implies} f_1(x)=f_2(x)$ pointwise in $\mathcal{H}$ so that we can identify $\mathcal{H}$ with a \emph{subspace} of $\mathcal{F}(\mathcal{X};\mathcal{Y})$. Hence $K_x^\adjoint f=(Wf)(x)=f(x)=\text{ev}_xf$, showing that $\mathcal{H}$ is a \acl{vv-RKHS} with reproducing kernel
 \begin{dmath*}
 K_{\mathcal{H}}(x,z)y\hiderel{=}(\text{ev}^\adjoint_zy)(x)\hiderel{=K}(x,z)y.
 \end{dmath*}

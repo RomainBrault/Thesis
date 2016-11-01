@@ -266,7 +266,7 @@ If $K(x,z)$ is a shift-invariant $\mathcal{Y}$-Mercer kernel such that for all $
 \begin{equation}
 \tildePhi{1:D}(x)= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^*, \qquad \omega_j \sim \mu,
 \end{equation}
-where $\inner{y, B(\omega)B(\omega)^*y'}p_{\mu}(\omega)=\IFT{\inner{y, K_e(\cdot)y'}}(\omega)$, is an approximated feature map of $K$.
+where $\inner{y, B(\omega)B(\omega)^*y'}p_{\mu}(\omega)=\FT{\inner{y, K_e(\cdot)y'}}(\omega)$, is an approximated feature map of $K$.
 \end{corollary}
 \begin{proof}
 Find $(A(\omega), d\mu)$ from \cref{pr:spectral} and apply \cref{pr:ORFF-map}.
@@ -309,18 +309,21 @@ Then the function $\tildePhi{1:D}$ defined as follow is an \acl{ORFF} of $K_{0}$
 \end{example}
 \begin{proof}
 The (Pontryagin) dual of $\mathcal{X}=\mathbb{R}^d$
-is $\dual{\mathcal{X}}=\mathbb{R}^d$, and the duality pairing is $\pairing{x-z,\omega}=\exp(i\inner{x-z, \omega})$. A $\mathbb{R}^p$-operator-valued function has a real operator-valued Fourier transform if and only if $A(\omega)$ is even with respect to $\omega$. Taking this point into account, the kernel approximation yields:
-\begin{equation*}
-\begin{aligned}
-\tilde{K}(x,z)&=\tildePhi{1:D}(x)^*\tildePhi{1:D}(z) \\
-&= \frac{1}{D} \sum\nolimits_{j=1}^D \cos{\inner{x,\omega_j}}\cos{\inner{z,\omega_j}} A(\omega_j) + \sin{\inner{x,\omega_j}}\sin{\inner{z,\omega_j}} A(\omega_j) \\
-&= \frac{1}{D} \sum\nolimits_{j=1}^D \cos{\inner{x-z,\omega_j}}A(\omega_j) \\
-&= \frac{1}{D} \sum\nolimits_{j=1}^D \exp(-i\inner{x-z, \omega_j})A(\omega_j).
-\end{aligned}
-\end{equation*}
-which tends to $\expectation_{\mu}[\exp(-i\inner{x-z, \omega})A(\omega) ]=\expectation_{\mu}[\conj{\pairing{x-z,\omega}}A(\omega)]=K(x, z)$ when $D$ tends to infinity.
+is $\dual{\mathcal{X}}=\mathbb{R}^d$, and the duality pairing is $\pairing{x-z,\omega}=\exp(i\inner{x-z, \omega})$. The kernel approximation yields:
+\begin{dmath*}
+\tilde{K}(x,z)=\tildePhi{1:D}(x)^*\tildePhi{1:D}(z)
+= \frac{1}{D} \sum_{j=1}^D \begin{pmatrix} \cos{\inner{x,\omega_j}} & \sin{\inner{x,\omega_j}} \end{pmatrix}\begin{pmatrix}\cos{\inner{z,\omega_j}} \\ \sin{\inner{z,\omega_j}} \end{pmatrix} A(\omega_j)
+= \frac{1}{D} \sum_{j=1}^D \cos{\inner{x-z,\omega_j}}A(\omega_j) \\
+\converges{\asurely}{D\to\infty}\expectation_\mu\left[\cos{\inner{x-z,\omega}}A(\omega)\right]
+\end{dmath*}
+in the weak operator topology. Since for all $x\in\mathcal{X}$, $\sin(x, \cdot)$ is an odd function and $A(\cdot)p_\mu(\cdot)$ is even,
+\begin{dmath*}
+\expectation_\mu\left[\cos{\inner{x-z,\omega}}A(\omega)\right]=\expectation_\mu\left[\exp(-i\inner{x-z,\omega})A(\omega)\right]\hiderel{=}K(x,z).
+\end{dmath*}
+Hence $\tilde{K}(x,z)\converges{\asurely}{D\to\infty}K(x,z)$.
+% which tends to $\expectation_{\mu}[\exp(-i\inner{x-z, \omega})A(\omega) ]=\expectation_{\mu}[\conj{\pairing{x-z,\omega}}A(\omega)]=K(x, z)$ when $D$ tends to infinity.
 \end{proof}
-The second example extends scalar-valued Random Fourier Features on the skewed multiplicative group described in \cref{eq:pairing-skewed} \cite{li2010random}) to the operator-valued case.
+The second example extends scalar-valued Random Fourier Features on the skewed multiplicative group described in \cref{eq:pairing-skewed}) to the operator-valued case.
 \begin{example}[Matrix-valued kernel on the skewed multiplicative group]
 In the following, $K(x,z)=K_{1-c}(x\odot z)$ is a $\mathbb{R}^p$-Mercer matrix-valued kernel on $\mathcal{X}=(-c;+\infty)^d$ invariant w.r.t. the group operation\mpar{The group operation $\odot$ is defined in \cref{sec:background}.} $\odot$. Then the function $\tildePhi{1:D}$ defined as follow is an \acl{ORFF} of $K_{1-c}$.
 \begin{equation*}
@@ -334,7 +337,7 @@ The dual of $\mathcal{X}=(-c;+\infty)^d$
 is $\dual{\mathcal{X}}=\mathbb{R}^d$, and the duality pairing is $\pairing{x \odot \myinv{z},\omega}=\exp(i\inner{\log(x\odot z^{-1}+c), \omega})$ (see \citet{Li2010}). Following the proof of \cref{ex:additive_group}, we have
 \begin{equation*}
 \begin{aligned}
-\tilde{K}(x,z)&= \frac{1}{D} \sum\nolimits_{j=1}^D e^{i\inner*{\log\left(\frac{x+c}{z+c}\right), \omega_j}}A(\omega_j).
+\tilde{K}(x,z)&= \frac{1}{D} \sum\nolimits_{j=1}^D \cos{\inner*{\log\left(\frac{x+c}{z+c}\right), \omega_j}}A(\omega_j).
 \end{aligned}
 \end{equation*}
 which converges almost surely to $\expectation_{\mu}[\exp(-i\inner*{\log(x\odot z^{-1}+c)})A(\omega) ]=\expectation_{\mu}[\conj{\pairing{x\odot z^{-1},\omega}}A(\omega)]=K(x, z)$ when $D$ tends to infinity.

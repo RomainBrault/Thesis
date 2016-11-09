@@ -109,18 +109,16 @@ Suppose that $\mathcal{Y}$ is a real Hilbert space. Then we have the additional 
 \end{proof}
 
 
-\begin{proposition}[Sufficient condition for shift-invariant $\mathcal{Y}$-Mercer kernel spectral decomposition]
+\begin{proposition}[Shift-invariant $\mathcal{Y}$-Mercer kernel spectral decomposition]
 \label{pr:spectral}
-Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel on $\mathcal{X}$ endowed with the group law $\groupop$.
-\paragraph{}
-If for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$ then there exists a positive measure $\mu$ with density $p_{\mu}$ on $\mathcal{B}(\mathcal{\dual{\mathcal{X}}})$ and $A:\dual{\mathcal{X}}\to \mathcal{L}_+(\mathcal{Y})$ an operator-valued function such that for all $y,$ $y'\in\mathcal{Y}$, $\inner{A(.)y,y'}\in L^1(\mathcal{X},d\mu)$ and
+Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel. If for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$ then there exists a positive measure $\mu$ with density $p_{\mu}$ on $\mathcal{B}(\mathcal{\dual{\mathcal{X}}})$ and $A:\dual{\mathcal{X}}\to \mathcal{L}_+(\mathcal{Y})$ an operator-valued function such that for all $y,$ $y'\in\mathcal{Y}$, $\inner{A(.)y,y'}\in L^1(\dual{\mathcal{X}},d\mu)$ and
 \begin{dmath*}
 \inner{y, K_e(\delta)y'}=\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, A(\omega)y'}p_{\mu}(\omega)d\omega.
 \end{dmath*}
 where $\inner{y, A(\omega)y'}p_{\mu}(\omega) = \FT{\inner{y, K_e(\cdot)y'}}(\omega)$.
 \end{proposition}
 \begin{proof}
-From \cref{pr:inverse_ovk_Fourier_decomposition} and \cref{lm:C_characterization}, by taking $\inner{y,C(\omega)y'} = \IFT{\inner{y, K_e(\cdot)y'}}(\omega)=\FT{\inner{y, K_e(\cdot)y'}}(\omega)$, we can write the following equality concerning the \acs{OVK} signature $K_e$. 
+This is a simple consequence of \cref{pr:inverse_ovk_Fourier_decomposition} and \cref{lm:C_characterization}. By taking $\inner{y,C(\omega)y'} = \IFT{\inner{y, K_e(\cdot)y'}}(\omega)=\FT{\inner{y, K_e(\cdot)y'}}(\omega)$ we can write the following equality concerning the \acs{OVK} signature $K_e$. 
 % Suppose that $\mu$ is absolutely continuous \wrt~$d\omega$. Then for all $\delta \in \mathcal{X}$ and for all $y,$ $y'$ in $\mathcal{Y}$
 \begin{dmath*}
 \inner{y, K_e(\cdot)y'}(\omega)=
@@ -142,17 +140,55 @@ K_e(x\groupop \inv{z})_{ij} \hiderel{=} \FT{A(\cdot)_{ij}p_\mu(\cdot)}
 \begin{remark}
 Note that although the \acl{IFT} of $K_e$ yields a unique operator-valued function $C(\cdot)$, the decomposition of $C(\omega)$ into $A(\omega)p_\mu(\omega)$ is again not unique. The choice of the decomposition may be justified by the computational cost or by the nature of the constants involved in the uniform convergence of the estimator.
 \end{remark}
+\begin{proposition}[Bounded shift-invariant $\mathcal{Y}$-Mercer kernel spectral decomposition]
+Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel. If for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},dx)$ then for all $y$, $y'\in\mathcal{Y}$, $\inner{y, C(\cdot)y'}=\FT{\inner{y, K_e(\cdot)y'}}$ exists and
+\begin{dmath}
+\inner{y, K_e(\delta)y'}=\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y, A_p(\omega)y'}p_{\mu}(\omega)d\omega.
+\end{dmath}
+with
+\begin{dgroup}
+\begin{dmath}
+c_p=\int_{\dual{\mathcal{X}}}\norm{C(\omega)}_p d\omega
+\end{dmath}
+\begin{dmath}
+\label{eq:bounded_C}
+A_p(\omega)=c_p\norm{C(\omega)}_p^{-1}C(\omega)
+\end{dmath}
+\begin{dmath}
+p_{\mu}(\omega)=c_p^{-1}\norm{C(\omega)}_p.
+\end{dmath}
+
+\end{dgroup}
+\label{eq:bounded_mu}
+Moreover
+\begin{propenum}
+\item $A_p(\cdot)$ and $p_{\mu}$ are even functions.
+\item $\sup_{\omega\in\dual{\mathcal{X}}}\norm{A_p(\omega)}_{\mathcal{Y},\mathcal{Y}}\le c_p$.
+\item In particular $\sup_{\omega\in\dual{\mathcal{X}}}\norm{A_{\infty}(\omega)}_{\mathcal{Y},\mathcal{Y}} = c_{\infty} < \infty.$
+\item For all $y$, $y'\in\mathcal{Y}$, $\inner{y, A_p(\omega)y'}\in L^1(\dual{\mathcal{X}}, d\mu)$.
+\end{propenum}
+\end{proposition}
+\begin{proof} Apply \cref{pr:spectral} with $A_p(\omega)$ and $p_\mu(\omega)$ defined respectively as in \cref{eq:bounded_C} and \cref{eq:bounded_mu}. We see immediately that $\int_{\dual{\mathcal{X}}}p_{\mu}(\omega)d\omega=1$ and $A_p(\omega)p_{\mu}(\omega)=C(\omega)$.
+\paragraph{}
+The Schatten norms $\norm{\cdot}_p$ verifies $\norm{\cdot}_p\ge \norm{\cdot}_q \ge \norm{\cdot}_{\mathcal{Y},\mathcal{Y}}=\norm{\cdot}_{\infty}$ for all $p$, $q\in\mathbb{N}$ such that $p \le q$. Therefore 
+\begin{dmath*}
+\sup_{\omega\in\dual{\mathcal{X}}}\norm{A_p(\omega)}_{\mathcal{Y},\mathcal{Y}} = \sup_{\omega\in\dual{\mathcal{X}}}\norm{\frac{\int_{\dual{\mathcal{X}}}\norm{C(\omega)}_p d\omega}{\norm{C(\omega)}_p}C(\omega)}_{\mathcal{Y},\mathcal{Y}}
+=\int_{\dual{\mathcal{X}}}\norm{C(\omega)}_p d\omega\sup_{\omega\in\dual{\mathcal{X}}}\frac{\norm{C(\omega)}_{\mathcal{Y},\mathcal{Y}}}{\norm{C(\omega)}_p}
+\le \int_{\dual{\mathcal{X}}}\norm{C(\omega)}_pd\omega\hiderel{=}c_p.
+\end{dmath*}
+In particular if $p=+\infty$, $\sup_{\omega\in\dual{\mathcal{X}}}\norm{A_{\infty}(\omega)}_{\mathcal{Y},\mathcal{Y}}=c_{\infty}$. Since $\mathcal{Y}$ is separable and for all $y$, $y'\in\mathcal{Y}$, $\inner{y,C(\cdot)y'}\in L^1(\dual{\mathcal{X}},d\omega)$ we have $c_\infty=\int_{\dual{\mathcal{X}}}\norm{C(\omega)}_{\mathcal{Y},\mathcal{Y}} d\omega<+\infty$.
+\end{proof}
+\subsection{Examples of spectral decomposition}
 
 \subsection{Regularization property}
 We have shown so far that it is always possible to construct a feature map that allows to approximate a shift-invariant $\mathcal{Y}$-Mercer kernel. However we could also propose a construction of such map by studying the regularization induced with respect to the \acl{FT} of a target function $f\in \mathcal{H}_K$. In other words, what is the norm in $L^2(\dual{\mathcal{X}}, d\omega, \mathcal{Y}')$ induced by $\norm{\cdot}_K$?
 \begin{proposition}
-Let $K$ be a shift-invariant $\mathcal{Y}$-Mercer Kernel such that for all $y$, $y'$ in $\mathcal{Y}$, $\inner{y, K_e(\cdot)y'}\in L^1(\mathcal{X}, dx)$.
-\paragraph{}
-Let $\inner{y, A(\omega)y'}p_\mu(\omega)\colonequals\FT{\inner{y, K_e(\cdot)^*y'}}(\omega)$ and let $f\in\mathcal{H}_K$. Then
+Let $K$ be a shift-invariant $\mathcal{Y}$-Mercer Kernel such that for all $y$, $y'$ in $\mathcal{Y}$, $\inner{y, K_e(\cdot)y'}\in L^1(\mathcal{X}, dx)$. Then for all $f\in\mathcal{H}_K$
 \begin{dmath}
 \norm{f}^2_K=\displaystyle\int_{\dual{\mathcal{X}}}\frac{\inner*{\FT{f}(\omega), A\left(\omega\right)^\dagger\FT{f}(\omega)}_{\mathcal{Y}}}{p_{\mu}(\omega)}d\omega.
 \label{eq:reg_L2}
 \end{dmath}
+where $\inner{y, A(\omega)y'}p_\mu(\omega)\colonequals\FT{\inner{y, K_e(\cdot)y'}}(\omega)$. 
 \label{pr:regularization}
 \end{proposition}
 \begin{proof}
@@ -238,22 +274,24 @@ Let $\theta=\vect_{j=1}^D\theta_j\in\left(\mathcal{Y}'\right)^D$, where $\theta\
 \end{dmath}
 \end{definition}
 The approximate feature operator is useful to show the relations between the approximate feature map with the functional feature map defined in \cref{pr:fourier_feature_map}.
-\begin{proposition} Let $g\in \mathcal{H}=L^2(\mathcal{\dual{X}},d\mu;\mathcal{Y})$ and let $\theta \colonequals \vect_{j=1}^Dg(\omega_j)$ where $\omega_j\sim \mu$. Then for all $g\in\mathcal{H}$,
+\begin{proposition} 
+\label{pr:phitilde_phi_rel}
+Let $g\in \mathcal{H}=L^2(\mathcal{\dual{X}},d\mu;\mathcal{Y}')$ and let $\theta \colonequals \vect_{j=1}^Dg(\omega_j)$ where $\omega_j\sim \mu$. Then for all $g\in\mathcal{H}$,
 \begin{propenum}
 \item \label{pr:cv_feature_map_1} $\tildePhi{1:D}(x)^*\theta \converges{\asurely}{D\to\infty} \Phi_x^*g$,
-\item \label{pr:cv_feature_map_2} $\norm{\theta}_{\mathcal{Y}}^2 \converges{\asurely}{D\to\infty} \norm{g}_{L^2\left(\dual{\mathcal{X}}, d\mu; \mathcal{Y}'\right)}^2$.
+\item \label{pr:cv_feature_map_2} $\frac{1}{D}\norm{\theta}_{\mathcal{Y}}^2 \converges{\asurely}{D\to\infty} \norm{g}_{L^2\left(\dual{\mathcal{X}}, d\mu; \mathcal{Y}'\right)}^2$.
 \end{propenum}
 \end{proposition}
 \begin{proof}
-Proof of \cref{pr:cv_feature_map_1}: since $\omega_1, \hdots \omega_D$ are \iid~random vectors, for all $y\in \mathcal{Y}$ and for all $y'\in\mathcal{Y}'$, $\inner{y, B(\cdot)y'}\in L^2(\dual{\mathcal{X}},d\mu)$ and $g\in L^2(\dual{\mathcal{X}},d\mu);\mathcal{Y})$, from the strong law of large numbers
+Proof of \cref{pr:cv_feature_map_1}: since $\omega_1, \hdots \omega_D$ are \iid~random vectors, for all $y\in \mathcal{Y}$ and for all $y'\in\mathcal{Y}'$, $\inner{y, B(\cdot)y'}\in L^2(\dual{\mathcal{X}},d\mu)$ and $g\in L^2(\dual{\mathcal{X}},d\mu;\mathcal{Y}')$, from the strong law of large numbers
 \begin{dmath*}
 \tildePhi{1:D}(x)^*\theta=\frac{1}{D}\sum_{j=1}^D \conj{\pairing{x,\omega_j}}B(\omega_j)g(\omega_j), \qquad \omega_j \hiderel{\sim} \mu \\
 \converges{\asurely}{D\to\infty} \int_{\dual{\mathcal{X}}}\conj{\pairing{x,\omega}}B(\omega)g(\omega)d\mu(\omega)
 \hiderel{=} (Wg)(x) \hiderel{\colonequals} \Phi_x^*g.
 \end{dmath*}
-Proof of \cref{pr:cv_feature_map_2}: again, since $\omega_1, \hdots \omega_D$ are \iid~random vectors and $g\in L^2(\dual{\mathcal{X}},d\mu;\mathcal{Y})$, from the strong law of large numbers
+Proof of \cref{pr:cv_feature_map_2}: again, since $\omega_1, \hdots \omega_D$ are \iid~random vectors and $g\in L^2(\dual{\mathcal{X}},d\mu;\mathcal{Y}')$, from the strong law of large numbers
 \begin{dmath*}
-\norm{\theta}^2_{\mathcal{Y}}=\sum_{j=1}^D\norm{g(\omega_j)}^2_{\mathcal{Y}}, \qquad \omega_j \hiderel{\sim} \mu \\
+\frac{1}{D}\norm{\theta}^2_{\mathcal{Y}}=\frac{1}{D}\sum_{j=1}^D\norm{g(\omega_j)}^2_{\mathcal{Y}}, \qquad \omega_j \hiderel{\sim} \mu \\
 \converges{\asurely}{D\to\infty} \int_{\dual{\mathcal{X}}} \norm{g(\omega)}_{\mathcal{Y}}^2d\mu(\omega)
 \colonequals \norm{g}_{L^2\left(\dual{\mathcal{X}}, d\mu; \mathcal{Y}'\right)}^2
 \end{dmath*}
@@ -349,15 +387,92 @@ which converges almost surely to $\expectation_{\mu}[\exp(-i\inner*{\log(x\odot 
 We now turn our attention to learning function with an ORFF model that approximate an OVK model. In particular we study the case of Ridge regression.
 \subsection{Ridge regression}
 Let $\mathcal{S} = \Set{(x_i,y_i) | \forall i\inrange{1}{N}, \forall x_i\in\mathcal{X}, \forall y_i\in\mathcal{Y}}$ be a collection of i.i.d training samples.
-Given a local loss function $L: \mathcal{S}\to \mathbb{R}^+$, we are interested in finding a \emph{vector-valued function} $f_*:\mathcal{X}\to\mathcal{Y}$, that lives in a RKHS and minimize a tradeoff between a data fitting term $L$ and a regularization term to prevent from overfitting. Namely finding $f_*\in\mathcal{H}_K$ such that
-\begin{equation}
-f_* = \argmin_{f\in\mathcal{H}_K}  \frac{1}{2N}\displaystyle\sum_{i=1}^NL(f(x_i), y_i) + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K},
+Given a local loss function $L: \mathcal{X}\times\mathcal{F}\times\mathcal{Y}\to \mathbb{R}^+$, we are interested in finding a \emph{vector-valued function} $f_*:\mathcal{X}\to\mathcal{Y}$, that lives in a RKHS and minimize a tradeoff between a data fitting term $L$ and a regularization term to prevent from overfitting. Namely finding $f_*\in\mathcal{H}_K$ such that
+\begin{dmath*}
+f_* = \argmin_{f\in\mathcal{H}_K}  \frac{1}{2N}\displaystyle\sum_{i=1}^NL(x_i, f, y_i) + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K},
 \label{eq:learning_rkhs}
-\end{equation}
-where $\lambda\in\mathbb{R}_+$ is a regularization parameter. Regression in \acl{vv-RKHS} has been well studied and a cornerstone of learning in \acs{vv-RKHS} is the representer theorem.
-\begin{theorem}
-Let $K$ be a $\mathcal{Y}$-Mercer Kernel
+\end{dmath*}
+where $\lambda\in\mathbb{R}_+$ is a regularization parameter. A common choice of data fitting term for regression is $L:x_i,\enskip f,\enskip y_i \mapsto \norm{f(x_i)-y_i}_{\mathcal{Y}}^2$. Regression in \acl{vv-RKHS} has been well studied and a cornerstone of learning in \acs{vv-RKHS} is the representer theorem\mpar{}.
+\begin{theorem}[Representer]
+Let $K$ be a $\mathcal{Y}$-Mercer Kernel and $\mathcal{H}_K$ its corresponding \acl{vv-RKHS}. The solution $f_*\in\mathcal{H}_K$ of the regularized optimization problem 
+\begin{dmath}
+f_* = \argmin_{f\in\mathcal{H}_K}  \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K},
+\label{eq:learning_rkhs}
+\end{dmath}
+has the form $f_*=\sum_{i=1}^NK(x_i,\cdot)u_i$, where $u_i\in\mathcal{Y}$.
 \end{theorem}
+This theorem was first introduced by \citet{Wahba90} in the case where $\mathcal{Y}=\mathbb{R}$. The extension to an arbitrary Hilbert space $\mathcal{Y}$ has been proved by many authors \citep{Brouard2011,kadri2015operator,Micchelli2005}. We present here the proof proposed by \citet{kadri2015operator}.
+\begin{proof}
+Let $J(f)=\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K}$ be the functional to minimize. We use the notion of Frechet derivative, noted $D_F$. This is the strongest notion of derivative in a normed vector space, see \citet{kurdila2006convex}.
+$f_*$ denotes the optimal vector in $\mathcal{H}_K$ such that $f_*=\argmin_{f\in\mathcal{H}_K}J(f){\scriptstyle\implies}D_F J(f_*)=0$. To compute the Frechet derivative $D_F$, we use the Gateaux derivative $D_G$ of $J$ with respect to $f\in\mathcal{H}_K$ in the direction $h\in\mathcal{H}_K$. The Gateaux derivative is defined by
+\begin{dmath*}
+D_G J(f, h) = \lim_{t\to 0} \frac{J(f+th)-J(f)}{t}.
+\end{dmath*}
+Let $G_i(f)=\norm{f(x_i)-y_i}_{\mathcal{Y}}^2$. Then $J(f)=\frac{1}{2N}\sum_{i=1}^NG_i(f)+\frac{\lambda}{2}\norm{f}_{\mathcal{H}_K}^2$. Moreover the directional Gateaux derivative obey $D_GJ(f, h)=\inner{D_GJ(f),h}_{\mathcal{H}_K}$. Thus
+\begin{enumerate}
+\item Regularization term:
+\begin{dmath}
+\label{enum:Gateaux_diff_reg}
+\lim_{t\to 0}\frac{\norm{f+th}^2_{\mathcal{H}_K}-\norm{f}_{\mathcal{H}_K}^2}{t}=2\inner{f,h}{\scriptstyle\implies}D_G\norm{f}_{\mathcal{H}_K}^2\hiderel{=}2f.
+\end{dmath}
+\item Data fitting term:
+\begin{dmath}
+\label{enum:Gateaux_diff_fit}
+\lim_{t\to 0}\frac{\norm{y_i-f(x_i)+th(x_i)}_{\mathcal{Y}}^2-\norm{y_i-f(x_i)}_{\mathcal{Y}}^2}{t} = -2\inner{y_i-f(x_i),h(x_i)}_{\mathcal{Y}} \hiderel{=} -2\inner{K_{x_i}(y_i-f(x_i)),h}_{\mathcal{H}_K}\\{\scriptstyle\implies}D_G G_i(f)\hiderel{=}-2K_{x_i}(y_i-f(x_i)).
+\end{dmath}
+\end{enumerate}
+Since $K$ is Mercer, $f$ is continuous. Applying corollary 4.1.1 in \citet{kurdila2006convex} shows that $J$ is Frechet differentiable and $\forall f\in\mathcal{H}_K$, $D_F J(f)=D_G J(f)$. Thus if $f_*=\argmin_{f\in\mathcal{H}_K}J(f)$ then $D_F J(f)=0$ so $D_G J(f)=0$. Eventually use \cref{enum:Gateaux_diff_reg} and \cref{enum:Gateaux_diff_fit} so that
+\begin{dmath*}
+D_G J(f_*)= \lambda f_*-\frac{1}{N}\sum_{i=1}^NK_{x_i}(y_i-f_*(x_i))\hiderel{=}0
+\end{dmath*}
+Let $u_i=\frac{(y_i-f_*(x_i)}{\lambda N}\in\mathcal{Y}$ to conclude the proof.
+\end{proof}
+The representer theorem show that minimizing a functional in a \acs{vv-RKHS} yields a solution which depends on all the points in the training set. Assuming that for all $x_i$, $x\in\mathcal{X}$ and for all $u_i\in\mathcal{Y}$ takes time $P$, computing $K(x_i, x)u_i$ making a prediction using the representer theorem take $O(NP)$. Obviously If $\mathcal{Y}=\mathbb{R}^P$, Then $P=p^2$ thus making a prediction cost $O(Np^2)$ operations.
+\paragraph{}
+Instead learning a model $f$ that depends on all the points of the training set, we would like to learn a parametric model of the form
+$\tildef{1:D}(x)=\tildePhi{1:D}(x)^*\theta$, where $\theta$ lives in some redescription space $\left(\mathcal{Y}'\right)^D$.
+\begin{proposition}[Consitensy of ORFF \wrt~\acs{vv-RKHS}]
+Let $K$ be a $\mathcal{Y}$-Mercer Kernel such that $\tildePhi{1:D}(x)^\adjoint\tildePhi{1:D}(z)\approx K(x,z)$. Moreover let
+\begin{dmath*}
+\label{eq:argmin_applied}
+\theta_*=\argmin_{\theta\in\left(\mathcal{Y}'\right)^D} \frac{1}{2N}\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint \theta-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2D}\norm{\theta}^2_{\left(\mathcal{Y}'\right)^D}
+\end{dmath*}
+and
+\begin{dmath*}
+\label{eq:argmin_RKHS}
+f_*=\argmin_{f\in\mathcal{H}_K} \frac{1}{2N}\sum_{i=1}^N\norm{f(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K}
+\end{dmath*}
+Then $\tildePhi{1:D}(\cdot)^\adjoint\theta_* \converges{\proba}{D\to\infty}f_*\in\mathcal{H}_K$.
+\end{proposition}
+\begin{proof}
+We have that for all $f\in\mathcal{H_K}$, there exists a $g\in\mathcal{H}$ such that $f(x)=(Wg)(x)=\Phi(x)^\adjoint g$ where $W$ is a partial isometry with initial subspace $(\Ker W)^\bot\subset\mathcal{H}$ and final subspace $\mathcal{H}_K$. Let
+\begin{dmath}
+\label{eq:argmin_HS}
+g_*=\argmin_{g\in\mathcal{H}} \frac{1}{2N}\sum_{i=1}^N\norm{(Wg)(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{g}^2_{\mathcal{H}_K}
+\end{dmath}
+Since $W$ is a partial isometry and \cref{eq:argmin_RKHS} has a unique global optimizer, \cref{eq:argmin_HS} has a unique global optimizer $g_*$ such that $Wg_*=f_*$. Let
+\begin{dmath}
+Q_0(g)=\frac{1}{2N}\sum_{i=1}^N\norm{(Wg)(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{g}^2_{\mathcal{H}_K},
+\end{dmath}
+and $\theta_g=\vect_{j=1}^Dg(\omega_j)$. We define the empirical estimator of $Q_0$ as
+\begin{dmath}
+Q_D(g)=\frac{1}{2N}\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint \theta_g-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2D}\norm{\theta_g}^2_{(\mathcal{Y}')^D}
+\end{dmath}
+With these notatition we have $g_*=\argmin_{g\in\mathcal{H}} Q_0(g)$. Moreover we note $\tilde{g}_*=\argmin_{g\in\mathcal{H}} Q_D(g)$. Then
+\begin{dmath}
+\label{eq:consitency1}
+\tilde{g}_* \converges{\proba}{D\to\infty} g_*
+\end{dmath}
+Let $\theta_{g,*}=\vect_{j=1}^D\tilde{g}_*(\omega_j)$. since $\tilde{g}_*$ minimizes $Q_D$, $\theta_{g,*}$ minimizes \cref{eq:argmin_applied}. Besides from \cref{pr:phitilde_phi_rel} we have
+\begin{dmath}
+\tilde{W}\theta_{g,*} \converges{\asurely}{D\to\infty} W\tilde{g}_*.
+\end{dmath}
+Finally \cref{eq:consitency1} shows that $W\tilde{g}_*\converges{\proba}{D\to\infty}Wg_*=f_*$, hence
+\begin{dmath*}
+\tildePhi{1:D}\theta_{g,*}\hiderel{=}\tilde{W}\theta_{g,*}\converges{\proba}{D\to\infty} f_*\hiderel{\in}\mathcal{H}_K.
+\end{dmath*}
+with $\theta_{g,*}=\theta_*$ defined in \cref{eq:argmin_RKHS}.
+\end{proof}
 \chapterend
 
 %----------------------------------------------------------------------------------------

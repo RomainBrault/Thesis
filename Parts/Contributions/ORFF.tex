@@ -7,6 +7,7 @@ Random Fourier Features have been proved useful to implement efficiently kernel 
  \end{dmath*}
  where $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{H},\mathcal{Y})$ and $\theta \in \mathcal{H}$. The methodology we propose works for operator-valued kernels defined on any \acf{LCA} group, noted ($\mathcal{X}, \groupop)$, for some operation noted $\groupop$. This allows us to use the general context of Pontryagin duality for \acl{FT} of functions on \acs{LCA} groups. Building upon a generalization of Bochner's theorem for operator-valued measures, an operator-valued kernel is seen as the \emph{\acl{FT}} of an operator-valued positive measure. From that result, we extend the principle of Random Fourier Feature for scalar-valued kernels and derive a general methodology to build Operator Random Fourier Feature when operator-valued kernels are shift-invariant according to the chosen group operation.
 
+\clearpage
 %----------------------------------------------------------------------------------------
 \section{Construction}
 \label{sec:construction}
@@ -268,7 +269,7 @@ The approximate feature map proposed in \cref{pr:ORFF-map} has direct link with 
 \end{dmath}
 Therefore $\tildePhi{1:D}(x)$ can be seen as an \say{operator-valued vector} corresponding the \say{stacking} of $D$ \iid~operator-valued realization of $\Phi_x$, the functional feature map. In the same way we can define an approximate feature operator $\tildeW{D}$.
 \begin{definition}[Random Fourier feature operator]
-Let $\theta=\vect_{j=1}^D\theta_j\in\left(\mathcal{Y}'\right)^D$, where $\theta\in\mathcal{Y}'$. We call random Fourier feature operator the linear application $W:\left(\mathcal{Y}'\right)^D\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ defined as follow.
+Let $\theta=\vect_{j=1}^D\theta_j\in\left(\mathcal{Y}'\right)^D$, where $\theta\in\mathcal{Y}'$. We call random Fourier feature operator the linear application $\tildeW{D}:\left(\mathcal{Y}'\right)^D\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ defined as follow.
 \begin{dmath}
 (\tildeW{D} \theta)(x) \hiderel{\colonequals} \tildePhi{1:D}(x)^*\theta\hiderel{=}\frac{1}{D}\sum_{j=1}^D \conj{\pairing{x,\omega_j}}B(\omega_j)\theta_j, \qquad \omega_j \hiderel{\sim} \mu.
 \end{dmath}
@@ -276,10 +277,10 @@ Let $\theta=\vect_{j=1}^D\theta_j\in\left(\mathcal{Y}'\right)^D$, where $\theta\
 The approximate feature operator is useful to show the relations between the approximate feature map with the functional feature map defined in \cref{pr:fourier_feature_map}.
 \begin{proposition} 
 \label{pr:phitilde_phi_rel}
-Let $g\in \mathcal{H}=L^2(\mathcal{\dual{X}},d\mu;\mathcal{Y}')$ and let $\theta \colonequals \vect_{j=1}^Dg(\omega_j)$ where $\omega_j\sim \mu$. Then for all $g\in\mathcal{H}$,
+Let $g\in \mathcal{H}=L^2(\mathcal{\dual{X}},d\mu;\mathcal{Y}')$ and let $\theta \colonequals \vect_{j=1}^Dg(\omega_j)$ and define $\mathcal{H}^D(\mathcal{Y}')\colonequals\Vect_{j=1}^D\mathcal{Y}'$, where $\omega_j\sim \mu$. Then for all $g\in\mathcal{H}$,
 \begin{propenum}
 \item \label{pr:cv_feature_map_1} $\tildePhi{1:D}(x)^*\theta \converges{\asurely}{D\to\infty} \Phi_x^*g$,
-\item \label{pr:cv_feature_map_2} $\frac{1}{D}\norm{\theta}_{\mathcal{Y}}^2 \converges{\asurely}{D\to\infty} \norm{g}_{L^2\left(\dual{\mathcal{X}}, d\mu; \mathcal{Y}'\right)}^2$.
+\item \label{pr:cv_feature_map_2} $\frac{1}{D}\norm{\theta}_{\mathcal{H}^D(\mathcal{Y}')}^2 \converges{\asurely}{D\to\infty} \norm{g}_{L^2\left(\dual{\mathcal{X}}, d\mu; \mathcal{Y}'\right)}^2$.
 \end{propenum}
 \end{proposition}
 \begin{proof}
@@ -291,8 +292,8 @@ Proof of \cref{pr:cv_feature_map_1}: since $\omega_1, \hdots \omega_D$ are \iid~
 \end{dmath*}
 Proof of \cref{pr:cv_feature_map_2}: again, since $\omega_1, \hdots \omega_D$ are \iid~random vectors and $g\in L^2(\dual{\mathcal{X}},d\mu;\mathcal{Y}')$, from the strong law of large numbers
 \begin{dmath*}
-\frac{1}{D}\norm{\theta}^2_{\mathcal{Y}}=\frac{1}{D}\sum_{j=1}^D\norm{g(\omega_j)}^2_{\mathcal{Y}}, \qquad \omega_j \hiderel{\sim} \mu \\
-\converges{\asurely}{D\to\infty} \int_{\dual{\mathcal{X}}} \norm{g(\omega)}_{\mathcal{Y}}^2d\mu(\omega)
+\frac{1}{D}\norm{\theta}^2_{\mathcal{H}^D(\mathcal{Y}')}=\frac{1}{D}\sum_{j=1}^D\norm{g(\omega_j)}^2_{\mathcal{Y}'}, \qquad \omega_j \hiderel{\sim} \mu \\
+\converges{\asurely}{D\to\infty} \int_{\dual{\mathcal{X}}} \norm{g(\omega)}_{\mathcal{Y}'}^2d\mu(\omega)
 \colonequals \norm{g}_{L^2\left(\dual{\mathcal{X}}, d\mu; \mathcal{Y}'\right)}^2
 \end{dmath*}
 \end{proof}
@@ -381,44 +382,66 @@ is $\dual{\mathcal{X}}=\mathbb{R}^d$, and the duality pairing is $\pairing{x \od
 which converges almost surely to $\expectation_{\mu}[\exp(-i\inner*{\log(x\odot z^{-1}+c)})A(\omega) ]=\expectation_{\mu}[\conj{\pairing{x\odot z^{-1},\omega}}A(\omega)]=K(x, z)$ when $D$ tends to infinity.
 \end{proof}
 
+\clearpage
 %----------------------------------------------------------------------------------------
 \section{Learning with ORFF}
 \label{sec:learning_with_operator-valued_random-fourier_features}
 We now turn our attention to learning function with an ORFF model that approximate an OVK model. In particular we study the case of Ridge regression.
 \subsection{Ridge regression}
 Let $\mathcal{S} = \Set{(x_i,y_i) | \forall i\inrange{1}{N}, \forall x_i\in\mathcal{X}, \forall y_i\in\mathcal{Y}}$ be a collection of i.i.d training samples.
-Given a local loss function $L: \mathcal{X}\times\mathcal{F}\times\mathcal{Y}\to \mathbb{R}^+$, we are interested in finding a \emph{vector-valued function} $f_*:\mathcal{X}\to\mathcal{Y}$, that lives in a RKHS and minimize a tradeoff between a data fitting term $L$ and a regularization term to prevent from overfitting. Namely finding $f_*\in\mathcal{H}_K$ such that
-\begin{dmath*}
-f_* = \argmin_{f\in\mathcal{H}_K}  \frac{1}{2N}\displaystyle\sum_{i=1}^NL(x_i, f, y_i) + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K},
+Given a local loss function $L: \mathcal{X}\times\mathcal{F}\times\mathcal{Y}\to \mathbb{R}_+$ such that $L$ is convex in $f$, we are interested in finding a \emph{vector-valued function} $f_*:\mathcal{X}\to\mathcal{Y}$, that lives in a RKHS and minimize a tradeoff between a data fitting term $L$ and a regularization term to prevent from overfitting. Namely finding $f_*\in\mathcal{H}_K$ such that
+\begin{dmath}
+f_* = \argmin_{f\in\mathcal{H}_K}  \frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f, y_i) + \frac{\lambda}{2}\norm{f}^2_{K},
 \label{eq:learning_rkhs}
+\end{dmath}
+where $\lambda\in\mathbb{R}_+$ is a regularization\mpar{Tychonov regularization.} parameter. A common choice of data fitting term for regression is $L:(x_i, f, y_i) \mapsto \norm{f(x_i)-y_i}_{\mathcal{Y}}^2$.
+\begin{remark}
+\label{rk:rkhs_bound}
+If for all $x_i\in\mathcal{X}$ and all $y_i\in\mathcal{Y}$ we have $L(x_i,0,y_i)\le 2\sigma_y^2$, then $\lambda\norm{f_*}_K\le\sigma_y^2$. Indeed, since $\mathcal{H}_K$ is a Hilbert space, $0\in\mathcal{H}_K$. Moreover $L$ is convex with respect to $f$, thus
+\begin{dmath*}
+\frac{\lambda}{2}\norm{f_*}^2_{K} \le \frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f_*, y_i) + \frac{\lambda}{2}\norm{f_*}^2_{K}
+\le \frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, 0, y_i) \hiderel{\le} \sigma_y^2
 \end{dmath*}
-where $\lambda\in\mathbb{R}_+$ is a regularization parameter. A common choice of data fitting term for regression is $L:x_i,\enskip f,\enskip y_i \mapsto \norm{f(x_i)-y_i}_{\mathcal{Y}}^2$. Regression in \acl{vv-RKHS} has been well studied and a cornerstone of learning in \acs{vv-RKHS} is the representer theorem\mpar{}.
+\end{remark}
+We now introduce a corollary from \citet{kurdila2006convex} showing that \cref{eq:learning_rkhs} attains a unique mimimizer.
+\begin{corollary}
+\label{cor:unique_minimizer}
+Let $\mathcal{H}$ be a Hilbert Space and $J:\mathcal{H}\to \mathbb{R}$ is a strongly lower semi-continuous convex and coercive function. Then $J$ is bounded from below and attains a minimizer \cite{kadri2015operator}.
+\end{corollary}
+This is easily verified for Ridge regression. Define
+\begin{dmath*}
+J_\lambda(f)=\frac{1}{2N}\sum_{i=1}^N\norm{f(x_i)-y_i}_{\mathcal{Y}}^2+\frac{\lambda}{2}\norm{f}_K^2,
+\end{dmath*}
+where $f\in\mathcal{H}_K$ and $\lambda\in\mathbb{R}_{>0}$. $J_\lambda$ is continuous and strongly convex. Additionally $J_\lambda$ is coercive since $\norm{f}_K$ is coercive, $\lambda>0$, and all the summands of $J_\lambda$ are positive. Hence for all positive $\lambda$, $f_*=\argmin_{f\in\mathcal{H}_K}J_\lambda(f)$ exists, is unique and attained.
+\paragraph{}
+Regression in \acl{vv-RKHS} has been well studied and a cornerstone of learning in \acs{vv-RKHS} is the representer theorem\mpar{Sometimes referred to as minimal norm interpolation theorem}.
 \begin{theorem}[Representer]
 Let $K$ be a $\mathcal{Y}$-Mercer Kernel and $\mathcal{H}_K$ its corresponding \acl{vv-RKHS}. The solution $f_*\in\mathcal{H}_K$ of the regularized optimization problem 
 \begin{dmath}
-f_* = \argmin_{f\in\mathcal{H}_K}  \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K},
+\label{eq:argmin_RKHS}
+f_* = \argmin_{f\in\mathcal{H}_K}  \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{K},
 \label{eq:learning_rkhs}
 \end{dmath}
-has the form $f_*=\sum_{i=1}^NK(x_i,\cdot)u_i$, where $u_i\in\mathcal{Y}$.
+has the form $f_*=\sum_{i=1}^NK(\cdot,x_i)u_i$, where $u_i\in\mathcal{Y}$.
 \end{theorem}
 This theorem was first introduced by \citet{Wahba90} in the case where $\mathcal{Y}=\mathbb{R}$. The extension to an arbitrary Hilbert space $\mathcal{Y}$ has been proved by many authors \citep{Brouard2011,kadri2015operator,Micchelli2005}. We present here the proof proposed by \citet{kadri2015operator}.
 \begin{proof}
-Let $J(f)=\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K}$ be the functional to minimize. We use the notion of Frechet derivative, noted $D_F$. This is the strongest notion of derivative in a normed vector space, see \citet{kurdila2006convex}.
-$f_*$ denotes the optimal vector in $\mathcal{H}_K$ such that $f_*=\argmin_{f\in\mathcal{H}_K}J(f){\scriptstyle\implies}D_F J(f_*)=0$. To compute the Frechet derivative $D_F$, we use the Gateaux derivative $D_G$ of $J$ with respect to $f\in\mathcal{H}_K$ in the direction $h\in\mathcal{H}_K$. The Gateaux derivative is defined by
+Let $J(f)=\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{K}$ be the functional to minimize. We use the notion of Frechet derivative, noted $D_F$. This is the strongest notion of derivative in a normed vector space, see \citet{kurdila2006convex}.
+$f_*$ denotes the optimal vector in $\mathcal{H}_K$ such§ that $f_*=\argmin_{f\in\mathcal{H}_K}J(f){\scriptstyle\implies}D_F J(f_*)=0$. To compute the Frechet derivative $D_F$, we use the Gateaux derivative $D_G$ of $J$ with respect to $f\in\mathcal{H}_K$ in the direction $h\in\mathcal{H}_K$. The Gateaux derivative is defined by
 \begin{dmath*}
 D_G J(f, h) = \lim_{t\to 0} \frac{J(f+th)-J(f)}{t}.
 \end{dmath*}
-Let $G_i(f)=\norm{f(x_i)-y_i}_{\mathcal{Y}}^2$. Then $J(f)=\frac{1}{2N}\sum_{i=1}^NG_i(f)+\frac{\lambda}{2}\norm{f}_{\mathcal{H}_K}^2$. Moreover the directional Gateaux derivative obey $D_GJ(f, h)=\inner{D_GJ(f),h}_{\mathcal{H}_K}$. Thus
+Let $G_i(f)=\norm{f(x_i)-y_i}_{\mathcal{Y}}^2$. Then $J(f)=\frac{1}{2N}\sum_{i=1}^NG_i(f)+\frac{\lambda}{2}\norm{f}_{K}^2$. Moreover the directional Gateaux derivative obey $D_GJ(f, h)=\inner{D_GJ(f),h}_{K}$. Thus
 \begin{enumerate}
 \item Regularization term:
 \begin{dmath}
 \label{enum:Gateaux_diff_reg}
-\lim_{t\to 0}\frac{\norm{f+th}^2_{\mathcal{H}_K}-\norm{f}_{\mathcal{H}_K}^2}{t}=2\inner{f,h}{\scriptstyle\implies}D_G\norm{f}_{\mathcal{H}_K}^2\hiderel{=}2f.
+\lim_{t\to 0}\frac{\norm{f+th}^2_{K}-\norm{f}_{K}^2}{t}=2\inner{f,h}{\scriptstyle\implies}D_G\norm{f}_{K}^2\hiderel{=}2f.
 \end{dmath}
 \item Data fitting term:
 \begin{dmath}
 \label{enum:Gateaux_diff_fit}
-\lim_{t\to 0}\frac{\norm{y_i-f(x_i)+th(x_i)}_{\mathcal{Y}}^2-\norm{y_i-f(x_i)}_{\mathcal{Y}}^2}{t} = -2\inner{y_i-f(x_i),h(x_i)}_{\mathcal{Y}} \hiderel{=} -2\inner{K_{x_i}(y_i-f(x_i)),h}_{\mathcal{H}_K}\\{\scriptstyle\implies}D_G G_i(f)\hiderel{=}-2K_{x_i}(y_i-f(x_i)).
+\lim_{t\to 0}\frac{\norm{y_i-f(x_i)+th(x_i)}_{\mathcal{Y}}^2-\norm{y_i-f(x_i)}_{\mathcal{Y}}^2}{t} = -2\inner{y_i-f(x_i),h(x_i)}_{\mathcal{Y}} \hiderel{=} -2\inner{K_{x_i}(y_i-f(x_i)),h}_{K}\\{\scriptstyle\implies}D_G G_i(f)\hiderel{=}-2K_{x_i}(y_i-f(x_i)).
 \end{dmath}
 \end{enumerate}
 Since $K$ is Mercer, $f$ is continuous. Applying corollary 4.1.1 in \citet{kurdila2006convex} shows that $J$ is Frechet differentiable and $\forall f\in\mathcal{H}_K$, $D_F J(f)=D_G J(f)$. Thus if $f_*=\argmin_{f\in\mathcal{H}_K}J(f)$ then $D_F J(f)=0$ so $D_G J(f)=0$. Eventually use \cref{enum:Gateaux_diff_reg} and \cref{enum:Gateaux_diff_fit} so that
@@ -427,62 +450,261 @@ D_G J(f_*)= \lambda f_*-\frac{1}{N}\sum_{i=1}^NK_{x_i}(y_i-f_*(x_i))\hiderel{=}0
 \end{dmath*}
 Let $u_i=\frac{(y_i-f_*(x_i)}{\lambda N}\in\mathcal{Y}$ to conclude the proof.
 \end{proof}
-The representer theorem show that minimizing a functional in a \acs{vv-RKHS} yields a solution which depends on all the points in the training set. Assuming that for all $x_i$, $x\in\mathcal{X}$ and for all $u_i\in\mathcal{Y}$ takes time $P$, computing $K(x_i, x)u_i$ making a prediction using the representer theorem take $O(NP)$. Obviously If $\mathcal{Y}=\mathbb{R}^P$, Then $P=p^2$ thus making a prediction cost $O(Np^2)$ operations.
+The representer theorem show that minimizing a functional in a \acs{vv-RKHS} yields a solution which depends on all the points in the training set. Assuming that for all $x_i$, $x\in\mathcal{X}$ and for all $u_i\in\mathcal{Y}$ it takes time $O(P)$, to compute $K(x_i, x)u_i$, making a prediction using the representer theorem take $O(NP)$. Obviously If $\mathcal{Y}=\mathbb{R}^p$, Then $P=O(p^2)$ thus making a prediction cost $O(Np^2)$ operations.
 \paragraph{}
 Instead learning a model $f$ that depends on all the points of the training set, we would like to learn a parametric model of the form
-$\tildef{1:D}(x)=\tildePhi{1:D}(x)^*\theta$, where $\theta$ lives in some redescription space $\left(\mathcal{Y}'\right)^D$.
-\begin{proposition}[Consitensy of ORFF \wrt~\acs{vv-RKHS}]
-Let $K$ be a $\mathcal{Y}$-Mercer Kernel such that $\tildePhi{1:D}(x)^\adjoint\tildePhi{1:D}(z)\approx K(x,z)$. Moreover let
-\begin{dmath*}
+$\tildef{1:D}(x)=\tildePhi{1:D}(x)^*\theta$, where $\theta$ lives in some redescription space\mpar{If $\mathcal{Y}=\mathbb{R}$ then $\mathcal{Y}'=\mathbb{R}$ thus $\theta=\mathbb{R}^D$ endowed with the euclidean inner product.} $\mathcal{H}^D\left(\mathcal{Y}'\right)\colonequals\Vect_{j=1}^D\mathcal{Y}'$. We are interested in finding a parameter vector $\theta_*$ such that
+\begin{dmath}
 \label{eq:argmin_applied}
-\theta_*=\argmin_{\theta\in\left(\mathcal{Y}'\right)^D} \frac{1}{2N}\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint \theta-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2D}\norm{\theta}^2_{\left(\mathcal{Y}'\right)^D}
+\theta_*=\argmin_{\theta\in\mathcal{H}^D\left(\mathcal{Y}'\right)} \frac{1}{2N}\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint \theta-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2D}\norm{\theta}^2_{\mathcal{H}^D\left(\mathcal{Y}'\right)}
+\end{dmath}
+Since $\theta\in\mathcal{H}^D\left(\mathcal{Y}'\right)$ lives in a different space than $f\in\mathcal{H}_K$ is makes no sense to show the convergence of $\theta_*$ to $f_*$. However we can verify that $\tildef{1:D}$ converges to $f\in\mathcal{H}_K$ pointwise. We first introduce the following lemma and assumptions. First we characterize extremum estimators. Let $\mathcal{H}$ be any Hilbert space.
+\begin{assumption}[EE]
+\label{ass:ee}
+The parameter $\tilde{g}_*\in\mathcal{H}$ is an extremum estimator of $Q_D$ if $\tilde{g}_*=\argmin_{g\in\mathcal{H}} Q_D(g)$.
+\end{assumption}
+To derive consistency we must ensure that the stochastic objective $Q_D$ function converges uniformly-weakly to some target function $Q_0$. Let $B(g,\epsilon)$ be the open ball in $\mathcal{H}$ with radius $\epsilon$ and $\mathcal{H}\setminus{B(g,\epsilon)}$ denotes its complement in $\mathcal{H}$.
+\begin{assumption}[U-SCON]
+\label{ass:uwcon}
+A \emph{stochastic} function $Q_D$ converges uniformly-strongly to some \emph{non-stochastic} function $Q_0$ if \begin{dmath*}
+\sup_{g\in\mathcal{H}}\abs{Q_D(g)-Q_0(g)}\converges{\asurely}{D\to\infty}0
 \end{dmath*}
-and
-\begin{dmath*}
-\label{eq:argmin_RKHS}
-f_*=\argmin_{f\in\mathcal{H}_K} \frac{1}{2N}\sum_{i=1}^N\norm{f(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K}
-\end{dmath*}
-Then $\tildePhi{1:D}(\cdot)^\adjoint\theta_* \converges{\proba}{D\to\infty}f_*\in\mathcal{H}_K$.
+\end{assumption}
+This is equivalent to say that $Q_D$ converges to $Q_0$ in probability in the uniform norm topology. Eventually the mimizers of $Q$ must be uniquely identifiable.
+\begin{assumption}[ID] 
+\label{ass:id}
+A function has unique identifiable minimizer if there exist $g_*\in\mathcal{H}$ such that for all $\epsilon\ge 0$, $\inf_{g\in \mathcal{H}\setminus{B(g_*,\epsilon)}} Q(g)>Q(g_*)$.
+\end{assumption}
+Note that if $Q$ is a strictly convex function of $g$, then \cref{ass:id} holds. These three assumptions combined yields the consistency of an estimator.
+\begin{proposition} If
+\cref{ass:ee}, \cref{ass:uwcon} and \cref{ass:id} hold then $\tilde{g}_* \converges{\asurely}{D\to\infty} g_*.$
 \end{proposition}
 \begin{proof}
-We have that for all $f\in\mathcal{H_K}$, there exists a $g\in\mathcal{H}$ such that $f(x)=(Wg)(x)=\Phi(x)^\adjoint g$ where $W$ is a partial isometry with initial subspace $(\Ker W)^\bot\subset\mathcal{H}$ and final subspace $\mathcal{H}_K$. Let
-\begin{dmath}
-\label{eq:argmin_HS}
-g_*=\argmin_{g\in\mathcal{H}} \frac{1}{2N}\sum_{i=1}^N\norm{(Wg)(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{g}^2_{\mathcal{H}_K}
-\end{dmath}
-Since $W$ is a partial isometry and \cref{eq:argmin_RKHS} has a unique global optimizer, \cref{eq:argmin_HS} has a unique global optimizer $g_*$ such that $Wg_*=f_*$. Let
-\begin{dmath}
-Q_0(g)=\frac{1}{2N}\sum_{i=1}^N\norm{(Wg)(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{g}^2_{\mathcal{H}_K},
-\end{dmath}
-and $\theta_g=\vect_{j=1}^Dg(\omega_j)$. We define the empirical estimator of $Q_0$ as
-\begin{dmath}
-Q_D(g)=\frac{1}{2N}\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint \theta_g-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2D}\norm{\theta_g}^2_{(\mathcal{Y}')^D}
-\end{dmath}
-With these notatition we have $g_*=\argmin_{g\in\mathcal{H}} Q_0(g)$. Moreover we note $\tilde{g}_*=\argmin_{g\in\mathcal{H}} Q_D(g)$. Then
-\begin{dmath}
-\label{eq:consitency1}
-\tilde{g}_* \converges{\proba}{D\to\infty} g_*
-\end{dmath}
-Let $\theta_{g,*}=\vect_{j=1}^D\tilde{g}_*(\omega_j)$. since $\tilde{g}_*$ minimizes $Q_D$, $\theta_{g,*}$ minimizes \cref{eq:argmin_applied}. Besides from \cref{pr:phitilde_phi_rel} we have
-\begin{dmath}
-\tilde{W}\theta_{g,*} \converges{\asurely}{D\to\infty} W\tilde{g}_*.
-\end{dmath}
-Finally \cref{eq:consitency1} shows that $W\tilde{g}_*\converges{\proba}{D\to\infty}Wg_*=f_*$, hence
-\begin{dmath*}
-\tildePhi{1:D}\theta_{g,*}\hiderel{=}\tilde{W}\theta_{g,*}\converges{\proba}{D\to\infty} f_*\hiderel{\in}\mathcal{H}_K.
-\end{dmath*}
-with $\theta_{g,*}=\theta_*$ defined in \cref{eq:argmin_RKHS}.
+
 \end{proof}
-\chapterend
+We are now ready to prove the consistency of ORFF with respect to the minimization in the RKHS, that is if we replace the model $f(x)=\sum_{i=1}^NK(\cdot, x_i)c_i$ by a model $f(x)=\tildePhi{1:D}(x)^\adjoint \theta$ and find the minimizer of the ridge regression problem, then when $D$ tends to infinity, both model return the \say{same} function.
+\begin{proposition}[Consitensy of ORFF \wrt~\acs{vv-RKHS}] Let $K$ be a $\mathcal{Y}$-Mercer Kernel. If $\theta_*\in\mathcal{H}^D\left(\mathcal{Y}'\right)$ is the minimizer of \cref{eq:argmin_applied} and $f_*\in\mathcal{H}_K$ is the minimizer of \cref{eq:argmin_RKHS}. Then 
+\begin{dmath}
+\tildePhi{1:D}(x)^\adjoint\theta_* \converges{\asurely}{D\to\infty}f_*(x),
+\end{dmath}
+for all $x\in\mathcal{X}$.
+\end{proposition}
+\begin{proof}
+% Let $(Wg)(x)=\Phi_x^\adjoint g$ be the feature operator associated to $\Phi$ and $\tildePhi{1:D}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D(\Phi_x y)(\omega_j)$, where $\omega_j$ are \iid~random vectors following the law $\mu$. Since $W$ is a partial isometry
+
+% We have that for all $f\in\mathcal{H_K}$, there exists a $g\in\mathcal{H}$ such that $(W^\adjoint f)(x)=g(x)=\Phi(x)^\adjoint g$ where $W$ is a partial isometry with initial subspace $(\Ker W)^\perp\subset\mathcal{H}$ and final subspace $\mathcal{H}_K$. 
+
+% \begin{dmath}
+% \label{eq:argmin_HS}
+% g_*=\argmin_{g\in(\Ker W)^\perp\subset\mathcal{H}} \frac{1}{2N}\sum_{i=1}^N\norm{(Wg)(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{g}^2_{\mathcal{H}}
+% \end{dmath}
+
+Define
+\begin{dmath}
+Q_0(g)=\frac{1}{2N}\sum_{i=1}^N\norm{(Wg)(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{g}^2_{\mathcal{H}}.
+\end{dmath}
+Moreover let $\tildePhi{1:D}(x_i)y=\Vect_{j=1}^D(\Phi_{x_i}y)(\omega_j)$ for all $y\in\mathcal{Y}$, and $\theta_g=\vect_{j=1}^Dg(\omega_j)$, where $\omega_j$ are \iid~random vectors following a law $\mu$. We define the empirical estimator of $Q_0$ as
+\begin{dmath}
+Q_D(g)=\frac{1}{2N}\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint \theta_g-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2D}\norm{\theta_g}^2_{\mathcal{H}^D\left(\mathcal{Y}'\right)}
+\end{dmath}
+Let $g_*=\argmin_{g\in\mathcal{H}}Q_0(g)$ and $\tilde{g}_*=\argmin_{g\in\mathcal{H}}Q_D(g)$ thus $\tilde{g}_*$ is an extremum estimator (\cref{ass:ee} holds). Notice that since $W$ is a bounded linear application, $Q_0$ is continuous strongly convex and coercive. By \cref{cor:unique_minimizer} attains an identifiable unique minimizer (\cref{ass:id} holds).
+
+Since W is bounded, $\Ker W$ is closed, so that we can perform the decomposition $\mathcal{H}=(\Ker W)^\perp\oplus \Ker W$. Then clearly by linearity of $W$ and the fact that for all $g\in\Ker W$, $Wg=0$,
+\begin{dmath*}
+g_*=\argmin_{g\in\mathcal{H}}Q_0(g)
+\hiderel{=}\argmin_{g\in(\Ker W)^\perp\oplus \Ker W}Q_0(g)
+\hiderel{=}\argmin_{g\in(\Ker W)^\perp}Q_0(g).
+\end{dmath*}
+Besides with similar arguments as in \cref{rk:rkhs_bound} we deduce that $\lambda\norm{g_*}_{\mathcal{H}}^2$ $\le$ $2\sigma^2_y$. As a result $g_*\in\mathcal{H}_\lambda\colonequals\Set{g\in(\Ker W)^\perp|\lambda\norm{g}_{\mathcal{H}}^2\le 2\sigma^2_y}$. Eventually
+\begin{dmath*}
+g_*=\argmin_{g\in\mathcal{H}}Q_0(g)\hiderel{=}\argmin_{g\in\mathcal{H}_\lambda}Q_0(g)
+\end{dmath*}
+% \begin{enumerate}
+% \item By assumption $\sup_{y\in\mathcal{Y}} \norm{y}\le \sigma_y$ thus from \cref{rk:rkhs_bound} we have that $\lambda\norm{f_*}^2_K$ is bounded by $2\sigma_y^2$ and so is $\lambda\norm{g_*}_{\mathcal{H}}^2$. We note $\mathcal{H}_K^{\lambda}=\Set{f\in\mathcal{H}_K|\lambda\norm{f}^2_K\le 2\sigma_y}$ and $\mathcal{H}^\lambda=\Set{g\in(\Ker W)^\perp|\lambda\norm{g}^2_{\mathcal{H}}\le 2\sigma_y}$.
+% Then 
+% \begin{dmath*}
+% f_*=\argmin_{f\in\mathcal{H}_K} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K}
+% =\argmin_{f\in\mathcal{H}_K^\lambda} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K}
+% \end{dmath*}
+% and $g_*=\argmin_{g\in(Ker W)^\perp} Q_0(g) 
+% \hiderel{=}\argmin_{g\in\mathcal{H}^\lambda} Q_0(g)$.
+% Besides the inclusion $\iota_K:\mathcal{H}_K\hookrightarrow\mathcal{C}(\mathcal{X};\mathcal{Y})$ is compact, thus the closed set $\mathcal{H}_K^{\lambda}=\Set{f\in\mathcal{H}_K|\lambda\norm{f}^2_K\le 2\sigma_y}$ is compact with respect to the compact-open topology. $W$ is a partial isometry with initial space $(\Ker W)^\perp$, the restriction $W|_{(\Ker W)^\perp}:(\Ker W)^\perp\to\mathcal{H}_K$ is an isometry. Thus the set $\mathcal{H}^\lambda=\Set{g\in(\Ker W)^\perp|\lambda\norm{g}^2_{\mathcal{H}}\le 2\sigma_y}=(W|_{(\Ker W)^\perp})^\adjoint \mathcal{H}_K^{\lambda}$ is compact.
+% \item It is easy to note that $Q_0$ is continuous and measureable. Besides since $f_*$ is unique and $W|_{(\Ker W)^\perp}$ is an isometry, $Q_0$ has unique minimizer $g_*$ such that $W|_{(\Ker W)^\perp}g_*=f_*$.
+% \item Suppose that $\norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}$ is bounded for all $\omega\in\dual{\mathcal{X}}$ as a consequence $\sup_{g\in\mathcal{H}^\lambda} \abs{Q_D(g)-Q_0(g)}$ is bounded thus from the strong law of large numbers $Q_D(g)\converges{\asurely}{D\to\infty}Q_0(g)$ uniformly.
+% \end{enumerate}
+% As a result, the extremum estimator $Q_D$ is consistent 
+% \begin{dmath}
+% \label{eq:consitency1}
+% \tilde{g}_* \converges{\proba}{D\to\infty} g_*
+% \end{dmath}
+% Let $\theta_{g,*}=\vect_{j=1}^D\tilde{g}_*(\omega_j)$. since $\tilde{g}_*$ minimizes $Q_D$, $\theta_{g,*}$ minimizes \cref{eq:argmin_applied}. Besides from \cref{pr:phitilde_phi_rel} we have
+% \begin{dmath}
+% \tilde{W}\theta_{g,*} \converges{\asurely}{D\to\infty} W\tilde{g}_*.
+% \end{dmath}
+% Finally \cref{eq:consitency1} shows that $W\tilde{g}_*\converges{\proba}{D\to\infty}Wg_*=f_*$, hence
+% \begin{dmath*}
+% \tildePhi{1:D}\theta_{g,*}\hiderel{=}\tilde{W}\theta_{g,*}\converges{\proba}{D\to\infty} f_*\hiderel{\in}\mathcal{H}_K.
+% \end{dmath*}
+% with $\theta_{g,*}=\theta_*$ defined in \cref{eq:argmin_RKHS}.
+\end{proof}
+
+\clearpage
 
 %----------------------------------------------------------------------------------------
-\section{Uniform bound on the approximation}
-\label{sec:uniform_bound_on_the_approximation}
+% \section{Consistency and generalization bounds}
+% \label{sec:consistency and generalization bounds}
+% \subsection{Operator-valued kernels}
+% In this section are interested in finding a minimizer $f_*:\mathcal{X}\to\mathcal{Y}$, where $\mathcal{X}$ is a Polish space and $\mathcal{Y}$ a separable Hilbert space such that for all $x_i$ in $\mathcal{X}$ and all $y_i$ in $\mathcal{Y}$,
+% \begin{dmath}
+% f_* = \argmin_{f\in\mathcal{H}_K} \sum_{i=1}^NL_{y_i}(f(x_i)) \hiderel{=} \argmin_{f\in\mathcal{H}_K} \mathcal{R}_{emp}(f, L),
+% \label{eq:pbOVK}
+% \end{dmath}
+% where $\mathcal{H}_K$ is a \acs{vv-RKHS} and $\forall y_i \in \mathcal{Y}$, $L_{y_i}$ a $L$-Lipschitz cost function. How does a function trained as in \cref{eq:pbOVK} generalizes on a test set?
+% \begin{proposition} Suppose that $f\in\mathcal{H}_K$ a \acs{vv-RKHS} where $\sup_{x\in\mathcal{X}} \Tr[K(x,x)] < T$ and $\norm{f}_{\mathcal{H}_K}<B$. Moreover let $L:\mathcal{Y}\times \mathcal{Y}\to[0, C]$ be a $L$-Lipschitz cost function. Then if we are given $N$ training points, we have with at least probability $1-2\delta$ that
+% \begin{dmath}
+% \mathcal{R}_{true}(f, L) \le \mathcal{R}_{emp}(f, L)  + 2\sqrt{\frac{2}{N}}\left( LBT^{1/2} + \frac{3C}{4}\sqrt{\ln(1/\delta)}\right).
+% \end{dmath}
+% \label{pr:ovk_gen}
+% \end{proposition}
+% \begin{proof}
+% This proof is due to Mauer \mpar{See \url{https://arxiv.org/pdf/1605.00251.pdf}}. We do not claim any originality for this proof. First let us introduce the notion of Rade\-macher complexity of a class of function $F$.
+% \begin{definition}
+% Let $\mathcal{X}$ be any set. Let $\epsilon_1$, $\hdots$, $\epsilon_N$ be $N$ independent Rade\-macher random variables, identically uniformly distributed on $\{-1;1\}$. For any class of functions $F:~\mathcal{X}\to\mathbb{R}$, then for all $x_1, \hdots x_N\in \mathcal{X}$ the quantity
+% \begin{dmath}
+% \mathcal{R}_N(F) \colonequals \expectation\left[ \sup_{f\in F} \sum_{i=1}^N \epsilon_i f(x_i) \right]
+% \end{dmath}
+% is called Rademacher complexity of the class $F$.
+% \end{definition}
+% In generalization bounds the Rademacher complexity of a class of function often involves a composition between a target function to be learn and a cost function, part of the risk we want to minimize. The idea is to bound the Rademacher complexity with a term that does not depends on the cost function, but only on the target function. Such a bound has be recently proposed by Mauer:
+% \begin{proposition}
+% \label{pr:radswap}
+% Let $\mathcal{X}$ be any set, $x_1, \hdots, x_N$ in $\mathcal{X}$, let $F$ be a class of function $f:~\mathcal{X}\to\mathcal{Y}$ and $h_i:~\mathcal{Y}\to\mathbb{R}$ be a $L$-Lipschitz function, where $\mathcal{Y}$ is a second countable Hilbert space endowed with euclidean inner product. Then
+% \begin{dmath}
+% \expectation \sup_{f\in F} \sum_{i=1}^N \epsilon_i h_i(x_i) \le \sqrt{2}L\sup_{f\in F}\sum_{i=1, k}^{i=N} \epsilon_{ik}f_k(x_i),
+% \end{dmath}
+% where $\epsilon_{ik}$ is a doubly indexed independent Rademacher sequence and $f_k(x_i)$ is the $k$-th component of $f(x_i)$
+% \end{proposition}
+% From now on we consider functions $f\in\mathcal{H}_K$ a vv-RKHS. Then there exists an induced feature-map $\Phi:~\mathcal{X}\to \mathcal{L}(\mathcal{Y}, \mathcal{H})$ such that for all $y, y'\in\mathcal{Y}$ the kernel is given by
+% \begin{dmath}
+% \inner{y, K(x,z)y'} = \inner{\Phi_xy, \Phi_zy'}.
+% \end{dmath}
+% We say that the feature space $\mathcal{H}$ is embed into the RKHS $\mathcal{H}_K$ by mean of the \emph{feature operator} $(W\theta)(x):=(\Phi_x^*\theta)$. Indeed $W$ defines a partial isometry between $\mathcal{H}$ and $\mathcal{H}_K$. Remember that $\mathcal{Y}$ a is supposed to be a separable Hilbert space so it has a countable basis and let the class of $\mathcal{Y}$-valued functions $F$ be
+% \begin{dmath}
+% F=\Set{ f | f: x \mapsto \Phi_x^* \theta, \enskip \norm{\theta} < B }\hiderel{\subset} \mathcal{H}_K.
+% \end{dmath}
+% Then from \cref{pr:radswap} and if $K$ is trace class, we have
+% \begin{dmath}
+% \label{eq:ker_bound}
+% \expectation \sup_{\norm{\theta}<B} \sum_{i=1}^N \epsilon_i L_{y_i}(\Phi_{x_i}^* \theta) \le \sqrt{2}L\expectation \sup_{\norm{\theta}<B} \sum_{i=1,k}^{i=N}\epsilon_{ik}\inner{\Phi_{x_i} \theta, e_k}
+% = \sqrt{2}L\expectation \sup_{\norm{\theta}<B} \inner*{ \theta, \sum_{i,k}^{i=N}\epsilon_{ik}\Phi_{x_i}e_k} 
+% \le \sqrt{2}LB\expectation \norm{\sum_{i=1,k}^{i=N}\epsilon_{ik}\Phi_{x_i}e_k} 
+% \le \sqrt{2}LB\sqrt{\sum_{i=1,k}^{i=N} \norm{\Phi_{x_i}e_k}^2 }
+% \le \sqrt{2}LB\sqrt{\sum_{i=1}^{i=N} \Tr\left[ K(x_i, x_i) \right] }.
+% \end{dmath}
+% From \url{http://www.jmlr.org/papers/volume3/bartlett02a/bartlett02a.pdf}:
+% \begin{theorem}
+% \label{th:gen_rad_bound}
+% Let $\mathcal{X}$ be any set, $F$ a class of functions $f:\mathcal{X}\to[0, C]$ and let $X_1, \hdots, X_N$ be a sequence of iid random variable with value in $\mathcal{X}$. Then for $\delta > 0$, with probability at least $1-\delta$, we have for all $f\in F$ that
+% \begin{dmath*}
+% \expectation f(X) \le \frac{1}{N} \sum_{i=1}^Nf(X_i) + \frac{2}{N}\mathcal{R}_N(F) + C\sqrt{\frac{9\ln(2/\delta)}{2N}}
+% \end{dmath*}
+% \end{theorem}
+% Conclude by plugin \cref{eq:ker_bound} in \cref{th:gen_rad_bound}.
+% \end{proof}
 
-%----------------------------------------------------------------------------------------
-\section{Consistency and generalization bounds}
-\label{sec:consistency and generalization bounds}
+% \subsection{Operator-valued Random Fourier Features}
+% Suppose we want to learn an approximate function such that for all $x\in\mathcal{X}$, $\tilde{f}_*(x) \approx f_*(x)$, where $f_*$ is defined as in \cref{eq:pbOVK}. In this section we suppose that $K$ is a shift invariant $\mathcal{Y}$-Mercer kernel on the \acs{LCA} group $(\mathcal{X},\star)$. Brault et al. showed that such a Kernel can be written for all $y$, $y'$ in $\mathcal{Y}$
+% \begin{dmath*}
+% \inner{\tilde{\Phi}(x)y, \tilde{\Phi}(z)y'}\approx \inner{y, K(x,z)y'}
+% \end{dmath*}
+% where 
+% \begin{dmath*}
+% \tilde{\Phi}(x)=\Vect_{j=1}^D \exp\left( -i\inner{x, \omega_j}B(\omega_j) \right), \enskip \omega_j \hiderel{\sim} \mu
+% \label{eq:ORFF}
+% \end{dmath*}
+% such that $\inner{y, B(\omega)B(\omega)^*y'}\frac{d\mu}{d\omega}=\FT{\inner{y, K(\cdot y')})}(\omega)$. We are interested in solving \cref{eq:pbOVK} with the feature map defined from the kernel approximation defined in \cref{eq:ORFF}. Namely:
+% \begin{dmath*}
+% f_* = \argmin_{f\in\tilde{F}} \sum_{i=1}^NL_{y_i}(\tilde{f}(x_i))
+% \hiderel{=} \argmin_{f\in\tilde{F}} \mathcal{R}_{emp}(\tilde{f}, L)
+% = \argmin_{\theta\in\mathcal{Y}^D} \sum_{i=1}^NL_{y_i}(\tilde{\Phi}(x_i)^*\theta).
+% \end{dmath*}
+% \begin{proposition} Suppose that $\Tr[\tilde{K}_e(0)] \le T$ and $\norm{\theta}_2<\frac{B}{D}$. Let $L:\mathcal{Y}\times \mathcal{Y}\to[0, C]$ be a $L$-Lipschitz cost function. Then if we are given $N$ training points, we have with at least probability $1-2\delta$ that
+% \begin{dmath*}
+% \mathcal{R}_{true}(\tilde{f}, L) - \min_{f\in F}\mathcal{R}_{true}(f, L) \le O\left(\underbrace{\frac{1}{\sqrt{N}}\left(LBT^{1/2}+\frac{3C}{4}\sqrt{\ln\left(\frac{1}{\delta}\right)}\right)}_{\text{estimation error}}+\underbrace{\frac{LB}{\sqrt{D}}\left(1+\sqrt{\ln\left(\frac{1}{\delta}\right)}\right)}_{\text{approximation error}}\right)
+% \end{dmath*}
+% \label{pr:ovk_gen}
+% \end{proposition}
 
+
+
+% \begin{proof}
+% We follow the proof of \url{https://people.eecs.berkeley.edu/~brecht/papers/08.rah.rec.nips.pdf}. It is an adaptation of the original proof in the light of the recent results of Mauer. We first define the two following sets:
+% \begin{dmath}
+% F=\Set{ f | f:\enskip x \mapsto \Phi_x^* \theta, \enskip \norm{\theta(\omega)} < Bp_\mu(\omega) }\hiderel{\subset} \mathcal{H}_K.
+% \end{dmath}
+% and
+% \begin{dmath}
+% \tilde{F}=\Set{ f | f: x \mapsto \tilde{\Phi}_x^* \theta, \enskip \norm{\theta_j} < \frac{B}{D}}\hiderel{\subset} \mathcal{H}.
+% \end{dmath}
+% \begin{proposition}[Existence of approximation function] Let $\nu$ be a measure on $\mathcal{X}$, and $f_*$ a function in $F$. If $\omega_1, \hdots, \omega_D$ are drawn i.i.d. from $\mu$ then with probability at least $1 - \delta$, there exists a function $\tilde{f}\in \tilde{F}$ such that
+% \begin{dmath}
+% \sqrt{\int_{\mathcal{X}}\norm{f(x)-\tilde{f}(x)}^2_{\mathcal{Y}}d\mu(x)}\le \frac{B}{\sqrt{D}}\left(1 + \sqrt{2\log(1/\delta)} \right)
+% \end{dmath}
+% \label{pr:existence_app}
+% \end{proposition}
+
+% We use the following lemma of Rahimi and Recht:
+% \begin{lemma}
+% \label{lm:concentration_hilbert}
+% Let $X_1, \hdots X_D$ be random variables with value in a ball $\mathcal{H}$ with radius $M$ centered around the origin in a Hilbert space. Denote the sample average $\bar{X}=\frac{1}{D}\sum_{j=1}^DX_j$. Then with probability $1-\delta$,
+% \begin{dmath}
+% \norm{\bar{X}-\expectation\bar{X}}\le \frac{M}{\sqrt{D}}\left(1 + \sqrt{2\log(1/\delta)} \right).
+% \end{dmath}
+% \end{lemma}
+% \begin{proof}
+% See \url{https://people.eecs.berkeley.edu/~brecht/papers/08.rah.rec.nips.pdf}, lemma 4 of the appendix.
+% \end{proof}
+% Since $f_*\in F$, we can write $f_*(x)=\int_{\omega\in\dual{\mathcal{X}}}\pairing{x,\omega}A(\omega)\theta(\omega)d\omega$. Construct the functions $f_j=\pairing{\cdot, \omega_j}A(\omega_j)\theta_j$, $j=1,\dots, D$ with $\theta_j:=\theta(\omega_j)/p_\mu(\omega_j)$. Let $\tilde{f}=\frac{1}{D}\sum_{j=1}^Df_j$ be the sample average of these functions. Then $\tilde{f}\in \tilde{F}$ because $\norm{\theta_j}/D\le B/D$. Also under the inner product $\inner{f,g}=\int_{\mathcal{X}} f(x)g(x)d\mu(x)$ we have that $\norm{\pairing{\cdot, \omega_j}A(\omega_j)\theta_j}\le B$. The claim follow by applying \cref{lm:concentration_hilbert} to $f_1, \hdots f_D$ under this inner product.
+% \end{proof}
+
+% \begin{proposition}[Bound on the approximation error] Suppose that $f\in F$ and $L_{y_i}$ is a $L$-Lipschitz cost function. With probability $1-\delta$ there exist a function $\tilde{f}\in \tilde{F}$ such that
+% \begin{dmath}
+% \mathcal{R}(\tilde{f}, L_{y_i})\le\mathcal{R}(f, L_{y_i}) + \frac{LB}{\sqrt{D}}\left(1 + \sqrt{2\log(1/\delta)} \right)
+% \end{dmath}
+% \label{pr:bound_app_error}
+% \end{proposition}
+% \begin{proof} For any two functions $f$ and $g$, the Lipschitz condition on $L_{y_i}$ followed by the concavity of square root gives
+% \begin{dmath}
+% \mathcal{R}(f, L) - \mathcal{R}(f, L) = \expectation \left[L(f(x)) - L(g(x))\right]
+% \le \expectation \norm{L(f(x)) - L(g(x))}
+% \le L \expectation \norm{f(x) - g(x)}
+% \le L \sqrt{\expectation \norm{f(x) - g(x)}^2}
+% \end{dmath}
+% Eventually apply \cref{pr:existence_app} to conclude.
+% \end{proof}
+% \begin{proposition}[Bound on the estimation error] 
+% \label{pr:bound_est_error}
+% Suppose $L: \mathcal{Y}\times\mathcal{Y}\to [0; C]$ is $L$-Lipschitz. Let $\omega_1, \hdots, \omega_D$ be fixed. If $\{(x_i, y_i)\}\subset(\mathcal{X}\times \mathcal{Y})^N$ are drawn i.i.d. from a fixed distribution, then for $\delta>0$ with probability $1-\delta$ over the dataset we have
+% \begin{dmath}
+% \forall\tilde{f}\in\mathcal{F}, \enskip \mathcal{R}_{true}(\tilde{f}, L) \le \mathcal{R}_{emp}(\tilde{f}, L) + \frac{1}{\sqrt{N}}\left( BL\sqrt{2\Tr\left[ \tilde{K}_e(0) \right]}+C\sqrt{\frac{9\ln(2/\delta)}{2}}\right)
+% \end{dmath}
+% \end{proposition}
+% \begin{proof}
+% Apply \cref{th:gen_rad_bound}. We get
+% \begin{equation}
+% \mathcal{R}_{true}(f, L) \le \mathcal{R}_{emp}(f, L) + \frac{2}{N}\mathcal{R}_N(F) + C\sqrt{\frac{9\ln(2/\delta)}{2N}}.
+% \label{eq:est_bound}
+% \end{dmath}
+% Since $f\in F$, $\forall j\inrange{1}{D},\enskip\norm{\theta_j}_\mathcal{Y}<\frac{B}{D}$; and recall that $\tilde{\Phi}(x)=\vect_{j=1}^D\Phi_x(\omega_j)$. Now with similar arguments as in \cref{eq:ker_bound} we have
+% \begin{dmath}
+% \mathcal{R}_N(F) \le \sqrt{2}BL\sqrt{N\Tr\left[K(0)\right]}
+% \end{dmath}
+% Plugin back in \cref{eq:est_bound} yields the desired result.
+% \end{proof}
+
+\clearpage
 %----------------------------------------------------------------------------------------
 \section{Conclusions}
 \label{sec:conclusions}
+
+\chapterend

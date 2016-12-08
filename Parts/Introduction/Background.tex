@@ -281,9 +281,9 @@ Some direct consequences follows from the definition.
 \item The kernel reproduces the value of a function $f\in\mathcal{H}$ at a point $x\in\mathcal{X}$ since for all $y\in\mathcal{Y}$ and $x\in\mathcal{X}$, $\text{ev}_x^\adjoint y=K_xy=K(\cdot,x)y$ so that $\inner{f(x),y}_{\mathcal{Y}}=\inner{f,K(\cdot, x)y}_{\mathcal{H}}$.
 \item The set $\Set{K_xy| \forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}$ is total in $\mathcal{H}$. Namely,
 \begin{dmath*}
-\left(\bigcup_{x\in\mathcal{X}}\Ima K_x\right)^{\bot}=\Set{0}.
+\left(\bigcup_{x\in\mathcal{X}}\Ima K_x\right)^{\perp}=\Set{0}.
 \end{dmath*}
-If $f\in(\cup_{x\in\mathcal{X}}\Ima K_x)^{\bot}$, then for all $x\in\mathcal{X}$, $f\in(\Ima K_x)^{\bot}=\Ker K_x^\adjoint$, hence $f(x)=0$ for all $x\in\mathcal{X}$ that is $f=0$.
+If $f\in(\cup_{x\in\mathcal{X}}\Ima K_x)^{\perp}$, then for all $x\in\mathcal{X}$, $f\in(\Ima K_x)^{\perp}=\Ker K_x^\adjoint$, hence $f(x)=0$ for all $x\in\mathcal{X}$ that is $f=0$.
 \item Finally for all $x\in\mathcal{X}$ and all $f\in\mathcal{H}$, $\norm{f(x)}_{\mathcal{Y}}\le \sqrt{\norm{K(x,x)}_{\mathcal{Y},\mathcal{Y}}}\norm{f}_{\mathcal{H}}$. This come from the fact that $\norm{K_x}=\norm{K_x^\adjoint}=\sqrt{\norm{K(x,x)}_{\mathcal{Y},\mathcal{Y}}}$ and the operator norm is sub-multiplicative.
 \end{enumerate}
 Additionally given an \acl{OVK} of positive type, it defines a unique \acs{vv-RKHS}.
@@ -312,7 +312,7 @@ which implies that
 \begin{dmath*}
 \norm{f(x)}_{\mathcal{Y}} \le \norm{f}_{\mathcal{H}_0}\sqrt{\norm{K(x,x)}_{\mathcal{Y},\mathcal{Y}}}
 \end{dmath*}
-Therefore if $\inner{f,f}_{\mathcal{H}_0}$ then $f=0$. Eventually we deduce that $\inner{\cdot,\cdot}_{\mathcal{H}_0}$ is a scalar product on $\mathcal{H}_0$. Hence $\mathcal{H}_0$ is a pre-Hilbert space. To make it a (complete) Hilbert space we need to take the completion of this space. Let $\mathcal{H}$ be the completion of $\mathcal{H}_0$. Moreover let $K_x:\mathcal{Y}\to\mathcal{H}$ where $K_xy=K_{x,y}$. By construction $K_x$ is bounded and let $W:\mathcal{H}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ where $(Wf)(x)=K_x^\adjoint f$. The operator $W$ is injective. Indeed if $Wf=0$ then for all $x\in\mathcal{X}$, $f\in\Ker K_x^\adjoint=(\Ima f)^{\bot}$. since the set $\cup_{x\in\mathcal{X}}\Ima K_x=\Set{K_xy|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}$ generates by definition $\mathcal{H}_0$, we have $f=0$. Besides, as $W$ is injective, we have for all $f_1$, $f_2\in\mathcal{H}_0$ $(Wf_1)(x)=(Wf_2)(x){\scriptstyle\implies} f_1(x)=f_2(x)$ pointwise in $\mathcal{H}$ so that we can identify $\mathcal{H}$ with a \emph{subspace} of $\mathcal{F}(\mathcal{X};\mathcal{Y})$. Hence $K_x^\adjoint f=(Wf)(x)=f(x)=\text{ev}_xf$, showing that $\mathcal{H}$ is a \acl{vv-RKHS} with reproducing kernel
+Therefore if $\inner{f,f}_{\mathcal{H}_0}$ then $f=0$. Eventually we deduce that $\inner{\cdot,\cdot}_{\mathcal{H}_0}$ is a scalar product on $\mathcal{H}_0$. Hence $\mathcal{H}_0$ is a pre-Hilbert space. To make it a (complete) Hilbert space we need to take the completion of this space. Let $\mathcal{H}$ be the completion of $\mathcal{H}_0$. Moreover let $K_x:\mathcal{Y}\to\mathcal{H}$ where $K_xy=K_{x,y}$. By construction $K_x$ is bounded and let $W:\mathcal{H}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ where $(Wf)(x)=K_x^\adjoint f$. The operator $W$ is injective. Indeed if $Wf=0$ then for all $x\in\mathcal{X}$, $f\in\Ker K_x^\adjoint=(\Ima f)^{\perp}$. since the set $\cup_{x\in\mathcal{X}}\Ima K_x=\Set{K_xy|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}$ generates by definition $\mathcal{H}_0$, we have $f=0$. Besides, as $W$ is injective, we have for all $f_1$, $f_2\in\mathcal{H}_0$ $(Wf_1)(x)=(Wf_2)(x){\scriptstyle\implies} f_1(x)=f_2(x)$ pointwise in $\mathcal{H}$ so that we can identify $\mathcal{H}$ with a \emph{subspace} of $\mathcal{F}(\mathcal{X};\mathcal{Y})$. Hence $K_x^\adjoint f=(Wf)(x)=f(x)=\text{ev}_xf$, showing that $\mathcal{H}$ is a \acl{vv-RKHS} with reproducing kernel
 \begin{dmath*}
 K_{\mathcal{H}}(x,z)y\hiderel{=}(\text{ev}^\adjoint_zy)(x)\hiderel{=K}(x,z)y.
 \end{dmath*}
@@ -343,18 +343,18 @@ K(x,z)=\Phi^\adjoint_x\Phi_z, \enskip \forall x, z\hiderel{\in}\mathcal{X}.
 \end{dmath*}
 $W^\adjoint W$ is the orthogonal projection onto 
 \begin{dmath*}
-  (\Ker W)^\bot = \lspan\Set{ \Phi_x y | \forall x\hiderel{\in}\mathcal{X},\enskip\forall y\hiderel{\in}\mathcal{Y} }.
+  (\Ker W)^\perp = \lspan\Set{ \Phi_x y | \forall x\hiderel{\in}\mathcal{X},\enskip\forall y\hiderel{\in}\mathcal{Y} }.
 \end{dmath*}
 Then $\norm{f}_K=\inf\Set{ \norm{g}_{\mathcal{H}} | \forall g \in\mathcal{H},\enskip Wg=f }$.
 \end{proposition}
 \begin{proof} The operator $(Wg)(x)=\Phi(x)^\adjoint g$ ensure that the nullspace of $W$ is $\mathcal{N}=\Ker W=\cap_{x\in\mathcal{X}}\Ker \Phi(x)^\adjoint$. Since $\Phi(x)$ is bounded, $\Phi(x)$ is a continuous operator, thus for all $x\in\mathcal{X}$, $\Ker \Phi(x)^\adjoint$ is closed so that $\mathcal{N}$ is closed. Moreover,
 \begin{dmath*}
-\mathcal{N}\hiderel{=}\Ker W\hiderel{=}\bigcap_{x\in\mathcal{X}}\Ker \Phi(x)^\adjoint\hiderel{=}\bigcap_{x\in\mathcal{X}}\left(\Ima \Phi(x)\right)^{\bot}\hiderel{=}\left(\bigcup_{x\in\mathcal{X}}\Ima \Phi(x)\right)^{\bot}
+\mathcal{N}\hiderel{=}\Ker W\hiderel{=}\bigcap_{x\in\mathcal{X}}\Ker \Phi(x)^\adjoint\hiderel{=}\bigcap_{x\in\mathcal{X}}\left(\Ima \Phi(x)\right)^{\perp}\hiderel{=}\left(\bigcup_{x\in\mathcal{X}}\Ima \Phi(x)\right)^{\perp}
 \end{dmath*}
-So that $\mathcal{N}^\bot=\cup_{x\in\mathcal{X}}\Ima \Phi(x)$ and the restriction of $W$ to $\mathcal{N}^{\bot}$ is injective. 
+So that $\mathcal{N}^\perp=\cup_{x\in\mathcal{X}}\Ima \Phi(x)$ and the restriction of $W$ to $\mathcal{N}^{\perp}$ is injective. 
 \paragraph{}
-Let $\mathcal{H}_K=\Ima W$ be a vector space. Define the unique inner product on $\mathcal{H}_K$ such that $W$ becomes a partial isometry from $\mathcal{H}$ onto $\mathcal{H}_K$. This is possible by taking $\inner{\cdot,\cdot}_K\colonequals\inner{(W|_{\mathcal{N}^{\bot}})^{-1}\cdot, (W|_{\mathcal{N}^{\bot}})^{-1}\cdot}_{\mathcal{H}}=\inner{W\cdot,W\cdot}_{\mathcal{H}}$ 
-which exist and is unique since the restriction of $W$ to $\mathcal{N}^{\bot}$ is injective. We call again this new partial isometry $W$. We show that $\mathcal{H}_K$ is a \acl{vv-RKHS}. Since $W^\adjoint W$ is a projection on $\mathcal{N}^{\bot}$, given $f\in\mathcal{H}_K$, where $f=Wg$ and $g\in\mathcal{N}^{\bot}$ we have for all $x\in\mathcal{X}$
+Let $\mathcal{H}_K=\Ima W$ be a vector space. Define the unique inner product on $\mathcal{H}_K$ such that $W$ becomes a partial isometry from $\mathcal{H}$ onto $\mathcal{H}_K$. This is possible by taking $\inner{\cdot,\cdot}_K\colonequals\inner{(W|_{\mathcal{N}^{\perp}})^{-1}\cdot, (W|_{\mathcal{N}^{\perp}})^{-1}\cdot}_{\mathcal{H}}=\inner{W\cdot,W\cdot}_{\mathcal{H}}$ 
+which exist and is unique since the restriction of $W$ to $\mathcal{N}^{\perp}$ is injective. We call again this new partial isometry $W$. We show that $\mathcal{H}_K$ is a \acl{vv-RKHS}. Since $W^\adjoint W$ is a projection on $\mathcal{N}^{\perp}$, given $f\in\mathcal{H}_K$, where $f=Wg$ and $g\in\mathcal{N}^{\perp}$ we have for all $x\in\mathcal{X}$
 \begin{dmath*}
 f(x)\hiderel{=}(Wg)(x)\hiderel{=}\Phi(x)^\adjoint g\hiderel{=}\Phi(x)^\adjoint W^\adjoint Wg=(W\Phi(x))^\adjoint f.
 \end{dmath*}
@@ -368,7 +368,7 @@ K(x,z)\hiderel{=}\text{ev}_x\text{ev}_z^\adjoint\hiderel{=}(W\Phi(x))^\adjoint(W
 \end{dmath*}
 Since $W^\adjoint W$ is the identity on $\Ima \Phi(z)$. Hence $\mathcal{H}_K$ is a \acs{vv-RKHS} (see proof of \cref{pr:unique_rkhs}).
 \end{proof}
-We call $\Phi$ a \emph{feature map}, $W$ a \emph{feature operator} and $\mathcal{H}$ a \emph{feature space}. Since $W$ is a partial isometry from $(\Ker W)^\bot$ onto $\mathcal{H}_K$, the map $W$ allows us to identify $\mathcal{H}_K$ with the closed subspace $(\Ker W)^\bot$ of $\mathcal{H}$. 
+We call $\Phi$ a \emph{feature map}, $W$ a \emph{feature operator} and $\mathcal{H}$ a \emph{feature space}. Since $W$ is a partial isometry from $(\Ker W)^\perp$ onto $\mathcal{H}_K$, the map $W$ allows us to identify $\mathcal{H}_K$ with the closed subspace $(\Ker W)^\perp$ of $\mathcal{H}$. 
 % With mild abuse of language, we say that $\mathcal{H}_K$ is embed into $\mathcal{H}$ by mean of the feature operator $W$. If we choose the trivial feature map $\Phi_x=K_x$ then the feature operator is the identity. 
 In this work we mainly focus on the class kernels inducing a \acs{vv-RKHS} of continuous functions. Such kernels are named $\mathcal{Y}$-Mercer kernels.
 \begin{definition}[$\mathcal{Y}$-Mercer kernel] A reproducing kernel $K:\mathcal{X}\times \mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called $\mathcal{Y}$-Mercer kernel if $\mathcal{H}_K$ is a subspace of $\mathcal{C}(\mathcal{X};\mathcal{Y})$.
@@ -396,7 +396,7 @@ The separability of $\mathcal{X}$ assure that there exist a countable dense subs
 \begin{dmath*}
 \mathcal{S}=\bigcup_{x\in\mathcal{X}_0}\Ima K_x \hiderel{=}\set{K_xy|\forall x\in\mathcal{X}_0, \forall y\in\mathcal{Y}}\hiderel{\subset} \mathcal{H}_K
 \end{dmath*}
-is separable too. We show that $\mathcal{S}$ is total in $\mathcal{H}_K$ so that $\mathcal{H}_K$ is separable. If for all $x\in\mathcal{X}_0$, $f\in\mathcal{S}^{\bot}$, then $f\in\Ker K_x^\adjoint$. Namely $f(x)=\text{ev}_xf=0$. Since $f$ is continuous and $\mathcal{X}_0$ is dense in $\mathcal{X}$, for all $x\in\mathcal{X}$, $f(x)=0$ so $f=0$.
+is separable too. We show that $\mathcal{S}$ is total in $\mathcal{H}_K$ so that $\mathcal{H}_K$ is separable. If for all $x\in\mathcal{X}_0$, $f\in\mathcal{S}^{\perp}$, then $f\in\Ker K_x^\adjoint$. Namely $f(x)=\text{ev}_xf=0$. Since $f$ is continuous and $\mathcal{X}_0$ is dense in $\mathcal{X}$, for all $x\in\mathcal{X}$, $f(x)=0$ so $f=0$.
 \end{proof}
 
 \begin{proposition}[Countable orthonormal basis for $\mathcal{Y}$-Mercer kernel \citep{carmeli2006vector}]

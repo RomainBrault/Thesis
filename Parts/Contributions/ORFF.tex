@@ -159,10 +159,10 @@ K_e(x\groupop \inv{z})_{ij} \hiderel{=} \FT{A(\cdot)_{ij}\rho(\cdot)}(x\groupop 
 \begin{remark}
 Note that although the \acl{FT} of $K_e$ yields a unique operator-valued function $C(\cdot)$, the decomposition of $C(\cdot)$ into $A(\cdot)\rho(\cdot)$ is again not unique. The choice of the decomposition may be justified by the computational cost or by the nature of the constants involved in the uniform convergence of the estimator.
 \end{remark}
-Another difficulty arise from the fact that the quantity $\sup_{\omega\in\dual{\mathcal{X}}} \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}$ obtained in \cref{pr:spectral} might not bounded. The unboundedness of $\norm{A(\cdot)}_{\mathcal{Y},\mathcal{Y}}$ forbid the use of the most simple concentrations inequalities -- which require the boundedness of the random variable to be controlled. Therefore in the context of \acl{OVK} concentration inequalities for unbounded random operators should be used. However, as pointed out by \citet{minh2016operator}, under some condition on the trace of $K_e(\delta)$, it is possible to turn $A(\cdot)$ into a bounded random operator for all $\omega$ in $\dual{\mathcal{X}}$. The idea is to define a sum measure $\rho=\sum_{j\in\mathbb{N}}\rho_{e_j}$, which gives rise to bounded operator $A(\omega)$ and is idependant of the $\Set{e_j}_{j\in\mathbb{N}}$ base, instead of constructing a measure from the operator norm as in \cref{pr:spectral}. Additionally with such construction the measure associated to $A(\cdot)$ is \emph{independant} from the basis of $\mathcal{Y}$. In this proof we relax the assumptions of \citet{minh2016operator} which requires $\int_{\mathcal{X}}\abs{\Tr{K_e(\delta)}}d\delta$ to be well defined. We only require $\Tr{K_e(e)}$ to be well defined.
+Another difficulty arise from the fact that the quantity $\sup_{\omega\in\dual{\mathcal{X}}} \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}$ obtained in \cref{pr:spectral} might not bounded. The unboundedness of $\norm{A(\cdot)}_{\mathcal{Y},\mathcal{Y}}$ forbid the use of the most simple concentrations inequalities -- which require the boundedness of the random variable to be controlled. Therefore in the context of \acl{OVK} concentration inequalities for unbounded random operators should be used. However, as pointed out by \citet{minh2016operator}, under some condition on the trace of $K_e(\delta)$, it is possible to turn $A(\cdot)$ into a bounded random operator for all $\omega$ in $\dual{\mathcal{X}}$. The idea is to define a sum measure $\rho=\sum_{j\in\mathbb{N}}\rho_{e_j}$, which gives rise to bounded operator $A(\omega)$ and is idependant of the $\Set{e_j}_{j\in\mathbb{N}}$ base, instead of constructing a measure from the operator norm as in \cref{pr:spectral}. Additionally with such construction the measure associated to $A(\cdot)$ is \emph{independant} from the basis of $\mathcal{Y}$. In this proof we relax the assumptions of \citet{minh2016operator} which requires $\int_{\mathcal{X}}\abs{\Tr{K_e(\delta)}}d\Haar(\delta)$ to be well defined. We only require $\Tr{K_e(e)}$ to be well defined.
 \begin{proposition}[Bounded shift-invariant $\mathcal{Y}$-Mercer kernel spectral decomposition]
 \label{pr:trace_measure}
-Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel. If for all $y$ and $y'$ in $\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},\Haar)$ and $\Tr\left[K_e(e)\right]\in\mathbb{R}$, then
+Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel. If for all $y$ and $y'$ in $\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},\Haar)$ and $\Tr K_e(e)\in\mathbb{R}$, then
 \begin{dmath}
 \inner{y', K_e(\delta)y}
 =\expectation_{\dual{\Haar},\rho_{\Tr}}\left[\conj{\pairing{\delta, \omega}}\inner{y, A_{\Tr}(\omega)y'}\right].
@@ -188,29 +188,30 @@ A_{\Tr}(\omega)=c_{\Tr}\Tr\left[C(\omega)\right]^{-1}C(\omega)
 Moreover
 \begin{propenum}
 \item For all $y$, $y'\in\mathcal{Y}$, $\inner{y, A_{\Tr}(\cdot)y'}\in L^1(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho_{\Tr}})$.
-\item $A_{\Tr}(\omega)$ is non-negative for $\probability_{\dual{\Haar},\rho_{\Tr}}$-almosts all $\omega\in\dual{\mathcal{X}}$,
+\item $A_{\Tr}(\omega)$ is non-negative for all $\omega\in\dual{\mathcal{X}}$,
 \item $\sup_{\omega\in\dual{\mathcal{X}}}\norm{A_{\Tr}(\omega)}_{\mathcal{Y},\mathcal{Y}}\le c_p$,
-\item $A_{\Tr}(\cdot)$ and $\mu_{\Tr}$ are even functions.
+\item $A_{\Tr}(\cdot)$ and $\rho_{\Tr}$ are even functions.
 \end{propenum}
 \end{proposition}
 \begin{proof}
 Let $\Set{e_j}_{j\in\mathbb{N}}$ be an orthonormal basis of $\mathcal{Y}$. Notice that
 \begin{dmath*}
-\int_{\dual{\mathcal{X}}}\inner{e_j,C(\omega)e_j}d\omega=\int_{\dual{\mathcal{X}}}\underbrace{\conj{\pairing{e,\omega}}}_{=1}\inner{e_j,C(\omega)e_j}d\omega
-\hiderel{=}\inner{e_j,K_e(e)e_j}.
+\int_{\dual{\mathcal{X}}}\inner{e_j,C(\omega)e_j}d\dual{\Haar}(\omega)
+=\int_{\dual{\mathcal{X}}}\underbrace{\conj{\pairing{e,\omega}}}_{=1}\inner{e_j,C(\omega)e_j}d\dual{\Haar}(\omega)
+=\inner{e_j,K_e(e)e_j}.
 \end{dmath*}
 Since $C(\omega)$ is non-negative, all the $\inner{e_j,C(\omega)e_j}$. Thus using the monotone convergence theorem,
 \begin{dmath*}
-\int_{\dual{\mathcal{X}}}\Tr\left[C(\omega)\right] d\omega
-       =\int_{\dual{\mathcal{X}}}\sum_{j\in\mathbb{N}}\inner{e_j,C(\omega)e_j}d\omega
-       \hiderel{=}\sum_{k\in\mathbb{N}}\inner{e_j,K_e(e)e_j}
+\int_{\dual{\mathcal{X}}}\Tr\left[C(\omega)\right] d\dual{\Haar}(\omega)
+       =\int_{\dual{\mathcal{X}}}\sum_{j\in\mathbb{N}}\inner{e_j,C(\omega)e_j}d\dual{\Haar}(\omega)
+       =\sum_{k\in\mathbb{N}}\inner{e_j,K_e(e)e_j}
        =\Tr\left[K_e(e)\right]\hiderel{=}c_{\Tr}\hiderel{<}\infty.
 \end{dmath*}
-Let $A_{\Tr}(\omega)$ and $\mu_{\Tr}(\omega)$ be defined respectively as in \cref{eq:bounded_C} and \cref{eq:bounded_mu}. By definition, $\int_{\dual{\mathcal{X}}}\mu_{\Tr}(\omega)d\omega=1$ and $A_{\Tr}(\omega)\mu_{\Tr}(\omega)=C(\omega)$. Now it remains to check the finiteness of $\Tr\left[C(\omega)\right]$ for all $\omega\in\dual{\mathcal{X}}$. Since for all $\omega\in\dual{\mathcal{X}}$, $\Tr\left[C(\omega)\right]\ge 0$,
+Let $A_{\Tr}(\omega)$ and $\rho_{\Tr}(\omega)$ be defined respectively as in \cref{eq:bounded_C} and \cref{eq:bounded_mu}. By definition, $\int_{\dual{\mathcal{X}}}\rho_{\Tr}(\omega)d\dual{\Haar}(\omega)=1$ and $A_{\Tr}(\omega)\rho_{\Tr}(\omega)=C(\omega)$. Now it remains to check the finiteness of $\Tr\left[C(\omega)\right]$ for all $\omega\in\dual{\mathcal{X}}$. Since for all $\omega\in\dual{\mathcal{X}}$, $\Tr\left[C(\omega)\right]\ge 0$,
 \begin{dmath*}
-\Tr\left[C(\omega)\right] \le \int_{\dual{\mathcal{X}}} \Tr\left[C(\omega)\right] d\omega \hiderel{=} \Tr\left[K_e(e)\right] \hiderel{<} \infty.
+\Tr\left[C(\omega)\right] \le \int_{\dual{\mathcal{X}}} \Tr\left[C(\omega)\right] d\dual{\Haar}(\omega) \hiderel{=} \Tr\left[K_e(e)\right] \hiderel{<} \infty.
 \end{dmath*}
-Since $\Tr\left[C(\omega)\right]$ is positive and its integral is finite, $\mu_{\Tr}$ is a probability density function. The Schatten norms $\norm{\cdot}_p$ verifies $\norm{\cdot}_p\ge \norm{\cdot}_q \ge \norm{\cdot}_{\mathcal{Y},\mathcal{Y}}=\norm{\cdot}_{\infty}$ for all $p$, $q\in\mathbb{N}$ such that $p \le q$. Therefore since for all $\omega\in\dual{\mathcal{X}}$, $C(\omega)$ is non-negative,
+Since $\Tr\left[C(\omega)\right]$ is positive and its integral is finite, $\rho_{\Tr}$ is a probability density function. The Schatten norms $\norm{\cdot}_p$ verifies $\Tr\left[\abs{\cdot}\right]=\norm{\cdot}_1\ge\norm{\cdot}_p\ge \norm{\cdot}_q \ge \norm{\cdot}_{\mathcal{Y},\mathcal{Y}}=\norm{\cdot}_{\infty}$ for all $p$, $q\in\mathbb{N}$ such that $1\le p \le q$. Therefore since for all $\omega\in\dual{\mathcal{X}}$, $C(\omega)$ is non-negative,
 \begin{dmath*}
 \norm{A_{\Tr}(\omega)}_{\mathcal{Y},\mathcal{Y}}=c_{\Tr}\Tr\left[C(\omega)\right]^{-1}\norm{C(\omega)}_{\infty}
 \le c_{\Tr}\Tr\left[C(\omega)\right]^{-1}\norm{C(\omega)}_{1}
@@ -218,9 +219,9 @@ Since $\Tr\left[C(\omega)\right]$ is positive and its integral is finite, $\mu_{
 =c_{\Tr}\Tr\left[C(\omega)\right]^{-1}\Tr\left[C(\omega)\right]
 \le c_{\Tr} \hiderel{<} \infty.
 \end{dmath*}
-Thus $\sup_{\omega\in\dual{\mathcal{X}}}\norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}} \le c_{\Tr} < \infty$. As $C$ is an even function, so are $A_{\Tr}$ and $\mu_{\Tr}$. Eventually $\inner{y', C(\cdot)y}\in L^1(\dual{\mathcal{X}}, d\omega)$, so $\inner{y, A_{\Tr}(\cdot)\mu_{\Tr}(\cdot)y'}\in L^1(\dual{\mathcal{X}}, d\omega)$, hence $\inner{y, A_{\Tr}(\cdot)y'}\in L^1(\dual{\mathcal{X}}, d\mu_{\Tr})$. Since the trace is idenpendent of the basis of $\mathcal{Y}$, so is $\mu_{\Tr}$.
+Thus $\sup_{\omega\in\dual{\mathcal{X}}}\norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}} \le c_{\Tr} < \infty$. As $C$ is an even function, so are $A_{\Tr}$ and $\rho_{\Tr}$. Eventually $\inner{y', C(\cdot)y}\in L^1(\dual{\mathcal{X}}, d\omega)$, thus $\inner{y, A_{\Tr}(\cdot)\rho_{\Tr}(\cdot)y'}\in L^1(\dual{\mathcal{X}}, \dual{\Haar})$, hence $\inner{y, A_{\Tr}(\cdot)y'}\in L^1(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho_{\Tr}})$. Since the trace is idenpendent of the basis of $\mathcal{Y}$, so is $\rho_{\Tr}$.
 \end{proof}
-If $\mathcal{Y}$ is finite dimensional then $\Tr\left[K_e(e)\right]$ is well defined hence \cref{pr:trace_measure} is valid as long as $K_e(\cdot)_{ij}\in L^1(\mathcal{X}, dx)$ for all $i$, $j\in\mathbb{N}_{p}$, where $p$ is the dimension of $\mathcal{Y}$.
+If $\mathcal{Y}$ is finite dimensional then $\Tr\left[K_e(e)\right]$ is well defined hence \cref{pr:trace_measure} is valid as long as $K_e(\cdot)_{ij}\in L^1(\mathcal{X}, \Haar)$ for all $i$, $j\in\mathbb{N}_{p}$, where $p$ is the dimension of $\mathcal{Y}$.
 \subsection{Examples of spectral decomposition}
 In this section we give exemple of spectral decomposition of various $\mathcal{Y}$-Mercer kernel, based on \cref{pr:spectral} and \cref{pr:trace_measure}.
 \subsubsection{Gaussian decomposable kernel}
@@ -236,27 +237,30 @@ where $\sigma \in \mathbb{R}_+$ is an hyperparameter corresponding to the bandwi
 where $\delta$ and $\omega\in\mathbb{R}^d$. In this case the Haar measures on $\mathcal{X}$ and $\dual{\mathcal{X}}$ are in both case the Lebesgue measure. However in order to have the property that $\IFT{\FT{f}}=f$ and $\IFT{f}=\mathcal{R}\FT{f}$ one must normalize both measures by $\sqrt{2\pi}^{-d}$, \ie~for all $\mathcal{Z}\in\mathcal{B}\left(\mathbb{R}^d\right)$,
 \begin{dgroup*}
 \begin{dmath*}
-\sqrt{2\pi}^{d}d\delta(\mathcal{Z}) = \Leb(\mathcal{Z}) \text{ and}
+\sqrt{2\pi}^{d}\Haar(\mathcal{Z}) = \Leb(\mathcal{Z}) \text{ and}
 \end{dmath*}
 \begin{dmath*}
-\sqrt{2\pi}^{d}d\omega(\mathcal{Z}) = \Leb(\mathcal{Z}).
+\sqrt{2\pi}^{d}\dual{\Haar}(\mathcal{Z}) = \Leb(\mathcal{Z}).
 \end{dmath*}
 \end{dgroup*}
 Then the \acl{FT} on $(\mathbb{R}^d,+)$ is
 \begin{dmath*}
 \FT{f}(\omega)
-=\int_{\mathbb{R}^d}\exp\left(-\iu\inner{\delta,\omega}\right)f(x)d\delta
+=\int_{\mathbb{R}^d}\exp\left(-\iu\inner{\delta,\omega}\right)f(x)d\Haar(\delta)
 =\int_{\mathbb{R}^d}\exp\left(-\iu\inner{\delta,\omega}\right)f(x)\frac{d\Leb(\delta)}{\sqrt{2\pi}^d}.
 \end{dmath*}
 Since $k^{\text{gauss}}_0\in L^1$ and $\Gamma$ is bounded, it is possible to apply \cref{pr:spectral}, and obtain for all $i$, $j\in\mathbb{N}_p$,
 \begin{dmath*}
-C^{dec,gauss}(\omega)_{ij}=\FT{K^{dec,gauss}_0(\cdot)_{ij}}(\omega)\hiderel{=}\FT{k_0^{gauss}}(\omega)\Gamma_{ij}
+C^{dec,gauss}(\omega)_{ij}=\FT{K^{dec,gauss}_0(\cdot)_{ij}}(\omega)
+=\FT{k_0^{gauss}}(\omega)\Gamma_{ij}
 =\int_{\mathbb{R}^d}\exp\left(-\iu\inner{\omega,x}\right)\exp\left( -\frac{1}{2\sigma^2}\norm{\delta}^2_2\right)\frac{d\Leb(\delta)}{\sqrt{2\pi}^d} \Gamma_{ij}
 =\frac{1}{\sqrt{2\pi\frac{1}{\sigma^2}}^d}\exp\left( -\frac{\sigma^2}{2}\norm{\omega}^2_2\right)\sqrt{2\pi}^d\Gamma_{ij}.
 \end{dmath*}
 Hence
 \begin{dmath*}
-C^{dec,gauss}(\omega)=\underbrace{\frac{1}{\sqrt{2\pi\frac{1}{\sigma^2}}^d}\exp\left( -\frac{\sigma^2}{2}\norm{\omega}^2_2\right)\sqrt{2\pi}^d}_{\mu(\cdot)=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d}\underbrace{\Gamma}_{A(\cdot)=\Gamma}
+C^{dec,gauss}(\omega)
+=\underbrace{\frac{1}{\sqrt{2\pi\frac{1}{\sigma^2}}^d}\exp\left( -\frac{\sigma^2}{2}\norm{\omega}^2_2\right)\sqrt{2\pi}^d}_{\mu(\cdot)
+=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d}\underbrace{\Gamma}_{A(\cdot)=\Gamma}
 \end{dmath*}
 Therefore the canonical decomposition of $C^{dec,gauss}$ is $A^{dec,gauss}(\omega)=\Gamma$ and $\mu^{dec,gauss}=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d$, where $\mathcal{N}$ is the Gaussian probability distribution. Note that this decomposition is done with respect to the \emph{normalized} Lebesgue measure $d\omega$, that is $d\mu=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^dd\omega$. Thus, the same decomposition with respect to the usual --non-normalized-- Lebesgue measure $\Leb$ yields
 \begin{dgroup}

@@ -33,6 +33,9 @@
 *.synctex.gz(busy)
 *.pdfsync
 
+# Folders
+.ipynb_checkpoints
+
 ## Auxiliary and intermediate files from other packages:
 # algorithms
 *.alg

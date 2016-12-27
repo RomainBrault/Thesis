@@ -6,4 +6,4 @@ rm -rf build || true
 mkdir build
 cd build
 cmake ..
-make -j8
+make -j1

@@ -1,6 +1,6 @@
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
-\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Tr}{{\mathbf{Tr}}}
 \DeclareMathOperator*{\sign}{sign}
 \DeclareMathOperator{\lspan}{\overline{span}\;}
 \DeclareMathOperator{\vect}{\bigoplus}
@@ -22,11 +22,13 @@
 % Romain's notations.
 \usepackage{mathtools}
 
-\def\expectation{{\text{\textbf{E}}}}
-\def\variance{{\text{\textbf{Var}}}}
-\def\probability{{\text{\textbf{Pr}}}}
+\newcommand{\expectation}{{\mathbf{{E}}}}
+\newcommand{\variance}{{\mathbf{{Var}}}}
+\newcommand{\probability}{{\mathbf{{Pr}}}}
+\newcommand{\Leb}{\mathbf{Leb}}
+\newcommand{\Haar}{\mathbf{Haar}}
 
-\def\param{\theta}
+\newcommand{\param}{\theta}
 \newcommand{\minimiser}{\hat\theta}
 \newcommand{\parameter}{\theta}
 \newcommand{\idim}{d}
@@ -39,10 +41,18 @@
 \let\Phi\phi
 \let\phi\varphi
 
-\newcommand{\tildePhi}[1]{\tilde{\Phi}_{\textsc{\relsize{-3}{\textsl{#1}}}}}
-\newcommand{\tildephi}[1]{\tilde{\phi}_{\textsc{\relsize{-3}{\textsl{#1}}}}}
-\newcommand{\tildeW}[1]{\tilde{W}_{\textsc{\relsize{-3}{\textsl{#1}}}}}
-\newcommand{\tildef}[1]{\tilde{f}_{\textsc{\relsize{-3}{\textsl{#1}}}}}
+% \newcommand{\tildePhi}[1]{\tilde{\Phi}_{\textsc{\relsize{-3}{\textsl{#1}}}}}
+% \newcommand{\tildephi}[1]{\tilde{\phi}_{\textsc{\relsize{-3}{\textsl{#1}}}}}
+% \newcommand{\tildeW}[1]{\tilde{W}_{\textsc{\relsize{-3}{\textsl{#1}}}}}
+% \newcommand{\tildef}[1]{\tilde{f}_{\textsc{\relsize{-3}{\textsl{#1}}}}}
+
+\newcommand{\tildePhi}[1]{\widetilde{\Phi}}
+\newcommand{\tildephi}[1]{\widetilde{\phi}}
+\newcommand{\tildeW}[1]{\widetilde{W}}
+\newcommand{\tildef}[1]{\widetilde{f}}
+
+\newcommand{\risk}[1]{\mathcal{R}(#1)}
+\newcommand{\riskemp}[1]{\mathcal{R_{\text{emp}}}(#1)}
 
 % \let\Phi\phi
 % \let\phi\varphi
@@ -51,9 +61,9 @@
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
 \DeclarePairedDelimiter\inner{\langle}{\rangle}
 \DeclarePairedDelimiter\pairing{(}{)}
-\DeclarePairedDelimiter\covariance{\text{Cov}_\mu[}{]}
-\DeclarePairedDelimiter\covariancenomu{\text{Cov}[}{]}
-\newcommand\dual[1]{\hat{#1}}
+\DeclarePairedDelimiter\covariance{\text{\textbf{Cov}}_\mu[}{]}
+\DeclarePairedDelimiter\covariancenomu{\text{\textbf{Cov}}[}{]}
+\newcommand\dual[1]{\widehat{#1}}
 % \newcommand\dual[1]{#1}
 \newcommand\conj[1]{\overline{#1}}
 \newcommand\inrange[2]{\in \Set{#1, \ldots, #2}}
@@ -75,19 +85,37 @@
 \newcommand\sech{\text{sech}}
 \newcommand\groupop{\star}
 \newcommand\inv[1]{{#1}^{-1}}
-  
+
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                               PROOF, THEOREM, and FRIENDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\BlackBox}{\rule{1.5ex}{1.5ex}}  % end of proof
-\newenvironment{sproof}{\par\noindent{ \emph{Sketch of proof}.\ }}{\hfill\BlackBox\\[2mm]}
-\newtheorem{assumption}{Assumption}
-\newtheorem{example}{Example} 
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}[theorem]{Lemma} 
-\newtheorem{proposition}[theorem]{Proposition} 
-\newtheorem{remark}[theorem]{Remark}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{conjecture}[theorem]{Conjecture}
-\newtheorem{axiom}[theorem]{Axiom}
+%--------------------------------
+\makeatletter
+\renewtheoremstyle{plain}%
+{\item[\hskip\labelsep \theorem@headerfont ##1\ ##2 \theorem@separator]}%
+{\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\ \normalfont \theorem@separator]}
+\makeatother
+
+\theoremstyle{definition}
+\newtheorem{assumption}{Assumption}[chapter]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[chapter]
+\newtheorem{definition}{Definition}[chapter]
+
+\theoremstyle{plain}
+\newtheorem{example}{Example}[chapter]
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\newtheorem{axiom}{Axiom}[chapter]
+
+\theoremstyle{nonumberplain}
+\theoremsymbol{\ensuremath{\Box}}
+\newtheorem{sproof}{Sketch of proof}
+
+\theoremstyle{nonumberplain}
+\theoremsymbol{\ensuremath{\Box}}
+\newtheorem{proof}{Proof}

@@ -56,6 +56,8 @@
 %	USEFUL COMMANDS
 %----------------------------------------------------------------------------------------
 
+\newcommand{\pdf}{p.\,d.\,f.}
+\newcommand{\Pdf}{P.\,d.\,f.}
 \newcommand{\wrt}{w.\,r.\,t.}
 \newcommand{\Wrt}{W.\,r.\,t.}
 \newcommand{\ie}{i.\,e.}
@@ -253,8 +255,10 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 \usepackage{dirtytalk}
 \usepackage{classicthesis}
 \usepackage{breqn}
-\usepackage{amsthm}
-\usepackage{thmtools}
+% \usepackage{amsthm,thmtools}
+% \usepackage[amsthm,thmtools,noconfig]{ntheorem}
+\usepackage{amssymb,amsmath}
+\usepackage[amsmath,thmmarks]{ntheorem}
 \usepackage{nameref,cleveref}
 \usepackage[algo2e,ruled,linesnumbered]{algorithm2e}
 \newcommand{\theHalgorithm}{\arabic{algorithm}}
@@ -318,7 +322,11 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 %\usepackage[default,osfigures]{opensans} % scale=0.95
 \usepackage{fontspec}
 % Ubuntu
-\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{FiraSans}
 % OSX
-% \usepackage{xltxtra}
+\usepackage{xltxtra}
 % \setromanfont[Mapping=tex-text, Ligatures={Common, Rare, Historic}]{Hoefler Text}
+\setmainfont[Mapping=tex-text, ItalicFeatures={Alternate=0,
+            Contextuals={NoLineFinal,NoLineInitial}},
+            Ligatures={Common,Historic},Alternate=1,
+            BoldFont=Hoefler Text Black]{Hoefler Text}

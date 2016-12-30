@@ -308,6 +308,7 @@ Since $k^{\text{skewed}}_0\in L^1$ and $\Gamma$ is bounded, it is possible to ap
 \begin{dmath*}
 C^{dec,skewed}(\omega)_{ij}=\FT{K^{dec,skewed}_0(\cdot)_{ij}}(\omega)
 =\FT{k_0^{skewed}}(\omega)\Gamma_{ij}
+=\prod_{k=1}^d\int_{(-c_k;+\infty)^d}\frac{\exp\left(-\iu\inner{\log(\delta_k+c_k),\omega_k}\right)}{t_k + c_k}\frac{2}{\sqrt{\delta_k+c_k}+\sqrt{\frac{1}{\delta_k+c_k}}}\frac{d\Leb(\delta_k)}{\sqrt{2\pi}^d}\Gamma_{ij}
 \end{dmath*}
 \subsubsection{Curl-free Gaussian kernel} The curl-free Gaussian kernel is defined as $K^{curl,gauss}_0=-\nabla\nabla^T k_0^{gauss}$. Here $\mathcal{X}=(\mathbb{R}^d, +)$ so the setting is the same than \cref{par:gaussian_dec}.
 \begin{dmath*}

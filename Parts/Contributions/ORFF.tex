@@ -219,7 +219,7 @@ Since $\Tr\left[C(\omega)\right]$ is positive and its integral is finite, $\rho_
 =c_{\Tr}\Tr\left[C(\omega)\right]^{-1}\Tr\left[C(\omega)\right]
 \le c_{\Tr} \hiderel{<} \infty.
 \end{dmath*}
-Thus $\sup_{\omega\in\dual{\mathcal{X}}}\norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}} \le c_{\Tr} < \infty$. As $C$ is an even function, so are $A_{\Tr}$ and $\rho_{\Tr}$. Eventually $\inner{y', C(\cdot)y}\in L^1(\dual{\mathcal{X}}, d\omega)$, thus $\inner{y, A_{\Tr}(\cdot)\rho_{\Tr}(\cdot)y'}\in L^1(\dual{\mathcal{X}}, \dual{\Haar})$, hence $\inner{y, A_{\Tr}(\cdot)y'}\in L^1(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho_{\Tr}})$. Since the trace is idenpendent of the basis of $\mathcal{Y}$, so is $\rho_{\Tr}$.
+Thus $\sup_{\omega\in\dual{\mathcal{X}}}\norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}} \le c_{\Tr} < \infty$. As $C$ is an even function, so are $A_{\Tr}$ and $\rho_{\Tr}$. Eventually $\inner{y', C(\cdot)y}$ is in $L^1(\dual{\mathcal{X}}, \dual{\Haar})$, thus $\inner{y, A_{\Tr}(\cdot)\rho_{\Tr}(\cdot)y'}$ is in $L^1(\dual{\mathcal{X}}, \dual{\Haar})$, hence $\inner{y, A_{\Tr}(\cdot)y'}\in L^1(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho_{\Tr}})$. Since the trace is idenpendent of the basis of $\mathcal{Y}$, so is $\rho_{\Tr}$.
 \end{proof}
 If $\mathcal{Y}$ is finite dimensional then $\Tr\left[K_e(e)\right]$ is well defined hence \cref{pr:trace_measure} is valid as long as $K_e(\cdot)_{ij}\in L^1(\mathcal{X}, \Haar)$ for all $i$, $j\in\mathbb{N}_{p}$, where $p$ is the dimension of $\mathcal{Y}$.
 \subsection{Examples of spectral decomposition}
@@ -253,28 +253,62 @@ Since $k^{\text{gauss}}_0\in L^1$ and $\Gamma$ is bounded, it is possible to app
 \begin{dmath*}
 C^{dec,gauss}(\omega)_{ij}=\FT{K^{dec,gauss}_0(\cdot)_{ij}}(\omega)
 =\FT{k_0^{gauss}}(\omega)\Gamma_{ij}
-=\int_{\mathbb{R}^d}\exp\left(-\iu\inner{\omega,x}\right)\exp\left( -\frac{1}{2\sigma^2}\norm{\delta}^2_2\right)\frac{d\Leb(\delta)}{\sqrt{2\pi}^d} \Gamma_{ij}
+=\int_{\mathbb{R}^d}\exp\left(-\iu\inner{\omega,x}\right)\exp\left( -\frac{\norm{\delta}^2_2}{2\sigma^2}\right)\frac{d\Leb(\delta)}{\sqrt{2\pi}^d} \Gamma_{ij}
 =\frac{1}{\sqrt{2\pi\frac{1}{\sigma^2}}^d}\exp\left( -\frac{\sigma^2}{2}\norm{\omega}^2_2\right)\sqrt{2\pi}^d\Gamma_{ij}.
 \end{dmath*}
 Hence
 \begin{dmath*}
 C^{dec,gauss}(\omega)
-=\underbrace{\frac{1}{\sqrt{2\pi\frac{1}{\sigma^2}}^d}\exp\left( -\frac{\sigma^2}{2}\norm{\omega}^2_2\right)\sqrt{2\pi}^d}_{\mu(\cdot)
+=\underbrace{\frac{1}{\sqrt{2\pi\frac{1}{\sigma^2}}^d}\exp\left( -\frac{\sigma^2}{2}\norm{\omega}^2_2\right)\sqrt{2\pi}^d}_{\rho(\cdot)
 =\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d}\underbrace{\Gamma}_{A(\cdot)=\Gamma}
 \end{dmath*}
-Therefore the canonical decomposition of $C^{dec,gauss}$ is $A^{dec,gauss}(\omega)=\Gamma$ and $\mu^{dec,gauss}=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d$, where $\mathcal{N}$ is the Gaussian probability distribution. Note that this decomposition is done with respect to the \emph{normalized} Lebesgue measure $d\omega$, that is $d\mu=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^dd\omega$. Thus, the same decomposition with respect to the usual --non-normalized-- Lebesgue measure $\Leb$ yields
+Therefore the canonical decomposition of $C^{dec,gauss}$ is $A^{dec,gauss}(\omega)=\Gamma$ and $\rho^{dec,gauss}=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d$, where $\mathcal{N}$ is the Gaussian probability distribution. Note that this decomposition is done with respect to the \emph{normalized} Lebesgue measure $\dual{\Haar}$, meaning that for all $\mathcal{Z}\in\mathcal{B}(\dual{\mathcal{X}})$,
+\begin{dmath*}
+\probability_{\dual{\Haar},\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d}(\mathcal{Z})=\int_{\mathcal{Z}}\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^dd\dual{\Haar}(\omega)
+=\int_{\dual{\mathcal{X}}}\mathcal{N}(0,\sigma^{-2}I_d)d\Leb(\omega)
+=\probability_{\mathcal{N}(0,\sigma^{-2}I_d)}(\mathcal{Z})
+\end{dmath*}
+Thus, the same decomposition with respect to the usual --non-normalized-- Lebesgue measure $\Leb$ yields
 \begin{dgroup}
 \begin{dmath}
 A^{dec,gauss}(\cdot)=\Gamma
 \end{dmath}
 \begin{dmath}
-\mu^{dec,gauss}=\mathcal{N}(0,\sigma^{-2}I_d)
+\rho^{dec,gauss}=\mathcal{N}(0,\sigma^{-2}I_d)
 \end{dmath}
 \end{dgroup}
 If $A$ is a trace class operator, applying \cref{pr:trace_measure} yields the same decomposition since $\Tr\left[K^{dec,gauss}_0(0)\right]=\Tr\left[\Gamma\right]$ and $\Tr\left[C^{dec,gauss}(\cdot)\right]=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d\Tr\left[\Gamma\right]$.
-\subsubsection{$\chi^2$ decomposable kernel}
-
-
+\subsubsection{Skewed-$\chi^2$ decomposable kernel}
+The skewed-$\chi^2$ scalar kernel is defined on the \acs{LCA} group $\mathcal{X}=((-c_k;+\infty)_{k=1}^d,\odot)$, with $c_k\in\mathbb{R}_{+}$. Let $(e_k)_{k=1}^d$ be the standard basis of $\mathcal{X}$ and ${}_k:x\mapsto \inner{x,e_k}$. The operator $\odot: \mathcal{X}\times\mathcal{X}\to\mathcal{X}$ is defined by
+\begin{dmath*}
+x\odot z = \left((x_k + c_k)(z_k + c_k) - c_k\right)_{k=1}^d.
+\end{dmath*}
+The identity element $e$ is $\left(1-c_k\right)_{k=1}^d$ since $(1-c) \odot x = x$. Thus the inverse element $x^{-1}$ is $((x_k+c_k)^{-1} - c_k)_{k=1}^d$. The skewed-$\chi^2$ scalar kernel reads
+\begin{dmath}
+k^{skewed}_{1-c}(\delta)=\prod_{k=1}^d\frac{2}{\sqrt{\delta_k+c_k}+\sqrt{\frac{1}{\delta_k+c_k}}}.
+\end{dmath}
+The dual of $\mathcal{X}$ is $\dual{\mathcal{X}}\cong\mathbb{R}$ with the pairing
+\begin{dmath*}
+\pairing{\delta,\omega}=\prod_{k=1}^d\exp\left(\iu\inner{\log(\delta_k+c_k),\omega_k}\right).
+\end{dmath*}
+The Haar measure are defined for all $\mathcal{Z}\in\mathcal{B}((-c;+\infty)^d)$ and all $\dual{\mathcal{Z}}\in\mathcal{B}(\mathbb{R}^d)$ by
+\begin{dgroup*}
+\begin{dmath*}
+\sqrt{2\pi}^d\Haar(\mathcal{Z})=\int_{\mathcal{Z}}\prod_{k=1}^d\frac{1}{z_k+c_k}d\Leb(z)
+\end{dmath*}
+\begin{dmath*}
+\sqrt{2\pi}^d\dual{\Haar}(\dual{\mathcal{Z}})=\Leb(\dual{\mathcal{Z}}).
+\end{dmath*}
+\end{dgroup*}
+Thus the \acl{FT} is
+\begin{dmath*}
+\FT{f}(\omega)=\int_{(-c;+\infty)^d}\prod_{k=1}^d\frac{\exp\left(-\iu\inner{\log(\delta_k+c_k),\omega_k}\right)}{t_k + c_k}f(\delta)\frac{d\Leb(\delta)}{\sqrt{2\pi}^d}
+\end{dmath*}
+Since $k^{\text{skewed}}_0\in L^1$ and $\Gamma$ is bounded, it is possible to apply \cref{pr:spectral}, and obtain for all $i$, $j\in\mathbb{N}_p$,
+\begin{dmath*}
+C^{dec,skewed}(\omega)_{ij}=\FT{K^{dec,skewed}_0(\cdot)_{ij}}(\omega)
+=\FT{k_0^{skewed}}(\omega)\Gamma_{ij}
+\end{dmath*}
 \subsubsection{Curl-free Gaussian kernel} The curl-free Gaussian kernel is defined as $K^{curl,gauss}_0=-\nabla\nabla^T k_0^{gauss}$. Here $\mathcal{X}=(\mathbb{R}^d, +)$ so the setting is the same than \cref{par:gaussian_dec}.
 \begin{dmath*}
 C^{curl,gauss}(\omega)_{ij}=

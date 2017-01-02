@@ -120,6 +120,7 @@ h\left(\inv{x}\right)
 =-h(x).
 \end{dmath}
 \subsection{Characters}
+\label{subsec:character}
 \acf{LCA} groups are central to the general definition of Fourier Transform which is related to the concept of Pontryagin duality \citep{folland1994course}.
 Let $(\mathcal{X}, \groupop)$ be a \acs{LCA} group with $e$ its neutral element and the notation, $\inv{x}$, for the inverse of $x \in \mathcal{X}$. A \emph{character} is a complex continuous homomorphism $\omega:\mathcal{X}\to\mathbb{U}$ from $\mathcal{X}$ to the set of complex numbers of unit module $\mathbb{U}$. The set of all characters of $\mathcal{X}$ forms the Pontryagin \emph{dual  group} $\dual{\mathcal{X}}$. The dual group of an \acs{LCA} group is an \acs{LCA} group so that we can endow $\dual{\mathcal{X}}$ with a \say{dual} Haar measure noted $\dual{\Haar}$. Then the dual group operation is defined by
 \begin{dmath*}
@@ -154,31 +155,30 @@ We notice that for any pairing depending of $\omega$, there exists a function $h
 \pairing*{x \groupop \inv{z},\omega} = \omega(x)\omega\left(\inv{z}\right) =\exp\left(+\iu h_{\omega}\left(x\right)\right)\exp\left(+\iu h_{\omega}\left(\inv{z}\right)\right)
 =\exp\left(+\iu h_{\omega}\left(x\right)\right)\exp\left(-\iu h_{\omega}\left(z\right)\right).
 \end{dmath*}
-\Cref{tab:dual_and_pairing} provide an explicit list of pairings for various groups based on $\mathbb{R}^d$ or its subsets. We especially mention the duality pairing associated to the skewed multiplicative \acs{LCA} group $\mathcal{X}=((-c;+\infty)^d, \odot)$
-% where the operation $\odot$ is defined component-wise as follows:
-% \begin{equation}
-% \forall k\inrange{1}{d}, \enskip (x \odot z)_k \coloneq
- (x_k+c)(z_k+c) - c,
-% \end{equation}
-% Then the pairing is defined by:
-% \begin{equation}\label{eq:pairing-skewed}
-% \pairing{x, \omega} = \exp\left(i\sum_{k=1}^d\omega_k \log(x_k+c)\right).
-% \end{equation}
-Hence $h_\omega(x)=\sum_{k=1}^d\omega_k \log(x_k+c)$. This group together with the operation $\odot$ has  been proposed by \cite{li2010random} to handle histograms features especially useful in image recognition applications.
-% % \begin{example}
-% % $\dual{\mathbb{R}}\equiv\mathbb{R}$.
-% % \begin{proof}
-% % If $\omega\in\dual{\mathbb{R}}$ then $\omega(0)=1$ since $\omega$ is an homeomorphism from $\mathbb{R}$ to $\mathbb{U}$. Therefore there exists $a>0$ such that $\int_0^a\omega(t)dt\neq0$. Setting $A\omega=\int_0^a\omega(t)dt$ we have
-% % \begin{equation*}
-% % (A\omega)(x)=\int_0^a\omega(x+t)dt=\int_x^{a+x}\omega(t)dt.
-% % \end{equation*}
-% % so $\omega$ is differentiable and
-% % \begin{equation*}
-% % \omega'(x)=A^{-1}(\omega(a+x)-\omega(x))=c\omega(x) \quad\text{where}\quad c=A^{-1}(\omega(a)-1).
-% % \end{equation*}
-% % It follow that $\omega(x)=e^{cx}$, and since $\abs{\omega}=1$, one can take $c=i\omega$ for some $\omega\in\mathbb{R}$. Hence we can identify $\omega$ with $\omega$ and $\dual{\mathbb{R}}$ with $\mathbb{R}$ since $\omega$ uniquely determines $\omega$.
-% % \end{proof}
-% % \end{example}
+\begin{example}
+$\dual{\mathbb{R}}\cong\mathbb{R}$ with the duality pairing $\pairing{x,\omega}=\exp\left(\iu x\omega\right)$ for all $x\in\mathbb{R}$ and all $\omega\in\mathbb{R}$.
+\begin{proof}
+If $\omega\in\dual{\mathbb{R}}$ then $\omega(0)=1$ since $\omega$ is an homeomorphism from $\mathbb{R}$ to $\mathbb{U}$. Therefore there exists $a>0$ such that $\int_0^a\omega(t)d\Leb(t)\neq0$. Setting $A\omega=\int_0^a\omega(t)d\Leb(t)$ we have
+\begin{dmath*}
+(A\omega)(x)=\int_0^a\omega(x+t)d\Leb(t)\hiderel{=}\int_x^{a+x}\omega(t)d\Leb(t).
+\end{dmath*}
+so $\omega$ is differentiable and
+\begin{dmath*}
+\omega'(x)=A^{-1}(\omega(a+x)-\omega(x))\hiderel{=}c\omega(x) \quad\text{where}\quad c\hiderel{=}A^{-1}(\omega(a)-1).
+\end{dmath*}
+It follow that $\omega(x)=e^{cx}$, and since $\abs{\omega}=1$, one can take $c=i\xi$ for some $\xi\in\mathbb{R}$. Hence we can identify $\omega$ with $\xi$ and $\dual{\mathbb{R}}$ with $\mathbb{R}$ since $\xi$ uniquely determines $\omega$. With mild abuse of notation we identify $\omega=\xi$.
+\end{proof}
+\end{example}
+\Cref{tab:dual_and_pairing} provide an explicit list of pairings for various groups based on $\mathbb{R}^d$ or its subsets. We especially mention the duality pairing associated to the skewed multiplicative \acs{LCA} product group $\mathcal{X}=(-c_k;+\infty)_{k=1}^d$ endowed with the group operation $\odot$ defined component-wise for all $x$, $z\in\mathcal{X}$ as follow.
+\begin{dmath*}
+x \odot z \colonequals ((x_k+c)(z_k+c) - c)_{k=1}^d.
+\end{dmath*}
+Then the duality pairing is defined by
+\begin{dmath*}
+\label{eq:pairing-skewed}
+\pairing{x, \omega} = \exp\left(\iu\sum_{k=1}^d\omega_k \log(x_k+c_k)\right).
+\end{dmath*}
+Hence $h_\omega(x)=\sum_{k=1}^d\omega_k \log(x_k+c_k)$. This group together with the operation $\odot$ has  been proposed by \cite{li2010random} to handle histograms features especially useful in image recognition applications.
 \subsection{The Fourier transform}
 For a function with values in a separable Hilbert space $f\in L^1(\mathcal{X},\Haar;\mathcal{Y})$, we denote $\FT{f}$ its \acf{FT} which is defined by
 \begin{dmath*}

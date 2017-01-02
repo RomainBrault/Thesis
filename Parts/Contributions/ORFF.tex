@@ -110,10 +110,11 @@ While \cref{pr:inverse_ovk_Fourier_decomposition} gives an explicit form of the 
 \begin{proposition}[Shift-invariant $\mathcal{Y}$-Mercer kernel spectral decomposition]
 \label{pr:spectral}
 Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel. If for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},\Haar)$ then there exists a positive probability measure $\probability_{\dual{\Haar},\rho}$ and an operator-valued function $A$ an such that for all $y,$ $y'\in\mathcal{Y}$,
-\begin{dmath*}
+\begin{dmath}
+\label{eq:expectation_spec}
 \inner{y', K_e(\delta)y}
 =\expectation_{\dual{\Haar},\rho}\left[\conj{\pairing{\delta, \omega}}\inner{y', A(\omega)y}\right],
-\end{dmath*}
+\end{dmath}
 with
 \begin{dmath}
 \label{eq:comega}
@@ -164,6 +165,7 @@ Another difficulty arise from the fact that the quantity $\sup_{\omega\in\dual{\
 \label{pr:trace_measure}
 Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel. If for all $y$ and $y'$ in $\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},\Haar)$ and $\Tr K_e(e)\in\mathbb{R}$, then
 \begin{dmath}
+\label{eq:expectation_tr}
 \inner{y', K_e(\delta)y}
 =\expectation_{\dual{\Haar},\rho_{\Tr}}\left[\conj{\pairing{\delta, \omega}}\inner{y, A_{\Tr}(\omega)y'}\right].
 \end{dmath}
@@ -222,7 +224,9 @@ Since $\Tr\left[C(\omega)\right]$ is positive and its integral is finite, $\rho_
 Thus $\sup_{\omega\in\dual{\mathcal{X}}}\norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}} \le c_{\Tr} < \infty$. As $C$ is an even function, so are $A_{\Tr}$ and $\rho_{\Tr}$. Eventually $\inner{y', C(\cdot)y}$ is in $L^1(\dual{\mathcal{X}}, \dual{\Haar})$, thus $\inner{y, A_{\Tr}(\cdot)\rho_{\Tr}(\cdot)y'}$ is in $L^1(\dual{\mathcal{X}}, \dual{\Haar})$, hence $\inner{y, A_{\Tr}(\cdot)y'}\in L^1(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho_{\Tr}})$. Since the trace is idenpendent of the basis of $\mathcal{Y}$, so is $\rho_{\Tr}$.
 \end{proof}
 If $\mathcal{Y}$ is finite dimensional then $\Tr\left[K_e(e)\right]$ is well defined hence \cref{pr:trace_measure} is valid as long as $K_e(\cdot)_{ij}\in L^1(\mathcal{X}, \Haar)$ for all $i$, $j\in\mathbb{N}_{p}$, where $p$ is the dimension of $\mathcal{Y}$.
+
 \subsection{Examples of spectral decomposition}
+\label{subsec:dec_examples}
 In this section we give exemple of spectral decomposition of various $\mathcal{Y}$-Mercer kernel, based on \cref{pr:spectral} and \cref{pr:trace_measure}.
 \subsubsection{Gaussian decomposable kernel}
 \label{par:gaussian_dec}
@@ -277,9 +281,11 @@ A^{dec,gauss}(\cdot)=\Gamma
 \rho^{dec,gauss}=\mathcal{N}(0,\sigma^{-2}I_d)
 \end{dmath}
 \end{dgroup}
-If $A$ is a trace class operator, applying \cref{pr:trace_measure} yields the same decomposition since $\Tr\left[K^{dec,gauss}_0(0)\right]=\Tr\left[\Gamma\right]$ and $\Tr\left[C^{dec,gauss}(\cdot)\right]=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d\Tr\left[\Gamma\right]$.
+If $\Gamma$ is a trace class operator, applying \cref{pr:trace_measure} yields the same decomposition since $\Tr\left[K^{dec,gauss}_0(0)\right]=\Tr\left[\Gamma\right]$ and $\Tr\left[C^{dec,gauss}(\cdot)\right]=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d\Tr\left[\Gamma\right]$.
+
 \subsubsection{Skewed-$\chi^2$ decomposable kernel}
-The skewed-$\chi^2$ scalar kernel is defined on the \acs{LCA} group $\mathcal{X}=((-c_k;+\infty)_{k=1}^d,\odot)$, with $c_k\in\mathbb{R}_{+}$. Let $(e_k)_{k=1}^d$ be the standard basis of $\mathcal{X}$ and ${}_k:x\mapsto \inner{x,e_k}$. The operator $\odot: \mathcal{X}\times\mathcal{X}\to\mathcal{X}$ is defined by
+\label{subsubsec:skewedchi2}
+The skewed-$\chi^2$ scalar kernel is defined on the \acs{LCA} product group $\mathcal{X}=((-c_k;+\infty)_{k=1}^d,\odot)$, with $c_k\in\mathbb{R}_{+}$. Let $(e_k)_{k=1}^d$ be the standard basis of $\mathcal{X}$ and ${}_k:x\mapsto \inner{x,e_k}$. The operator $\odot: \mathcal{X}\times\mathcal{X}\to\mathcal{X}$ is defined by
 \begin{dmath*}
 x\odot z = \left((x_k + c_k)(z_k + c_k) - c_k\right)_{k=1}^d.
 \end{dmath*}
@@ -302,22 +308,37 @@ The Haar measure are defined for all $\mathcal{Z}\in\mathcal{B}((-c;+\infty)^d)$
 \end{dgroup*}
 Thus the \acl{FT} is
 \begin{dmath*}
-\FT{f}(\omega)=\int_{(-c;+\infty)^d}\prod_{k=1}^d\frac{\exp\left(-\iu\inner{\log(\delta_k+c_k),\omega_k}\right)}{t_k + c_k}f(\delta)\frac{d\Leb(\delta)}{\sqrt{2\pi}^d}
+\FT{f}(\omega)=\int_{(-c;+\infty)^d}\prod_{k=1}^d\frac{\exp\left(-\iu\inner{\log(\delta_k+c_k),\omega_k}\right)}{t_k + c_k}f(\delta)\frac{d\Leb(\delta)}{\sqrt{2\pi}^d}.
 \end{dmath*}
-Since $k^{\text{skewed}}_0\in L^1$ and $\Gamma$ is bounded, it is possible to apply \cref{pr:spectral}, and obtain for all $i$, $j\in\mathbb{N}_p$,
+Then, applying Fubini's theorem over product space,
 \begin{dmath*}
-C^{dec,skewed}(\omega)_{ij}=\FT{K^{dec,skewed}_0(\cdot)_{ij}}(\omega)
-=\FT{k_0^{skewed}}(\omega)\Gamma_{ij}
-=\prod_{k=1}^d\int_{(-c_k;+\infty)^d}\frac{\exp\left(-\iu\inner{\log(\delta_k+c_k),\omega_k}\right)}{t_k + c_k}\frac{2}{\sqrt{\delta_k+c_k}+\sqrt{\frac{1}{\delta_k+c_k}}}\frac{d\Leb(\delta_k)}{\sqrt{2\pi}^d}\Gamma_{ij}
+\FT{k_0^{skewed}}(\omega)=\prod_{k=1}^d\int_{-c_k}^{\infty}\frac{2\exp\left(-\iu\inner{\log(\delta_k+c_k),\omega_k}\right)}{(t_k + c_k)\left(\sqrt{\delta_k+c_k}+\sqrt{\frac{1}{\delta_k+c_k}}\right)}\frac{d\Leb(\delta_k)}{\sqrt{2\pi}^d}
+=\prod_{k=1}^d\int_{-c_k}^{\infty} \frac{2\exp\left(-\iu\inner{\delta_k,\omega_k}\right)}{\exp\left(\frac{1}{2}\delta_k\right)+\exp\left(-\frac{1}{2}\delta_k\right)} \frac{d\Leb(\delta_k)}{\sqrt{2\pi}^d}
+=\sqrt{2\pi}^d\prod_{k=1}^d\sech(\pi\omega_k)
 \end{dmath*}
+Since $k^{\text{skewed}}_{1-c}\in L^1$ and $\Gamma$ is bounded, it is possible to apply \cref{pr:spectral}, and obtain for all $i$, $j\in\mathbb{N}_p$,
+\begin{dmath*}
+C^{dec,skewed}(\omega)
+=\FT{k_{1-c}^{skewed}}(\omega)\Gamma
+=\underbrace{\sqrt{2\pi}^d\prod_{k=1}^d\sech(\pi\omega_k)}_{\rho(\cdot)=\mathcal{S}(0,2^{-1})^d\sqrt{2\pi}^d}\underbrace{\Gamma}_{A(\cdot)}
+\end{dmath*}
+Hence the decomposition with respect to the usual --non-normalized-- Lebesgue measure $\Leb$ yields
+\begin{dgroup}
+\begin{dmath}
+A^{dec,skewed}(\cdot)=\Gamma
+\end{dmath}
+\begin{dmath}
+\rho^{dec,skewed}=\mathcal{S}(0,2^{-1})^d
+\end{dmath}
+\end{dgroup}
 \subsubsection{Curl-free Gaussian kernel} The curl-free Gaussian kernel is defined as $K^{curl,gauss}_0=-\nabla\nabla^T k_0^{gauss}$. Here $\mathcal{X}=(\mathbb{R}^d, +)$ so the setting is the same than \cref{par:gaussian_dec}.
 \begin{dmath*}
 C^{curl,gauss}(\omega)_{ij}=
-\FT{K^{curl,gauss}_0(\cdot)_{ij}}(\omega)
+\FT{K^{curl,gauss}_{1-c}(\cdot)_{ij}}(\omega)
 =\FT{-\frac{d^2}{d\delta_id\delta_j}k^{gauss}_0}(\omega)
 =-(\iu\omega_i)(\iu\omega_j)\FT{k_0^{gauss}}(\omega)
 =\omega_i\omega_j\FT{k_0^{gauss}}(\omega)
-=\frac{1}{\sqrt{2\pi\frac{1}{\sigma^2}}^d}\exp\left( -\frac{\sigma^2}{2}\norm{\omega}^2_2\right)\sqrt{2\pi}^d\omega_i\omega_j.
+=\sqrt{2\pi\frac{1}{\sigma^2}}^d\exp\left( -\frac{\sigma^2}{2}\norm{\omega}^2_2\right)\sqrt{2\pi}^d\omega_i\omega_j.
 \end{dmath*}
 Hence
 \begin{dmath*}
@@ -341,7 +362,7 @@ Notice that in this case $\norm{A^{curl,gauss}(\cdot)}_{\mathbb{R}^d,\mathbb{R}^
 \end{dmath*}
 Hence
 \begin{dmath*}
-\nabla\nabla^Tk^{gauss}_0(\delta)=\left(I_d -\frac{\delta\delta^T}{\sigma^2} \right)\frac{\exp\left(-\frac{1}{2\sigma^2}\norm{\delta}^2_2\right)}{\sigma^2}
+-\nabla\nabla^Tk^{gauss}_0(\delta)=\left(I_d -\frac{\delta\delta^T}{\sigma^2} \right)\frac{\exp\left(-\frac{1}{2\sigma^2}\norm{\delta}^2_2\right)}{\sigma^2}
 \end{dmath*}
 Thus $\Tr\left[K^{curl,gauss}_0(0)\right]=\Tr\left[\nabla\nabla^Tk^{gauss}_0(0)\right]=d\sigma^{-2}$ and $\Tr\left[C(\omega)\right]=\norm{\omega}_2^2\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d$. Apply \cref{pr:trace_measure} to obtain the decomposition $A^{curl,gauss}_{\Tr}(\omega)=\omega\omega^T\norm{\omega}_2^{-2}$ and the measure $\mu^{curl,gauss}_{\Tr}(\omega)=\sigma^2d^{-1}\norm{\omega}_2^2\mathcal{N}\left(0,\sigma^{-2}\right)\sqrt{2\pi}^d$ for all $\omega\in\mathbb{R}^d$, with respect to the normalized Lebesgue measure. Therefore the decomposition with respect to the usual non-normalized Lebesgue measure is
 \begin{dgroup}
@@ -363,15 +384,15 @@ C^{div,gauss}(\omega)_{ij}=
 \end{dmath*}
 Hence
 \begin{dmath*}
-C^{div,gauss}(\omega)=\underbrace{\frac{1}{\sqrt{2\pi\frac{1}{\sigma^2}}^d}\exp\left( -\frac{\sigma^2}{2}\norm{\omega}^2_2\right)\sqrt{2\pi}^d}_{\mu(\cdot)=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d}\underbrace{\left(I_d\norm{\omega}_2^2-\omega\omega^T\right)}_{A(\omega)=I_d\norm{\omega}_2^2-\omega\omega^T}.
+C^{div,gauss}(\omega)=\underbrace{\frac{1}{\sqrt{2\pi\frac{1}{\sigma^2}}^d}\exp\left( -\frac{\sigma^2}{2}\norm{\omega}^2_2\right)\sqrt{2\pi}^d}_{\rho(\cdot)=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d}\underbrace{\left(I_d\norm{\omega}_2^2-\omega\omega^T\right)}_{A(\omega)=I_d\norm{\omega}_2^2-\omega\omega^T}.
 \end{dmath*}
-Thus the canonical decomposition with respect to the normalized Lebesgue measure is $A^{div,gauss}(\omega)=I_d\norm{\omega}_2^2-\omega\omega^T$ and the measure $\mu^{div,gauss}=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d$. The canonical decomposition with respect to the usual Lebesgue measure is
+Thus the canonical decomposition with respect to the normalized Lebesgue measure is $A^{div,gauss}(\omega)=I_d\norm{\omega}_2^2-\omega\omega^T$ and the measure $\rho^{div,gauss}=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d$. The canonical decomposition with respect to the usual Lebesgue measure is
 \begin{dgroup}
 \begin{dmath}
 A^{div,gauss}(\omega)=I_d\norm{\omega}_2^2-\omega\omega^T
 \end{dmath}
 \begin{dmath}
-\mu^{div,gauss}=\mathcal{N}(0,\sigma^{-2}I_d).
+\rho^{div,gauss}=\mathcal{N}(0,\sigma^{-2}I_d).
 \end{dmath}
 \end{dgroup}
 To obtain the bounded decomposition, again, apply \cref{pr:trace_measure}. For all $\delta\in\mathbb{R}^d$,
@@ -383,57 +404,21 @@ Thus overall,
 \begin{dmath*}
 K^{div,gauss}_0(\delta)=\left(\frac{\delta\delta^T}{\sigma^2} + \left((d-1) - \frac{\norm{\delta}_2^2}{\sigma^2}\right)I_d \right)\frac{\exp\left(-\frac{1}{2\sigma^2}\norm{\delta}^2_2\right)}{\sigma^2},
 \end{dmath*}
-Eventually $\Tr\left[K^{div,gauss}_0(0)\right]=\Tr\left[(\nabla\nabla^T-\Delta)k^{gauss}_0(0)\right]=d(d-1)\sigma^{-2}$ and $\Tr\left[C(\omega)\right]=(d-1)\norm{\omega}_2^2\mathcal{N}(0,\sigma^2I_d)\sqrt{2\pi}^d$. As a result the decomposition with respect to the normalized Lebesgue measure is $A^{div,gauss}_{\Tr}(\omega)=(I_d-\omega\omega^T\norm{\omega}_2^{-2})$ and $\mu^{div,gauss}_{\Tr}(\omega)=d^{-1}\sigma^2\norm{\omega}_2^2\mathcal{N}(0,\sigma^2I_d)\sqrt{2\pi}^d$. The decomposition with respect to the normalized Lebesgue measure being
+Eventually $\Tr\left[K^{div,gauss}_0(0)\right]=\Tr\left[(\nabla\nabla^T-\Delta)k^{gauss}_0(0)\right]=d(d-1)\sigma^{-2}$ and $\Tr\left[C(\omega)\right]=(d-1)\norm{\omega}_2^2\mathcal{N}(0,\sigma^2I_d)\sqrt{2\pi}^d$. As a result the decomposition with respect to the normalized Lebesgue measure is $A^{div,gauss}_{\Tr}(\omega)=(I_d-\omega\omega^T\norm{\omega}_2^{-2})$ and $\rho^{div,gauss}_{\Tr}(\omega)=d^{-1}\sigma^2\norm{\omega}_2^2\mathcal{N}(0,\sigma^2I_d)\sqrt{2\pi}^d$. The decomposition with respect to the normalized Lebesgue measure being
 \begin{dgroup}
 \begin{dmath}
 A^{div,gauss}_{\Tr}(\omega)=I_d-\frac{\omega\omega^T}{\norm{\omega}_2^2}
 \end{dmath}
 \begin{dmath}
-\mu^{div,gauss}_{\Tr}=\frac{\sigma^2}{d}\norm{\omega}_2^2\mathcal{N}(0,\sigma^{-2}I_d).
+\rho^{div,gauss}_{\Tr}=\frac{\sigma^2}{d}\norm{\omega}_2^2\mathcal{N}(0,\sigma^{-2}I_d).
 \end{dmath}
 \end{dgroup}
-\subsection{Regularization property}
-We have shown so far that it is always possible to construct a feature map that allows to approximate a shift-invariant $\mathcal{Y}$-Mercer kernel. However we could also propose a construction of such map by studying the regularization induced with respect to the \acl{FT} of a target function $f\in \mathcal{H}_K$. In other words, what is the norm in $L^2(\dual{\mathcal{X}}, d\omega, \mathcal{Y}')$ induced by $\norm{\cdot}_K$?
-\begin{proposition}
-Let $K$ be a shift-invariant $\mathcal{Y}$-Mercer Kernel such that for all $y$, $y'$ in $\mathcal{Y}$, $\inner{y', K_e(\cdot)y}\in L^1(\mathcal{X}, dx)$. Then for all $f\in\mathcal{H}_K$
-\begin{dmath}
-\norm{f}^2_K=\displaystyle\int_{\dual{\mathcal{X}}}\frac{\inner*{\FT{f}(\omega), A\left(\omega\right)^\dagger\FT{f}(\omega)}_{\mathcal{Y}}}{\mu(\omega)}d\omega.
-\label{eq:reg_L2}
-\end{dmath}
-where $\inner{y', A(\omega)y}\mu(\omega)\colonequals\FT{\inner{y', K_e(\cdot)y}}(\omega)$.
-\label{pr:regularization}
-\end{proposition}
-\begin{proof}
-We first show how the \acl{FT} relates to the feature operator. Since $\mathcal{H}_K$ is embed into $\mathcal{H}=L^2(\dual{\mathcal{X}}, \mu, \mathcal{Y})$ by mean of the feature operator $W$, we have:
-\begin{dgroup*}
-\begin{dmath*}
-\FT{\IFT{f}}(x)\hiderel{=}\int_{\dual{\mathcal{X}}}\overline{\pairing{x,\omega}}\IFT{f}(\omega)d\omega = f(x)
-\end{dmath*}
-\begin{dmath*}
-(Wg)(x)\hiderel{=}\int_{\dual{\mathcal{X}}}\overline{\pairing{x,\omega}}\mu(\omega)B(\omega)g(\omega)d\omega = f(x).
-\end{dmath*}
-\end{dgroup*}
-By injectivity of the \acl{FT}, $\IFT{f}(\omega)=\mu(\omega)B(\omega)g(\omega)$ $\mu$-almost everywhere. From \cref{pr:feature_operator} we have
-\begin{dmath*}
-\norm{f}^2_{K} = \inf \Set{\norm{g}^2_{\mathcal{H}} | \forall g\hiderel{\in}\mathcal{H}, \enskip Wg\hiderel{=}f} = \inf \Set{\int_{\dual{\mathcal{X}}} \norm{g}^2_{\mathcal{Y}}d\mu | \forall g\hiderel{\in}\mathcal{H},\enskip \IFT{f}\hiderel{=}\mu(\cdot)B(\cdot)g(\cdot)}.
-\end{dmath*}
-The pseudo inverse of the operator $B(\omega)$ -- noted $B(\omega)^\dagger$ -- is the unique solution of the system $\IFT{f}(\omega)=\mu(\omega)B(\omega)g(\omega)$ \wrt~$g(\omega)$ with minimal norm. Eventually,
-\begin{dmath*}
-\norm{f}^2_K = \displaystyle\int_{\dual{\mathcal{X}}} \frac{\norm{B(\omega)^\dagger\IFT{f}(\omega)}^2_{\mathcal{Y}}}{\mu(\omega)^2}d\mu(\omega)
-\end{dmath*}
-Using the fact that $\IFT{.}=\mathcal{F}\mathcal{R}[.]$ and $\mathcal{F}^2[.]=\mathcal{R}[.]$,
-\begin{dmath*}
-\norm{f}^2_K= \displaystyle\int_{\dual{\mathcal{X}}} \frac{\norm{\mathcal{R}\left[B(\cdot)\mu(\cdot)\right](\omega)^\dagger\FT{f}(\omega)}^2_{\mathcal{Y}}}{\mu(\omega)^2}d\omega
-\end{dmath*}
-Conclude the proof by taking $d\mu(\omega)=\mu(\omega)d\omega$ and rewriting the integral as an expectation and using the fact that $A(\omega)\mu(\omega)=C(\omega)=C(\inv{\omega})$.
-\end{proof}
-Note that if $K(x,z)=k(x,z)$ is a scalar kernel then for all $\omega$ in $\dual{\mathcal{X}}$, $A(\omega)=1$. Therefore we recover a well known results for kernels that is for any $f\in\mathcal{H}_k$ we have $\norm{f}_k=\int_{\dual{\mathcal{X}}}\FT{k_e}(\omega)^{-1}\FT{f}(\omega)^2d\omega$. We also note that the regularization property in $\mathcal{H}_K$ does not depends (as expected) on the decomposition of $A(\omega)$ into $B(\omega)B(\omega)^\adjoint $. Therefore the decomposition should be chosen such that it optimizes the computation cost. For instance if $A(\omega)\in\mathcal{L}(\mathbb{R}^p)$ has rank $r$, one could find an operator $B(\omega)\in\mathcal{L}(\mathbb{R}^p, \mathbb{R}^r)$ such that $A(\omega)=B(\omega)B(\omega)^\adjoint $.
 
 \subsection{Functional Fourier feature map}
 Let us introduce a functional feature map, we call here \emph{Fourier Feature map}, defined by the following proposition as a direct consequence of \cref{pr:mercer_kernel_bochner}.
 
 \begin{proposition}[Fourier feature map]\label{pr:fourier_feature_map}
-If there exist an operator-valued function $B:\dual{\mathcal{X}}\to\mathcal{L}(\mathcal{Y},\mathcal{Y}')$ such that for all $y$, $y'\in\mathcal{Y}$, $\inner{y, B(\omega)B(\omega)^\adjoint y'}=\inner{y', A(\omega)y}$ $\mu$-almost everywhere and $\inner{y', A(\omega)y}\in L^1(\dual{\mathcal{X}},d\mu)$ then the operator $\Phi_x$ defined for all $y$ in $\mathcal{Y}$ by
+If there exist an operator-valued function $B:\dual{\mathcal{X}}\to\mathcal{L}(\mathcal{Y},\mathcal{Y}')$ such that for all $y$, $y'\in\mathcal{Y}$, $\inner{y, B(\omega)B(\omega)^\adjoint y'}=\inner{y', A(\omega)y}$ $\dual{\mu}$-almost everywhere and $\inner{y', A(\omega)y}\in L^1(\dual{\mathcal{X}},\dual{\mu})$ then the operator $\Phi_x$ defined for all $y$ in $\mathcal{Y}$ by
 \begin{dmath}
 \label{eq:feature_shiftinv_map}
 (\Phi_x y)(\omega)=\pairing{x,\omega}B(\omega)^\adjoint y,
@@ -443,83 +428,86 @@ is \emph{a feature map}\mpar{\Ie~it satisfies for all $x$, $z \in \mathcal{X}$, 
 \begin{proof}
 For all $y$, $y'\in \mathcal{Y}$ and $x$, $z\in\mathcal{X}$,
 \begin{dmath*}
-\inner{y, \Phi_x^\adjoint \Phi_z y'} = \inner{\Phi_x y, \Phi_z y'}_{L^2(\dual{\mathcal{X}},\mu,\mathcal{Y}')} \\
-= \int_{\dual{\mathcal{X}}}\conj{\pairing{x,\omega}}\inner{y, B(\omega)\pairing{z,\omega}B(\omega)^\adjoint y'}d\mu(\omega) \\
-= \int_{\dual{\mathcal{X}}}\conj{\pairing{x \groupop \myinv{z},\omega}}\inner{y B(\omega)B(\omega)^\adjoint y'}d\mu(\omega) \\
-= \int_{\dual{\mathcal{X}}}\conj{\pairing{x \groupop \inv{z},\omega}}\inner{y,A(\omega)y'}d\mu(\omega),
+\inner{y, \Phi_x^\adjoint \Phi_z y'} = \inner{\Phi_x y, \Phi_z y'}_{L^2(\dual{\mathcal{X}},\dual{\mu};\mathcal{Y}')} \\
+= \int_{\dual{\mathcal{X}}}\conj{\pairing{x,\omega}}\inner{y, B(\omega)\pairing{z,\omega}B(\omega)^\adjoint y'}d\dual{\mu}(\omega) \\
+= \int_{\dual{\mathcal{X}}}\conj{\pairing{x \groupop \myinv{z},\omega}}\inner{y B(\omega)B(\omega)^\adjoint y'}d\dual{\mu}(\omega) \\
+= \int_{\dual{\mathcal{X}}}\conj{\pairing{x \groupop \inv{z},\omega}}\inner{y,A(\omega)y'}d\dual{\mu}(\omega),
 \end{dmath*}
 which defines a $\mathcal{Y}$-Mercer according to \cref{pr:mercer_kernel_bochner} of \citet{Carmeli2010}.
 \end{proof}
-With this notation notice that $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \mu; \mathcal{Y}'))$ such that $\Phi_x\in \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \mu; \mathcal{Y}'))$ where $\Phi_x\colonequals\Phi(x)$.
+With this notation notice that $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \dual{\mu}; \mathcal{Y}'))$ such that $\Phi_x\in \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \dual{\mu}; \mathcal{Y}'))$ where $\Phi_x\colonequals\Phi(x)$.
 
 \subsection{Building Operator-valued Random Fourier Features}
-Throughout the document, without loss of generality, we assume that $\int_{\mathcal{X}} d\mu(\omega)=1$ and thus $d\mu$ is a probability measure with density $\mu$. As shown in \cref{pr:fourier_feature_map} it is always possible to find a pair $(A(\omega), d\mu)$ such that $d\mu$ is a probability measure and $\expectation_\mu{\conj{\pairing{\delta,\omega}}A(\omega)}$.
+As shown in \cref{pr:spectral,pr:trace_measure} it is always possible to find a pair $(A, \probability_{\dual{\Haar},\rho})$ from a shift invariant $\mathcal{Y}$-Mercer \acl{OVK} $K_e$ such that $\probability_{\dual{\Haar},\rho}$ is a probability measure --\ie~$\int_{\dual{\mathcal{X}}} \rho d\dual{\Haar}=1$ where $\rho$ is the density of $\probability_{\dual{\Haar},\rho}$-- and $K_e(\delta)=\expectation_\rho{\conj{\pairing{\delta,\omega}}A(\omega)}$. In order to obtain an approximation of $K$ from a decomposition $(A, \probability_{\dual{\Haar},\rho})$ we turn our attention to a Monte-Carlo estimation of the expectations \cref{eq:expectation_tr} and \cref{eq:expectation_spec} characterizing a $\mathcal{Y}$-Mercer shift-invariant \acl{OVK}.
 \paragraph{}
-Given a $\mathcal{Y}$-Mercer shift-invariant kernel $K$ on $\mathcal{X}$, an approximation of $K$ can be obtained using a decomposition $(A, \mu)$ and a plug-in Monte-Carlo estimator instead of the expectation. However, for efficient computations, as motivated in the introduction, we are interested in finding an approximated feature map more than a kernel approximation. Indeed, an approximated feature map will allow to build linear models in regression tasks. The following proposition provides the general form of an \acl{ORFF}.
-\begin{proposition}\label{pr:ORFF-map}If one can find $B: \dual{\mathcal{X}} \to \mathcal{L}(\mathcal{Y}',\mathcal{Y})$ and a probability measure $\mu$ on $\mathcal{B}(\dual{\mathcal{X}})$, such that for all $y\in\mathcal{Y}$ and all $y'\in\mathcal{Y}'$, $\inner{y, B(\cdot)y'} \in L^2(\dual{\mathcal{X}}, d\mu)$, then the operator-valued function
-\begin{equation}\label{eq:phitilde}
-\tildePhi{1:D}(x)= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint , \qquad \omega_j \sim \mu
+However, for efficient computations as motivated in the introduction, we are interested in finding an approximated \emph{feature map} instead of a kernel approximation. Indeed, an approximated feature map will allow to build linear models in regression tasks. The idea is to start from the Monte-Carlo approximation of the expectation and provide a systematic decomposition of the Monte-Carlo sample mean into an approximate feature map. The following proposition provides the general form of an \acl{ORFF}.
+\begin{proposition}[ORFF]
+\label{pr:ORFF-map}
+If one can find $B: \dual{\mathcal{X}} \to \mathcal{L}(\mathcal{Y}',\mathcal{Y})$ and a probability measure $\probability_{\dual{\Haar},\rho}$ on $\mathcal{B}(\dual{\mathcal{X}})$, such that for all $y\in\mathcal{Y}$ and all $y'\in\mathcal{Y}'$, $\inner{y, B(\cdot)y'} \in L^2(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho})$, then the operator-valued function
+\begin{equation}
+\label{eq:phitilde}
+\tildePhi{1:D}(x)= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint , \qquad \omega_j \sim \probability_{\dual{\Haar},\rho} \enskip\text{\iid},
 \end{equation}
-is an approximated feature map of an \acl{OVK}\mpar{\Ie~it satisfies $\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(z)\converges{\asurely}{D\to\infty}K(x,z)$ where $K$ is a $\mathcal{Y}$-Mercer \acs{OVK}.}.
+is an approximated feature map\mpar{\Ie~it satisfies $\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(z)\converges{\asurely}{D\to\infty}K(x,z)$ where $K$ is a $\mathcal{Y}$-Mercer \acs{OVK}.} of an \acl{OVK}.
 \end{proposition}
 \begin{proof}
-Let $\omega_1, \ldots, \omega_D$ be $D$ \iid~random vectors following the law $\mu$. For all $x$, $z \in \mathcal{X}$ and all $y$, $y' \in \mathcal{Y}$,
+Let $(\omega_j)_{j=1}^D$ be $D$ \iid~random vectors following the law $\probability_{\dual{\Haar},\rho}$. For all $x$, $z \in \mathcal{X}$ and all $y$, $y' \in \mathcal{Y}$,
 \begin{dmath*}
-\inner*{\tildePhi{1:D}(x)y,\tildePhi{1:D}(z)y'}=\inner*{y,\left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{z, \omega_j}B(\omega_j)^\adjoint \right)^\adjoint  \left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint \right)y'}
+\inner*{\tildePhi{1:D}(x)y,\tildePhi{1:D}(z)y'}=\frac{1}{D}\inner*{y,\left(\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint \right)^\adjoint  \left(\Vect_{j=1}^D\pairing{z, \omega_j}B(\omega_j)^\adjoint \right)y'}
 = \frac{1}{D} \sum_{j=1}^D \conj{\pairing{x\groupop \inv{z}, \omega_j}}A(\omega_j),
 \end{dmath*}
-where $A(\omega)=B(\omega)B(\omega)^\adjoint $. By assumption $\inner{y, A(\cdot)y'}\in L^1(\dual{\mathcal{X}},\mu)$ and $\omega_j$ are \iid~. Hence from the strong law of large numbers and \cref{pr:mercer_kernel_bochner},
+where $A(\omega)=B(\omega)B(\omega)^\adjoint $. By assumption $\inner{y, A(\cdot)y'}\in L^1(\dual{\mathcal{X}},\probability_{\dual{\Haar},\rho})$ and $\omega_j$ are \iid~. Hence from the strong law of large numbers and \cref{pr:mercer_kernel_bochner} with $\dual{\mu}=\probability_{\dual{\Haar},\rho}$,
 \begin{dmath*}
-\frac{1}{D} \sum_{j=1}^D \conj{\pairing{x\groupop\inv{z},\omega_j}}A(\omega_j)\converges{\asurely}{D\to\infty}\expectation_{\mu}[\conj{\pairing{x\groupop z^{-1},\omega_j}}A(\omega)]\hiderel{=}K_e(x\groupop\inv{z})
+\frac{1}{D} \sum_{j=1}^D \conj{\pairing{x\groupop\inv{z},\omega_j}}A(\omega_j)\converges{\asurely}{D\to\infty}\expectation_{\rho}[\conj{\pairing{x\groupop z^{-1},\omega_j}}A(\omega)]\hiderel{=}K_e(x\groupop\inv{z})
 \end{dmath*}
-in the weak operator topology.
+where the integral converges in the weak operator topology.
 \end{proof}
 The approximate feature map proposed in \cref{pr:ORFF-map} has direct link with the functional feature map defined in \cref{pr:fourier_feature_map} since we have for all $y\in\mathcal{Y}$
 \begin{dmath}
-\tildePhi{1:D}(x)y = \frac{1}{\sqrt{D}} \Vect_{j=1}^D (\Phi_x y)(\omega_j) = \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint y, \qquad \omega_j \hiderel{\sim} \mu.
+\tildePhi{1:D}(x)y = \frac{1}{\sqrt{D}} \Vect_{j=1}^D (\Phi_x y)(\omega_j) = \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint y, \qquad \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip\text{\iid}.
 \end{dmath}
 Therefore $\tildePhi{1:D}(x)$ can be seen as an \say{operator-valued vector} corresponding the \say{stacking} of $D$ \iid~operator-valued realization of $\Phi_x$, the functional feature map. In the same way we can define an approximate feature operator $\tildeW{D}$.
 \begin{definition}[Random Fourier feature operator]
 Let $\theta=\vect_{j=1}^D\theta_j\in\left(\mathcal{Y}'\right)^D$, where $\theta\in\mathcal{Y}'$. We call random Fourier feature operator the linear application $\tildeW{D}:\left(\mathcal{Y}'\right)^D\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ defined as follow.
 \begin{dmath}
-(\tildeW{D} \theta)(x) \hiderel{\colonequals} \tildePhi{1:D}(x)^\adjoint \theta\hiderel{=}\frac{1}{D}\sum_{j=1}^D \conj{\pairing{x,\omega_j}}B(\omega_j)\theta_j, \qquad \omega_j \hiderel{\sim} \mu.
+(\tildeW{D} \theta)(x) \hiderel{\colonequals} \tildePhi{1:D}(x)^\adjoint \theta\hiderel{=}\frac{1}{D}\sum_{j=1}^D \conj{\pairing{x,\omega_j}}B(\omega_j)\theta_j, \qquad \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip \text{\iid}.
 \end{dmath}
 \end{definition}
 The approximate feature operator is useful to show the relations between the approximate feature map with the functional feature map defined in \cref{pr:fourier_feature_map}.
 \begin{proposition}
 \label{pr:phitilde_phi_rel}
-Let $g\in \mathcal{H}=L^2(\mathcal{\dual{X}},d\mu;\mathcal{Y}')$ and let $\theta \colonequals \vect_{j=1}^Dg(\omega_j)$ and define $\mathcal{H}^D(\mathcal{Y}')\colonequals\Vect_{j=1}^D\mathcal{Y}'$, where $\omega_j\sim \mu$. Then for all $g\in\mathcal{H}$,
+Let $g\in \mathcal{H}=L^2(\mathcal{\dual{X}},\probability_{\dual{\Haar},\rho};\mathcal{Y}')$ and let $\theta \colonequals \vect_{j=1}^Dg(\omega_j)$ and define $\mathcal{H}^D(\mathcal{Y}')\colonequals\Vect_{j=1}^D\mathcal{Y}'$, where $\omega_j\sim \probability_{\dual{\Haar},\rho}$ \iid. Then for all $g\in\mathcal{H}$,
 \begin{propenum}
-\item \label{pr:cv_feature_map_1} $\tildePhi{1:D}(x)^\adjoint \theta \converges{\asurely}{D\to\infty} \Phi_x^\adjoint g$,
-\item \label{pr:cv_feature_map_2} $\frac{1}{D}\norm{\theta}_{\mathcal{H}^D(\mathcal{Y}')}^2 \converges{\asurely}{D\to\infty} \norm{g}_{L^2\left(\dual{\mathcal{X}}, d\mu; \mathcal{Y}'\right)}^2$.
+\item \label{pr:cv_feature_map_1} $(\tildeW{D} \theta)(x)=\frac{1}{\sqrt{D}}\tildePhi{1:D}(x)^\adjoint \theta \converges{\asurely}{D\to\infty} \Phi_x^\adjoint g=(Wg)(x)$,
+\item \label{pr:cv_feature_map_2} $\frac{1}{D}\norm{\theta}_{\mathcal{H}^D(\mathcal{Y}')}^2 \converges{\asurely}{D\to\infty} \norm{g}_{L^2\left(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho}; \mathcal{Y}'\right)}^2$.
 \end{propenum}
 \end{proposition}
 \begin{proof}
-Proof of \cref{pr:cv_feature_map_1}: since $\omega_1, \hdots \omega_D$ are \iid~random vectors, for all $y\in \mathcal{Y}$ and for all $y'\in\mathcal{Y}'$, $\inner{y, B(\cdot)y'}\in L^2(\dual{\mathcal{X}},d\mu)$ and $g\in L^2(\dual{\mathcal{X}},d\mu;\mathcal{Y}')$, from the strong law of large numbers
+Proof of \cref{pr:cv_feature_map_1}: since $(\omega_j)_{j=1}^D$ are \iid~random vectors, for all $y\in \mathcal{Y}$ and for all $y'\in\mathcal{Y}'$, $\inner{y, B(\cdot)y'}\in L^2(\dual{\mathcal{X}},\probability_{\dual{\Haar},\rho})$ and $g\in L^2(\dual{\mathcal{X}},\probability_{\dual{\Haar},\rho};\mathcal{Y}')$, from the strong law of large numbers
 \begin{dmath*}
-\tildePhi{1:D}(x)^\adjoint \theta=\frac{1}{D}\sum_{j=1}^D \conj{\pairing{x,\omega_j}}B(\omega_j)g(\omega_j), \qquad \omega_j \hiderel{\sim} \mu \\
-\converges{\asurely}{D\to\infty} \int_{\dual{\mathcal{X}}}\conj{\pairing{x,\omega}}B(\omega)g(\omega)d\mu(\omega)
-\hiderel{=} (Wg)(x) \hiderel{\colonequals} \Phi_x^\adjoint g.
+(\tildeW{D} \theta)(x)=\frac{1}{\sqrt{D}}\tildePhi{1:D}(x)^\adjoint \theta=\frac{1}{D}\sum_{j=1}^D \conj{\pairing{x,\omega_j}}B(\omega_j)g(\omega_j), \qquad \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip \text{\iid} \\
+\converges{\asurely}{D\to\infty} \int_{\dual{\mathcal{X}}}\conj{\pairing{x,\omega}}B(\omega)g(\omega)d\probability_{\dual{\Haar},\rho}(\omega)
+= (Wg)(x) \hiderel{\colonequals} \Phi_x^\adjoint g.
 \end{dmath*}
-Proof of \cref{pr:cv_feature_map_2}: again, since $\omega_1, \hdots \omega_D$ are \iid~random vectors and $g\in L^2(\dual{\mathcal{X}},d\mu;\mathcal{Y}')$, from the strong law of large numbers
+Proof of \cref{pr:cv_feature_map_2}: again, since $(\omega_j)_{j-1}^D$ are \iid~random vectors and $g\in L^2(\dual{\mathcal{X}},\probability_{\dual{\Haar},\rho};\mathcal{Y}')$, from the strong law of large numbers
 \begin{dmath*}
-\frac{1}{D}\norm{\theta}^2_{\mathcal{H}^D(\mathcal{Y}')}=\frac{1}{D}\sum_{j=1}^D\norm{g(\omega_j)}^2_{\mathcal{Y}'}, \qquad \omega_j \hiderel{\sim} \mu \\
-\converges{\asurely}{D\to\infty} \int_{\dual{\mathcal{X}}} \norm{g(\omega)}_{\mathcal{Y}'}^2d\mu(\omega)
-\colonequals \norm{g}_{L^2\left(\dual{\mathcal{X}}, d\mu; \mathcal{Y}'\right)}^2
+\frac{1}{D}\norm{\theta}^2_{\mathcal{H}^D(\mathcal{Y}')}=\frac{1}{D}\sum_{j=1}^D\norm{g(\omega_j)}^2_{\mathcal{Y}'}, \qquad \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip \text{\iid} \\
+\converges{\asurely}{D\to\infty} \int_{\dual{\mathcal{X}}} \norm{g(\omega)}_{\mathcal{Y}'}^2d\probability_{\dual{\Haar},\rho}(\omega) \\
+= \norm{g}_{L^2\left(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho}; \mathcal{Y}'\right)}^2
 \end{dmath*}
 \end{proof}
-Hence the sequence of function $\tildef{D}\colonequals \tildePhi{1:D}(\cdot)^\adjoint \theta$ converges almost surely to a function $f\in\mathcal{H}_{(A,d\mu)}{\scriptstyle\implies} \mathcal{H}_K$. Therefore, in light of \cref{pr:regularization}, it is possible to define an approximate feature map of an \acl{OVK} from its regularization properties in the \acs{vv-RKHS}.
+Hence the sequence of function $\tildef{D}_j\colonequals (\tildePhi{1:D}_{1:j}(\cdot)^\adjoint \theta)_{j=1}^D$ converges almost surely to a function $f\in\mathcal{H}_{(A,\probability_{\dual{\Haar},\rho})}{\scriptstyle\implies} \mathcal{H}_K$. Therefore, in light of \cref{pr:regularization} the regularization property of the kernel with respect to the \acl{FT}, it is also possible to define an approximate feature map of an \acl{OVK} from its regularization properties in the \acs{vv-RKHS}.
 Otherwise \cref{cr:ORFF-map-kernel} exhibit a construction of an \acs{ORFF} directly from an \acs{OVK}.
 \begin{corollary}
 \label{cr:ORFF-map-kernel}
-If $K(x,z)$ is a shift-invariant $\mathcal{Y}$-Mercer kernel such that for all $y$, $y'\in\mathcal{Y}$, $\inner{y', K_e(\delta)y}\in L^1(\mathcal{X},dx)$. Then
+If $K(x,z)$ is a shift-invariant $\mathcal{Y}$-Mercer kernel such that for all $y$, $y'\in\mathcal{Y}$, $\inner{y', K_e(\cdot)y}\in L^1(\mathcal{X},\Haar)$. Then
 \begin{equation}
-\tildePhi{1:D}(x)= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint , \qquad \omega_j \sim \mu,
+\tildePhi{1:D}(x)= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint , \qquad \omega_j \sim \probability_{\dual{\Haar},\rho} \enskip\text{\iid},
 \end{equation}
-where $\inner{y, B(\omega)B(\omega)^\adjoint y'}\mu(\omega)=\FT{\inner{y', K_e(\cdot)y}}(\omega)$, is an approximated feature map of $K$.
+where $\inner{y, B(\omega)B(\omega)^\adjoint y'}\rho(\omega)=\FT{\inner{y', K_e(\cdot)y}}(\omega)$, is an approximated feature map of $K$.
 \end{corollary}
 \begin{proof}
-Find $(A(\omega), d\mu)$ from \cref{pr:spectral} and apply \cref{pr:ORFF-map}.
+Find $(A, \probability_{\dual{\Haar},\rho})$ from \cref{pr:spectral} and apply \cref{pr:ORFF-map}.
 \end{proof}
 
 We write $\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(x)\approx K(x,z)$ when $\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(x)\converges{\asurely}{} K(x,z)$ in the weak operator topology when $D$ tends to infinity. With mild abuse of notation we say that $\tildePhi{1:D}(x)$ is an approximate feature map of $\Phi_x$ \ie~$\tildePhi{1:D}(x)\approx \Phi_x$, when for all $y\in\mathcal{Y}$, $\inner{y, K(x,z)y'}=\inner{\Phi_x y, \Phi_z y'}\approx \inner{\tildePhi{1:D}(x)y, \tildePhi{1:D}(x)y'}\colonequals \tilde{K}(x,z)$ where $\Phi_x$ is defined in the sense of \cref{pr:fourier_feature_map}.
@@ -533,13 +521,12 @@ We find a decomposition such that for all $j=1, \ldots, D$, $A(\omega_j)=B(\omeg
 \begin{center}
 \begin{algorithm2e}[H]\label{alg:ORFF_construction}
 	\SetAlgoLined
-    \Input{$K(x, z)=K_e(\delta)$ a $\mathcal{Y}$-shift-invariant Mercer kernel such that $\forall y,y'\in\mathcal{Y},$ $\inner{y', K_e(\delta)y}\in L^1(\mathbb{R}^d, dx)$ and $D$ the number of features.}
+    \Input{$K(x, z)=K_e(\delta)$ a $\mathcal{Y}$-shift-invariant Mercer kernel such that $\forall y,y'\in\mathcal{Y},$ $\inner{y', K_e(\cdot)y}\in L^1(\mathbb{R}^d, \Haar)$ and $D$ the number of features.}
     \Output{A random feature $\tildePhi{1:D}(x)$ such that $\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(z) \approx K(x,z)$}
     \BlankLine
 	Define the pairing $\pairing{x, \omega}$ from the \acs{LCA} group $(\mathcal{X}, \groupop)$\;
-	Find a decomposition $(B(\omega)$,$\density(\omega))$ such that $B(\omega)B(\omega)^\adjoint \density(\omega)=\IFT{K_e}(\omega)$\;
-% 	Build an randomized feature map via Monte-Carlo sampling from the probability measure $\mu$ and the application $B$\;
-	Draw $D$ random vectors $\omega_j$, $j=1, \hdots, D$ from the probability distribution $\mu$\;
+	Find a decomposition $(B(\omega),\probability_{\dual{\Haar},\rho})$ such that $B(\omega)B(\omega)^\adjoint \rho(\omega)=\IFT{K_e}(\omega)$\;
+	Draw $D$ random vectors $(\omega_j)_{j=1}^D$ \iid~from the probability law $\probability_{\dual{\Haar},\rho}$\;
    \Return $\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint $\;
    \caption{Construction of \acs{ORFF} from \acs{OVK}}
    \label{al:ORFF_construction}
@@ -547,35 +534,59 @@ We find a decomposition such that for all $j=1, \ldots, D$, $A(\omega_j)=B(\omeg
 \end{center}
 
 \subsection{Examples of Operator Random Fourier Feature maps}
-We now give two examples of operator-valued random Fourier feature map when $\mathcal{Y}\subset\mathbb{R}^p$. First we introduce the general form of an approximated feature map for a matrix-valued kernel on the additive group $(\mathbb{R}^d,+)$.
+We now give two examples of operator-valued random Fourier feature map when. First we introduce the general form of an approximated feature map for a matrix-valued kernel on the additive group $(\mathbb{R}^d,+)$.
 \begin{example}[Matrix-valued kernel on the additive group]\label{ex:additive_group}
-In the following, $K(x,z)=K_0(x-z)$ is a $\mathbb{R}^p$-Mercer matrix-valued kernel on $\mathcal{X}=\mathbb{R}^d$ invariant w.r.t. the group operation $+$. %
+In the following, $K(x,z)=K_0(x-z)$ is a $\mathcal{Y}$-Mercer matrix-valued kernel on $\mathcal{X}=\mathbb{R}^d$ invariant w.r.t. the group operation $+$. %
 Then the function $\tildePhi{1:D}$ defined as follow is an \acl{ORFF} of $K_{0}$.
-\begin{equation*}
-\begin{aligned}
-\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^\adjoint  \\ \sin{\inner{x,\omega_j}}B(\omega_j)^\adjoint \end{pmatrix}, \enskip \omega_j \sim \mu.
-\end{aligned}
-\end{equation*}
+\begin{dmath*}
+\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^\adjoint  \\ \sin{\inner{x,\omega_j}}B(\omega_j)^\adjoint \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip\text{\iid}.
+\end{dmath*}
 \end{example}
 \begin{proof}
 The (Pontryagin) dual of $\mathcal{X}=\mathbb{R}^d$
-is $\dual{\mathcal{X}}=\mathbb{R}^d$, and the duality pairing is $\pairing{x-z,\omega}=\exp(i\inner{x-z, \omega})$. The kernel approximation yields:
+is $\dual{\mathcal{X}}\cong\mathbb{R}^d$, and the duality pairing is $\pairing{x-z,\omega}=\exp(i\inner{x-z, \omega})$. The kernel approximation yields:
 \begin{dmath*}
 \tilde{K}(x,z)=\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(z)
 = \frac{1}{D} \sum_{j=1}^D \begin{pmatrix} \cos{\inner{x,\omega_j}} & \sin{\inner{x,\omega_j}} \end{pmatrix}\begin{pmatrix}\cos{\inner{z,\omega_j}} \\ \sin{\inner{z,\omega_j}} \end{pmatrix} A(\omega_j)
 = \frac{1}{D} \sum_{j=1}^D \cos{\inner{x-z,\omega_j}}A(\omega_j) \\
-\converges{\asurely}{D\to\infty}\expectation_\mu\left[\cos{\inner{x-z,\omega}}A(\omega)\right]
+\converges{\asurely}{D\to\infty}\expectation_\rho\left[\cos{\inner{x-z,\omega}}A(\omega)\right]
 \end{dmath*}
-in the weak operator topology. Since for all $x\in\mathcal{X}$, $\sin(x, \cdot)$ is an odd function and $A(\cdot)\mu(\cdot)$ is even,
+in the weak operator topology. Since for all $x\in\mathcal{X}$, $\sin\inner{x, \cdot}$ is an odd function and $A(\cdot)\rho(\cdot)$ is even,
 \begin{dmath*}
-\expectation_\mu\left[\cos{\inner{x-z,\omega}}A(\omega)\right]=\expectation_\mu\left[\exp(-i\inner{x-z,\omega})A(\omega)\right]\hiderel{=}K(x,z).
+\expectation_\rho\left[\cos{\inner{x-z,\omega}}A(\omega)\right]=\expectation_\rho\left[\exp(-i\inner{x-z,\omega})A(\omega)\right]\hiderel{=}K(x,z).
 \end{dmath*}
 Hence $\tilde{K}(x,z)\converges{\asurely}{D\to\infty}K(x,z)$.
-% which tends to $\expectation_{\mu}[\exp(-i\inner{x-z, \omega})A(\omega) ]=\expectation_{\mu}[\conj{\pairing{x-z,\omega}}A(\omega)]=K(x, z)$ when $D$ tends to infinity.
 \end{proof}
-The second example extends scalar-valued Random Fourier Features on the skewed multiplicative group described in \cref{eq:pairing-skewed}) to the operator-valued case.
+In particular we deduce the following features maps for the kernels proposed in \cref{subsec:dec_examples}.
+\begin{itemize}
+\item For the decomposable gaussian kernel $K_0^{dec,gauss}(\delta)=k_0^{gauss}\Gamma$ for all $\delta\in\mathbb{R}^d$, let $BB^\adjoint=\Gamma$. A bounded --and unbounded-- \acs{ORFF} map is
+\begin{dmath*}
+\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B^\adjoint \\ \sin{\inner{x,\omega_j}}B^\adjoint \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\mathcal{N}(0,\sigma^{-2}I_d)} \enskip\text{\iid}
+=\tildephi{1:D}(x)\otimes B,
+\end{dmath*}
+where $\tildephi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}} \\ \sin{\inner{x,\omega_j}}\end{pmatrix}$ is a scalar \acs{RFF} map \cite{Rahimi2007}.
+\item For the curl-free gaussian kernel, $K_0^{curl,gauss}=-\nabla\nabla^T k_0^{gauss}$ an unbounded \acs{ORFF} map is
+\begin{dmath*}
+\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\omega_j^T \\ \sin{\inner{x,\omega_j}}\omega_j^T \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\mathcal{N}(0,\sigma^{-2}I_d)} \enskip\text{\iid}
+\end{dmath*}
+and a bounded \acs{ORFF} map is
+\begin{dmath*}
+\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\frac{\omega_j^T}{\norm{\omega_j}} \\ \sin{\inner{x,\omega_j}}\frac{\omega_j^T}{\norm{\omega_j}} \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}.
+\end{dmath*}
+where $\rho(\omega)=\frac{\sigma^2\norm{\omega}^2}{d}\mathcal{N}(0,\sigma^{-2}I_d)(\omega)$ for all $\omega\in\mathbb{R}^d$.
+\item For the divergence-free gaussian kernel $K_0^{div,gauss}(x,z)=(\nabla\nabla^T-\Delta I_d) k_0^{gauss}(x,z)$ an unbounded \acs{ORFF} map is
+\begin{dmath*}
+\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^T \\ \sin{\inner{x,\omega_j}}B(\omega_j)^T \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}
+\end{dmath*}
+where $B(\omega)=\left(I_d-\frac{\omega^T\omega}{\norm{\omega}}\right)$ and $\rho=\mathcal{N}(0,\sigma^{-2}I_d)$ for all $\omega\in\mathbb{R}^d$. A bounded \acs{ORFF} map is
+\begin{dmath*}
+\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^T \\ \sin{\inner{x,\omega_j}}B(\omega_j)^T \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}
+\end{dmath*}
+where $B(\omega)=\left(I_d-\frac{\omega^T\omega}{\norm{\omega}^2}\right)$ and $\rho(\omega)=\frac{\sigma^2\norm{\omega}^2}{d}\mathcal{N}(0,\sigma^{-2}I_d)$ for all $\omega\in\mathbb{R}^d$.
+\end{itemize}
+The second example extends scalar-valued Random Fourier Features on the skewed multiplicative group --described in \cref{subsec:characters} and \cref{subsubsec:skewedchi2}-- to the operator-valued case.
 \begin{example}[Matrix-valued kernel on the skewed multiplicative group]
-In the following, $K(x,z)=K_{1-c}(x\odot z)$ is a $\mathbb{R}^p$-Mercer matrix-valued kernel on $\mathcal{X}=(-c;+\infty)^d$ invariant w.r.t. the group operation\mpar{The group operation $\odot$ is defined in \cref{sec:background}.} $\odot$. Then the function $\tildePhi{1:D}$ defined as follow is an \acl{ORFF} of $K_{1-c}$.
+In the following, $K(x,z)=K_{1-c}(x\odot z)$ is a $\mathcal{Y}$-Mercer matrix-valued kernel on $\mathcal{X}=(-c;+\infty)^d$ invariant w.r.t. the group operation\mpar{The group operation $\odot$ is defined in \cref{subsubsec:skewedchi2}.} $\odot$. Then the function $\tildePhi{1:D}$ defined as follow is an \acl{ORFF} of $K_{1-c}$.
 \begin{equation*}
 \begin{aligned}
 \tildePhi(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}}B(\omega_j)^\adjoint  \\ \sin{\inner{\log(x+c),\omega_j}}B(\omega_j)^\adjoint \end{pmatrix}, \enskip \omega_j \sim \mu.
@@ -584,14 +595,57 @@ In the following, $K(x,z)=K_{1-c}(x\odot z)$ is a $\mathbb{R}^p$-Mercer matrix-v
 \end{example}
 \begin{proof}
 The dual of $\mathcal{X}=(-c;+\infty)^d$
-is $\dual{\mathcal{X}}=\mathbb{R}^d$, and the duality pairing is $\pairing{x \odot \myinv{z},\omega}=\exp(i\inner{\log(x\odot z^{-1}+c), \omega})$ (see \citet{Li2010}). Following the proof of \cref{ex:additive_group}, we have
+is $\dual{\mathcal{X}}=\mathbb{R}^d$, and the duality pairing is $\pairing{x \odot \myinv{z},\omega}=\exp(i\inner{\log(x\odot z^{-1}+c), \omega})$ (see \citet{li2010random}). Following the proof of \cref{ex:additive_group}, we have
 \begin{equation*}
 \begin{aligned}
 \tilde{K}(x,z)&= \frac{1}{D} \sum\nolimits_{j=1}^D \cos{\inner*{\log\left(\frac{x+c}{z+c}\right), \omega_j}}A(\omega_j).
 \end{aligned}
 \end{equation*}
-which converges almost surely to $\expectation_{\mu}[\exp(-i\inner*{\log(x\odot z^{-1}+c)})A(\omega) ]=\expectation_{\mu}[\conj{\pairing{x\odot z^{-1},\omega}}A(\omega)]=K(x, z)$ when $D$ tends to infinity.
+which converges almost surely to
+\begin{dmath*}
+\expectation_{\mu}[\exp(-i\inner*{\log(x\odot z^{-1}+c)})A(\omega) ]\hiderel{=}\expectation_{\mu}[\conj{\pairing{x\odot z^{-1},\omega}}A(\omega)]\hiderel{=}K(x, z)
+\end{dmath*}
+ when $D$ tends to infinity.
 \end{proof}
+
+\subsection{Regularization property}
+We have shown so far that it is always possible to construct a feature map that allows to approximate a shift-invariant $\mathcal{Y}$-Mercer kernel. However we could also propose a construction of such map by studying the regularization induced with respect to the \acl{FT} of a target function $f\in \mathcal{H}_K$. In other words, what is the norm in $L^2(\dual{\mathcal{X}}, \dual{\Haar}; \mathcal{Y}')$ induced by $\norm{\cdot}_K$?
+\begin{proposition}
+Let $K$ be a shift-invariant $\mathcal{Y}$-Mercer Kernel such that for all $y$, $y'$ in $\mathcal{Y}$, $\inner{y', K_e(\cdot)y}\in L^1(\mathcal{X}, \Haar)$. Then for all $f\in\mathcal{H}_K$
+\begin{dmath}
+\norm{f}^2_K=\displaystyle\int_{\dual{\mathcal{X}}}\frac{\inner*{\FT{f}(\omega), A\left(\omega\right)^\dagger\FT{f}(\omega)}_{\mathcal{Y}}}{\rho(\omega)}d\dual{\Haar}(\omega).
+\label{eq:reg_L2}
+\end{dmath}
+where $\inner{y', A(\omega)y}\rho(\omega)\colonequals\FT{\inner{y', K_e(\cdot)y}}(\omega)$.
+\label{pr:regularization}
+\end{proposition}
+\begin{proof}
+We first show how the \acl{FT} relates to the feature operator. Since $\mathcal{H}_K$ is embed into $\mathcal{H}=L^2(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho}; \mathcal{Y})$ by mean of the feature operator $W$, we have for all $f\in\mathcal{H}_k$, for all $f\in\mathcal{H}$ and for all $x\in\mathcal{X}$
+\begin{dgroup*}
+\begin{dmath*}
+\FT{\IFT{f}}(x)\hiderel{=}\int_{\dual{\mathcal{X}}}\overline{\pairing{x,\omega}}\IFT{f}(\omega)d\dual{\Haar}(\omega) = f(x)
+\end{dmath*}
+\begin{dmath*}
+(Wg)(x)\hiderel{=}\int_{\dual{\mathcal{X}}}\conj{\pairing{x,\omega}}\rho(\omega)B(\omega)g(\omega)d\dual{\Haar}(\omega) = f(x).
+\end{dmath*}
+\end{dgroup*}
+By injectivity of the \acl{FT}, $\IFT{f}(\omega)=\rho(\omega)B(\omega)g(\omega)$. From \cref{pr:feature_operator} we have
+\begin{dmath*}
+\norm{f}^2_{K} = \inf \Set{\norm{g}^2_{\mathcal{H}} | \forall g\hiderel{\in}\mathcal{H}, \enskip Wg\hiderel{=}f} = \inf \Set{\int_{\dual{\mathcal{X}}} \norm{g}^2_{\mathcal{Y}}d\probability_{\dual{\Haar},\rho} | \forall g\hiderel{\in}\mathcal{H},\enskip \IFT{f}\hiderel{=}\rho(\cdot)B(\cdot)g(\cdot)}.
+\end{dmath*}
+The pseudo inverse of the operator $B(\omega)$ -- noted $B(\omega)^\dagger$ -- is the unique solution of the system $\IFT{f}(\omega)=\rho(\omega)B(\omega)g(\omega)$ \wrt~$g(\omega)$ with minimal norm\mpar{Note that since $B(\omega)$ is bounded the pseudo inverse of $B(\omega)$ is well defined for $\dual{\Haar}$-almost all $\omega$. However if $B(\omega)$ is infinite dimensional, the pseudo inverse is continuous if and only if $A(\omega)$ has closed range. This is always true if $\mathcal{Y}$ is finite dimensional.}. Eventually,
+\begin{dmath*}
+\norm{f}^2_K = \int_{\dual{\mathcal{X}}} \frac{\norm{B(\omega)^\dagger\IFT{f}(\omega)}_{\mathcal{Y}}^2}{\rho(\omega)^2}d\probability_{\dual{\Haar},\rho}(\omega)
+\end{dmath*}
+Using the fact that $\IFT{\cdot}=\mathcal{F}\mathcal{R}[\cdot]$ and $\mathcal{F}^2[\cdot]=\mathcal{R}[\cdot]$,
+\begin{dmath*}
+\norm{f}^2_K= \displaystyle\int_{\dual{\mathcal{X}}} \frac{\norm{\mathcal{R}\left[B(\cdot)^\dagger\rho(\cdot)\right](\omega)\FT{f}(\omega)}^2_{\mathcal{Y}}}{\rho(\omega)^2}d\dual{\Haar}(\omega)
+= \displaystyle\int_{\dual{\mathcal{X}}} \frac{\norm{B(\omega)^\dagger\rho(\omega)\FT{f}(\omega)}^2_{\mathcal{Y}}}{\rho(\omega)^2}d\dual{\Haar}(\omega)
+= \displaystyle\int_{\dual{\mathcal{X}}} \frac{\inner{B(\omega)^\dagger\FT{f}(\omega),B(\omega)^\dagger\FT{f}(\omega)}_{\mathcal{Y}}}{\rho(\omega)}d\dual{\Haar}(\omega)
+= \displaystyle\int_{\dual{\mathcal{X}}} \frac{\inner{\FT{f}(\omega),A(\omega)^\dagger\FT{f}(\omega)}_{\mathcal{Y}}}{\rho(\omega)}d\dual{\Haar}(\omega)
+\end{dmath*}
+\end{proof}
+Note that if $K(x,z)=k(x,z)$ is a scalar kernel then for all $\omega$ in $\dual{\mathcal{X}}$, $A(\omega)=1$. Therefore we recover a well known results for kernels that is for any $f\in\mathcal{H}_k$ we have $\norm{f}_k=\int_{\dual{\mathcal{X}}}\FT{k_e}(\omega)^{-1}\FT{f}(\omega)^2d\dual{\Haar}(\omega)$ \citep{Yang2012,vertregularization,smola1998connection}. We also note that the regularization property in $\mathcal{H}_K$ does not depends (as expected) on the decomposition of $A(\omega)$ into $B(\omega)B(\omega)^\adjoint $. Therefore the decomposition should be chosen such that it optimizes the computation cost. For instance if $A(\omega)\in\mathcal{L}(\mathbb{R}^p)$ has rank $r$, one could find an operator $B(\omega)\in\mathcal{L}(\mathbb{R}^p, \mathbb{R}^r)$ such that $A(\omega)=B(\omega)B(\omega)^\adjoint $.
 
 \clearpage
 %----------------------------------------------------------------------------------------
@@ -608,7 +662,7 @@ f_* = \argmin_{f\in\mathcal{H}_K}  \frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f,
 where $\lambda\in\mathbb{R}_+$ is a regularization\mpar{Tychonov regularization.} parameter. A common choice of data fitting term for regression is $L:(x_i, f, y_i) \mapsto \norm{f(x_i)-y_i}_{\mathcal{Y}}^2$.
 \begin{remark}
 \label{rk:rkhs_bound}
-If for all $x_i\in\mathcal{X}$ and all $y_i\in\mathcal{Y}$ we have $L(x_i,0,y_i)\le 2\sigma_y^2$, then $\lambda\norm{f_*}_K\le\sigma_y^2$. Indeed, since $\mathcal{H}_K$ is a Hilbert space, $0\in\mathcal{H}_K$. Moreover $L$ is convex with respect to $f$, thus
+If for all $x_i\in\mathcal{X}$ and all $y_i\in\mathcal{Y}$ we have $L(x_i,0,y_i)\le \sigma_y^2$, then $\lambda\norm{f_*}_K\le 2\sigma_y^2$. Indeed, since $\mathcal{H}_K$ is a Hilbert space, $0\in\mathcal{H}_K$. Moreover $L$ is convex with respect to $f$, thus
 \begin{dmath*}
 \frac{\lambda}{2}\norm{f_*}^2_{K} \le \frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f_*, y_i) + \frac{\lambda}{2}\norm{f_*}^2_{K}
 \le \frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, 0, y_i) \hiderel{\le} \sigma_y^2
@@ -669,95 +723,95 @@ $\tildef{1:D}(x)=\tildePhi{1:D}(x)^\adjoint \theta$, where $\theta$ lives in som
 \label{eq:argmin_applied}
 \theta_*=\argmin_{\theta\in\mathcal{H}^D\left(\mathcal{Y}'\right)} \frac{1}{2N}\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint \theta-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2D}\norm{\theta}^2_{\mathcal{H}^D\left(\mathcal{Y}'\right)}
 \end{dmath}
-% Since $\theta\in\mathcal{H}^D\left(\mathcal{Y}'\right)$ lives in a different space than $f\in\mathcal{H}_K$ is makes no sense to show the convergence of $\theta_*$ to $f_*$. However we can verify that $\tildef{1:D}$ converges to $f\in\mathcal{H}_K$ pointwise. We first introduce the following lemma and assumptions. First we characterize extremum estimators. Let $\mathcal{H}$ be any Hilbert space.
-% \begin{assumption}[EE]
-% \label{ass:ee}
-% The parameter $\tilde{g}_*\in\mathcal{H}$ is an extremum estimator of $Q_D$ if $\tilde{g}_*=\argmin_{g\in\mathcal{H}} Q_D(g)$.
-% \end{assumption}
-% To derive consistency we must ensure that the stochastic objective $Q_D$ function converges uniformly-weakly to some target function $Q_0$. Let $B(g,\epsilon)$ be the open ball in $\mathcal{H}$ with radius $\epsilon$ and $\mathcal{H}\setminus{B(g,\epsilon)}$ denotes its complement in $\mathcal{H}$.
-% \begin{assumption}[U-SCON]
-% \label{ass:uwcon}
-% A \emph{stochastic} function $Q_D$ converges uniformly-strongly to some \emph{non-stochastic} function $Q_0$ if \begin{dmath*}
-% \sup_{g\in\mathcal{H}}\abs{Q_D(g)-Q_0(g)}\converges{\asurely}{D\to\infty}0
-% \end{dmath*}
-% \end{assumption}
-% This is equivalent to say that $Q_D$ converges to $Q_0$ in probability in the uniform norm topology. Eventually the mimizers of $Q$ must be uniquely identifiable.
-% \begin{assumption}[ID]
-% \label{ass:id}
-% A function has unique identifiable minimizer if there exist $g_*\in\mathcal{H}$ such that for all $\epsilon\ge 0$, $\inf_{g\in \mathcal{H}\setminus{B(g_*,\epsilon)}} Q(g)>Q(g_*)$.
-% \end{assumption}
-% Note that if $Q$ is a strictly convex function of $g$, then \cref{ass:id} holds. These three assumptions combined yields the consistency of an estimator.
-% \begin{proposition} If
-% \cref{ass:ee}, \cref{ass:uwcon} and \cref{ass:id} hold then $\tilde{g}_* \converges{\asurely}{D\to\infty} g_*.$
-% \end{proposition}
-% \begin{proof}
+Since $\theta\in\mathcal{H}^D\left(\mathcal{Y}'\right)$ lives in a different space than $f\in\mathcal{H}_K$ is makes no sense to show the convergence of $\theta_*$ to $f_*$. However we can verify that $\tildef{1:D}$ converges to $f\in\mathcal{H}_K$ pointwise. We first introduce the following lemma and assumptions. First we characterize extremum estimators. Let $\mathcal{H}$ be any Hilbert space.
+\begin{assumption}[EE]
+\label{ass:ee}
+The parameter $\tilde{g}_*\in\mathcal{H}$ is an extremum estimator of $Q_D$ if $\tilde{g}_*=\argmin_{g\in\mathcal{H}} Q_D(g)$.
+\end{assumption}
+To derive consistency we must ensure that the stochastic objective $Q_D$ function converges uniformly-weakly to some target function $Q_0$. Let $B(g,\epsilon)$ be the open ball in $\mathcal{H}$ with radius $\epsilon$ and $\mathcal{H}\setminus{B(g,\epsilon)}$ denotes its complement in $\mathcal{H}$.
+\begin{assumption}[U-SCON]
+\label{ass:uwcon}
+A \emph{stochastic} function $Q_D$ converges uniformly-strongly to some \emph{non-stochastic} function $Q_0$ if \begin{dmath*}
+\sup_{g\in\mathcal{H}}\abs{Q_D(g)-Q_0(g)}\converges{\asurely}{D\to\infty}0
+\end{dmath*}
+\end{assumption}
+This is equivalent to say that $Q_D$ converges to $Q_0$ in probability in the uniform norm topology. Eventually the mimizers of $Q$ must be uniquely identifiable.
+\begin{assumption}[ID]
+\label{ass:id}
+A function has unique identifiable minimizer if there exist $g_*\in\mathcal{H}$ such that for all $\epsilon\ge 0$, $\inf_{g\in \mathcal{H}\setminus{B(g_*,\epsilon)}} Q(g)>Q(g_*)$.
+\end{assumption}
+Note that if $Q$ is a strictly convex function of $g$, then \cref{ass:id} holds. These three assumptions combined yields the consistency of an estimator.
+\begin{proposition} If
+\cref{ass:ee}, \cref{ass:uwcon} and \cref{ass:id} hold then $\tilde{g}_* \converges{\asurely}{D\to\infty} g_*.$
+\end{proposition}
+\begin{proof}
 
-% \end{proof}
-% We are now ready to prove the consistency of ORFF with respect to the minimization in the RKHS, that is if we replace the model $f(x)=\sum_{i=1}^NK(\cdot, x_i)c_i$ by a model $f(x)=\tildePhi{1:D}(x)^\adjoint \theta$ and find the minimizer of the ridge regression problem, then when $D$ tends to infinity, both model return the \say{same} function.
-% \begin{proposition}[Consitensy of ORFF \wrt~\acs{vv-RKHS}] Let $K$ be a $\mathcal{Y}$-Mercer Kernel. If $\theta_*\in\mathcal{H}^D\left(\mathcal{Y}'\right)$ is the minimizer of \cref{eq:argmin_applied} and $f_*\in\mathcal{H}_K$ is the minimizer of \cref{eq:argmin_RKHS}. Then
-% \begin{dmath}
-% \tildePhi{1:D}(x)^\adjoint\theta_* \converges{\asurely}{D\to\infty}f_*(x),
-% \end{dmath}
-% for all $x\in\mathcal{X}$.
-% \end{proposition}
-% \begin{proof}
-% % Let $(Wg)(x)=\Phi_x^\adjoint g$ be the feature operator associated to $\Phi$ and $\tildePhi{1:D}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D(\Phi_x y)(\omega_j)$, where $\omega_j$ are \iid~random vectors following the law $\mu$. Since $W$ is a partial isometry
+\end{proof}
+We are now ready to prove the consistency of ORFF with respect to the minimization in the RKHS, that is if we replace the model $f(x)=\sum_{i=1}^NK(\cdot, x_i)c_i$ by a model $f(x)=\tildePhi{1:D}(x)^\adjoint \theta$ and find the minimizer of the ridge regression problem, then when $D$ tends to infinity, both model return the \say{same} function.
+\begin{proposition}[Consitensy of ORFF \wrt~\acs{vv-RKHS}] Let $K$ be a $\mathcal{Y}$-Mercer Kernel. If $\theta_*\in\mathcal{H}^D\left(\mathcal{Y}'\right)$ is the minimizer of \cref{eq:argmin_applied} and $f_*\in\mathcal{H}_K$ is the minimizer of \cref{eq:argmin_RKHS}. Then
+\begin{dmath}
+\tildePhi{1:D}(x)^\adjoint\theta_* \converges{\asurely}{D\to\infty}f_*(x),
+\end{dmath}
+for all $x\in\mathcal{X}$.
+\end{proposition}
+\begin{proof}
+% Let $(Wg)(x)=\Phi_x^\adjoint g$ be the feature operator associated to $\Phi$ and $\tildePhi{1:D}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D(\Phi_x y)(\omega_j)$, where $\omega_j$ are \iid~random vectors following the law $\mu$. Since $W$ is a partial isometry
 
-% % We have that for all $f\in\mathcal{H_K}$, there exists a $g\in\mathcal{H}$ such that $(W^\adjoint f)(x)=g(x)=\Phi(x)^\adjoint g$ where $W$ is a partial isometry with initial subspace $(\Ker W)^\perp\subset\mathcal{H}$ and final subspace $\mathcal{H}_K$.
+% We have that for all $f\in\mathcal{H_K}$, there exists a $g\in\mathcal{H}$ such that $(W^\adjoint f)(x)=g(x)=\Phi(x)^\adjoint g$ where $W$ is a partial isometry with initial subspace $(\Ker W)^\perp\subset\mathcal{H}$ and final subspace $\mathcal{H}_K$.
 
-% % \begin{dmath}
-% % \label{eq:argmin_HS}
-% % g_*=\argmin_{g\in(\Ker W)^\perp\subset\mathcal{H}} \frac{1}{2N}\sum_{i=1}^N\norm{(Wg)(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{g}^2_{\mathcal{H}}
-% % \end{dmath}
+% \begin{dmath}
+% \label{eq:argmin_HS}
+% g_*=\argmin_{g\in(\Ker W)^\perp\subset\mathcal{H}} \frac{1}{2N}\sum_{i=1}^N\norm{(Wg)(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{g}^2_{\mathcal{H}}
+% \end{dmath}
 
-% Define
-% \begin{dmath}
-% Q_0(g)=\frac{1}{2N}\sum_{i=1}^N\norm{(Wg)(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{g}^2_{\mathcal{H}}.
-% \end{dmath}
-% Moreover let $\tildePhi{1:D}(x_i)y=\Vect_{j=1}^D(\Phi_{x_i}y)(\omega_j)$ for all $y\in\mathcal{Y}$, and $\theta_g=\vect_{j=1}^Dg(\omega_j)$, where $\omega_j$ are \iid~random vectors following a law $\mu$. We define the empirical estimator of $Q_0$ as
-% \begin{dmath}
-% Q_D(g)=\frac{1}{2N}\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint \theta_g-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2D}\norm{\theta_g}^2_{\mathcal{H}^D\left(\mathcal{Y}'\right)}
-% \end{dmath}
-% Let $g_*=\argmin_{g\in\mathcal{H}}Q_0(g)$ and $\tilde{g}_*=\argmin_{g\in\mathcal{H}}Q_D(g)$ thus $\tilde{g}_*$ is an extremum estimator (\cref{ass:ee} holds). Notice that since $W$ is a bounded linear application, $Q_0$ is continuous strongly convex and coercive. By \cref{cor:unique_minimizer} attains an identifiable unique minimizer (\cref{ass:id} holds).
+Define
+\begin{dmath}
+Q_0(g)=\frac{1}{2N}\sum_{i=1}^N\norm{(Wg)(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{g}^2_{\mathcal{H}}.
+\end{dmath}
+Moreover let $\tildePhi{1:D}(x_i)y=\Vect_{j=1}^D(\Phi_{x_i}y)(\omega_j)$ for all $y\in\mathcal{Y}$, and $\theta_g=\vect_{j=1}^Dg(\omega_j)$, where $\omega_j$ are \iid~random vectors following a law $\mu$. We define the empirical estimator of $Q_0$ as
+\begin{dmath}
+Q_D(g)=\frac{1}{2N}\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint \theta_g-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2D}\norm{\theta_g}^2_{\mathcal{H}^D\left(\mathcal{Y}'\right)}
+\end{dmath}
+Let $g_*=\argmin_{g\in\mathcal{H}}Q_0(g)$ and $\tilde{g}_*=\argmin_{g\in\mathcal{H}}Q_D(g)$ thus $\tilde{g}_*$ is an extremum estimator (\cref{ass:ee} holds). Notice that since $W$ is a bounded linear application, $Q_0$ is continuous strongly convex and coercive. By \cref{cor:unique_minimizer} attains an identifiable unique minimizer (\cref{ass:id} holds).
 
-% Since W is bounded, $\Ker W$ is closed, so that we can perform the decomposition $\mathcal{H}=(\Ker W)^\perp\oplus \Ker W$. Then clearly by linearity of $W$ and the fact that for all $g\in\Ker W$, $Wg=0$,
-% \begin{dmath*}
-% g_*=\argmin_{g\in\mathcal{H}}Q_0(g)
-% \hiderel{=}\argmin_{g\in(\Ker W)^\perp\oplus \Ker W}Q_0(g)
-% \hiderel{=}\argmin_{g\in(\Ker W)^\perp}Q_0(g).
-% \end{dmath*}
-% Besides with similar arguments as in \cref{rk:rkhs_bound} we deduce that $\lambda\norm{g_*}_{\mathcal{H}}^2$ $\le$ $2\sigma^2_y$. As a result $g_*\in\mathcal{H}_\lambda\colonequals\Set{g\in(\Ker W)^\perp|\lambda\norm{g}_{\mathcal{H}}^2\le 2\sigma^2_y}$. Eventually
-% \begin{dmath*}
-% g_*=\argmin_{g\in\mathcal{H}}Q_0(g)\hiderel{=}\argmin_{g\in\mathcal{H}_\lambda}Q_0(g)
-% \end{dmath*}
-% \begin{enumerate}
-% \item By assumption $\sup_{y\in\mathcal{Y}} \norm{y}\le \sigma_y$ thus from \cref{rk:rkhs_bound} we have that $\lambda\norm{f_*}^2_K$ is bounded by $2\sigma_y^2$ and so is $\lambda\norm{g_*}_{\mathcal{H}}^2$. We note $\mathcal{H}_K^{\lambda}=\Set{f\in\mathcal{H}_K|\lambda\norm{f}^2_K\le 2\sigma_y}$ and $\mathcal{H}^\lambda=\Set{g\in(\Ker W)^\perp|\lambda\norm{g}^2_{\mathcal{H}}\le 2\sigma_y}$.
-% Then
-% \begin{dmath*}
-% f_*=\argmin_{f\in\mathcal{H}_K} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K}
-% =\argmin_{f\in\mathcal{H}_K^\lambda} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K}
-% \end{dmath*}
-% and $g_*=\argmin_{g\in(Ker W)^\perp} Q_0(g)
-% \hiderel{=}\argmin_{g\in\mathcal{H}^\lambda} Q_0(g)$.
-% Besides the inclusion $\iota_K:\mathcal{H}_K\hookrightarrow\mathcal{C}(\mathcal{X};\mathcal{Y})$ is compact, thus the closed set $\mathcal{H}_K^{\lambda}=\Set{f\in\mathcal{H}_K|\lambda\norm{f}^2_K\le 2\sigma_y}$ is compact with respect to the compact-open topology. $W$ is a partial isometry with initial space $(\Ker W)^\perp$, the restriction $W|_{(\Ker W)^\perp}:(\Ker W)^\perp\to\mathcal{H}_K$ is an isometry. Thus the set $\mathcal{H}^\lambda=\Set{g\in(\Ker W)^\perp|\lambda\norm{g}^2_{\mathcal{H}}\le 2\sigma_y}=(W|_{(\Ker W)^\perp})^\adjoint \mathcal{H}_K^{\lambda}$ is compact.
-% \item It is easy to note that $Q_0$ is continuous and measureable. Besides since $f_*$ is unique and $W|_{(\Ker W)^\perp}$ is an isometry, $Q_0$ has unique minimizer $g_*$ such that $W|_{(\Ker W)^\perp}g_*=f_*$.
-% \item Suppose that $\norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}$ is bounded for all $\omega\in\dual{\mathcal{X}}$ as a consequence $\sup_{g\in\mathcal{H}^\lambda} \abs{Q_D(g)-Q_0(g)}$ is bounded thus from the strong law of large numbers $Q_D(g)\converges{\asurely}{D\to\infty}Q_0(g)$ uniformly.
-% \end{enumerate}
-% As a result, the extremum estimator $Q_D$ is consistent
-% \begin{dmath}
-% \label{eq:consitency1}
-% \tilde{g}_* \converges{\proba}{D\to\infty} g_*
-% \end{dmath}
-% Let $\theta_{g,*}=\vect_{j=1}^D\tilde{g}_*(\omega_j)$. since $\tilde{g}_*$ minimizes $Q_D$, $\theta_{g,*}$ minimizes \cref{eq:argmin_applied}. Besides from \cref{pr:phitilde_phi_rel} we have
-% \begin{dmath}
-% \tilde{W}\theta_{g,*} \converges{\asurely}{D\to\infty} W\tilde{g}_*.
-% \end{dmath}
-% Finally \cref{eq:consitency1} shows that $W\tilde{g}_*\converges{\proba}{D\to\infty}Wg_*=f_*$, hence
-% \begin{dmath*}
-% \tildePhi{1:D}\theta_{g,*}\hiderel{=}\tilde{W}\theta_{g,*}\converges{\proba}{D\to\infty} f_*\hiderel{\in}\mathcal{H}_K.
-% \end{dmath*}
-% with $\theta_{g,*}=\theta_*$ defined in \cref{eq:argmin_RKHS}.
-% \end{proof}
+Since W is bounded, $\Ker W$ is closed, so that we can perform the decomposition $\mathcal{H}=(\Ker W)^\perp\oplus \Ker W$. Then clearly by linearity of $W$ and the fact that for all $g\in\Ker W$, $Wg=0$,
+\begin{dmath*}
+g_*=\argmin_{g\in\mathcal{H}}Q_0(g)
+\hiderel{=}\argmin_{g\in(\Ker W)^\perp\oplus \Ker W}Q_0(g)
+\hiderel{=}\argmin_{g\in(\Ker W)^\perp}Q_0(g).
+\end{dmath*}
+Besides with similar arguments as in \cref{rk:rkhs_bound} we deduce that $\lambda\norm{g_*}_{\mathcal{H}}^2$ $\le$ $2\sigma^2_y$. As a result $g_*\in\mathcal{H}_\lambda\colonequals\Set{g\in(\Ker W)^\perp|\lambda\norm{g}_{\mathcal{H}}^2\le 2\sigma^2_y}$. Eventually
+\begin{dmath*}
+g_*=\argmin_{g\in\mathcal{H}}Q_0(g)\hiderel{=}\argmin_{g\in\mathcal{H}_\lambda}Q_0(g)
+\end{dmath*}
+\begin{enumerate}
+\item By assumption $\sup_{y\in\mathcal{Y}} \norm{y}\le \sigma_y$ thus from \cref{rk:rkhs_bound} we have that $\lambda\norm{f_*}^2_K$ is bounded by $2\sigma_y^2$ and so is $\lambda\norm{g_*}_{\mathcal{H}}^2$. We note $\mathcal{H}_K^{\lambda}=\Set{f\in\mathcal{H}_K|\lambda\norm{f}^2_K\le 2\sigma_y}$ and $\mathcal{H}^\lambda=\Set{g\in(\Ker W)^\perp|\lambda\norm{g}^2_{\mathcal{H}}\le 2\sigma_y}$.
+Then
+\begin{dmath*}
+f_*=\argmin_{f\in\mathcal{H}_K} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K}
+=\argmin_{f\in\mathcal{H}_K^\lambda} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K}
+\end{dmath*}
+and $g_*=\argmin_{g\in(Ker W)^\perp} Q_0(g)
+\hiderel{=}\argmin_{g\in\mathcal{H}^\lambda} Q_0(g)$.
+Besides the inclusion $\iota_K:\mathcal{H}_K\hookrightarrow\mathcal{C}(\mathcal{X};\mathcal{Y})$ is compact, thus the closed set $\mathcal{H}_K^{\lambda}=\Set{f\in\mathcal{H}_K|\lambda\norm{f}^2_K\le 2\sigma_y}$ is compact with respect to the compact-open topology. $W$ is a partial isometry with initial space $(\Ker W)^\perp$, the restriction $W|_{(\Ker W)^\perp}:(\Ker W)^\perp\to\mathcal{H}_K$ is an isometry. Thus the set $\mathcal{H}^\lambda=\Set{g\in(\Ker W)^\perp|\lambda\norm{g}^2_{\mathcal{H}}\le 2\sigma_y}=(W|_{(\Ker W)^\perp})^\adjoint \mathcal{H}_K^{\lambda}$ is compact.
+\item It is easy to note that $Q_0$ is continuous and measureable. Besides since $f_*$ is unique and $W|_{(\Ker W)^\perp}$ is an isometry, $Q_0$ has unique minimizer $g_*$ such that $W|_{(\Ker W)^\perp}g_*=f_*$.
+\item Suppose that $\norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}$ is bounded for all $\omega\in\dual{\mathcal{X}}$ as a consequence $\sup_{g\in\mathcal{H}^\lambda} \abs{Q_D(g)-Q_0(g)}$ is bounded thus from the strong law of large numbers $Q_D(g)\converges{\asurely}{D\to\infty}Q_0(g)$ uniformly.
+\end{enumerate}
+As a result, the extremum estimator $Q_D$ is consistent
+\begin{dmath}
+\label{eq:consitency1}
+\tilde{g}_* \converges{\proba}{D\to\infty} g_*
+\end{dmath}
+Let $\theta_{g,*}=\vect_{j=1}^D\tilde{g}_*(\omega_j)$. since $\tilde{g}_*$ minimizes $Q_D$, $\theta_{g,*}$ minimizes \cref{eq:argmin_applied}. Besides from \cref{pr:phitilde_phi_rel} we have
+\begin{dmath}
+\tilde{W}\theta_{g,*} \converges{\asurely}{D\to\infty} W\tilde{g}_*.
+\end{dmath}
+Finally \cref{eq:consitency1} shows that $W\tilde{g}_*\converges{\proba}{D\to\infty}Wg_*=f_*$, hence
+\begin{dmath*}
+\tildePhi{1:D}\theta_{g,*}\hiderel{=}\tilde{W}\theta_{g,*}\converges{\proba}{D\to\infty} f_*\hiderel{\in}\mathcal{H}_K.
+\end{dmath*}
+with $\theta_{g,*}=\theta_*$ defined in \cref{eq:argmin_RKHS}.
+\end{proof}
 
 \clearpage
 

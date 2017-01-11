@@ -89,11 +89,10 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                               PROOF, THEOREM, and FRIENDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%--------------------------------
 \makeatletter
 \renewtheoremstyle{plain}%
 {\item[\hskip\labelsep \theorem@headerfont ##1\ ##2 \theorem@separator]}%
-{\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\ \normalfont \theorem@separator]}
+{\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\ \theorem@separator] {\theorem@headerfont (##3).} \theorem@separator}
 \makeatother
 
 \theoremstyle{definition}

@@ -85,6 +85,11 @@
 %\PassOptionsToPackage{spanish,es-lcroman}{babel}
 \usepackage[american]{babel}
 
+ %------------------------------------------------
+
+\usepackage{afterpage}
+\usepackage{pdflscape}
+
 %------------------------------------------------
 
 \usepackage{csquotes}
@@ -131,7 +136,7 @@ natbib=true % natbib compatibility mode (\citep and \citet still work)
 %------------------------------------------------
 
 % Not necessary for overleaf's LaTeX version.
-% \usepackage{fixltx2e} % Fixes some LaTeX stuff
+\usepackage{fixltx2e} % Fixes some LaTeX stuff
 
 %------------------------------------------------
 
@@ -251,10 +256,10 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 \usepackage{adforn}
 \usepackage[shortlabels]{enumitem}
 \usepackage{braket}
-\usepackage{colonequals}
 \usepackage{dirtytalk}
 \usepackage{classicthesis}
 \usepackage{breqn}
+\usepackage{colonequals}
 % \usepackage{amsthm,thmtools}
 % \usepackage[amsthm,thmtools,noconfig]{ntheorem}
 \usepackage{amssymb,amsmath}

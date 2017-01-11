@@ -484,8 +484,7 @@ Note that we consider $\omega$ to be a \emph{variable} in $\dual{\mathcal{X}}$ w
 \end{dmath*}
 where
 \begin{dmath*}
-\widetilde{\mathcal{H}}^D = \Set{\Vect_{j=1}^Dg(\omega_j)| \forall g\in L^2\left(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho}, \mathcal{Y}'\right), \enskip \omega_j\sim \probability_{\dual{\Haar},\rho} \enskip \text{\iid} }
-\subset \Vect_{j=1}^D \mathcal{Y}' ,
+\widetilde{\mathcal{H}}^D = \Set{\Vect_{j=1}^Dg(\omega_j)| \forall g\in L^2\left(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho}, \mathcal{Y}'\right), \enskip \omega_j\sim \probability_{\dual{\Haar},\rho} \enskip \text{\iid} },
 \end{dmath*}
 is a Hilbert space whose inner product is
 \begin{dmath*}
@@ -592,8 +591,7 @@ We find a decomposition such that for all $j=1, \ldots, D$, $A(\omega_j)=B(\omeg
 \centering
 \input{../gfx/feature_relationship.tikz}
 % \end{sideways}
-\caption[Relationships between feature-maps.]{Relationships between feature-maps. $\widetilde{\mathcal{H}}^D = \Set{\Vect_{j=1}^Dg(\omega_j)| \forall g\in L^2\left(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho}, \mathcal{Y}'\right), \enskip \omega_j\sim \probability_{\dual{\Haar},\rho} \enskip \text{\iid} }
-\subset \Vect_{j=1}^D \mathcal{Y}'$.}
+\caption[Relationships between feature-maps.]{Relationships between feature-maps. $\widetilde{\mathcal{H}}^D = \Set{\Vect_{j=1}^Dg(\omega_j)| \forall g\in L^2\left(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho}, \mathcal{Y}'\right), \enskip \omega_j\sim \probability_{\dual{\Haar},\rho} \enskip \text{\iid} }$.}
 \label{fig:rel_features}
 \end{figure}
 % \end{sidewaysfigure}
@@ -606,8 +604,9 @@ We now give two examples of operator-valued random Fourier feature map when. Fir
 In the following, $K(x,z)=K_0(x-z)$ is a $\mathcal{Y}$-Mercer matrix-valued kernel on $\mathcal{X}=\mathbb{R}^d$ invariant w.r.t. the group operation $+$. %
 Then the function $\tildePhi{1:D}$ defined as follow is an \acl{ORFF} of $K_{0}$.
 \begin{dmath*}
-\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^\adjoint  \\ \sin{\inner{x,\omega_j}}B(\omega_j)^\adjoint \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip\text{\iid}.
+\tildePhi{1:D}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^\adjoint y \\ \sin{\inner{x,\omega_j}}B(\omega_j)^\adjoint y\end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip\text{\iid}.
 \end{dmath*}
+for all $y\in\mathcal{Y}$.
 \end{example}
 \begin{proof}
 The (Pontryagin) dual of $\mathcal{X}=\mathbb{R}^d$
@@ -628,37 +627,36 @@ In particular we deduce the following features maps for the kernels proposed in 
 \begin{itemize}
 \item For the decomposable gaussian kernel $K_0^{dec,gauss}(\delta)=k_0^{gauss}(\delta)\Gamma$ for all $\delta\in\mathbb{R}^d$, let $BB^\adjoint=\Gamma$. A bounded --and unbounded-- \acs{ORFF} map is
 \begin{dmath*}
-\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B^\adjoint \\ \sin{\inner{x,\omega_j}}B^\adjoint \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\mathcal{N}(0,\sigma^{-2}I_d)} \enskip\text{\iid}
-=\tildephi{1:D}(x)\otimes B^\adjoint,
+\tildePhi{1:D}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B^\adjoint y\\ \sin{\inner{x,\omega_j}}B^\adjoint y \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\mathcal{N}(0,\sigma^{-2}I_d)} \enskip\text{\iid}
+=(\tildephi{1:D}(x)\otimes B^\adjoint)y,
 \end{dmath*}
 where $\tildephi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}} \\ \sin{\inner{x,\omega_j}}\end{pmatrix}$ is a scalar \acs{RFF} map \cite{Rahimi2007}.
 \item For the curl-free gaussian kernel, $K_0^{curl,gauss}=-\nabla\nabla^T k_0^{gauss}$ an unbounded \acs{ORFF} map is
 \begin{dmath*}
-\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\omega_j^T \\ \sin{\inner{x,\omega_j}}\omega_j^T \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\mathcal{N}(0,\sigma^{-2}I_d)} \enskip\text{\iid}
+\tildePhi{1:D}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\omega_j^T y\\ \sin{\inner{x,\omega_j}}\omega_j^T y\end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\mathcal{N}(0,\sigma^{-2}I_d)} \enskip\text{\iid}
 \end{dmath*}
 and a bounded \acs{ORFF} map is
 \begin{dmath*}
-\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\frac{\omega_j^T}{\norm{\omega_j}} \\ \sin{\inner{x,\omega_j}}\frac{\omega_j^T}{\norm{\omega_j}} \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}.
+\tildePhi{1:D}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\frac{\omega_j^T}{\norm{\omega_j}} y \\ \sin{\inner{x,\omega_j}}\frac{\omega_j^T}{\norm{\omega_j}} y \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}.
 \end{dmath*}
 where $\rho(\omega)=\frac{\sigma^2\norm{\omega}^2}{d}\mathcal{N}(0,\sigma^{-2}I_d)(\omega)$ for all $\omega\in\mathbb{R}^d$.
 \item For the divergence-free gaussian kernel $K_0^{div,gauss}(x,z)=(\nabla\nabla^T-\Delta I_d) k_0^{gauss}(x,z)$ an unbounded \acs{ORFF} map is
 \begin{dmath*}
-\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^T \\ \sin{\inner{x,\omega_j}}B(\omega_j)^T \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}
+\tildePhi{1:D}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^T y\\ \sin{\inner{x,\omega_j}}B(\omega_j)^T y\end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}
 \end{dmath*}
 where $B(\omega)=\left(I_d-\frac{\omega^T\omega}{\norm{\omega}}\right)$ and $\rho=\mathcal{N}(0,\sigma^{-2}I_d)$ for all $\omega\in\mathbb{R}^d$. A bounded \acs{ORFF} map is
 \begin{dmath*}
-\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^T \\ \sin{\inner{x,\omega_j}}B(\omega_j)^T \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}
+\tildePhi{1:D}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^T y\\ \sin{\inner{x,\omega_j}}B(\omega_j)^T y\end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}
 \end{dmath*}
 where $B(\omega)=\left(I_d-\frac{\omega^T\omega}{\norm{\omega}^2}\right)$ and $\rho(\omega)=\frac{\sigma^2\norm{\omega}^2}{d}\mathcal{N}(0,\sigma^{-2}I_d)$ for all $\omega\in\mathbb{R}^d$.
 \end{itemize}
 The second example extends scalar-valued Random Fourier Features on the skewed multiplicative group --described in \cref{subsec:characters} and \cref{subsubsec:skewedchi2}-- to the operator-valued case.
 \begin{example}[Matrix-valued kernel on the skewed multiplicative group]
 In the following, $K(x,z)=K_{1-c}(x\odot z^{-1})$ is a $\mathcal{Y}$-Mercer matrix-valued kernel on $\mathcal{X}=(-c;+\infty)^d$ invariant \wrt~the group operation\mpar{The group operation $\odot$ is defined in \cref{subsubsec:skewedchi2}.} $\odot$. Then the function $\tildePhi{1:D}$ defined as follow is an \acl{ORFF} of $K_{1-c}$.
-\begin{equation*}
-\begin{aligned}
-\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}}B(\omega_j)^\adjoint  \\ \sin{\inner{\log(x+c),\omega_j}}B(\omega_j)^\adjoint \end{pmatrix}, \enskip \omega_j \sim \probability_{\dual{\Haar},\rho} \enskip\text{\iid}.
-\end{aligned}
-\end{equation*}
+\begin{dmath*}
+\tildePhi{1:D}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}}B(\omega_j)^\adjoint y\\ \sin{\inner{\log(x+c),\omega_j}}B(\omega_j)^\adjoint y\end{pmatrix}, \enskip \omega_j \sim \probability_{\dual{\Haar},\rho} \enskip\text{\iid}.
+\end{dmath*}
+for all $y\in\mathcal{Y}$.
 \end{example}
 \begin{proof}
 The dual of $\mathcal{X}=(-c;+\infty)^d$
@@ -677,8 +675,8 @@ when $D$ tends to infinity, in the weak operator topology.
 \begin{itemize}
 \item For the skewed-$\chi^2$ decomposable kernel defined as $K_{1-c}^{dec,skewed}(\delta)=k_{1-c}^{skewed}(\delta)\Gamma$ for all $\delta\in\mathcal{X}$, let $BB^*=\Gamma$. A bounded --and unbounded-- \acs{ORFF} map is
 \begin{dmath*}
-\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}}B^\adjoint \\ \sin{\inner{\log(x+c),\omega_j}}B^\adjoint \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}
-=\tildephi{1:D}(x) \otimes B^\adjoint,
+\tildePhi{1:D}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}}B^\adjoint y\\ \sin{\inner{\log(x+c),\omega_j}}B^\adjoint y\end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}
+=(\tildephi{1:D}(x) \otimes B^\adjoint)y,
 \end{dmath*}
 where $\rho=\mathcal{S}(0,2^{-1})$ and $\tildephi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}} \\ \sin{\inner{\log(x+c),\omega_j}}\end{pmatrix}$ is a scalar \acs{RFF} map \cite{li2010random}.
 \end{itemize}

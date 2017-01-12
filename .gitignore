@@ -85,7 +85,6 @@ acs-*.bib
 
 # knitr
 *-concordance.tex
-*.tikz
 *-tikzDictionary
 
 # listings

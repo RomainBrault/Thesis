@@ -1,0 +1,44 @@
+\resizebox{\textheight}{!}{%
+\begin{tikzpicture}
+  \tikzstyle{every node}=[font=\Huge]
+  \matrix (m) [matrix of math nodes, nodes in empty cells, ampersand replacement=\&, row sep=3em, column sep=4em, minimum width=2em]
+  {
+     \Phi_x\in\mathcal{L}(\mathcal{Y}\text{;} \mathcal{H}) \& \& \mathcal{Y} \& \Phi_x\in\mathcal{L}\left(\mathcal{Y}\text{;} L^2\left(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho}\text{;} \mathcal{Y}'\right)\right) \& \& \mathcal{Y} \& \tildePhi{1:D}(x)\in\mathcal{L}\left(\mathcal{Y}\text{;} \widetilde{\mathcal{H}}^D\right) \& \& \mathcal{Y}\\
+     \& \& \& \& \& \& \& \& \\
+     x\in\mathcal{X} \& \& \& x\in\mathcal{X} \& \& \& x\in\mathcal{X} \& \& \\
+      \& \& \& \& \& \& \& \& \\
+  };
+  \path[-stealth, very thick]
+    (m-1-1) edge node [above] {$\Phi_x^\adjoint g$} (m-1-3)
+    (m-3-1) edge node [below] {$f$} (m-1-3)
+    (m-3-1) edge node [left] {$\Phi$} (m-1-1)
+
+    (m-1-4) edge node [above] {$\Phi_x^\adjoint g$} (m-1-6)
+    (m-3-4) edge node [below] {$f$} (m-1-6)
+    (m-3-4) edge node [left] {$\Phi$} (m-1-4)
+
+    (m-1-7) edge node [above] {$\tildePhi{1:D}(x)^\adjoint \theta$} (m-1-9)
+    (m-3-7) edge node [below] {$\tildef{1:D}$} (m-1-9)
+    (m-3-7) edge node [left] {$\tildePhi{1:D}$} (m-1-7)
+    ;
+
+    \node[rectangle,above delimiter=\}] (del-top-1) at ($0.5*(m-4-1.south west) + 0.5*(m-4-3.south east)$) {\tikz{\path (m-4-1.north) rectangle (m-4-3.north);}};
+    \node[rectangle,above delimiter=\}] (del-top-2) at ($0.5*(m-4-4.south west) + 0.5*(m-4-6.south east)$) {\tikz{\path (m-4-4.north) rectangle (m-4-6.north);}};
+    \node[rectangle,above delimiter=\}] (del-top-3) at ($0.5*(m-4-7.south west) + 0.5*(m-4-9.south east)$) {\tikz{\path (m-4-7.north) rectangle (m-4-9.north);}};
+
+   \node[rectangle,above] (ker-top-1) at (-17, 5) {$\Phi_x^\adjoint \Phi_z=K(x, z)$};
+   \node[rectangle,above] (ker-top-1) at (-1.5, 5) {$K_e\left(x\groupop z^{-1}\right)$};
+   \node[rectangle,above] (ker-top-1) at (14.5, 5) {$\widetilde{K}_e\left(x\groupop z^{-1}\right)=\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(x)$};
+
+   \node[rectangle,above] (sym-top-1) at (-9.75, 5.25) {$=$};
+   \node[rectangle,above] (sym-top-1) at (8.5, 5.25) {$\approx$};
+
+   \draw[very thick] (-20.5,4.5) -- (20.5,4.5);
+
+   \path[-stealth, very thick]
+    (del-top-1.south) edge [bend right] node [below, text width=10cm] {\centering\huge Fourier, \\ $\quad\Phi_x(\omega)y=\pairing{x,\omega}B(\omega)^\adjoint y$.} (del-top-2.south)
+    (del-top-2.south) edge [bend right] node [below, text width=14cm] {\centering\huge Monte-Carlo, \\ $\tildePhi{1:D}(x)y=\Vect_{j=1}^D(\Phi_x y)(\omega_j)$, $\omega_j\sim \probability_{\dual{\Haar},\rho}$ \iid.} (del-top-3.south)
+    ;
+
+\end{tikzpicture}
+}

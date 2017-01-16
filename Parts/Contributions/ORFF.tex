@@ -510,7 +510,7 @@ In the same way we can define an approximate feature operator $\tildeW{D}$ which
 \end{dmath*}
 We call random Fourier feature operator the linear application $\tildeW{D}:\widetilde{H}^D\to \mathcal{H}_{\widetilde{K}}$ defined as
 \begin{dmath*}
-(\tildeW{D} \theta)(x) \colonequals \tildePhi{1:D}(x)^\adjoint \theta =\frac{1}{\sqrt{D}}\sum_{j=1}^D \conj{\pairing{x,\omega_j}}B(\omega_j)g(\omega_j), \enskip \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip\text{\iid}.
+(\tildeW{D} \theta)(x) \colonequals \tildePhi{1:D}(x)^\adjoint \theta =\frac{1}{D}\sum_{j=1}^D \conj{\pairing{x,\omega_j}}B(\omega_j)g(\omega_j), \enskip \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip\text{\iid}.
 \end{dmath*}
 where $\theta=\frac{1}{\sqrt{D}}\Vect_{j=1}^Dg(\omega_j)\in\widetilde{\mathcal{H}}^D$. Moreover,
 \begin{dmath*}
@@ -769,7 +769,6 @@ where $f=\oplus_{i\in I} f_i$, $f_i\in\mathcal{H}_{K^i}$, and the sum converges 
 
 % \end{corollary}
 
-\clearpage
 %----------------------------------------------------------------------------------------
 \section{Learning with ORFF}
 \label{sec:learning_with_operator-valued_random-fourier_features}
@@ -848,12 +847,43 @@ $\tildef{1:D}(x)=\tildePhi{1:D}(x)^\adjoint \theta$, where $\theta$ lives in som
 \begin{corollary}[\acs{ORFF} representer]
 Let $\widetilde{K}$ an \acl{OVK} such that $\widetilde{K} \approx K$ where $K$ is a $\mathcal{Y}$-Mercer \acs{OVK} and $\mathcal{H}_{\widetilde{K}}$ its corresponding \acl{vv-RKHS}. The solution $f_*\in\mathcal{H}_{\widetilde{K}}$ of the regularized optimization problem
 \begin{dmath}
-\label{eq:argmin_RKHS}
+\label{eq:argmin_RKHS_rand}
 \widetilde{f}_* = \argmin_{\widetilde{f}\in\mathcal{H}_{\widetilde{K}}}  \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\widetilde{f}(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\widetilde{f}}^2_{\widetilde{K}},
-\label{eq:learning_rkhs}
 \end{dmath}
-has the form $\widetilde{f}_*=\tildePhi{1:D}(\cdot)^\adjoint\theta$, where $\theta\in\mathcal{H}_D$.
+has the form $\widetilde{f}_*=\tildePhi{1:D}(\cdot)^\adjoint\theta_*$, where $\theta_*\in (\Ker \widetilde{W})^{\perp}$ and
+\begin{dmath}
+\theta_* = \argmin_{\theta'\in\Vect_{j=1}^D\mathcal{Y}'} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint \theta' - y_i}^2_{\mathcal{Y}} + \frac{\lambda}{2}\norm{\theta'}^2_{\Vect_{j=1}^D\mathcal{Y}'}.
+\end{dmath}
 \end{corollary}
+\begin{proof}
+Since $\widetilde{K}$ is an operator-valued kernel, \cref{eq:argmin_RKHS_rand} has a solution of the form
+\begin{dmath*}
+\widetilde{f}_* = \sum_{i=1}^N \widetilde{K}(\cdot, x_i)u_i, \qquad u_i \hiderel{\in} \mathcal{Y}', \enskip x_i \hiderel{\in}\mathcal{X}
+= \sum_{i=1}^N \tildePhi{1:D}(\cdot)^\adjoint \tildePhi{1:D}(x_i)u_i
+\hiderel{=} \tildePhi{1:D}(\cdot)^\adjoint \underbrace{\left(\sum_{i=1}^N\tildePhi{1:D}(x_i)u_i\right)}_{=\theta\in \left(\Ker \widetilde{W}\right)^\perp\subset \widetilde{\mathcal{H}}^D}.
+\end{dmath*}
+Let
+\begin{dmath*}
+\theta_* = \argmin_{\theta\in\left(\Ker \widetilde{W}\right)^\perp} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\tildePhi{1:D}(x)^\adjoint\theta - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\tildePhi{1:D}(\cdot)^\adjoint\theta}^2_{\widetilde{K}}
+\end{dmath*}
+Since $\theta\in(\Ker W)^\perp$ and $W$ is an isometry from $(\Ker W)^\perp\subset \widetilde{\mathcal{H}}^D$ onto $\mathcal{H}_{\widetilde{K}}$, we have $\norm{\tildePhi{1:D}(\cdot)^\adjoint\theta}^2_{\widetilde{K}} = \norm{\theta}^2_{\widetilde{\mathcal{H}}^D}$. Hence
+\begin{dmath*}
+\theta_* = \argmin_{\theta\in\left(\Ker \widetilde{W}\right)^\perp} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\tildePhi{1:D}(x)^\adjoint\theta - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\theta}^2_{\widetilde{\mathcal{H}}^D},
+\end{dmath*}
+Since W is bounded, $\Ker \widetilde{W}$ is closed, so that we can perform the decomposition $\widetilde{\mathcal{H}}^D=\left(\Ker \widetilde{W}\right)^\perp\oplus \left(\Ker \widetilde{W}\right)$. Then clearly by linearity of $W$ and the fact that for all $\theta^{\parallel}\in\Ker \widetilde{W}$, $\widetilde{W}\theta^{\parallel}=0$, if $\lambda > 0$ we have
+\begin{dmath*}
+\theta_* = \argmin_{\theta\in\widetilde{\mathcal{H}}^D} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\tildePhi{1:D}(x)^\adjoint\theta - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\theta}^2_{\widetilde{\mathcal{H}}^D}
+= \argmin_{\theta\in\left(\left(\Ker \widetilde{W}\right)^\perp\oplus \Ker \widetilde{W}\right)} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{(\widetilde{W}\theta)(x) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\theta}^2_{\widetilde{\mathcal{H}}^D}
+= \argmin_{\substack{\theta^{\perp}\in\left(\Ker \widetilde{W}\right)^\perp, \\ \theta^{\parallel}\in\Ker \widetilde{W}}} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\left(\widetilde{W}\theta^{\perp}\right)(x) + \underbrace{\left(\widetilde{W}\theta^{\parallel}\right)}_{=0 \enskip\text{for all}\enskip \theta^{\parallel}}(x) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\theta^\perp}^2_{\widetilde{\mathcal{H}}^D} + \underbrace{\frac{\lambda}{2}\norm{\theta^{\parallel}}^2_{\widetilde{\mathcal{H}}^D}}_{=0 \enskip\text{if}\enskip \theta^{\parallel}=0}
+= \argmin_{\theta^{\perp}\in\left(\Ker \widetilde{W}\right)^\perp} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\tildePhi{1:D}(x)^\adjoint\theta^{\perp} - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\theta^{\perp}}^2_{\widetilde{\mathcal{H}}^D}.
+\end{dmath*}
+Eventually for all $g\in L^{2}\left(\dual{\mathcal{X}},\probability_{\dual{\Haar},\rho},\mathcal{Y}'\right)$ and $\omega_j \sim \probability_{\dual{\Haar},\rho}$ \iid,
+\begin{dmath*}
+\theta_* = \argmin_{\theta\in\widetilde{\mathcal{H}}^D} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint\theta - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\theta}^2_{\widetilde{\mathcal{H}}^D}
+= \argmin_{\frac{1}{\sqrt{D}}\Vect_{j=1}^Dg(\omega_j)} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\frac{1}{D}\sum_{j=1}^D\conj{\pairing{x_i,\omega_j}}B(\omega_j)g(\omega_j) - y_i}^2_{\mathcal{Y}}+ \frac{\lambda}{2}\frac{1}{D}\sum_{j=1}^D\norm{g(\omega_j)}^2_{\mathcal{Y'}}
+= \argmin_{\theta'\in\Vect_{j=1}^D\mathcal{Y}'} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint \theta' - y_i}^2_{\mathcal{Y}}+ \frac{\lambda}{2}\norm{\theta'}^2_{\Vect_{j=1}^D\mathcal{Y}'}. \qquad \qed
+\end{dmath*}
+\end{proof}
 % Since $\theta\in\widetilde{\mathcal{H}}^D\left(\mathcal{Y}'\right)$ lives in a different space than $f\in\mathcal{H}_K$ is makes no sense to show the convergence of $\theta_*$ to $f_*$. However we can verify that $\tildef{1:D}$ converges to $f\in\mathcal{H}_K$ pointwise. We first introduce the following lemma and assumptions. First we characterize extremum estimators. Let $\mathcal{H}$ be any Hilbert space.
 % \begin{assumption}[EE]
 % \label{ass:ee}

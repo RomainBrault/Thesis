@@ -3,7 +3,7 @@
 \label{sec:motivations}
 Random Fourier Features have been proved useful to implement efficiently kernel methods in the scalar case, allowing to learn a linear model based on an approximated feature map. In this work, we are interested to construct approximated operator-valued feature maps to learn vector-valued functions. With an explicit (approximated) feature map, one converts the problem of learning a function $f$ in the vector-valued Reproducing Kernel Hilbert Space $\mathcal{H}_K$ into the learning of a linear model $\tilde{f}$ defined by:
  \begin{dmath*}
- \tilde{f}(x) = \tildePhi{1:D}(x)^\adjoint  \theta,
+ \tilde{f}(x) = \tildePhi{\omega}(x)^\adjoint  \theta,
  \end{dmath*}
  where $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{H},\mathcal{Y})$ and $\theta \in \mathcal{H}$. The methodology we propose works for operator-valued kernels defined on any \acf{LCA} group, noted ($\mathcal{X}, \groupop)$, for some operation noted $\groupop$. This allows us to use the general context of Pontryagin duality for \acl{FT} of functions on \acs{LCA} groups. Building upon a generalization of Bochner's theorem for operator-valued measures, an operator-valued kernel is seen as the \emph{\acl{FT}} of an operator-valued positive measure. From that result, we extend the principle of Random Fourier Feature for scalar-valued kernels and derive a general methodology to build Operator Random Fourier Feature when operator-valued kernels are shift-invariant according to the chosen group operation.
 
@@ -11,8 +11,8 @@ Random Fourier Features have been proved useful to implement efficiently kernel 
 %----------------------------------------------------------------------------------------
 \section{Construction}
 \label{sec:construction}
-We present a construction of \acf{ORFF} such that $f: x\mapsto \tildePhi{1:D}(x)^\adjoint \theta$ is a continuous function that maps an arbitrary \acs{LCA} group $\mathcal{X}$ as input space to an arbitrary output Hilbert space $\mathcal{Y}$. First we define a functional \emph{Fourier feature map}, and then propose a Monte-Carlo sampling from this feature map to construct an approximation of a shift-invariant $\mathcal{Y}$-Mercer kernel.
-Then, we prove the convergence of the kernel approximation $\tilde{K}(x,z)=\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(z)$ with high probability on \emph{compact} subsets of the \acs{LCA} $\mathcal{X}$, when $\mathcal{Y}$ is \emph{finite dimensional}. Eventually we conclude with some numerical experiments.
+We present a construction of \acf{ORFF} such that $f: x\mapsto \tildePhi{\omega}(x)^\adjoint \theta$ is a continuous function that maps an arbitrary \acs{LCA} group $\mathcal{X}$ as input space to an arbitrary output Hilbert space $\mathcal{Y}$. First we define a functional \emph{Fourier feature map}, and then propose a Monte-Carlo sampling from this feature map to construct an approximation of a shift-invariant $\mathcal{Y}$-Mercer kernel.
+Then, we prove the convergence of the kernel approximation $\tilde{K}(x,z)=\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z)$ with high probability on \emph{compact} subsets of the \acs{LCA} $\mathcal{X}$, when $\mathcal{Y}$ is \emph{finite dimensional}. Eventually we conclude with some numerical experiments.
 \subsection{Theoretical study}
 The following proposition of \citet{Zhang2012,Carmeli2010} extends Bochner's theorem to any shift-invariant $\mathcal{Y}$-Mercer kernel.
 \begin{proposition}[Operator-valued Bochner's theorem \citep{Zhang2012,neeb1998operator}]\label{eq:bochner-gen}
@@ -424,7 +424,7 @@ Let us introduce a functional feature map, we call here \emph{Fourier Feature ma
 \begin{proposition}[Functional Fourier feature map]\label{pr:fourier_feature_map}
 Let $\mathcal{Y}$ and $\mathcal{Y}'$ be two Hilbert spaces. If there exist an operator-valued function $B:\dual{\mathcal{X}}\to\mathcal{L}(\mathcal{Y},\mathcal{Y}')$ such that for all $y$, $y'\in\mathcal{Y}$,
 \begin{dmath*}
-\inner{y, B(\omega)B(\omega)^\adjoint y'}=\inner{y', A(\omega)y}
+\inner{y, B(\omega)B(\omega)^\adjoint y'}_{\mathcal{Y}}=\inner{y', A(\omega)y}_{\mathcal{Y}}
 \end{dmath*}
 $\dual{\mu}$-almost everywhere and $\inner{y', A(\cdot)y}\in L^1(\dual{\mathcal{X}},\dual{\mu})$ then the operator $\Phi_x$ defined for all $y$ in $\mathcal{Y}$ by
 \begin{dmath}
@@ -436,7 +436,7 @@ is \emph{a feature map}\mpar{\Ie~it satisfies for all $x$, $z \in \mathcal{X}$, 
 \begin{proof}
 For all $y$, $y'\in \mathcal{Y}$ and $x$, $z\in\mathcal{X}$,
 \begin{dmath*}
-\inner{y, \Phi_x^\adjoint \Phi_z y'} = \inner{\Phi_x y, \Phi_z y'}_{L^2(\dual{\mathcal{X}},\dual{\mu};\mathcal{Y}')} \\
+\inner{y, \Phi_x^\adjoint \Phi_z y'}_{\mathcal{Y}} = \inner{\Phi_x y, \Phi_z y'}_{L^2(\dual{\mathcal{X}},\dual{\mu};\mathcal{Y}')}  \\
 = \int_{\dual{\mathcal{X}}}\conj{\pairing{x,\omega}}\inner{y, B(\omega)\pairing{z,\omega}B(\omega)^\adjoint y'}d\dual{\mu}(\omega) \\
 = \int_{\dual{\mathcal{X}}}\conj{\pairing{x \groupop \myinv{z},\omega}}\inner{y B(\omega)B(\omega)^\adjoint y'}d\dual{\mu}(\omega) \\
 = \int_{\dual{\mathcal{X}}}\conj{\pairing{x \groupop \inv{z},\omega}}\inner{y,A(\omega)y'}d\dual{\mu}(\omega),
@@ -451,19 +451,19 @@ As shown in \cref{pr:spectral,pr:trace_measure} it is always possible to find a 
 However, for efficient computations as motivated in the introduction, we are interested in finding an approximated \emph{feature map} instead of a kernel approximation. Indeed, an approximated feature map will allow to build linear models in regression tasks. The idea is to start from the Monte-Carlo approximation of the expectation and provide a systematic decomposition of the Monte-Carlo sample mean into an approximate feature map. The following proposition provides the general form of an \acl{ORFF}.
 \begin{proposition}[ORFF]
 \label{pr:ORFF-map}
-Let $\mathcal{Y}$ and $\mathcal{Y}'$ be two Hilbert spaces. If one can find $B: \dual{\mathcal{X}} \to \mathcal{L}(\mathcal{Y},\mathcal{Y}')$ and a probability measure $\probability_{\dual{\Haar},\rho}$ on $\mathcal{B}(\dual{\mathcal{X}})$, such that for all $y\in\mathcal{Y}$ and all $y'\in\mathcal{Y}'$, $\inner{y, B(\cdot)y'} \in L^2(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho})$, then the operator-valued function define for all $y\in\mathcal{Y}$ by
+Let $\mathcal{Y}$ and $\mathcal{Y}'$ be two Hilbert spaces. If one can find $B: \dual{\mathcal{X}} \to \mathcal{L}(\mathcal{Y},\mathcal{Y}')$ and a probability measure $\probability_{\dual{\Haar},\rho}$ on $\mathcal{B}(\dual{\mathcal{X}})$, such that for all $y\in\mathcal{Y}$ and all $y'\in\mathcal{Y}'$, $\inner{y, B(\cdot)y'} \in L^2(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho})$, then the operator-valued function given for all $y\in\mathcal{Y}$ by
 \begin{equation}
 \label{eq:phitilde}
-\tildePhi{1:D}(x)y= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint y , \qquad \omega_j \sim \probability_{\dual{\Haar},\rho} \enskip\text{\iid},
+\tildePhi{\omega}(x)y= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint y \condition{$\omega_j \sim \probability_{\dual{\Haar},\rho}$ \iid,}
 \end{equation}
-is an approximated feature map\mpar{\Ie~it satisfies $\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(z)\converges{\asurely}{D\to\infty}K(x,z)$ where $K$ is a $\mathcal{Y}$-Mercer \acs{OVK}.} of a shift-invariant $\mathcal{Y}$-Mercer \acl{OVK}.
+is an approximated feature map\mpar{\Ie~it satisfies $\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z)\converges{\asurely}{D\to\infty}K(x,z)$ where $K$ is a $\mathcal{Y}$-Mercer \acs{OVK}.} of a shift-invariant $\mathcal{Y}$-Mercer \acl{OVK}.
 \end{proposition}
 \begin{proof}
-Let $(\omega_j)_{j=1}^D$ be $D$ \iid~random vectors following the law $\probability_{\dual{\Haar},\rho}$. For all $x$, $z \in \mathcal{X}$ and all $y$, $y' \in \mathcal{Y}$,
+Let $(\omega_j)_{j=1}^D$ be a sequence of $D\in\mathbb{N}$ \iid~random vectors, each of them following the law $\probability_{\dual{\Haar},\rho}$. For all $x$, $z \in \mathcal{X}$ and all $y$, $y' \in \mathcal{Y}$,
 \begin{dmath*}
-\inner*{\tildePhi{1:D}(x)y',\tildePhi{1:D}(z)y}=\frac{1}{D}\inner*{\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint y',  \Vect_{j=1}^D\pairing{z, \omega_j}B(\omega_j)^\adjoint y}
-= \frac{1}{D} \sum_{j=1}^D \inner*{y', \conj{\pairing{x, \omega_j}}B(\omega_j)\pairing{z, \omega_j}B(\omega_j)^\adjoint y}
-= \inner*{y', \left(\frac{1}{D} \sum_{j=1}^D \conj{\pairing{x\groupop \inv{z}, \omega_j}}A(\omega_j)\right)y},
+\inner*{\tildePhi{\omega}(x)y',\tildePhi{\omega}(z)y}=\frac{1}{D}\inner*{\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint y',  \Vect_{j=1}^D\pairing{z, \omega_j}B(\omega_j)^\adjoint y}
+= \frac{1}{D} \sum_{j=1}^D \inner*{y', \conj{\pairing{x, \omega_j}}B(\omega_j)\pairing{z, \omega_j}B(\omega_j)^\adjoint y}_{\mathcal{Y}}
+= \inner*{y', \left(\frac{1}{D} \sum_{j=1}^D \conj{\pairing{x\groupop \inv{z}, \omega_j}}A(\omega_j)\right)y}_{\mathcal{Y}},
 \end{dmath*}
 where $A(\omega)=B(\omega)B(\omega)^\adjoint $. By assumption $\inner{y, A(\cdot)y'}\in L^1(\dual{\mathcal{X}},\probability_{\dual{\Haar},\rho})$ and $\omega_j$ are \iid~. Hence from the strong law of large numbers and \cref{pr:mercer_kernel_bochner} with $\dual{\mu}=\probability_{\dual{\Haar},\rho}$,
 \begin{dmath*}
@@ -474,96 +474,108 @@ where the integral converges in the weak operator topology.
 \begin{remark}
 The approximate feature map proposed in \cref{pr:ORFF-map} has direct link with the functional Fourier feature map defined in \cref{pr:fourier_feature_map} since we have for all $y\in\mathcal{Y}$
 \begin{dmath}
-\tildePhi{1:D}(x)y = \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint y, \qquad \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip\text{\iid}
+\tildePhi{\omega}(x)y = \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint y \condition{$\omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho}$ \iid}
 = \frac{1}{\sqrt{D}} \Vect_{j=1}^D (\Phi_x y)(\omega_j).
 \end{dmath}
 \end{remark}
-Note that we consider $\omega$ to be a \emph{variable} in $\dual{\mathcal{X}}$ while $\omega_j$ are \emph{random variables}. \Ie~$\omega_j$ are $(\dual{\mathcal{X}}, \mathcal{B}(\dual{\mathcal{X}}))$-valued measurable function and $\probability_{\dual{\Haar},\rho}$ is the distribution associated to all the $\omega_j$. Therefore $\tildePhi{1:D}(x)$ can be seen as an \say{operator-valued vector} corresponding the \say{stacking} of $D$ \iid~operator-valued random variable $\pairing{x, \omega_j}B(\omega_j)^\adjoint$. Thus for all $x\in\mathcal{X}$, $\tildePhi{1:D}(x)$ is itself a random variable, with
+Therefore $\tildePhi{\omega}(x)$ can be seen as an \say{operator-valued vector} corresponding the \say{stacking} of $D$ \iid~operator-valued random variable $\pairing{x, \omega_j}B(\omega_j)^\adjoint$. Note that we consider $\omega$ to be a \emph{variable} in $\dual{\mathcal{X}}$ while $\omega_j$ are $\dual{\mathcal{X}}$-valued \emph{random variables}. \Ie~$\omega_j$ are $(\dual{\mathcal{X}}, \mathcal{B}(\dual{\mathcal{X}}))$-valued measurable function and $\probability_{\dual{\Haar},\rho}$ is the distribution of each $\omega_j$. Let
 \begin{dmath*}
-\tildePhi{1:D}(x)\in\mathcal{L}\left(\mathcal{Y};\widetilde{\mathcal{H}}^D\right),
+\tildeH{\omega} = \Vect_{j=1}^D\mathcal{Y}',
 \end{dmath*}
-where
+be a Hilbert space. Let $\seq{\omega}\in\dual{\mathcal{X}}^D$ be a sequence where $\seq{\omega}=(\omega_j)_{j=1}^D$ (\ie~ an outcome of the random sequence $(\omega_j)_{j=1}^D$, $\omega_j \sim \probability_{\dual{\Haar},\rho}$). Notice that for any $x\in\mathcal{X}$ and $y\in\mathcal{Y}$, $\tildePhi{\omega}(x)y\in\tildeH{\omega}$ as we can take $g(\omega_j)=\pairing{x,\omega_j}B(\omega_j)^\adjoint y$. Thus we have for all $y$, $y'\in\mathcal{Y}$ and all $x$, $z\in\mathcal{X}$
 \begin{dmath*}
-\widetilde{\mathcal{H}}^D = \Set{\frac{1}{\sqrt{D}}\Vect_{j=1}^Dg(\omega_j)| \begin{array}{l} \forall g\in L^2\left(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho}, \mathcal{Y}'\right), \\ \omega_j\sim \probability_{\dual{\Haar},\rho} \enskip \text{\iid} \end{array}},
+\inner{y', \tildeK{\omega}(x, z)y}_{\mathcal{Y}} \hiderel{=} \inner{y', \tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z)y}_{\mathcal{Y}} \hiderel{=} \inner{\tildePhi{\omega}(x)y', \tildePhi{\omega}(z)y}_{\tildeH{\omega}}.
 \end{dmath*}
-is a Hilbert space whose inner product is
+Thus $\tildeK{\omega}(x,z)=\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z)$ is a proper random shift-invariant \acl{OVK} as shown in the following proposition.
+\begin{proposition} Let $\seq{\omega}\in\dual{\mathcal{X}}^D$. If for all $y$, $y'\in\mathcal{Y}$
 \begin{dmath*}
-\inner{\theta, \theta'}_{\widetilde{\mathcal{H}}^D} = \frac{1}{D}\sum_{j=1}^D\inner{g(\omega_j),g'(\omega_j)}_{\mathcal{Y}'},
+\inner{y', \tildeK{\omega}_e\left(x\groupop z^{-1}\right)y}_{\mathcal{Y}}=\inner{\tildePhi{\omega}(x)y', \tildePhi{\omega}(z)y}_{\tildeH{\omega}}
+=\inner*{y', \frac{1}{D}\sum_{j=1}^D \conj{\pairing{x\groupop z^{-1},\omega_j}}B(\omega_j)B(\omega_j)^*y}_{\mathcal{Y}},
 \end{dmath*}
-for all $\theta=D^{-\frac{1}{2}}\vect_{j=1}^Dg(\omega_j)\in\widetilde{\mathcal{H}}^D$ and $\theta'=D^{-\frac{1}{2}}\vect_{j=1}^Dg'(\omega_j)\in\widetilde{\mathcal{H}}^D$. In particular, notice that for any $x\in\mathcal{X}$ and $y\in\mathcal{Y}$, $\tildePhi{1:D}(x)y\in\widetilde{\mathcal{H}}^D$ as we can take $g(\omega_j)=\pairing{x,\omega_j}B(\omega_j)^\adjoint y$. Thus we have for all $y$, $y'\in\mathcal{Y}$ and all $x$, $z\in\mathcal{X}$
-\begin{dmath*}
-\inner{y', \widetilde{K}(x, z)y}_{\mathcal{Y}} \hiderel{=} \inner{y', \tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(z)y}_{\mathcal{Y}} \hiderel{=} \inner{\tildePhi{1:D}(x)y', \tildePhi{1:D}(z)y}_{\widetilde{\mathcal{H}}^D}.
-\end{dmath*}
-Thus $\widetilde{K}(x,z)=\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(z)$ is a proper random shift-invariant \acl{OVK} as shown in the following proposition.
-\begin{proposition} Let $\omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho}$ \iid. If
-\begin{dmath*}
-\widetilde{K}_e\left(x\groupop z^{-1}\right)=\tildePhi{1:D}(x)^{\adjoint}\tildePhi{1:D}(z)\hiderel{=}\frac{1}{D}\sum_{j=1}^D \conj{\pairing{x\groupop z^{-1},\omega_j}}B(\omega_j)B(\omega_j)^*,
-\end{dmath*}
-for all $x$,  $z\in\mathcal{X}$, then $\widetilde{K}$ is a shift-invariant \acl{OVK}.
+for all $x$,  $z\in\mathcal{X}$, then $\tildeK{\omega}$ is a shift-invariant \acl{OVK}.
 \end{proposition}
-\begin{proof} Apply \cref{pr:feature_operator} to $\widetilde{\Phi}$ to show that $\widetilde{K}$ is an \acs{OVK}. \Cref{pr:kernel_signature} shows that $\widetilde{K}$ is shift-invariant since $\widetilde{K}(x,z)=\widetilde{K}_e\left(x,\groupop z^{-1}\right)$. Note that $\widetilde{K}$ is not sensus stricto a $\mathcal{Y}$-Mercer kernel since it is a random variable. However $\lim_{D\to\infty} \widetilde{K} = \expectation \widetilde{K} = K$ is $\mathcal{Y}$-Mercer.
+\begin{proof} Apply \cref{pr:feature_operator} to $\tildePhi{\omega}$ considering the Hilbert space $\tildeH{\omega}$ to show that $\tildeK{\omega}$ is an \acs{OVK}. Then \cref{pr:kernel_signature} shows that $\tildeK{\omega}$ is shift-invariant since $\tildeK{\omega}(x,z)=\tildeK{\omega}_e\left(x,\groupop z^{-1}\right)$.
 \end{proof}
-In the same way we can define an approximate feature operator $\tildeW{D}$ which maps $\widetilde{\mathcal{H}}^D$ onto $\mathcal{H}_{\widetilde{K}}$, where $\widetilde{K}(x,z)=\tildePhi{1:D}(x)^\adjoint\tildePhi{1:D}(z)$ for all $x$, $z\in\mathcal{X}$.
-\begin{definition}[Random Fourier feature operator] Let
+We stress out that if $\seq{\omega}=(\omega_j)_{j=1}^D\sim \probability_{\dual{\Haar},\rho}$ \iid~is a \emph{random sequence} then
 \begin{dmath*}
-\widetilde{K}_e=\frac{1}{D}\sum_{j=1}^D \conj{\pairing{\cdot,\omega_j}}B(\omega_j)B(\omega_j)^*, \qquad \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip\text{\iid}.
+\tildeK{\omega}_e\left(x\groupop z^{-1}\right)=\tildePhi{\omega}(x)^{\adjoint}\tildePhi{\omega}(z)
 \end{dmath*}
-We call random Fourier feature operator the linear application $\tildeW{D}:\widetilde{H}^D\to \mathcal{H}_{\widetilde{K}}$ defined as
+\emph{is not} an \acl{OVK} since it is a random variable and ($\tildeH{\omega}$ is no longer a Hilbert space, since \cref{eq:inner_Htilde} does not define a proper inner product). However this is not a problem since any outcome of the random sequence $\seq{\omega}$ gives birth to a (different) \acl{OVK}, and $\expectation_{\dual{\Haar},\rho}\tildeK{\omega}$ is an \acs{OVK}. This illustrated by \cref{fig:not_Mercer} where we represented the same function for different realization of $\tildeK{\omega}\approx K$. We generated $250$ points equally separated on the segment $(-1;1)$.
+\begin{figure}[htb]
+\centering
+\resizebox{\textwidth}{!}{%
+\input{../gfx/not_Mercer.pgf}
+}
+\caption[Different outcomes of a Gaussian kernel approximation]{Different outcomes of a Gaussian kernel approximation. Top row and bottom row correspond to two different outcomes of $\tildeK{\omega}$, which are \emph{different} \acl{OVK}. However when $D$ tends to infinity, the different outcomes fo $\tildeK{\omega}$ yield the samel \acs{OVK}.}
+\label{fig:not_Mercer}
+\end{figure}
+We computed the Gram Matrix of the Gaussian decomposable kernel
 \begin{dmath*}
-(\tildeW{D} \theta)(x) \colonequals \tildePhi{1:D}(x)^\adjoint \theta =\frac{1}{D}\sum_{j=1}^D \conj{\pairing{x,\omega_j}}B(\omega_j)g(\omega_j), \enskip \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip\text{\iid}.
+K(x,z)_{ij}=\exp\left(-\frac{1}{2(0.1)^2(x_i - x_j)^2}\right)\Gamma \condition{for $i$, $j\in\mathbb{N}_{250}$.}
 \end{dmath*}
-where $\theta=\frac{1}{\sqrt{D}}\Vect_{j=1}^Dg(\omega_j)\in\widetilde{\mathcal{H}}^D$. Moreover,
+We computed a reference function (black line) defined as $(y_1, y_2)^T = f(x_i)=\sum_{j=1}^{250}K(x_i,x_j)u_j$ where $u_j\sim\mathcal{N}(0,1)$ \iid. We took $\Gamma=.5 I_2 + .5 1_2$ such that the outputs $y_1$ and $y_2$ share some similarities. Then we computed an approximate kernel matrix $\tildeK{\omega}\approx K$ for $25$ increasing values of $D$ ranging from $1$ to $10^4$. The two graphs on the top row shows that the more the number of features increase the closer the model $\widetilde{f}(x_i)=\sum_{j=1}^{250}\tildeK{\omega}(x_i,x_j)u_j$ is to $f$. The bottom row shows the same experiment but for a different realization of $\tildeK{\omega}$. When $D$ is small the curves of the bottom and top rows are very dissimilar --and sine wave like-- while they both converge to $f$ when $D$ increase.
+\paragraph{}
+In the same way we defined an \acs{ORFF}, we can define an approximate feature operator $\tildeW{\omega}$ which maps $\tildeH{\omega}$ onto $\mathcal{H}_{\tildeK{\omega}}$, where \begin{dmath*}
+\tildeK{\omega}(x,z)=\tildePhi{\omega}(x)^\adjoint\tildePhi{\omega}(z)
+\end{dmath*}
+for all $x$, $z\in\mathcal{X}$.
+\begin{definition}[Random Fourier feature operator] Let $\seq{\omega}=(\omega_j)_{j=1}^D\in\dual{\mathcal{X}}^D$ and let
 \begin{dmath*}
-(\Ker \widetilde{W})^\perp = \lspan\Set{\tildePhi{1:D}(x)y | \forall x\in\mathcal{X},\enskip \forall y\in\mathcal{Y}}.
+\tildeK{\omega}_e=\frac{1}{D}\sum_{j=1}^D \conj{\pairing{\cdot,\omega_j}}B(\omega_j)B(\omega_j)^*.
+\end{dmath*}
+We call random Fourier feature operator the linear application $\tildeW{\omega}:\tildeH{\omega}\to \mathcal{H}_{\tildeK{\omega}}$ defined as
+\begin{dmath*}
+\left(\tildeW{\omega} \theta\right)(x) \colonequals \tildePhi{\omega}(x)^\adjoint \theta =\frac{1}{D}\sum_{j=1}^D \conj{\pairing{x,\omega_j}}B(\omega_j)g(\omega_j)
+\end{dmath*}
+where $\theta=\frac{1}{\sqrt{D}}\Vect_{j=1}^Dg(\omega_j)\in\tildeH{\omega}$. Then,
+\begin{dmath*}
+\left(\Ker \tildeW{\omega}\right)^\perp = \lspan\Set{\tildePhi{\omega}(x)y | \forall x\in\mathcal{X},\enskip \forall y\in\mathcal{Y}} \hiderel{\subseteq} \tildeH{\omega}.
 \end{dmath*}
 \end{definition}
 The random Fourier feature operator is useful to show the relations between the random Fourier feature map with the functional feature map defined in \cref{pr:fourier_feature_map}. The relationship between the generic feature map (defined for all \acl{OVK}) the functional feature map (defining a shift-invariant $\mathcal{Y}$-Mercer \acl{OVK}) and the random Fourier feature map is presented in \cref{fig:rel_features}.
 \begin{proposition}
 \label{pr:phitilde_phi_rel}
-For all $g\in \mathcal{H}=L^2(\mathcal{\dual{X}},\probability_{\dual{\Haar},\rho};\mathcal{Y}')$ let
+For any $g\in \mathcal{H}=L^2(\mathcal{\dual{X}},\probability_{\dual{\Haar},\rho};\mathcal{Y}')$, let
 \begin{dmath*}
 \theta \colonequals \frac{1}{\sqrt{D}}\Vect_{j=1}^D g(\omega_j), \enskip \omega_j \sim \probability_{\dual{\Haar},\rho} \enskip\text{\iid}.
 \end{dmath*}
 Then
 \begin{propenum}
-\item \label{pr:cv_feature_map_0} $\theta\in\widetilde{\mathcal{H}}^D$,
-\item \label{pr:cv_feature_map_1} $(\tildeW{D} \theta)(x)=\tildePhi{1:D}(x)^\adjoint \theta \converges{\asurely}{D\to\infty} \Phi_x^\adjoint g=(Wg)(x)$,
-\item \label{pr:cv_feature_map_2} $\norm{\theta}_{\widetilde{\mathcal{H}}^D}^2 \converges{\asurely}{D\to\infty} \norm{g}_{\mathcal{H}}^2$,
+\item \label{pr:cv_feature_map_1} $\left(\tildeW{\omega} \theta\right)(x)=\tildePhi{\omega}(x)^\adjoint \theta \converges{\asurely}{D\to\infty} \Phi_x^\adjoint g=(Wg)(x)$,
+\item \label{pr:cv_feature_map_2} $\norm{\theta}_{\tildeH{\omega}}^2 \converges{\asurely}{D\to\infty} \norm{g}_{\mathcal{H}}^2$,
 \end{propenum}
 \end{proposition}
-\begin{proof}[of \cref{pr:cv_feature_map_0}] this is true by construction of $\theta$.
-\end{proof}
 \begin{proof}[of \cref{pr:cv_feature_map_1}] since $(\omega_j)_{j=1}^D$ are \iid~random vectors, for all $y\in \mathcal{Y}$ and for all $y'\in\mathcal{Y}'$, $\inner{y, B(\cdot)y'}\in L^2(\dual{\mathcal{X}},\probability_{\dual{\Haar},\rho})$ and $g\in L^2(\dual{\mathcal{X}},\probability_{\dual{\Haar},\rho};\mathcal{Y}')$, from the strong law of large numbers
 \begin{dmath*}
-(\tildeW{D} \theta)(x)=\tildePhi{1:D}(x)^\adjoint \theta=\frac{1}{D}\sum_{j=1}^D \conj{\pairing{x,\omega_j}}B(\omega_j)g(\omega_j), \qquad \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip \text{\iid} \\
+(\tildeW{\omega} \theta)(x)=\tildePhi{\omega}(x)^\adjoint \theta=\frac{1}{D}\sum_{j=1}^D \conj{\pairing{x,\omega_j}}B(\omega_j)g(\omega_j), \qquad \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip \text{\iid} \\
 \converges{\asurely}{D\to\infty} \int_{\dual{\mathcal{X}}}\conj{\pairing{x,\omega}}B(\omega)g(\omega)d\probability_{\dual{\Haar},\rho}(\omega)
 = (Wg)(x) \hiderel{\colonequals} \Phi_x^\adjoint g.\qquad\ensuremath{\Box}
 \end{dmath*}
 \end{proof}
 \begin{proof}[of \cref{pr:cv_feature_map_2}] again, since $(\omega_j)_{j-1}^D$ are \iid~random vectors and $g\in L^2(\dual{\mathcal{X}},\probability_{\dual{\Haar},\rho};\mathcal{Y}')$, from the strong law of large numbers
 \begin{dmath*}
-\norm{\theta}^2_{\widetilde{\mathcal{H}}^D}=\frac{1}{D}\sum_{j=1}^D\norm{g(\omega_j)}^2_{\mathcal{Y}'}, \qquad \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip \text{\iid} \\
+\norm{\theta}^2_{\tildeH{\omega}}=\frac{1}{D}\sum_{j=1}^D\norm{g(\omega_j)}^2_{\mathcal{Y}'}, \qquad \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip \text{\iid} \\
 \converges{\asurely}{D\to\infty} \int_{\dual{\mathcal{X}}} \norm{g(\omega)}_{\mathcal{Y}'}^2d\probability_{\dual{\Haar},\rho}(\omega) \\
 = \norm{g}_{L^2\left(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho}; \mathcal{Y}'\right)}^2.\qquad\ensuremath{\Box}
 \end{dmath*}
 \end{proof}
-Hence the sequence of function $\tildef{D}_j\colonequals (\tildePhi{1:D}_{1:j}(\cdot)^\adjoint \theta)_{j=1}^D$ converges almost surely to a function $f\in\mathcal{H}_{(A,\probability_{\dual{\Haar},\rho})}{\scriptstyle\implies} \mathcal{H}_K$.
-\paragraph{}
-We write $\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(x)\approx K(x,z)$ when $\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(x)\converges{\asurely}{} K(x,z)$ in the weak operator topology when $D$ tends to infinity. With mild abuse of notation we say that $\tildePhi{1:D}(x)$ is an approximate feature map of $\Phi_x$ \ie~$\tildePhi{1:D}(x)\approx \Phi_x$, when for all $y'$, $y\in\mathcal{Y}$,
+% Hence the sequence of function $\tildef{D}_j\colonequals (\tildePhi{\omega}_{1:j}(\cdot)^\adjoint \theta)_{j=1}^D$ converges almost surely to a function $f\in\mathcal{H}_{(A,\probability_{\dual{\Haar},\rho})}{\scriptstyle\implies} \mathcal{H}_K$.
+% \paragraph{}
+We write $\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(x)\approx K(x,z)$ when $\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(x)\converges{\asurely}{} K(x,z)$ in the weak operator topology when $D$ tends to infinity. With mild abuse of notation we say that $\tildePhi{\omega}(x)$ is an approximate feature map of $\Phi_x$ \ie~$\tildePhi{\omega}(x)\approx \Phi_x$, when for all $y'$, $y\in\mathcal{Y}$,
 \begin{dmath*}
-\inner{y, K(x,z)y'}_{\mathcal{Y}}=\inner{\Phi_x y, \Phi_z y'}_{\mathcal{L^2(\dual{\mathcal{X}},\probability_{\dual{\Haar},\rho};\mathcal{Y'})}}\approx \inner{\tildePhi{1:D}(x)y, \tildePhi{1:D}(x)y'}_{\widetilde{\mathcal{H}}^D}\colonequals \inner{y, \tilde{K}(x,z)y'}_{\mathcal{Y}}
+\inner{y, K(x,z)y'}_{\mathcal{Y}}=\inner{\Phi_x y, \Phi_z y'}_{\mathcal{L^2(\dual{\mathcal{X}},\probability_{\dual{\Haar},\rho};\mathcal{Y'})}}\approx \inner{\tildePhi{\omega}(x)y, \tildePhi{\omega}(x)y'}_{\tildeH{\omega}}\colonequals \inner{y, \tilde{K}(x,z)y'}_{\mathcal{Y}}
 \end{dmath*}
 where $\Phi_x$ is defined in the sense of \cref{pr:fourier_feature_map}. Then \cref{cr:ORFF-map-kernel} exhibit a construction of an \acs{ORFF} directly from an \acs{OVK}.
 \begin{corollary}
 \label{cr:ORFF-map-kernel}
 If $K(x,z)$ is a shift-invariant $\mathcal{Y}$-Mercer kernel such that for all $y$, $y'\in\mathcal{Y}$, $\inner{y', K_e(\cdot)y}\in L^1(\mathcal{X},\Haar)$. Then
 \begin{equation}
-\tildePhi{1:D}(x)y= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint y, \qquad \omega_j \sim \probability_{\dual{\Haar},\rho} \enskip\text{\iid},
+\tildePhi{\omega}(x)y= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint y, \qquad \omega_j \sim \probability_{\dual{\Haar},\rho} \enskip\text{\iid},
 \end{equation}
 where $\inner{y, B(\omega)B(\omega)^\adjoint y'}\rho(\omega)=\FT{\inner{y', K_e(\cdot)y}}(\omega)$, is an approximated feature map of $K$.
 \end{corollary}
 \begin{proof}
-Find $(A, \probability_{\dual{\Haar},\rho})$ from \cref{pr:spectral} and apply \cref{pr:ORFF-map}.
+Find $(A, \probability_{\dual{\Haar},\rho})$ from \cref{pr:spectral}, find a decomposition of $A(\omega)=B(\omega)B(\omega)^*$ for $\probability_{\dual{\Haar},\rho}$-almost all $\omega$ and apply \cref{pr:ORFF-map}.
 \end{proof}
 \begin{remark}
 We find a decomposition such that for all $j=1, \ldots, D$, $A(\omega_j)=B(\omega_j)B(\omega_j)^\adjoint $ either by exhibiting an analytic closed-form or using a numerical decomposition.
@@ -575,12 +587,12 @@ We find a decomposition such that for all $j=1, \ldots, D$, $A(\omega_j)=B(\omeg
 \begin{algorithm2e}[H]\label{alg:ORFF_construction}
 	\SetAlgoLined
     \Input{$K(x, z)=K_e(\delta)$ a $\mathcal{Y}$-shift-invariant Mercer kernel such that $\forall y,y'\in\mathcal{Y},$ $\inner{y', K_e(\cdot)y}\in L^1(\mathbb{R}^d, \Haar)$ and $D$ the number of features.}
-    \Output{A random feature $\tildePhi{1:D}(x)$ such that $\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(z) \approx K(x,z)$}
+    \Output{A random feature $\tildePhi{\omega}(x)$ such that $\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z) \approx K(x,z)$}
     \BlankLine
 	Define the pairing $\pairing{x, \omega}$ from the \acs{LCA} group $(\mathcal{X}, \groupop)$\;
 	Find a decomposition $(B(\omega),\probability_{\dual{\Haar},\rho})$ such that $B(\omega)B(\omega)^\adjoint \rho(\omega)=\IFT{K_e}(\omega)$\;
 	Draw $D$ random vectors $(\omega_j)_{j=1}^D$ \iid~from the probability law $\probability_{\dual{\Haar},\rho}$\;
-   \Return $\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint $\;
+   \Return $\tildePhi{\omega}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint $\;
    \caption{Construction of \acs{ORFF} from \acs{OVK}}
    \label{al:ORFF_construction}
 \end{algorithm2e}
@@ -588,15 +600,12 @@ We find a decomposition such that for all $j=1, \ldots, D$, $A(\omega_j)=B(\omeg
 
 \afterpage{
 \begin{landscape}
-% \begin{sidewaysfigure}[htb]
 \begin{figure}[htb]
 \centering
 \input{../gfx/feature_relationship.tikz}
-% \end{sideways}
-\caption[Relationships between feature-maps.]{Relationships between feature-maps. $\widetilde{\mathcal{H}}^D = \frac{1}{\sqrt{D}}\Set{\Vect_{j=1}^Dg(\omega_j)| \forall g\in L^2\left(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho}, \mathcal{Y}'\right), \enskip \omega_j\sim \probability_{\dual{\Haar},\rho} \enskip \text{\iid} }$.}
+\caption[Relationships between feature-maps.]{Relationships between feature-maps. $\tildeH{\omega} = \Set{\frac{1}{\sqrt{D}}\Vect_{j=1}^Dg(\omega_j)| \forall g\in L^2\left(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho}, \mathcal{Y}'\right) }$.}
 \label{fig:rel_features}
 \end{figure}
-% \end{sidewaysfigure}
 \end{landscape}
 }
 
@@ -604,9 +613,9 @@ We find a decomposition such that for all $j=1, \ldots, D$, $A(\omega_j)=B(\omeg
 We now give two examples of operator-valued random Fourier feature map when. First we introduce the general form of an approximated feature map for a matrix-valued kernel on the additive group $(\mathbb{R}^d,+)$.
 \begin{example}[Matrix-valued kernel on the additive group]\label{ex:additive_group}
 In the following, $K(x,z)=K_0(x-z)$ is a $\mathcal{Y}$-Mercer matrix-valued kernel on $\mathcal{X}=\mathbb{R}^d$ invariant w.r.t. the group operation $+$. %
-Then the function $\tildePhi{1:D}$ defined as follow is an \acl{ORFF} of $K_{0}$.
+Then the function $\tildePhi{\omega}$ defined as follow is an \acl{ORFF} of $K_{0}$.
 \begin{dmath*}
-\tildePhi{1:D}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^\adjoint y \\ \sin{\inner{x,\omega_j}}B(\omega_j)^\adjoint y\end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip\text{\iid}.
+\tildePhi{\omega}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^\adjoint y \\ \sin{\inner{x,\omega_j}}B(\omega_j)^\adjoint y\end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho} \enskip\text{\iid}.
 \end{dmath*}
 for all $y\in\mathcal{Y}$.
 \end{example}
@@ -614,7 +623,7 @@ for all $y\in\mathcal{Y}$.
 The (Pontryagin) dual of $\mathcal{X}=\mathbb{R}^d$
 is $\dual{\mathcal{X}}\cong\mathbb{R}^d$, and the duality pairing is $\pairing{x-z,\omega}=\exp(i\inner{x-z, \omega})$. The kernel approximation yields:
 \begin{dmath*}
-\tilde{K}(x,z)=\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(z)
+\tilde{K}(x,z)=\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z)
 = \frac{1}{D} \sum_{j=1}^D \begin{pmatrix} \cos{\inner{x,\omega_j}} & \sin{\inner{x,\omega_j}} \end{pmatrix}\begin{pmatrix}\cos{\inner{z,\omega_j}} \\ \sin{\inner{z,\omega_j}} \end{pmatrix} A(\omega_j)
 = \frac{1}{D} \sum_{j=1}^D \cos{\inner{x-z,\omega_j}}A(\omega_j) \\
 \converges{\asurely}{D\to\infty}\expectation_\rho\left[\cos{\inner{x-z,\omega}}A(\omega)\right]
@@ -629,34 +638,34 @@ In particular we deduce the following features maps for the kernels proposed in 
 \begin{itemize}
 \item For the decomposable gaussian kernel $K_0^{dec,gauss}(\delta)=k_0^{gauss}(\delta)\Gamma$ for all $\delta\in\mathbb{R}^d$, let $BB^\adjoint=\Gamma$. A bounded --and unbounded-- \acs{ORFF} map is
 \begin{dmath*}
-\tildePhi{1:D}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B^\adjoint y\\ \sin{\inner{x,\omega_j}}B^\adjoint y \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\mathcal{N}(0,\sigma^{-2}I_d)} \enskip\text{\iid}
-=(\tildephi{1:D}(x)\otimes B^\adjoint)y,
+\tildePhi{\omega}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B^\adjoint y\\ \sin{\inner{x,\omega_j}}B^\adjoint y \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\mathcal{N}(0,\sigma^{-2}I_d)} \enskip\text{\iid}
+=(\tildePhi{\omega}(x)\otimes B^\adjoint)y,
 \end{dmath*}
-where $\tildephi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}} \\ \sin{\inner{x,\omega_j}}\end{pmatrix}$ is a scalar \acs{RFF} map \cite{Rahimi2007}.
+where $\tildePhi{\omega}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}} \\ \sin{\inner{x,\omega_j}}\end{pmatrix}$ is a scalar \acs{RFF} map \cite{Rahimi2007}.
 \item For the curl-free gaussian kernel, $K_0^{curl,gauss}=-\nabla\nabla^T k_0^{gauss}$ an unbounded \acs{ORFF} map is
 \begin{dmath*}
-\tildePhi{1:D}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\omega_j^T y\\ \sin{\inner{x,\omega_j}}\omega_j^T y\end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\mathcal{N}(0,\sigma^{-2}I_d)} \enskip\text{\iid}
+\tildePhi{\omega}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\omega_j^T y\\ \sin{\inner{x,\omega_j}}\omega_j^T y\end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\mathcal{N}(0,\sigma^{-2}I_d)} \enskip\text{\iid}
 \end{dmath*}
 and a bounded \acs{ORFF} map is
 \begin{dmath*}
-\tildePhi{1:D}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\frac{\omega_j^T}{\norm{\omega_j}} y \\ \sin{\inner{x,\omega_j}}\frac{\omega_j^T}{\norm{\omega_j}} y \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}.
+\tildePhi{\omega}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\frac{\omega_j^T}{\norm{\omega_j}} y \\ \sin{\inner{x,\omega_j}}\frac{\omega_j^T}{\norm{\omega_j}} y \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}.
 \end{dmath*}
 where $\rho(\omega)=\frac{\sigma^2\norm{\omega}^2}{d}\mathcal{N}(0,\sigma^{-2}I_d)(\omega)$ for all $\omega\in\mathbb{R}^d$.
 \item For the divergence-free gaussian kernel $K_0^{div,gauss}(x,z)=(\nabla\nabla^T-\Delta I_d) k_0^{gauss}(x,z)$ an unbounded \acs{ORFF} map is
 \begin{dmath*}
-\tildePhi{1:D}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^T y\\ \sin{\inner{x,\omega_j}}B(\omega_j)^T y\end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}
+\tildePhi{\omega}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^T y\\ \sin{\inner{x,\omega_j}}B(\omega_j)^T y\end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}
 \end{dmath*}
 where $B(\omega)=\left(I_d-\frac{\omega^T\omega}{\norm{\omega}}\right)$ and $\rho=\mathcal{N}(0,\sigma^{-2}I_d)$ for all $\omega\in\mathbb{R}^d$. A bounded \acs{ORFF} map is
 \begin{dmath*}
-\tildePhi{1:D}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^T y\\ \sin{\inner{x,\omega_j}}B(\omega_j)^T y\end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}
+\tildePhi{\omega}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^T y\\ \sin{\inner{x,\omega_j}}B(\omega_j)^T y\end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}
 \end{dmath*}
 where $B(\omega)=\left(I_d-\frac{\omega^T\omega}{\norm{\omega}^2}\right)$ and $\rho(\omega)=\frac{\sigma^2\norm{\omega}^2}{d}\mathcal{N}(0,\sigma^{-2}I_d)$ for all $\omega\in\mathbb{R}^d$.
 \end{itemize}
 The second example extends scalar-valued Random Fourier Features on the skewed multiplicative group --described in \cref{subsec:characters} and \cref{subsubsec:skewedchi2}-- to the operator-valued case.
 \begin{example}[Matrix-valued kernel on the skewed multiplicative group]
-In the following, $K(x,z)=K_{1-c}(x\odot z^{-1})$ is a $\mathcal{Y}$-Mercer matrix-valued kernel on $\mathcal{X}=(-c;+\infty)^d$ invariant \wrt~the group operation\mpar{The group operation $\odot$ is defined in \cref{subsubsec:skewedchi2}.} $\odot$. Then the function $\tildePhi{1:D}$ defined as follow is an \acl{ORFF} of $K_{1-c}$.
+In the following, $K(x,z)=K_{1-c}(x\odot z^{-1})$ is a $\mathcal{Y}$-Mercer matrix-valued kernel on $\mathcal{X}=(-c;+\infty)^d$ invariant \wrt~the group operation\mpar{The group operation $\odot$ is defined in \cref{subsubsec:skewedchi2}.} $\odot$. Then the function $\tildePhi{\omega}$ defined as follow is an \acl{ORFF} of $K_{1-c}$.
 \begin{dmath*}
-\tildePhi{1:D}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}}B(\omega_j)^\adjoint y\\ \sin{\inner{\log(x+c),\omega_j}}B(\omega_j)^\adjoint y\end{pmatrix},
+\tildePhi{\omega}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}}B(\omega_j)^\adjoint y\\ \sin{\inner{\log(x+c),\omega_j}}B(\omega_j)^\adjoint y\end{pmatrix},
 \end{dmath*}
 $\omega_j \sim \probability_{\dual{\Haar},\rho}$ iid, for all $y\in\mathcal{Y}$.
 \end{example}
@@ -677,10 +686,10 @@ when $D$ tends to infinity, in the weak operator topology.
 \begin{itemize}
 \item For the skewed-$\chi^2$ decomposable kernel defined as $K_{1-c}^{dec,skewed}(\delta)=k_{1-c}^{skewed}(\delta)\Gamma$ for all $\delta\in\mathcal{X}$, let $BB^*=\Gamma$. A bounded --and unbounded-- \acs{ORFF} map is
 \begin{dmath*}
-\tildePhi{1:D}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}}B^\adjoint y\\ \sin{\inner{\log(x+c),\omega_j}}B^\adjoint y\end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}
-=(\tildephi{1:D}(x) \otimes B^\adjoint)y,
+\tildePhi{\omega}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}}B^\adjoint y\\ \sin{\inner{\log(x+c),\omega_j}}B^\adjoint y\end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}
+=(\tildePhi{\omega}(x) \otimes B^\adjoint)y,
 \end{dmath*}
-where $\rho=\mathcal{S}(0,2^{-1})$ and $\tildephi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}} \\ \sin{\inner{\log(x+c),\omega_j}}\end{pmatrix}$ is a scalar \acs{RFF} map \cite{li2010random}.
+where $\rho=\mathcal{S}(0,2^{-1})$ and $\tildePhi{\omega}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}} \\ \sin{\inner{\log(x+c),\omega_j}}\end{pmatrix}$ is a scalar \acs{RFF} map \cite{li2010random}.
 \end{itemize}
 \subsection{Regularization property}
 We have shown so far that it is always possible to construct a feature map that allows to approximate a shift-invariant $\mathcal{Y}$-Mercer kernel. However we could also propose a construction of such map by studying the regularization induced with respect to the \acl{FT} of a target function $f\in \mathcal{H}_K$. In other words, what is the norm in $L^2(\dual{\mathcal{X}}, \dual{\Haar}; \mathcal{Y}')$ induced by $\norm{\cdot}_K$?
@@ -732,10 +741,10 @@ Note that if $K(x,z)=k(x,z)$ is a scalar kernel then for all $\omega$ in $\dual{
     \item An operator-valued function $B:\dual{\mathcal{X}}\to\mathcal{L}(\mathcal{Y},\mathcal{Y}')$ such that for all $y$ $y'\in\mathcal{Y}$, $\inner{y', B(\cdot)B(\cdot)^\adjoint y}\in L^1(\dual{\mathcal{X}},\probability_{\dual{\Haar},\rho})$.
     \item $D$ the number of features.
     \end{itemize}}
-    \Output{A random feature $\tildePhi{1:D}(x)$ such that $\tildePhi{1:D}(x)^\adjoint \tildePhi{1:D}(z) \approx K_e(x\groupop z^{-1})$.}
+    \Output{A random feature $\tildePhi{\omega}(x)$ such that $\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z) \approx K_e(x\groupop z^{-1})$.}
     \BlankLine
     Draw $D$ random vectors $(\omega_j)_{j=1}^D$ \iid~from the probability law $\probability_{\dual{\Haar},\rho}$\;
-    \Return $\tildePhi{1:D}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint $\;
+    \Return $\tildePhi{\omega}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint $\;
    \caption{Construction of \acs{ORFF}}
    \label{al:ORFF_construction}
 \end{algorithm2e}
@@ -772,119 +781,213 @@ where $f=\oplus_{i\in I} f_i$, $f_i\in\mathcal{H}_{K^i}$, and the sum converges 
 %----------------------------------------------------------------------------------------
 \section{Learning with ORFF}
 \label{sec:learning_with_operator-valued_random-fourier_features}
-We now turn our attention to learning function with an ORFF model that approximate an OVK model. In particular we study the case of Ridge regression.
-\subsection{Ridge regression}
-Let $\mathcal{S} = \Set{(x_i,y_i) | \forall i\inrange{1}{N}, \forall x_i\in\mathcal{X}, \forall y_i\in\mathcal{Y}}$ be a collection of i.i.d training samples.
-Given a local loss function $L: \mathcal{X}\times\mathcal{F}\times\mathcal{Y}\to \mathbb{R}_+$ such that $L$ is convex in $f$, we are interested in finding a \emph{vector-valued function} $f_*:\mathcal{X}\to\mathcal{Y}$, that lives in a RKHS and minimize a tradeoff between a data fitting term $L$ and a regularization term to prevent from overfitting. Namely finding $f_*\in\mathcal{H}_K$ such that
+We now turn our attention to learning function with an ORFF model that approximate an OVK model.
+\subsection{Warm-up: supervised regression}
+Let $\seq{s} = (x_i,y_i)_{i=1}^N\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$ be a sequence of training samples. Given a local loss function $L: \mathcal{X}\times\mathcal{F}\times\mathcal{Y}\to \overline{\mathbb{R}}$ such that $L$ is proper, convex and lower semi-continous in $f$, we are interested in finding a \emph{vector-valued function} $f_{\seq{s}}:\mathcal{X}\to\mathcal{Y}$, that lives in a RKHS and minimize a tradeoff between a data fitting term $L$ and a regularization term to prevent from overfitting. Namely finding $f_{\seq{s}}\in\mathcal{H}_K$ such that
 \begin{dmath}
-f_* = \argmin_{f\in\mathcal{H}_K}  \frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f, y_i) + \frac{\lambda}{2}\norm{f}^2_{K},
+f_{\seq{s}} = \argmin_{f\in\mathcal{H}_K}  \frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f, y_i) + \frac{\lambda}{2}\norm{f}^2_{K},
 \label{eq:learning_rkhs}
 \end{dmath}
 where $\lambda\in\mathbb{R}_+$ is a regularization\mpar{Tychonov regularization.} parameter. A common choice of data fitting term for regression is $L:(x_i, f, y_i) \mapsto \norm{f(x_i)-y_i}_{\mathcal{Y}}^2$.
+We introduce a corollary from Mazur and Schauder proposed in 1936 (see \citet{kurdila2006convex, gorniewicz1999topological}) showing that \cref{eq:learning_rkhs} --and \cref{eq:learning_rkhs_gen}-- attains a unique mimimizer.
+\begin{theorem}[Mazur-Schauder]
+\label{cor:unique_minimizer}
+Let $\mathcal{H}$ be a Hilbert space and $J:\mathcal{H}\to \overline{\mathbb{R}}$ be a proper, convex, lower semi-continuous and coercive function. Then $J$ is bounded from below and attains a minimizer. Moreover if $J$ is strictly convex the minimizer is unique.
+\end{theorem}
+This is easily verified for Ridge regression. Define
+\begin{dmath}
+\label{eq:ridge}
+J_\lambda(f)=\frac{1}{2N}\sum_{i=1}^N\norm{f(x_i)-y_i}_{\mathcal{Y}}^2+\frac{\lambda}{2}\norm{f}_K^2,
+\end{dmath}
+where $f\in\mathcal{H}_K$ and $\lambda\in\mathbb{R}_{>0}$. $J_\lambda$ is continuous\mpar{Reminder, if $f\in\mathcal{H}_k, \text{ev}_x:f\mapsto f(x)$ is continuous, see \cref{pr:unique_rkhs}.} and strictly convex. Additionally $J_\lambda$ is coercive since $\norm{f}_K$ is coercive, $\lambda\in\mathbb{R}_{>0}$, and all the summands of $J_\lambda$ are positive. Hence for all positive $\lambda$, $f_{\seq{s}}=\argmin_{f\in\mathcal{H}_K}J_\lambda(f)$ exists, is unique and attained.
 \begin{remark}
 \label{rk:rkhs_bound}
-If for all $x_i\in\mathcal{X}$ and all $y_i\in\mathcal{Y}$ we have $L(x_i,0,y_i)\le \sigma_y^2$, then $\lambda\norm{f_*}_K\le 2\sigma_y^2$. Indeed, since $\mathcal{H}_K$ is a Hilbert space, $0\in\mathcal{H}_K$. Moreover $L$ is convex with respect to $f$, thus
+We condider the optimization problem proposed in \cref{eq:ridge} where $L:(x_i, f, y_i) \mapsto \norm{f(x_i)-y_i}_{\mathcal{Y}}^2$. If given a training sample $\seq{s}$, we have
 \begin{dmath*}
-\frac{\lambda}{2}\norm{f_*}^2_{K} \le \frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f_*, y_i) + \frac{\lambda}{2}\norm{f_*}^2_{K}
-\le \frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, 0, y_i) \hiderel{\le} \sigma_y^2
+\frac{1}{N}\sum_{i=1}^N\norm{y_i}_{\mathcal{Y}}^2 \le \sigma_y^2,
 \end{dmath*}
+then $\lambda\norm{f_{\seq{s}}}_K\le 2\sigma_y^2$. Indeed, since $\mathcal{H}_K$ is a Hilbert space, $0\in\mathcal{H}_K$, thus
+\begin{dmath*}
+\frac{\lambda}{2}\norm{f_{\seq{s}}}^2_{K} \le \frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f_{\seq{s}}, y_i) + \frac{\lambda}{2}\norm{f_{\seq{s}}}^2_{K}
+\le \frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, 0, y_i) \hiderel{\le} \sigma_y^2 \condition{by optimality of $f_{\seq{s}}$.}
+\end{dmath*}
+Since for all $x\in\mathcal{X}$, $\norm{f(x)}_{\mathcal{Y}}\le \sqrt{\norm{K(x, x)}_{\mathcal{Y},\mathcal{Y}}}\norm{f}_{K}$, the maximum value that the solution $\norm{f_{\seq{s}}(x)}_{\mathcal{Y}}$ of \cref{eq:ridge} can reach is $2\sqrt{\norm{K(x, x)}}\frac{\sigma_y^2}{\lambda}$. Thus when solving a Ridge regression problem, given a shift-invariant kernel $K_e$, one should choose
+\begin{dmath*}
+0 \hiderel{<} \lambda \hiderel{\le} 2\frac{\sqrt{\norm{K_e(e)}}\sigma_y^2}{C}.
+\end{dmath*}
+with $C\in\mathbb{R}_{>0}$ to have a chance to fit all the $y_i$ with norm $\norm{y_i}_{\mathcal{Y}} \le C$ in the train set.
 \end{remark}
-We now introduce a corollary from \citet{kurdila2006convex} showing that \cref{eq:learning_rkhs} attains a unique mimimizer.
-\begin{corollary}
-\label{cor:unique_minimizer}
-Let $\mathcal{H}$ be a Hilbert Space and $J:\mathcal{H}\to \mathbb{R}$ is a strongly lower semi-continuous convex and coercive function. Then $J$ is bounded from below and attains a minimizer \cite{kadri2015operator}.
-\end{corollary}
-This is easily verified for Ridge regression. Define
-\begin{dmath*}
-J_\lambda(f)=\frac{1}{2N}\sum_{i=1}^N\norm{f(x_i)-y_i}_{\mathcal{Y}}^2+\frac{\lambda}{2}\norm{f}_K^2,
-\end{dmath*}
-where $f\in\mathcal{H}_K$ and $\lambda\in\mathbb{R}_{>0}$. $J_\lambda$ is continuous and strongly convex. Additionally $J_\lambda$ is coercive since $\norm{f}_K$ is coercive, $\lambda>0$, and all the summands of $J_\lambda$ are positive. Hence for all positive $\lambda$, $f_*=\argmin_{f\in\mathcal{H}_K}J_\lambda(f)$ exists, is unique and attained.
+\subsection{Semi-supervised regression}
+Regression in \acl{vv-RKHS} has been well studied \citep{Alvarez2012, Minh_icml13,minh2016unifying,sangnier2016joint,kadri2015operator,Micchelli2005,Brouard2016_jmlr}, and a cornerstone of learning in \acs{vv-RKHS} is the representer theorem\mpar{Sometimes referred to as minimal norm interpolation theorem.}, which allows to replace the search of a minimizer in a infinite dimensional \acs{vv-RKHS} by a finite number of paramaters $(u_i)_{i=1}^N$, $u_i\in\mathcal{Y}$. We present here the very genreal form of \citet{minh2016unifying}. This framework encompass Vector-valued Manifold Regularization \citep{belkin2006manifold,Brouard2011,minh2013unifying} and Co-regularized Multi-view Learning \citep{brefeld2006efficient,sindhwani2008rkhs,rosenberg2009kernel,sun2011multi}.
 \paragraph{}
-Regression in \acl{vv-RKHS} has been well studied \cite{Alvarez2012,Minh_icml13,sangnier2016joint,kadri2015operator,Micchelli2005,Brouard2016_jmlr}, and a cornerstone of learning in \acs{vv-RKHS} is the representer theorem\mpar{Sometimes referred to as minimal norm interpolation theorem.}, which allows to replace the search of a minimizer in a infinite dimensional \acs{vv-RKHS} by a finite number of paramaters $(u_i)_{i\in\mathbb{N}_N}$, $u_i\in\mathcal{Y}$.
-\begin{theorem}[Representer]
-Let $K$ be a $\mathcal{Y}$-Mercer \acl{OVK} and $\mathcal{H}_K$ its corresponding \acl{vv-RKHS}. The solution $f_*\in\mathcal{H}_K$ of the regularized optimization problem
+In the following we suppose we are given a cost function $c:\mathcal{Y}\times\mathcal{Y}\to\overline{\mathbb{R}}$, such that $c(f(x),y)$ returns the error of the prediction $f(x)$ \wrt~the ground truth $y$. A loss function of a model $f$ with respect to an example $(x,y)\in\mathcal{X}\times\mathcal{Y}$ can be naturally defined from a cost function as $L(x,f,y)=c(f(x),y)$. Conceptually the function $c$ evaluate the quality of the prediction versus its ground truth $y\in\mathcal{Y}$ while the loss function $L$ evaluate the quality of the model $f$ at a training point $(x,y)\in\mathcal{X}\times\mathcal{Y}$. Moreover we suppose that we are given a training sample $\seq{u}=(x_i)_{i=N}^{N+U}\in\mathcal{X}^U$ of unlabelled exemple. We note $\seq{z}\in\left(\mathcal{X}\times\mathcal{Y}\right)^N\times\mathcal{X}^U$ the sequence $\seq{s}\seq{u}$ concatenating both labeled ($\seq{s}$) and unlabelled ($\seq{u}$) training examples.
+\begin{theorem}[Representer \citep{minh2016unifying}]
+\label{th:representer}
+Let $K$ be a $\mathcal{W}$-Mercer \acl{OVK} and $\mathcal{H}_K$ its corresponding $\mathcal{W}$-Reproducing Kernel Hilbert space.
+\paragraph{}
+Let $V:\mathcal{W}\to\mathcal{Y}$ be a bounded linear operator and let $c:\mathcal{Y}\times\mathcal{Y}\to\overline{\mathbb{R}}$ be a cost function such that $L(x, f, y)=c(Vf(x), y)$ is a proper convex lower semi-continuous function in $f$ for all $x\in\mathcal{X}$ and all $y\in\mathcal{Y}$.
+\paragraph{}
+Eventually let $\lambda_K\in\mathbb{R}_{>0}$ and $\lambda_M \in \mathbb{R}_+$ be two regularization hyperparameters and $(M_{ik})_{i,k=1}^{N+U}$ be a sequence of data dependent bounded linear operators in $\mathcal{L}(\mathcal{W})$, such that
+\begin{dmath*}
+\sum_{i,j=1}^{N+U} \inner{w_i, M_{ik}w_k} \ge 0 \condition{$\forall (w_i)_{i=1}^{N+U}\in\mathcal{W}^{N+U}$ and $M_{ik}=M_{ki}^*$}.
+\end{dmath*}
+The solution $f_{\seq{z}}\in\mathcal{H}_K$ of the regularized optimization problem
 \begin{dmath}
-\label{eq:argmin_RKHS}
-f_* = \argmin_{f\in\mathcal{H}_K}  \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{K},
-\label{eq:learning_rkhs}
+f_{\seq{z}} = \argmin_{f\in\mathcal{H}_K} \frac{1}{N}\displaystyle\sum_{i=1}^N c(Vf(x_i), y_i) + \frac{\lambda_K}{2}\norm{f}^2_{K} \\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner{f(x_i), M_{ik}f(x_k)}_{\mathcal{W}}
+\label{eq:learning_rkhs_gen}
 \end{dmath}
-has the form $f_*=\sum_{i=1}^NK(\cdot,x_i)u_i$, where $u_i\in\mathcal{Y}$.
+has the form
+\begin{dmath*}
+f_{\seq{z}}=\sum_{i=1}^{N+U}K(\cdot,x_i)u_i \condition{where $u_i\in\mathcal{Y}$}.
+\end{dmath*}
 \end{theorem}
-This theorem was first introduced by \citet{Wahba90} in the case where $\mathcal{Y}=\mathbb{R}$. The extension to an arbitrary Hilbert space $\mathcal{Y}$ has been proved by many authors \citep{Brouard2011,kadri2015operator,Micchelli2005}. We present here the proof proposed by \citet{kadri2015operator}.
+The first representer theorem was first introduced by \citet{Wahba90} in the case where $\mathcal{Y}=\mathbb{R}$. The extension to an arbitrary Hilbert space $\mathcal{Y}$ has been proved by many authors in different forms \citep{Brouard2011,kadri2015operator,Micchelli2005}. We present here the proof of the generic formulation proposed by \citet{minh2016unifying}. In the mean time we clarify some elements of the proof. Indeed the existence of a global minimizer is not trivial and we must invoke the Mazur-Schauder theorem. Moreover the coercivity of the objective function required by the Mazur-Schauder theorem is not obvious when we do not require the cost function to take only positive values. However a corollary of Hahn-Banach theorem linking strong convexity to coercivity gives the solution.
 \begin{proof}
-Let $J(f)=\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{K}$ be the functional to minimize. We use the notion of Frechet derivative, noted $D_F$. This is the strongest notion of derivative in a normed vector space, see \citet{kurdila2006convex}.
-$f_*$ denotes the optimal vector in $\mathcal{H}_K$ such that $f_*=\argmin_{f\in\mathcal{H}_K}J(f){\scriptstyle\implies}D_F J(f_*)=0$. To compute the Frechet derivative $D_F$, we use the Gateaux derivative $D_G$ of $J$ with respect to $f\in\mathcal{H}_K$ in the direction $h\in\mathcal{H}_K$. The Gateaux derivative is defined by
+Since $f(x)=K_x^*f$ (see \cref{eq:reproducing_prop}), the optimization problem reads
 \begin{dmath*}
-D_G J(f, h) = \lim_{t\to 0} \frac{J(f+th)-J(f)}{t}.
+f_{\seq{z}} = \argmin_{f\in\mathcal{H}_K} \frac{1}{N}\displaystyle\sum_{i=1}^N c(VK_{x_i}^\adjoint f, y_i) + \frac{\lambda_K}{2}\norm{f}^2_{K} \\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner{K_{x_i}^\adjoint f, M_{ik}K_{x_k}^\adjoint f}_{\mathcal{W}}
 \end{dmath*}
-Let $G_i(f)=\norm{f(x_i)-y_i}_{\mathcal{Y}}^2$. Then $J(f)=\frac{1}{2N}\sum_{i=1}^NG_i(f)+\frac{\lambda}{2}\norm{f}_{K}^2$. Moreover the directional Gateaux derivative obey $D_GJ(f, h)=\inner{D_GJ(f),h}_{K}$. Thus
-\begin{enumerate}
-\item Regularization term:
-\begin{dmath}
-\label{enum:Gateaux_diff_reg}
-\lim_{t\to 0}\frac{\norm{f+th}^2_{K}-\norm{f}_{K}^2}{t}=2\inner{f,h}{\scriptstyle\implies}D_G\norm{f}_{K}^2\hiderel{=}2f.
-\end{dmath}
-\item Data fitting term:
-\begin{dmath}
-\label{enum:Gateaux_diff_fit}
-\lim_{t\to 0}\frac{\norm{y_i-f(x_i)+th(x_i)}_{\mathcal{Y}}^2-\norm{y_i-f(x_i)}_{\mathcal{Y}}^2}{t} = -2\inner{y_i-f(x_i),h(x_i)}_{\mathcal{Y}} \hiderel{=} -2\inner{K_{x_i}(y_i-f(x_i)),h}_{K}\\{\scriptstyle\implies}D_G G_i(f)\hiderel{=}-2K_{x_i}(y_i-f(x_i)).
-\end{dmath}
-\end{enumerate}
-Since $K$ is Mercer, $f$ is continuous. Applying corollary 4.1.1 in \citet{kurdila2006convex} shows that $J$ is Frechet differentiable and $\forall f\in\mathcal{H}_K$, $D_F J(f)=D_G J(f)$. Thus if $f_*=\argmin_{f\in\mathcal{H}_K}J(f)$ then $D_F J(f)=0$ so $D_G J(f)=0$. Eventually use \cref{enum:Gateaux_diff_reg} and \cref{enum:Gateaux_diff_fit} so that
+Let $E_{V,\seq{s}}:\mathcal{H}_K\to\Vect_{i=1}^N\mathcal{Y}$ be a linear operator defined as
 \begin{dmath*}
-D_G J(f_*)= \lambda f_*-\frac{1}{N}\sum_{i=1}^NK_{x_i}(y_i-f_*(x_i))\hiderel{=}0
+E_{V,\seq{s}}f = \Vect_{i=1}^N CK_{x_i}^\adjoint f,
 \end{dmath*}
-Let $u_i=\frac{(y_i-f_*(x_i)}{\lambda N}\in\mathcal{Y}$ to conclude the proof.
+with $VK_{x_i}^\adjoint:\mathcal{H}_K\to\mathcal{Y}$ and $K_{x_i}V^\adjoint:\mathcal{Y}\to\mathcal{H}_K$. Let $Y=\vect_{i=1}^Ny_i\in\mathcal{Y}^N$. We have
+\begin{dmath*}
+\inner{Y, E_{V,\seq{s}}f}_{\Vect_{i=1}^N\mathcal{Y}}=\sum_{i=1}^N\inner{y_i, VK_{x_i}^\adjoint f}_{\mathcal{Y}}
+\hiderel{=}\sum_{i=1}^N\inner{K_{x_i}V^\adjoint y_i, f}_{\mathcal{H}_K}.
+\end{dmath*}
+Thus the adjoint operator $E_{V,\seq{s}}^\adjoint:\Vect_{i=1}^N\mathcal{Y}\to\mathcal{H}_K$ is
+\begin{dmath*}
+E_{V,\seq{s}}^\adjoint Y=\sum_{i=1}^NK_{x_i}V^\adjoint y_i,
+\end{dmath*}
+and the operator $E_{V,\seq{s}}^*E_{V,\seq{s}}:\mathcal{H}_K\to\mathcal{H}_K$ is
+\begin{dmath*}
+E_{V,\seq{s}}^\adjoint E_{V,\seq{s}}f = \sum_{i=1}^NK_{x_i}V^\adjoint VK_{x_i}^\adjoint f
+\end{dmath*}
+where $V^\adjoint V\in\mathcal{L}(\mathcal{W})$. Let
+\begin{dmath*}
+J_{\lambda_K}(f) = \underbrace{\frac{1}{N}\displaystyle\sum_{i=1}^N c(Vf(x_i), y_i)}_{=J_c} + \frac{\lambda_K}{2}\norm{f}^2_{K} \\ + \underbrace{\frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner{f(x_i), M_{ik}f(x_k)}_{\mathcal{W}}}_{=J_M}
+\end{dmath*}
+To ensure that $J_{\lambda_K}$ has a global minimizer we need the following technical lemma (which is a consequence of the Hahn-Banach theorem for lower-semicontimuous functional, see \cite{kurdila2006convex}).
+\begin{lemma}
+\label{lm:strongly_convex_is_coercive}
+Let $J$ be a proper, convex, lower semi-continuous functional, defined on a Hilbert space $\mathcal{H}$. If $J$ is strongly convex, then $J$ is coercive.
+\end{lemma}
+\begin{proof}
+Consider the convex function function $G(f)\colonequals J(f)-\lambda\norm{f}^2$, for some $\lambda>0$. Since $J$ is by assumption proper, lower semi-continuous and strongly convex with parameter $\lambda$, $G$ is proper, lower semi-continuous and convex. Thus Hahn-Banach theorem apply, stating that $G$ is bounded by below by an affine functional. \Ie~there exists $f_0$ and $f_1\in\mathcal{H}$ such that
+\begin{dmath*}
+G(f)\ge G(f_0) + \inner{f - f_0, f_1} \condition{for all $f\in\mathcal{H}$.}
+\end{dmath*}
+Then substitute the definition of $G$ to obtain
+\begin{dmath*}
+J(f)\ge J(f_0) + \lambda\left(\norm{f}-\norm{f_0}\right) + \inner{f - f_0, f_1}.
+\end{dmath*}
+By the Cauchy-Schwartz inequality, $\inner{f, f_1}\ge - \norm{f}\norm{f_1}$, thus
+\begin{dmath*}
+J(f)\ge J(f_0) + \lambda\left(\norm{f}-\norm{f_0}\right)  - \norm{f}\norm{f_1} - \inner{f_0, f_1},
+\end{dmath*}
+which tends to infinity as $f$ tends to infinity. Hence $J$ is coercive
 \end{proof}
-The representer theorem show that minimizing a functional in a \acs{vv-RKHS} yields a solution which depends on all the points in the training set. Assuming that for all $x_i$, $x\in\mathcal{X}$ and for all $u_i\in\mathcal{Y}$ it takes time $O(P)$, to compute $K(x_i, x)u_i$, making a prediction using the representer theorem take $O(NP)$. Obviously If $\mathcal{Y}=\mathbb{R}^p$, Then $P=O(p^2)$ thus making a prediction cost $O(Np^2)$ operations.
+for all $f\in\mathcal{H}_K$. Since $c$ is proper, lower semi-continuous and convex by assumption, thus the term $J_c$ is also proper, lower semi-continuous and convex. Moreover the term $J_M$ is always positive for any $f\in\mathcal{H}_K$ and $\frac{\lambda_K}{2}\norm{f}^2_{K}$ is strongly convex. Thus $J_{\lambda_K}$ is strongly convex. Apply \cref{lm:strongly_convex_is_coercive} to obtain the coercivity of $J_{\lambda_K}$, and then \cref{cor:unique_minimizer} to show that $J_{\lambda_K}$ has a unique minimizer and is attained. Then let $\mathcal{H}_{K, \seq{z}}=\Set{\sum_{i=1}^{N+U}K_{x_i}u_i| \forall u_i \in\mathcal{W}^{N+U}}$. For $f\in\mathcal{H}_{K, \seq{z}}^\perp$\mpar{$\mathcal{H}_{K, \seq{z}}^\perp\oplus\mathcal{H}_{K, \seq{z}}=\mathcal{H_K}$.}, the operator $E_{V,\seq{s}}$ satisfies
+\begin{dmath*}
+\inner{Y, E_{V,\seq{s}}f}_{\Vect_{i=1}^N\mathcal{Y}} = \inner{\underbrace{f}_{\in\mathcal{H}_{K, \seq{z}}^\perp}, \underbrace{\sum_{i=1}^{N+U}K_{x_i}V^\adjoint y_i}_{\in\mathcal{H}_{K, \seq{z}}}}_{\mathcal{H}_K} \hiderel{=} 0
+\end{dmath*}
+for all sequences $(y_i)_{i=1}^N$, since $V^\adjoint y_i\in\mathcal{W}$. Hence,
+\begin{dmath}
+\label{eq:null1}
+(Vf(x_i))_{i=1}^{N}=0
+\end{dmath}
+In the same way,
+\begin{dmath*}
+\sum_{i=1}^{N+U}\inner{K_{x_i}^* f, u_i}_{\mathcal{W}} \hiderel{=} \inner{\underbrace{f}_{\in\mathcal{H}_{K, \seq{z}}^\perp}, \underbrace{\sum_{i=1}^{N+U}K_{x_i}u_i}_{\in\mathcal{H}_{K, \seq{z}}}}_{\mathcal{H}_K} \hiderel{=} 0.
+\end{dmath*}
+for all sequences $(u_i)_{i=1}^{N+U}\in\mathcal{W}^{N+U}$. As a result,
+\begin{dmath}
+\label{eq:null2}
+(f(x_i))_{i=1}^{U+N}=0.
+\end{dmath}
+Now for an arbitrary $f\in\mathcal{H_K}$, consider the orthogonal decomposition $f=f^{\perp}+f^{\parallel}$, where $f^{\perp}\in\mathcal{H}_{K, \seq{z}}^\perp$ and $f^{\parallel}\in\mathcal{H}_{K, \seq{z}}$. Then since $\norm{f^{\perp}+f^{\parallel}}_{\mathcal{H}_K}^2=\norm{f^{\perp}}_{\mathcal{H}_K}^2+\norm{f^{\parallel}}_{\mathcal{H}_K}^2$, \cref{eq:null1} and \cref{eq:null2} shows that if $\lambda_K\ge 0$, clearly then
+\begin{dmath*}
+J_{\lambda_K}(f)=J_{\lambda_K}\left(f^{\perp}+f^{\parallel}\right) \hiderel{\ge} J_{\lambda_K}\left(f^{\parallel}\right)
+\end{dmath*}
+The last inequality holds only when $\norm{f^{\perp}}_{\mathcal{H}_K}=0$, that is when $f^{\perp}=0$. As a result since the minimizer of $J_{\lambda_K}$is unique and attained, it must lies in $\mathcal{H}_{K, \seq{z}}$.
+\end{proof}
+The representer theorem show that minimizing a functional in a \acs{vv-RKHS} yields a solution which depends on all the points in the training set. Assuming that for all $x_i$, $x\in\mathcal{X}$ and for all $u_i\in\mathcal{Y}$ it takes time $O(P)$, to compute $K(x_i, x)u_i$, making a prediction using the representer theorem take $O(2(N+U)P)$. Obviously If $\mathcal{Y}=\mathbb{R}^p$, Then $P=O(p^2)$ thus making a prediction cost $O(2(N+U)p^2)$ operations.
 \paragraph{}
 Instead learning a model $f$ that depends on all the points of the training set, we would like to learn a parametric model of the form
-$\tildef{1:D}(x)=\tildePhi{1:D}(x)^\adjoint \theta$, where $\theta$ lives in some redescription space\mpar{If $\mathcal{Y}=\mathbb{R}$ then $\mathcal{Y}'=\mathbb{R}$ thus $\theta=\mathbb{R}^D$ endowed with the euclidean inner product.} $\widetilde{\mathcal{H}}^D$. We are interested in finding a parameter vector $\theta_*$ such that
+$\tildef{1:D}(x)=\tildePhi{\omega}(x)^\adjoint \theta$, where $\theta$ lives in some redescription space\mpar{If $V=1$, $\mathcal{W}=\mathbb{R}$ then $\mathcal{W}'=\mathbb{R}$ thus $\theta\in \mathbb{R}^D$ endowed with the euclidean inner product.} $\tildeH{\omega}\subseteq \Vect_{j=1}^D\mathcal{W}'$. We are interested in finding a parameter vector $\theta_{\seq{z}}$ such that
 \begin{dmath}
 \label{eq:argmin_applied}
-\theta_*=\argmin_{\theta\in\widetilde{\mathcal{H}}^D} \frac{1}{2N}\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint \theta-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\theta}^2_{\widetilde{\mathcal{H}}^D}
+\theta_{\seq{z}}=\argmin_{\theta\in \Vect_{j=1}^D\mathcal{W}'} \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\Vect_{j=1}^D\mathcal{W}'} \\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\Vect_{j=1}^D\mathcal{W}'}
 \end{dmath}
+
 \begin{corollary}[\acs{ORFF} representer]
-Let $\widetilde{K}$ an \acl{OVK} such that $\widetilde{K} \approx K$ where $K$ is a $\mathcal{Y}$-Mercer \acs{OVK} and $\mathcal{H}_{\widetilde{K}}$ its corresponding \acl{vv-RKHS}. The solution $f_*\in\mathcal{H}_{\widetilde{K}}$ of the regularized optimization problem
+Let $\tildeK{\omega}$ be an \acl{OVK} such that for all $x$, $z\in\mathcal{X}$, $\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z) \approx K(x,z)$ where $K$ is a $\mathcal{W}$-Mercer \acs{OVK} and $\mathcal{H}_{\tildeK{\omega}}$ its corresponding $\mathcal{W}$-Reproducing kernel Hilbert space.
+\paragraph{}
+Let $V:\mathcal{W}\to\mathcal{Y}$ be a bounded linear operator and let $c:\mathcal{Y}\times\mathcal{Y}\to\overline{\mathbb{R}}$ be a cost function such that $L(x, \widetilde{f}, y)=c(V\widetilde{f}(x), y)$ is a proper convex lower semi-continuous function in $\widetilde{f}\in\mathcal{H}_{\tildeK{\omega}}$ for all $x\in\mathcal{X}$ and all $y\in\mathcal{Y}$.
+\paragraph{}
+Eventually let $\lambda_K\in\mathbb{R}_{>0}$ and $\lambda_M \in \mathbb{R}_+$ be two regularization hyperparameters and $(M_{ik})_{i,k=1}^{N+U}$ be a sequence of data dependent bounded linear operators in $\mathcal{L}(\mathcal{W})$, such that
+\begin{dmath*}
+\sum_{i,j=1}^{N+U} \inner{w_i, M_{ik}w_k} \ge 0 \condition{$\forall (w_i)_{i=1}^{N+U}\in\mathcal{W}^{N+U}$ and $M_{ik}=M_{ki}^*$}.
+\end{dmath*}
+The solution $f_{\seq{z}}\in\mathcal{H}_{\tildeK{\omega}}$ of the regularized optimization problem
 \begin{dmath}
 \label{eq:argmin_RKHS_rand}
-\widetilde{f}_* = \argmin_{\widetilde{f}\in\mathcal{H}_{\widetilde{K}}}  \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\widetilde{f}(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\widetilde{f}}^2_{\widetilde{K}},
+\widetilde{f}_{\seq{z}} = \argmin_{\widetilde{f}\in\mathcal{H}_{\tildeK{\omega}}} \frac{1}{N}\displaystyle\sum_{i=1}^N c\left(V\widetilde{f}(x_i), y_i\right) + \frac{\lambda_K}{2}\norm{\widetilde{f}}^2_{\tildeK{\omega}} \\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner{\widetilde{f}(x_i), M_{ik}\widetilde{f}(x_k)}_{\mathcal{W}}
 \end{dmath}
-has the form $\widetilde{f}_*=\tildePhi{1:D}(\cdot)^\adjoint\theta_*$, where $\theta_*\in (\Ker \widetilde{W})^{\perp}$ and
+has the form $\widetilde{f}_{\seq{z}}=\tildePhi{\omega}(\cdot)^\adjoint\theta_{\seq{z}}$, where $\theta_{\seq{z}}\in (\Ker \tildeW{\omega})^{\perp}$ and
 \begin{dmath}
-\theta_* = \argmin_{\theta'\in\Vect_{j=1}^D\mathcal{Y}'} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint \theta' - y_i}^2_{\mathcal{Y}} + \frac{\lambda}{2}\norm{\theta'}^2_{\Vect_{j=1}^D\mathcal{Y}'}.
+\theta_{\seq{z}}=\argmin_{\theta\in \Vect_{j=1}^D\mathcal{W}'} \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\Vect_{j=1}^D\mathcal{W}'} \\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\Vect_{j=1}^D\mathcal{W}'}.
 \end{dmath}
 \end{corollary}
 \begin{proof}
-Since $\widetilde{K}$ is an operator-valued kernel, \cref{eq:argmin_RKHS_rand} has a solution of the form
+Since $\tildeK{\omega}$ is an operator-valued kernel, from \cref{th:representer}, \cref{eq:argmin_RKHS_rand} has a solution of the form
 \begin{dmath*}
-\widetilde{f}_* = \sum_{i=1}^N \widetilde{K}(\cdot, x_i)u_i, \qquad u_i \hiderel{\in} \mathcal{Y}', \enskip x_i \hiderel{\in}\mathcal{X}
-= \sum_{i=1}^N \tildePhi{1:D}(\cdot)^\adjoint \tildePhi{1:D}(x_i)u_i
-\hiderel{=} \tildePhi{1:D}(\cdot)^\adjoint \underbrace{\left(\sum_{i=1}^N\tildePhi{1:D}(x_i)u_i\right)}_{=\theta\in \left(\Ker \widetilde{W}\right)^\perp\subset \widetilde{\mathcal{H}}^D}.
+\widetilde{f}_{\seq{z}} = \sum_{i=1}^{N+U} \tildeK{\omega}(\cdot, x_i)u_i \condition{$u_i \hiderel{\in} \mathcal{W}$, $x_i \hiderel{\in}\mathcal{X}$}
+= \sum_{i=1}^N \tildePhi{\omega}(\cdot)^\adjoint \tildePhi{\omega}(x_i)u_i
+\hiderel{=} \tildePhi{\omega}(\cdot)^\adjoint \underbrace{\left(\sum_{i=1}^{N+U}\tildePhi{\omega}(x_i)u_i\right)}_{=\theta\in \left(\Ker \tildeW{\omega}\right)^\perp\subset \tildeH{\omega}}.
 \end{dmath*}
 Let
 \begin{dmath*}
-\theta_* = \argmin_{\theta\in\left(\Ker \widetilde{W}\right)^\perp} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\tildePhi{1:D}(x)^\adjoint\theta - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\tildePhi{1:D}(\cdot)^\adjoint\theta}^2_{\widetilde{K}}
+\theta_{\seq{z}}=\argmin_{\theta\in\left(\Ker \tildeW{\omega}\right)^\perp} \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\tildePhi{\omega}(\cdot)^\adjoint\theta}^2_{\tildeK{\omega}} \\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{W}}.
 \end{dmath*}
-Since $\theta\in(\Ker W)^\perp$ and $W$ is an isometry from $(\Ker W)^\perp\subset \widetilde{\mathcal{H}}^D$ onto $\mathcal{H}_{\widetilde{K}}$, we have $\norm{\tildePhi{1:D}(\cdot)^\adjoint\theta}^2_{\widetilde{K}} = \norm{\theta}^2_{\widetilde{\mathcal{H}}^D}$. Hence
+Since $\theta\in(\Ker \tildeW{\omega})^\perp$ and $W$ is an isometry from $(\Ker \tildeW{\omega})^\perp\subset \tildeH{\omega}$ onto $\mathcal{H}_{\tildeK{\omega}}$, we have $\norm{\tildePhi{\omega}(\cdot)^\adjoint\theta}^2_{\tildeK{\omega}} = \norm{\theta}^2_{\tildeH{\omega}}$. Hence
 \begin{dmath*}
-\theta_* = \argmin_{\theta\in\left(\Ker \widetilde{W}\right)^\perp} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\tildePhi{1:D}(x)^\adjoint\theta - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\theta}^2_{\widetilde{\mathcal{H}}^D},
+\theta_{\seq{z}}=\argmin_{\theta\in\left(\Ker \tildeW{\omega}\right)^\perp} \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner{\tildePhi{\omega}(x_i)^\adjoint \theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{W}}.
 \end{dmath*}
-Since W is bounded, $\Ker \widetilde{W}$ is closed, so that we can perform the decomposition $\widetilde{\mathcal{H}}^D=\left(\Ker \widetilde{W}\right)^\perp\oplus \left(\Ker \widetilde{W}\right)$. Then clearly by linearity of $W$ and the fact that for all $\theta^{\parallel}\in\Ker \widetilde{W}$, $\widetilde{W}\theta^{\parallel}=0$, if $\lambda > 0$ we have
+Finding a minimizer $\theta_{\seq{z}}$ over $\left(\Ker \tildeW{\omega}\right)^\perp$ is not the same than finding a minimizer over $\tildeH{\omega}$. Although in both cases Mazur-Schauder's theorem guarantee that the respective minimizers are unique, they might not be the same. Since $\tildeW{\omega}$ is bounded, $\Ker \tildeW{\omega}$ is closed, so that we can perform the decomposition $\tildeH{\omega}=\left(\Ker \tildeW{\omega}\right)^\perp\oplus \left(\Ker \tildeW{\omega}\right)$. Then clearly by linearity of $W$ and the fact that for all $\theta^{\parallel}\in\Ker \tildeW{\omega}$, $\tildeW{\omega}\theta^{\parallel}=0$, if $\lambda > 0$ we have
 \begin{dmath*}
-\theta_* = \argmin_{\theta\in\widetilde{\mathcal{H}}^D} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\tildePhi{1:D}(x)^\adjoint\theta - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\theta}^2_{\widetilde{\mathcal{H}}^D}
-= \argmin_{\theta\in\left(\left(\Ker \widetilde{W}\right)^\perp\oplus \Ker \widetilde{W}\right)} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{(\widetilde{W}\theta)(x) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\theta}^2_{\widetilde{\mathcal{H}}^D}
-= \argmin_{\substack{\theta^{\perp}\in\left(\Ker \widetilde{W}\right)^\perp, \\ \theta^{\parallel}\in\Ker \widetilde{W}}} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\left(\widetilde{W}\theta^{\perp}\right)(x) + \underbrace{\left(\widetilde{W}\theta^{\parallel}\right)}_{=0 \enskip\text{for all}\enskip \theta^{\parallel}}(x) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\theta^\perp}^2_{\widetilde{\mathcal{H}}^D} + \underbrace{\frac{\lambda}{2}\norm{\theta^{\parallel}}^2_{\widetilde{\mathcal{H}}^D}}_{=0 \enskip\text{if}\enskip \theta^{\parallel}=0}
-= \argmin_{\theta^{\perp}\in\left(\Ker \widetilde{W}\right)^\perp} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\tildePhi{1:D}(x)^\adjoint\theta^{\perp} - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\theta^{\perp}}^2_{\widetilde{\mathcal{H}}^D}.
+\theta_{\seq{z}}=\argmin_{\theta\in\tildeH{\omega}} \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{W}}
+=\argmin_{\substack{\theta^{\perp}\in\left(\Ker \tildeW{\omega}\right)^\perp, \\ \theta^{\parallel}\in\Ker \tildeW{\omega}}} \frac{1}{2N}\sum_{i=1}^Nc\left(V\left(\tildeW{\omega}\theta^{\perp}\right)(x)+\underbrace{V\left(\tildeW{\omega}\theta^{\parallel}\right)(x)}_{=0\enskip\text{for all}\enskip \theta^{\parallel} }, y_i\right) \\ + \frac{\lambda_K}{2}\norm{\theta^\perp}^2_{\tildeH{\omega}} + \underbrace{\frac{\lambda}{2}\norm{\theta^{\parallel}}^2_{\tildeH{\omega}}}_{=0 \enskip\text{only if}\enskip \theta^{\parallel}=0} \\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta^{\perp}, M_{ik}\left(\tildeW{\omega}\theta^{\perp}\right)(x_k)}_{\mathcal{W}} \\
++ \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner*{\underbrace{\left(\tildeW{\omega}\theta^{\parallel}\right)(x_i)}_{=0\enskip\text{for all}\enskip \theta^{\parallel} }, M_{ik}\left(\tildeW{\omega}\theta^{\perp}\right)(x_k)}_{\mathcal{W}}
+\\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner*{\left(\tildeW{\omega}\theta^{\perp}\right)(x_i), M_{ik}\underbrace{\left(\tildeW{\omega}\theta^{\parallel}\right)(x_k)}_{=0\enskip\text{for all}\enskip \theta^{\parallel} }}_{\mathcal{W}} \\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner*{\underbrace{\left(\tildeW{\omega}\theta^{\parallel}\right)(x_i)}_{=0\enskip\text{for all}\enskip \theta^{\parallel} }, M_{ik}\underbrace{\left(\tildeW{\omega}\theta^{\parallel}\right)(x_k)}_{=0\enskip\text{for all}\enskip \theta^{\parallel} }}_{\mathcal{W}}.
 \end{dmath*}
-Eventually for all $g\in L^{2}\left(\dual{\mathcal{X}},\probability_{\dual{\Haar},\rho},\mathcal{Y}'\right)$ and $\omega_j \sim \probability_{\dual{\Haar},\rho}$ \iid,
+Thus
 \begin{dmath*}
-\theta_* = \argmin_{\theta\in\widetilde{\mathcal{H}}^D} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint\theta - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{\theta}^2_{\widetilde{\mathcal{H}}^D}
-= \argmin_{\frac{1}{\sqrt{D}}\Vect_{j=1}^Dg(\omega_j)} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\frac{1}{D}\sum_{j=1}^D\conj{\pairing{x_i,\omega_j}}B(\omega_j)g(\omega_j) - y_i}^2_{\mathcal{Y}}+ \frac{\lambda}{2}\frac{1}{D}\sum_{j=1}^D\norm{g(\omega_j)}^2_{\mathcal{Y'}}
-= \argmin_{\theta'\in\Vect_{j=1}^D\mathcal{Y}'} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint \theta' - y_i}^2_{\mathcal{Y}}+ \frac{\lambda}{2}\norm{\theta'}^2_{\Vect_{j=1}^D\mathcal{Y}'}. \qquad \qed
+\theta_{\seq{z}}=\argmin_{\theta^{\perp}\in\left(\Ker \tildeW{\omega}\right)^\perp}
+\frac{1}{2N}\sum_{i=1}^Nc\left(V\left(\tildeW{\omega}\theta^{\perp}\right)(x), y_i\right) + \frac{\lambda_K}{2}\norm{\theta^\perp}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta^{\perp}, M_{ik}\left(\tildeW{\omega}\theta^{\perp}\right)(x_k)}_{\mathcal{W}}.
+\end{dmath*}
+Hence minimizing over $\left(\Ker \tildeW{\omega}\right)^\perp$ or $\tildeH{\omega}$ is the same. Eventually for all $g\in L^{2}\left(\dual{\mathcal{X}},\probability_{\dual{\Haar},\rho},\mathcal{W}'\right)$ and for any outcome of $\omega_j \sim \probability_{\dual{\Haar},\rho}$ \iid,
+\begin{dmath*}
+\theta_{\seq{z}}=\argmin_{\theta\in\tildeH{\omega}} \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint\theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{W}}
+=\argmin_{\theta \in \Vect_{j=1}^D\mathcal{W}'} \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint\theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\Vect_{j=1}^D\mathcal{W}'} \\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner*{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\Vect_{j=1}^D\mathcal{W}'}. \qed
 \end{dmath*}
 \end{proof}
-% Since $\theta\in\widetilde{\mathcal{H}}^D\left(\mathcal{Y}'\right)$ lives in a different space than $f\in\mathcal{H}_K$ is makes no sense to show the convergence of $\theta_*$ to $f_*$. However we can verify that $\tildef{1:D}$ converges to $f\in\mathcal{H}_K$ pointwise. We first introduce the following lemma and assumptions. First we characterize extremum estimators. Let $\mathcal{H}$ be any Hilbert space.
+
+% \afterpage{
+\begin{landscape}
+\begin{figure}[htb]
+\centering
+\resizebox{\textheight}{!}{%
+\input{../gfx/representer.pgf}
+}
+\caption[ORFF Representer theorem]{ORFF Representer theorem. We trained a first model named $\tildeK{\omega}$ following}
+\label{fig:rel_features}
+\end{figure}
+\end{landscape}
+% }
+
+% Since $\theta\in\tildeH{\omega}\left(\mathcal{Y}'\right)$ lives in a different space than $f\in\mathcal{H}_K$ is makes no sense to show the convergence of $\theta_*$ to $f_*$. However we can verify that $\tildef{1:D}$ converges to $f\in\mathcal{H}_K$ pointwise. We first introduce the following lemma and assumptions. First we characterize extremum estimators. Let $\mathcal{H}$ be any Hilbert space.
 % \begin{assumption}[EE]
 % \label{ass:ee}
 % The parameter $\tilde{g}_*\in\mathcal{H}$ is an extremum estimator of $Q_D$ if $\tilde{g}_*=\argmin_{g\in\mathcal{H}} Q_D(g)$.
@@ -908,15 +1011,15 @@ Eventually for all $g\in L^{2}\left(\dual{\mathcal{X}},\probability_{\dual{\Haar
 % \begin{proof}
 
 % \end{proof}
-% We are now ready to prove the consistency of ORFF with respect to the minimization in the RKHS, that is if we replace the model $f(x)=\sum_{i=1}^NK(\cdot, x_i)c_i$ by a model $f(x)=\tildePhi{1:D}(x)^\adjoint \theta$ and find the minimizer of the ridge regression problem, then when $D$ tends to infinity, both model return the \say{same} function.
-% \begin{proposition}[Consitensy of ORFF \wrt~\acs{vv-RKHS}] Let $K$ be a $\mathcal{Y}$-Mercer Kernel. If $\theta_*\in\widetilde{\mathcal{H}}^D\left(\mathcal{Y}'\right)$ is the minimizer of \cref{eq:argmin_applied} and $f_*\in\mathcal{H}_K$ is the minimizer of \cref{eq:argmin_RKHS}. Then
+% We are now ready to prove the consistency of ORFF with respect to the minimization in the RKHS, that is if we replace the model $f(x)=\sum_{i=1}^NK(\cdot, x_i)c_i$ by a model $f(x)=\tildePhi{\omega}(x)^\adjoint \theta$ and find the minimizer of the ridge regression problem, then when $D$ tends to infinity, both model return the \say{same} function.
+% \begin{proposition}[Consitensy of ORFF \wrt~\acs{vv-RKHS}] Let $K$ be a $\mathcal{Y}$-Mercer Kernel. If $\theta_*\in\tildeH{\omega}\left(\mathcal{Y}'\right)$ is the minimizer of \cref{eq:argmin_applied} and $f_*\in\mathcal{H}_K$ is the minimizer of \cref{eq:argmin_RKHS}. Then
 % \begin{dmath}
-% \tildePhi{1:D}(x)^\adjoint\theta_* \converges{\asurely}{D\to\infty}f_*(x),
+% \tildePhi{\omega}(x)^\adjoint\theta_* \converges{\asurely}{D\to\infty}f_*(x),
 % \end{dmath}
 % for all $x\in\mathcal{X}$.
 % \end{proposition}
 % \begin{proof}
-% % Let $(Wg)(x)=\Phi_x^\adjoint g$ be the feature operator associated to $\Phi$ and $\tildePhi{1:D}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D(\Phi_x y)(\omega_j)$, where $\omega_j$ are \iid~random vectors following the law $\mu$. Since $W$ is a partial isometry
+% % Let $(Wg)(x)=\Phi_x^\adjoint g$ be the feature operator associated to $\Phi$ and $\tildePhi{\omega}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D(\Phi_x y)(\omega_j)$, where $\omega_j$ are \iid~random vectors following the law $\mu$. Since $W$ is a partial isometry
 
 % % We have that for all $f\in\mathcal{H_K}$, there exists a $g\in\mathcal{H}$ such that $(W^\adjoint f)(x)=g(x)=\Phi(x)^\adjoint g$ where $W$ is a partial isometry with initial subspace $(\Ker W)^\perp\subset\mathcal{H}$ and final subspace $\mathcal{H}_K$.
 
@@ -929,9 +1032,9 @@ Eventually for all $g\in L^{2}\left(\dual{\mathcal{X}},\probability_{\dual{\Haar
 % \begin{dmath}
 % Q_0(g)=\frac{1}{2N}\sum_{i=1}^N\norm{(Wg)(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{g}^2_{\mathcal{H}}.
 % \end{dmath}
-% Moreover let $\tildePhi{1:D}(x_i)y=\Vect_{j=1}^D(\Phi_{x_i}y)(\omega_j)$ for all $y\in\mathcal{Y}$, and $\theta_g=\vect_{j=1}^Dg(\omega_j)$, where $\omega_j$ are \iid~random vectors following a law $\mu$. We define the empirical estimator of $Q_0$ as
+% Moreover let $\tildePhi{\omega}(x_i)y=\Vect_{j=1}^D(\Phi_{x_i}y)(\omega_j)$ for all $y\in\mathcal{Y}$, and $\theta_g=\vect_{j=1}^Dg(\omega_j)$, where $\omega_j$ are \iid~random vectors following a law $\mu$. We define the empirical estimator of $Q_0$ as
 % \begin{dmath}
-% Q_D(g)=\frac{1}{2N}\sum_{i=1}^N\norm{\tildePhi{1:D}(x_i)^\adjoint \theta_g-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2D}\norm{\theta_g}^2_{\widetilde{\mathcal{H}}^D\left(\mathcal{Y}'\right)}
+% Q_D(g)=\frac{1}{2N}\sum_{i=1}^N\norm{\tildePhi{\omega}(x_i)^\adjoint \theta_g-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2D}\norm{\theta_g}^2_{\tildeH{\omega}\left(\mathcal{Y}'\right)}
 % \end{dmath}
 % Let $g_*=\argmin_{g\in\mathcal{H}}Q_0(g)$ and $\tilde{g}_*=\argmin_{g\in\mathcal{H}}Q_D(g)$ thus $\tilde{g}_*$ is an extremum estimator (\cref{ass:ee} holds). Notice that since $W$ is a bounded linear application, $Q_0$ is continuous strongly convex and coercive. By \cref{cor:unique_minimizer} attains an identifiable unique minimizer (\cref{ass:id} holds).
 
@@ -969,7 +1072,7 @@ Eventually for all $g\in L^{2}\left(\dual{\mathcal{X}},\probability_{\dual{\Haar
 % \end{dmath}
 % Finally \cref{eq:consitency1} shows that $W\tilde{g}_*\converges{\proba}{D\to\infty}Wg_*=f_*$, hence
 % \begin{dmath*}
-% \tildePhi{1:D}\theta_{g,*}\hiderel{=}\tilde{W}\theta_{g,*}\converges{\proba}{D\to\infty} f_*\hiderel{\in}\mathcal{H}_K.
+% \tildePhi{\omega}\theta_{g,*}\hiderel{=}\tilde{W}\theta_{g,*}\converges{\proba}{D\to\infty} f_*\hiderel{\in}\mathcal{H}_K.
 % \end{dmath*}
 % with $\theta_{g,*}=\theta_*$ defined in \cref{eq:argmin_RKHS}.
 % \end{proof}

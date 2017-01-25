@@ -251,23 +251,23 @@ where$\omega\sim\mathcal{N}(0,I_d/\sigma^2)$, hence $\norm{A(\omega)}_2\sim \Gam
  \norm{\norm{A^{div}(\omega)}_{\mathcal{Y},\mathcal{Y}}}_{\psi_1}^{-1}=\norm{\norm{A^{curl}(\omega)}_{\mathcal{Y},\mathcal{Y}}}_{\psi_1}^{-1}=\frac{\sigma^2}{2}\left(1-4^{-\frac{1}{p}}\right).
 \end{equation*}
 
-\clearpage
-\section{Generalization bound}
-In this section are interested in finding a minimizer $f_*:\mathcal{X}\to\mathcal{Y}$, where $\mathcal{X}$ is a Polish space and $\mathcal{Y}$ a separable Hilbert space such that for all $x_i$ in $\mathcal{X}$ and all $y_i$ in $\mathcal{Y}$. We consider a training set $Z=\Set{(x_i,y_i)|i\inrange{1}{N}}$ drawn \iid~from an unknown probability law $\probability$. We suppose we are given a cost function $c:\mathcal{X}\times\mathcal{Y}\to\mathbb{R}$, such that $c(f(x_i),y_i)$ returns the error of the prediction $f(x_i)$ \wrt~the ground truth $y_i$. A loss function of a model $f$ with respect to an example $(x_i,y_i)\in\mathcal{X}\times\mathcal{Y}$ is defined as $L(x_i,f,y_i)=c(f(x_i),y_i)$. Conceptually the function $c$ evaluate the quality of the prediction versus its ground truth $y_i\in\mathcal{Y}$ while the loss function $L$ evaluate the quality of the model $f$ at a training point $(x_i, y_i)\in\mathcal{X}\times\mathcal{Y}$. Then the generalization error of a model $f$ reads
-\begin{dmath*}
-\risk{f}=\int_{\mathcal{X}\times\mathcal{Y}}L(x,f,y)d\probability(x,y)
-\end{dmath*}
-Since in practice we do not have access to the probability $\probability$ of the points in the dataset, we define its empirical counterpart as the empirical mean estimate, where the $(x_i,y_i)$'s are drawn \iid~from a uniform law. Namely
-\begin{dmath*}
-\riskemp{f, Z}=\frac{1}{N}\sum_{i=1}^NL(x_i,f,y_i)
-\end{dmath*}
+% \clearpage
+% \section{Generalization bound}
+% In this section are interested in finding a minimizer $f_*:\mathcal{X}\to\mathcal{Y}$, where $\mathcal{X}$ is a Polish space and $\mathcal{Y}$ a separable Hilbert space such that for all $x_i$ in $\mathcal{X}$ and all $y_i$ in $\mathcal{Y}$. We consider a training set $Z=\Set{(x_i,y_i)|i\inrange{1}{N}}$ drawn \iid~from an unknown probability law $\probability$. We suppose we are given a cost function $c:\mathcal{X}\times\mathcal{Y}\to\mathbb{R}$, such that $c(f(x_i),y_i)$ returns the error of the prediction $f(x_i)$ \wrt~the ground truth $y_i$. A loss function of a model $f$ with respect to an example $(x_i,y_i)\in\mathcal{X}\times\mathcal{Y}$ is defined as $L(x_i,f,y_i)=c(f(x_i),y_i)$. Conceptually the function $c$ evaluate the quality of the prediction versus its ground truth $y_i\in\mathcal{Y}$ while the loss function $L$ evaluate the quality of the model $f$ at a training point $(x_i, y_i)\in\mathcal{X}\times\mathcal{Y}$. Then the generalization error of a model $f$ reads
+% \begin{dmath*}
+% \risk{f}=\int_{\mathcal{X}\times\mathcal{Y}}L(x,f,y)d\probability(x,y)
+% \end{dmath*}
+% Since in practice we do not have access to the probability $\probability$ of the points in the dataset, we define its empirical counterpart as the empirical mean estimate, where the $(x_i,y_i)$'s are drawn \iid~from a uniform law. Namely
+% \begin{dmath*}
+% \riskemp{f, Z}=\frac{1}{N}\sum_{i=1}^NL(x_i,f,y_i)
+% \end{dmath*}
 
-\begin{proposition} Suppose that $f\in\mathcal{H}_K$ a \acs{vv-RKHS} where $\sup_{x\in\mathcal{X}} \Tr[K(x,x)] < T$ and $\norm{f}_{\mathcal{H}_K}<B$. Moreover let $L:\mathcal{Y}\times \mathcal{Y}\to[0, C]$ be a $L$-Lipschitz cost function. Then if we are given $N$ training points, we have with at least probability $1-2\delta$ that
-\begin{dmath}
-\mathcal{R}_{true}(f, L) \le \mathcal{R}_{emp}(f, L)  + 2\sqrt{\frac{2}{N}}\left( LBT^{1/2} + \frac{3C}{4}\sqrt{\ln(1/\delta)}\right).
-\end{dmath}
-\label{pr:ovk_gen}
-\end{proposition}
+% \begin{proposition} Suppose that $f\in\mathcal{H}_K$ a \acs{vv-RKHS} where $\sup_{x\in\mathcal{X}} \Tr[K(x,x)] < T$ and $\norm{f}_{\mathcal{H}_K}<B$. Moreover let $L:\mathcal{Y}\times \mathcal{Y}\to[0, C]$ be a $L$-Lipschitz cost function. Then if we are given $N$ training points, we have with at least probability $1-2\delta$ that
+% \begin{dmath}
+% \mathcal{R}_{true}(f, L) \le \mathcal{R}_{emp}(f, L)  + 2\sqrt{\frac{2}{N}}\left( LBT^{1/2} + \frac{3C}{4}\sqrt{\ln(1/\delta)}\right).
+% \end{dmath}
+% \label{pr:ovk_gen}
+% \end{proposition}
 
 % \begin{dmath}
 % f_* = \argmin_{f\in\mathcal{H}_K} \sum_{i=1}^NL(x_i, f, y _i) \hiderel{=} \argmin_{f\in\mathcal{H}_K} \mathcal{R}_{emp}(f, L),

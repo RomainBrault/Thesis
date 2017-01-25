@@ -38,18 +38,20 @@
 \newcommand{\IFT}[1]{\mathcal{F}^{-1}\left[#1\right]}
 \newcommand{\MGF}{\text{MGF}}
 
-\let\Phi\phi
-\let\phi\varphi
+\newcommand{\seq}[1]{\boldsymbol{\mathbf{#1}}}
 
-% \newcommand{\tildePhi}[1]{\tilde{\Phi}_{\textsc{\relsize{-3}{\textsl{#1}}}}}
-% \newcommand{\tildephi}[1]{\tilde{\phi}_{\textsc{\relsize{-3}{\textsl{#1}}}}}
-% \newcommand{\tildeW}[1]{\tilde{W}_{\textsc{\relsize{-3}{\textsl{#1}}}}}
-% \newcommand{\tildef}[1]{\tilde{f}_{\textsc{\relsize{-3}{\textsl{#1}}}}}
-
-\newcommand{\tildePhi}[1]{\widetilde{\Phi}}
 \newcommand{\tildephi}[1]{\widetilde{\phi}}
+\newcommand{\tildePhi}[1]{\widetilde{\Phi}}
 \newcommand{\tildeW}[1]{\widetilde{W}}
+\newcommand{\tildeH}[1]{\widetilde{\mathcal{H}}}
 \newcommand{\tildef}[1]{\widetilde{f}}
+\newcommand{\tildeK}[1]{\widetilde{K}}
+
+% \newcommand{\tildePhi}[1]{\widetilde{\Phi}_{{\scriptstyle \boldsymbol{\mathbf{#1}}}}}
+% \newcommand{\tildephi}[1]{\widetilde{\phi}_{{\scriptstyle \boldsymbol{\mathbf{#1}}}}}
+% \newcommand{\tildeW}[1]{\widetilde{W}_{{\scriptstyle \boldsymbol{\mathbf{#1}}}}}
+% \newcommand{\tildef}[1]{\widetilde{f}_{{\scriptstyle \boldsymbol{\mathbf{#1}}}}}
+% \newcommand{\tildeH}[1]{\widetilde{\mathcal{H}}_{{\scriptstyle \boldsymbol{\mathbf{#1}}}}}
 
 \newcommand{\risk}[1]{\mathcal{R}(#1)}
 \newcommand{\riskemp}[1]{\mathcal{R_{\text{emp}}}(#1)}
@@ -118,3 +120,5 @@
 \theoremstyle{nonumberplain}
 \theoremsymbol{\ensuremath{\Box}}
 \newtheorem{proof}{Proof}
+
+\numberwithin{equation}{chapter}

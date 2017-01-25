@@ -254,7 +254,7 @@ Given $\mathcal{X}$ a locally compact second countable topological space and  $\
 \begin{dmath}
 \sum_{i,j=1}^N\inner{K(x_i,x_j)y_j,y_i}_{\mathcal{Y}}\ge 0,
 \end{dmath}
-for all $x_1,\hdots,x_N$ in $\mathcal{X}$, all $y_1,\hdots,y_N$ in $\mathcal{Y}$ and $N\ge 1$.
+for all $N\in\mathbb{N}$ and for all sequences of points $(x_i)_{i=1}^N$ in $\mathcal{X}^N$ and all sequences of points $(y_i)_{i=1}^N$ in $\mathcal{Y}^N$.
 \label{def:ovk}
 \end{definition}
 if $\mathcal{Y}$ is a complex Hilbert space, an \acl{OVK} of positive type is always Hermitian, \ie~$K(x,z)=K(z,x)^\adjoint$. This gives rise to the following definition of \acl{OVK} of positive type acting on a real Hilbert space.
@@ -268,7 +268,7 @@ and
 \begin{dmath}
 \sum_{i,j=1}^N\inner{K(x_i,x_j)y_j,y_i}_{\mathcal{Y}}\ge 0,
 \end{dmath}
-for all $x_1,\hdots,x_N$ in $\mathcal{X}$, all $y_1,\hdots,y_N$ in $\mathcal{Y}$ and $N\ge 1$.
+for all $N\in\mathbb{N}$ and for all sequences of points $(x_i)_{i=1}^N$ in $\mathcal{X}^N$, and all sequences of points  $(y_i)_{i=1}^N$ in $\mathcal{Y}^N$.
 \label{def:ovk_real}
 \end{definition}
 As in the scalar case any \acl{vv-RKHS} defines a unique \acl{OVK} of positive type and conversely an \acl{OVK} of positive type defines a unique \acl{vv-RKHS}.
@@ -288,7 +288,7 @@ is a bounded operator and the \acl{OVK} $K$ associated to $\mathcal{H}$ is defin
 \begin{dmath*}
 K:\mathcal{X}\times\mathcal{X}\hiderel{\to}\mathcal{L}(\mathcal{Y}) \qquad K(x,z)\hiderel{=}\text{ev}_x\text{ev}_z^\adjoint.
 \end{dmath*}
-Since for all $y_i$, $y_j\in\mathcal{Y}$,
+Since for all $(x_i)_{i=1}^N$ in $\mathcal{X}^N$ and all $(y_i)_{i=1}^N$ in $\mathcal{Y}^N$,
 \begin{dmath*}
 \sum_{i,j=1}^N\inner{K(x_i,x_j)y_j,y_i}_{\mathcal{Y}}
 =\sum_{i,j=1}^N\inner{\text{ev}^\adjoint_{x_j}y_j,\text{ev}^\adjoint_{x_i}y_i}_{\mathcal{Y}}
@@ -306,20 +306,29 @@ K(x,z)y\hiderel{=}\text{ev}_x\text{ev}_z^\adjoint y\hiderel{=}K_x^\adjoint K_zy\
 \paragraph{}
 Some direct consequences follows from the definition.
 \begin{enumerate}
-\item The kernel reproduces the value of a function $f\in\mathcal{H}$ at a point $x\in\mathcal{X}$ since for all $y\in\mathcal{Y}$ and $x\in\mathcal{X}$, $\text{ev}_x^\adjoint y=K_xy=K(\cdot,x)y$ so that $\inner{f(x),y}_{\mathcal{Y}}=\inner{f,K(\cdot, x)y}_{\mathcal{H}}$.
+\item The kernel reproduces the value of a function $f\in\mathcal{H}$ at a point $x\in\mathcal{X}$ since for all $y\in\mathcal{Y}$ and $x\in\mathcal{X}$,
+$\text{ev}_x^\adjoint y=K_xy=K(\cdot,x)y$ so that
+\begin{dmath}
+\label{eq:reproducing_prop}
+\inner{f(x),y}_{\mathcal{Y}}\hiderel{=}\inner{f,K(\cdot, x)y}_{\mathcal{H}}\hiderel{=}\inner{K_x^*f,y}_{\mathcal{Y}}.
+\end{dmath}
 \item The set $\Set{K_xy| \forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}$ is total in $\mathcal{H}$. Namely,
 \begin{dmath*}
 \left(\bigcup_{x\in\mathcal{X}}\Ima K_x\right)^{\perp}=\Set{0}.
 \end{dmath*}
 If $f\in(\cup_{x\in\mathcal{X}}\Ima K_x)^{\perp}$, then for all $x\in\mathcal{X}$, $f\in(\Ima K_x)^{\perp}=\Ker K_x^\adjoint$, hence $f(x)=0$ for all $x\in\mathcal{X}$ that is $f=0$.
-\item Finally for all $x\in\mathcal{X}$ and all $f\in\mathcal{H}$, $\norm{f(x)}_{\mathcal{Y}}\le \sqrt{\norm{K(x,x)}_{\mathcal{Y},\mathcal{Y}}}\norm{f}_{\mathcal{H}}$. This come from the fact that $\norm{K_x}=\norm{K_x^\adjoint}=\sqrt{\norm{K(x,x)}_{\mathcal{Y},\mathcal{Y}}}$ and the operator norm is sub-multiplicative.
+\item Finally for all $x\in\mathcal{X}$ and all $f\in\mathcal{H}$, $\norm{f(x)}_{\mathcal{Y}}\le \sqrt{\norm{K(x,x)}_{\mathcal{Y},\mathcal{Y}}}\norm{f}_{\mathcal{H}}$. This come from the fact that $\norm{K_x}_{\mathcal{Y},\mathcal{H}}=\norm{K_x^\adjoint}_{\mathcal{H},\mathcal{Y}}=\sqrt{\norm{K(x,x)}_{\mathcal{Y},\mathcal{Y}}}$ and the operator norm is sub-multiplicative.
 \end{enumerate}
 Additionally given an \acl{OVK} of positive type, it defines a unique \acs{vv-RKHS}.
 \begin{proposition}
 Given an \acl{OVK} of positive type there $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$, there is a unique \acl{vv-RKHS} $\mathcal{H}$ on $\mathcal{X}$ with reproducing kernel $K$.
 \end{proposition}
 \begin{proof}
-Let $K_{x,y}=K(\cdot, x)y\in\mathcal{F}(\mathcal{X};\mathcal{Y})$ and let $\mathcal{H}_0=\text{span}\Set{K_{x,y}|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$. If $f=\sum_{i=1}^Nc_iK_{x_i,y_i}$ and $g=\sum_{i=1}^Nd_iK_{z_i,y_i'}$ are elements of $\mathcal{H}_0$ we have that
+Let $K_{x,y}=K(\cdot, x)y\in\mathcal{F}(\mathcal{X};\mathcal{Y})$ and let
+\begin{dmath*}
+\mathcal{H}_0=\text{span}\Set{K_{x,y}|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}\hiderel{\subset}\mathcal{F}(\mathcal{X};\mathcal{Y}).
+\end{dmath*}
+If $f=\sum_{i=1}^Nc_iK_{x_i,y_i}$ and $g=\sum_{i=1}^Nd_iK_{z_i,y_i'}$ are elements of $\mathcal{H}_0$ we have that
 \begin{dmath*}
 \sum_{j=1}^N\conj{d_j}\inner{f(z_j),y_j'}_{\mathcal{Y}}\hiderel{=}\sum_{i,j=1}^Nc_i\conj{d_j}\inner{K(z_j,x_i)y_i,y_j'}_{\mathcal{Y}}\hiderel{=}\sum_{i=1}^Nc_i\inner{y_i,g(x_i)}_{\mathcal{Y}},
 \end{dmath*}
@@ -333,8 +342,8 @@ is well defined. Since $K$ is an \acl{OVK} of positive type, we have for all $f\
 \end{dmath*}
 Besides if $f\in\mathcal{H}_0$ for all unitary vector $y\in\mathcal{Y}$, by the Cauchy-Schwartz inequality we have
 \begin{dmath*}
-\abs{\inner{f(x),y}_{\mathcal{Y}}}=\abs{\inner{f,K_{x,y}}_{\mathcal{H}_0}}\hiderel{\le}\sqrt{\inner{f,f}_{\mathcal{H}_0}}\sqrt{\inner{K_{x,y},K_{x,y}}}
-=\sqrt{\inner{f,f}_{\mathcal{H}_0}}\sqrt{\inner{K(x,x)y,y}}\hiderel{\le}\sqrt{\inner{f,f}_{\mathcal{H}_0}}\sqrt{\norm{K(x,x)}_{\mathcal{Y},\mathcal{Y}}},
+\abs{\inner{f(x),y}_{\mathcal{Y}}}=\abs{\inner{f,K_{x,y}}_{\mathcal{H}_0}}\hiderel{\le}\sqrt{\inner{f,f}_{\mathcal{H}_0}}\sqrt{\inner{K_{x,y},K_{x,y}}_{\mathcal{Y}}}
+=\sqrt{\inner{f,f}_{\mathcal{H}_0}}\sqrt{\inner{K(x,x)y,y}_{\mathcal{Y}}}\hiderel{\le}\sqrt{\inner{f,f}_{\mathcal{H}_0}}\sqrt{\norm{K(x,x)}_{\mathcal{Y},\mathcal{Y}}},
 \end{dmath*}
 which implies that
 \begin{dmath*}
@@ -373,7 +382,11 @@ $W^\adjoint W$ is the orthogonal projection onto
 \begin{dmath*}
   (\Ker W)^\perp = \lspan\Set{ \Phi_x y | \forall x\hiderel{\in}\mathcal{X},\enskip\forall y\hiderel{\in}\mathcal{Y} }.
 \end{dmath*}
-Then $\norm{f}_K=\inf\Set{ \norm{g}_{\mathcal{H}} | \forall g \in\mathcal{H},\enskip Wg=f }$.
+Then
+\begin{dmath}
+\label{eq:norm_relation_w}
+\norm{f}_K=\inf\Set{ \norm{g}_{\mathcal{H}} | \forall g \in\mathcal{H},\enskip Wg=f }.
+\end{dmath}
 \end{proposition}
 \begin{proof} The operator $(Wg)(x)=\Phi(x)^\adjoint g$ ensure that the nullspace of $W$ is $\mathcal{N}=\Ker W=\cap_{x\in\mathcal{X}}\Ker \Phi(x)^\adjoint$. Since $\Phi(x)$ is bounded, $\Phi(x)$ is a continuous operator, thus for all $x\in\mathcal{X}$, $\Ker \Phi(x)^\adjoint$ is closed so that $\mathcal{N}$ is closed. Moreover,
 \begin{dmath*}
@@ -381,8 +394,7 @@ Then $\norm{f}_K=\inf\Set{ \norm{g}_{\mathcal{H}} | \forall g \in\mathcal{H},\en
 \end{dmath*}
 So that $\mathcal{N}^\perp=\cup_{x\in\mathcal{X}}\Ima \Phi(x)$ and the restriction of $W$ to $\mathcal{N}^{\perp}$ is injective.
 \paragraph{}
-Let $\mathcal{H}_K=\Ima W$ be a vector space. Define the unique inner product on $\mathcal{H}_K$ such that $W$ becomes a partial isometry from $\mathcal{H}$ onto $\mathcal{H}_K$. This is possible by taking $\inner{\cdot,\cdot}_K\colonequals\inner{(W|_{\mathcal{N}^{\perp}})^{-1}\cdot, (W|_{\mathcal{N}^{\perp}})^{-1}\cdot}_{\mathcal{H}}=\inner{W\cdot,W\cdot}_{\mathcal{H}}$
-which exist and is unique since the restriction of $W$ to $\mathcal{N}^{\perp}$ is injective. We call again this new partial isometry $W$. We show that $\mathcal{H}_K$ is a \acl{vv-RKHS}. Since $W^\adjoint W$ is a projection on $\mathcal{N}^{\perp}$, given $f\in\mathcal{H}_K$, where $f=Wg$ and $g\in\mathcal{N}^{\perp}$ we have for all $x\in\mathcal{X}$
+Let $\mathcal{H}_K=\Ima W$ be a vector space. Define the unique inner product on $\mathcal{H}_K$ such that $W$ becomes a partial isometry from $\mathcal{H}$ onto $\mathcal{H}_K$. We call this new partial isometry (again) $W$. We show that $\mathcal{H}_K$ is a \acl{vv-RKHS}. Since $W^\adjoint W$ is a projection on $\mathcal{N}^{\perp}$, given $f\in\mathcal{H}_K$, where $f=Wg$ and $g\in\mathcal{N}^{\perp}$ we have for all $x\in\mathcal{X}$
 \begin{dmath*}
 f(x)\hiderel{=}(Wg)(x)\hiderel{=}\Phi(x)^\adjoint g\hiderel{=}\Phi(x)^\adjoint W^\adjoint Wg=(W\Phi(x))^\adjoint f.
 \end{dmath*}
@@ -398,6 +410,8 @@ Since $W^\adjoint W$ is the identity on $\Ima \Phi(z)$. Hence $\mathcal{H}_K$ is
 \end{proof}
 We call $\Phi$ a \emph{feature map}, $W$ a \emph{feature operator} and $\mathcal{H}$ a \emph{feature space}. Since $W$ is an isometry from $(\Ker W)^\perp$ onto $\mathcal{H}_K$, the map $W$ allows us to identify $\mathcal{H}_K$ with the closed subspace $(\Ker W)^\perp$ of $\mathcal{H}$.
 % With mild abuse of language, we say that $\mathcal{H}_K$ is embed into $\mathcal{H}$ by mean of the feature operator $W$. If we choose the trivial feature map $\Phi_x=K_x$ then the feature operator is the identity.
+Notice that $W$ is a partial isometry, meaning that there can exist multiple functions $g\in\mathcal{H}$, the redescription space, such that $Wg=f$ where $f$ is a function of the \acs{vv-RKHS} $\mathcal{H}_K$. However \cref{eq:norm_relation_w} shows that there is a unique function $g\in\mathcal{H}$ such that $Wg=f$, \emph{and} $\norm{g}_{\mathcal{H}}=\norm{f}_{\mathcal{H}_K}$. Among all functions $g\in\mathcal{H}$ such that $Wg=f$, the only one making the norm in the \acs{vv-RKHS} and the redescription space is the one with minimal norm.
+\paragraph{}
 In this work we mainly focus on the class kernels inducing a \acs{vv-RKHS} of continuous functions. Such kernels are named $\mathcal{Y}$-Mercer kernels.
 \begin{definition}[$\mathcal{Y}$-Mercer kernel] A reproducing kernel $K:\mathcal{X}\times \mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called $\mathcal{Y}$-Mercer kernel if $\mathcal{H}_K$ is a subspace of $\mathcal{C}(\mathcal{X};\mathcal{Y})$.
 \end{definition}
@@ -412,7 +426,15 @@ If $\mathcal{H}_K\subset\mathcal{C}(\mathcal{X};\mathcal{Y})$, then for all $x\i
 \begin{dmath*}
 \norm{f(x)}\hiderel{=}\norm{f}_K\sqrt{\norm{K(x,x)}}\hiderel{\le} M \norm{f}_K.
 \end{dmath*}
-Thus convergence in $\mathcal{H}_K$ implies uniform convergence. Since by assumption $\Set{K_xt|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}\subset\mathcal{C}(\mathcal{X};\mathcal{Y})$, then the \acl{vv-RKHS} $\mathcal{H}_K=\lspan\Set{K_xy| \forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}\subset\mathcal{C}$ is also a subset of $\mathcal{C}(\mathcal{X};\mathcal{Y})$ by the uniform convergence theorem.
+Thus convergence in $\mathcal{H}_K$ implies uniform convergence. Since by assumption
+\begin{dmath*}
+\Set{K_xt|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}\subset\mathcal{C}(\mathcal{X};\mathcal{Y}),
+\end{dmath*}
+then the \acl{vv-RKHS}
+\begin{dmath*}
+\mathcal{H}_K=\lspan\Set{K_xy| \forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}\subset\mathcal{C}
+\end{dmath*}
+is also a subset of $\mathcal{C}(\mathcal{X};\mathcal{Y})$ by the uniform convergence theorem.
 \end{proof}
 
 \begin{lemma}
@@ -450,7 +472,7 @@ A shift-invariant kernel can be characterize by a function of one variable $K_e$
 \paragraph{}
 We recall the definition of left regular representation of $\mathcal{X}$ acting on $\mathcal{H}_K$ which is useful to study \acs{LCA} groups. For all $x$, $z\in\mathcal{X}$ and for all $f\in\mathcal{H}_K$,
 \begin{dmath*}
-(\lambda_z f)(x)\colonequals f(\inv{z}\groupop x).
+(\lambda_z f)(x)G\colonequals f(\inv{z}\groupop x).
 \end{dmath*}
 A group representation $\lambda_z$ describe the group by making it act on a vector space (here $\mathcal{H}_K$) in a linear manner. In other word, the group representation let us see a group as a linear operator which are well studied mathematical object.
 \begin{proposition}[Kernel signature \citep{Carmeli2010}]
@@ -486,7 +508,10 @@ that is $\lambda_xK_t=K_{x\groupop t}$. Besides for all $y$, $y'\in\mathcal{Y}$ 
 \inner{\lambda_xK_ty, \lambda_xK_{t'}y'}_K=\inner{K_{x\groupop t}y, K_{x \groupop t'}y'}_K\hiderel{=}\inner{K(x \groupop t', x \groupop t)y,y'}=\inner{K(t',t)y, y'}\hiderel{=}\inner{K_ty, K_{t'}y'}_K
 \end{dmath*}
 This means that $\lambda$ leaves the set $\Set{K_xy|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}$ invariant.
-Since $\Set{K_xy|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}$ is total in $\mathcal{H}_K$ (see \cref{eq:span_RKHS}), $\lambda$ is surjective and because it also leaves the inner product invariant, the firs two claims follow.
+Since \begin{dmath*}
+\Set{K_xy|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}
+\end{dmath*}
+is total in $\mathcal{H}_K$ (see \cref{eq:span_RKHS}), $\lambda$ is surjective and because it also leaves the inner product invariant, the firs two claims follow.
 \end{proof}
 The notation $K_e$ for the function of completely positive type associated with the reproducing kernel $K$
 is consistent with the definition given by \cref{eq:trivial_feature_op} since for all $x\in\mathcal{X}$ and all $y\in\mathcal{Y}$

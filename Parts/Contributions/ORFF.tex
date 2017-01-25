@@ -967,7 +967,7 @@ Thus
 \theta_{\seq{z}}=\argmin_{\theta^{\perp}\in\left(\Ker \tildeW{\omega}\right)^\perp}
 \frac{1}{2N}\sum_{i=1}^Nc\left(V\left(\tildeW{\omega}\theta^{\perp}\right)(x), y_i\right) + \frac{\lambda_K}{2}\norm{\theta^\perp}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta^{\perp}, M_{ik}\left(\tildeW{\omega}\theta^{\perp}\right)(x_k)}_{\mathcal{W}}.
 \end{dmath*}
-Hence minimizing over $\left(\Ker \tildeW{\omega}\right)^\perp$ or $\tildeH{\omega}$ is the same. Eventually for all $g\in L^{2}\left(\dual{\mathcal{X}},\probability_{\dual{\Haar},\rho},\mathcal{W}'\right)$ and for any outcome of $\omega_j \sim \probability_{\dual{\Haar},\rho}$ \iid,
+Hence minimizing over $\left(\Ker \tildeW{\omega}\right)^\perp$ or $\tildeH{\omega}$ is the same when $\lambda_K > 0$. Eventually for all $g\in L^{2}\left(\dual{\mathcal{X}},\probability_{\dual{\Haar},\rho},\mathcal{W}'\right)$ and for any outcome of $\omega_j \sim \probability_{\dual{\Haar},\rho}$ \iid,
 \begin{dmath*}
 \theta_{\seq{z}}=\argmin_{\theta\in\tildeH{\omega}} \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint\theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{W}}
 =\argmin_{\theta \in \Vect_{j=1}^D\mathcal{W}'} \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint\theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\Vect_{j=1}^D\mathcal{W}'} \\ + \frac{\lambda_M}{2(N+U)}\sum_{i,k=1}^{N+U}\inner*{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\Vect_{j=1}^D\mathcal{W}'}. \qed

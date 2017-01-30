@@ -801,7 +801,7 @@ Let $\mathcal{H}$ be a Hilbert space and $J:\mathcal{H}\to \overline{\mathbb{R}}
 This is easily verified for Ridge regression. Define
 \begin{dmath}
 \label{eq:ridge}
-J_\lambda(f)=\frac{1}{2N}\sum_{i=1}^N\norm{f(x_i)-y_i}_{\mathcal{Y}}^2+\frac{\lambda}{2}\norm{f}_K^2,
+J_\lambda(f)=\frac{1}{N}\sum_{i=1}^N\norm{f(x_i)-y_i}_{\mathcal{Y}}^2+\frac{\lambda}{2}\norm{f}_K^2,
 \end{dmath}
 where $f\in\mathcal{H}_K$ and $\lambda\in\mathbb{R}_{>0}$. $J_\lambda$ is continuous\mpar{Reminder, if $f\in\mathcal{H}_k, \text{ev}_x:f\mapsto f(x)$ is continuous, see \cref{pr:unique_rkhs}.} and strictly convex. Additionally $J_\lambda$ is coercive since $\norm{f}_K$ is coercive, $\lambda\in\mathbb{R}_{>0}$, and all the summands of $J_\lambda$ are positive. Hence for all positive $\lambda$, $f_{\seq{s}}=\argmin_{f\in\mathcal{H}_K}J_\lambda(f)$ exists, is unique and attained.
 \begin{remark}
@@ -926,7 +926,7 @@ Instead learning a model $f$ that depends on all the points of the training set,
 $\tildef{1:D}(x)=\tildePhi{\omega}(x)^\adjoint \theta$, where $\theta$ lives in some redescription space\mpar{If $V=1$, $\mathcal{U}=\mathbb{R}$ then $\mathcal{U}'=\mathbb{R}$ thus $\theta\in \mathbb{R}^D$ endowed with the euclidean inner product.} $\tildeH{\omega} = \Vect_{j=1}^D\mathcal{U}'$. We are interested in finding a parameter vector $\theta_{\seq{z}}$ such that
 \begin{dmath}
 \label{eq:argmin_applied}
-\theta_{\seq{z}}=\argmin_{\theta\in \Vect_{j=1}^D\mathcal{U}'} \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\Vect_{j=1}^D\mathcal{U}'} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\Vect_{j=1}^D\mathcal{U}'}
+\theta_{\seq{z}}=\argmin_{\theta\in \Vect_{j=1}^D\mathcal{U}'} \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\Vect_{j=1}^D\mathcal{U}'} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\Vect_{j=1}^D\mathcal{U}'}
 \end{dmath}
 
 \begin{corollary}[\acs{ORFF} representer]
@@ -946,7 +946,7 @@ The solution $f_{\seq{z}}\in\mathcal{H}_{\tildeK{\omega}}$ of the regularized op
 \end{dmath}
 has the form $\widetilde{f}_{\seq{z}}=\tildePhi{\omega}(\cdot)^\adjoint\theta_{\seq{z}}$, where $\theta_{\seq{z}}\in (\Ker \tildeW{\omega})^{\perp}$ and
 \begin{dmath}
-\theta_{\seq{z}}=\argmin_{\theta\in \Vect_{j=1}^D\mathcal{U}'} \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\Vect_{j=1}^D\mathcal{U}'} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\Vect_{j=1}^D\mathcal{U}'}.
+\theta_{\seq{z}}=\argmin_{\theta\in \Vect_{j=1}^D\mathcal{U}'} \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\Vect_{j=1}^D\mathcal{U}'} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\Vect_{j=1}^D\mathcal{U}'}.
 \end{dmath}
 \end{corollary}
 \begin{proof}
@@ -959,36 +959,36 @@ Since $\tildeK{\omega}$ is an operator-valued kernel, from \cref{th:representer}
 Let
 \begin{dmath*}
 \label{eq:argmin_theta}
-\theta_{\seq{z}}=\argmin_{\theta\in\left(\Ker \tildeW{\omega}\right)^\perp} \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\tildePhi{\omega}(\cdot)^\adjoint\theta}^2_{\tildeK{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{U}}.
+\theta_{\seq{z}}=\argmin_{\theta\in\left(\Ker \tildeW{\omega}\right)^\perp} \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\tildePhi{\omega}(\cdot)^\adjoint\theta}^2_{\tildeK{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{U}}.
 \end{dmath*}
 Since $\theta\in(\Ker \tildeW{\omega})^\perp$ and $W$ is an isometry from $(\Ker \tildeW{\omega})^\perp\subset \tildeH{\omega}$ onto $\mathcal{H}_{\tildeK{\omega}}$, we have $\norm{\tildePhi{\omega}(\cdot)^\adjoint\theta}^2_{\tildeK{\omega}} = \norm{\theta}^2_{\tildeH{\omega}}$. Hence
 \begin{dmath*}
-\theta_{\seq{z}}=\argmin_{\theta\in\left(\Ker \tildeW{\omega}\right)^\perp} \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\tildePhi{\omega}(x_i)^\adjoint \theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{U}}.
+\theta_{\seq{z}}=\argmin_{\theta\in\left(\Ker \tildeW{\omega}\right)^\perp} \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\tildePhi{\omega}(x_i)^\adjoint \theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{U}}.
 \end{dmath*}
 Finding a minimizer $\theta_{\seq{z}}$ over $\left(\Ker \tildeW{\omega}\right)^\perp$ is not the same than finding a minimizer over $\tildeH{\omega}$. Although in both cases Mazur-Schauder's theorem guarantee that the respective minimizers are unique, they might not be the same. Since $\tildeW{\omega}$ is bounded, $\Ker \tildeW{\omega}$ is closed, so that we can perform the decomposition $\tildeH{\omega}=\left(\Ker \tildeW{\omega}\right)^\perp\oplus \left(\Ker \tildeW{\omega}\right)$. Then clearly by linearity of $W$ and the fact that for all $\theta^{\parallel}\in\Ker \tildeW{\omega}$, $\tildeW{\omega}\theta^{\parallel}=0$, if $\lambda > 0$ we have
 \begin{dmath*}
-\theta_{\seq{z}}=\argmin_{\theta\in\tildeH{\omega}} \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{U}}
+\theta_{\seq{z}}=\argmin_{\theta\in\tildeH{\omega}} \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{U}}
 \end{dmath*}
 Thus
 \begin{dmath*}
-\theta_{\seq{z}}=\argmin_{\substack{\theta^{\perp}\in\left(\Ker \tildeW{\omega}\right)^\perp, \\ \theta^{\parallel}\in\Ker \tildeW{\omega}}} \frac{1}{2N}\sum_{i=1}^Nc\left(V\left(\tildeW{\omega}\theta^{\perp}\right)(x)+\underbrace{V\left(\tildeW{\omega}\theta^{\parallel}\right)(x)}_{=0\enskip\text{for all}\enskip \theta^{\parallel} }, y_i\right) \\ + \frac{\lambda_K}{2}\norm{\theta^\perp}^2_{\tildeH{\omega}} + \underbrace{\frac{\lambda}{2}\norm{\theta^{\parallel}}^2_{\tildeH{\omega}}}_{=0 \enskip\text{only if}\enskip \theta^{\parallel}=0} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta^{\perp}, M_{ik}\left(\tildeW{\omega}\theta^{\perp}\right)(x_k)}_{\mathcal{U}} \\
+\theta_{\seq{z}}=\argmin_{\substack{\theta^{\perp}\in\left(\Ker \tildeW{\omega}\right)^\perp, \\ \theta^{\parallel}\in\Ker \tildeW{\omega}}} \frac{1}{N}\sum_{i=1}^Nc\left(V\left(\tildeW{\omega}\theta^{\perp}\right)(x)+\underbrace{V\left(\tildeW{\omega}\theta^{\parallel}\right)(x)}_{=0\enskip\text{for all}\enskip \theta^{\parallel} }, y_i\right) \\ + \frac{\lambda_K}{2}\norm{\theta^\perp}^2_{\tildeH{\omega}} + \underbrace{\frac{\lambda}{2}\norm{\theta^{\parallel}}^2_{\tildeH{\omega}}}_{=0 \enskip\text{only if}\enskip \theta^{\parallel}=0} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta^{\perp}, M_{ik}\left(\tildeW{\omega}\theta^{\perp}\right)(x_k)}_{\mathcal{U}} \\
 + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\underbrace{\left(\tildeW{\omega}\theta^{\parallel}\right)(x_i)}_{=0\enskip\text{for all}\enskip \theta^{\parallel} }, M_{ik}\left(\tildeW{\omega}\theta^{\perp}\right)(x_k)}_{\mathcal{U}}
 \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\left(\tildeW{\omega}\theta^{\perp}\right)(x_i), M_{ik}\underbrace{\left(\tildeW{\omega}\theta^{\parallel}\right)(x_k)}_{=0\enskip\text{for all}\enskip \theta^{\parallel} }}_{\mathcal{U}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\underbrace{\left(\tildeW{\omega}\theta^{\parallel}\right)(x_i)}_{=0\enskip\text{for all}\enskip \theta^{\parallel} }, M_{ik}\underbrace{\left(\tildeW{\omega}\theta^{\parallel}\right)(x_k)}_{=0\enskip\text{for all}\enskip \theta^{\parallel} }}_{\mathcal{U}}.
 \end{dmath*}
 Thus
 \begin{dmath*}
 \theta_{\seq{z}}=\argmin_{\theta^{\perp}\in\left(\Ker \tildeW{\omega}\right)^\perp}
-\frac{1}{2N}\sum_{i=1}^Nc\left(V\left(\tildeW{\omega}\theta^{\perp}\right)(x), y_i\right) + \frac{\lambda_K}{2}\norm{\theta^\perp}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta^{\perp}, M_{ik}\left(\tildeW{\omega}\theta^{\perp}\right)(x_k)}_{\mathcal{U}}.
+\frac{1}{N}\sum_{i=1}^Nc\left(V\left(\tildeW{\omega}\theta^{\perp}\right)(x), y_i\right) + \frac{\lambda_K}{2}\norm{\theta^\perp}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta^{\perp}, M_{ik}\left(\tildeW{\omega}\theta^{\perp}\right)(x_k)}_{\mathcal{U}}.
 \end{dmath*}
 Hence minimizing over $\left(\Ker \tildeW{\omega}\right)^\perp$ or $\tildeH{\omega}$ is the same when $\lambda_K > 0$. Eventually for any outcome of $\omega_j \sim \probability_{\dual{\Haar},\rho}$ \iid,
 \begin{dmath*}
-\theta_{\seq{z}}=\argmin_{\theta\in\tildeH{\omega}} \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint\theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{U}}
-=\argmin_{\theta \in \Vect_{j=1}^D\mathcal{U}'} \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint\theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\Vect_{j=1}^D\mathcal{U}'} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\Vect_{j=1}^D\mathcal{U}'}. \qed
+\theta_{\seq{z}}=\argmin_{\theta\in\tildeH{\omega}} \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint\theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{U}}
+=\argmin_{\theta \in \Vect_{j=1}^D\mathcal{U}'} \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint\theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\Vect_{j=1}^D\mathcal{U}'} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\Vect_{j=1}^D\mathcal{U}'}. \qed
 \end{dmath*}
 \end{proof}
 This shows that when $\lambda_K>0$ the solution of \cref{eq:argmin_u} with the approximated kernel $K(x,z) \approx \tildeK{\omega}(x,z) = \tildePhi{\omega}(x)^\adjoint\tildePhi{\omega}(z)$ is the same than the solution of \cref{eq:argmin_theta} up to a transformation. Namely, if $u_{\seq{z}}$ is the solution of \cref{eq:argmin_u}, $\theta_{\seq{z}}$ is the solution of \cref{eq:argmin_theta} and $\lambda_K>0$ we have
 \begin{dmath*}
-\theta_{\seq{z}} = \sum_{j=1}^{N+U} \tildePhi{\omega}(x_j) u_{\seq{z}}.
+\theta_{\seq{z}} = \sum_{j=1}^{N+U} \tildePhi{\omega}(x_j) u_{\seq{z}} \hiderel{\in}\vect_{j=1}^D\mathcal{U}'.
 \end{dmath*}
 If $\lambda_K=0$ we can still find a solution $u_{\seq{z}}$ of \cref{eq:argmin_u}. By construction of the kernel expansion, we have $u_{\seq{z}}\in(\Ker W)^\bot$. However looking at the proof of \cref{cr:orff_representer} we see that $\theta_{\seq{z}}$ might \emph{not} g belong to $(\Ker W)^\bot$. Then we can compute a residual vector
 \begin{dmath*}
@@ -1002,10 +1002,36 @@ Then if $r_{\seq{z}}=0$, it means that $\lambda_K$ is large enough for both repr
 \subsection{Gradient methods}
 In order to find a solution to \cref{eq:argmin_theta}, we turn our attention to gradient descent methods. In the following we let
 \begin{dmath*}
-J_{\lambda_K}(\theta) = \frac{1}{2N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\Vect_{j=1}^D\mathcal{U}'} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\Vect_{j=1}^D\mathcal{U}'}.
+J_{\lambda_K}(\theta) = \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\Vect_{j=1}^D\mathcal{U}'} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\Vect_{j=1}^D\mathcal{U}'}.
 \end{dmath*}
-Since the solution of \cref{eq:argmin_theta} is unique when $\lambda_K>0$, a sufficient and necessary condition is that the gradient of $J_{\lambda_K}$ at the minimizer $\theta_{\seq{z}}$ is zero.
-
+Since the solution of \cref{eq:argmin_theta} is unique when $\lambda_K>0$, a sufficient and necessary condition is that the gradient of $J_{\lambda_K}$ at the minimizer $\theta_{\seq{z}}$ is zero. We use the Frechet derivative, the strongest notion of derivative in Banach spaces\mpar{Here we view the Hilbert space $\mathcal{H}$ (feature space) as a reflexive Banach space.} \cite{conway2013course, kurdila2006convex}. A function $f:\mathcal{H}_0\to\mathcal{H}_1$ is call Frechet differentiable at $\theta_0\in \mathcal{H}_0$ if there exist a bounded linear operator $A:\mathcal{H}_0\to \mathcal{H}_1$ such that
+\begin{dmath*}
+\lim_{h\to 0} \frac{\norm{f(\theta_0+h)-f(\theta_0)-Ah}_{\mathcal{H}_1}}{\norm{h}_{\mathcal{H}_0}}=0
+\end{dmath*}
+We write
+\begin{dmath*}
+(D_Ff)(\theta_0)\hiderel{=}\derivativeat{f(\theta)}{\theta}{\theta_0}\hiderel{=}A
+\end{dmath*}
+and call it Frechet derivative of $f$ with respect to $\theta$ at $\theta_0$. With mild abuse of notation we write $\derivative{f(\theta_0)}{\theta_0} = \derivativeat{f(\theta)}{\theta}{\theta_0}$. The Frechet derivative is an unbounded linear operator. The chain rule is valid in this context. Namely if a function $f:\mathcal{H}_0\to\mathcal{H}_1$ is Frechet differentiable at $\theta$ and $g:\mathcal{H}_1\to \mathcal{H}_2$ is Frechet differentiable at $f(\theta)$ then $g\circ f$ is Frechet differentiable at $\theta$ and
+\begin{dmath*}
+\lderivative{(g\circ f)(\theta)}{\theta} = \derivative{g(f(\theta))}{f(\theta)} \circ \derivative{f(\theta)}{\theta}.
+\end{dmath*}
+Where the two last equalities apply since $\mathcal{H}_0$, $\mathcal{H}_1$, $\mathcal{H}_2$ are a Hilbert spaces, and thus are reflexive. By linearity and applying the chaine rule to \cref{eq:argmin_theta} and since $M_{ik}^\adjoint = M_{ki}$ for all $i$, $k\in\mathbb{N}_{N+U}$, we have
+\begin{dgroup*}
+\begin{dmath*}
+\lderivative{\frac{\lambda_K}{2}\norm{\theta}^2_{\Vect_{j=1}^D\mathcal{U}'}}{\theta}=\lambda_K\theta,
+\end{dmath*}
+\begin{dmath*}
+\lderivative{\frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\tildePhi{\omega}(x_i)^\adjoint \theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{U}}}{\theta}=\lambda_M\left(\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint\right) \theta,
+\end{dmath*}
+\begin{dmath*}
+\lderivative{\frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right)}{\theta}{\theta}= \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint \lderivativeat{c\left(y, y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}.
+\end{dmath*}
+\end{dgroup*}
+Provided that $c(y,y_i)$ is Frechet differentiable \wrt~$y$, for all $y$ and $y_i\in\mathcal{Y}$. Hence
+\begin{dmath*}
+\lderivative{J_{\lambda_K}(\theta)}{\theta} = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint(Dc)\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \lambda_K\theta + \lambda_M\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta
+\end{dmath*}
 \subsection{Linear operators}
 
 % \afterpage{
@@ -1059,16 +1085,16 @@ Since the solution of \cref{eq:argmin_theta} is unique when $\lambda_K>0$, a suf
 
 % % \begin{dmath}
 % % \label{eq:argmin_HS}
-% % g_*=\argmin_{g\in(\Ker W)^\perp\subset\mathcal{H}} \frac{1}{2N}\sum_{i=1}^N\norm{(Wg)(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{g}^2_{\mathcal{H}}
+% % g_*=\argmin_{g\in(\Ker W)^\perp\subset\mathcal{H}} \frac{1}{N}\sum_{i=1}^N\norm{(Wg)(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{g}^2_{\mathcal{H}}
 % % \end{dmath}
 
 % Define
 % \begin{dmath}
-% Q_0(g)=\frac{1}{2N}\sum_{i=1}^N\norm{(Wg)(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{g}^2_{\mathcal{H}}.
+% Q_0(g)=\frac{1}{N}\sum_{i=1}^N\norm{(Wg)(x_i)-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{g}^2_{\mathcal{H}}.
 % \end{dmath}
 % Moreover let $\tildePhi{\omega}(x_i)y=\Vect_{j=1}^D(\Phi_{x_i}y)(\omega_j)$ for all $y\in\mathcal{Y}$, and $\theta_g=\vect_{j=1}^Dg(\omega_j)$, where $\omega_j$ are \iid~random vectors following a law $\mu$. We define the empirical estimator of $Q_0$ as
 % \begin{dmath}
-% Q_D(g)=\frac{1}{2N}\sum_{i=1}^N\norm{\tildePhi{\omega}(x_i)^\adjoint \theta_g-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2D}\norm{\theta_g}^2_{\tildeH{\omega}\left(\mathcal{Y}'\right)}
+% Q_D(g)=\frac{1}{N}\sum_{i=1}^N\norm{\tildePhi{\omega}(x_i)^\adjoint \theta_g-y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2D}\norm{\theta_g}^2_{\tildeH{\omega}\left(\mathcal{Y}'\right)}
 % \end{dmath}
 % Let $g_*=\argmin_{g\in\mathcal{H}}Q_0(g)$ and $\tilde{g}_*=\argmin_{g\in\mathcal{H}}Q_D(g)$ thus $\tilde{g}_*$ is an extremum estimator (\cref{ass:ee} holds). Notice that since $W$ is a bounded linear application, $Q_0$ is continuous strongly convex and coercive. By \cref{cor:unique_minimizer} attains an identifiable unique minimizer (\cref{ass:id} holds).
 
@@ -1086,8 +1112,8 @@ Since the solution of \cref{eq:argmin_theta} is unique when $\lambda_K>0$, a suf
 % \item By assumption $\sup_{y\in\mathcal{Y}} \norm{y}\le \sigma_y$ thus from \cref{rk:rkhs_bound} we have that $\lambda\norm{f_*}^2_K$ is bounded by $2\sigma_y^2$ and so is $\lambda\norm{g_*}_{\mathcal{H}}^2$. We note $\mathcal{H}_K^{\lambda}=\Set{f\in\mathcal{H}_K|\lambda\norm{f}^2_K\le 2\sigma_y}$ and $\mathcal{H}^\lambda=\Set{g\in(\Ker W)^\perp|\lambda\norm{g}^2_{\mathcal{H}}\le 2\sigma_y}$.
 % Then
 % \begin{dmath*}
-% f_*=\argmin_{f\in\mathcal{H}_K} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K}
-% =\argmin_{f\in\mathcal{H}_K^\lambda} \frac{1}{2N}\displaystyle\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K}
+% f_*=\argmin_{f\in\mathcal{H}_K} \frac{1}{N}\displaystyle\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K}
+% =\argmin_{f\in\mathcal{H}_K^\lambda} \frac{1}{N}\displaystyle\sum_{i=1}^N\norm{f(x_i) - y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}^2_{\mathcal{H}_K}
 % \end{dmath*}
 % and $g_*=\argmin_{g\in(Ker W)^\perp} Q_0(g)
 % \hiderel{=}\argmin_{g\in\mathcal{H}^\lambda} Q_0(g)$.

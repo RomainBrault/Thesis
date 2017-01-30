@@ -10,12 +10,12 @@
 \let\cleardoublepage\relax
 
 \chapter*{Abstract}
-Short summary of the contents\dots a great guide by 
-Kent Beck how to write good abstracts can be found here:  
-\begin{center}
-\url{https://plg.uwaterloo.ca/~migod/research/beckOOPSLA.html}
-\end{center}
+In this thesis we study scalable methods to perform regression with \emph{\acl{OVK}s}. In the context of scalar-kernel learning, a kernel can be seen a a similarity measure between two data point. A solution of the learning problem has the form of a linear combination of theses similarities with respect to unknown weights to be found in order to have the best \say{fit} of the data. When dealing with \acl{OVK}s, the evalution of the kernel is no longer a scalar similarity, but a function acting on vectors. A solution is then a linear combination of operators with respect to vector weights.
 
-\endgroup			
+Although \acl{OVK}s generalize strictly scalar-valued kernels, they have the disadvantage of being expensive in memory and time. Thus these methods seems not to be fitted to the current applications where data are often massive, and we want to process all of them to obtain the best possible model. To overcome this scalability issue, we replace the \acl{OVK} by an equivalent stochastic approximation of the kernel called feature map. We featurize the input data with a stochastic function such that an inner product on two featurized data is equivalent to the \acl{OVK} evaluation.
+
+First we generalize the construction of these stochastic feature map --based on a generalization of Bochner's theorem for shift-invariant Mercer kernels-- and study their properties along with the complexity of the algorithms based on them. Then we show theoretical guarantees by bounding the error due to the approximation with high probabiity. We conclude by application to functional data analysis, multitask learning, time serie regression and compare the proposed framework with other state of the art methods.
+
+\endgroup
 
 \vfill

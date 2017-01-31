@@ -994,7 +994,7 @@ If $\lambda_K=0$ we can still find a solution $u_{\seq{z}}$ of \cref{eq:argmin_u
 \begin{dmath*}
 r_{\seq{z}} = \theta_{\seq{z}} - \sum_{j=1}^{N+U} \tildePhi{\omega}(x_j) u_{\seq{z}} \hiderel{\in}\vect_{j=1}^D\mathcal{U}'.
 \end{dmath*}
-Then if $r_{\seq{z}}=0$, it means that $\lambda_K$ is large enough for both reprensenter theorem and \acs{ORFF} representer theorem to apply. If $r_{\seq{z}}\neq0$ but $\tildePhi{\omega}(\cdot)^\adjoint r_{\seq{z}} = 0$ means that both $\theta_{\seq{z}}$ and $\sum_{j=1}^{N+U} \tildePhi{\omega}(x_j) u_{\seq{z}}$ are in $(\Ker W)^\bot$, thus the representer theorem failed to find the \say{true} solution over the whole space $\mathcal{H}_K$ but returns a projection onto $\mathcal{H}_{\tildeK{\omega},\seq{z}}$ of the solution. If $r_{\seq{z}} \neq 0$ and $\tildePhi{\omega}(\cdot)^\adjoint r_{\seq{z}} \neq 0$ means that $\theta_{\seq{z}}$ is \emph{not} in $(\Ker W)^\bot$, thus the \acs{ORFF} representer theorem failed to apply. This remark is illustrated by \cref{fig:representer}.
+Then if $r_{\seq{z}}=0$, it means that $\lambda_K$ is large enough for both reprensenter theorem and \acs{ORFF} representer theorem to apply. If $r_{\seq{z}}\neq0$ but $\tildePhi{\omega}(\cdot)^\adjoint r_{\seq{z}} = 0$ means that both $\theta_{\seq{z}}$ and $\sum_{j=1}^{N+U} \tildePhi{\omega}(x_j) u_{\seq{z}}$ are in $(\Ker W)^\bot$, thus the representer theorem fails to find the \say{true} solution over the whole space $\mathcal{H}_K$ but returns a projection onto $\mathcal{H}_{\tildeK{\omega},\seq{z}}$ of the solution. If $r_{\seq{z}} \neq 0$ and $\tildePhi{\omega}(\cdot)^\adjoint r_{\seq{z}} \neq 0$ means that $\theta_{\seq{z}}$ is \emph{not} in $(\Ker W)^\bot$, thus the \acs{ORFF} representer theorem fails to apply. This remark is illustrated by \cref{fig:representer}.
 
 \section{Solution of the empirical risk minimization}
 % We illustrate the ORFF representer theorem (\cref{cr:orff_representer}) on two experiment involving scalar valued kernels.
@@ -1004,7 +1004,7 @@ In order to find a solution to \cref{eq:argmin_theta}, we turn our attention to 
 \begin{dmath*}
 J_{\lambda_K}(\theta) = \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\Vect_{j=1}^D\mathcal{U}'} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\Vect_{j=1}^D\mathcal{U}'}.
 \end{dmath*}
-Since the solution of \cref{eq:argmin_theta} is unique when $\lambda_K>0$, a sufficient and necessary condition is that the gradient of $J_{\lambda_K}$ at the minimizer $\theta_{\seq{z}}$ is zero. We use the Frechet derivative, the strongest notion of derivative in Banach spaces\mpar{Here we view the Hilbert space $\mathcal{H}$ (feature space) as a reflexive Banach space.} \cite{conway2013course, kurdila2006convex}. A function $f:\mathcal{H}_0\to\mathcal{H}_1$ is call Frechet differentiable at $\theta_0\in \mathcal{H}_0$ if there exist a bounded linear operator $A:\mathcal{H}_0\to \mathcal{H}_1$ such that
+Since the solution of \cref{eq:argmin_theta} is unique when $\lambda_K>0$, a sufficient and necessary condition is that the gradient of $J_{\lambda_K}$ at the minimizer $\theta_{\seq{z}}$ is zero. We use the Frechet derivative, the strongest notion of derivative in Banach spaces\mpar{Here we view the Hilbert space $\mathcal{H}$ (feature space) as a reflexive Banach space.} \cite{conway2013course, kurdila2006convex} wich directly generalizes the notion of gradient to Banach spaces. A function $f:\mathcal{H}_0\to\mathcal{H}_1$ is call Frechet differentiable at $\theta_0\in \mathcal{H}_0$ if there exist a bounded linear operator $A:\mathcal{H}_0\to \mathcal{H}_1$ such that
 \begin{dmath*}
 \lim_{h\to 0} \frac{\norm{f(\theta_0+h)-f(\theta_0)-Ah}_{\mathcal{H}_1}}{\norm{h}_{\mathcal{H}_0}}=0
 \end{dmath*}
@@ -1016,22 +1016,39 @@ and call it Frechet derivative of $f$ with respect to $\theta$ at $\theta_0$. Wi
 \begin{dmath*}
 \lderivative{(g\circ f)(\theta)}{\theta} = \derivative{g(f(\theta))}{f(\theta)} \circ \derivative{f(\theta)}{\theta}.
 \end{dmath*}
-Where the two last equalities apply since $\mathcal{H}_0$, $\mathcal{H}_1$, $\mathcal{H}_2$ are a Hilbert spaces, and thus are reflexive. By linearity and applying the chaine rule to \cref{eq:argmin_theta} and since $M_{ik}^\adjoint = M_{ki}$ for all $i$, $k\in\mathbb{N}_{N+U}$, we have
+If $f:\mathcal{H}\to\mathbb{R}$ we define the gradient of $f$ as
+\begin{dmath*}
+\nabla_{\theta} f(\theta) = \left(\derivative{f(\theta)}{\theta}\right)^\adjoint
+\end{dmath*}
+and in the same way, for a function $f:\mathcal{H}_0\to\mathcal{H}_1$ the jacobian of $f$ as
+\begin{dmath*}
+\jacobian_{\theta} f(\theta) = \left(\derivative{f(\theta)}{\theta}\right)^\adjoint.
+\end{dmath*}
+In this context if $f:\mathcal{H}_0\to\mathcal{H}_1$ and $g:\mathcal{H}_1\to\mathbb{R}$ the chain rule reads
+\begin{dmath*}
+\nabla_{\theta} (g\circ f)(\theta) = \jacobian_{\theta}f(\theta) \circ \nabla_{f(\theta)}g(f(\theta)).
+\end{dmath*}
+By linearity and applying the chaine rule to \cref{eq:argmin_theta} and since $M_{ik}^\adjoint = M_{ki}$ for all $i$, $k\in\mathbb{N}_{N+U}$, we have
 \begin{dgroup*}
 \begin{dmath*}
-\lderivative{\frac{\lambda_K}{2}\norm{\theta}^2_{\Vect_{j=1}^D\mathcal{U}'}}{\theta}=\lambda_K\theta,
+\nabla_{\theta}c\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right)= \tildePhi{\omega}(x_i)V^\adjoint \left(\lderivativeat{c\left(y, y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint,
 \end{dmath*}
 \begin{dmath*}
-\lderivative{\frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\tildePhi{\omega}(x_i)^\adjoint \theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{U}}}{\theta}=\lambda_M\left(\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint\right) \theta,
+\nabla_{\theta}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{U}}=\tildePhi{\omega}(x_i)\left(M_{ik}+M_{ki}\right)\tildePhi{\omega}(x_k)^\adjoint \theta,
 \end{dmath*}
 \begin{dmath*}
-\lderivative{\frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right)}{\theta}{\theta}= \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint \lderivativeat{c\left(y, y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}.
+\nabla_{\theta}\norm{\theta}^2_{\Vect_{j=1}^D\mathcal{U}'}=2\theta.
 \end{dmath*}
 \end{dgroup*}
 Provided that $c(y,y_i)$ is Frechet differentiable \wrt~$y$, for all $y$ and $y_i\in\mathcal{Y}$. Hence
 \begin{dmath*}
-\lderivative{J_{\lambda_K}(\theta)}{\theta} = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint(Dc)\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \lambda_K\theta + \lambda_M\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta
+\nabla_{\theta} J_{\lambda_K}(\theta) = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint \left(\lderivativeat{c\left(y, y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint + \lambda_K\theta + \lambda_M\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta
 \end{dmath*}
+Therefore after factorization, considering $\lambda_K > 0$,
+\begin{dmath*}
+\nabla_{\theta} J_{\lambda_K}(\theta) = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint \left(\lderivativeat{c\left(y, y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint + \lambda_K\left(I_{\Vect_{j=1}^D\mathcal{U}'} +  \frac{\lambda_M}{\lambda_K}\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \right)\theta
+\end{dmath*}
+
 \subsection{Linear operators}
 
 % \afterpage{

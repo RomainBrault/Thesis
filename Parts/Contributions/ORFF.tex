@@ -1048,6 +1048,10 @@ Therefore after factorization, considering $\lambda_K > 0$,
 \begin{dmath*}
 \nabla_{\theta} J_{\lambda_K}(\theta) = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint \left(\lderivativeat{c\left(y, y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint + \lambda_K\left(I_{\Vect_{j=1}^D\mathcal{U}'} +  \frac{\lambda_M}{\lambda_K}\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \right)\theta
 \end{dmath*}
+We note the quantity $\mathbf{M}_{\lambda_K,\lambda_M}=I_{\Vect_{j=1}^D\mathcal{U}'} +  \frac{\lambda_M}{\lambda_K}\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \right)\in\Vect_{j=1}^D\mathcal{L}(\mathcal{U}')$ so that
+\begin{dmath*}
+\nabla_{\theta} J_{\lambda_K}(\theta) = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint \left(\lderivativeat{c\left(y, y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint + \lambda_K\mathbf{M}_{\lambda_K,\lambda_M}\theta
+\end{dmath*}
 
 \subsection{Linear operators}
 

@@ -1071,7 +1071,7 @@ Therefore,
 \end{dmath*}
 Suppose that $\mathcal{Y}\subseteq\mathbb{R}^p$, $V:\mathcal{U}\to\mathcal{Y}$ where $\mathcal{U}\subseteq\mathbb{R}^u$ and for all $x\in\mathcal{X}$, $\tildePhi{\omega}(x): \mathbb{R}^{r}\to\mathbb{R}^u$. From this we can derive \cref{alg:close_form} which return the close form solution of \cref{eq:cost_functional} for $c(y,y')=\norm{y-y'}_2^2$.
 \end{example}
-\paragraph{Complexity analysis}
+\paragraph{Complexity analysis:}
 \Cref{alg:close_form} constitute our first step toward large-scale learning with operator-valued kernels. We can easily compute the time complexity of \cref{alg:close_form} when all the operators act on finite dimensional Hilbert spaces. Suppose that $u=\dim(\mathcal{U})<+\infty$, $u'=\dim(\mathcal{U}')<+\infty$ and for all $x\in\mathcal{X}$, $\tildePhi{\omega}(x):\mathcal{U}'\to\tildeH{\omega}$ where $r=\dim(\tildeH{\omega})<+\infty$ is the dimension of the redescription space $\tildeH{\omega}=\mathbb{R}^{r}$. Since $u$, $u'$, and $r<+\infty$, we view the operators $\tildePhi{\omega}(x)$, $V$ and $\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)}$ as matrices. Computing $V^\adjoint V$ cost $O_t(u^2p)$. Step 1 costs $O_t(r^2u + ru^2)$. Steps 5 (optional) has the same cost except that the sum is done over all pair of $N+U$ points thus it costs $O_t((N+U)^2(r^2u + r u^2))$. Steps 7 costs $O_t(N(ru + up))$. For step 8, the naive inversion of the operator costs $O_t(r^3)$. Eventually the overall complexity of \cref{alg:close_form} is
 \begin{dmath*}
 O_t\left(ru(r + u) \begin{cases} (N+U)^2 & \text{if $\lambda_M > 0$} \\ N & \text{if $\lambda_M = 0$} \end{cases}+ r^3 + Nu(r+p)

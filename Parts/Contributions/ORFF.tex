@@ -446,6 +446,7 @@ which defines a $\mathcal{Y}$-Mercer according to \cref{pr:mercer_kernel_bochner
 With this notation notice that $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \dual{\mu}; \mathcal{Y}'))$ such that $\Phi_x\in \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \dual{\mu}; \mathcal{Y}'))$ where $\Phi_x\colonequals\Phi(x)$.
 
 \subsection{Building Operator-valued Random Fourier Features}
+\label{subsec:building_ORFF}
 As shown in \cref{pr:spectral,pr:trace_measure} it is always possible to find a pair $(A, \probability_{\dual{\Haar},\rho})$ from a shift invariant $\mathcal{Y}$-Mercer \acl{OVK} $K_e$ such that $\probability_{\dual{\Haar},\rho}$ is a probability measure --\ie~$\int_{\dual{\mathcal{X}}} \rho d\dual{\Haar}=1$ where $\rho$ is the density of $\probability_{\dual{\Haar},\rho}$-- and $K_e(\delta)=\expectation_\rho{\conj{\pairing{\delta,\omega}}A(\omega)}$. In order to obtain an approximation of $K$ from a decomposition $(A, \probability_{\dual{\Haar},\rho})$ we turn our attention to a Monte-Carlo estimation of the expectations \cref{eq:expectation_tr} and \cref{eq:expectation_spec} characterizing a $\mathcal{Y}$-Mercer shift-invariant \acl{OVK}.
 \paragraph{}
 However, for efficient computations as motivated in the introduction, we are interested in finding an approximated \emph{feature map} instead of a kernel approximation. Indeed, an approximated feature map will allow to build linear models in regression tasks. The idea is to start from the Monte-Carlo approximation of the expectation and provide a systematic decomposition of the Monte-Carlo sample mean into an approximate feature map. The following proposition provides the general form of an \acl{ORFF}.
@@ -610,6 +611,7 @@ When $\lambda_M=0$ or there is no
 }
 
 \subsection{Examples of Operator Random Fourier Feature maps}
+\label{subsec:examples_ORFF}
 We now give two examples of operator-valued random Fourier feature map when. First we introduce the general form of an approximated feature map for a matrix-valued kernel on the additive group $(\mathbb{R}^d,+)$.
 \begin{example}[Matrix-valued kernel on the additive group]\label{ex:additive_group}
 In the following, $K(x,z)=K_0(x-z)$ is a $\mathcal{Y}$-Mercer matrix-valued kernel on $\mathcal{X}=\mathbb{R}^d$ invariant w.r.t. the group operation $+$. %
@@ -1069,14 +1071,21 @@ Therefore,
 \end{dmath*}
 Suppose that $\mathcal{Y}\subseteq\mathbb{R}^p$, $V:\mathcal{U}\to\mathcal{Y}$ where $\mathcal{U}\subseteq\mathbb{R}^u$ and for all $x\in\mathcal{X}$, $\tildePhi{\omega}(x): \mathbb{R}^{r}\to\mathbb{R}^u$. From this we can derive \cref{alg:close_form} which return the close form solution of \cref{eq:cost_functional} for $c(y,y')=\norm{y-y'}_2^2$.
 \end{example}
+\paragraph{Complexity analysis}
+\Cref{alg:close_form} constitute our first step toward large-scale learning with operator-valued kernels. We can easily compute the time complexity of \cref{alg:close_form} when all the operators act on finite dimensional Hilbert spaces. Suppose that $u=\dim(\mathcal{U})<+\infty$, $u'=\dim(\mathcal{U}')<+\infty$ and for all $x\in\mathcal{X}$, $\tildePhi{\omega}(x):\mathcal{U}'\to\tildeH{\omega}$ where $r=\dim(\tildeH{\omega})<+\infty$ is the dimension of the redescription space $\tildeH{\omega}=\mathbb{R}^{r}$. Since $u$, $u'$, and $r<+\infty$, we view the operators $\tildePhi{\omega}(x)$, $V$ and $\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)}$ as matrices. Computing $V^\adjoint V$ cost $O_t(u^2p)$. Step 1 costs $O_t(r^2u + ru^2)$. Steps 5 (optional) has the same cost except that the sum is done over all pair of $N+U$ points thus it costs $O_t((N+U)^2(r^2u + r u^2))$. Steps 7 costs $O_t(N(ru + up))$. For step 8, the naive inversion of the operator costs $O_t(r^3)$. Eventually the overall complexity of \cref{alg:close_form} is
+\begin{dmath*}
+O_t\left(ru(r + u) \begin{cases} (N+U)^2 & \text{if $\lambda_M > 0$} \\ N & \text{if $\lambda_M = 0$} \end{cases}+ r^3 + Nu(r+p)
+\right),
+\end{dmath*}
+while the space complexity is $O_s(r^2)$.
 \begin{center}
-\begin{algorithm2e}[h]
+\begin{algorithm2e}[H]
     \label{alg:close_form}
     \SetAlgoLined
     \Input{\begin{itemize}
     \item $\seq{s}=(x_i, y_i)_{i=1}^N\in\left(\mathcal{X}\times\mathbb{R}^p\right)^N$ a sequence of supervised training points,
     \item $\seq{u}=(x_i)_{i=N+1}^{N+U}\in\mathcal{X}^{U}$ a sequence of unsupervised training points,
-    \item $\tildePhi{\omega}(x_i) \in \left(\mathbb{R}^u, \mathbb{R}^{2Du'}\right)$ a feature map defined for all $x_i\in\mathcal{X}$,
+    \item $\tildePhi{\omega}(x_i) \in \left(\mathbb{R}^u, \mathbb{R}^{r}\right)$ a feature map defined for all $x_i\in\mathcal{X}$,
     \item $(M_{ik})_{i,k=1}^{N+U}$ a sequence of data dependent operators (see \cref{cr:orff_representer}),
     \item $V \in \mathcal{L}\left(\mathbb{R}^u, \to \mathbb{R}^p\right)$ a combination operator,
     \item $\lambda_K \in\mathbb{R}_{>0}$ the Tychonov regularization term,
@@ -1087,7 +1096,6 @@ Suppose that $\mathcal{Y}\subseteq\mathbb{R}^p$, $V:\mathcal{U}\to\mathcal{Y}$ w
     h:\begin{cases} \mathcal{X} \to \mathbb{R}^p \\ x\mapsto\tildePhi{\omega}(x)^\adjoint\theta_{\seq{z}},\end{cases}
     \end{dmath*}
     such that $\theta_{\seq{z}}$ minimize \cref{eq:cost_functional}, where $c(y,y')=\norm{y-y'}_2^2$.}
-    Let $r=2Du'$\;
     $\mathbf{P} \gets \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint V\tildePhi{\omega}(x_i)^\adjoint \in\mathcal{L}(\mathbb{R}^{r}, \mathbb{R}^{r})  $\;
     \uIf{$\lambda_M = 0$}{
         $\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)} \gets I_{r} \in\mathcal{L}(\mathbb{R}^{r}, \mathbb{R}^{r})$\;
@@ -1101,24 +1109,18 @@ Suppose that $\mathcal{Y}\subseteq\mathbb{R}^p$, $V:\mathcal{U}\to\mathcal{Y}$ w
     \caption{Naive close form for the squared error cost.}
 \end{algorithm2e}
 \end{center}
-\paragraph{}
-\Cref{alg:close_form} constitute our first step toward large-scale learning with operator-valued kernels. We can easily compute the time complexity of \cref{alg:close_form}. Let $r=\dim(\tildeH{\omega})$ be the total dimension of the redescription space $\tildeH{\omega}=\mathbb{R}^{r}$. Computing $V^\adjoint V$ cost $O_t(u^2p)$. Step 2 costs $O_t(r^2u + ru^2)$. Steps 6 (optional) has the same cost except that the sum is done over all pair of $N+U$ points thus it costs $O_t((N+U)^2(r^2u + r u^2))$. Steps 8 costs $O_t(N(ru + up))$. For step 9, the naive inversion of the operator costs $O_t(r^3)$. Eventually the overall complexity of \cref{alg:close_form} is
-\begin{dmath*}
-O_t\left(ru(r + u) \begin{cases} (N+U)^2 & \text{if $\lambda_M > 0$} \\ N & \text{if $\lambda_M = 0$} \end{cases}+ r^3 + Nu(r+p)
-\right),
-\end{dmath*}
-while the space complexity is $O_s(r^2)$. This complexity is to compare with the kernelized solution proposed by \citet{minh2016unifying}. Let
+This complexity is to compare with the kernelized solution proposed by \citet{minh2016unifying}. Let
 \begin{dmath*}
 \mathbf{K}:\begin{cases}
 \mathcal{U}^{N+U} \to \mathcal{U}^{N+U} \\
-u\mapsto\sum_{j=1}^{N+U}K(x_i, x_j)u_j
+u\mapsto\Vect_{i=1}^{N+U}\sum_{j=1}^{N+U}K(x_i, x_j)u_j
 \end{cases}
 \end{dmath*}
 and
 \begin{dmath*}
 \mathbf{M}:\begin{cases}
 \mathcal{U}^{N+U} \to \mathcal{U}^{N+U} \\
-u\mapsto\sum_{k=1}^{N+U}M_{ik}u_k.
+u\mapsto\Vect_{i=1}^{N+U}\sum_{k=1}^{N+U}M_{ik}u_k.
 \end{cases}
 \end{dmath*}
 When $\mathcal{U}=\mathbb{R}$, $\mathbf{K}$ is called the Gram matrix of $K$. When $\mathcal{U}=\mathbb{R}^p$, $\mathbf{K}$ is a matrix-valued Gram matrix where each entry $\mathbf{K}_{ij}\in\mathcal{L}(\mathbb{R}^p)$. When $\mathcal{U}=\mathbb{R}^p$, $\mathbf{M}$ can also be seen as a matrix-valued matrix where each entry is $M_{ik}\in\mathcal{L}(\mathbb{R}^p)$. We also introduce the operators $\mathbf{C}^\adjoint \mathbf{C}\colonequals I_{N+U} \otimes (C^\adjoint C)$ and
@@ -1138,14 +1140,8 @@ O_t(p^3(ND^2+D^3)),
 \end{dmath*}
 which is annoying. Indeed learning $p$ independent models with scalar Random Fourier Features would cost $O_t(p(ND^2+D^3))$, meaning that introducing has increase the complexity from $p$ to $p^3$. However in some cases we can drastically reduce the complexity by viewing the feature-maps as linear operators rather than matrices.
 
-\subsection{Linear operators}
-When developping \cref{alg:close_form} we considered that the feature map $\tildePhi{\omega}(x)$ was an operator from $\mathbb{R}^u$ to $\mathbb{R}^{2Du'}$ for all $x\in\mathcal{X}$.
-
-We focus here on the feature maps given in
-
-% \afterpage{
 \begin{landscape}
-\begin{figure}[htb]
+\begin{figure}[tb]
 \centering
 \resizebox{\textheight}{!}{%
 \input{../gfx/representer.pgf}
@@ -1154,6 +1150,16 @@ We focus here on the feature maps given in
 \label{fig:representer}
 \end{figure}
 \end{landscape}
+
+\subsection{Efficient linear operators}
+When developping \cref{alg:close_form} we considered that the feature map $\tildePhi{\omega}(x)$ was a matrix from $\mathbb{R}^u$ to $\mathbb{R}^{r}$ for all $x\in\mathcal{X}$, and therefore that computing $\tildePhi{\omega}(x)^\adjoint \theta$ has a time complexity of $O(r^2u)$. While this holds true in the most generic senario, in many cases the feature maps presents some structure or sparsity allowing to reduce the computational cost of evaluating the feature map. We focus on the \acl{ORFF} given by \cref{alg:ORFF_construction}, developped in \cref{subsec:building_ORFF} and \cref{subsec:examples_ORFF} and treat the decomposable kernel, the curl-free kernel and the divergence-free kernel as an example.
+
+\subsection{Decomposable kernel}
+\subsection{Curl-free kernel}
+\subsection{Divergence-free kernel}
+
+% \afterpage{
+
 
 
 % Since $\theta\in\tildeH{\omega}\left(\mathcal{Y}'\right)$ lives in a different space than $f\in\mathcal{H}_K$ is makes no sense to show the convergence of $\theta_*$ to $f_*$. However we can verify that $\tildef{1:D}$ converges to $f\in\mathcal{H}_K$ pointwise. We first introduce the following lemma and assumptions. First we characterize extremum estimators. Let $\mathcal{H}$ be any Hilbert space.

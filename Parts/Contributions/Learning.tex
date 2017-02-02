@@ -1,0 +1,410 @@
+\section{Learning with ORFF}
+\label{sec:learning_with_operator-valued_random-fourier_features}
+We now turn our attention to learning function with an ORFF model that approximate an OVK model.
+\subsection{Warm-up: supervised regression}
+Let $\seq{s} = (x_i,y_i)_{i=1}^N\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$ be a sequence of training samples. Given a local loss function $L: \mathcal{X}\times\mathcal{F}\times\mathcal{Y}\to \overline{\mathbb{R}}$ such that $L$ is proper, convex and lower semi-continous in $f$, we are interested in finding a \emph{vector-valued function} $f_{\seq{s}}:\mathcal{X}\to\mathcal{Y}$, that lives in a \acs{vv-RKHS} and minimize a tradeoff between a data fitting term $L$ and a regularization term to prevent from overfitting. Namely finding $f_{\seq{s}}\in\mathcal{H}_K$ such that
+\begin{dmath}
+f_{\seq{s}} = \argmin_{f\in\mathcal{H}_K}  \frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f, y_i) + \frac{\lambda}{2}\norm{f}^2_{K},
+\label{eq:learning_rkhs}
+\end{dmath}
+where $\lambda\in\mathbb{R}_+$ is a regularization\mpar{Tychonov regularization.} parameter. We call the quantity
+\begin{dmath*}
+\mathcal{R}(f)=\frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f, y_i) \condition{$\forall f\in\mathcal{H}_K$, $\forall \seq{s}\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$.}
+\end{dmath*}
+The empirical risk of the model $f\in\mathcal{H}_K$. A common choice of data fitting term for regression is $L:(x_i, f, y_i) \mapsto \norm{f(x_i)-y_i}_{\mathcal{Y}}^2$.
+We introduce a corollary from Mazur and Schauder proposed in 1936 (see \citet{kurdila2006convex, gorniewicz1999topological}) showing that \cref{eq:learning_rkhs} --and \cref{eq:learning_rkhs_gen}-- attains a unique mimimizer.
+\begin{theorem}[Mazur-Schauder]
+\label{cor:unique_minimizer}
+Let $\mathcal{H}$ be a Hilbert space and $J:\mathcal{H}\to \overline{\mathbb{R}}$ be a proper, convex, lower semi-continuous and coercive function. Then $J$ is bounded from below and attains a minimizer. Moreover if $J$ is strictly convex the minimizer is unique.
+\end{theorem}
+This is easily verified for Ridge regression. Define
+\begin{dmath}
+\label{eq:ridge}
+J_\lambda(f)=\frac{1}{N}\sum_{i=1}^N\norm{f(x_i)-y_i}_{\mathcal{Y}}^2+\frac{\lambda}{2}\norm{f}_K^2,
+\end{dmath}
+where $f\in\mathcal{H}_K$ and $\lambda\in\mathbb{R}_{>0}$. $J_\lambda$ is continuous\mpar{Reminder, if $f\in\mathcal{H}_k, \text{ev}_x:f\mapsto f(x)$ is continuous, see \cref{pr:unique_rkhs}.} and strictly convex. Additionally $J_\lambda$ is coercive since $\norm{f}_K$ is coercive, $\lambda\in\mathbb{R}_{>0}$, and all the summands of $J_\lambda$ are positive. Hence for all positive $\lambda$, $f_{\seq{s}}=\argmin_{f\in\mathcal{H}_K}J_\lambda(f)$ exists, is unique and attained.
+\begin{remark}
+\label{rk:rkhs_bound}
+We condider the optimization problem proposed in \cref{eq:ridge} where $L:(x_i, f, y_i) \mapsto \norm{f(x_i)-y_i}_{\mathcal{Y}}^2$. If given a training sample $\seq{s}$, we have
+\begin{dmath*}
+\frac{1}{N}\sum_{i=1}^N\norm{y_i}_{\mathcal{Y}}^2 \le \sigma_y^2,
+\end{dmath*}
+then $\lambda\norm{f_{\seq{s}}}_K\le 2\sigma_y^2$. Indeed, since $\mathcal{H}_K$ is a Hilbert space, $0\in\mathcal{H}_K$, thus
+\begin{dmath*}
+\frac{\lambda}{2}\norm{f_{\seq{s}}}^2_{K} \le \frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f_{\seq{s}}, y_i) + \frac{\lambda}{2}\norm{f_{\seq{s}}}^2_{K}
+\le \frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, 0, y_i) \hiderel{\le} \sigma_y^2 \condition{by optimality of $f_{\seq{s}}$.}
+\end{dmath*}
+Since for all $x\in\mathcal{X}$, $\norm{f(x)}_{\mathcal{Y}}\le \sqrt{\norm{K(x, x)}_{\mathcal{Y},\mathcal{Y}}}\norm{f}_{K}$, the maximum value that the solution $\norm{f_{\seq{s}}(x)}_{\mathcal{Y}}$ of \cref{eq:ridge} can reach is $2\sqrt{\norm{K(x, x)}}\frac{\sigma_y^2}{\lambda}$. Thus when solving a Ridge regression problem, given a shift-invariant kernel $K_e$, one should choose
+\begin{dmath*}
+0 \hiderel{<} \lambda \hiderel{\le} 2\frac{\sqrt{\norm{K_e(e)}}\sigma_y^2}{C}.
+\end{dmath*}
+with $C\in\mathbb{R}_{>0}$ to have a chance to fit all the $y_i$ with norm $\norm{y_i}_{\mathcal{Y}} \le C$ in the train set.
+\end{remark}
+\subsection{Semi-supervised regression}
+Regression in \acl{vv-RKHS} has been well studied \citep{Alvarez2012, Minh_icml13,minh2016unifying,sangnier2016joint,kadri2015operator,Micchelli2005,Brouard2016_jmlr}, and a cornerstone of learning in \acs{vv-RKHS} is the representer theorem\mpar{Sometimes referred to as minimal norm interpolation theorem.}, which allows to replace the search of a minimizer in a infinite dimensional \acs{vv-RKHS} by a finite number of paramaters $(u_i)_{i=1}^N$, $u_i\in\mathcal{Y}$. We present here the very genreal form of \citet{minh2016unifying}. This framework encompass Vector-valued Manifold Regularization \citep{belkin2006manifold,Brouard2011,minh2013unifying} and Co-regularized Multi-view Learning \citep{brefeld2006efficient,sindhwani2008rkhs,rosenberg2009kernel,sun2011multi}.
+\paragraph{}
+In the following we suppose we are given a cost function $c:\mathcal{Y}\times\mathcal{Y}\to\overline{\mathbb{R}}$, such that $c(f(x),y)$ returns the error of the prediction $f(x)$ \wrt~the ground truth $y$. A loss function of a model $f$ with respect to an example $(x,y)\in\mathcal{X}\times\mathcal{Y}$ can be naturally defined from a cost function as $L(x,f,y)=c(f(x),y)$. Conceptually the function $c$ evaluate the quality of the prediction versus its ground truth $y\in\mathcal{Y}$ while the loss function $L$ evaluate the quality of the model $f$ at a training point $(x,y)\in\mathcal{X}\times\mathcal{Y}$. Moreover we suppose that we are given a training sample $\seq{u}=(x_i)_{i=N}^{N+U}\in\mathcal{X}^U$ of unlabelled exemple. We note $\seq{z}\in\left(\mathcal{X}\times\mathcal{Y}\right)^N\times\mathcal{X}^U$ the sequence $\seq{z}=\seq{s}\seq{u}$ concatenating both labeled ($\seq{s}$) and unlabelled ($\seq{u}$) training examples.
+\begin{theorem}[Representer \citep{minh2016unifying}]
+\label{th:representer}
+Let $K$ be a $\mathcal{U}$-Mercer \acl{OVK} and $\mathcal{H}_K$ its corresponding $\mathcal{U}$-Reproducing Kernel Hilbert space.
+\paragraph{}
+Let $V:\mathcal{U}\to\mathcal{Y}$ be a bounded linear operator and let $c:\mathcal{Y}\times\mathcal{Y}\to\overline{\mathbb{R}}$ be a cost function such that $L(x, f, y)=c(Vf(x), y)$ is a proper convex lower semi-continuous function in $f$ for all $x\in\mathcal{X}$ and all $y\in\mathcal{Y}$.
+\paragraph{}
+Eventually let $\lambda_K\in\mathbb{R}_{>0}$ and $\lambda_M \in \mathbb{R}_+$ be two regularization hyperparameters and $(M_{ik})_{i,k=1}^{N+U}$ be a sequence of data dependent bounded linear operators in $\mathcal{L}(\mathcal{U})$, such that
+\begin{dmath*}
+\sum_{i,j=1}^{N+U} \inner{u_i, M_{ik}u_k} \ge 0 \condition{$\forall (u_i)_{i=1}^{N+U}\in\mathcal{U}^{N+U}$ and $M_{ik}=M_{ki}^*$}.
+\end{dmath*}
+The solution $f_{\seq{z}}\in\mathcal{H}_K$ of the regularized optimization problem
+\begin{dmath}
+f_{\seq{z}} = \argmin_{f\in\mathcal{H}_K} \frac{1}{N}\displaystyle\sum_{i=1}^N c(Vf(x_i), y_i) + \frac{\lambda_K}{2}\norm{f}^2_{K} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{f(x_i), M_{ik}f(x_k)}_{\mathcal{U}}
+\label{eq:learning_rkhs_gen}
+\end{dmath}
+has the form $f_{\seq{z}}=\sum_{j=1}^{N+U}K(\cdot,x_j)u_{\seq{z},j}$ where $u_{\seq{z},j}\in\mathcal{U}$ and
+\begin{dmath}
+    \label{eq:argmin_u}
+    u_{\seq{z}} = \argmin_{u\in\Vect_{i=1}^{N+U}\mathcal{U}}\frac{1}{N}\displaystyle\sum_{i=1}^N c\left(V\sum_{k=1}^{N+U}K(x_i,x_j)u_j, y_i\right) + \frac{\lambda_K}{2}\sum_{k=1}^{N+U}u_i^\adjoint K(x_i,x_k)u_k \\ +
+    \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U} \inner*{\sum_{j=1}^{N+U}K(x_i,x_j)u_j, M_{ik}\sum_{j=1}^{N+U}K(x_k,x_j)u_j}_{\mathcal{U}}
+\end{dmath}
+\end{theorem}
+The first representer theorem was first introduced by \citet{Wahba90} in the case where $\mathcal{Y}=\mathbb{R}$. The extension to an arbitrary Hilbert space $\mathcal{Y}$ has been proved by many authors in different forms \citep{Brouard2011,kadri2015operator,Micchelli2005}. The idea behind the representer theorem is that eventhough we minimize over the whole space $\mathcal{H}_K$, when $\lambda_K>0$, the solution of \cref{eq:learning_rkhs_gen} falls inevitably into the set $\mathcal{H}_{K, \seq{z}}=\Set{\sum_{j=1}^{N+U}K_{x_j}u_j| \forall (u_i)_{i=1}^{N+U} \in\mathcal{U}^{N+U}}$. Therefore the result can be expressed as a finite linear combination of basis functions of the form $K(\cdot,x_k)$. Remark that we can perform the kernel expansion of $f_{\seq{z}}=\sum_{j=1}^{N+U}K(\cdot,x_j)u_{\seq{z},j}$ eventhough $\lambda_K=0$. However $f_{\seq{z}}$ is no longer the solution of \cref{eq:learning_rkhs_gen} over the whole space $\mathcal{H}_K$ but a projection on the subspace $\mathcal{H}_{K, \seq{z}}$. While this is in general not a problem for practical applications, it might raise issues for further theoretical investigations. In particular, it makes it difficult to perform theoretical comparison the \say{exact} solution of \cref{eq:learning_rkhs_gen} with respect to the \acs{ORFF} approximation solution given in \cref{cr:orff_representer}.
+\paragraph{}
+We present here the proof of the generic formulation proposed by \citet{minh2016unifying}. In the mean time we clarify some elements of the proof. Indeed the existence of a global minimizer is not trivial and we must invoke the Mazur-Schauder theorem. Moreover the coercivity of the objective function required by the Mazur-Schauder theorem is not obvious when we do not require the cost function to take only positive values. However a corollary of Hahn-Banach theorem linking strong convexity to coercivity gives the solution.
+\begin{proof}
+Since $f(x)=K_x^*f$ (see \cref{eq:reproducing_prop}), the optimization problem reads
+\begin{dmath*}
+f_{\seq{z}} = \argmin_{f\in\mathcal{H}_K} \frac{1}{N}\displaystyle\sum_{i=1}^N c(VK_{x_i}^\adjoint f, y_i) + \frac{\lambda_K}{2}\norm{f}^2_{K} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{K_{x_i}^\adjoint f, M_{ik}K_{x_k}^\adjoint f}_{\mathcal{U}}
+\end{dmath*}
+Let $W_{V,\seq{s}}:\mathcal{H}_K\to\Vect_{i=1}^N\mathcal{Y}$ be a linear operator defined as
+\begin{dmath*}
+W_{V,\seq{s}}f = \Vect_{i=1}^N CK_{x_i}^\adjoint f,
+\end{dmath*}
+with $VK_{x_i}^\adjoint:\mathcal{H}_K\to\mathcal{Y}$ and $K_{x_i}V^\adjoint:\mathcal{Y}\to\mathcal{H}_K$. Let $Y=\vect_{i=1}^Ny_i\in\mathcal{Y}^N$. We have
+\begin{dmath*}
+\inner{Y, W_{V,\seq{s}}f}_{\Vect_{i=1}^N\mathcal{Y}}=\sum_{i=1}^N\inner{y_i, VK_{x_i}^\adjoint f}_{\mathcal{Y}}
+\hiderel{=}\sum_{i=1}^N\inner{K_{x_i}V^\adjoint y_i, f}_{\mathcal{H}_K}.
+\end{dmath*}
+Thus the adjoint operator $W_{V,\seq{s}}^\adjoint:\Vect_{i=1}^N\mathcal{Y}\to\mathcal{H}_K$ is
+\begin{dmath*}
+W_{V,\seq{s}}^\adjoint Y=\sum_{i=1}^NK_{x_i}V^\adjoint y_i,
+\end{dmath*}
+and the operator $W_{V,\seq{s}}^*W_{V,\seq{s}}:\mathcal{H}_K\to\mathcal{H}_K$ is
+\begin{dmath*}
+W_{V,\seq{s}}^\adjoint W_{V,\seq{s}}f = \sum_{i=1}^NK_{x_i}V^\adjoint VK_{x_i}^\adjoint f
+\end{dmath*}
+where $V^\adjoint V\in\mathcal{L}(\mathcal{U})$. Let
+\begin{dmath*}
+J_{\lambda_K}(f) = \underbrace{\frac{1}{N}\displaystyle\sum_{i=1}^N c(Vf(x_i), y_i)}_{=J_c} + \frac{\lambda_K}{2}\norm{f}^2_{K} \\ + \underbrace{\frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{f(x_i), M_{ik}f(x_k)}_{\mathcal{U}}}_{=J_M}
+\end{dmath*}
+To ensure that $J_{\lambda_K}$ has a global minimizer we need the following technical lemma (which is a consequence of the Hahn-Banach theorem for lower-semicontimuous functional, see \citet{kurdila2006convex}).
+\begin{lemma}
+\label{lm:strongly_convex_is_coercive}
+Let $J$ be a proper, convex, lower semi-continuous functional, defined on a Hilbert space $\mathcal{H}$. If $J$ is strongly convex, then $J$ is coercive.
+\end{lemma}
+\begin{proof}
+Consider the convex function function $G(f)\colonequals J(f)-\lambda\norm{f}^2$, for some $\lambda>0$. Since $J$ is by assumption proper, lower semi-continuous and strongly convex with parameter $\lambda$, $G$ is proper, lower semi-continuous and convex. Thus Hahn-Banach theorem apply, stating that $G$ is bounded by below by an affine functional. \Ie~there exists $f_0$ and $f_1\in\mathcal{H}$ such that
+\begin{dmath*}
+G(f)\ge G(f_0) + \inner{f - f_0, f_1} \condition{for all $f\in\mathcal{H}$.}
+\end{dmath*}
+Then substitute the definition of $G$ to obtain
+\begin{dmath*}
+J(f)\ge J(f_0) + \lambda\left(\norm{f}-\norm{f_0}\right) + \inner{f - f_0, f_1}.
+\end{dmath*}
+By the Cauchy-Schwartz inequality, $\inner{f, f_1}\ge - \norm{f}\norm{f_1}$, thus
+\begin{dmath*}
+J(f)\ge J(f_0) + \lambda\left(\norm{f}-\norm{f_0}\right)  - \norm{f}\norm{f_1} - \inner{f_0, f_1},
+\end{dmath*}
+which tends to infinity as $f$ tends to infinity. Hence $J$ is coercive
+\end{proof}
+for all $f\in\mathcal{H}_K$. Since $c$ is proper, lower semi-continuous and convex by assumption, thus the term $J_c$ is also proper, lower semi-continuous and convex. Moreover the term $J_M$ is always positive for any $f\in\mathcal{H}_K$ and $\frac{\lambda_K}{2}\norm{f}^2_{K}$ is strongly convex. Thus $J_{\lambda_K}$ is strongly convex. Apply \cref{lm:strongly_convex_is_coercive} to obtain the coercivity of $J_{\lambda_K}$, and then \cref{cor:unique_minimizer} to show that $J_{\lambda_K}$ has a unique minimizer and is attained. Then let $\mathcal{H}_{K, \seq{z}}=\Set{\sum_{j=1}^{N+U}K_{x_j}u_j| \forall (u_i)_{i=1}^{N+U} \in\mathcal{U}^{N+U}}$. For $f\in\mathcal{H}_{K, \seq{z}}^\perp$\mpar{$\mathcal{H}_{K, \seq{z}}^\perp\oplus\mathcal{H}_{K, \seq{z}}=\mathcal{H_K}$.}, the operator $W_{V,\seq{s}}$ satisfies
+\begin{dmath*}
+\inner{Y, W_{V,\seq{s}}f}_{\Vect_{i=1}^N\mathcal{Y}} = \inner{\underbrace{f}_{\in\mathcal{H}_{K, \seq{z}}^\perp}, \underbrace{\sum_{i=1}^{N+U}K_{x_i}V^\adjoint y_i}_{\in\mathcal{H}_{K, \seq{z}}}}_{\mathcal{H}_K} \hiderel{=} 0
+\end{dmath*}
+for all sequences $(y_i)_{i=1}^N$, since $V^\adjoint y_i\in\mathcal{U}$. Hence,
+\begin{dmath}
+\label{eq:null1}
+(Vf(x_i))_{i=1}^{N}=0
+\end{dmath}
+In the same way,
+\begin{dmath*}
+\sum_{i=1}^{N+U}\inner{K_{x_i}^* f, u_i}_{\mathcal{U}} \hiderel{=} \inner{\underbrace{f}_{\in\mathcal{H}_{K, \seq{z}}^\perp}, \underbrace{\sum_{j=1}^{N+U}K_{x_j}u_j}_{\in\mathcal{H}_{K, \seq{z}}}}_{\mathcal{H}_K} \hiderel{=} 0.
+\end{dmath*}
+for all sequences $(u_i)_{i=1}^{N+U}\in\mathcal{U}^{N+U}$. As a result,
+\begin{dmath}
+\label{eq:null2}
+(f(x_i))_{i=1}^{U+N}=0.
+\end{dmath}
+Now for an arbitrary $f\in\mathcal{H_K}$, consider the orthogonal decomposition $f=f^{\perp}+f^{\parallel}$, where $f^{\perp}\in\mathcal{H}_{K, \seq{z}}^\perp$ and $f^{\parallel}\in\mathcal{H}_{K, \seq{z}}$. Then since $\norm{f^{\perp}+f^{\parallel}}_{\mathcal{H}_K}^2=\norm{f^{\perp}}_{\mathcal{H}_K}^2+\norm{f^{\parallel}}_{\mathcal{H}_K}^2$, \cref{eq:null1} and \cref{eq:null2} shows that if $\lambda_K\ge 0$, clearly then
+\begin{dmath*}
+J_{\lambda_K}(f)=J_{\lambda_K}\left(f^{\perp}+f^{\parallel}\right) \hiderel{\ge} J_{\lambda_K}\left(f^{\parallel}\right)
+\end{dmath*}
+The last inequality holds only when $\norm{f^{\perp}}_{\mathcal{H}_K}=0$, that is when $f^{\perp}=0$. As a result since the minimizer of $J_{\lambda_K}$is unique and attained, it must lies in $\mathcal{H}_{K, \seq{z}}$.
+\end{proof}
+The representer theorem show that minimizing a functional in a \acs{vv-RKHS} yields a solution which depends on all the points in the training set. Assuming that for all $x_i$, $x\in\mathcal{X}$ and for all $u_i\in\mathcal{Y}$ it takes time $O(P)$, to compute $K(x_i, x)u_i$, making a prediction using the representer theorem take $O(2P)$. Obviously If $\mathcal{Y}=\mathbb{R}^p$, Then $P=O(p^2)$ thus making a prediction cost $O(2p^2)$ operations.
+\paragraph{}
+Instead learning a model $f$ that depends on all the points of the training set, we would like to learn a parametric model of the form
+$\tildef{\omega}(x)=\tildePhi{\omega}(x)^\adjoint \theta$, where $\theta$ lives in some redescription space $\tildeH{\omega}$. We are interested in finding a parameter vector $\theta_{\seq{z}}$ such that
+\begin{dmath}
+\label{eq:argmin_applied}
+\theta_{\seq{z}}=\argmin_{\theta\in \tildeH{\omega}} \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\tildeH{\omega}}
+\end{dmath}
+
+\begin{corollary}[\acs{ORFF} representer]
+\label{cr:orff_representer}
+Let $\tildeK{\omega}$ be an \acl{OVK} such that for all $x$, $z\in\mathcal{X}$, $\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z) = \widetilde{K}(x,z)$ where $\widetilde{K}$ is a $\mathcal{U}$-Mercer \acs{OVK} and $\mathcal{H}_{\tildeK{\omega}}$ its corresponding $\mathcal{U}$-Reproducing kernel Hilbert space.
+\paragraph{}
+Let $V:\mathcal{U}\to\mathcal{Y}$ be a bounded linear operator and let $c:\mathcal{Y}\times\mathcal{Y}\to\overline{\mathbb{R}}$ be a cost function such that $L(x, \widetilde{f}, y)=c(V\widetilde{f}(x), y)$ is a proper convex lower semi-continuous function in $\widetilde{f}\in\mathcal{H}_{\tildeK{\omega}}$ for all $x\in\mathcal{X}$ and all $y\in\mathcal{Y}$.
+\paragraph{}
+Eventually let $\lambda_K\in\mathbb{R}_{>0}$ and $\lambda_M \in \mathbb{R}_+$ be two regularization hyperparameters and $(M_{ik})_{i,k=1}^{N+U}$ be a sequence of data dependent bounded linear operators in $\mathcal{L}(\mathcal{U})$, such that
+\begin{dmath*}
+\sum_{i,j=1}^{N+U} \inner{u_i, M_{ik}u_k} \ge 0 \condition{$\forall (u_i)_{i=1}^{N+U}\in\mathcal{U}^{N+U}$ and $M_{ik}=M_{ki}^*$}.
+\end{dmath*}
+The solution $f_{\seq{z}}\in\mathcal{H}_{\tildeK{\omega}}$ of the regularized optimization problem
+\begin{dmath}
+\label{eq:argmin_RKHS_rand}
+\widetilde{f}_{\seq{z}} = \argmin_{\widetilde{f}\in\mathcal{H}_{\tildeK{\omega}}} \frac{1}{N}\displaystyle\sum_{i=1}^N c\left(V\widetilde{f}(x_i), y_i\right) + \frac{\lambda_K}{2}\norm{\widetilde{f}}^2_{\tildeK{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\widetilde{f}(x_i), M_{ik}\widetilde{f}(x_k)}_{\mathcal{U}}
+\end{dmath}
+has the form $\widetilde{f}_{\seq{z}}=\tildePhi{\omega}(\cdot)^\adjoint\theta_{\seq{z}}$, where $\theta_{\seq{z}}\in (\Ker \tildeW{\omega})^{\perp}$ and
+\begin{dmath}
+\theta_{\seq{z}}=\argmin_{\theta\in \tildeH{\omega}} \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\tildeH{\omega}}.
+\end{dmath}
+\end{corollary}
+\begin{proof}
+Since $\tildeK{\omega}$ is an operator-valued kernel, from \cref{th:representer}, \cref{eq:argmin_RKHS_rand} has a solution of the form
+\begin{dmath*}
+\widetilde{f}_{\seq{z}} = \sum_{i=1}^{N+U} \tildeK{\omega}(\cdot, x_i)u_i \condition{$u_i \hiderel{\in} \mathcal{U}$, $x_i \hiderel{\in}\mathcal{X}$}
+= \sum_{i=1}^N \tildePhi{\omega}(\cdot)^\adjoint \tildePhi{\omega}(x_i)u_i
+\hiderel{=} \tildePhi{\omega}(\cdot)^\adjoint \underbrace{\left(\sum_{i=1}^{N+U}\tildePhi{\omega}(x_i)u_i\right)}_{=\theta\in \left(\Ker \tildeW{\omega}\right)^\perp\subset \tildeH{\omega}}.
+\end{dmath*}
+Let
+\begin{dmath*}
+\label{eq:argmin_theta}
+\theta_{\seq{z}}=\argmin_{\theta\in\left(\Ker \tildeW{\omega}\right)^\perp} \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\tildePhi{\omega}(\cdot)^\adjoint\theta}^2_{\tildeK{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{U}}.
+\end{dmath*}
+Since $\theta\in(\Ker \tildeW{\omega})^\perp$ and $W$ is an isometry from $(\Ker \tildeW{\omega})^\perp\subset \tildeH{\omega}$ onto $\mathcal{H}_{\tildeK{\omega}}$, we have $\norm{\tildePhi{\omega}(\cdot)^\adjoint\theta}^2_{\tildeK{\omega}} = \norm{\theta}^2_{\tildeH{\omega}}$. Hence
+\begin{dmath*}
+\theta_{\seq{z}}=\argmin_{\theta\in\left(\Ker \tildeW{\omega}\right)^\perp} \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\tildePhi{\omega}(x_i)^\adjoint \theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{U}}.
+\end{dmath*}
+Finding a minimizer $\theta_{\seq{z}}$ over $\left(\Ker \tildeW{\omega}\right)^\perp$ is not the same than finding a minimizer over $\tildeH{\omega}$. Although in both cases Mazur-Schauder's theorem guarantee that the respective minimizers are unique, they might not be the same. Since $\tildeW{\omega}$ is bounded, $\Ker \tildeW{\omega}$ is closed, so that we can perform the decomposition $\tildeH{\omega}=\left(\Ker \tildeW{\omega}\right)^\perp\oplus \left(\Ker \tildeW{\omega}\right)$. Then clearly by linearity of $W$ and the fact that for all $\theta^{\parallel}\in\Ker \tildeW{\omega}$, $\tildeW{\omega}\theta^{\parallel}=0$, if $\lambda > 0$ we have
+\begin{dmath*}
+\theta_{\seq{z}}=\argmin_{\theta\in\tildeH{\omega}} \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{U}}
+\end{dmath*}
+Thus
+\begin{dmath*}
+\theta_{\seq{z}}=\argmin_{\substack{\theta^{\perp}\in\left(\Ker \tildeW{\omega}\right)^\perp, \\ \theta^{\parallel}\in\Ker \tildeW{\omega}}} \frac{1}{N}\sum_{i=1}^Nc\left(V\left(\tildeW{\omega}\theta^{\perp}\right)(x)+\underbrace{V\left(\tildeW{\omega}\theta^{\parallel}\right)(x)}_{=0\enskip\text{for all}\enskip \theta^{\parallel} }, y_i\right) \\ + \frac{\lambda_K}{2}\norm{\theta^\perp}^2_{\tildeH{\omega}} + \underbrace{\frac{\lambda}{2}\norm{\theta^{\parallel}}^2_{\tildeH{\omega}}}_{=0 \enskip\text{only if}\enskip \theta^{\parallel}=0} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta^{\perp}, M_{ik}\left(\tildeW{\omega}\theta^{\perp}\right)(x_k)}_{\mathcal{U}} \\
++ \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\underbrace{\left(\tildeW{\omega}\theta^{\parallel}\right)(x_i)}_{=0\enskip\text{for all}\enskip \theta^{\parallel} }, M_{ik}\left(\tildeW{\omega}\theta^{\perp}\right)(x_k)}_{\mathcal{U}}
+\\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\left(\tildeW{\omega}\theta^{\perp}\right)(x_i), M_{ik}\underbrace{\left(\tildeW{\omega}\theta^{\parallel}\right)(x_k)}_{=0\enskip\text{for all}\enskip \theta^{\parallel} }}_{\mathcal{U}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\underbrace{\left(\tildeW{\omega}\theta^{\parallel}\right)(x_i)}_{=0\enskip\text{for all}\enskip \theta^{\parallel} }, M_{ik}\underbrace{\left(\tildeW{\omega}\theta^{\parallel}\right)(x_k)}_{=0\enskip\text{for all}\enskip \theta^{\parallel} }}_{\mathcal{U}}.
+\end{dmath*}
+Thus
+\begin{dmath*}
+\theta_{\seq{z}}=\argmin_{\theta^{\perp}\in\left(\Ker \tildeW{\omega}\right)^\perp}
+\frac{1}{N}\sum_{i=1}^Nc\left(V\left(\tildeW{\omega}\theta^{\perp}\right)(x), y_i\right) + \frac{\lambda_K}{2}\norm{\theta^\perp}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta^{\perp}, M_{ik}\left(\tildeW{\omega}\theta^{\perp}\right)(x_k)}_{\mathcal{U}}.
+\end{dmath*}
+Hence minimizing over $\left(\Ker \tildeW{\omega}\right)^\perp$ or $\tildeH{\omega}$ is the same when $\lambda_K > 0$. Eventually,
+% Eventually for any outcome of $\omega_j \sim \probability_{\dual{\Haar},\rho}$ \iid,
+\begin{dmath*}
+\theta_{\seq{z}}=\argmin_{\theta\in\tildeH{\omega}} \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\tildePhi{\omega}(x_i)^\adjoint\theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{U}}
+=\argmin_{\theta \in \tildeH{\omega}} \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint\theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner*{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\tildeH{\omega}}. \qed
+\end{dmath*}
+\end{proof}
+This shows that when $\lambda_K>0$ the solution of \cref{eq:argmin_u} with the approximated kernel $K(x,z) \approx \tildeK{\omega}(x,z) = \tildePhi{\omega}(x)^\adjoint\tildePhi{\omega}(z)$ is the same than the solution of \cref{eq:argmin_theta} up to a transformation. Namely, if $u_{\seq{z}}$ is the solution of \cref{eq:argmin_u}, $\theta_{\seq{z}}$ is the solution of \cref{eq:argmin_theta} and $\lambda_K>0$ we have
+\begin{dmath*}
+\theta_{\seq{z}} = \sum_{j=1}^{N+U} \tildePhi{\omega}(x_j) u_{\seq{z}} \hiderel{\in}\tildeH{\omega}.
+\end{dmath*}
+If $\lambda_K=0$ we can still find a solution $u_{\seq{z}}$ of \cref{eq:argmin_u}. By construction of the kernel expansion, we have $u_{\seq{z}}\in(\Ker W)^\bot$. However looking at the proof of \cref{cr:orff_representer} we see that $\theta_{\seq{z}}$ might \emph{not} g belong to $(\Ker W)^\bot$. Then we can compute a residual vector
+\begin{dmath*}
+r_{\seq{z}} = \theta_{\seq{z}} - \sum_{j=1}^{N+U} \tildePhi{\omega}(x_j) u_{\seq{z}} \hiderel{\in}\tildeH{\omega}.
+\end{dmath*}
+Then if $r_{\seq{z}}=0$, it means that $\lambda_K$ is large enough for both reprensenter theorem and \acs{ORFF} representer theorem to apply. If $r_{\seq{z}}\neq0$ but $\tildePhi{\omega}(\cdot)^\adjoint r_{\seq{z}} = 0$ means that both $\theta_{\seq{z}}$ and $\sum_{j=1}^{N+U} \tildePhi{\omega}(x_j) u_{\seq{z}}$ are in $(\Ker W)^\bot$, thus the representer theorem fails to find the \say{true} solution over the whole space $\mathcal{H}_K$ but returns a projection onto $\mathcal{H}_{\tildeK{\omega},\seq{z}}$ of the solution. If $r_{\seq{z}} \neq 0$ and $\tildePhi{\omega}(\cdot)^\adjoint r_{\seq{z}} \neq 0$ means that $\theta_{\seq{z}}$ is \emph{not} in $(\Ker W)^\bot$, thus the \acs{ORFF} representer theorem fails to apply. This remark is illustrated by \cref{fig:representer}.
+
+\section{Solution of the empirical risk minimization}
+% We illustrate the ORFF representer theorem (\cref{cr:orff_representer}) on two experiment involving scalar valued kernels.
+
+\subsection{Gradient methods}
+\label{subsec:gradient_methods}
+In order to find a solution to \cref{eq:argmin_theta}, we turn our attention to gradient descent methods. In the following we let
+\begin{dmath}
+\label{eq:cost_functional}
+J_{\lambda_K}(\theta) = \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\tildeH{\omega}}.
+\end{dmath}
+Since the solution of \cref{eq:argmin_theta} is unique when $\lambda_K>0$, a sufficient and necessary condition is that the gradient of $J_{\lambda_K}$ at the minimizer $\theta_{\seq{z}}$ is zero. We use the Frechet derivative, the strongest notion of derivative in Banach spaces\mpar{Here we view the Hilbert space $\mathcal{H}$ (feature space) as a reflexive Banach space.} \cite{conway2013course, kurdila2006convex} wich directly generalizes the notion of gradient to Banach spaces. A function $f:\mathcal{H}_0\to\mathcal{H}_1$ is call Frechet differentiable at $\theta_0\in \mathcal{H}_0$ if there exist a bounded linear operator $A:\mathcal{H}_0\to \mathcal{H}_1$ such that
+\begin{dmath*}
+\lim_{h\to 0} \frac{\norm{f(\theta_0+h)-f(\theta_0)-Ah}_{\mathcal{H}_1}}{\norm{h}_{\mathcal{H}_0}}=0
+\end{dmath*}
+We write
+\begin{dmath*}
+(D_Ff)(\theta_0)\hiderel{=}\derivativeat{f(\theta)}{\theta}{\theta_0}\hiderel{=}A
+\end{dmath*}
+and call it Frechet derivative of $f$ with respect to $\theta$ at $\theta_0$. With mild abuse of notation we write $\derivative{f(\theta_0)}{\theta_0} = \derivativeat{f(\theta)}{\theta}{\theta_0}$. The Frechet derivative is an unbounded linear operator. The chain rule is valid in this context. Namely if a function $f:\mathcal{H}_0\to\mathcal{H}_1$ is Frechet differentiable at $\theta$ and $g:\mathcal{H}_1\to \mathcal{H}_2$ is Frechet differentiable at $f(\theta)$ then $g\circ f$ is Frechet differentiable at $\theta$ and
+\begin{dmath*}
+\lderivative{(g\circ f)(\theta)}{\theta} = \derivative{g(f(\theta))}{f(\theta)} \circ \derivative{f(\theta)}{\theta}.
+\end{dmath*}
+If $f:\mathcal{H}\to\mathbb{R}$ we define the gradient of $f$ as
+\begin{dmath*}
+\nabla_{\theta} f(\theta) = \left(\derivative{f(\theta)}{\theta}\right)^\adjoint
+\end{dmath*}
+and in the same way, for a function $f:\mathcal{H}_0\to\mathcal{H}_1$ the jacobian of $f$ as
+\begin{dmath*}
+\jacobian_{\theta} f(\theta) = \left(\derivative{f(\theta)}{\theta}\right)^\adjoint.
+\end{dmath*}
+In this context if $f:\mathcal{H}_0\to\mathcal{H}_1$ and $g:\mathcal{H}_1\to\mathbb{R}$ the chain rule reads
+\begin{dmath*}
+\nabla_{\theta} (g\circ f)(\theta) = \jacobian_{\theta}f(\theta) \circ \nabla_{f(\theta)}g(f(\theta)).
+\end{dmath*}
+We consider that $\mathcal{U}$ and $\mathcal{U}'$ are both isometrically isomorphic to some $\ell^2$ such that $\nabla_{\theta} \norm{\theta}^2 = 2\theta$. By linearity and applying the chaine rule to \cref{eq:argmin_theta} and since $M_{ik}^\adjoint = M_{ki}$ for all $i$, $k\in\mathbb{N}_{N+U}$, we have
+\begin{dgroup*}
+\begin{dmath*}
+\nabla_{\theta}c\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right)= \tildePhi{\omega}(x_i)V^\adjoint \left(\lderivativeat{c\left(y, y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint,
+\end{dmath*}
+\begin{dmath*}
+\nabla_{\theta}\inner*{\tildePhi{\omega}(x_i)^\adjoint \theta, M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\mathcal{U}}=\tildePhi{\omega}(x_i)\left(M_{ik}+M_{ki}\right)\tildePhi{\omega}(x_k)^\adjoint \theta,
+\end{dmath*}
+\begin{dmath*}
+\nabla_{\theta}\norm{\theta}^2_{\tildeH{\omega}}=2\theta.
+\end{dmath*}
+\end{dgroup*}
+Provided that $c(y,y_i)$ is Frechet differentiable \wrt~$y$, for all $y$ and $y_i\in\mathcal{Y}$ we have
+\begin{dmath*}
+\nabla_{\theta} J_{\lambda_K}(\theta) = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint \left(\lderivativeat{c\left(y, y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint + \lambda_K\theta + \lambda_M\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta
+\end{dmath*}
+Therefore after factorization, considering $\lambda_K > 0$,
+\begin{dmath*}
+\nabla_{\theta} J_{\lambda_K}(\theta) = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint \left(\lderivativeat{c\left(y, y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint + \lambda_K\left(I_{\tildeH{\omega}} + \frac{\lambda_M}{\lambda_K}\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \right)\theta
+\end{dmath*}
+We note the quantity $\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)}=I_{\tildeH{\omega}} + \frac{\lambda_M}{\lambda_K}\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \in \mathcal{L}(\Vect_{j=1}^D\mathcal{U}')$ so that
+\begin{dmath*}
+\nabla_{\theta} J_{\lambda_K}(\theta) = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint \left(\lderivativeat{c\left(y, y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint + \lambda_K\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)}\theta
+\end{dmath*}
+\begin{example}[Naive close form for the squared error cost]
+Consider the cost function defined for all $y$, $y'\in\mathcal{Y}$ by $c(y,y')=\norm{y-y}_2^2$. Then
+\begin{dmath*}
+\left(\lderivativeat{c\left(y, y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint = 2\left(V\tildePhi{\omega}(x_i)^\adjoint \theta-y_i\right).
+\end{dmath*}
+Thus, since the optimal solution $\theta_{\seq{z}}$ verifies $\nabla_{\theta_{\seq{z}}} J_{\lambda_K}(\theta_{\seq{z}}) = 0$ we have
+\begin{dmath*}
+\frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint\left(V\tildePhi{\omega}(x_i)^\adjoint \theta_{\seq{z}}-y_i\right) + \lambda_K\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)}\theta_{\seq{z}}= 0.
+\end{dmath*}
+Therefore,
+\begin{dmath*}
+\left(\frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint V\tildePhi{\omega}(x_i)^\adjoint + \lambda_K\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)}\right)\theta_{\seq{z}} = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint y_i.
+\end{dmath*}
+Suppose that $\mathcal{Y}\subseteq\mathbb{R}^p$, $V:\mathcal{U}\to\mathcal{Y}$ where $\mathcal{U}\subseteq\mathbb{R}^u$ and for all $x\in\mathcal{X}$, $\tildePhi{\omega}(x): \mathbb{R}^{r}\to\mathbb{R}^u$. From this we can derive \cref{alg:close_form} which return the close form solution of \cref{eq:cost_functional} for $c(y,y')=\norm{y-y'}_2^2$.
+\end{example}
+\paragraph{Complexity analysis:}
+\Cref{alg:close_form} constitute our first step toward large-scale learning with operator-valued kernels. We can easily compute the time complexity of \cref{alg:close_form} when all the operators act on finite dimensional Hilbert spaces. Suppose that $u=\dim(\mathcal{U})<+\infty$ and $u'=\dim(\mathcal{U}')<+\infty$ and for all $x\in\mathcal{X}$, $\tildePhi{\omega}(x):\mathcal{U}'\to\tildeH{\omega}$ where $r=\dim(\tildeH{\omega})<+\infty$ is the dimension of the redescription space $\tildeH{\omega}=\mathbb{R}^{r}$. Since $u$, $u'$, and $r<+\infty$, we view the operators $\tildePhi{\omega}(x)$, $V$ and $\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)}$ as matrices. Computing $V^\adjoint V$ cost $O_t(u^2p)$. Step 1 costs $O_t(r^2u + ru^2)$. Steps 5 (optional) has the same cost except that the sum is done over all pair of $N+U$ points thus it costs $O_t((N+U)^2(r^2u + r u^2))$. Steps 7 costs $O_t(N(ru + up))$. For step 8, the naive inversion of the operator costs $O_t(r^3)$. Eventually the overall complexity of \cref{alg:close_form} is
+\begin{dmath*}
+O_t\left(ru(r + u) \begin{cases} (N+U)^2 & \text{if $\lambda_M > 0$} \\ N & \text{if $\lambda_M = 0$} \end{cases}+ r^3 + Nu(r+p)
+\right),
+\end{dmath*}
+while the space complexity is $O_s(r^2)$.
+\afterpage{%
+\begin{center}
+\begin{algorithm2e}[H]
+    \label{alg:close_form}
+    \SetAlgoLined
+    \Input{\begin{itemize}
+    \item $\seq{s}=(x_i, y_i)_{i=1}^N\in\left(\mathcal{X}\times\mathbb{R}^p\right)^N$ a sequence of supervised training points,
+    \item $\seq{u}=(x_i)_{i=N+1}^{N+U}\in\mathcal{X}^{U}$ a sequence of unsupervised training points,
+    \item $\tildePhi{\omega}(x_i) \in \left(\mathbb{R}^u, \mathbb{R}^{r}\right)$ a feature map defined for all $x_i\in\mathcal{X}$,
+    \item $(M_{ik})_{i,k=1}^{N+U}$ a sequence of data dependent operators (see \cref{cr:orff_representer}),
+    \item $V \in \mathcal{L}\left(\mathbb{R}^u, \to \mathbb{R}^p\right)$ a combination operator,
+    \item $\lambda_K \in\mathbb{R}_{>0}$ the Tychonov regularization term,
+    \item $\lambda_M \in\mathbb{R}_+$ the manifold regularization term.
+    \end{itemize}}
+    \Output{A model
+    \begin{dmath*}
+    h:\begin{cases} \mathcal{X} \to \mathbb{R}^p \\ x\mapsto\tildePhi{\omega}(x)^T\theta_{\seq{z}},\end{cases}
+    \end{dmath*}
+    such that $\theta_{\seq{z}}$ minimize \cref{eq:cost_functional}, where $c(y,y')=\norm{y-y'}_2^2$.}
+    $\mathbf{P} \gets \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^T V\tildePhi{\omega}(x_i)^T \in\mathcal{L}(\mathbb{R}^{r}, \mathbb{R}^{r})  $\;
+    \uIf{$\lambda_M = 0$}{
+        $\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)} \gets I_{r} \in\mathcal{L}(\mathbb{R}^{r}, \mathbb{R}^{r})$\;
+    }
+    \Else{
+        $\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)} \gets \left(I_{r} + \frac{\lambda_M}{\lambda_K}\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^T \right) \in\mathcal{L}(\mathbb{R}^{r}, \mathbb{R}^{r}) $\;
+    }
+    $\mathbf{Y} \gets \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^T y_i \in \mathbb{R}^{r} $\;
+    $\theta_{\seq{z}} \gets \left(P + \lambda_K\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)}\right)^{-1}Y \in \mathbb{R}^{r} $\;
+    \Return $h: x \mapsto \tildePhi{\omega}(x)^T\theta_{\seq{z}}$\;
+    \caption{Naive close form for the squared error cost.}
+\end{algorithm2e}
+\end{center}}
+This complexity is to compare with the kernelized solution proposed by \citet{minh2016unifying}. Let
+\begin{dmath*}
+\mathbf{K}:\begin{cases}
+\mathcal{U}^{N+U} \to \mathcal{U}^{N+U} \\
+u\mapsto\Vect_{i=1}^{N+U}\sum_{j=1}^{N+U}K(x_i, x_j)u_j
+\end{cases}
+\end{dmath*}
+and
+\begin{dmath*}
+\mathbf{M}:\begin{cases}
+\mathcal{U}^{N+U} \to \mathcal{U}^{N+U} \\
+u\mapsto\Vect_{i=1}^{N+U}\sum_{k=1}^{N+U}M_{ik}u_k.
+\end{cases}
+\end{dmath*}
+When $\mathcal{U}=\mathbb{R}$,
+\begin{dmath*}
+    \mathbf{K}=\begin{pmatrix} K(x_1, x_1) & \hdots & K(x_1, x_{N+U})
+    \\ \vdots & \ddots & \vdots \\  K(x_{N+U}, x_1) & \hdots & K(x_{N+U}, x_{N+U}) \end{pmatrix}
+\end{dmath*}
+is called the Gram matrix of $K$. When $\mathcal{U}=\mathbb{R}^p$, $\mathbf{K}$ is a matrix-valued Gram matrix of size $u(N+U)\times u(N+U)$ where each entry $\mathbf{K}_{ij}\in\mathcal{L}(\mathbb{R}^u)$. When $\mathcal{U}=\mathbb{R}^u$, $\mathbf{M}$ can also be seen as a matrix-valued matrix where each entry is $M_{ik}\in\mathcal{L}(\mathbb{R}^u)$. We also introduce the operators $\mathbf{C}^T \mathbf{C}\colonequals I_{N+U} \otimes (C^T C)$ and
+\begin{dmath*}
+\mathbf{P}:\begin{cases}
+\mathcal{U}^{N+U} \to \mathcal{U}^{N+U} \\
+u\mapsto \left(\Vect_{j=1}^Nu_j\right) \oplus \left(\Vect_{j=N+1}^{N+U}0\right)
+\end{cases}
+\end{dmath*}
+The operator $\mathbf{P}$ is a projection that sets all the terms $u_j$, $N < j \le N + U$ of $u$ to zero. When $\mathcal{U}=\mathbb{R}^u$ it can also be seen as the block matrix of size $u(N+U) \times u(N + U)$ and
+\begin{dmath*}
+    \mathbf{P}=\begin{pmatrix}  & & & 0 & \hdots & 0 \\ & I_u \otimes I_{N} & & \vdots & \ddots & \vdots \\ & & & 0 & \hdots & 0 \\
+    0 & \hdots & 0 & 0 & \hdots & 0 \\
+    \vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\
+    0 & \hdots & 0 & 0 & \hdots & 0
+    \end{pmatrix}
+\end{dmath*}
+Then the equivalent kernelized solution $u_{\seq{z}}$ of \cref{th:representer} is given by \cite{minh2016unifying}
+\begin{dmath*}
+\left(\frac{1}{N}\mathbf{C}^T \mathbf{C} \mathbf{P} \mathbf{K} + \lambda_M \mathbf{M} \mathbf{K} + \lambda_K I_{\Vect_{i=1}^{N+U}\mathcal{U}}\right)u_{\seq{z}}=\left(\Vect_{i=1}^N C^T y_i\right) \oplus \left(\Vect_{i=N+1}^{N+U} 0 \right).
+\end{dmath*}
+which has time complexity $O_t(((N+U)u)^3+ Nup)$ and space complexity $O_s(((N+U)u)^2)$. Hence \cref{alg:close_form} is better that its kernelized counterpart when $r=2Du'$ is small compare to $(N+U)u$. Roughly speaking it is better to use \cref{alg:close_form} when the number of features, $r$, required is small compared to the number of training point. Notice that computing the data dependent norm (manifold regularization) is expensive. Indeed when $\lambda_M=0$, \cref{alg:close_form} has a linear complexity with respect to the number of supervised training points $N$ while the complexity becomes quatratic in the number of supervised and unsupervised training points $N+U$ when $\lambda_M>0$. Moreover suppose that $\lambda_M=0$, $\mathcal{U}=\mathbb{R}^p$ and $\mathcal{U}'=\mathbb{R}^{p}$ and the combination operator is $V=I_{p}$. Then the complexity of \cref{alg:close_form} boils down to
+\begin{dmath*}
+O_t(p^3(ND^2+D^3)),
+\end{dmath*}
+which is annoying. Indeed learning $p$ independent models with scalar Random Fourier Features would cost $O_t(p(ND^2+D^3))$, meaning that learning vector-valued function has increase the (expected) complexity from $p$ to $p^3$. However in some cases we can drastically reduce the complexity by viewing the feature-maps as linear operators rather than matrices.
+
+\afterpage{%
+\begin{landscape}
+\begin{figure}[tb]
+\centering
+\resizebox{\textheight}{!}{%
+\input{../gfx/representer.pgf}
+}
+\caption[ORFF Representer theorem]{ORFF Representer theorem. We trained a first model named $\tildeK{\omega}$ following}
+\label{fig:representer}
+\end{figure}
+\end{landscape}}
+
+\subsection{Efficient linear operators}
+When developping \cref{alg:close_form} we considered that the feature map $\tildePhi{\omega}(x)$ was a matrix from $\mathbb{R}^u$ to $\mathbb{R}^{r}$ for all $x\in\mathcal{X}$, and therefore that computing $\tildePhi{\omega}(x)^T \theta$ has a time complexity of $O(r^2u)$. While this holds true in the most generic senario, in many cases the feature maps presents some structure or sparsity allowing to reduce the computational cost of evaluating the feature map. We focus on the \acl{ORFF} given by \cref{alg:ORFF_construction}, developped in \cref{subsec:building_ORFF} and \cref{subsec:examples_ORFF} and treat the decomposable kernel, the curl-free kernel and the divergence-free kernel as an example. We recall that if $\mathcal{U}'=\mathbb{R}^{u'}$ and $\mathcal{U}=\mathbb{R}^u$, then $\tildeH{\omega}=\mathbb{R}^{2Du'}$ thus the \acl{ORFF}s given in \cref{ch:operator-valued_random_fourier_features} have the form
+\begin{dmath*}
+\begin{cases}\tildePhi{\omega}(x) \in\mathcal{L}\left(\mathbb{R}^u, \mathbb{R}^{2Du'}\right) &:  y \mapsto \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^T y \\ \tildePhi{\omega}(x)^T \in\mathcal{L}\left(\mathbb{R}^{2Du'}, \mathbb{R}^u\right) &: \theta \mapsto \frac{1}{\sqrt{D}} \sum_{j=1}^D \pairing{x, \omega_j}B(\omega_j)\theta_j \end{cases},
+\end{dmath*}
+where $\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \iid~and $B(\omega_j)\in\mathcal{L}\left(\mathbb{R}^u,\mathbb{R}^{u'}\right)$ for all $\omega_j\in\dual{\mathcal{X}}$. Hence the \acl{ORFF} can be seen as the block matrix
+\begin{dmath*}
+\tildePhi{\omega}(x) = \begin{pmatrix} \cos\inner{x,\omega_1}B(\omega_1)^T \\
+\sin\inner{x,\omega_1}B(\omega_1)^T \\
+\vdots \\
+\cos\inner{x,\omega_D}B(\omega_D)^T \\
+\sin\inner{x,\omega_D}B(\omega_D)^T
+\end{pmatrix}\hiderel{\in}\mathcal{L}\left(\mathbb{R}^u, \mathbb{R}^{2Du'}\right)\condition{$\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \iid.}
+\end{dmath*}
+\subsection{Decomposable kernel}
+\subsection{Curl-free kernel}
+\subsection{Divergence-free kernel}
+
+\clearpage
+%----------------------------------------------------------------------------------------
+\section{Conclusions}
+\label{sec:conclusions}
+
+\chapterend

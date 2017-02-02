@@ -18,7 +18,7 @@ $\iu$ & Unit pure imaginary number $\sqrt{-1}$. \\
 $\ec$ & Euler constant. \\
 $\inner{\cdot,\cdot}$ & Euclidean inner product. \\
 $\norm{\cdot}$ & Euclidean norm. \\
-$\mathcal{X}$ & Input space (). \\
+$\mathcal{X}$ & Input space. \\
 $\dual{\mathcal{X}}$ & The Pontryagin dual of $\mathcal{X}$. \\
 $\mathcal{Y}$ & Output space (Hilbert space). \\
 $\mathcal{H}$ & Feature space (Hilbert space). \\
@@ -31,10 +31,8 @@ $\mathcal{L}(\mathcal{Y})$ & The set of bounded linear operator from a Hilbert s
 $\mathcal{L}_{+}(\mathcal{Y})$ & The set of non-negative bounded linear operator from a Hilbert space $\mathcal{H}$ to itself. \\
 $\mathcal{B}(\mathcal{X})$ & Borel $\sigma$-algebra on $\mathcal{X}$. \\
 $\mu(\mathcal{X})$ & A scalar positive measure of $\mathcal{X}$. \\
-$p_\mu(x)$ & The Radon-Nikodym derivative of $\mu$ \wrt~the Lebesgue measure. \\
-$dx$, $d\omega$ & The canonical Haar measure of the \acs{LCA} group $(\mathcal{X},\mathcal{B}(\mathcal{X}))$. (resp. $(\dual{\mathcal{X}}, \mathcal{B}(\dual{\mathcal{X}})$). \\
-$L^p(\mathcal{X},dx)$ & The Banach space of $\abs{\cdot}^p$-integrable function from $(\mathcal{X},\mathcal{B}(\mathcal{X}),dx)$ to $\mathbb{C}$. \\
-$L^p(\mathcal{X},dx;\mathcal{Y})$ & The Banach space of  $\norm{\cdot}_{\mathcal{Y}^p}$ (Bochner)-integrable function from $(\mathcal{X},\mathcal{B}(\mathcal{X}), dx)$ to $\mathcal{Y}$. \\
+$L^p(\mathcal{X}, \mu)$ & The Banach space of $\abs{\cdot}^p$-integrable function from $(\mathcal{X},\mathcal{B}(\mathcal{X}), \mu)$ to $\mathbb{C}$. \\
+$L^p(\mathcal{X}, \mu;\mathcal{Y})$ & The Banach space of  $\norm{\cdot}_{\mathcal{Y}^p}$ (Bochner)-integrable function from $(\mathcal{X},\mathcal{B}(\mathcal{X}), \mu)$ to $\mathcal{Y}$. \\
 \bottomrule
 \end{tabularx}
 \label{table:notations}
@@ -47,6 +45,18 @@ $L^p(\mathcal{X},dx;\mathcal{Y})$ & The Banach space of  $\norm{\cdot}_{\mathcal
 %----------------------------------------------------------------------------------------
 \section{On large-scale learning}
 \label{sec:on_large-scale_learning}
+
+\section{History and state of the art of large scale learning with kernels}
+\label{sec:on_large-scale_learning}
+\subsection{Introduction to kernel methods}
+
+\subsection{Quadratic programing, subsampling}
+
+\subsection{Gradient descents}
+
+\subsection{Mercer Theorem, Nystr\"om method and feature maps}
+
+\subsection{Recent extensions}
 
 %----------------------------------------------------------------------------------------
 \section{Elements of abstract harmonic analysis}
@@ -76,7 +86,7 @@ for any compact set $K\in\mathcal{B}(\mathcal{X})$.
 \Haar(E)=\inf \Set{\Haar(U) | E\subseteq U}
 \end{dmath*}
 For any open set $U$.
-\item The measure $dx$ is inner regular on open sets $E$.
+\item The measure $\Haar$ is inner regular on open sets $E$.
 \begin{dmath*}
 \Haar(E)=\sup\Set{\Haar(K) | K\subseteq E},
 \end{dmath*}
@@ -456,7 +466,7 @@ Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{Y}$ be a reproducing kernel where
 \begin{proof}
 From \cref{pr:characterization_mercer_kernels} $K$ is a $\mathcal{Y}$-Mercer kernel if and only if $\mathcal{H}_K\subset \mathcal{C}(\mathcal{X};\mathcal{Y})$. Applying \cref{lm:separability} of \cite{carmeli2006vector}, we have that $\mathcal{H}_K$ is separable. Thus since $\mathcal{H}_K$ is also a Hilbert space it has a countable orthonormal basis.
 \end{proof}
-An important consequence is that if $K$ is a $\mathcal{Y}$-Mercer and $\mathcal{X}$ and $\mathcal{Y}$ are separable then $\mathcal{H}_K$ is isometrically isomorphic to $\ell^2$.
+An important consequence is that if $K$ is a $\mathcal{Y}$-Mercer and $\mathcal{X}$ and $\mathcal{Y}$ are separable then $\mathcal{H}_K$ and any resdescription is isometrically isomorphic to $\ell^2$.
 
 %----------------------------------------------------------------------------------------
 \subsection{Shift-Invariant operator-valued kernels}
@@ -566,7 +576,7 @@ and the \emph{curl-free} kernel as %
 \begin{dmath*}\label{curl-def}
 K^{curl}(x,z)\hiderel{=}K_0^{curl}(\delta)=-\nabla\nabla^T k_0(\delta),
 \end{dmath*} %
-where $\nabla\nabla^T$ is the Hessian operator and $\Delta$ is the Laplacian operator. %
+where $\nabla$ is the gradient operator\mpar{See \cref{subsec:gradient_methods} for the formal definition of the operator $\nabla$.}, $\nabla\nabla^T$ is the Hessian operator and $\Delta$ is the Laplacian operator. %
 \end{definition}
 Although taken separately these kernels are not universal, a convex combination of the curl-free and divergence-free kernels allows to learn any vector field that satisfies the Helmholtz decomposition theorem \citep{Macedo2008, Baldassare2012}.
 

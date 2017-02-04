@@ -17,14 +17,15 @@ before_install:
   - brew update
   - brew outdated cmake || brew upgrade cmake
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh
-    chmod +x miniconda.sh && ./miniconda.sh -b
+  - chmod +x miniconda.sh
+  - ./miniconda.sh -b
   - export PATH=$HOME/miniconda/bin:$PATH
   - conda update --yes conda
   - conda install --yes numpy, scipy, matplotlib, sklearn
   - popd
 
 script:
-  - chmod u+x compile
+  - chmod +x compile
   - ./compile -f
 
 after_success:

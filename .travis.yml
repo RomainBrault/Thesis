@@ -1,25 +1,27 @@
+sudo: false
 language: python
 os: osx
 osx_image: xcode8.2
 
-python:
-  - "3.5"  # Anaconda python
-
 cache:
   directories:
     - $HOME/Library/Caches/Homebrew
+    - $HOME/miniconda
 
 branches:
   only:
     - master
 
 before_install:
+  - pushd $HOME
   - brew update
   - brew outdated cmake || brew upgrade cmake
-  - pip install numpy
-  - pip install scipy
-  - pip install matplotlib
-  - pip install sklearn
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh
+    chmod +x miniconda.sh && ./miniconda.sh -b
+  - export PATH=$HOME/miniconda/bin:$PATH
+  - conda update --yes conda
+  - conda install --yes numpy, scipy, matplotlib, sklearn
+  - popd
 
 script:
   - chmod u+x compile

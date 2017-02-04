@@ -1,3 +1,5 @@
+%!TEX root = ../../ThesisRomainbrault.tex
+
 \section{Learning with ORFF}
 \label{sec:learning_with_operator-valued_random-fourier_features}
 We now turn our attention to learning function with an ORFF model that approximate an OVK model.
@@ -111,7 +113,7 @@ J(f)\ge J(f_0) + \lambda\left(\norm{f}-\norm{f_0}\right) + \inner{f - f_0, f_1}.
 \end{dmath*}
 By the Cauchy-Schwartz inequality, $\inner{f, f_1}\ge - \norm{f}\norm{f_1}$, thus
 \begin{dmath*}
-J(f)\ge J(f_0) + \lambda\left(\norm{f}-\norm{f_0}\right)  - \norm{f}\norm{f_1} - \inner{f_0, f_1},
+J(f)\ge J(f_0) + \lambda\left(\norm{f}-\norm{f_0}\right) - \norm{f}\norm{f_1} - \inner{f_0, f_1},
 \end{dmath*}
 which tends to infinity as $f$ tends to infinity. Hence $J$ is coercive
 \end{proof}
@@ -214,7 +216,7 @@ If $\lambda_K=0$ we can still find a solution $u_{\seq{z}}$ of \cref{eq:argmin_u
 \begin{dmath*}
 r_{\seq{z}} = \theta_{\seq{z}} - \sum_{j=1}^{N+U} \tildePhi{\omega}(x_j) u_{\seq{z}} \hiderel{\in}\tildeH{\omega}.
 \end{dmath*}
-Then if $r_{\seq{z}}=0$, it means that $\lambda_K$ is large enough for both reprensenter theorem and \acs{ORFF} representer theorem to apply. If $r_{\seq{z}}\neq0$ but $\tildePhi{\omega}(\cdot)^\adjoint r_{\seq{z}} = 0$ means that both $\theta_{\seq{z}}$ and $\sum_{j=1}^{N+U} \tildePhi{\omega}(x_j) u_{\seq{z}}$ are in $(\Ker W)^\bot$, thus the representer theorem fails to find the \say{true} solution over the whole space $\mathcal{H}_K$ but returns a projection onto $\mathcal{H}_{\tildeK{\omega},\seq{z}}$ of the solution. If $r_{\seq{z}} \neq 0$ and $\tildePhi{\omega}(\cdot)^\adjoint r_{\seq{z}} \neq 0$ means that $\theta_{\seq{z}}$ is \emph{not} in $(\Ker W)^\bot$, thus the \acs{ORFF} representer theorem fails to apply. This remark is illustrated by \cref{fig:representer}.
+Then if $r_{\seq{z}}=0$, it mkeans that $\lambda_K$ is large enough for both reprensenter theorem and \acs{ORFF} representer theorem to apply. If $r_{\seq{z}}\neq0$ but $\tildePhi{\omega}(\cdot)^\adjoint r_{\seq{z}} = 0$ means that both $\theta_{\seq{z}}$ and $\sum_{j=1}^{N+U} \tildePhi{\omega}(x_j) u_{\seq{z}}$ are in $(\Ker W)^\bot$, thus the representer theorem fails to find the \say{true} solution over the whole space $\mathcal{H}_K$ but returns a projection onto $\mathcal{H}_{\tildeK{\omega},\seq{z}}$ of the solution. If $r_{\seq{z}} \neq 0$ and $\tildePhi{\omega}(\cdot)^\adjoint r_{\seq{z}} \neq 0$ means that $\theta_{\seq{z}}$ is \emph{not} in $(\Ker W)^\bot$, thus the \acs{ORFF} representer theorem fails to apply. This remark is illustrated by \cref{fig:representer}.
 
 \section{Solution of the empirical risk minimization}
 % We illustrate the ORFF representer theorem (\cref{cr:orff_representer}) on two experiment involving scalar valued kernels.
@@ -372,13 +374,17 @@ O_t(p^3(ND^2+D^3)),
 \end{dmath*}
 which is annoying. Indeed learning $p$ independent models with scalar Random Fourier Features would cost $O_t(p(ND^2+D^3))$, meaning that learning vector-valued function has increase the (expected) complexity from $p$ to $p^3$. However in some cases we can drastically reduce the complexity by viewing the feature-maps as linear operators rather than matrices.
 
+\begin{pycode}[representer]
+sys.path.append('../src/')
+import representer
+
+err = representer.main()
+\end{pycode}
+
 \afterpage{%
 \begin{landscape}
 \begin{figure}[tb]
-\centering
-\resizebox{\textheight}{!}{%
-\input{../gfx/representer.pgf}
-}
+\pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./representer.pgf}}')}
 \caption[ORFF Representer theorem]{ORFF Representer theorem. We trained a first model named $\tildeK{\omega}$ following}
 \label{fig:representer}
 \end{figure}
@@ -390,22 +396,33 @@ When developping \cref{alg:close_form} we considered that the feature map $\tild
 \begin{cases}\tildePhi{\omega}(x) \in\mathcal{L}\left(\mathbb{R}^u, \mathbb{R}^{2Du'}\right) &:  y \mapsto \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^T y \\ \tildePhi{\omega}(x)^T \in\mathcal{L}\left(\mathbb{R}^{2Du'}, \mathbb{R}^u\right) &: \theta \mapsto \frac{1}{\sqrt{D}} \sum_{j=1}^D \pairing{x, \omega_j}B(\omega_j)\theta_j \end{cases},
 \end{dmath*}
 where $\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \iid~and $B(\omega_j)\in\mathcal{L}\left(\mathbb{R}^u,\mathbb{R}^{u'}\right)$ for all $\omega_j\in\dual{\mathcal{X}}$. Hence the \acl{ORFF} can be seen as the block matrix
-\begin{dmath*}
+\begin{dmath}
+\label{eq:matrix_orff}
 \tildePhi{\omega}(x) = \begin{pmatrix} \cos\inner{x,\omega_1}B(\omega_1)^T \\
 \sin\inner{x,\omega_1}B(\omega_1)^T \\
 \vdots \\
 \cos\inner{x,\omega_D}B(\omega_D)^T \\
 \sin\inner{x,\omega_D}B(\omega_D)^T
-\end{pmatrix}\hiderel{\in}\mathcal{L}\left(\mathbb{R}^u, \mathbb{R}^{2Du'}\right)\condition{$\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \iid.}
-\end{dmath*}
+\end{pmatrix}\hiderel{\in}\mathcal{L}\left(\mathbb{R}^u, \mathbb{R}^{2Du'}\right),
+\end{dmath}
+$\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \iid.
 \subsection{Decomposable kernel}
-Recall that if $B\in\mathcal{L}\left(\mathbb{R}^{u'}, \mathbb{R}^u\right)$ is matrix, the operator $\tildePhi{\omega}(x)$ corresponding to the decomposable kernel is
-\begin{dgroup}
+Following \cref{eq:matrix_orff} the feature map associated to the decomposable kernel would be
 \begin{dmath*}
-\tildePhi{\omega}(x)y = \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B^T y
+\tildePhi{\omega}(x) = \begin{pmatrix} \cos\inner{x,\omega_1}B^T \\
+\sin\inner{x,\omega_1}B^T \\
+\vdots \\
+\cos\inner{x,\omega_D}B^T \\
+\sin\inner{x,\omega_D}B^T
+\end{pmatrix}\hiderel{\in}\mathcal{L}\left(\mathbb{R}^u, \mathbb{R}^{2Du'}\right),
+\end{dmath*}
+$\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \iid. Thus evaluating a matrix vector product such as $\tildePhi{\omega}(x)^T\theta$ or $\tildePhi{\omega}(x)y$ have $O_t((2Du')^2u)$ time complexity, which is utterly inefficient\ldots~Indeed, recall that if $B\in\mathcal{L}\left(\mathbb{R}^{u'}, \mathbb{R}^u\right)$ is matrix, the operator $\tildePhi{\omega}(x)$ corresponding to the decomposable kernel is
+\begin{dgroup*}
+\begin{dmath*}
+\tildePhi{\omega}(x)y \hiderel{=} \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B^T y \hiderel{=} \left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}\right)B^T y
 \end{dmath*}
 \begin{dmath*}
-\tildePhi{\omega}(x)^T\theta = \frac{1}{\sqrt{D}} \sum_{j=1}^D \pairing{x, \omega_j}B\theta_j
+\tildePhi{\omega}(x)^T\theta \hiderel{=} \frac{1}{\sqrt{D}} \sum_{j=1}^D \pairing{x, \omega_j}B\theta_j \hiderel{=} B\left(\frac{1}{\sqrt{D}} \sum_{j=1}^D \pairing{x, \omega_j}\theta_j\right)
 \end{dmath*}
 \end{dgroup*}
 \subsection{Curl-free kernel}

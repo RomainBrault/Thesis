@@ -1,0 +1,122 @@
+#!/bin/sh
+#================================================================
+# HEADER
+#================================================================
+#% SYNOPSIS
+#+    ${SCRIPT_NAME} [-ocbfushv]
+#%
+#% DESCRIPTION
+#%    Use this scipt to compile my thesis
+#%
+#% OPTIONS
+#%    -o, --output                  Output folder, default ./bin
+#%    -c, --compiler                pdf latex compiler, default xelatex
+#%    -b, --build                   Build folder, default ./build
+#%    -f, --help                    Force compilation from scratch
+#%    -u, --update                  Pull latest version from git
+#%    -s, --synctex                 Use synctex, default OFF
+#%    -h, --help                    Print this help
+#%    -v, --version                 Print script information
+#%
+#% EXAMPLES
+#%    ${SCRIPT_NAME} -o DEFAULT arg1 arg2
+#%
+#================================================================
+#- IMPLEMENTATION
+#     name            ${SCRIPT_NAME}
+#-    version         0.1
+#-    author          Romain Brault
+#-    copyright       Copyright (c) Romain Brault
+#-    license         GNU General Public License
+#-
+#================================================================
+#  HISTORY
+#     2017/01/01 : RomainBrault : Script creation
+#
+#================================================================
+# END_OF_HEADER
+#================================================================
+
+set -e
+
+# Needed variables
+SCRIPT_HEADSIZE=$(head -200 ${0} |grep -n "^# END_OF_HEADER" | cut -f1 -d:)
+SCRIPT_NAME="$(basename ${0})"
+
+# Usage functions
+usage() { printf "Usage: "; head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e "^#+" | sed -e "s/^#+[ ]*//g" -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g" ; }
+usagefull() { head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e "^#[%+-]" | sed -e "s/^#[%+-]//g" -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g" ; }
+scriptinfo() { head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e "^#-" | sed -e "s/^#-//g" -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g"; }
+
+for arg in "$@"; do
+  shift
+  case "$arg" in
+    "--help")
+        set -- "$@" "-h" ;;
+    "--version")
+        set -- "$@" "-v" ;;
+    "--update")
+        set -- "$@" "-u" ;;
+    "--force")
+        set -- "$@" "-f" ;;
+    "--output")
+        set -- "$@" "-o" ;;
+    "--build")
+        set -- "$@" "-b" ;;
+    "--synctex")
+        set -- "$@" "-s" ;;
+    *)
+        set -- "$@" "$arg" ;;
+  esac
+done
+
+# A POSIX variable
+OPTIND=1         # Reset in case getopts has been used previously in the shell.
+UPDATE=false
+FORCE=false
+OUTPUT=bin
+BUILD=build
+SYNCTEX=OFF
+COMPILER=xelatex
+
+while getopts ":hvufo:b:s" opt; do
+    case "$opt" in
+    h)
+        usagefull; exit 0  ;;
+    v)
+        scriptinfo; exit 0  ;;
+    u)
+        UPDATE=true ;;
+    f)
+        FORCE=true ;;
+    s)
+        SYNCTEX=ON ;;
+    o)
+        OUTPUT=${OPTARG} ;;
+    c)
+        COMPILER=${OPTARG} ;;
+    b)
+        BUILD=${OPTARG} ;;
+    \?)
+        usage; exit 0 ;;
+    esac
+done
+
+if [[ ${UPDATE} = true ]]; then
+    git pull github master
+fi
+if [[ ${FORCE} = true ]]; then
+    rm -rf ${BUILD} || true
+    rm -rf ${OUTPUT} || true
+fi
+mkdir -p ${BUILD}
+cd ${BUILD}
+if [[ ${FORCE} = true ]]; then
+    cmake -DLATEX_OUTPUT_PATH=${OUTPUT} \
+          -DPDFLATEX_COMPILER=${COMPILER} \
+          -DLATEX_USE_SYNCTEX=${SYNCTEX} ..
+    time make -j4 pdf
+else
+    time make -j4 pdf
+fi
+cd ..

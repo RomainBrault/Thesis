@@ -18,12 +18,14 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage{pythontex}
+
 %----------------------------------------------------------------------------------------
 %	CHARACTER ENCODING
 %----------------------------------------------------------------------------------------
 
 % Set the encoding of your files. UTF-8 is the only sensible encoding nowadays. If you can't read äöüßáéçèê∂åëæƒÏ€ then change the encoding setting in your editor, not the line below. If your editor does not support utf8 use another editor!
-% \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
 
 %----------------------------------------------------------------------------------------
 %	DOCUMENT VARIABLES
@@ -34,7 +36,7 @@
 \WarningFilter{scrreprt}{Usage of package `titlesec' together}
 \WarningFilter{scrreprt}{Activating an ugly workaround}
 % Remove drafting to get rid of the '[ Date - classicthesis version 4.0 ]' text at the bottom of every page
-\PassOptionsToPackage{eulerchapternumbers,listings, pdfspacing,subfig,beramono,eulermath,parts}{classicthesis}
+\PassOptionsToPackage{eulerchapternumbers,listings,subfig,beramono,eulermath,parts}{classicthesis}
 % Available options: drafting parts nochapters linedheaders eulerchapternumbers beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc manychapters listings floatperchapter subfig
 
 \newcommand{\myTitle}{Data are not real!\xspace}
@@ -215,7 +217,7 @@ pdftitle={\myTitle},
 pdfauthor={\textcopyright\ \myName, \myUni, \myFaculty},
 pdfsubject={},
 pdfkeywords={},
-pdfcreator={pdfLaTeX},
+pdfcreator={xelatex},
 pdfproducer={LaTeX with hyperref and classicthesis}
 %------------------------------------------------
 }
@@ -336,3 +338,5 @@ pdfproducer={LaTeX with hyperref and classicthesis}
             Contextuals={NoLineFinal,NoLineInitial}},
             Ligatures={Common,Rare,Historic},Alternate=1,
             BoldFont=Hoefler Text Black]{Hoefler Text}
+
+%

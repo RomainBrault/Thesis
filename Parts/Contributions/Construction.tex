@@ -1,3 +1,5 @@
+%!TEX root = ../../ThesisRomainbrault.tex
+
 %----------------------------------------------------------------------------------------
 \section{Motivations}
 \label{sec:motivations}
@@ -502,14 +504,20 @@ We stress out that if $\seq{\omega}=(\omega_j)_{j=1}^D\sim \probability_{\dual{\
 \tildeK{\omega}_e\left(x\groupop z^{-1}\right)=\tildePhi{\omega}(x)^{\adjoint}\tildePhi{\omega}(z)
 \end{dmath*}
 is not \emph{sensus} stricto an \acl{OVK} since it is a random variable (and $\tildeH{\omega}$ is no longer a Hilbert space, since its inner product is a then random variable and not a scalar). However this is not a problem since any outcome of the random sequence $\seq{\omega}$ gives birth to a (different) \acl{OVK}, and $\expectation_{\dual{\Haar},\rho}\tildeK{\omega}$ is an \acs{OVK}. This illustrated by \cref{fig:not_Mercer} where we represented the same function for different realization of $\tildeK{\omega}\approx K$. We generated $250$ points equally separated on the segment $(-1;1)$.
+
+\begin{pycode}[not_mercer]
+sys.path.append('../src/')
+import not_mercer
+
+not_mercer.main()
+\end{pycode}
+
 \begin{figure}[htb]
-\centering
-\resizebox{\textwidth}{!}{%
-\input{../gfx/not_Mercer.pgf}
-}
+\pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./not_Mercer.pgf}}')}
 \caption[Different outcomes of a Gaussian kernel approximation]{Different outcomes of a Gaussian kernel approximation. Top row and bottom row correspond to two different outcomes of $\tildeK{\omega}$, which are \emph{different} \acl{OVK}. However when $D$ tends to infinity, the different outcomes fo $\tildeK{\omega}$ yield the samel \acs{OVK}.}
 \label{fig:not_Mercer}
 \end{figure}
+
 We computed the Gram Matrix of the Gaussian decomposable kernel
 \begin{dmath*}
 K(x,z)_{ij}=\exp\left(-\frac{1}{2(0.1)^2(x_i - x_j)^2}\right)\Gamma \condition{for $i$, $j\in\mathbb{N}_{250}$.}

@@ -6,7 +6,7 @@ osx_image: xcode8.2
 cache:
   directories:
     - $HOME/Library/Caches/Homebrew
-    - $HOME/miniconda
+    - $HOME/miniconda3
 
 branches:
   only:
@@ -20,11 +20,12 @@ notifications:
 before_install:
   - pushd $HOME
   - brew update
+  - brew upgrade
   - brew outdated cmake || brew upgrade cmake
+  - brew install caskroom/cask/brew-cask
   - brew cask install mactex
   - brew install ghostscript
   - brew install imagemagick
-  - brew install caskroom/cask/brew-cask
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh
   - chmod u+x miniconda.sh
   - ./miniconda.sh -b
@@ -52,7 +53,7 @@ after_success:
   - git checkout --orphan publish
   - git rm -r .
   - rm -r .
-  - cp build/ThesisRomainBrault.pdf .
+  - cp bin/ThesisRomainBrault.pdf .
   - git add -A
   - git commit -m "Travis generation of ThesisRomainBrault.pdf"
   - git push -u publish

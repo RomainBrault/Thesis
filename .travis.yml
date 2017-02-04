@@ -26,7 +26,7 @@ before_install:
   - ./miniconda.sh -b
   - export PATH=$HOME/miniconda3/bin:$PATH
   - conda update --yes conda
-  - conda install --yes numpy scipy matplotlib sklearn
+  - conda install --yes numpy scipy matplotlib scikit-learn
   - popd
 
 script:

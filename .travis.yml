@@ -1,6 +1,6 @@
-sudo: required
 language: python
 os: osx
+osx_image: xcode8.2
 
 python:
   - "3.5"  # Anaconda python

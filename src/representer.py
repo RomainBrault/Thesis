@@ -1,35 +1,42 @@
+r"""Plot figure: ORFF Representer theorem."""
+
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
 
 
 def phi(x, w, D):
+    r"""RFF map."""
     Z = np.dot(x, w)
     return np.hstack((np.cos(Z), np.sin(Z))) / np.sqrt(D)
 
 
 def main():
-    d = 1
-    D = 50
+    r"""Plot figure: ORFF Representer theorem."""
+    d = 1  # dimensionality of the inputs
+    D = 50  # number of random features
 
     N = 50
     Nt = 200
 
+    # N training points in (0,1)
     np.random.seed(0)
     x = 2 * np.random.rand(N, d) - 1
     y = np.sin(10 * x)
     y += .5 * np.random.randn(y.shape[0], y.shape[1]) + 2. * x ** 2
 
+    # Nt testing points in (0,1)
     xt = np.linspace(-1, 1, Nt).reshape((-1, 1))
     yt = np.sin(10 * xt) + 2. * xt ** 2
     yt += .5 * np.random.randn(yt.shape[0], yt.shape[1])
 
     sigma = .3
-    w = np.random.randn(d, D) / sigma
+    w = np.random.randn(d, D) / sigma  # Realization of (\omega_j)_{j=1}^D
 
-    phiX = phi(x, w, D)
-    phiXt = phi(xt, w, D)
+    phiX = phi(x, w, D)  # Train RFF
+    phiXt = phi(xt, w, D)  # Test RFF
 
+    # Create plot
     plt.close()
     plt.rc('text', usetex=True)
     plt.rc('font', family='serif')
@@ -39,12 +46,16 @@ def main():
     formatter = matplotlib.ticker.ScalarFormatter()
     formatter.set_powerlimits((-3, 4))
 
+    # For different hyperparameters \lambda
     for k, lbda in enumerate([1e-2, 5e-6, 1e-10, 0]):
+        # Train with ORFF with kernel approximation (dual)
         ck = np.linalg.lstsq(np.dot(phiX, phiX.T) + lbda * np.eye(N),
                              y, rcond=-1)[0]
+        # Train with ORFF without kernel approximation (primal)
         c = np.linalg.lstsq(np.dot(phiX.T, phiX) + lbda * np.eye(2 * D),
                             np.dot(phiX.T, y), rcond=-1)[0]
         cc = np.sum((phi(x, w, D) * ck), axis=0)
+        # Link dual coefficient with primal coefficients
         cr = (cc - c.ravel()) / np.linalg.norm(c) * 100
         err = np.array([np.linalg.norm(np.dot(phiXt, c) - yt) ** 2 / Nt,
                         np.linalg.norm(np.dot(np.dot(phiXt,
@@ -53,6 +64,7 @@ def main():
                         np.linalg.norm(np.dot(phiXt, cr)) ** 2 / Nt,
                         np.linalg.norm(cr)])
 
+        # Plot
         lmin = -1.8
         lmax = 3.
         axis[k, 0].set_xlim([-1.5, 1])

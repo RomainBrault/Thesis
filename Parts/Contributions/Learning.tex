@@ -407,6 +407,20 @@ where $\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \iid~and $B(\omega_j)\in\m
 \end{dmath}
 $\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \iid.
 \subsection{Decomposable kernel}
+Troughout this section we show how the mathematical formulation relates to a concrete (Python) implementation. We propose a Python implementation based on NumPy \citep{oliphant2006guide}, SciPy \citep{jones2014scipy} and Scikit-learn \cite{pedregosa2011scikit}. We start with the required imports.
+\begin{pyblock}[efficient_linop][fontsize=\scriptsize]
+r"""Example of fast implementation of the Gaussian ORFF decomposable kernel."""
+
+from time import time
+
+from numpy.linalg import svd
+from numpy.random import rand, seed
+from numpy import (dot, diag, sqrt, kron, zeros,
+                   logspace, log10, matrix, eye, int)
+from scipy.sparse.linalg import LinearOperator
+from sklearn.kernel_approximation import RBFSampler
+from matplotlib.pyplot import savefig, subplots
+\end{pyblock}
 Following \cref{eq:matrix_orff} the feature map associated to the decomposable kernel would be
 \begin{dmath*}
 \tildePhi{\omega}(x) = \begin{pmatrix} \cos\inner{x,\omega_1}B^T \\
@@ -414,19 +428,122 @@ Following \cref{eq:matrix_orff} the feature map associated to the decomposable k
 \vdots \\
 \cos\inner{x,\omega_D}B^T \\
 \sin\inner{x,\omega_D}B^T
-\end{pmatrix}\hiderel{\in}\mathcal{L}\left(\mathbb{R}^u, \mathbb{R}^{2Du'}\right),
+\end{pmatrix}
+\hiderel{=}
+\begin{pmatrix} \cos\inner{x,\omega_1} \\
+\sin\inner{x,\omega_1} \\
+\vdots \\
+\cos\inner{x,\omega_D} \\
+\sin\inner{x,\omega_D}
+\end{pmatrix}\otimes B^T
+\hiderel{\in}\mathcal{L}\left(\mathbb{R}^u, \mathbb{R}^{2Du'}\right),
 \end{dmath*}
-$\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \iid. Thus evaluating a matrix vector product such as $\tildePhi{\omega}(x)^T\theta$ or $\tildePhi{\omega}(x)y$ have $O_t((2Du')^2u)$ time complexity, which is utterly inefficient\ldots~Indeed, recall that if $B\in\mathcal{L}\left(\mathbb{R}^{u'}, \mathbb{R}^u\right)$ is matrix, the operator $\tildePhi{\omega}(x)$ corresponding to the decomposable kernel is
-\begin{dgroup*}
+$\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \iid, which would lead to the following naive python implementation
+\begin{pyblock}[efficient_linop][fontsize=\scriptsize]
+def NaiveDecomposableGaussianORFF(X, A, gamma=1.,
+                                  D=100, eps=1e-5, random_state=0):
+    r"""Return the Naive Random Fourier Feature map associated with the data X.
+
+    Parameters
+    ----------
+    X : {array-like}, shape = [n_samples, n_features]
+        Samples.
+    A : {array-like}, shape = [n_targets, n_targets]
+        Operator of the Decomposable kernel (positive semi-definite)
+    gamma : {float},
+        Gamma parameter of the RBF kernel.
+    D : {integer}
+        Number of random features.
+    eps : {float}
+        Cutoff threshold for the singular values of A.
+    random_state : {integer}
+        Seed of the generator.
+
+    Returns
+    -------
+    \tilde{\Phi}(X) : array
+    """
+    # Decompose A=BB^T
+    u, s, v = svd(A, full_matrices=False, compute_uv=True)
+    B = dot(diag(sqrt(s[s > eps])), v[s > eps, :])
+
+    # Sample a RFF from the scalar Gaussian kernel
+    phi_s = RBFSampler(gamma=gamma, n_components=D, random_state=random_state)
+    phiX = phi_s.fit_transform(X)
+
+    # Create the ORFF linear operator
+    return matrix(kron(phiX, B))
+\end{pyblock}
+With such imlementation evaluating a matrix vector product such as $\tildePhi{\omega}(x)^T\theta$ or $\tildePhi{\omega}(x)y$ have $O_t(2Du'u)$ time complexity and $O_s(2Du'u)$ of space complexity, which is utterly inefficient\ldots~Indeed, recall that if $B\in\mathcal{L}\left(\mathbb{R}^{u'}, \mathbb{R}^u\right)$ is matrix, the operator $\tildePhi{\omega}(x)$ corresponding to the decomposable kernel is
 \begin{dmath*}
-\tildePhi{\omega}(x)y \hiderel{=} \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}B^T y \hiderel{=} \left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x, \omega_j}\right)B^T y
+\tildePhi{\omega}(x)y \hiderel{=} \frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos\inner{x, \omega_j} B^Ty \\ \sin\inner{x, \omega_j} B^Ty \end{pmatrix} \hiderel{=} \left(\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos\inner{x, \omega_j} \\ \sin\inner{x, \omega_j} \end{pmatrix}\right)\otimes B^Ty
 \end{dmath*}
+and
 \begin{dmath*}
-\tildePhi{\omega}(x)^T\theta \hiderel{=} \frac{1}{\sqrt{D}} \sum_{j=1}^D \pairing{x, \omega_j}B\theta_j \hiderel{=} B\left(\frac{1}{\sqrt{D}} \sum_{j=1}^D \pairing{x, \omega_j}\theta_j\right)
+\tildePhi{\omega}(x)^T\theta = \frac{1}{\sqrt{D}} \sum_{j=1}^D \cos\inner{x, \omega_j}B\theta_j + \sin\inner{x, \omega_j}B\theta_j = B\left(\frac{1}{\sqrt{D}} \sum_{j=1}^D \left(\cos\inner{x, \omega_j} + \sin\inner{x, \omega_j}\right)\theta_j\right).
 \end{dmath*}
-\end{dgroup*}
+Which can be implemented easily in Python thanks to SciPy's Linear opeartors.
+\begin{pyblock}[efficient_linop][fontsize=\scriptsize]
+def FastDecomposableGaussianORFF(X, A, gamma=1.,
+                                 D=100, eps=1e-5, random_state=0):
+    r"""Return the Fast Random Fourier Feature map associated with the data X.
+
+    Parameters
+    ----------
+    X : {array-like}, shape = [n_samples, n_features]
+        Samples.
+    A : {array-like}, shape = [n_targets, n_targets]
+        Operator of the Decomposable kernel (positive semi-definite)
+    gamma : {float},
+        Gamma parameter of the RBF kernel.
+    D : {integer}
+        Number of random features.
+    eps : {float}
+        Cutoff threshold for the singular values of A.
+    random_state : {integer}
+        Seed of the generator.
+
+    Returns
+    -------
+    \tilde{\Phi}(X) : Linear Operator, callable
+    """
+    # Decompose A=BB^T
+    u, s, v = svd(A, full_matrices=False, compute_uv=True)
+    B = dot(diag(sqrt(s[s > eps])), v[s > eps, :])
+
+    # Sample a RFF from the scalar Gaussian kernel
+    phi_s = RBFSampler(gamma=gamma, n_components=D, random_state=random_state)
+    phiX = phi_s.fit_transform(X)
+
+    # Create the ORFF linear operator
+    cshape = (D, B.shape[0])
+    rshape = (X.shape[0], B.shape[1])
+    return LinearOperator((phiX.shape[0] * B.shape[1], D * B.shape[0]),
+                          matvec=lambda b: dot(phiX, dot(b.reshape(cshape),
+                                               B)),
+                          rmatvec=lambda r: dot(phiX.T, dot(r.reshape(rshape),
+                                                B.T)))
+\end{pyblock}
+It is worth mentioning that the same strategy can be applied in many different language. For instance in C{}\verb!++!, the libray Eigen \cite{eigenweb} allows to wrap a sparse matrix with a custom type, where the user overload the transpose and dot product operator (as in Python). Then the custom user operator behaves as a (sparse) matrix --see \url{https://eigen.tuxfamily.org/dox/group__MatrixfreeSolverExample.html}. With this implementation the time complexity of $\tildePhi{\omega}(x)^T\theta$ and $\tildePhi{\omega}(x)y$ falls down to $O_t(2Du'+u'u)$ and the same holds for space complexity. A quick experiment shows the advantage of seeing the decomposable kernel as a linear operator rather than a matrix.
+\begin{pycode}[efficient_linop]
+sys.path.append('../src/')
+import decomposable_gaussian
+
+decomposable_gaussian.main()
+\end{pycode}
+\begin{figure}[htb]
+\pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./fast_decomposable_gaussian.pgf}}')}
+\caption[Fast decomposable gaussian ORFF]{Fast decomposable gaussian ORFF.}
+\label{fig:fast_decomposable_gaussian}
+\end{figure}
+
+
 \subsection{Curl-free kernel}
 \subsection{Divergence-free kernel}
+
+\subsection{Iterative solvers}
+
+\section{Experiments}
 
 \clearpage
 %----------------------------------------------------------------------------------------

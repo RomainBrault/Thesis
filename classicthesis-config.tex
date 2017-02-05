@@ -1,3 +1,5 @@
+%!TEX root = ./ThesisRomainbrault.tex
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Classicthesis Typographic Thesis
 % Configuration File
@@ -18,6 +20,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage{adforn}
 \usepackage{pythontex}
 
 %----------------------------------------------------------------------------------------
@@ -25,7 +28,7 @@
 %----------------------------------------------------------------------------------------
 
 % Set the encoding of your files. UTF-8 is the only sensible encoding nowadays. If you can't read äöüßáéçèê∂åëæƒÏ€ then change the encoding setting in your editor, not the line below. If your editor does not support utf8 use another editor!
-\usepackage[utf8]{inputenc}
+% \usepackage[utf8]{inputenc}
 
 %----------------------------------------------------------------------------------------
 %	DOCUMENT VARIABLES
@@ -86,9 +89,11 @@
 % Spanish languages need extra options in order to work with this template
 %\PassOptionsToPackage{spanish,es-lcroman}{babel}
 \usepackage[american]{babel}
+\hyphenation{un-boun-ded}
 
  %------------------------------------------------
 
+\usepackage{microtype}
 \usepackage{afterpage}
 \usepackage{pdflscape}
 \usepackage{rotating}
@@ -97,15 +102,17 @@
 
 \usepackage{csquotes}
 \PassOptionsToPackage{%
-%backend=biber, % Instead of bibtex
-backend=bibtex8,bibencoding=ascii,%
+% backend=biber, % Instead of bibtex
+backend=bibtex8, %
+bibencoding=ascii,%
 language=auto,%
 style=numeric-comp,%
-%style=authoryear-comp, % Author 1999, 2010
-%bibstyle=authoryear,dashed=false, % dashed: substitute rep. author with ---
+% style=authoryear-comp, % Author 1999, 2010
+% bibstyle=authoryear,dashed=false, % dashed: substitute rep. author with ---
 sorting=nyt, % name, year, title
 maxbibnames=10, % default: 3, et al.
-%backref=true,%
+backref=true, %
+block=space, %
 natbib=true % natbib compatibility mode (\citep and \citet still work)
 }{biblatex}
 \usepackage{biblatex}
@@ -139,7 +146,7 @@ natbib=true % natbib compatibility mode (\citep and \citet still work)
 %------------------------------------------------
 
 % Not necessary for overleaf's LaTeX version.
-\usepackage{fixltx2e} % Fixes some LaTeX stuff
+% \usepackage{fixltx2e} % Fixes some LaTeX stuff
 
 %------------------------------------------------
 
@@ -218,7 +225,7 @@ pdfauthor={\textcopyright\ \myName, \myUni, \myFaculty},
 pdfsubject={},
 pdfkeywords={},
 pdfcreator={xelatex},
-pdfproducer={LaTeX with hyperref and classicthesis}
+% pdfproducer={LaTeX with hyperref and classicthesis}
 %------------------------------------------------
 }
 
@@ -254,9 +261,7 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 }{\relax}
 \makeatother
 
-
 %----------------------------------------------------------------------------------------
-\usepackage{adforn}
 \usepackage[shortlabels]{enumitem}
 \usepackage{braket}
 \usepackage{dirtytalk}

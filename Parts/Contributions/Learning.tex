@@ -407,8 +407,8 @@ where $\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \iid~and $B(\omega_j)\in\m
 \end{dmath}
 $\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \iid.
 \subsection{Decomposable kernel}
-Troughout this section we show how the mathematical formulation relates to a concrete (Python) implementation. We propose a Python implementation based on NumPy \citep{oliphant2006guide}, SciPy \citep{jones2014scipy} and Scikit-learn \cite{pedregosa2011scikit}. We start with the required imports.
-\begin{pyblock}[efficient_linop][fontsize=\scriptsize]
+Troughout this section we show how the mathematical formulation relates to a concrete (Python) implementation. We propose a Python implementation based on NumPy \citep{oliphant2006guide}, SciPy \citep{jones2014scipy} and Scikit-learn \cite{pedregosa2011scikit}. Following \cref{eq:matrix_orff} the feature map associated to the decomposable kernel would be
+\begin{pycode}[efficient_linop][fontsize=\scriptsize]
 r"""Example of fast implementation of the Gaussian ORFF decomposable kernel."""
 
 from time import time
@@ -420,8 +420,7 @@ from numpy import (dot, diag, sqrt, kron, zeros,
 from scipy.sparse.linalg import LinearOperator
 from sklearn.kernel_approximation import RBFSampler
 from matplotlib.pyplot import savefig, subplots
-\end{pyblock}
-Following \cref{eq:matrix_orff} the feature map associated to the decomposable kernel would be
+\end{pycode}
 \begin{dmath*}
 \tildePhi{\omega}(x) = \begin{pmatrix} \cos\inner{x,\omega_1}B^T \\
 \sin\inner{x,\omega_1}B^T \\
@@ -438,7 +437,7 @@ Following \cref{eq:matrix_orff} the feature map associated to the decomposable k
 \end{pmatrix}\otimes B^T
 \hiderel{\in}\mathcal{L}\left(\mathbb{R}^u, \mathbb{R}^{2Du'}\right),
 \end{dmath*}
-$\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \iid, which would lead to the following naive python implementation
+$\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \iid, which would lead to the following naive python implementation for the Gaussian (RBF) kernel of parameter $\gamma$, whose associated spectral distribution is $\probability_{\rho}=\mathcal{N}(0, 2\gamma)$.
 \begin{pyblock}[efficient_linop][fontsize=\scriptsize]
 def NaiveDecomposableGaussianORFF(X, A, gamma=1.,
                                   D=100, eps=1e-5, random_state=0):
@@ -482,7 +481,7 @@ and
 \begin{dmath*}
 \tildePhi{\omega}(x)^T\theta = \frac{1}{\sqrt{D}} \sum_{j=1}^D \cos\inner{x, \omega_j}B\theta_j + \sin\inner{x, \omega_j}B\theta_j = B\left(\frac{1}{\sqrt{D}} \sum_{j=1}^D \left(\cos\inner{x, \omega_j} + \sin\inner{x, \omega_j}\right)\theta_j\right).
 \end{dmath*}
-Which can be implemented easily in Python thanks to SciPy's Linear opeartors.
+Which can be implemented easily in Python thanks to SciPy's LinearOperator.
 \begin{pyblock}[efficient_linop][fontsize=\scriptsize]
 def FastDecomposableGaussianORFF(X, A, gamma=1.,
                                  D=100, eps=1e-5, random_state=0):
@@ -527,9 +526,9 @@ def FastDecomposableGaussianORFF(X, A, gamma=1.,
 It is worth mentioning that the same strategy can be applied in many different language. For instance in C{}\verb!++!, the libray Eigen \cite{eigenweb} allows to wrap a sparse matrix with a custom type, where the user overload the transpose and dot product operator (as in Python). Then the custom user operator behaves as a (sparse) matrix --see \url{https://eigen.tuxfamily.org/dox/group__MatrixfreeSolverExample.html}. With this implementation the time complexity of $\tildePhi{\omega}(x)^T\theta$ and $\tildePhi{\omega}(x)y$ falls down to $O_t(2Du'+u'u)$ and the same holds for space complexity. A quick experiment shows the advantage of seeing the decomposable kernel as a linear operator rather than a matrix.
 \begin{pycode}[efficient_linop]
 sys.path.append('../src/')
-import decomposable_gaussian
+import fast_decomposable_gaussian
 
-decomposable_gaussian.main()
+fast_decomposable_gaussian.main()
 \end{pycode}
 \begin{figure}[htb]
 \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./fast_decomposable_gaussian.pgf}}')}
@@ -548,6 +547,6 @@ decomposable_gaussian.main()
 \clearpage
 %----------------------------------------------------------------------------------------
 \section{Conclusions}
-\label{sec:conclusions}
+\label{sec:conclusions_learning}
 
 \chapterend

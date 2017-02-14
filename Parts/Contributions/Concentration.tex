@@ -20,12 +20,17 @@ $F(x \groupop \inv{z}) =\tilde{K}(x,z)-K(x,z)$ and study how the uniform norm
   \norm{\tilde{K}(x,z)-K(x,z)}_{\mathcal{Y},\mathcal{Y}}
 \end{dmath}
 behaves according to $D$. \Cref{fig:approximation_error} empirically shows convergence of three different \acs{OVK} approximations for $x,z$ sampled from the compact $[-1,1]^4$ and using an increasing number of sample points $D$. The log-log plot shows that all three kernels have the same convergence rate, up to a multiplicative factor.
+\begin{pycode}[approximation]
+sys.path.append('../src/')
+import approximation
+
+err = approximation.main()
+\end{pycode}
+
 \begin{figure}[!ht]
  \centering
- \resizebox{\textwidth}{!}{%
- \input{../gfx/kernel_reconstruction.pgf}
- }
- \caption{Error reconstructing the target operator-valued kernel $k$ with ORFF
+ \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./approximation.pgf}}')}
+ \caption[\acs{ORFF} reconstruction error]{Error reconstructing the target operator-valued kernel $K$ with \acs{ORFF}
  approximation $\tilde{K}$ for the decomposable, curl-free and divergence-free
  kernel.}
  \label{fig:approximation_error}

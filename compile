@@ -102,13 +102,18 @@ while getopts ":hvufo:b:s" opt; do
     esac
 done
 
+# Update
 if [[ ${UPDATE} = true ]]; then
     git pull github master
 fi
+
+# Remove temporary files
 if [[ ${FORCE} = true ]]; then
     rm -rf ${BUILD} || true
     rm -rf ${OUTPUT} || true
 fi
+
+# Configure and Build
 mkdir -p ${BUILD}
 cd ${BUILD}
 if [[ ${FORCE} = true ]]; then
@@ -119,4 +124,11 @@ if [[ ${FORCE} = true ]]; then
 else
     time make -j4 pdf
 fi
+cd ..
+
+# Backup
+cd gfx
+mkdir -p bck
+cp ../${OUTPUT}/*.pgf bck
+cp ../${OUTPUT}/*.png bck
 cd ..

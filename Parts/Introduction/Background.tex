@@ -3,12 +3,24 @@
 %----------------------------------------------------------------------------------------
 \section{Notations}
 \label{sec:notations}
-The euclidean inner product in $\mathbb{R}^d$ is denoted $\inner{\cdot, \cdot}$ and the euclidean norm is denoted $\norm{\cdot}$. The unit pure imaginary number $\sqrt{-1}$ is denoted $\iu$.
+We note $\mathbb{K}$ any Abelian\mpar{Commutative.} field, $\mathbb{R}$ the Abelian field of real numbers and $\mathbb{C}$ the abelian field of complex numbers. The unit pure imaginary number $\sqrt{-1}\in\mathbb{C}$ is denoted $\iu$ and the euler constant $\exp(1)\in\mathbb{R}$ is denoted $\ec$. $\mathbb{N}$ represent the monoid of natural numbers and $\mathbb{N}_n$, $n\in\mathbb{N}$ the set of natural numbers smaller than $n$. For any space $\mathcal{S}$, $\mathcal{S}^d$, $d\in\mathbb{N}$ represents the cartesian product space $\mathcal{S}^d=\mathcal{S}\times \ldots \times \mathcal{S}$. For any two algebraic structures $\mathcal{S}$ and $\mathcal{S}'$ we write $\mathcal{S}\cong\mathcal{S}'$ is there exist an isomorphism between these two structures.
+\paragraph{}
 $\mathcal{B}(\mathbb{R}^d)$ is the Borel $\sigma$-algebra on $\mathbb{R}^d$.
 If $\mathcal{X}$ and $\mathcal{Y}$ are two vector spaces, we denote by $\mathcal{F}(\mathcal{X};\mathcal{Y})$ the vector space of functions $f:\mathcal{X}\to\mathcal{Y}$ and $\mathcal{C}(\mathcal{X};\mathcal{Y})\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$ the subspace of continuous functions.
-If $\mathcal{H}$ is an Hilbert space we denote its scalar product by $\inner{\cdot,\cdot}_{\mathcal{H}}$ and its norm by $\norm{\cdot}_{\mathcal{H}}$.
-We set $\mathcal{L}(\mathcal{H})=\mathcal{L}(\mathcal{H};\mathcal{H})$ to be the space of linear operators from $\mathcal{H}$ to itself. If $W\in\mathcal{L}(\mathcal{H})$, $\Ker W$ denotes the nullspace, $\Ima W$ the image and $W^\adjoint \in \mathcal{L}(\mathcal{H})$ the adjoint operator (transpose when $W$ is a real matrix). All these notations are summarized in \cref{table:notations}.
+If $\mathcal{H}$ is an Hilbert space on a field $\mathbb{K}$ we denote its scalar product by $\inner{\cdot,\cdot}_{\mathcal{H}}$ and its norm by $\norm{\cdot}_{\mathcal{H}}$.
+\paragraph{}
+If $x\in\mathcal{H}$ we note $x^*\in\mathcal{H}^*$, $x^*:\mathcal{H}\to\mathbb{K}$ the dual vector in the dual vector space $\mathcal{H}^*$ of $\mathcal{H}$. If $\mathcal{H}$ is a Hilbert space, it is reflexive (\ie~$\mathcal{H}^{**}\cong\mathcal{H}$). Let $\mathcal{H}$ be a finite dimensional Hilbert space endowed with a basis $(e_i)_{i=1}^N$. If no specific mention, we consider that $\mathcal{H}^*$ is endowed with the dual basis $(e^*_i)_{i=1}^N$ such that $e_i^*e_j=\delta_{ij}$. If $\mathcal{H}=\mathbb{R}^d$, this allows us to identify $x^*$ with $x^T$. The dual space $\mathcal{H}^*$ is isomorphic to $\mathcal{H}$ if and only if $\mathcal{H}$ is finite dimensional. For all $x$ and $y$ in $\mathcal{H}$ we have $\inner{x, y}_{\mathcal{H}}=x^*y$.
+\paragraph{}
+We set $\mathcal{L}(\mathcal{H})=\mathcal{L}(\mathcal{H};\mathcal{H})$ to be the space of linear operators from $\mathcal{H}$ to itself. If $W\in\mathcal{L}(\mathcal{H})$, $\Ker W$ denotes the nullspace, $\Ima W$ the image and $W^\adjoint \in \mathcal{L}(\mathcal{H})$ the adjoint operator.
+\paragraph{}
+We call matrix $M$ of size $(m,n)\in\mathbb{N}^2$ on an Abelian field $\mathbb{K}$ a collection of elements $M=(m_{ij})_{1\le i\le m, 1\le j \le n}$, $m_{ij}\in\mathbb{K}$. We note $\mathcal{M}_{m,n}(\mathbb{K})$ the vector space of all matrices. If $\mathcal{H}_1$ and $\mathcal{H}_2$ are two finite dimensional Hilbert spaces on an Abelian field $\mathbb{K}$, any bounded linear operator $L\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ can be view as a matrix. Let $n=\dim(\mathcal{H}_1)$, $m=\dim(\mathcal{H}_2)$ and let $B=(e_i)_{i=1}^{n}$ and $C=(e'_i)_{i=1}^{m}$ be the respective canonical bases of $\mathcal{H}_1$ and $\mathcal{H}_2$. We note $\text{mat}_{B, C}: \mathcal{L}(\mathcal{H}_1;\mathcal{H}_2) \to \mathcal{M}_{m,n}(\mathbb{K})$ such that $M=\text{mat}_{B, C}(L)=(\inner{e'_j, L e_i})_{1\le i\le n, 1\le j \le m}\in\mathcal{M}_{m,n}(\mathbb{K})$. Let $M_1\in\mathcal{M}_{m,n}(\mathbb{K})$ and $M_2\in\mathcal{M}_{n,l}(\mathbb{K})$. The product between two matrices is written $M_1M_2\in\mathcal{M}_{m,l}(\mathbb{K})$ and obey $(M_1M_2)_{ij} = \sum_{k=1}^n M_{ik}M_{kj}$. Given two linear operator $L_1\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ and $L2\in\mathcal{L}(\mathcal{H}_2;\mathcal{H}_3)$ we have $L_1L_2\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_3)$ and \begin{dmath*}
+\text{mat}_{B, D}(L_1L_2)=\text{mat}_{B, C}(L_1)\text{mat}_{C, D}(L_2).
+\end{dmath*}
+The operator $\text{mat}_{B, C}$ is a vector space isomorphism allowing us to identify $\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ with $\mathcal{M}_{mn}(\mathbb{K})$ where $n=\dim(\mathcal{H}_1)$ and $m=\dim(\mathcal{H}_2)$. All these notations are summarized in \cref{table:notations}.
 
+
+
+\afterpage{%
 \begin{table}[!ht]
 \centering
 \caption{Mathematical symbols used throughout the parper and their signification.}
@@ -16,8 +28,12 @@ We set $\mathcal{L}(\mathcal{H})=\mathcal{L}(\mathcal{H};\mathcal{H})$ to be the
 \toprule
 Symbol & \multicolumn{1}{c}{Meaning} \\
 \cmidrule{1-2}
-$\iu$ & Unit pure imaginary number $\sqrt{-1}$. \\
-$\ec$ & Euler constant. \\
+$\mathbb{K}$ & Any Abelian field. \\
+$\mathbb{R}$ & The Abelian field of real numbers. \\
+$\mathbb{C}$ & The Abelian field of complex numbers. \\
+$\iu \in\mathbb{C}$ & Unit pure imaginary number $\sqrt{-1}$. \\
+$\ec \in\mathbb{R}$ & Euler constant. \\
+$\delta_{ij}$ & Kronecker delta function. $\delta_{ij}=0$ if $i \neq j$, $1$ otherwise. \\
 $\inner{\cdot,\cdot}$ & Euclidean inner product. \\
 $\norm{\cdot}$ & Euclidean norm. \\
 $\mathcal{X}$ & Input space. \\
@@ -29,16 +45,18 @@ $\norm{\cdot}_{\mathcal{Y}}$ & The canonical norm induced by the inner product o
 $\mathcal{F}(\mathcal{X};\mathcal{Y})$ & Vector space of function from $\mathcal{X}$ to $\mathcal{Y}$. \\
 $\mathcal{C}(\mathcal{X};\mathcal{Y})$ & The vector subspace of $\mathcal{F}$ of continuous function from $\mathcal{X}$ to $\mathcal{Y}$. \\
 $\mathcal{L}(\mathcal{H};\mathcal{Y})$ & The set of bounded linear operator from a Hilbert space $\mathcal{H}$ to a Hilbert space $\mathcal{Y}$. \\
+$\mathcal{M}_{m,n}(\mathbb{K})$ & The set of matrices of size $(m,n)$. \\
 $\mathcal{L}(\mathcal{Y})$ & The set of bounded linear operator from a Hilbert space $\mathcal{H}$ to itself. \\
 $\mathcal{L}_{+}(\mathcal{Y})$ & The set of non-negative bounded linear operator from a Hilbert space $\mathcal{H}$ to itself. \\
 $\mathcal{B}(\mathcal{X})$ & Borel $\sigma$-algebra on $\mathcal{X}$. \\
 $\mu(\mathcal{X})$ & A scalar positive measure of $\mathcal{X}$. \\
 $L^p(\mathcal{X}, \mu)$ & The Banach space of $\abs{\cdot}^p$-integrable function from $(\mathcal{X},\mathcal{B}(\mathcal{X}), \mu)$ to $\mathbb{C}$. \\
 $L^p(\mathcal{X}, \mu;\mathcal{Y})$ & The Banach space of  $\norm{\cdot}_{\mathcal{Y}^p}$ (Bochner)-integrable function from $(\mathcal{X},\mathcal{B}(\mathcal{X}), \mu)$ to $\mathcal{Y}$. \\
+$\Vect_{j=1}^D x_i$ & The direct sum of $D$ vectors $x_i$'s in $\mathcal{H}$. \\
 \bottomrule
 \end{tabularx}
 \label{table:notations}
-\end{table}
+\end{table}}
 
 %----------------------------------------------------------------------------------------
 \section{About statistical learning}
@@ -148,7 +166,7 @@ where $x\in\mathcal{X}\cong\dual{\dual{\mathcal{X}}}$ and $\omega\in\dual{\mathc
 \begin{dmath}
 \conj{\pairing{x,\omega}} = \pairing*{\inv{x},\omega}\hiderel{=}\pairing*{x,\inv{\omega}}.
 \end{dmath}
-\begin{table}[!ht]\label{table:pairings}
+\begin{table}[!ht]
 \caption{Classification of \acl{FT}s in terms of their domain and transform domain.}
 \label{tab:dual_and_pairing}
 \centering
@@ -207,7 +225,7 @@ Moreover if $\dual{\Haar}$ is normalized, $\mathcal{F}$ extends to a unitary ope
 \end{dmath*}
 % The inverse Fourier transform of $g$, an integrable function on $\dual{X}$ is defined as:
 % where the Haar measure $\mu=\dual{\nu}$ is called the {\it dual measure} to $\nu$.
-\Cref{table:pairings} gives some examples of real Abelian groups with their associated dual and pairing. The interested reader can refer to \citet{folland1994course} for a more detailed construction of LCA, Pontryagin duality and \acl{FT}s on LCA. For the familiar case of a scalar-valued function $f$ on the \acs{LCA} group $(\mathbb{R}^d, +)$, we have for all $\omega\in \dual{\mathcal{X}}$
+\Cref{tab:dual_and_pairing} gives some examples of real Abelian groups with their associated dual and pairing. The interested reader can refer to \citet{folland1994course} for a more detailed construction of LCA, Pontryagin duality and \acl{FT}s on LCA. For the familiar case of a scalar-valued function $f$ on the \acs{LCA} group $(\mathbb{R}^d, +)$, we have for all $\omega\in \dual{\mathcal{X}}$
 \begin{dmath}
 \label{fourier-R-plus}
 \FT{f}(\omega)
@@ -370,7 +388,7 @@ The uniqueness of $\mathcal{H}$ comes from the uniqueness of the completion of $
 \end{proof}
 The above theorem holds also if $\mathcal{Y}$ is a real vector space provided we add the assumption that $K$ is symmetric, \ie~$K(x,z)=K(z,x)$.
 \paragraph{}
-Since an \acl{OVK} of positive type defines a unique \acs{vv-RKHS} and conversely a \acs{vv-RKHS} defines a unique \acl{OVK}, we denotes the Hilbert space $\mathcal{H}$ endowed with the scalar product $\inner{\cdot,\cdot}$ respectively $\mathcal{H}_K$ and $\inner{\cdot,\cdot}_K$. From now we refer to \acl{OVK} of positive type as \acl{OVK} whether they act on complex or real Hilbert spaces. As a consequence, given $K$ an \acl{OVK} of positive type, define $K_x=K(\cdot,x)$ we have
+Since an \acl{OVK} of positive type defines a unique \acs{vv-RKHS} and conversely a \acs{vv-RKHS} defines a unique \acl{OVK}, we denotes the Hilbert space $\mathcal{H}$ endowed with the scalar product $\inner{\cdot,\cdot}$ respectively $\mathcal{H}_K$ and $\inner{\cdot,\cdot}_K$. From now we refer to \acl{OVK} of positive type as \acl{OVK} whether they act on complex or real Hilbert spaces. As a consequence, given $K$ an \acl{OVK}, define $K_x=K(\cdot,x)$ we have
 \begin{dgroup}
 \begin{dmath}
 \label{eq:kernel_operator_product}
@@ -441,7 +459,7 @@ If $\mathcal{H}_K\subset\mathcal{C}(\mathcal{X};\mathcal{Y})$, then for all $x\i
 \end{dmath*}
 Thus convergence in $\mathcal{H}_K$ implies uniform convergence. Since by assumption
 \begin{dmath*}
-\Set{K_xt|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}\subset\mathcal{C}(\mathcal{X};\mathcal{Y}),
+\Set{K_xt|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}\hiderel{\subset}\mathcal{C}(\mathcal{X};\mathcal{Y}),
 \end{dmath*}
 then the \acl{vv-RKHS}
 \begin{dmath*}
@@ -579,7 +597,7 @@ and the \emph{curl-free} kernel as %
 \begin{dmath*}\label{curl-def}
 K^{curl}(x,z)\hiderel{=}K_0^{curl}(\delta)=-\nabla\nabla^T k_0(\delta),
 \end{dmath*} %
-where $\nabla$ is the gradient operator\mpar{See \cref{subsec:gradient_methods} for the formal definition of the operator $\nabla$.}, $\nabla\nabla^T$ is the Hessian operator and $\Delta$ is the Laplacian operator. %
+where $\nabla$ is the gradient operator\mpar{See \cref{subsec:gradient_methods} for a formal definition of the operator $\nabla$.}, $\nabla\nabla^T$ is the Hessian operator and $\Delta$ is the Laplacian operator. %
 \end{definition}
 Although taken separately these kernels are not universal, a convex combination of the curl-free and divergence-free kernels allows to learn any vector field that satisfies the Helmholtz decomposition theorem \citep{Macedo2008, Baldassare2012}.
 

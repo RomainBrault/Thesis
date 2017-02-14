@@ -7,15 +7,13 @@ Random Fourier Features have been proved useful to implement efficiently kernel 
  \begin{dmath*}
  \tilde{f}(x) = \tildePhi{\omega}(x)^\adjoint  \theta,
  \end{dmath*}
- where $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{H},\mathcal{Y})$ and $\theta \in \mathcal{H}$. The methodology we propose works for operator-valued kernels defined on any \acf{LCA} group, noted ($\mathcal{X}, \groupop)$, for some operation noted $\groupop$. This allows us to use the general context of Pontryagin duality for \acl{FT} of functions on \acs{LCA} groups. Building upon a generalization of Bochner's theorem for operator-valued measures, an operator-valued kernel is seen as the \emph{\acl{FT}} of an operator-valued positive measure. From that result, we extend the principle of Random Fourier Feature for scalar-valued kernels and derive a general methodology to build Operator Random Fourier Feature when operator-valued kernels are shift-invariant according to the chosen group operation. Elements of this chapter has been developped in \citet{brault2016random}.
-
-\clearpage
-%----------------------------------------------------------------------------------------
-\section{Construction}
-\label{sec:construction}
+ where $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{H},\mathcal{Y})$ and $\theta \in \mathcal{H}$. The methodology we propose works for operator-valued kernels defined on any \acf{LCA} group, noted ($\mathcal{X}, \groupop)$, for some operation noted $\groupop$. This allows us to use the general context of Pontryagin duality for \acl{FT} of functions on \acs{LCA} groups. Building upon a generalization of Bochner's theorem for operator-valued measures, an operator-valued kernel is seen as the \emph{\acl{FT}} of an operator-valued positive measure. From that result, we extend the principle of Random Fourier Feature for scalar-valued kernels and derive a general methodology to build Operator Random Fourier Feature when operator-valued kernels are shift-invariant according to the chosen group operation. Elements of this chapter have been developped in \citet{brault2016random}.
+\paragraph{}
 We present a construction of \acf{ORFF} such that $f: x\mapsto \tildePhi{\omega}(x)^\adjoint \theta$ is a continuous function that maps an arbitrary \acs{LCA} group $\mathcal{X}$ as input space to an arbitrary output Hilbert space $\mathcal{Y}$. First we define a functional \emph{Fourier feature map}, and then propose a Monte-Carlo sampling from this feature map to construct an approximation of a shift-invariant $\mathcal{Y}$-Mercer kernel.
 Then, we prove the convergence of the kernel approximation $\tilde{K}(x,z)=\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z)$ with high probability on \emph{compact} subsets of the \acs{LCA} $\mathcal{X}$, when $\mathcal{Y}$ is \emph{finite dimensional}. Eventually we conclude with some numerical experiments.
-\subsection{Theoretical study}
+
+%----------------------------------------------------------------------------------------
+\section{Theoretical study}
 The following proposition of \citet{Zhang2012,Carmeli2010} extends Bochner's theorem to any shift-invariant $\mathcal{Y}$-Mercer kernel.
 \begin{proposition}[Operator-valued Bochner's theorem \citep{Zhang2012,neeb1998operator}]\label{eq:bochner-gen}
 If a continuous function $K$ from $\mathcal{X} \times \mathcal{X}$ to $\mathcal{Y}$ is a shift-invariant $\mathcal{Y}$-Mercer kernel on $\mathcal{X}$, then there exists a unique positive projection-valued measure $\dual{Q}: \mathcal{B}(\mathcal{X}) \to \mathcal{L}_+(\mathcal{Y})$ such that for all $x$, $z \in \mathcal{X}$,
@@ -445,10 +443,10 @@ For all $y$, $y'\in \mathcal{Y}$ and $x$, $z\in\mathcal{X}$,
 \end{dmath*}
 which defines a $\mathcal{Y}$-Mercer according to \cref{pr:mercer_kernel_bochner} of \citet{Carmeli2010}.
 \end{proof}
-With this notation notice that $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \dual{\mu}; \mathcal{Y}'))$ such that $\Phi_x\in \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \dual{\mu}; \mathcal{Y}'))$ where $\Phi_x\colonequals\Phi(x)$.
+With this notation we have $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \dual{\mu}; \mathcal{Y}'))$ such that $\Phi_x\in \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \dual{\mu}; \mathcal{Y}'))$ where $\Phi_x\colonequals\Phi(x)$.
 
-\subsection{Building Operator-valued Random Fourier Features}
-\label{subsec:building_ORFF}
+\section{Building Operator-valued Random Fourier Features}
+\label{sec:building_ORFF}
 As shown in \cref{pr:spectral,pr:trace_measure} it is always possible to find a pair $(A, \probability_{\dual{\Haar},\rho})$ from a shift invariant $\mathcal{Y}$-Mercer \acl{OVK} $K_e$ such that $\probability_{\dual{\Haar},\rho}$ is a probability measure --\ie~$\int_{\dual{\mathcal{X}}} \rho d\dual{\Haar}=1$ where $\rho$ is the density of $\probability_{\dual{\Haar},\rho}$-- and $K_e(\delta)=\expectation_\rho{\conj{\pairing{\delta,\omega}}A(\omega)}$. In order to obtain an approximation of $K$ from a decomposition $(A, \probability_{\dual{\Haar},\rho})$ we turn our attention to a Monte-Carlo estimation of the expectations \cref{eq:expectation_tr} and \cref{eq:expectation_spec} characterizing a $\mathcal{Y}$-Mercer shift-invariant \acl{OVK}.
 \paragraph{}
 However, for efficient computations as motivated in the introduction, we are interested in finding an approximated \emph{feature map} instead of a kernel approximation. Indeed, an approximated feature map will allow to build linear models in regression tasks. The idea is to start from the Monte-Carlo approximation of the expectation and provide a systematic decomposition of the Monte-Carlo sample mean into an approximate feature map. The following proposition provides the general form of an \acl{ORFF}.
@@ -485,7 +483,7 @@ Therefore $\tildePhi{\omega}(x)$ can be seen as an \say{operator-valued vector} 
 \begin{dmath*}
 \tildeH{\omega} = \Vect_{j=1}^D\mathcal{Y}',
 \end{dmath*}
-be a Hilbert space. Let $\seq{\omega}\in\dual{\mathcal{X}}^D$ be a sequence where $\seq{\omega}=(\omega_j)_{j=1}^D$ (\ie~ an outcome of the random sequence $(\omega_j)_{j=1}^D$, $\omega_j \sim \probability_{\dual{\Haar},\rho}$). Notice that for any $x\in\mathcal{X}$ and $y\in\mathcal{Y}$, $\tildePhi{\omega}(x)y\in\tildeH{\omega}$ as we can take $g(\omega_j)=\pairing{x,\omega_j}B(\omega_j)^\adjoint y$. Thus we have for all $y$, $y'\in\mathcal{Y}$ and all $x$, $z\in\mathcal{X}$
+be a Hilbert space. Let $\seq{\omega}\in\dual{\mathcal{X}}^D$ be a sequence where $\seq{\omega}=(\omega_j)_{j=1}^D$ (\ie~ a realization of the random sequence $(\omega_j)_{j=1}^D$, $\omega_j \sim \probability_{\dual{\Haar},\rho}$). Notice that for any $x\in\mathcal{X}$ and $y\in\mathcal{Y}$, $\tildePhi{\omega}(x)y\in\tildeH{\omega}$ as we can take $g(\omega_j)=\pairing{x,\omega_j}B(\omega_j)^\adjoint y$. Thus we have for all $y$, $y'\in\mathcal{Y}$ and all $x$, $z\in\mathcal{X}$
 \begin{dmath*}
 \inner{y', \tildeK{\omega}(x, z)y}_{\mathcal{Y}} \hiderel{=} \inner{y', \tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z)y}_{\mathcal{Y}} \hiderel{=} \inner{\tildePhi{\omega}(x)y', \tildePhi{\omega}(z)y}_{\tildeH{\omega}}.
 \end{dmath*}
@@ -503,7 +501,7 @@ We stress out that if $\seq{\omega}=(\omega_j)_{j=1}^D\sim \probability_{\dual{\
 \begin{dmath*}
 \tildeK{\omega}_e\left(x\groupop z^{-1}\right)=\tildePhi{\omega}(x)^{\adjoint}\tildePhi{\omega}(z)
 \end{dmath*}
-is not \emph{sensus} stricto an \acl{OVK} since it is a random variable (and $\tildeH{\omega}$ is no longer a Hilbert space, since its inner product is a then random variable and not a scalar). However this is not a problem since any outcome of the random sequence $\seq{\omega}$ gives birth to a (different) \acl{OVK}, and $\expectation_{\dual{\Haar},\rho}\tildeK{\omega}$ is an \acs{OVK}. This illustrated by \cref{fig:not_Mercer} where we represented the same function for different realization of $\tildeK{\omega}\approx K$. We generated $250$ points equally separated on the segment $(-1;1)$.
+is not \emph{sensus} stricto an \acl{OVK} since it is a random variable (and $\tildeH{\omega}$ is no longer a Hilbert space, since its inner product is a then random variable and not a scalar). However this is not a problem since any realization of the random sequence $\seq{\omega}$ gives birth to a (different) \acl{OVK}, and $\expectation_{\dual{\Haar},\rho}\tildeK{\omega}$ is an \acs{OVK}. This illustrated by \cref{fig:not_Mercer} where we represented the same function for different realization of $\tildeK{\omega}\approx K$. We generated $250$ points equally separated on the segment $(-1;1)$.
 
 \begin{pycode}[not_mercer]
 sys.path.append('../src/')
@@ -514,7 +512,7 @@ not_mercer.main()
 
 \begin{figure}[htb]
 \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./not_Mercer.pgf}}')}
-\caption[Different outcomes of a Gaussian kernel approximation]{Different outcomes of a Gaussian kernel approximation. Top row and bottom row correspond to two different outcomes of $\tildeK{\omega}$, which are \emph{different} \acl{OVK}. However when $D$ tends to infinity, the different outcomes fo $\tildeK{\omega}$ yield the samel \acs{OVK}.}
+\caption[Different realizations of a Gaussian kernel approximation]{Different realizations of a Gaussian kernel approximation. Top row and bottom row correspond to two different realizations of $\tildeK{\omega}$, which are \emph{different} \acl{OVK}. However when $D$ tends to infinity, the different realizations of $\tildeK{\omega}$ yield the samel \acs{OVK}.}
 \label{fig:not_Mercer}
 \end{figure}
 
@@ -614,7 +612,7 @@ We find a decomposition such that for all $j=1, \ldots, D$, $A(\omega_j)=B(\omeg
 \begin{figure}[htb]
 \centering
 \input{../gfx/feature_relationship.tikz}
-\caption[Relationships between feature-maps.]{Relationships between feature-maps. $\tildeH{\omega} = \Vect_{j=1}^D \mathcal{Y}'$.}
+\caption[Relationships between feature-maps.]{Relationships between feature-maps. For any realization of $\omega_j\sim\probability_{\dual{\Haar},\rho}$ \iid~, $\tildeH{\omega} = \Vect_{j=1}^D \mathcal{Y}'$.}
 \label{fig:rel_features}
 \end{figure}
 \end{landscape}
@@ -651,27 +649,29 @@ In particular we deduce the following features maps for the kernels proposed in 
 \item For the decomposable gaussian kernel $K_0^{dec,gauss}(\delta)=k_0^{gauss}(\delta)\Gamma$ for all $\delta\in\mathbb{R}^d$, let $BB^\adjoint=\Gamma$. A bounded --and unbounded-- \acs{ORFF} map is
 \begin{dmath*}
 \tildePhi{\omega}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B^\adjoint y\\ \sin{\inner{x,\omega_j}}B^\adjoint y \end{pmatrix}
-=(\tildePhi{\omega}(x)\otimes B^\adjoint)y,
+=(\tildephi{\omega}(x)\otimes B^\adjoint)y,
 \end{dmath*}
-where $\omega_j \hiderel{\sim} \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$ \iid~and $\tildePhi{\omega}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}} \\ \sin{\inner{x,\omega_j}}\end{pmatrix}$ is a scalar \acs{RFF} map \citep{Rahimi2007}.
+where $\omega_j \hiderel{\sim} \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$ \iid~and $\tildephi{\omega}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}} \\ \sin{\inner{x,\omega_j}}\end{pmatrix}$ is a scalar \acs{RFF} map \citep{Rahimi2007}.
 \item For the curl-free gaussian kernel, $K_0^{curl,gauss}=-\nabla\nabla^T k_0^{gauss}$ an unbounded \acs{ORFF} map is
-\begin{dmath*}
+\begin{dmath}
+\label{eq:unbounded_curl_free_orff}
 \tildePhi{\omega}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\omega_j^T y\\ \sin{\inner{x,\omega_j}}\omega_j^T y\end{pmatrix},
-\end{dmath*}
+\end{dmath}
 $\omega_j \hiderel{\sim} \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$ \iid~and a bounded \acs{ORFF} map is
 \begin{dmath*}
 \tildePhi{\omega}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\frac{\omega_j^T}{\norm{\omega_j}} y \\ \sin{\inner{x,\omega_j}}\frac{\omega_j^T}{\norm{\omega_j}} y \end{pmatrix}\condition{$\omega_j \hiderel{\sim} \probability_{\rho}$ \iid.}
 \end{dmath*}
 where $\rho(\omega)=\frac{\sigma^2\norm{\omega}^2}{d}\mathcal{N}(0,\sigma^{-2}I_d)(\omega)$ for all $\omega\in\mathbb{R}^d$.
 \item For the divergence-free gaussian kernel $K_0^{div,gauss}(x,z)=(\nabla\nabla^T-\Delta I_d) k_0^{gauss}(x,z)$ an unbounded \acs{ORFF} map is
-\begin{dmath*}
-\tildePhi{\omega}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^T y\\ \sin{\inner{x,\omega_j}}B(\omega_j)^T y\end{pmatrix} \condition{$\omega_j \hiderel{\sim} \probability_{\rho}$ \iid.}
-\end{dmath*}
-where $B(\omega)=\left(I_d-\frac{\omega^T\omega}{\norm{\omega}}\right)$ and $\rho=\mathcal{N}(0,\sigma^{-2}I_d)$ for all $\omega\in\mathbb{R}^d$. A bounded \acs{ORFF} map is
+\begin{dmath}
+\label{eq:unbounded_div_free_orff}
+\tildePhi{\omega}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^T y\\ \sin{\inner{x,\omega_j}}B(\omega_j)^T y\end{pmatrix}
+\end{dmath}
+where $\omega_j \hiderel{\sim} \probability_{\rho}$ \iid~and $B(\omega)=\left(\norm{\omega}I_d-\omega\omega^T\right)$ and $\rho=\mathcal{N}(0,\sigma^{-2}I_d)$ for all $\omega\in\mathbb{R}^d$. A bounded \acs{ORFF} map is
 \begin{dmath*}
 \tildePhi{\omega}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B(\omega_j)^T y\\ \sin{\inner{x,\omega_j}}B(\omega_j)^T y\end{pmatrix}\condition{$\omega_j \hiderel{\sim} \probability_{\rho}$ \iid,}
 \end{dmath*}
-where $B(\omega)=\left(I_d-\frac{\omega^T\omega}{\norm{\omega}^2}\right)$ and $\rho(\omega)=\frac{\sigma^2\norm{\omega}^2}{d}\mathcal{N}(0,\sigma^{-2}I_d)$ for all $\omega\in\mathbb{R}^d$.
+where $B(\omega)=\left(I_d-\frac{\omega\omega^T}{\norm{\omega}^2}\right)$ and $\rho(\omega)=\frac{\sigma^2\norm{\omega}^2}{d}\mathcal{N}(0,\sigma^{-2}I_d)$ for all $\omega\in\mathbb{R}^d$.
 \end{itemize}
 The second example extends scalar-valued Random Fourier Features on the skewed multiplicative group --described in \cref{subsec:characters} and \cref{subsubsec:skewedchi2}-- to the operator-valued case.
 \begin{example}[Matrix-valued kernel on the skewed multiplicative group]
@@ -728,7 +728,7 @@ By injectivity of the \acl{FT}, $\IFT{f}(\omega)=\rho(\omega)B(\omega)g(\omega)$
 \begin{dmath*}
 \norm{f}^2_{K} = \inf \Set{\norm{g}^2_{\mathcal{H}} | \forall g\hiderel{\in}\mathcal{H}, \enskip Wg\hiderel{=}f} = \inf \Set{\int_{\dual{\mathcal{X}}} \norm{g}^2_{\mathcal{Y}}d\probability_{\dual{\Haar},\rho} | \forall g\hiderel{\in}\mathcal{H},\enskip \IFT{f}\hiderel{=}\rho(\cdot)B(\cdot)g(\cdot)}.
 \end{dmath*}
-The pseudo inverse of the operator $B(\omega)$ -- noted $B(\omega)^\dagger$ -- is the unique solution of the system $\IFT{f}(\omega)=\rho(\omega)B(\omega)g(\omega)$ \wrt~$g(\omega)$ with minimal norm\mpar{Note that since $B(\omega)$ is bounded the pseudo inverse of $B(\omega)$ is well defined for $\dual{\Haar}$-almost all $\omega$. However if $B(\omega)$ is infinite dimensional, the pseudo inverse is continuous if and only if $A(\omega)$ has closed range. This is always true if $\mathcal{Y}$ is finite dimensional.}. Eventually,
+The pseudo inverse of the operator $B(\omega)$ -- noted $B(\omega)^\dagger$ -- is the unique solution of the system $\IFT{f}(\omega)=\rho(\omega)B(\omega)g(\omega)$ \wrt~$g(\omega)$ with minimal norm\footnote{Note that since $B(\omega)$ is bounded the pseudo inverse of $B(\omega)$ is well defined for $\dual{\Haar}$-almost all $\omega$. However if $B(\omega)$ is infinite dimensional, the pseudo inverse is continuous if and only if $A(\omega)$ has closed range. This is always true if $\mathcal{Y}$ is finite dimensional.}. Eventually,
 \begin{dmath*}
 \norm{f}^2_K = \int_{\dual{\mathcal{X}}} \frac{\norm{B(\omega)^\dagger\IFT{f}(\omega)}_{\mathcal{Y}}^2}{\rho(\omega)^2}d\probability_{\dual{\Haar},\rho}(\omega)
 \end{dmath*}
@@ -760,7 +760,7 @@ Note that if $K(x,z)=k(x,z)$ is a scalar kernel then for all $\omega$ in $\dual{
    \caption{Construction of \acs{ORFF}}
 \end{algorithm2e}
 \end{center}
-\subsection{Operator Random Feature engineering}
+\section{Operator Random Feature engineering}
 As in the scalar case, it is possible to construct. We list some examples in the following.
 \subsubsection{Sum of kernels}
 \begin{proposition}[Sum of kernels]

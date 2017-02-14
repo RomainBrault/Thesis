@@ -22,6 +22,7 @@
 
 \usepackage{adforn}
 \usepackage{pythontex}
+\usepackage{multicol}
 
 %----------------------------------------------------------------------------------------
 %	CHARACTER ENCODING
@@ -42,8 +43,8 @@
 \PassOptionsToPackage{eulerchapternumbers,listings,subfig,beramono,eulermath,parts}{classicthesis}
 % Available options: drafting parts nochapters linedheaders eulerchapternumbers beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc manychapters listings floatperchapter subfig
 
-\newcommand{\myTitle}{Data are not real!\xspace}
-\newcommand{\mySubtitle}{Large-scale learning on structured input-output data with operator-valued kernels\xspace}
+\newcommand{\myTitle}{Data Are Not Real!\xspace}
+\newcommand{\mySubtitle}{Large-Scale Learning On Structured Input-Output Data With Operator-Valued Kernels\xspace}
 \newcommand{\myDegree}{Engineer (Eng.)\xspace}
 \newcommand{\myName}{Romain Brault\xspace}
 % \newcommand{\myProf}{Florence d'Alch\'e-Buc\xspace}
@@ -52,10 +53,12 @@
 \newcommand{\mySupervisor}{Florence d'Alch\'e-Buc\xspace}
 \newcommand{\myFaculty}{IBISC\xspace}
 \newcommand{\myDepartment}{Computer Science \xspace}
-\newcommand{\myUni}{Universit\'e d'\'Evry val d'Essonne\xspace}
+\newcommand{\myUniUEVE}{Universit\'e-D'\'Evry-Val-D'Essonne \xspace}
+\newcommand{\myUniTP}{T\'el\'ecom-ParisTech \xspace}
 \newcommand{\myLocation}{15, Rue Plumet, 75015 - Paris, France\xspace}
-\newcommand{\myTime}{Septembre 2016\xspace}
+\newcommand{\myTime}{\today\xspace}
 \newcommand{\myVersion}{version 0.1\xspace}
+\newcommand{\NNT}{201XSACLSXXX\xspace}
 
 %----------------------------------------------------------------------------------------
 %	USEFUL COMMANDS
@@ -93,7 +96,7 @@
 
  %------------------------------------------------
 
-\usepackage{microtype}
+\usepackage[absolute]{textpos}
 \usepackage{afterpage}
 \usepackage{pdflscape}
 \usepackage{rotating}
@@ -165,7 +168,8 @@ natbib=true % natbib compatibility mode (\citep and \citet still work)
 %----------------------------------------------------------------------------------------
 %	FLOATS: TABLES, FIGURES AND CAPTIONS SETUP
 %----------------------------------------------------------------------------------------
-
+\usepackage{ltablex}
+\usepackage{threeparttablex}
 \usepackage{tabularx} % Better tables
 \setlength{\extrarowheight}{3pt} % Increase table row height
 \newcommand{\tableheadline}[1]{\multicolumn{1}{c}{\spacedlowsmallcaps{#1}}}
@@ -216,12 +220,12 @@ colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
 breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
 plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
 hypertexnames=true, pdfhighlight=/O,%nesting=true,%frenchlinks,%
-urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,%
+urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,%
     %urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,%
 %------------------------------------------------
 % PDF file meta-information
 pdftitle={\myTitle},
-pdfauthor={\textcopyright\ \myName, \myUni, \myFaculty},
+pdfauthor={\textcopyright\ \myName, \myUniUEVE, \myUniTP, \myFaculty},
 pdfsubject={},
 pdfkeywords={},
 pdfcreator={xelatex},
@@ -260,6 +264,8 @@ pdfcreator={xelatex},
 \providecommand{\subfigureautorefname}{\figureautorefname} % Fix to getting autorefs for subfigures right
 }{\relax}
 \makeatother
+
+\VerbatimFootnotes
 
 %----------------------------------------------------------------------------------------
 \usepackage[shortlabels]{enumitem}

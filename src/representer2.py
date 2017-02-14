@@ -1,4 +1,4 @@
-r"""Plot figure: ORFF Representer theorem pt.1."""
+r"""Plot figure: ORFF Representer theorem pt.2."""
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -12,11 +12,11 @@ def phi(x, w, D):
 
 
 def main():
-    r"""Plot figure: ORFF Representer theorem pt.1."""
+    r"""Plot figure: ORFF Representer theorem pt.2."""
     d = 1  # dimensionality of the inputs
-    D = 50  # number of random features
+    D = 100  # number of random features
 
-    N = 50
+    N = 30
     Nt = 200
 
     # N training points in (0,1)
@@ -30,7 +30,7 @@ def main():
     yt = np.sin(10 * xt) + 2. * xt ** 2
     yt += .5 * np.random.randn(yt.shape[0], yt.shape[1])
 
-    sigma = .3
+    sigma = .1
     w = np.random.randn(d, D) / sigma  # Realization of (\omega_j)_{j=1}^D
 
     phiX = phi(x, w, D)  # Train RFF
@@ -99,7 +99,7 @@ def main():
         if k == 3:
             axis[k, 2].set_xlabel(
                 r'$|\theta^{\parallel}_j|$, \% of relative error')
-    plt.savefig('representer.pgf', bbox_inches='tight')
+    plt.savefig('representer2.pgf', bbox_inches='tight')
 
     return err
 

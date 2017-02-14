@@ -1314,7 +1314,7 @@ function(add_latex_targets_internal)
     ${LATEX_COMPILER} ${LATEX_COMPILER_ARGS} ${synctex_flags} ${LATEX_MAIN_INPUT}
     )
   set(pythontex_build_command
-    ${PYTHONTEX_COMPILER} ${LATEX_MAIN_INPUT}
+    ${PYTHONTEX_COMPILER} "--jobs" "1" "--verbose" ${LATEX_MAIN_INPUT}
     )
   if(LATEX_COMPILER_ARGS MATCHES ".*batchmode.*")
     # Wrap command in script that dumps the log file on error. This makes sure

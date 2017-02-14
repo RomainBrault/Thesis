@@ -2,71 +2,125 @@
 
 \begin{titlepage}
 
+\pdfbookmark[1]{Title Page}{Title Page}
+
+\storeareas{\DefaultMargins}
+
+\areaset
+  {\textwidth}% calculate requiered \textwidth
+  {\dimexpr\the\paperheight-.5cm\relax}% calculate requiered \textheight
+
+\begin{textblock}{1}(1.15,1)
+\includegraphics[height=2.4cm]{../gfx/UPSac.png} %% Logo de Paris Saclay
+\end{textblock}
+
+\begin{textblock}{1}(11,1)
+\includegraphics[width=2.4cm]{../gfx/University_of_Evry_Val_d_Essonne_logo.png}
+\end{textblock}
+\begin{textblock}{1}(13,1)
+\includegraphics[width=2.4cm]{../gfx/TelecomParisTech.png}
+\end{textblock}
+
+\begin{tikzpicture}[remember picture,overlay,color=PSaclay]
+    \draw[very thick]
+        ([yshift=-140pt,xshift=45pt]current page.north west)--
+        ([yshift=-140pt,xshift=-25pt]current page.north east)--
+        ([yshift=35pt,xshift=-25pt]current page.south east)--
+        ([yshift=35pt,xshift=45pt]current page.south west)--cycle;
+\end{tikzpicture}
+
+
+
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 \begin{addmargin}[-1cm]{-3cm}
+
+\vspace{2cm}
+NNT: \NNT
+
+\vspace{-.5cm}
+
 \begin{center}
 \large
 
 \hfill
+
+\begingroup
+{A thesis submitted to attain the degree of} \\
+{\Huge \color{PSaclay}\textsc{Doctor Of} \\ \textsc{Universit\'e Paris-Saclay}}
+\endgroup
+
+\vspace{.5cm}
+\begingroup
+Prepared at \\
+{\Huge \color{PSaclay}\textsc{\myUniUEVE}} \\
+{\LARGE \&} \\
+{\Huge \color{PSaclay}\textsc{\myUniTP}} \\
+\endgroup
+
+\vspace{.5cm}
+\begingroup
+Presented by \\
+{\Large\textbf{M. \textsc{\myName}}}\footnote{Email: \href{mailto:romain.brault@ibisc.fr}{romain.brault@ibisc.fr}} % Your name
+\endgroup
+
+\bigskip
 \vfill
 
 \begingroup
-A thesis submitted to attain the degree of \\ \bigskip
-{\Huge \color{Maroon} DOCTOR OF COMPUTER SCIENCE}
+Entitled \\
+\smallskip
+{\Huge \color{PSaclay}\textsc{\myTitle}} % Thesis title
 \endgroup
 
+\bigskip
 \vfill
 
 \begingroup
-Entitled \\ \bigskip
-{\Huge \color{Maroon}\spacedallcaps{\myTitle}}
+About \\
+{\Large \textbf{\textsc{\mySubtitle}}} % Thesis subtitle
 \endgroup
 
-\vfill
-
-Presented by \\ \bigskip
-{\Large\textbf{\spacedlowsmallcaps{\myName}}}\footnote{Email: \href{mailto:romain.brault@ibisc.fr}{romain.brault@ibisc.fr}} % Your name
-
+\bigskip
 \vfill
 
 \begingroup
-About \\ \bigskip
-{\Large \textbf{\spacedlowsmallcaps{\mySubtitle}}}. % Thesis subtitle
-\endgroup
-
-\vfill
-
-\noindent Under supervision of
-\par
-\mySupervisorDegree \spacedlowsmallcaps{\mySupervisor}\footnote{Email: \href{mailto:florence.dalche@telecom-paristech.fr}{florence.dalche@telecom-paristech.fr}}
-
-\vfill
-
-\includegraphics[width=6cm]{gfx/University_of_Evry_Val_d_Essonne_logo} \\ \medskip % Picture
-\vfill
-\begin{center}
-\begin{tabularx}{\textwidth}{XXX}
-M. John \textsc{Doe} & UEVE & examinator, \\
-M. John \textsc{Doe} & UEVE & director, \\
-M. John \textsc{Doe} & UEVE & examinator, \\
-M. John \textsc{Doe} & UEVE & examinator, \\
-M. John \textsc{Doe} & UEVE & reporter, \\
-\end{tabularx}
-\end{center}
+Doctoral School -- 580\\
+Sciences et Technologies de l'Information et de la Communication \\ % Thesis subtitle
+Specialty Area of \myDepartment \\
+Laboratoire \myFaculty
 \medskip
-accepted on the recommendation of M. John \textsc{Doe} (UEVE) and M. John \textsc{Doe} (UEVE).
-\vfill
-\myDepartment \\
-\myFaculty \\
-\myUni \\ \bigskip
 
-\myTime\ -- \myVersion % Time and version
-
-\vfill
-
+\endgroup
 \end{center}
+
+\vspace{2cm}
+\vfill
+
+\noindent Under supervision of \mySupervisorDegree \textsc{\mySupervisor}\footnote{Email: \href{mailto:florence.dalche@telecom-paristech.fr}{florence.dalche@telecom-paristech.fr}} \\
+\smallskip
+\noindent \textbf{Presented and defended at \myUniUEVE, the 1st of March 2017}
+\smallskip
+\noindent \textbf{Jury}
+\paragraph{}
+\noindent \begin{tabular}{lllll}
+Mme. & Florence & \textsc{d'Alch\'e-Buc} & T\'el\'ecom-Paristech & Director, \\
+M. & Jean-Marc & \textsc{Delosme} & IBSIC & President, \\
+M. & Alexandre & \textsc{Gramfort} & T\'el\'ecom-Paristech & Invited, \\
+M. & Arthur & \textsc{Gretton} & UCL & Examinator, \\
+M. & Zolt\'an & \textsc{Szab\'o} & \'Ecole Polytechnique & Examinator, \\
+Mme.&  Marie & \textsc{Szafranski} & IBSIC & Reporter. \\
+\end{tabular}
+\vspace*{.75cm}
+
+\begin{textblock}{5}(11,14.8)
+\myTime\ -- \myVersion % Time and version
+\end{textblock}
+
+
 \end{addmargin}
 
 \renewcommand*{\thefootnote}{\arabic{footnote}}
 \setcounter{footnote}{0}
+
+\DefaultMargins
 \end{titlepage}

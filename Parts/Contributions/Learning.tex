@@ -630,7 +630,7 @@ This equivalent formulation allows us to keep the notation \say{lighter}. With t
 \midrule
     Decomposable\tnote{1} &$\Theta\mapsto$& $B\Theta \tildephi{\omega}(X)$ & $U\mapsto$ & $B^TU\tildephi{\omega}(X)^T$ \\
 
-    Gaussian \newline curl-free\tnote{2} & $\Theta^c, \Theta^s\mapsto $ & $\displaystyle\sum_{j=1}^D\omega_j\left(\Theta_{j}^c\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta_{j}^s\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U\mapsto$ & $\begin{cases}\Theta_j^c=\omega_j^T U(\tildephi{\omega}^{c}(X)_{j\bullet})^T \\ \Theta_j^s=\omega_j^T U(\tildephi{\omega}^{s}(X)_{j\bullet})^T\end{cases}$ \\
+    Gaussian \newline curl-free\tnote{2} & $\Theta^c, \Theta^s\mapsto $ & $\displaystyle\sum_{j=1}^D\omega_j\left(\Theta_{j}^c\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta_{j}^s\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U\mapsto$ & $\begin{cases}\Theta_j^c=\omega_j^T U\tildephi{\omega}^{c}(X)_{\bullet j}^T \\ \Theta_j^s=\omega_j^T U\tildephi{\omega}^{s}(X)_{\bullet j}^T\end{cases}$ \\
 
     Gaussian \newline divergence-free\tnote{2,3} & $\Theta^c, \Theta^s \mapsto$ & $\displaystyle\sum_{j=1}^D\left(\norm{\omega_j}_2I_d-\omega_j\omega_j^T\right)\left(\Theta^{c}_{\bullet j}\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta^{s}_{\bullet j}\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U \mapsto$ & $\begin{cases}\Theta^c_{\bullet j}=\left(\norm{\omega_j}_2I_d-\omega_j\omega_j^T\right)U(\tildephi{\omega}^{c}(X)_{j\bullet})^T \\ \Theta^s_{\bullet j}=\left(\norm{\omega_j}_2I_d-\omega_j\omega_j^T\right)U(\tildephi{\omega}^{s}(X)_{j\bullet})^T \end{cases}$ \\
 \bottomrule
@@ -656,7 +656,7 @@ This equivalent formulation allows us to keep the notation \say{lighter}. With t
 \midrule
     Decomposable\tnote{1} &$\Theta\mapsto$& $B^TB\Theta \tildephi{\omega}(X)\tildephi{\omega}(X)^T$ & $U\mapsto$ & $BB^TU\tildephi{\omega}(X)^T\tildephi{\omega}(X)$ \\
 
-    Gaussian \newline curl-free\tnote{2} & $\Theta^c, \Theta^s\mapsto $ & $\displaystyle\sum_{j=1}^D\omega_j\omega_j^T\left(U(\tildephi{\omega}^{c}(X)_{j\bullet})^T\tildephi{\omega}^{c}(X)_{j\bullet} + U(\tildephi{\omega}^{s}(X)_{j\bullet})^T\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U\mapsto$ & $\begin{cases}\Theta_j^c=\omega_j^T\displaystyle\sum_{i=1}^N \tildephi{\omega}^{c}(X)_{ji}U_{\bullet i} \\ \Theta_j^s=\omega_j^T\displaystyle\sum_{i=1}^N \tildephi{\omega}^{s}(X)_{ji}U_{\bullet i}\end{cases}$ \\
+    Gaussian \newline curl-free\tnote{2} & $\Theta^c, \Theta^s\mapsto $ & $\displaystyle\sum_{j=1}^D\omega_j\omega_j^TU\left(\tildephi{\omega}^{c}(X)_{\bullet j}^T\tildephi{\omega}^{c}(X)_{j\bullet} + \tildephi{\omega}^{s}(X)_{\bullet j}^T\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U\mapsto$ & $\begin{cases}\Theta_j^c=\omega_j^T\displaystyle\sum_{i=1}^N \tildephi{\omega}^{c}(X)_{ji}U_{\bullet i} \\ \Theta_j^s=\omega_j^T\displaystyle\sum_{i=1}^N \tildephi{\omega}^{s}(X)_{ji}U_{\bullet i}\end{cases}$ \\
 
     Gaussian \newline divergence-free\tnote{2,3} & $\Theta^c, \Theta^s \mapsto$ & $\displaystyle\sum_{j=1}^D\left(\norm{\omega_j}_2I_d-\omega_j\omega_j^T\right)\left(\Theta^{c}_{\bullet j}\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta^{s}_{\bullet j}\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U \mapsto$ & $\begin{cases}\Theta^c_{\bullet j}=\left(\norm{\omega_j}_2I_d-\omega_j\omega_j^T\right)\displaystyle\sum_{i=1}^N \tildephi{\omega}^{c}(X)_{ji}U_{\bullet i} \\ \Theta^s_{\bullet j}=\left(\norm{\omega_j}_2I_d-\omega_j\omega_j^T\right)\displaystyle\sum_{i=1}^N \tildephi{\omega}^{s}(X)_{ji}U_{\bullet i} \end{cases}$ \\
 \bottomrule

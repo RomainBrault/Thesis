@@ -252,7 +252,7 @@ In this context if $f:\mathcal{H}_0\to\mathcal{H}_1$ and $g:\mathcal{H}_1\to\mat
 \begin{dmath*}
 \nabla_{\theta} (g\circ f)(\theta) = \jacobian_{\theta}f(\theta) \circ \nabla_{f(\theta)}g(f(\theta)).
 \end{dmath*}
-By linearity and applying the chaine rule to \cref{eq:argmin_theta} and since $M_{ik}^\adjoint = M_{ki}$ for all $i$, $k\in\mathbb{N}_{N+U}$, we have
+By linearity and applying the chaine rule to \cref{eq:argmin_theta} and since $M_{ik}^\adjoint = M_{ki}$ for all $i$, $k\in\mathbb{N}^*_{N+U}$, we have
 \begin{dgroup*}
 \begin{dmath*}
 \nabla_{\theta}c\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right)= \tildePhi{\omega}(x_i)V^\adjoint \left(\lderivativeat{c\left(y, y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint,
@@ -518,7 +518,7 @@ and
 \label{eq:phi_transpose_efficient}
 \tildePhi{\omega}(x)^T\theta = \frac{1}{\sqrt{D}} \sum_{j=1}^D \cos\inner{x, \omega_j}B\theta_j + \sin\inner{x, \omega_j}B\theta_j = B\left(\frac{1}{\sqrt{D}} \sum_{j=1}^D \left(\cos\inner{x, \omega_j} + \sin\inner{x, \omega_j}\right)\theta_j\right).
 \end{dmath}
-Which requires only on evaluation of $B$ on $y$ abd can be implemented easily in Python thanks to SciPy's LinearOperator. Note that the computation of these expressions can be fully vectorized\mpar{See \citet{walt2011numpy}.} using the vectorization property of the kronecker product. In the following we consider $\Theta \in \mathcal{M}_{2D,u'}(\mathbb{R})$ and the operator $\vectorize: \mathcal{M}_{u',2D}(\mathbb{R}) \to \mathbb{R}^{2Du'}$ which turns a matrix into a vector (\ie~$\theta_{u'i+j} = \vectorize(\Theta_{ij})$, $i\in\mathbb{N}_{2D}$ and $j\in\mathbb{N}_{u'}$). Then
+Which requires only on evaluation of $B$ on $y$ abd can be implemented easily in Python thanks to SciPy's LinearOperator. Note that the computation of these expressions can be fully vectorized\mpar{See \citet{walt2011numpy}.} using the vectorization property of the kronecker product. In the following we consider $\Theta \in \mathcal{M}_{2D,u'}(\mathbb{R})$ and the operator $\vectorize: \mathcal{M}_{u',2D}(\mathbb{R}) \to \mathbb{R}^{2Du'}$ which turns a matrix into a vector (\ie~$\theta_{u'i+j} = \vectorize(\Theta_{ij})$, $i\in\mathbb{N}_{2D}$ and $j\in\mathbb{N}^*_{u'}$). Then
 \begin{dmath*}
 \left(\tildephi{\omega}(x) \otimes B^T\right)^T \theta \hiderel{=} \left(\tildephi{\omega}(x)^T \otimes B\right) \vectorize(\Theta) \hiderel{=} \vectorize\left(B \Theta \tildephi{\omega}(x) \right).
 \end{dmath*}
@@ -566,7 +566,7 @@ def EfficientDecomposableGaussianORFF(X, A, gamma=1.,
 \end{pyblock}
 
 \subsection{Linear operators in matrix form}
-For convinience we give the operators corresponding to the decomposable, curl-free and divergence-free kernels in matrix form. Let $(x_i)_{i=1}^N$, $N\in\mathbb{N}$, $x_i$'s in $\mathbb{R}^d$, $d\le\infty$ be a sequence of points in $\mathbb{R}^d$. We note
+For convinience we give the operators corresponding to the decomposable, curl-free and divergence-free kernels in matrix form. Let $(x_i)_{i=1}^N$, $N\in\mathbb{N}^*$, $x_i$'s in $\mathbb{R}^d$, $d\le\infty$ be a sequence of points in $\mathbb{R}^d$. We note
 \begin{dmath*}
 X=\begin{pmatrix}x_1 & \hdots & x_N\end{pmatrix}\hiderel{\in}\mathcal{M}_{d,N}
 \end{dmath*}
@@ -630,15 +630,15 @@ This equivalent formulation allows us to keep the notation \say{lighter}. With t
 \midrule
     Decomposable\tnote{1} &$\Theta\mapsto$& $B\Theta \tildephi{\omega}(X)$ & $U\mapsto$ & $B^TU\tildephi{\omega}(X)^T$ \\
 
-    Gaussian \newline curl-free\tnote{2} & $\Theta^c, \Theta^s\mapsto $ & $\displaystyle\sum_{j=1}^D\omega_j\left(\Theta_{j}^c\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta_{j}^s\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U\mapsto$ & $\begin{cases}\Theta_j^c=\omega_j^T U\tildephi{\omega}^{c}(X)_{\bullet j}^T \\ \Theta_j^s=\omega_j^T U\tildephi{\omega}^{s}(X)_{\bullet j}^T\end{cases}$ \\
+    Gaussian curl-free\tnote{2} & $\Theta^c, \Theta^s\mapsto $ & $\displaystyle\sum_{j=1}^D\omega_j\left(\Theta_{j}^c\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta_{j}^s\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U\mapsto$ & $\begin{cases}\Theta_j^c=\omega_j^T U\tildephi{\omega}^{c}(X)_{\bullet j}^T \\ \Theta_j^s=\omega_j^T U\tildephi{\omega}^{s}(X)_{\bullet j}^T\end{cases}$ \\
 
-    Gaussian \newline divergence-free\tnote{2,3} & $\Theta^c, \Theta^s \mapsto$ & $\displaystyle\sum_{j=1}^D\left(\norm{\omega_j}_2I_d-\omega_j\omega_j^T\right)\left(\Theta^{c}_{\bullet j}\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta^{s}_{\bullet j}\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U \mapsto$ & $\begin{cases}\Theta^c_{\bullet j}=\left(\norm{\omega_j}_2I_d-\omega_j\omega_j^T\right)U(\tildephi{\omega}^{c}(X)_{j\bullet})^T \\ \Theta^s_{\bullet j}=\left(\norm{\omega_j}_2I_d-\frac{\omega_j\omega_j^T}{\norm{\omega_j}}\right)U(\tildephi{\omega}^{s}(X)_{j\bullet})^T \end{cases}$ \\
+    Gaussian divergence-free\tnote{2,3} & $\Theta^c, \Theta^s \mapsto$ & $\displaystyle\sum_{j=1}^DB(\omega_j)\left(\Theta^{c}_{\bullet j}\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta^{s}_{\bullet j}\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U \mapsto$ & $\begin{cases}\Theta^c_{\bullet j}=B(\omega_j)U(\tildephi{\omega}^{c}(X)_{j\bullet})^T \\ \Theta^s_{\bullet j}=B(\omega_j)U(\tildephi{\omega}^{s}(X)_{j\bullet})^T \end{cases}$ \\
 \bottomrule
 \end{tabularx}
 \begin{tablenotes}
 \item[1] Where $\tildephi{\omega}(X)=\begin{pmatrix} \tildephi{\omega}(X_{\bullet 1}) & \hdots & \tildephi{\omega}(X_{\bullet N}) \end{pmatrix}\in\mathcal{M}_{r, N}$ is any design matrix, with scalar feature map $\tildephi{\omega}:\mathbb{R}^d\to\mathbb{R}^r$ such that $\tildephi{\omega}(x)^\adjoint \tildephi{\omega}(z)=k(x,z)\in\mathbb{R}$ for all $x$, $z\in\mathcal{X}$. The input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data $U\in\mathcal{M}_{u,N}(\mathbb{R})$, the parameter matrices $\Theta^c$ and $\Theta^s\in\mathcal{M}_{u', r}(\mathbb{R})$ and the decomposable operator $B\in\mathcal{M}_{u,u'}(\mathbb{R})$.
-\item[2] Where $\tildephi{\omega}^{c}(X)_{ji}=\cos\inner{\omega_j, x_i}$ and $\tildephi{\omega}^{s}(X)_{ji}=\sin\inner{\omega_j, x_i}$, $j\in\mathbb{N}_D$ and $i\in\mathbb{N}_N$. Thus $\tildephi{\omega}^{c}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$ and $\tildephi{\omega}^{s}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$. The input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data $U\in\mathcal{M}_{d,N}(\mathbb{R})$, the parameter matrices $\Theta^c$ and $\Theta^s\in\mathbb{R}^D$, $\omega_j\sim \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$ \iid~for all $j\in\mathbb{N}_D$.
-\item[3] Here, $\Theta^c$ and $\Theta^s\in\mathcal{M}_{d,D}(\mathbb{R})$.
+\item[2] Where $\tildephi{\omega}^{c}(X)_{ji}=\cos\inner{\omega_j, x_i}$ and $\tildephi{\omega}^{s}(X)_{ji}=\sin\inner{\omega_j, x_i}$, $j\in\mathbb{N}^*_D$ and $i\in\mathbb{N}^*_N$. Thus $\tildephi{\omega}^{c}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$ and $\tildephi{\omega}^{s}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$. The input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data $U\in\mathcal{M}_{d,N}(\mathbb{R})$, the parameter matrices $\Theta^c$ and $\Theta^s\in\mathbb{R}^D$, $\omega_j\sim \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$ \iid~for all $j\in\mathbb{N}^*_D$.
+\item[3] Here, $\Theta^c$ and $\Theta^s\in\mathcal{M}_{d,D}(\mathbb{R})$ and $B(\omega)=\left(\norm{\omega}_2I_d-\frac{\omega\omega^T}{\norm{\omega}_2}\right)\in\mathcal{M}_{d,d}$.
 \end{tablenotes}
 \end{threeparttable}
 \label{tb:efficient2-op}
@@ -656,15 +656,15 @@ This equivalent formulation allows us to keep the notation \say{lighter}. With t
 \midrule
     Decomposable\tnote{1} &$\Theta\mapsto$& $B^TB\Theta \tildephi{\omega}(X)\tildephi{\omega}(X)^T$ & $U\mapsto$ & $BB^TU\tildephi{\omega}(X)^T\tildephi{\omega}(X)$ \\
 
-    Gaussian \newline curl-free\tnote{2} & $\Theta^c, \Theta^s\mapsto $ & $\displaystyle\sum_{j=1}^D\omega_j\omega_j^TU\left(\tildephi{\omega}^{c}(X)_{\bullet j}^T\tildephi{\omega}^{c}(X)_{j\bullet} + \tildephi{\omega}^{s}(X)_{\bullet j}^T\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U\mapsto$ & $\displaystyle\sum_{j=1}^D\omega_j\omega_j^TU\left(\tildephi{\omega}^{c}(X)_{\bullet j}^T\tildephi{\omega}^{c}(X)_{j\bullet} + \tildephi{\omega}^{s}(X)_{\bullet j}^T\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ \\
+    Gaussian \newline curl-free\tnote{2} & $\Theta^c, \Theta^s\mapsto $ & $\begin{cases}\Theta_j^c=\omega_j^T U\tildephi{\omega}^{c}(X)_{\bullet j}^T \\ \Theta_j^s=\omega_j^T U\tildephi{\omega}^{s}(X)_{\bullet j}^T\end{cases}$ & $U\mapsto$ & $\displaystyle\sum_{j=1}^D\omega_j\omega_j^TU\left(\tildephi{\omega}^{c}(X)_{\bullet j}^T\tildephi{\omega}^{c}(X)_{j\bullet} + \tildephi{\omega}^{s}(X)_{\bullet j}^T\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ \\
 
-    Gaussian \newline divergence-free\tnote{2,3} & $\Theta^c, \Theta^s \mapsto$ & $\displaystyle\sum_{j=1}^D\left(\norm{\omega_j}_2I_d-\omega_j\omega_j^T\right)\left(\Theta^{c}_{\bullet j}\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta^{s}_{\bullet j}\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U \mapsto$ & $\displaystyle\sum_{j=1}^D\left(\norm{\omega_j}^2_2I_d-\omega_j\omega_j^T\right)U\left(\tildephi{\omega}^{c}(X)_{\bullet j}^T\tildephi{\omega}^{c}(X)_{j\bullet} + \tildephi{\omega}^{s}(X)_{\bullet j}^T\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ \\
+    Gaussian \newline divergence-free\tnote{2,3} & $\Theta^c, \Theta^s \mapsto$ & $\begin{cases}\Theta^c_{\bullet j}=\left(\norm{\omega_j}_2I_d-\frac{\omega_j\omega_j^T}{\norm{\omega_j}_2}\right)U(\tildephi{\omega}^{c}(X)_{j\bullet})^T \\ \Theta^s_{\bullet j}=\left(\norm{\omega_j}_2I_d-\frac{\omega_j\omega_j^T}{\norm{\omega_j}_2}\right)U(\tildephi{\omega}^{s}(X)_{j\bullet})^T \end{cases}$ & $U \mapsto$ & $\displaystyle\sum_{j=1}^DA(\omega_j)U\left(\tildephi{\omega}^{c}(X)_{\bullet j}^T\tildephi{\omega}^{c}(X)_{j\bullet} + \tildephi{\omega}^{s}(X)_{\bullet j}^T\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ \\
 \bottomrule
 \end{tabularx}
 \begin{tablenotes}
 \item[1] Where $\tildephi{\omega}(X)=\begin{pmatrix} \tildephi{\omega}(X_{\bullet 1}) & \hdots & \tildephi{\omega}(X_{\bullet N}) \end{pmatrix}\in\mathcal{M}_{r, N}$ is any design matrix, with scalar feature map $\tildephi{\omega}:\mathbb{R}^d\to\mathbb{R}^r$ such that $\tildephi{\omega}(x)^\adjoint \tildephi{\omega}(z)=k(x,z)\in\mathbb{R}$ for all $x$, $z\in\mathcal{X}$. The input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data $U\in\mathcal{M}_{u,N}(\mathbb{R})$, the parameter matrices $\Theta^c$ and $\Theta^s\in\mathcal{M}_{u', r}(\mathbb{R})$ and the decomposable operator $B\in\mathcal{M}_{u,u'}(\mathbb{R})$.
-\item[2] Where $\tildephi{\omega}^{c}(X)_{ji}=\cos\inner{\omega_j, x_i}$ and $\tildephi{\omega}^{s}(X)_{ji}=\sin\inner{\omega_j, x_i}$, $j\in\mathbb{N}_D$ and $i\in\mathbb{N}_N$. Thus $\tildephi{\omega}^{c}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$ and $\tildephi{\omega}^{s}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$. The input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data $U\in\mathcal{M}_{d,N}(\mathbb{R})$, the parameter matrices $\Theta^c$ and $\Theta^s\in\mathbb{R}^D$, $\omega_j\sim \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$ \iid~for all $j\in\mathbb{N}_D$.
-\item[3] Here, $\Theta^c$ and $\Theta^s\in\mathcal{M}_{d,D}(\mathbb{R})$.
+\item[2] Where $\tildephi{\omega}^{c}(X)_{ji}=\cos\inner{\omega_j, x_i}$ and $\tildephi{\omega}^{s}(X)_{ji}=\sin\inner{\omega_j, x_i}$, $j\in\mathbb{N}^*_D$ and $i\in\mathbb{N}^*_N$. Thus $\tildephi{\omega}^{c}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$ and $\tildephi{\omega}^{s}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$. The input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data $U\in\mathcal{M}_{d,N}(\mathbb{R})$, the parameter matrices $\Theta^c$ and $\Theta^s\in\mathbb{R}^D$, $\omega_j\sim \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$ \iid~for all $j\in\mathbb{N}^*_D$.
+\item[3] Here, $\Theta^c$ and $\Theta^s\in\mathcal{M}_{d,D}(\mathbb{R})$ and $A(\omega)=B(\omega)B(\omega)^T=\left(\norm{\omega}^2_2I_d-\omega\omega^T\right)\in\mathcal{M}_{d,d}$.
 \end{tablenotes}
 \end{threeparttable}
 \label{tb:efficient-op}

@@ -151,12 +151,12 @@ Therefore $\rho(\omega)$ is the density of a probability measure $\probability_{
 for all $\mathcal{Z}\in\mathcal{B}(\dual{\mathcal{X}})$.
 \end{proof}
 \paragraph{}
-In the case where $\mathcal{Y}=\mathbb{R}^p$, we rewrite \cref{eq:comega} coefficient-wise by choosing an orthonormal basis $\Set{e_j}_{j\in\mathbb{N}_p}$ of $\mathbb{R}^p$.
+In the case where $\mathcal{Y}=\mathbb{R}^p$, we rewrite \cref{eq:comega} coefficient-wise by choosing an orthonormal basis $\Set{e_j}_{j\in\mathbb{N}^*_p}$ of $\mathbb{R}^p$.
 \begin{dmath}
 \label{eq:operator_identification_real}
 A(\omega)_{ij}\rho(\omega)\hiderel{=}\FT{K_e(\cdot)_{ij}}(\omega).
 \end{dmath}
-It follows that for all $i$ and $j$ in $\mathbb{N}_{p}$,
+It follows that for all $i$ and $j$ in $\mathbb{N}^*_{p}$,
 \begin{dmath}\label{eq:matrix-exp}
 K_e(x\groupop \inv{z})_{ij} \hiderel{=} \FT{A(\cdot)_{ij}\rho(\cdot)}(x\groupop \inv{z})
 \end{dmath}
@@ -164,7 +164,7 @@ K_e(x\groupop \inv{z})_{ij} \hiderel{=} \FT{A(\cdot)_{ij}\rho(\cdot)}(x\groupop 
 \begin{remark}
 Note that although the \acl{FT} of $K_e$ yields a unique operator-valued function $C(\cdot)$, the decomposition of $C(\cdot)$ into $A(\cdot)\rho(\cdot)$ is again not unique. The choice of the decomposition may be justified by the computational cost or by the nature of the constants involved in the uniform convergence of the estimator.
 \end{remark}
-Another difficulty arise from the fact that the quantity $\sup_{\omega\in\dual{\mathcal{X}}} \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}$ obtained in \cref{pr:spectral} might not bounded. The unboundedness of $\norm{A(\cdot)}_{\mathcal{Y},\mathcal{Y}}$ forbid the use of the most simple concentrations inequalities -- which require the boundedness of the random variable to be controlled. Therefore in the context of \acl{OVK} concentration inequalities for unbounded random operators should be used. However, as pointed out by \citet{minh2016operator}, under some condition on the trace of $K_e(\delta)$, it is possible to turn $A(\cdot)$ into a bounded random operator for all $\omega$ in $\dual{\mathcal{X}}$. The idea is to define a sum measure $\rho=\sum_{j\in\mathbb{N}}\rho_{e_j}$, which gives rise to bounded operator $A(\omega)$ and is idependant of the $\Set{e_j}_{j\in\mathbb{N}}$ base, instead of constructing a measure from the operator norm as in \cref{pr:spectral}. Additionally with such construction the measure associated to $A(\cdot)$ is \emph{independant} from the basis of $\mathcal{Y}$. In this proof we relax the assumptions of \citet{minh2016operator} which requires $\int_{\mathcal{X}}\abs{\Tr{K_e(\delta)}}d\Haar(\delta)$ to be well defined. We only require $\Tr{K_e(e)}$ to be well defined.
+Another difficulty arise from the fact that the quantity $\sup_{\omega\in\dual{\mathcal{X}}} \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}$ obtained in \cref{pr:spectral} might not bounded. The unboundedness of $\norm{A(\cdot)}_{\mathcal{Y},\mathcal{Y}}$ forbid the use of the most simple concentrations inequalities -- which require the boundedness of the random variable to be controlled. Therefore in the context of \acl{OVK} concentration inequalities for unbounded random operators should be used. However, as pointed out by \citet{minh2016operator}, under some condition on the trace of $K_e(\delta)$, it is possible to turn $A(\cdot)$ into a bounded random operator for all $\omega$ in $\dual{\mathcal{X}}$. The idea is to define a sum measure $\rho=\sum_{j\in\mathbb{N}^*}\rho_{e_j}$, which gives rise to bounded operator $A(\omega)$ and is idependant of the $\Set{e_j}_{j\in\mathbb{N}^*}$ base, instead of constructing a measure from the operator norm as in \cref{pr:spectral}. Additionally with such construction the measure associated to $A(\cdot)$ is \emph{independant} from the basis of $\mathcal{Y}$. In this proof we relax the assumptions of \citet{minh2016operator} which requires $\int_{\mathcal{X}}\abs{\Tr{K_e(\delta)}}d\Haar(\delta)$ to be well defined. We only require $\Tr{K_e(e)}$ to be well defined.
 \begin{proposition}[Bounded shift-invariant $\mathcal{Y}$-Mercer kernel spectral decomposition]
 \label{pr:trace_measure}
 Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel. If for all $y$ and $y'$ in $\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},\Haar)$ and $\Tr K_e(e)\in\mathbb{R}$, then
@@ -200,7 +200,7 @@ Moreover
 \end{propenum}
 \end{proposition}
 \begin{proof}
-Let $\Set{e_j}_{j\in\mathbb{N}}$ be an orthonormal basis of $\mathcal{Y}$. Notice that
+Let $\Set{e_j}_{j\in\mathbb{N}^*}$ be an orthonormal basis of $\mathcal{Y}$. Notice that
 \begin{dmath*}
 \int_{\dual{\mathcal{X}}}\inner{e_j,C(\omega)e_j}d\dual{\Haar}(\omega)
 =\int_{\dual{\mathcal{X}}}\underbrace{\conj{\pairing{e,\omega}}}_{=1}\inner{e_j,C(\omega)e_j}d\dual{\Haar}(\omega)
@@ -209,15 +209,15 @@ Let $\Set{e_j}_{j\in\mathbb{N}}$ be an orthonormal basis of $\mathcal{Y}$. Notic
 Since $C(\omega)$ is non-negative, all the $\inner{e_j,C(\omega)e_j}$. Thus using the monotone convergence theorem,
 \begin{dmath*}
 \int_{\dual{\mathcal{X}}}\Tr\left[C(\omega)\right] d\dual{\Haar}(\omega)
-       =\int_{\dual{\mathcal{X}}}\sum_{j\in\mathbb{N}}\inner{e_j,C(\omega)e_j}d\dual{\Haar}(\omega)
-       =\sum_{k\in\mathbb{N}}\inner{e_j,K_e(e)e_j}
+       =\int_{\dual{\mathcal{X}}}\sum_{j\in\mathbb{N}^*}\inner{e_j,C(\omega)e_j}d\dual{\Haar}(\omega)
+       =\sum_{k\in\mathbb{N}^*}\inner{e_j,K_e(e)e_j}
        =\Tr\left[K_e(e)\right]\hiderel{=}c_{\Tr}\hiderel{<}\infty.
 \end{dmath*}
 Let $A_{\Tr}(\omega)$ and $\rho_{\Tr}(\omega)$ be defined respectively as in \cref{eq:bounded_C} and \cref{eq:bounded_mu}. By definition, $\int_{\dual{\mathcal{X}}}\rho_{\Tr}(\omega)d\dual{\Haar}(\omega)=1$ and $A_{\Tr}(\omega)\rho_{\Tr}(\omega)=C(\omega)$. Now it remains to check the finiteness of $\Tr\left[C(\omega)\right]$ for all $\omega\in\dual{\mathcal{X}}$. Since for all $\omega\in\dual{\mathcal{X}}$, $\Tr\left[C(\omega)\right]\ge 0$,
 \begin{dmath*}
 \Tr\left[C(\omega)\right] \le \int_{\dual{\mathcal{X}}} \Tr\left[C(\omega)\right] d\dual{\Haar}(\omega) \hiderel{=} \Tr\left[K_e(e)\right] \hiderel{<} \infty.
 \end{dmath*}
-Since $\Tr\left[C(\omega)\right]$ is positive and its integral is finite, $\rho_{\Tr}$ is a probability density function. The Schatten norms $\norm{\cdot}_p$ verifies $\Tr\left[\abs{\cdot}\right]=\norm{\cdot}_1\ge\norm{\cdot}_p\ge \norm{\cdot}_q \ge \norm{\cdot}_{\mathcal{Y},\mathcal{Y}}=\norm{\cdot}_{\infty}$ for all $p$, $q\in\mathbb{N}$ such that $1\le p \le q$. Therefore since for all $\omega\in\dual{\mathcal{X}}$, $C(\omega)$ is non-negative,
+Since $\Tr\left[C(\omega)\right]$ is positive and its integral is finite, $\rho_{\Tr}$ is a probability density function. The Schatten norms $\norm{\cdot}_p$ verifies $\Tr\left[\abs{\cdot}\right]=\norm{\cdot}_1\ge\norm{\cdot}_p\ge \norm{\cdot}_q \ge \norm{\cdot}_{\mathcal{Y},\mathcal{Y}}=\norm{\cdot}_{\infty}$ for all $p$, $q\in\mathbb{N}^*$ such that $1\le p \le q$. Therefore since for all $\omega\in\dual{\mathcal{X}}$, $C(\omega)$ is non-negative,
 \begin{dmath*}
 \norm{A_{\Tr}(\omega)}_{\mathcal{Y},\mathcal{Y}}=c_{\Tr}\Tr\left[C(\omega)\right]^{-1}\norm{C(\omega)}_{\infty}
 \le c_{\Tr}\Tr\left[C(\omega)\right]^{-1}\norm{C(\omega)}_{1}
@@ -227,7 +227,7 @@ Since $\Tr\left[C(\omega)\right]$ is positive and its integral is finite, $\rho_
 \end{dmath*}
 Thus $\sup_{\omega\in\dual{\mathcal{X}}}\norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}} \le c_{\Tr} < \infty$. As $C$ is an even function, so are $A_{\Tr}$ and $\rho_{\Tr}$. Eventually $\inner{y', C(\cdot)y}$ is in $L^1(\dual{\mathcal{X}}, \dual{\Haar})$, thus $\inner{y, A_{\Tr}(\cdot)\rho_{\Tr}(\cdot)y'}$ is in $L^1(\dual{\mathcal{X}}, \dual{\Haar})$, hence $\inner{y, A_{\Tr}(\cdot)y'}\in L^1(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho_{\Tr}})$. Since the trace is idenpendent of the basis of $\mathcal{Y}$, so is $\rho_{\Tr}$.
 \end{proof}
-If $\mathcal{Y}$ is finite dimensional then $\Tr\left[K_e(e)\right]$ is well defined hence \cref{pr:trace_measure} is valid as long as $K_e(\cdot)_{ij}\in L^1(\mathcal{X}, \Haar)$ for all $i$, $j\in\mathbb{N}_{p}$, where $p$ is the dimension of $\mathcal{Y}$.
+If $\mathcal{Y}$ is finite dimensional then $\Tr\left[K_e(e)\right]$ is well defined hence \cref{pr:trace_measure} is valid as long as $K_e(\cdot)_{ij}\in L^1(\mathcal{X}, \Haar)$ for all $i$, $j\in\mathbb{N}^*_{p}$, where $p$ is the dimension of $\mathcal{Y}$.
 
 \subsection{Examples of spectral decomposition}
 \label{subsec:dec_examples}
@@ -257,7 +257,7 @@ Then the \acl{FT} on $(\mathbb{R}^d,+)$ is
 =\int_{\mathbb{R}^d}\exp\left(-\iu\inner{\delta,\omega}\right)f(x)d\Haar(\delta)
 =\int_{\mathbb{R}^d}\exp\left(-\iu\inner{\delta,\omega}\right)f(x)\frac{d\Leb(\delta)}{\sqrt{2\pi}^d}.
 \end{dmath*}
-Since $k^{\text{gauss}}_0\in L^1$ and $\Gamma$ is bounded, it is possible to apply \cref{pr:spectral}, and obtain for all $i$, $j\in\mathbb{N}_p$,
+Since $k^{\text{gauss}}_0\in L^1$ and $\Gamma$ is bounded, it is possible to apply \cref{pr:spectral}, and obtain for all $i$, $j\in\mathbb{N}^*_p$,
 \begin{dmath*}
 C^{dec,gauss}(\omega)_{ij}=\FT{K^{dec,gauss}_0(\cdot)_{ij}}(\omega)
 =\FT{k_0^{gauss}}(\omega)\Gamma_{ij}
@@ -320,7 +320,7 @@ Then, applying Fubini's theorem over product space,
 =\prod_{k=1}^d\int_{-c_k}^{\infty} \frac{2\exp\left(-\iu\inner{\delta_k,\omega_k}\right)}{\exp\left(\frac{1}{2}\delta_k\right)+\exp\left(-\frac{1}{2}\delta_k\right)} \frac{d\Leb(\delta_k)}{\sqrt{2\pi}^d}
 =\sqrt{2\pi}^d\prod_{k=1}^d\sech(\pi\omega_k)
 \end{dmath*}
-Since $k^{\text{skewed}}_{1-c}\in L^1$ and $\Gamma$ is bounded, it is possible to apply \cref{pr:spectral}, and obtain for all $i$, $j\in\mathbb{N}_p$,
+Since $k^{\text{skewed}}_{1-c}\in L^1$ and $\Gamma$ is bounded, it is possible to apply \cref{pr:spectral}, and obtain for all $i$, $j\in\mathbb{N}^*_p$,
 \begin{dmath*}
 C^{dec,skewed}(\omega)
 =\FT{k_{1-c}^{skewed}}(\omega)\Gamma
@@ -357,7 +357,7 @@ A^{curl,gauss}(\omega)=\omega\omega^T
 \mu^{curl,gauss}=\mathcal{N}(0,\sigma^{-2}I_d)
 \end{dmath}
 \end{dgroup}
-Notice that in this case $\norm{A^{curl,gauss}(\cdot)}_{\mathbb{R}^d,\mathbb{R}^d}$ is not bounded. However applying \cref{pr:trace_measure} yields a different decomposition where the quantity $\norm{A^{curl,gauss}_{\Tr}(\cdot)}_{\mathbb{R}^d,\mathbb{R}^d}$ is bounded. First we have for all $\delta\in\mathbb{R}^d$ and for all $i$, $j\in\mathbb{N}_d$
+Notice that in this case $\norm{A^{curl,gauss}(\cdot)}_{\mathbb{R}^d,\mathbb{R}^d}$ is not bounded. However applying \cref{pr:trace_measure} yields a different decomposition where the quantity $\norm{A^{curl,gauss}_{\Tr}(\cdot)}_{\mathbb{R}^d,\mathbb{R}^d}$ is bounded. First we have for all $\delta\in\mathbb{R}^d$ and for all $i$, $j\in\mathbb{N}^*_d$
 \begin{dmath*}
 \frac{d^2}{d\delta_id\delta_j}k^{gauss}_0(\delta)=\frac{\exp\left(-\frac{1}{2\sigma^2}\norm{\delta}^2_2\right)}{\sigma^2}\begin{cases}
 \frac{\delta_i\delta_j}{\sigma^2} & \text{if } i\neq j \\
@@ -460,7 +460,7 @@ Let $\mathcal{Y}$ and $\mathcal{Y}'$ be two Hilbert spaces. If one can find $B: 
 is an approximated feature map\mpar{\Ie~it satisfies $\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z)\converges{\asurely}{D\to\infty}K(x,z)$ where $K$ is a $\mathcal{Y}$-Mercer \acs{OVK}.} of a shift-invariant $\mathcal{Y}$-Mercer \acl{OVK}.
 \end{proposition}
 \begin{proof}
-Let $(\omega_j)_{j=1}^D$ be a sequence of $D\in\mathbb{N}$ \iid~random vectors, each of them following the law $\probability_{\dual{\Haar},\rho}$. For all $x$, $z \in \mathcal{X}$ and all $y$, $y' \in \mathcal{Y}$,
+Let $(\omega_j)_{j=1}^D$ be a sequence of $D\in\mathbb{N}^*$ \iid~random vectors, each of them following the law $\probability_{\dual{\Haar},\rho}$. For all $x$, $z \in \mathcal{X}$ and all $y$, $y' \in \mathcal{Y}$,
 \begin{dmath*}
 \inner*{\tildePhi{\omega}(x)y',\tildePhi{\omega}(z)y}=\frac{1}{D}\inner*{\Vect_{j=1}^D\pairing{x, \omega_j}B(\omega_j)^\adjoint y',  \Vect_{j=1}^D\pairing{z, \omega_j}B(\omega_j)^\adjoint y}
 = \frac{1}{D} \sum_{j=1}^D \inner*{y', \conj{\pairing{x, \omega_j}}B(\omega_j)\pairing{z, \omega_j}B(\omega_j)^\adjoint y}_{\mathcal{Y}}
@@ -518,7 +518,7 @@ not_mercer.main()
 
 We computed the Gram Matrix of the Gaussian decomposable kernel
 \begin{dmath*}
-K(x,z)_{ij}=\exp\left(-\frac{1}{2(0.1)^2(x_i - x_j)^2}\right)\Gamma \condition{for $i$, $j\in\mathbb{N}_{250}$.}
+K(x,z)_{ij}=\exp\left(-\frac{1}{2(0.1)^2(x_i - x_j)^2}\right)\Gamma \condition{for $i$, $j\in\mathbb{N}^*_{250}$.}
 \end{dmath*}
 We computed a reference function (black line) defined as $(y_1, y_2)^T = f(x_i)=\sum_{j=1}^{250}K(x_i,x_j)u_j$ where $u_j\sim\mathcal{N}(0,1)$ \iid. We took $\Gamma=.5 I_2 + .5 1_2$ such that the outputs $y_1$ and $y_2$ share some similarities. Then we computed an approximate kernel matrix $\tildeK{\omega}\approx K$ for $25$ increasing values of $D$ ranging from $1$ to $10^4$. The two graphs on the top row shows that the more the number of features increase the closer the model $\widetilde{f}(x_i)=\sum_{j=1}^{250}\tildeK{\omega}(x_i,x_j)u_j$ is to $f$. The bottom row shows the same experiment but for a different realization of $\tildeK{\omega}$. When $D$ is small the curves of the bottom and top rows are very dissimilar --and sine wave like-- while they both converge to $f$ when $D$ increase.
 \paragraph{}

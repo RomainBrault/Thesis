@@ -27,14 +27,27 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
+\begin{filecontents*}{\jobname.xmpdata}
+    \Title{\myTitle}
+    \Author{\myName}
+    \Keywords{Noyaux \`a Valeurs Op\'erateurs\sep
+              Passage \`a l'\'echelle\sep
+              Random Fourier Features\sep
+              Operator-Valued Kernels\sep
+              Large Scale Learning\sep
+              ORFF\sep
+              Thesis}
+    \Publisher{Universit\'e Paris-Saclay}
+\end{filecontents*}
+
 \documentclass[
-		twoside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,
-	 	footinclude=true,cleardoublepage=empty,
-		dottedtoc, % Make page numbers in the table of contents flushed right with dots leading to them
-		BCOR=5mm,paper=a4,fontsize=11pt, % Binding correction, paper type and font size
-		american, % Languages, change this to your language(s)
+        twoside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,
+        footinclude=true,cleardoublepage=empty,
+        dottedtoc, % Make page numbers in the table of contents flushed right with dots leading to them
+        BCOR=5mm,paper=a4,fontsize=11pt, % Binding correction, paper type and font size
+        american, % Languages, change this to your language(s)
         drafting=false %
-		]{scrreprt}
+        ]{scrreprt}
 
 % Includes the file which contains all the document configurations and packages - make sure to edit this file
 \input{classicthesis-config}

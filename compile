@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 #================================================================
 # HEADER
 #================================================================
@@ -117,12 +117,14 @@ fi
 mkdir -p ${BUILD}
 cd ${BUILD}
 if [[ ${FORCE} = true ]]; then
-    cmake -DLATEX_OUTPUT_PATH=${OUTPUT} \
+    cmake -G Ninja \
+          -DCMAKE_MAKE_PROGRAM=/usr/local/Cellar/ninja/1.7.2/bin/ninja \
+          -DLATEX_OUTPUT_PATH=${OUTPUT} \
           -DPDFLATEX_COMPILER=${COMPILER} \
           -DLATEX_USE_SYNCTEX=${SYNCTEX} ..
-    time make -j4 pdf
+    time ninja -v pdf
 else
-    time make -j4 pdf
+    time ninja -v pdf
 fi
 cd ..
 

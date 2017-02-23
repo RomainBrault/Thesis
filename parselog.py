@@ -1,4 +1,4 @@
-#!/Users/Romain/anaconda/bin/python
+#!/usr/bin/env python
 
 """Helper for Xelatex log parsing."""
 

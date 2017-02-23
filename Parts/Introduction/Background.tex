@@ -6,14 +6,14 @@
 We note $\mathbb{K}$ any Abelian\mpar{Commutative.} field, $\mathbb{R}$ the Abelian field of real numbers and $\mathbb{C}$ the abelian field of complex numbers. The unit pure imaginary number $\sqrt{-1}\in\mathbb{C}$ is denoted $\iu$ and the euler constant $\exp(1)\in\mathbb{R}$ is denoted $\ec$. $\mathbb{N}$ represent the monoid of natural numbers and $\mathbb{N}_n$, $n\in\mathbb{N}$ the set of natural numbers smaller or equal to $n$. For any space $\mathcal{S}$, $\mathcal{S}^d$, $d\in\mathbb{N}$ represents the cartesian product space $\mathcal{S}^d=\mathcal{S}\times \ldots \times \mathcal{S}$. For any two algebraic structures $\mathcal{S}$ and $\mathcal{S}'$ we write $\mathcal{S}\cong\mathcal{S}'$ is there exist an isomorphism between these two structures.
 \paragraph{}
 $\mathcal{B}(\mathbb{R}^d)$ is the Borel $\sigma$-algebra on $\mathbb{R}^d$.
-If $\mathcal{X}$ and $\mathcal{Y}$ are two vector spaces, we denote by $\mathcal{F}(\mathcal{X};\mathcal{Y})$ the vector space of functions $f:\mathcal{X}\to\mathcal{Y}$ and $\mathcal{C}(\mathcal{X};\mathcal{Y})\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$ the subspace of continuous functions.
+If $\mathcal{X}$ and $\mathcal{Y}$ are two topological vector spaces, we denote by $\mathcal{F}(\mathcal{X};\mathcal{Y})$ the vector space of functions $f:\mathcal{X}\to\mathcal{Y}$ and $\mathcal{C}(\mathcal{X};\mathcal{Y})\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$ the subspace of continuous functions.
 If $\mathcal{H}$ is an Hilbert space on a field $\mathbb{K}$ we denote its scalar product by $\inner{\cdot,\cdot}_{\mathcal{H}}$ and its norm by $\norm{\cdot}_{\mathcal{H}}$.
 \paragraph{}
 If $x\in\mathcal{H}$ we note $x^*\in\mathcal{H}^*$, $x^*:\mathcal{H}\to\mathbb{K}$ the dual vector in the dual vector space $\mathcal{H}^*$ of $\mathcal{H}$. If $\mathcal{H}$ is a Hilbert space, it is reflexive (\ie~$\mathcal{H}^{**}\cong\mathcal{H}$). Let $\mathcal{H}$ be a finite dimensional Hilbert space endowed with a basis $(e_i)_{i=1}^N$. If no specific mention, we consider that $\mathcal{H}^*$ is endowed with the dual basis $(e^*_i)_{i=1}^N$ such that $e_i^*e_j=\delta_{ij}$. If $\mathcal{H}=\mathbb{R}^d$, this allows us to identify $x^*$ with $x^T$. The dual space $\mathcal{H}^*$ is isomorphic to $\mathcal{H}$ if and only if $\mathcal{H}$ is finite dimensional. For all $x$ and $y$ in $\mathcal{H}$ we have $\inner{x, y}_{\mathcal{H}}=x^*y$.
 \paragraph{}
 We set $\mathcal{L}(\mathcal{H})=\mathcal{L}(\mathcal{H};\mathcal{H})$ to be the space of linear operators from $\mathcal{H}$ to itself. If $W\in\mathcal{L}(\mathcal{H})$, $\Ker W$ denotes the nullspace, $\Ima W$ the image and $W^\adjoint \in \mathcal{L}(\mathcal{H})$ the adjoint operator.
 \paragraph{}
-We call matrix $M$ of size $(m,n)\in\mathbb{N}^2$ on an Abelian field $\mathbb{K}$ a collection of elements $M=(m_{ij})_{1\le i\le m, 1\le j \le n}$, $m_{ij}\in\mathbb{K}$. We note $\mathcal{M}_{m,n}(\mathbb{K})$ the vector space of all matrices. If $\mathcal{H}_1$ and $\mathcal{H}_2$ are two finite dimensional Hilbert spaces on an Abelian field $\mathbb{K}$, any bounded linear operator $L\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ can be view as a matrix. Let $n=\dim(\mathcal{H}_1)$, $m=\dim(\mathcal{H}_2)$ and let $B=(e_i)_{i=1}^{n}$ and $C=(e'_i)_{i=1}^{m}$ be the respective canonical bases of $\mathcal{H}_1$ and $\mathcal{H}_2$. We note $\text{mat}_{B, C}: \mathcal{L}(\mathcal{H}_1;\mathcal{H}_2) \to \mathcal{M}_{m,n}(\mathbb{K})$ such that $M=\text{mat}_{B, C}(L)=(\inner{e'_j, L e_i})_{1\le i\le n, 1\le j \le m}\in\mathcal{M}_{m,n}(\mathbb{K})$. Let $M_1\in\mathcal{M}_{m,n}(\mathbb{K})$ and $M_2\in\mathcal{M}_{n,l}(\mathbb{K})$. The product between two matrices is written $M_1M_2\in\mathcal{M}_{m,l}(\mathbb{K})$ and obey $(M_1M_2)_{ij} = \sum_{k=1}^n M_{ik}M_{kj}$. Given two linear operator $L_1\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ and $L2\in\mathcal{L}(\mathcal{H}_2;\mathcal{H}_3)$ we have $L_1L_2\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_3)$ and \begin{dmath*}
+We call matrix $M$ of size $(m,n)\in\mathbb{N}^2$ on an Abelian field $\mathbb{K}$ a collection of elements $M=(m_{ij})_{1\le i\le m, 1\le j \le n}$, $m_{ij}\in\mathbb{K}$. We note $\mathcal{M}_{m,n}(\mathbb{K})$ the vector space of all matrices. If $\mathcal{H}_1$ and $\mathcal{H}_2$ are two finite dimensional Hilbert spaces on an Abelian field $\mathbb{K}$, any bounded linear operator $L\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ can be viewed as a matrix. Let $n=\dim(\mathcal{H}_1)$, $m=\dim(\mathcal{H}_2)$ and let $B=(e_i)_{i=1}^{n}$ and $C=(e'_i)_{i=1}^{m}$ be the respective canonical bases of $\mathcal{H}_1$ and $\mathcal{H}_2$. We note $\text{mat}_{B, C}: \mathcal{L}(\mathcal{H}_1;\mathcal{H}_2) \to \mathcal{M}_{m,n}(\mathbb{K})$ such that $M=\text{mat}_{B, C}(L)=(\inner{e'_j, L e_i})_{1\le i\le n, 1\le j \le m}\in\mathcal{M}_{m,n}(\mathbb{K})$. Let $M_1\in\mathcal{M}_{m,n}(\mathbb{K})$ and $M_2\in\mathcal{M}_{n,l}(\mathbb{K})$. The product between two matrices is written $M_1M_2\in\mathcal{M}_{m,l}(\mathbb{K})$ and obey $(M_1M_2)_{ij} = \sum_{k=1}^n M_{ik}M_{kj}$. Given two linear operator $L_1\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ and $L2\in\mathcal{L}(\mathcal{H}_2;\mathcal{H}_3)$ we have $L_1L_2\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_3)$ and \begin{dmath*}
 \text{mat}_{B, D}(L_1L_2)=\text{mat}_{B, C}(L_1)\text{mat}_{C, D}(L_2).
 \end{dmath*}
 The operator $\text{mat}_{B, C}$ is a vector space isomorphism allowing us to identify $\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ with $\mathcal{M}_{mn}(\mathbb{K})$ where $n=\dim(\mathcal{H}_1)$ and $m=\dim(\mathcal{H}_2)$. All these notations are summarized in \cref{table:notations}.
@@ -23,7 +23,7 @@ The operator $\text{mat}_{B, C}$ is a vector space isomorphism allowing us to id
 \afterpage{%
 \begin{table}[!ht]
 \centering
-\caption{Mathematical symbols used throughout the parper and their signification.}
+\caption{Mathematical symbols used throughout the parper and their signification. \label{table:notations}}
 \begin{tabularx}{\textwidth}{cX}
 \toprule
 Symbol & \multicolumn{1}{c}{Meaning} \\
@@ -55,7 +55,6 @@ $L^p(\mathcal{X}, \mu;\mathcal{Y})$ & The Banach space of  $\norm{\cdot}_{\mathc
 $\Vect_{j=1}^D x_i$ & The direct sum of $D$ vectors $x_i$'s in $\mathcal{H}$. \\
 \bottomrule
 \end{tabularx}
-\label{table:notations}
 \end{table}}
 
 %----------------------------------------------------------------------------------------
@@ -84,49 +83,62 @@ $\Vect_{j=1}^D x_i$ & The direct sum of $D$ vectors $x_i$'s in $\mathcal{H}$. \\
 \label{sec:abstract_harmonic}
 
 \subsection{Locally compact Abelian groups}
-\begin{definition}{\acl{LCA} group.}
-A group $\mathcal{X}$ endowed with a binary operation $\groupop$ is said to be Locally Compact Abelian if $\mathcal{X}$ is a topological \emph{commutative} group \wrt~$\groupop$ for which every point has a compact neighborhood and is Hausdorff.
+\begin{definition}{\acf{LCA} group.}
+A group $\mathcal{X}$ endowed with a binary operation $\groupop$ is said to be Locally Compact Abelian if $\mathcal{X}$ is a topological \emph{commutative} group \wrt~$\groupop$ for which every point has a compact neighborhood and is Hausdorff (T2).
 \end{definition}
-
+Moreover given a element $z$ of al \acs{LCA} group $\mathcal{X}$, we define the set $z\groupop\mathcal{X}=\mathcal{X}\groupop z=\Set{z\groupop x|\forall x\in\mathcal{X}}$ and the set $\mathcal{X}^{-1}=\Set{x^{-1}|\forall x\in\mathcal{X}}$.
+We also note $e$ the neural element of $\mathcal{X}$ such that $x\groupop e=e \groupop x= e$ for all $x\in\mathcal{X}$.
+Throughout this thesis we focus on positive definite function. Let $\mathcal{Y}$ be a complex separable Hilbert space. A function $f:\mathcal{X}\to\mathcal{Y}$ is positive definite if for all $N\in\mathbb{B}$ and all $y\in\mathcal{Y}$,
+\begin{dmath*}
+\sum_{i,j=1}^N\inner{y_i, f(x_j^{-1}\groupop x_i)y_j}\ge 0
+\end{dmath*}
+for all squences $(y_i)_{i\in\mathbb{N}_N^*}\in\mathcal{Y}^N$ and all sequences $(x_i)_{i\in\mathbb{N}_N^*}\in\mathcal{X}^N$. If $\mathcal{Y}$ is real we add the assumption that $f(x^{-1})=f(x)^*$ for all $x\in\mathcal{X}$.
+A consequence is that a positive definite function is bounded, as shown by \citet{falb1969theorem},
+$\norm{f(x)}_{\mathcal{Y}}\le 2\norm{f(e)}_{\mathcal{Y}}$ for all $x\in\mathcal{X}$, however positive definite function are not necessarily continuous. This motivates the introduction of functions of positive type which are nothing but continuous positive definite function.
 \subsection{The Haar measure}
-\begin{definition}[The Haar measure]
-There is, up to a positive multiplicative constant, a unique countably additive, nontrivial measure $\Haar$ on the Borel subsets of $\mathcal{X}$ satisfying the following properties \mpar{For more details and constructive proofs see \cite{alfsen1964simplified,folland1994course,conway2013course}.}:
+A $\sigma$-algebra on $\mathcal{X}$ is a set $\mathcal{M}\subseteq\mathcal{P}(\mathcal{X})$ of subsets of $\mathcal{X}$, containing the empty set, which is closed under taking complements and countable unions. A pair $(\mathcal{X},\mathcal{M})$ where $\mathcal{X}$ is a set and $\mathcal{M}$ is a $\sigma$-algebra is called a measure space. The Borel $\sigma$-algebra $\mathcal{B}(\mathcal{X})$ is a $\sigma$-algebra generated by the open sets of $\mathcal{X}$. A measure on a measurable space $(\mathcal{X},\mathcal{B}(\mathcal{X}))$ is a map $\mu: \mathcal{B}(X) \to \overline{\mathbb{R}}_+$ which is zero on the empty set and countably additive, \ie~for any subset $(\mathcal{Z}_n)_{n\in\mathbb{N}}$ is a sequence of pairwise disjoint measurable sets,
+\begin{dmath*}
+\mu\left(\bigcup_{n\in\mathbb{N}}\mathcal{Z}_n\right)=\sum_{n\in\mathbb{N}}\mu(\mathcal{Z}_n).
+\end{dmath*}
+Measures on topological spaces which appear in practice often satisfy the following additional regularity properties.
+\begin{definition}[Radon measure]
+A Radon measure $\mu=\Radon$ on a topological measurable space $\mathcal{X}$ is a measure on
+$(\mathcal{X}, \mathcal{B}(\mathcal{X}))$ which satisfies the following properties.
 \begin{propenum}
-\item The measure $\Haar$ is translation-invariant.
+\item The measure $\Radon$ is finite on every compact set.
 \begin{dmath*}
-\Haar(x\groupop E) = \Haar(E),
+\Radon(K) < \infty\condition{for any compact set $K\in\mathcal{B}(\mathcal{X})$.}
 \end{dmath*}
-for every $x$ in $\mathcal{X}$ and Borel set $E\in\mathcal{B}(\mathcal{X})$.
-\item The measure $\Haar$ is finite on every compact set.
+\item The measure $\Radon$ is outer regular on any Borel sets $E$.
 \begin{dmath*}
-\Haar(K) < \infty
+\Radon(E)=\inf \Set{\Radon(U) | E\subseteq U}\condition{for any open set $U$.}
 \end{dmath*}
-for any compact set $K\in\mathcal{B}(\mathcal{X})$.
-\item The measure $\Haar$ is outer regular on any Borel sets $E$.
+\item The measure $\Radon$ is inner regular on open sets $E$.
 \begin{dmath*}
-\Haar(E)=\inf \Set{\Haar(U) | E\subseteq U}
+\Radon(E)=\sup\Set{\Radon(K) | K\subseteq E}\condition{for any compact set $K$.}
 \end{dmath*}
-For any open set $U$.
-\item The measure $\Haar$ is inner regular on open sets $E$.
-\begin{dmath*}
-\Haar(E)=\sup\Set{\Haar(K) | K\subseteq E},
-\end{dmath*}
-for any compact set $K$.
 \end{propenum}
 \end{definition}
-Such a measure on G is called a Haar measure\mpar{If $\mathcal{X}$ was not supposed to be Abelian, we should have defined a left Haar measure and a right Haar measure. In our case both measure are the same, so we refer to both of them as Haar measure}. An immediate consequence of the invariance is that for any $c\in\mathcal{X}$,
+
+When dealing with topological groups it is natural to look for measures which
+are invariant under translation. There exist, up to a positive multiplicative constant, a unique countably additive, nontrivial measure $\Haar$ on \emph{any} $\acs{LCA}$ group. For more details and constructive proofs see~\cite{alfsen1964simplified,folland1994course,conway2013course}.
+
+\begin{definition}[The Haar measure]
+A Haar measure $\mu=\Haar$ on a \acs{LCA} group $\mathcal{X}=(G,\groupop)$ is a Radon measure on $(\mathcal{X},\mathcal{B}(X))$ which is non-zero on non-empty open sets and is invariant under translation. Namely
+\begin{propenum}
+\item if $\mathcal{Z} \subseteq \mathcal{X}$ is open, then $\Haar(\mathcal{X})>0$.
+\item For all $\mathcal{Z}\in\mathcal{B}(\mathcal{X})$ and $x \in \mathcal{X}$, $\Haar(x\groupop \mathcal{Z})=\Haar(\mathcal{Z})$.
+\end{propenum}
+\end{definition}
+Such a measure on a \acs{LCA} group $\mathcal{X}$ is called a Haar measure\mpar{If $\mathcal{X}$ was not supposed to be Abelian, we should have defined a left Haar measure and a right Haar measure. In our case both measure are the same, so we refer to both of them as Haar measure}. An immediate consequence of the invariance is that for any $c\in\mathcal{X}$,
 \begin{dmath*}
 \int_{\mathcal{X}}f(s\groupop x)d\Haar(x)=\int_{\mathcal{X}}f(x)d\Haar(x).
 \end{dmath*}
-It can be shown that $\Haar(U) > 0$ for every non-empty open subset $U$. In particular, if $\mathcal{X}$ is compact then $\Haar(\mathcal{X})$ is finite and positive, so we can uniquely specify a left Haar measure on $\mathcal{X}$ by adding the normalization condition $\Haar(\mathcal{X})=1$. Another useful property is that given a continuous function $f\in\mathcal{C}(\mathcal{X})$,
-\begin{dmath*}
-\int_{\mathcal{X}}f(x)d\Haar(x)=\int_{\mathcal{X}}f\left(\inv{x}\right)d\Haar(x).
-\end{dmath*}
-We call measured space the space $(\mathcal{X},\mathcal{B}(\mathcal{X}),\Haar)$ the space $\mathcal{X}$ endowed with its Borel sigma algebra and some measure $\Haar$. If $\Haar(\mathcal{X})=1$ then the space $(\mathcal{X},\mathcal{B}(\mathcal{X}),\Haar)$ is called a probability space.
+It can be shown that $\Haar(U) > 0$ for every non-empty open subset $U$. In particular, if $\mathcal{X}$ is compact then $\Haar(\mathcal{X})$ is finite and positive, so we can uniquely specify a left Haar measure on $\mathcal{X}$ by adding the normalization condition $\Haar(\mathcal{X})=1$. We call measured space the space $(\mathcal{X},\mathcal{B}(\mathcal{X}),\Haar)$ the space $\mathcal{X}$ endowed with its Borel $\sigma$-algebra and some measure $\Haar$. If $\Haar(\mathcal{X})=1$ then the space $(\mathcal{X},\mathcal{B}(\mathcal{X}),\Haar)$ is called a probability space. Last but not least, on the additive group $(\mathbb{R},+)$, the Lebesgue measure noted $\Leb$ is a valid Haar measure. For a concise introduction and important properties we refer the reader to the lecture of \citet{tornier2014haar}.
 \subsection{Even and odd functions}
-We say that a function $f:\mathcal{X}\to\mathcal{C}$ is even if for all $x\in\mathcal{X}$, $f(x)=f\left(\inv{x}\right)$ and odd if $f(x)=-f\left(\inv{x}\right)$. The definition can be extended to operator-valued functions.
-\begin{definition}[Even and odd function on a LCA group]
-Let $\mathcal{X}$ be a measured LCA group. A function $f:\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is (weakly) even if for all $x\in\mathcal{X}$ and all $y$, $y'\in\mathcal{Y}$
+Let $\mathcal{X}$ be a \acs{LCA} group and $\mathbb{K}$ be a field viewed as an additive group. We say that a function $f:\mathcal{X}\to\mathbb{K}$ is even if for all $x\in\mathcal{X}$, $f(x)=f\left(\inv{x}\right)$ and odd if $f(x)=-f\left(\inv{x}\right)$. The definition can be extended to operator-valued functions.
+\begin{definition}[Even and odd operator-valued function on a \acs{LCA} group]
+Let $\mathcal{X}$ be a measured \acs{LCA} group and $\mathcal{Y}$ be a Hilbert space, and $\mathcal{L}(\mathcal{Y})$ the space of bounded linear operators from $\mathcal{Y}$ to itself viewed as an additive group. A function $f:\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is (weakly) even if for all $x\in\mathcal{X}$ and all $y$, $y'\in\mathcal{Y}$ where $\mathcal{}$
 \begin{dmath}
 \inner{y,f\left(\inv{x}\right)y'}=\inner{y,f(x)y'}
 \end{dmath}
@@ -138,21 +150,20 @@ and (weakly) odd if
 It is easy to check that if $f$ is odd then $\int_{\mathcal{X}}\inner{y,f(x)y'}d\Haar(x)=0$.
 \begin{proof}
 \begin{dmath*}
-\int_{\mathcal{X}}\inner{y,f(x)y'}d\Haar(x)=\frac{1}{2}\left(\int_{\mathcal{X}}\inner{y,f\left(\inv{x}\right)y'}d\Haar(x) + \int_{\mathcal{X}}\inner{y,f(x)y'}d\Haar(x)\right)
+\int_{\mathcal{X}}\inner{y,f(x)y'}d\Haar(x)=\int_{\mathcal{X}}\inner*{y,\left(\frac{f\left(\inv{x}\right) + f(x)}{2}\right)-\left(\frac{f\left(\inv{x}\right) - f(x)}{2}\right)y'}d\Haar(x)
 =\frac{1}{2}\left(-\int_{\mathcal{X}}\inner{y,f(x)y'}d\Haar(x) + \int_{\mathcal{X}}\inner{y,f(x)y'}d\Haar(x)\right)
 =0.
 \end{dmath*}
 \end{proof}
 Besides the product of an even and an odd function is odd. Indeed for all $f$, $g\in\mathcal{F}(\mathcal{X};\mathcal{L}(\mathcal{Y}))$, where $f$ is even and $g$ odd. Define $h(x)=\inner{y,f(x)g(x)y'}$. Then we have
 \begin{dmath}
-h\left(\inv{x}\right)
-=\inner{y,f\left(\inv{x}\right)g\left(\inv{x}\right)y'}
-=\inner{y,f(x)\left(-g(x)\right)y'}
+h\left(\inv{x}\right)=\inner{y,f\left(\inv{x}\right)g\left(\inv{x}\right)y'}
+\hiderel{=}\inner{y,f(x)\left(-g(x)\right)y'}
 =-h(x).
 \end{dmath}
 \subsection{Characters}
 \label{subsec:character}
-\acf{LCA} groups are central to the general definition of Fourier Transform which is related to the concept of Pontryagin duality \citep{folland1994course}.
+\acf{LCA} groups are central to the general definition of Fourier Transform which is related to the concept of Pontryagin duality~\citep{folland1994course}.
 Let $(\mathcal{X}, \groupop)$ be a \acs{LCA} group with $e$ its neutral element and the notation, $\inv{x}$, for the inverse of $x \in \mathcal{X}$. A \emph{character} is a complex continuous homomorphism $\omega:\mathcal{X}\to\mathbb{U}$ from $\mathcal{X}$ to the set of complex numbers of unit module $\mathbb{U}$. The set of all characters of $\mathcal{X}$ forms the Pontryagin \emph{dual  group} $\dual{\mathcal{X}}$. The dual group of an \acs{LCA} group is an \acs{LCA} group so that we can endow $\dual{\mathcal{X}}$ with a \say{dual} Haar measure noted $\dual{\Haar}$. Then the dual group operation is defined by
 \begin{dmath*}
 (\omega_1 \groupop \omega_2)(x)=\omega_1(x)\omega_2(x) \hiderel{\in} \mathbb{U}.
@@ -160,13 +171,14 @@ Let $(\mathcal{X}, \groupop)$ be a \acs{LCA} group with $e$ its neutral element 
 \paragraph{}
 The Pontryagin duality theorem states that $\dual{\dual{\mathcal{X}}}\cong \mathcal{X}$. \Ie~there is a canonical isomorphism between any \acs{LCA} group and its double dual. To emphasize this duality the following notation is usually adopted
 \begin{dmath}
+\label{eq:paringdef}
 \omega(x)=\pairing{x,\omega}\hiderel{=}\pairing{\omega,x}\hiderel{=}x(\omega),
 \end{dmath}
-where $x\in\mathcal{X}\cong\dual{\dual{\mathcal{X}}}$ and $\omega\in\dual{\mathcal{X}}$. Another important property involves the complex conjugate of the pairing which is defined as
+where $x\in\mathcal{X}\cong\dual{\dual{\mathcal{X}}}$ and $\omega\in\dual{\mathcal{X}}$. The form $\pairing{\cdot,\cdot}$ defined in \cref{eq:paringdef} is called (duality) pairing. Another important property involves the complex conjugate of the pairing which is defined as
 \begin{dmath}
 \conj{\pairing{x,\omega}} = \pairing*{\inv{x},\omega}\hiderel{=}\pairing*{x,\inv{\omega}}.
 \end{dmath}
-\begin{table}[!ht]
+\begin{table}[htb]
 \caption{Classification of \acl{FT}s in terms of their domain and transform domain.}
 \label{tab:dual_and_pairing}
 \centering
@@ -174,9 +186,9 @@ where $x\in\mathcal{X}\cong\dual{\dual{\mathcal{X}}}$ and $\omega\in\dual{\mathc
 \toprule
 \multicolumn{1}{c}{$\mathcal{X}=$} & \multicolumn{1}{c}{$\dual{\mathcal{X}}\cong$} & \multicolumn{1}{c}{Operation} & \multicolumn{1}{l}{Pairing} \\
 \cmidrule{1-4}
-$\mathbb{R}^d$ & $\mathbb{R}^d$ & $+$ & $\pairing{x,\omega} = \exp\left(\iu \inner{x, \omega}\right)$ \\
-$\mathbb{R}^d_{*,+}$ & $\mathbb{R}^d$ & $\cdot$ & $\pairing{x,\omega} =\exp\left( \iu \inner{\log(x), \omega} \right)$ \\
-$(-c;+\infty)^d$ & $\mathbb{R}^d$ & $\odot$ & $\pairing{x,\omega} =\exp\left( \iu \inner{\log(x+c), \omega} \right)$ \\
+$\mathbb{R}^d$ & $\mathbb{R}^d$ & $+$ & $\pairing{x,\omega} = \exp\left(\iu \inner{x, \omega}_2\right)$ \\
+$\mathbb{R}^d_{*,+}$ & $\mathbb{R}^d$ & $\cdot$ & $\pairing{x,\omega} =\exp\left( \iu \inner{\log(x), \omega}_2 \right)$ \\
+$(-c;+\infty)^d$ & $\mathbb{R}^d$ & $\odot$ & $\pairing{x,\omega} =\exp\left( \iu \inner{\log(x+c), \omega}_2 \right)$ \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -186,8 +198,10 @@ We notice that for any pairing depending of $\omega$, there exists a function $h
 \pairing*{x \groupop \inv{z},\omega} = \omega(x)\omega\left(\inv{z}\right) =\exp\left(+\iu h_{\omega}\left(x\right)\right)\exp\left(+\iu h_{\omega}\left(\inv{z}\right)\right)
 =\exp\left(+\iu h_{\omega}\left(x\right)\right)\exp\left(-\iu h_{\omega}\left(z\right)\right).
 \end{dmath*}
+The following example shows how to determine the (Pontryagin) dual of a \acs{LCA} group.
 \begin{example}
-$\dual{\mathbb{R}}\cong\mathbb{R}$ with the duality pairing $\pairing{x,\omega}=\exp\left(\iu x\omega\right)$ for all $x\in\mathbb{R}$ and all $\omega\in\mathbb{R}$.
+\label{ex:additive_group_lca}
+On the additive group $\mathcal{X}=(\mathbb{R},+)$ we have $\dual{\mathbb{R}}\cong\mathbb{R}$ with the duality pairing $\pairing{x,\omega}=\exp\left(\iu x\omega\right)$ for all $x\in\mathbb{R}$ and all $\omega\in\mathbb{R}$. The Haar measure on $\mathcal{X}$ is the Lebesgue measure.
 \begin{proof}
 If $\omega\in\dual{\mathbb{R}}$ then $\omega(0)=1$ since $\omega$ is an homeomorphism from $\mathbb{R}$ to $\mathbb{U}$. Therefore there exists $a>0$ such that $\int_0^a\omega(t)d\Leb(t)\neq0$. Setting $A\omega=\int_0^a\omega(t)d\Leb(t)$ we have
 \begin{dmath*}
@@ -197,45 +211,117 @@ so $\omega$ is differentiable and
 \begin{dmath*}
 \omega'(x)=A^{-1}(\omega(a+x)-\omega(x))\hiderel{=}c\omega(x) \quad\text{where}\quad c\hiderel{=}A^{-1}(\omega(a)-1).
 \end{dmath*}
-It follow that $\omega(x)=e^{cx}$, and since $\abs{\omega}=1$, one can take $c=i\xi$ for some $\xi\in\mathbb{R}$. Hence we can identify $\omega$ with $\xi$ and $\dual{\mathbb{R}}$ with $\mathbb{R}$ since $\xi$ uniquely determines $\omega$. With mild abuse of notation we identify $\omega=\xi$.
+It follow that $\omega(x)=e^{cx}$, and since $\abs{\omega}=1$, one can take $c=i\xi$ for some $\xi\in\mathbb{R}$. Hence we can identify $\omega$ with $\xi$ and $\dual{\mathbb{R}}$ with $\mathbb{R}$ since $\xi$ uniquely determines $\omega$, thus we identify $\omega=\xi$.
 \end{proof}
 \end{example}
-\Cref{tab:dual_and_pairing} provide an explicit list of pairings for various groups based on $\mathbb{R}^d$ or its subsets. We especially mention the duality pairing associated to the skewed multiplicative \acs{LCA} product group $\mathcal{X}=(-c_k;+\infty)_{k=1}^d$ endowed with the group operation $\odot$ defined component-wise for all $x$, $z\in\mathcal{X}$ as follow.
+We also especially mention the duality pairing associated to the skewed multiplicative \acs{LCA} product group. This group together with the operation $\odot$ has  been proposed by~\citet{li2010random} to handle histograms features especially useful in image recognition applications. Let $\mathcal{X}=(-c_k;+\infty)_{k=1}^d$, where $c_k\in\mathbb{R}_+$, endowed with the group operation $\odot$ defined component-wise for all $x$, $z\in\mathcal{X}$ as follow.
 \begin{dmath*}
-x \odot z \colonequals ((x_k+c)(z_k+c) - c)_{k=1}^d.
+x \odot z \colonequals ((x_k+c)(z_k+c_k) - c_k)_{k=1}^d.
 \end{dmath*}
-Then the duality pairing is defined by
+\begin{example}[\citet{li2010random}]
+On the skewed multiplicative group $\mathcal{X}=((-c,+\infty), \odot)$ we have $\dual{\mathbb{(-c,+\infty)}}\cong\mathbb{R}$, with duality pairing $\pairing{x,\omega}=\exp(\iu\log(x+c)\omega)$ for all $x\in\mathcal{X}$ and all $\omega\in\dual{\mathcal{X}}$. The Haar measure on $\mathcal{X}$ is given for all $\mathcal{Z}\in\mathcal{B}(\mathcal{X})$ by $\Haar(\mathcal{X})=\int_{\mathcal{Z}}(z+c)^{-1}d\Leb(z)$.
+\end{example}
+\begin{proof}
+Let $a$, $b\in(-c,+\infty)$ and $\mu([a, b])=\int_a^b(z+c)^{-1}d\Leb(z)$. Then for all $d\in(-c,+\infty)$
+\begin{dmath*}
+\mu([d\odot a, d \odot b])=\int_{(d+c)(a+c)-c}^{(d+c)(b+c)-c}(z+c)^{-1}d\Leb(z)
+=\log(d+c)(b+c)-\log(d+c)(a+c)=\log(b+c)-\log(a+c)
+=\int_{a}^{b}(z+c)^{-1}d\Leb(z)\hiderel{=}\mu([a, b]).
+\end{dmath*}
+Thus $\mu$ is translation invariant, making $\Haar=\lambda\mu$ a valid Haar measure on $\mathcal{X}$ for any multiplicative constant $\lambda\in\mathbb{R}_*$. Let $\pairing{x,\omega}=\exp(\iu\log(x+c)\omega)$ for all $x\in\mathcal{X}$ and all $\omega\in\dual{\mathcal{X}}$. We have for all $z\in\mathcal{X}$
+\begin{dmath*}
+\pairing{x\odot z,\omega}=\exp(\iu\log((x+c)(z+c))\omega)
+=\exp(\iu\log(x+c)\omega)\exp(\iu\log(z+c)\omega)
+=\pairing{x,\omega}\pairing{z,\omega}
+\end{dmath*}
+Thus $\omega(x\odot z)=\omega(x)\omega(z)$, which define a valid pairing, therefore we can identify $\dual{\mathcal{X}}=\dual{(-c,+\infty)}\cong\mathbb{R}$ where $\mathbb{R}$ is the additive group endowed with the Haar measure being the Lebesgue measure.
+\end{proof}
+It is easy to extend the pontryagin dual of groups to dual groups, as well as defining the pairing on the dual group using the following proposition~\citep{folland1994course}
+\begin{proposition}
+Let $(\mathcal{X}_i)_{i\in\mathbb{N}}$ be a collection of \acs{LCA} groups. Then
+\begin{dmath*}
+\dual{\left(\prod_{i\in\mathbb{N}}\mathcal{X}_i\right)}\cong\prod_{i\in\mathbb{N}}\dual{\mathcal{X}_i}
+\end{dmath*}
+\end{proposition}
+\begin{proof}
+Each $\omega=(\omega_1, \hdots, \omega_N)\in\prod_{i=1}^N\mathcal{X}_i$ defines a character on $\prod_{i=1}^N\mathcal{X}_i$ by
+\begin{dmath*}
+\pairing{(x_1, \hdots, x_N),(\omega_1, \hdots, \omega_N)}=\pairing{x_1,\omega_1}\cdots\pairing{x_N,\omega_N}.
+\end{dmath*}
+Moreover, every character $\omega$ on $\prod_{i=1}^N\mathcal{X}_i$ is of this form, where $\omega_i$ is defined by
+\begin{dmath*}
+\pairing{x_i,\omega_i}=\pairing{(e_1, \hdots, e_{i-1}, x_j, e_{i+1}, \hdots, e_N), \omega},
+\end{dmath*}
+where $e_i$ denotes the neutral element of the \acs{LCA} group $\mathcal{X}_i$.
+\end{proof}
+Hence $\dual{\mathbb{R}^d}\cong\mathbb{R}^d$ with duality pairing
+\begin{dmath*}
+\pairing{x,\omega}=\exp\left(\iu\sum_{k=1}^d x_k\omega_k \right),
+\end{dmath*} hence $h_\omega(x)=\sum_{k=1}^d\omega_k x_k)=\inner{x,\omega}_2$. For the skewed multiplicative group $\dual{(-c_k;+\infty)_{k=1}^d}\cong\mathbb{R}^d$ and the duality pairing is defined by
 \begin{dmath*}
 \label{eq:pairing-skewed}
-\pairing{x, \omega} = \exp\left(\iu\sum_{k=1}^d\omega_k \log(x_k+c_k)\right).
+\pairing{x, \omega} = \exp\left(\iu\sum_{k=1}^d\log(x_k+c_k)\omega_k\right).
 \end{dmath*}
-Hence $h_\omega(x)=\sum_{k=1}^d\omega_k \log(x_k+c_k)$. This group together with the operation $\odot$ has  been proposed by \cite{li2010random} to handle histograms features especially useful in image recognition applications.
+Hence $h_\omega(x)=\sum_{k=1}^d \log(x_k+c_k)\omega_k=\inner{\log(x+c),\omega}_2$. Eventually the natural Haar measure on product group is the product measure. \Eg~for $\mathcal{X}=\mathbb{R}^d$, the Haar measure on $\mathbb{R}^d$ is the d-th power of the Lebesgue measure on $\mathbb{R}$. \Cref{tab:dual_and_pairing} provide an explicit list of pairings for various groups based on $\mathbb{R}^d$ or its subsets. The interested reader can refer to~\citet{folland1994course} for a more detailed construction of LCA, Pontryagin duality and \acl{FT}s on LCA.
+
 \subsection{The Fourier transform}
 For a function with values in a separable Hilbert space $f\in L^1(\mathcal{X},\Haar;\mathcal{Y})$, we denote $\FT{f}$ its \acf{FT} which is defined by
 \begin{dmath*}
     \forall \omega \in \dual{\mathcal{X}},\enskip \FT{f}(\omega) \hiderel{=}\int_{\mathcal{X}} \conj{\pairing{x,\omega}}f(x)d\Haar(x).
 \end{dmath*}
-For a measure $\Haar$ defined on $\mathcal{X}$, there exists a unique suitably normalized measure $\dual{\Haar}$ on $\dual{\mathcal{X}}$ such that for all $f \in L^1(\mathcal{X}, \Haar;\mathcal{Y})$ and if $\FT{f} \in L^1(\dual{\mathcal{X}}, \dual{\Haar}; \mathcal{Y})$ we have
-\begin{dmath}\label{fourier-l1}
-\forall x \in \mathcal{X},\enskip f(x)\hiderel{=}\int_{\dual{\mathcal{X}}}\FT{f}(\omega)(x,\omega) d\dual{\Haar}(\omega).
-\end{dmath}
-Moreover if $\dual{\Haar}$ is normalized, $\mathcal{F}$ extends to a unitary operator from $L^2(\mathcal{X}, \Haar, \mathcal{Y})$ onto $L^2(\dual{\mathcal{X}}, \dual{\Haar}; \mathcal{Y})$. Then the \acf{IFT} of a function $g\in L^1(\dual{\mathcal{X}},\dual{\Haar}; \mathcal{Y})$ (where $\dual{\Haar}$ is suitably normalized \wrt~$\Haar$) is noted $\IFT{g}$ defined by
+The \acf{IFT} of a function $g\in L^1(\dual{\mathcal{X}},\dual{\Haar}; \mathcal{Y})$ is noted $\IFT{g}$ defined by
 \begin{dmath*}
     \forall x \in \mathcal{X},\enskip \IFT{g}(x) \hiderel{=} \int_{\dual{\mathcal{X}}} \pairing{x,\omega}g(\omega) d\dual{\Haar}(\omega),
 \end{dmath*}
-% The inverse Fourier transform of $g$, an integrable function on $\dual{X}$ is defined as:
-% where the Haar measure $\mu=\dual{\nu}$ is called the {\it dual measure} to $\nu$.
-\Cref{tab:dual_and_pairing} gives some examples of real Abelian groups with their associated dual and pairing. The interested reader can refer to \citet{folland1994course} for a more detailed construction of LCA, Pontryagin duality and \acl{FT}s on LCA. For the familiar case of a scalar-valued function $f$ on the \acs{LCA} group $(\mathbb{R}^d, +)$, we have for all $\omega\in \dual{\mathcal{X}}$
+We also define the flip operator $\mathcal{R}$ by $(\mathcal{R}f)(x) \colonequals f\left(\inv{x}\right)$.
+\begin{theorem}[Fourier inversion]
+\label{th:fourier_inversion}
+Given a measure $\Haar$ defined on $\mathcal{X}$, there exists a unique suitably normalized dual measure $\dual{\Haar}$ on $\dual{\mathcal{X}}$ such that for all $f \in L^1(\mathcal{X}, \Haar;\mathcal{Y})$ and if $\FT{f} \in L^1(\dual{\mathcal{X}}, \dual{\Haar}; \mathcal{Y})$ we have
+\begin{dmath}
+\label{fourier-l1}
+f(x)\hiderel{=}\int_{\dual{\mathcal{X}}}\pairing{x,\omega}\FT{f}(\omega) d\dual{\Haar}(\omega) \condition{for $\Haar$-almost all $x\in \mathcal{X}$.}
+\end{dmath}
+\ie~such that $(\mathcal{R}\mathcal{F}\FT{f})(x)=\mathcal{F}^{-1}\FT{f}(x)=f(x)$ for $\Haar$-almost all $x\in\mathcal{X}$. If $f$ is continuous this relation holds for all $x\in\mathcal{X}$.
+\end{theorem}
+\begin{proof}
+The proof is based on Bochner's theorem and the Pontryagin duality theorem. We refer the reader to \citet[theorem~4.22 page~105 and theorem~4.33 page~111]{folland1994course} for the full proof.
+\end{proof}
+Thus when a Haar measure $\Haar$ on $\mathcal{X}$ is given, the measure on $\dual{\mathcal{X}}$ that makes \cref{th:fourier_inversion} true is called the dual measure of $\Haar$, noted $\dual{\Haar}$. Let $c\in\mathbb{R}_*$ If $c\Haar$ is the measure on $\mathcal{X}$, then $c^{-1}\dual{\Haar}$ is the dual measure on $\dual{\mathcal{X}}$. Hence one must replace $\dual{\Haar}$ by $c^{-1}\dual{\Haar}$ in the inversion formula to compensate. Therefore, \emph{we always take the Haar measure $\dual{\Haar}$ on $\dual{\mathcal{X}}$ to be the dual of the given Haar measure $\Haar$ on $\mathcal{X}$}. Whenever $\dual{\Haar}=\Haar$ we say that the Haar measure is self-dual.
+\paragraph{}
+Moreover if $\dual{\Haar}$ is normalized, the \acl{FT} on $L^1(\mathcal{X},\Haar;\mathcal{Y})\cap L^2(\mathcal{X},\Haar;\mathcal{Y})$ extends uniquely to a unitary isomorphism from $L^2(\mathcal{X}, \Haar, \mathcal{Y})$ onto $L^2(\dual{\mathcal{X}}, \dual{\Haar}; \mathcal{Y})$ (Plancherel theorem). For the familiar case of a scalar-valued function $f$ on the \acs{LCA} group $(\mathbb{R}^d, +)$, we have for all $\omega\in \dual{\mathcal{X}}=\mathbb{R}^d$
 \begin{dmath}
 \label{fourier-R-plus}
 \FT{f}(\omega)
-=\int_{\dual{\mathcal{X}}} \conj{\pairing{x,\omega}}f(x)d\Haar(x)
-=\int_{\mathbb{R}^d} \ec^{-\iu \inner{x,\omega}}f(x) d\Leb(x),
+=\int_{\mathcal{X}} \conj{\pairing{x,\omega}}f(x)d\Haar(x)
+=\int_{\mathbb{R}^d} \exp(-\iu \inner{x,\omega}_2)f(x) d\Leb(x),
 \end{dmath}
-the Haar measure being here the Lebesgue measure.
+the Haar measure being here the Lebesgue measure. Notice that the normalization factor of $\dual{\Haar}$ on $\dual{\mathcal{X}}$ depends on the measure $\Haar$ on $\mathcal{X}$ \emph{and} the duality pairing. For instance let $\mathcal{X}=(\mathbb{R}^d, +)$. In \cref{ex:additive_group_lca} we showed that $\dual{\mathcal{X}}\cong\mathbb{R}^d$ with pairing $\pairing{x,\omega}=\exp(\iu x\omega)$, for all $x\in\mathcal{X}$ and $\omega\in\dual{\mathcal{X}}$.
+If one endow $\mathcal{X}$ with the Lebesgue measure as the Haar measure, the Haar measure on the dual is defined for all $\mathcal{Z}\in\mathcal{B}(\mathbb{R}^d)$ by
+\begin{dmath*}
+\Haar(\mathcal{Z})\hiderel{=}\Leb(\mathcal{Z}),
+\quad\text{and}\quad
+\dual{\Haar}(\mathcal{Z})\hiderel{=}\frac{1}{(2\pi)^d}\Leb(\mathcal{Z}),
+\end{dmath*}
+in order to have $\mathcal{F}^{-1}\FT{f}=f$. If one use the cleaner equivalent pairing $\pairing{x,\omega}=\exp(2\iu\pi x\omega)$ rather than $\pairing{x,\omega}=\exp(\iu x\omega)$, then
+\begin{dmath*}
+\dual{\Haar}(\mathcal{Z})=\Leb(\mathcal{Z}).
+\end{dmath*}
+The pairing $\pairing{x,\omega}=\exp(2\iu\pi x\omega)$ looks more attractive in theory since it limits the messy factor outside the integral sign and make the Haar measure self-dual. However it is of lesser use in practice since it yields additional unnecessary computation when evaluating the pairing.
+
+Hence we settle with the Haar measure on $\mathcal{X}$ defined as
+\begin{dmath*}
+\dual{\Haar}(\mathcal{Z})=\Haar(\mathcal{Z})\hiderel{=}\frac{1}{\sqrt{2\pi}^d}\Leb(\mathcal{Z})
+\end{dmath*}
+We conclude this subsection by recalling the injectevity property of the \acl{FT}.
+\begin{corollary}[The \acl{FT} injectivity]
+Given $\mu$ and $\nu$ two measures, if $\FT{\mu}=\FT{\nu}$ then $\mu=\nu$. Moreover given two functions $f$ and $g\in L^1(\mathcal{X},\Haar;\mathcal{Y})$ if $\FT{f}=\FT{g}$ then $f=g$
+\end{corollary}
+\begin{proof}
+We refer the reader to the proof of \citet[corollary~4.34 page~112]{folland1994course}.
+\end{proof}
 
 \subsection{Representation of Groups}
-Representations of groups are convenient are tools that allows group-theoretic problems to be replaced by linear algebra problems. Let $Gl(\mathcal{H})$ be the group of continuous isomorphism of $\mathcal{H}$, a Hilbert space, onto itself. A representation $\pi$ of a \acs{LCA} group $\mathcal{X}$ in $\mathcal{H}$ is an homomorphism $\pi$:
+Representations of groups are convenient are tools that allows group\--\-theo\-re\-tic problems to be replaced by linear algebra problems. Let $Gl(\mathcal{H})$ be the group of continuous isomorphism of $\mathcal{H}$, a Hilbert space, onto itself. A representation $\pi$ of a \acs{LCA} group $\mathcal{X}$ in $\mathcal{H}$ is an homomorphism $\pi$:
 \begin{dmath*}
 \pi:\mathcal{X}\hiderel{\to} Gl(\mathcal{H})
 \end{dmath*}
@@ -252,7 +338,7 @@ If for all $x\in\mathcal{X}$, $\pi(x)$ is a unitary operator, then the group rep
 \pi(x)^*\hiderel{=}\pi(x)^{-1}\hiderel{=}\pi\left(x^{-1}\right).
 \end{dmath*}
 \paragraph{}
-The representation $\pi$ of $\mathcal{X}$ in $\mathcal{H}$ is said to be irreducible when $\mathcal{H}\neq \Set{0}$ and are the only two stable invariant subspaces under all operators $\pi(x)$ for all $x\in\mathcal{X}$. \Ie~$\forall U\subset\mathcal{H}$, $U\neq \Set{0}$, $\Set{\pi(x)v|\forall x\in\mathcal{X},\forall v\in\mathcal{U}}\neq \mathcal{U}$.
+The representation $\pi$ of $\mathcal{X}$ in $\mathcal{H}$ is said to be irreducible when $\mathcal{H}\neq \Set{0}$ and are the only two stable invariant subspaces under all operators $\pi(x)$ for all $x\in\mathcal{X}$. \Ie~for all $ U\subset\mathcal{H}$, $U\neq \Set{0}$, $\Set{\pi(x)v|\forall x\in\mathcal{X},\forall v\in\mathcal{U}}\neq \mathcal{U}$.
 \paragraph{}
 To study \acs{LCA} groups we also introduce the left regular representation of $\mathcal{X}$ acting on a Hilbert space of function $\mathcal{H}\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$. For all $x$, $z\in\mathcal{X}$ and for all $f\in\mathcal{H}$,
 \begin{dmath*}
@@ -263,11 +349,12 @@ The representation $\lambda$ of $\mathcal{X}$ defines an action $\lambda_x$ on $
 %----------------------------------------------------------------------------------------
 \section{On operator-valued kernels}
 \label{sec:background_on_operator-valued_kernels}
-We now introduce the theory of \acf{vv-RKHS} that provides a flexible framework to study and learn vector-valued functions.
+We now introduce the theory of \acf{vv-RKHS} that provides a flexible framework to study and learn vector-valued functions. The fundations of the general theory of scalar kernel is mostly due to \citet{Aronszajn1950}  and provides a unifying point of view for the study of an important class of Hilbert spaces of real or complex valued functions. It has been first applied in the theory of partial differential equation. The theory of operator-valued kernel which extends the scalar-valued kernel was first developped by \citet{Pedrick57} in his Ph.~D Thesis. Since then it has been successfully applied to machine learning by many authors. In particular we introduce the notion of operator-valued kernel following the results of \citet{Micchelli2005,carmeli2006vector,Carmeli2010}.
+
 \subsection{Definitions and properties}
 \label{subsec:def_properties}
 A \acf{vv-RKHS} is a functional vector space defined as follow.
-\begin{definition}[\acl{vv-RKHS} \citep{carmeli2006vector,Micchelli2005}]
+\begin{definition}[\acl{vv-RKHS}~\citep{carmeli2006vector,Micchelli2005}]
 Let $\mathcal{Y}$ be a (real or complex) Hilbert space. A \acl{vv-RKHS} on $\mathcal{X}$, a locally compact second countable topological space is a Hilbert space $\mathcal{H}$ such that
 \begin{propenum}
 \item the elements of $\mathcal{H}$ are functions from $\mathcal{X}$ to $\mathcal{Y}$ (\ie~$\mathcal{H} \subset \mathcal{F}(\mathcal{X}, \mathcal{Y})$);
@@ -278,34 +365,34 @@ Let $\mathcal{Y}$ be a (real or complex) Hilbert space. A \acl{vv-RKHS} on $\mat
 \end{dmath}
 \end{propenum}
 \end{definition}
-An operator-valued kernel is defined here as a \acl{OVK} of positive type \citet{Carmeli2010}.
-\begin{definition}[\acl{OVK} of positive type acting on a complex space]
+An operator-valued kernel is defined here as a positive-definite \acl{OVK}~\citet{Carmeli2010}.
+\begin{definition}[positive-definite \acl{OVK} acting on a complex space]
 \label{def:reproducing_kernel}
-Given $\mathcal{X}$ a locally compact second countable topological space and  $\mathcal{Y}$ a complex Hilbert Space, a map $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called an \acl{OVK} of positive type kernel if
+Given $\mathcal{X}$ a locally compact second countable topological space and  $\mathcal{Y}$ a complex Hilbert Space, a map $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called an positive-definite \acl{OVK} kernel if
 \begin{dmath}
 \sum_{i,j=1}^N\inner{K(x_i,x_j)y_j,y_i}_{\mathcal{Y}}\ge 0,
 \end{dmath}
-for all $N\in\mathbb{N}$ and for all sequences of points $(x_i)_{i=1}^N$ in $\mathcal{X}^N$ and all sequences of points $(y_i)_{i=1}^N$ in $\mathcal{Y}^N$.
+for all $N\in\mathbb{N}$, for all sequences of points $(x_i)_{i=1}^N$ in $\mathcal{X}^N$ and all sequences of points $(y_i)_{i=1}^N$ in $\mathcal{Y}^N$.
 \label{def:ovk}
 \end{definition}
-if $\mathcal{Y}$ is a complex Hilbert space, an \acl{OVK} of positive type is always Hermitian, \ie~$K(x,z)=K(z,x)^\adjoint$. This gives rise to the following definition of \acl{OVK} of positive type acting on a real Hilbert space.
-\begin{definition}[\acl{OVK} of positive type acting on a real Hilbert space]
+if $\mathcal{Y}$ is a complex Hilbert space, a positive-definite \acl{OVK} is always self-adjoint, \ie~$K(x,z)=K(z,x)^\adjoint$. This gives rise to the following definition of positive definite \acl{OVK} acting on a real Hilbert space.
+\begin{definition}[positive-definite \acl{OVK} acting on a real Hilbert space]
 \label{def:reproducing_kernel_real}
-Given $\mathcal{X}$ a locally compact second countable topological space and $\mathcal{Y}$ a real Hilbert Space, a map $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called an \acl{OVK} of positive type kernel if
+Given $\mathcal{X}$ a locally compact second countable topological space and $\mathcal{Y}$ a real Hilbert Space, a map $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called a positive-definite \acl{OVK} kernel if
 \begin{dmath}
-K(x,z)=K(z,x)
+K(x,z)=K(z,x)^\adjoint
 \end{dmath}
 and
 \begin{dmath}
 \sum_{i,j=1}^N\inner{K(x_i,x_j)y_j,y_i}_{\mathcal{Y}}\ge 0,
 \end{dmath}
-for all $N\in\mathbb{N}$ and for all sequences of points $(x_i)_{i=1}^N$ in $\mathcal{X}^N$, and all sequences of points  $(y_i)_{i=1}^N$ in $\mathcal{Y}^N$.
+for all $N\in\mathbb{N}$, for all sequences of points $(x_i)_{i=1}^N$ in $\mathcal{X}^N$, and all sequences of points  $(y_i)_{i=1}^N$ in $\mathcal{Y}^N$.
 \label{def:ovk_real}
 \end{definition}
-As in the scalar case any \acl{vv-RKHS} defines a unique \acl{OVK} of positive type and conversely an \acl{OVK} of positive type defines a unique \acl{vv-RKHS}.
+As in the scalar case any \acl{vv-RKHS} defines a unique positive-definite \acl{OVK} and conversely a positive-definite \acl{OVK}defines a unique \acl{vv-RKHS}.
 \begin{proposition}
 \label{pr:unique_rkhs}
-Given a \acl{vv-RKHS} there is a unique \acl{OVK} $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ of positive type.
+Given a \acl{vv-RKHS} there is a unique positive-definite \acl{OVK} $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$.
 \end{proposition}
 \begin{proof}
 Given $x\in\mathcal{X}$, \cref{eq:RKHS_bounded} ensure that the evaluation map at $x$ defined as
@@ -327,7 +414,7 @@ Since for all $(x_i)_{i=1}^N$ in $\mathcal{X}^N$ and all $(y_i)_{i=1}^N$ in $\ma
 =\norm{\sum_{i=1}^N\text{ev}^\adjoint_{x_i}y_i}_{\mathcal{Y}}
 \hiderel{\ge} 0,
 \end{dmath*}
-the map $K$ is of positive type.
+the map $K$ is positive-definite.
 \end{proof}
 Given $x\in\mathcal{X}$, $K_x:\mathcal{Y}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ denotes the linear operator whose action on a vector $y$ is the function $K_xy\in\mathcal{F}(\mathcal{X};\mathcal{Y})$ defined for all $z\in\mathcal{X}$ by $K_x=\text{ev}_x^\adjoint$. As a consequence we have that
 \begin{dmath}
@@ -350,9 +437,9 @@ $\text{ev}_x^\adjoint y=K_xy=K(\cdot,x)y$ so that
 If $f\in(\cup_{x\in\mathcal{X}}\Ima K_x)^{\perp}$, then for all $x\in\mathcal{X}$, $f\in(\Ima K_x)^{\perp}=\Ker K_x^\adjoint$, hence $f(x)=0$ for all $x\in\mathcal{X}$ that is $f=0$.
 \item Finally for all $x\in\mathcal{X}$ and all $f\in\mathcal{H}$, $\norm{f(x)}_{\mathcal{Y}}\le \sqrt{\norm{K(x,x)}_{\mathcal{Y},\mathcal{Y}}}\norm{f}_{\mathcal{H}}$. This come from the fact that $\norm{K_x}_{\mathcal{Y},\mathcal{H}}=\norm{K_x^\adjoint}_{\mathcal{H},\mathcal{Y}}=\sqrt{\norm{K(x,x)}_{\mathcal{Y},\mathcal{Y}}}$ and the operator norm is sub-multiplicative.
 \end{enumerate}
-Additionally given an \acl{OVK} of positive type, it defines a unique \acs{vv-RKHS}.
+Additionally given an positive-definite \acl{OVK}, it defines a unique \acs{vv-RKHS}.
 \begin{proposition}
-Given an \acl{OVK} of positive type there $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$, there is a unique \acl{vv-RKHS} $\mathcal{H}$ on $\mathcal{X}$ with reproducing kernel $K$.
+Given a positive-definite \acl{OVK} there $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$, there is a unique \acl{vv-RKHS} $\mathcal{H}$ on $\mathcal{X}$ with reproducing kernel $K$.
 \end{proposition}
 \begin{proof}
 Let $K_{x,y}=K(\cdot, x)y\in\mathcal{F}(\mathcal{X};\mathcal{Y})$ and let
@@ -367,7 +454,7 @@ so that the sesquilinear form on $\mathcal{H}_0\times\mathcal{H}_0$
 \begin{dmath*}
 \inner{f,g}_{\mathcal{H}_0}=\sum_{i,j=1}^Nc_i\conj{d_j}\inner{K(z_j,x_i)y_i,y_j'}_{\mathcal{Y}}
 \end{dmath*}
-is well defined. Since $K$ is an \acl{OVK} of positive type, we have for all $f\in\mathcal{H}_0$ that $\inner{f,f}\ge 0$. Moreover the sesquilinear form is positive, so that it is also Hermitian. Choosing $g=K_{x,y}$ in the above definition yields for all $x\in \mathcal{X}$, all $f\in\mathcal{H}_0$ and all $y\in \mathcal{Y}$
+is well defined. Since $K$ is an positive-definite \acl{OVK}, we have for all $f\in\mathcal{H}_0$ that $\inner{f,f}\ge 0$. Moreover the sesquilinear form is positive, so that it is also Hermitian. Choosing $g=K_{x,y}$ in the above definition yields for all $x\in \mathcal{X}$, all $f\in\mathcal{H}_0$ and all $y\in \mathcal{Y}$
 \begin{dmath*}
 \inner{f,K_{x,y}}_{\mathcal{H}_0}=\inner{f(x),y}_{\mathcal{Y}}.
 \end{dmath*}
@@ -380,15 +467,15 @@ which implies that
 \begin{dmath*}
 \norm{f(x)}_{\mathcal{Y}} \le \norm{f}_{\mathcal{H}_0}\sqrt{\norm{K(x,x)}_{\mathcal{Y},\mathcal{Y}}}
 \end{dmath*}
-Therefore if $\inner{f,f}_{\mathcal{H}_0}$ then $f=0$. Eventually we deduce that $\inner{\cdot,\cdot}_{\mathcal{H}_0}$ is a scalar product on $\mathcal{H}_0$. Hence $\mathcal{H}_0$ is a pre-Hilbert space. To make it a (complete) Hilbert space we need to take the completion of this space. Let $\mathcal{H}$ be the completion of $\mathcal{H}_0$. Moreover let $K_x:\mathcal{Y}\to\mathcal{H}$ where $K_xy=K_{x,y}$. By construction $K_x$ is bounded and let $W:\mathcal{H}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ where $(Wf)(x)=K_x^\adjoint f$. The operator $W$ is injective. Indeed if $Wf=0$ then for all $x\in\mathcal{X}$, $f\in\Ker K_x^\adjoint=(\Ima f)^{\perp}$. since the set $\cup_{x\in\mathcal{X}}\Ima K_x=\Set{K_xy|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}$ generates by definition $\mathcal{H}_0$, we have $f=0$. Besides, as $W$ is injective, we have for all $f_1$, $f_2\in\mathcal{H}_0$ $(Wf_1)(x)=(Wf_2)(x){\scriptstyle\implies} f_1(x)=f_2(x)$ pointwise in $\mathcal{H}$ so that we can identify $\mathcal{H}$ with a \emph{subspace} of $\mathcal{F}(\mathcal{X};\mathcal{Y})$. Hence $K_x^\adjoint f=(Wf)(x)=f(x)=\text{ev}_xf$, showing that $\mathcal{H}$ is a \acl{vv-RKHS} with reproducing kernel
+Therefore if $\inner{f,f}_{\mathcal{H}_0}$ then $f=0$. Eventually we deduce that $\inner{\cdot,\cdot}_{\mathcal{H}_0}$ is a scalar product on $\mathcal{H}_0$. Hence $\mathcal{H}_0$ is a pre-Hilbert space. To make it a (complete) Hilbert space we need to take the completion of this space. Let $\mathcal{H}$ be the completion of $\mathcal{H}_0$. Moreover let $K_x:\mathcal{Y}\to\mathcal{H}$ where $K_xy=K_{x,y}$. By construction $K_x$ is bounded. Let $W:\mathcal{H}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ where $(Wf)(x)=K_x^\adjoint f$. The operator $W$ is injective. Indeed if $Wf=0$ then for all $x\in\mathcal{X}$, $f\in\Ker K_x^\adjoint=(\Ima f)^{\perp}$. since the set $\cup_{x\in\mathcal{X}}\Ima K_x=\Set{K_xy|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}$ generates by definition $\mathcal{H}_0$, we have $f=0$. Besides, as $W$ is injective, we have for all $f_1$, $f_2\in\mathcal{H}_0$ $(Wf_1)(x)=(Wf_2)(x){\scriptstyle\implies} f_1(x)=f_2(x)$ pointwise in $\mathcal{H}$ so that we can identify $\mathcal{H}$ with a \emph{subspace} of $\mathcal{F}(\mathcal{X};\mathcal{Y})$. Hence $K_x^\adjoint f=(Wf)(x)=f(x)=\text{ev}_xf$, showing that $\mathcal{H}$ is a \acl{vv-RKHS} with reproducing kernel
 \begin{dmath*}
-K_{\mathcal{H}}(x,z)y\hiderel{=}(\text{ev}^\adjoint_zy)(x)\hiderel{=K}(x,z)y.
+K_{\mathcal{H}}(x,z)y\hiderel{=}(\text{ev}^\adjoint_zy)(x)\hiderel{=}K(x,z)y.
 \end{dmath*}
 The uniqueness of $\mathcal{H}$ comes from the uniqueness of the completion of $\mathcal{H}_0$ up to an isometry.
 \end{proof}
-The above theorem holds also if $\mathcal{Y}$ is a real vector space provided we add the assumption that $K$ is symmetric, \ie~$K(x,z)=K(z,x)$.
+The above theorem also holds if $\mathcal{Y}$ is a real Hilbert space provided we add the assumption that $K(x,z)$ is self-adjoint \ie~$K(x,z)=K(z,x)^\adjoint$ for all $x$, $z\in\mathcal{X}$. Then $K(x,z)$ still defines a valid symmetric bilinear form on $\mathcal{Y}$ when $\mathcal{Y}$ is a \emph{real} Hilbert space.
 \paragraph{}
-Since an \acl{OVK} of positive type defines a unique \acs{vv-RKHS} and conversely a \acs{vv-RKHS} defines a unique \acl{OVK}, we denotes the Hilbert space $\mathcal{H}$ endowed with the scalar product $\inner{\cdot,\cdot}$ respectively $\mathcal{H}_K$ and $\inner{\cdot,\cdot}_K$. From now we refer to \acl{OVK} of positive type as \acl{OVK} whether they act on complex or real Hilbert spaces. As a consequence, given $K$ an \acl{OVK}, define $K_x=K(\cdot,x)$ we have
+Since an positive-definite \acl{OVK} defines a unique \acf{vv-RKHS} and conversely a \acs{vv-RKHS} defines a unique \acl{OVK}, we denotes the Hilbert space $\mathcal{H}$ endowed with the scalar product $\inner{\cdot,\cdot}$ respectively $\mathcal{H}_K$ and $\inner{\cdot,\cdot}_K$. From now we refer to positive-definite \acl{OVK} or reproducing \acl{OVK} as \acl{OVK} whether they act on complex or real Hilbert spaces. As a consequence, given $K$ an \acl{OVK}, define $K_x=K(\cdot,x)$ we have
 \begin{dgroup}
 \begin{dmath}
 \label{eq:kernel_operator_product}
@@ -402,7 +489,7 @@ K(x,z)=K^\adjoint_x K_z \enskip\forall x,z\hiderel{\in}\mathcal{X}
 % Additionally, given a $\mathcal{Y}$-reproducing kernel $K$, there is a unique Hilbert space $\mathcal{H}_K\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$ satisfying $K_x\in\mathcal{L}(\mathcal{Y};\mathcal{H}_K)$, for all $ x\in\mathcal{X}$ and $\forall x\in\mathcal{X}, \forall f\in\mathcal{H}_K, \enskip f(x)=K^\adjoint_x f$, where $K^\adjoint_x:\mathcal{H}_K\to\mathcal{Y}$ is the adjoint of $K_x$.
 % The space $\mathcal{H}_K$ is called the \emph{\acl{vv-RKHS}} associated with $K$.
 Another way to describe functions of $\mathcal{H}_K$ consists in using a suitable feature map.
-\begin{proposition}[Feature Operator \citep{Carmeli2010}]
+\begin{proposition}[Feature Operator~\citep{Carmeli2010}]
 \label{pr:feature_operator}
 Let $\mathcal{H}$ be any Hilbert space and $\Phi:\mathcal{X}\to\mathcal{L}(\mathcal{Y};\mathcal{H})$, with $\Phi_x :=
  \Phi(x)$. Then the operator $W:\mathcal{H}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ defined for all $g \in\mathcal{H}$, and for all $x\in\mathcal{X}$ by $(W g)(x)=\Phi_x^\adjoint g$ is a partial isometry from $\mathcal{H}$ onto the \acs{vv-RKHS} $\mathcal{H}_K$ with reproducing kernel
@@ -448,7 +535,7 @@ In this work we mainly focus on the class kernels inducing a \acs{vv-RKHS} of co
 \end{definition}
 \paragraph{}
 The following proposition characterize $\mathcal{Y}$-Mercer kernel in terms of the properties of a kernels rather than properties of the \acs{vv-RKHS}.
-\begin{proposition}[Characterization of $\mathcal{Y}$-Mercer kernel \citep{Carmeli2010}]
+\begin{proposition}[Characterization of $\mathcal{Y}$-Mercer kernel~\citep{Carmeli2010}]
 \label{pr:characterization_mercer_kernels}
 Let $K$ be a reproducing kernel. The kernel $K$ is Mercer if and only if the function $x\mapsto\norm{K(x,x)}$ is locally bounded and for all $x\in\mathcal{X}$ and all $y\in\mathcal{Y}$, $K_xy\in\mathcal{C}(\mathcal{X};\mathcal{Y})$.
 \end{proposition}
@@ -463,7 +550,7 @@ Thus convergence in $\mathcal{H}_K$ implies uniform convergence. Since by assump
 \end{dmath*}
 then the \acl{vv-RKHS}
 \begin{dmath*}
-\mathcal{H}_K=\lspan\Set{K_xy| \forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}\subset\mathcal{C}
+\mathcal{H}_K=\lspan\Set{K_xy| \forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}\hiderel{\subset}\mathcal{C}
 \end{dmath*}
 is also a subset of $\mathcal{C}(\mathcal{X};\mathcal{Y})$ by the uniform convergence theorem.
 \end{proof}
@@ -480,12 +567,12 @@ The separability of $\mathcal{X}$ assure that there exist a countable dense subs
 is separable too. We show that $\mathcal{S}$ is total in $\mathcal{H}_K$ so that $\mathcal{H}_K$ is separable. If for all $x\in\mathcal{X}_0$, $f\in\mathcal{S}^{\perp}$, then $f\in\Ker K_x^\adjoint$. Namely $f(x)=\text{ev}_xf=0$. Since $f$ is continuous and $\mathcal{X}_0$ is dense in $\mathcal{X}$, for all $x\in\mathcal{X}$, $f(x)=0$ so $f=0$.
 \end{proof}
 
-\begin{proposition}[Countable orthonormal basis for $\mathcal{Y}$-Mercer kernel \citep{carmeli2006vector}]
+\begin{proposition}[Countable orthonormal basis for $\mathcal{Y}$-Mercer kernel~\citep{carmeli2006vector}]
 \label{pr:mercer_countable_basis}
 Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{Y}$ be a reproducing kernel where $\mathcal{X}$ and $\mathcal{Y}$ are separable spaces. If $K$ is a $\mathcal{Y}$-Mercer kernel then $\mathcal{H}_K$ has a countable orthonormal basis.
 \end{proposition}
 \begin{proof}
-From \cref{pr:characterization_mercer_kernels} $K$ is a $\mathcal{Y}$-Mercer kernel if and only if $\mathcal{H}_K\subset \mathcal{C}(\mathcal{X};\mathcal{Y})$. Applying \cref{lm:separability} of \cite{carmeli2006vector}, we have that $\mathcal{H}_K$ is separable. Thus since $\mathcal{H}_K$ is also a Hilbert space it has a countable orthonormal basis.
+From \cref{pr:characterization_mercer_kernels} $K$ is a $\mathcal{Y}$-Mercer kernel if and only if $\mathcal{H}_K\subset \mathcal{C}(\mathcal{X};\mathcal{Y})$. Applying \cref{lm:separability} of~\cite{carmeli2006vector}, we have that $\mathcal{H}_K$ is separable. Thus since $\mathcal{H}_K$ is also a Hilbert space it has a countable orthonormal basis.
 \end{proof}
 An important consequence is that if $K$ is a $\mathcal{Y}$-Mercer and $\mathcal{X}$ and $\mathcal{Y}$ are separable then $\mathcal{H}_K$ and any resdescription is isometrically isomorphic to $\ell^2$.
 
@@ -506,12 +593,12 @@ We recall the definition of left regular representation of $\mathcal{X}$ acting 
 (\lambda_z f)(x)G\colonequals f(\inv{z}\groupop x).
 \end{dmath*}
 A group representation $\lambda_z$ describe the group by making it act on a vector space (here $\mathcal{H}_K$) in a linear manner. In other word, the group representation let us see a group as a linear operator which are well studied mathematical object.
-\begin{proposition}[Kernel signature \citep{Carmeli2010}]
+\begin{proposition}[Kernel signature~\citep{Carmeli2010}]
 \label{pr:kernel_signature}
 Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ be a reproducing kernel. The following conditions are equivalents.
 \begin{propenum}
-\item \label{pr:kernel_signature_1} $K$ is a shift-invariant of positive type.
-\item \label{pr:kernel_signature_2} There is a function $K_e:\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ of completely positive type such that $K(x,z)=K_e(\inv{z}\groupop x)$.
+\item \label{pr:kernel_signature_1} $K$ is a positive-definite shift-invariant \acl{OVK}.
+\item \label{pr:kernel_signature_2} There is a positive-definite function $K_e:\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ such that $K(x,z)=K_e(\inv{z}\groupop x)$.
 \end{propenum}
 If one of the above conditions is satisfied, then the representation $\lambda$ leaves invariant $\mathcal{H}_K$, its action on $\mathcal{H}_K$ is unitary and
 \begin{dgroup}
@@ -572,9 +659,9 @@ When $\mathcal{Y}=\mathbb{R}^p$, the matrix $\Gamma$ is interpreted as encoding 
 % \begin{proof}
 % Apply \cref{pr:regularization} with $A(\omega)=A$.
 % \end{proof}
-% Where $\inner{\cdot}_k$ is the inner product induced by the scalar kernel $k$ in the RKHS $\mathcal{H}_k$. Hence we recover the result of \cite{Alvarez2012}. In particular
-If a graph coding for the proximity between tasks is known, then it is shown in \citet{Evgeniou2005,Baldassare2010,Alvarez2012} that $\Gamma$ can be chosen equal to the pseudo inverse $L^{\dagger}$ of the graph Laplacian such that the norm in $\mathcal{H}_K$ is a graph-regularizing penalty for the outputs (tasks).  When no prior knowledge is available, $\Gamma$ can be set to the empirical covariance of the output training data or learned with one of the algorithms proposed in the literature \citep{Dinuzzo2011, Sindhwani2013, Lim2015}. Another interesting property of the decomposable kernel is its universality (a kernel which may approximate an arbitrary continuous target function uniformly on any compact subset of the input space). A reproducing kernel $K$ is said \emph{universal} if the associated \acs{vv-RKHS} $\mathcal{H}_K$ is dense in the space $\mathcal{C}(\mathcal{X},\mathcal{Y})$. The conditions for a kernel to be universal have been discussed in \citet{caponnetto2008,Carmeli2010}. In particular they show that a decomposable kernel is universal provided that the scalar kernel $k$ is universal and the operator $\Gamma$ is injective.
-\begin{proposition}[Kernels and Regularizers \citep{Alvarez2012}]
+% Where $\inner{\cdot}_k$ is the inner product induced by the scalar kernel $k$ in the RKHS $\mathcal{H}_k$. Hence we recover the result of~\cite{Alvarez2012}. In particular
+If a graph coding for the proximity between tasks is known, then it is shown in~\citet{Evgeniou2005,Baldassare2010,Alvarez2012} that $\Gamma$ can be chosen equal to the pseudo inverse $L^{\dagger}$ of the graph Laplacian such that the norm in $\mathcal{H}_K$ is a graph-regularizing penalty for the outputs (tasks).  When no prior knowledge is available, $\Gamma$ can be set to the empirical covariance of the output training data or learned with one of the algorithms proposed in the literature~\citep{Dinuzzo2011, Sindhwani2013, Lim2015}. Another interesting property of the decomposable kernel is its universality (a kernel which may approximate an arbitrary continuous target function uniformly on any compact subset of the input space). A reproducing kernel $K$ is said \emph{universal} if the associated \acs{vv-RKHS} $\mathcal{H}_K$ is dense in the space $\mathcal{C}(\mathcal{X},\mathcal{Y})$. The conditions for a kernel to be universal have been discussed in~\citet{caponnetto2008,Carmeli2010}. In particular they show that a decomposable kernel is universal provided that the scalar kernel $k$ is universal and the operator $\Gamma$ is injective.
+\begin{proposition}[Kernels and Regularizers~\citep{Alvarez2012}]
 Let $K(x,z) \colonequals k(x,z)\Gamma$ for all $x$, $z\in\mathcal{X}$ be a decomposable kernel where $\Gamma$ is a matrix of size $p\times p$. Then for all $f\in\mathcal{H}_K$,
 \begin{dmath}
 \norm{f}_K = \sum_{i,j=1}^p \Gamma^\dagger_{ij}\inner{f_i,f_j}_k
@@ -583,9 +670,9 @@ where $f_i=\inner{f,e_i}$ (resp $f_j=\inner{f,e_j}$), denotes the $i$-th (resp $
 \end{proposition}
 
 \paragraph{}
-Curl-free and divergence-free kernels provide an interesting application of operator-valued kernels \citep{Macedo2008, Baldassare2012, Micheli2013} to \emph{vector field} learning, for which input and output spaces have the same dimensions ($d=p$). %
-Applications cover shape deformation analysis \citep{Micheli2013} and magnetic fields approximations \citep{Wahlstrom2013}. %
-These kernels discussed in \citep{Fuselier2006} allow encoding input-dependent similarities between vector-fields. %
+Curl-free and divergence-free kernels provide an interesting application of operator-valued kernels~\citep{Macedo2008, Baldassare2012, Micheli2013} to \emph{vector field} learning, for which input and output spaces have the same dimensions ($d=p$). %
+Applications cover shape deformation analysis~\citep{Micheli2013} and magnetic fields approximations~\citep{Wahlstrom2013}. %
+These kernels discussed in~\citep{Fuselier2006} allow encoding input-dependent similarities between vector-fields. %
 \begin{definition}[Curl-free and Div-free kernel]\label{curl-div-free}
 Assume $\mathcal{X}=(\mathbb{R}^d, +)$ and $\mathcal{Y}=\mathbb{R}^p$ with $d=p$. %
 The \emph{divergence-free} kernel is defined as %
@@ -599,6 +686,6 @@ K^{curl}(x,z)\hiderel{=}K_0^{curl}(\delta)=-\nabla\nabla^T k_0(\delta),
 \end{dmath*} %
 where $\nabla$ is the gradient operator\mpar{See \cref{subsec:gradient_methods} for a formal definition of the operator $\nabla$.}, $\nabla\nabla^T$ is the Hessian operator and $\Delta$ is the Laplacian operator. %
 \end{definition}
-Although taken separately these kernels are not universal, a convex combination of the curl-free and divergence-free kernels allows to learn any vector field that satisfies the Helmholtz decomposition theorem \citep{Macedo2008, Baldassare2012}.
+Although taken separately these kernels are not universal, a convex combination of the curl-free and divergence-free kernels allows to learn any vector field that satisfies the Helmholtz decomposition theorem~\citep{Macedo2008, Baldassare2012}.
 
 \chapterend

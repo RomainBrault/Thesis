@@ -36,7 +36,7 @@ err = approximation.main()
  \label{fig:approximation_error}
 \end{figure}
 \paragraph{}
-In order to bound the error with high probability, we turn to concentration inequalities devoted to random matrices \citep{Boucheron}. Prior to the presentation of general results, we briefly recall the uniform convergence of \acs{RFF} approximation for a scalar shift invariant kernel on the additive \acs{LCA} group $\mathbb{R}^d$ and introduce a direct corollary about decomposable shift-invariant \acs{OVK} on the \acs{LCA} group $(\mathbb{R}^d, +)$.
+In order to bound the error with high probability, we turn to concentration inequalities devoted to random matrices~\citep{Boucheron}. Prior to the presentation of general results, we briefly recall the uniform convergence of \acs{RFF} approximation for a scalar shift invariant kernel on the additive \acs{LCA} group $\mathbb{R}^d$ and introduce a direct corollary about decomposable shift-invariant \acs{OVK} on the \acs{LCA} group $(\mathbb{R}^d, +)$.
 
 
 
@@ -44,8 +44,8 @@ In order to bound the error with high probability, we turn to concentration ineq
 
 
 \subsection{Scalar random Fourier Features and decomposable kernel}
-\citet{Rahimi2007} proved the uniform convergence of \acf{RFF} approximation for a scalar shift invariant kernel on the \acs{LCA} group $\mathbb{R}^d$ endowed with the group operation $\groupop=+$. In the case of the shift-invariant decomposable \acs{OVK}, an upper bound on the error can be directly obtained as a consequence of the result in the scalar case obtained by \citet{Rahimi2007} and other authors \citep{sutherland2015, sriper2015} since in this case
-\begin{theorem}[Uniform error bound for \acs{RFF}, \citet{Rahimi2007}]\label{rff-scalar-bound}
+\citet{Rahimi2007} proved the uniform convergence of \acf{RFF} approximation for a scalar shift invariant kernel on the \acs{LCA} group $\mathbb{R}^d$ endowed with the group operation $\groupop=+$. In the case of the shift-invariant decomposable \acs{OVK}, an upper bound on the error can be directly obtained as a consequence of the result in the scalar case obtained by~\citet{Rahimi2007} and other authors~\citep{sutherland2015, sriper2015} since in this case
+\begin{theorem}[Uniform error bound for \acs{RFF},~\citet{Rahimi2007}]\label{rff-scalar-bound}
 Let $\mathcal{C}$ be a compact of subset of $\mathbb{R}^d$ of diameter $\abs{\mathcal{C}}$. Let $k$ be a shift invariant kernel, differentiable with a bounded second derivative and $\mu$ its normalized \acl{IFT} such that is defines a probability measure. Let $D$ the dimension of the Fourier feature vectors. Then for the mapping $\tildephi{1:D}$ described in Section 1, we have
 \begin{dmath*}
 \probability_{\mu}\Set{(\omega_j)_{j=1}^D|\norm{\tilde{k}-k}_{\mathcal
@@ -60,7 +60,7 @@ Let $\mathcal{C}$ be a compact of subset of $\mathbb{R}^d$ of diameter $\abs{\ma
 \end{dmath*}
 \end{corollary}
 \begin{proof}
-The proof directly extends \cref{rff-scalar-bound} given by \cite{Rahimi2007}. Let $\tilde{k}$ the Random Fourier approximation for the scalar-valued kernel $k$. Since
+The proof directly extends \cref{rff-scalar-bound} given by~\cite{Rahimi2007}. Let $\tilde{k}$ the Random Fourier approximation for the scalar-valued kernel $k$. Since
 \begin{dmath*}
 \sup_{(x,z)\in\mathcal{C}\times\mathcal{C}}\norm{\tilde{K}(x,z)-K(x,z)}_{\mathcal{Y},\mathcal{Y}} = \sup_{(x,z)\in\mathcal{C}\times\mathcal{C}} \norm{A}_{\mathcal{Y},\mathcal{Y}} \abs{\tilde{K}(x,z)-k(x,z)},
 \end{dmath*}
@@ -70,7 +70,7 @@ taking $\epsilon' = \norm{A}_{\mathcal{Y},\mathcal{Y}} \epsilon$ gives the follo
 \left(\tilde{k}(x,z)-k(x,z)\right)}_{\mathcal{Y},\mathcal{Y}}\ge \epsilon' } \le 2^8\left( \frac{d\sigma \norm{A}_{\mathcal{Y},\mathcal{Y}} \abs{\mathcal{C}}}{\epsilon'} \right)^2\exp\left( -\frac{\left(\epsilon'\right)^2D}{4\norm{A}_{\mathcal{Y},\mathcal{Y}}^2(d+2)} \right) \end{dmath*}
 which concludes the proof.
 \end{proof}
-Please note that a similar corollary could have been obtained for the recent result of \citet{sutherland2015} who refined the bound proposed by Rahimi and Recht by using a Bernstein concentration inequality instead of the Hoeffding inequality. More recently \citet{sriper2015} showed an optimal bound for \acl{RFF},
+Please note that a similar corollary could have been obtained for the recent result of~\citet{sutherland2015} who refined the bound proposed by Rahimi and Recht by using a Bernstein concentration inequality instead of the Hoeffding inequality. More recently~\citet{sriper2015} showed an optimal bound for \acl{RFF},
 
 
 
@@ -86,7 +86,7 @@ to infinite dimensional output Hilbert spaces. We propose a bound for
 \item a general theorem valid for random matrices with bounded norms such as decomposable kernel \acs{ORFF} approximation as well as un\-bounded norms such as the \acs{ORFF} aproximation we proposed for curl and divergence-free kernels that behave as subexponential random variables.
 \end{enumerate}
 Before introducing the new theorem, we give the definition of the Orlicz norm which gives a proxy-bound on the norm of subexponential random variables.
-\begin{definition}[Orlicz norm \citep{van1996weak}]
+\begin{definition}[Orlicz norm~\citep{van1996weak}]
 Let $\psi:\mathbb{R}_+\to\mathbb{R}_+$ be a non-decreasing convex function with
 $\psi(0)=0$. For a random variable $X$ on a measured space $(\Omega,\mathcal{T}
 (\Omega),\mu)$, the quantity
@@ -141,7 +141,7 @@ at most $2\abs{\mathcal{C}}$ where $\abs{\mathcal{C}}$ is the diameter of
 $\mathcal{C}$. It is then possible to find an $\epsilon$-net covering $\mathcal
 {C}_{\Delta}$ with at most $T=(4\abs{\mathcal{C}}/r)^d$ balls of radius $r$. We
 call $\delta_i$ for $i\inrange{1}{T}$ the center of the $i$-th ball,
-called \emph{anchors} of the $\epsilon$-net. Denote $L_{F}$ the Lipschitz constant of $F$. We introduce the following lemma proved in \cite{Rahimi2007}.
+called \emph{anchors} of the $\epsilon$-net. Denote $L_{F}$ the Lipschitz constant of $F$. We introduce the following lemma proved in~\cite{Rahimi2007}.
 \begin{lemma}
 
 \end{lemma}
@@ -159,7 +159,7 @@ Using Jensen's inequality and applying Markov's inequality yields
 We set $\sigma_p^2=\expectation_{\mu}\left[H_\omega^2\norm{A(\omega)}_2^2\right]$ where $H_\omega$ is the Lipschitz-constant of $h_\omega$ and suppose its existence.
 \end{sproof}
 \begin{sproof}[H2]
-To obtain a bound on the anchors we apply theorem 4 of \citet{koltchinskii2013remark}.
+To obtain a bound on the anchors we apply theorem 4 of~\citet{koltchinskii2013remark}.
 We suppose the existence of the two constants
 \begin{dmath*}
 b= \sup_{\delta\in\mathcal{C}_{\Delta}}D\norm{\variance_\mu \left[ \tilde{K}_e(\delta) \right]}_{\mathcal{Y},\mathcal{Y}}
@@ -193,9 +193,9 @@ The bound becomes
 where $C'_d=\left(\left(\frac{d}{2}\right)^{\frac{-d}{d+2}}+\left(\frac{d}{2}\right)^{\frac{2}{d+2}}\right)$.
 Conclude by taking $C_{d,p}=pC'_d 2^{\frac{6d+2}{d+2}}$.
 \end{sproof}
-We give a comprehensive full proof of the theorem in the appendix. It follows the usual scheme derived in \citet{Rahimi2007} and \citet{sutherland2015} and involves Bernstein concentration inequality for unbounded symmetric matrices (theorem 3.3 in the supplements).
+We give a comprehensive full proof of the theorem in the appendix. It follows the usual scheme derived in~\citet{Rahimi2007} and~\citet{sutherland2015} and involves Bernstein concentration inequality for unbounded symmetric matrices (theorem 3.3 in the supplements).
 \begin{remark}[dealing with infinite dimensional operators]\label{remark:infinite_dimension}
-We studied the concentration of ORFFs under the assumption that $\mathcal{Y}$ is finite dimensional. This assumption is required in the proof when bounding the Lipschitz constant. The proof require the quantity $\tilde{K}$ to be smooth enough to be able to interchange integral and derivative such that $\expectation\frac{\partial}{\partial \delta}\tilde{K}=\frac{\partial}{\partial \delta}\expectation\tilde{K}$. In the proof we show, component-wise, that that is $K$ is twice differentiable, then the interchange is possible. To do the same for infinite dimensional operator-valued kernels, one could use Hille's theorem\mpar{See \url{http://fa.its.tudelft.nl/~neerven/publications/papers/ISEM.pdf}.} and could deduce the necessary condition on $K$ to allow the interchange. One could also deduced a bound on the Lipchitz constant without computing the derivative of $\tilde{K}-K$. Additionally one should study whether \citet[theorem 4]{koltchinskii2013remark} could apply to infinite dimensional operators and under which assumption.
+We studied the concentration of ORFFs under the assumption that $\mathcal{Y}$ is finite dimensional. This assumption is required in the proof when bounding the Lipschitz constant. The proof require the quantity $\tilde{K}$ to be smooth enough to be able to interchange integral and derivative such that $\expectation\frac{\partial}{\partial \delta}\tilde{K}=\frac{\partial}{\partial \delta}\expectation\tilde{K}$. In the proof we show, component-wise, that that is $K$ is twice differentiable, then the interchange is possible. To do the same for infinite dimensional operator-valued kernels, one could use Hille's theorem\mpar{See \url{http://fa.its.tudelft.nl/~neerven/publications/papers/ISEM.pdf}.} and could deduce the necessary condition on $K$ to allow the interchange. One could also deduced a bound on the Lipchitz constant without computing the derivative of $\tilde{K}-K$. Additionally one should study whether~\citet[theorem 4]{koltchinskii2013remark} could apply to infinite dimensional operators and under which assumption.
 \end{remark}
 \subsection{Variance of the ORFF approximation}
 We now provide a bound on the norm of the variance of $\tilde{K}$, required to apply \cref{pr:orff_concentration}.

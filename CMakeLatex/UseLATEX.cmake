@@ -1,6 +1,6 @@
 # File: UseLATEX.cmake
 # CMAKE commands to actually use the LaTeX compiler
-# Version: 2.4.1
+# Version: 2.4.2
 # Author: Kenneth Moreland <kmorel@sandia.gov>
 #
 # Copyright 2004, 2015 Sandia Corporation.
@@ -61,15 +61,15 @@
 #       so all input files are copied from the source directory to the
 #       output directory.  This includes the target tex file, any tex file
 #       listed with the INPUTS option, the bibliography files listed with
-#       the BIBFILES option, and any .cls, .bst, and .clo files found in
-#       the current source directory.  Images found in the IMAGE_DIRS
-#       directories or listed by IMAGES are also copied to the output
-#       directory and converted to an appropriate format if necessary.  Any
-#       tex files also listed with the CONFIGURE option are also processed
-#       with the CMake CONFIGURE_FILE command (with the @ONLY flag).  Any
-#       file listed in CONFIGURE but not the target tex file or listed with
-#       INPUTS has no effect. DEPENDS can be used to specify generated files
-#       that are needed to compile the latex target.
+#       the BIBFILES option, and any .cls, .bst, .clo, .sty, .ist, and .fd
+#       files found in the current source directory.  Images found in the
+#       IMAGE_DIRS directories or listed by IMAGES are also copied to the
+#       output directory and converted to an appropriate format if necessary.
+#       Any tex files also listed with the CONFIGURE option are also processed
+#       with the CMake CONFIGURE_FILE command (with the @ONLY flag).  Any file
+#       listed in CONFIGURE but not the target tex file or listed with INPUTS
+#       has no effect. DEPENDS can be used to specify generated files that are
+#       needed to compile the latex target.
 #
 #       The following targets are made. The name prefix is based off of the
 #       base name of the tex file unless TARGET_NAME is specified. If
@@ -114,6 +114,10 @@
 #       in the multibib package.
 #
 # History:
+#
+# 2.4.2 Fix an issue where new versions of ImageMagick expect the order of
+#       options in command line execution of magick/convert. (See, for
+#       example, http://www.imagemagick.org/Usage/basics/#why.)
 #
 # 2.4.1 Add ability to dump LaTeX log file when using batch mode. Batch
 #       mode suppresses most output, often including error messages. To
@@ -421,6 +425,7 @@ function(latex_execute_latex)
     WORKING_DIRECTORY ${LATEX_WORKING_DIRECTORY}
     RESULT_VARIABLE execute_result
     )
+
   if(NOT ${execute_result} EQUAL 0)
     message("LaTeX command failed")
     message("${full_command_original}")
@@ -1049,17 +1054,24 @@ function(latex_add_convert_command
         message(SEND_ERROR "IMAGEMAGICK_CONVERT set to Window's convert.exe for changing file systems rather than ImageMagick's convert for changing image formats. Please make sure ImageMagick is installed (available at http://www.imagemagick.org). If you have a recent version of ImageMagick (7.0 or higher), use the magick program instead of convert for IMAGEMAGICK_CONVERT.")
       else()
         set(converter ${IMAGEMAGICK_CONVERT})
+        # ImageMagick requires a special order of arguments where resize and
+        # arguments of that nature must be placed after the input image path.
+        add_custom_command(OUTPUT ${output_path}
+          COMMAND ${converter}
+            ARGS ${input_path} ${convert_flags} ${output_path}
+          DEPENDS ${input_path}
+          )
       endif()
     else()
       message(SEND_ERROR "Could not find convert program. Please download ImageMagick from http://www.imagemagick.org and install.")
     endif()
+  else() # Not ImageMagick convert
+    add_custom_command(OUTPUT ${output_path}
+      COMMAND ${converter}
+        ARGS ${convert_flags} ${input_path} ${output_path}
+      DEPENDS ${input_path}
+      )
   endif()
-
-  add_custom_command(OUTPUT ${output_path}
-    COMMAND ${converter}
-      ARGS ${convert_flags} ${input_path} ${output_path}
-    DEPENDS ${input_path}
-    )
 endfunction(latex_add_convert_command)
 
 # Makes custom commands to convert a file to a particular type.

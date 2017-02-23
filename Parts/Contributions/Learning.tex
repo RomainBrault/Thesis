@@ -1,5 +1,6 @@
 %!TEX root = ../../ThesisRomainbrault.tex
 
+%----------------------------------------------------------------------------------------
 \section{Learning with ORFF}
 \label{sec:learning_with_operator-valued_random-fourier_features}
 We now turn our attention to learning function with an ORFF model that approximate an OVK model.
@@ -14,7 +15,7 @@ where $\lambda\in\mathbb{R}_+$ is a regularization\mpar{Tychonov regularization.
 \mathcal{R}(f)=\frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f, y_i) \condition{$\forall f\in\mathcal{H}_K$, $\forall \seq{s}\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$.}
 \end{dmath*}
 The empirical risk of the model $f\in\mathcal{H}_K$. A common choice of data fitting term for regression is $L:(x_i, f, y_i) \mapsto \norm{f(x_i)-y_i}_{\mathcal{Y}}^2$.
-We introduce a corollary from Mazur and Schauder proposed in 1936 (see \citet{kurdila2006convex, gorniewicz1999topological}) showing that \cref{eq:learning_rkhs} --and \cref{eq:learning_rkhs_gen}-- attains a unique mimimizer.
+We introduce a corollary from Mazur and Schauder proposed in 1936 (see~\citet{kurdila2006convex, gorniewicz1999topological}) showing that \cref{eq:learning_rkhs} --and \cref{eq:learning_rkhs_gen}-- attains a unique mimimizer.
 \begin{theorem}[Mazur-Schauder]
 \label{cor:unique_minimizer}
 Let $\mathcal{H}$ be a Hilbert space and $J:\mathcal{H}\to \overline{\mathbb{R}}$ be a proper, convex, lower semi-continuous and coercive function. Then $J$ is bounded from below and attains a minimizer. Moreover if $J$ is strictly convex the minimizer is unique.
@@ -43,10 +44,10 @@ Since for all $x\in\mathcal{X}$, $\norm{f(x)}_{\mathcal{Y}}\le \sqrt{\norm{K(x, 
 with $C\in\mathbb{R}_{>0}$ to have a chance to fit all the $y_i$ with norm $\norm{y_i}_{\mathcal{Y}} \le C$ in the train set.
 \end{remark}
 \subsection{Semi-supervised regression}
-Regression in \acl{vv-RKHS} has been well studied \citep{Alvarez2012, Minh_icml13,minh2016unifying,sangnier2016joint,kadri2015operator,Micchelli2005,Brouard2016_jmlr}, and a cornerstone of learning in \acs{vv-RKHS} is the representer theorem\mpar{Sometimes referred to as minimal norm interpolation theorem.}, which allows to replace the search of a minimizer in a infinite dimensional \acs{vv-RKHS} by a finite number of paramaters $(u_i)_{i=1}^N$, $u_i\in\mathcal{Y}$. We present here the very genreal form of \citet{minh2016unifying}. This framework encompass Vector-valued Manifold Regularization \citep{belkin2006manifold,Brouard2011,minh2013unifying} and Co-regularized Multi-view Learning \citep{brefeld2006efficient,sindhwani2008rkhs,rosenberg2009kernel,sun2011multi}.
+Regression in \acl{vv-RKHS} has been well studied~\citep{Alvarez2012, Minh_icml13,minh2016unifying,sangnier2016joint,kadri2015operator,Micchelli2005,Brouard2016_jmlr}, and a cornerstone of learning in \acs{vv-RKHS} is the representer theorem\mpar{Sometimes referred to as minimal norm interpolation theorem.}, which allows to replace the search of a minimizer in a infinite dimensional \acs{vv-RKHS} by a finite number of paramaters $(u_i)_{i=1}^N$, $u_i\in\mathcal{Y}$. We present here the very genreal form of~\citet{minh2016unifying}. This framework encompass Vector-valued Manifold Regularization~\citep{belkin2006manifold,Brouard2011,minh2013unifying} and Co-regularized Multi-view Learning~\citep{brefeld2006efficient,sindhwani2008rkhs,rosenberg2009kernel,sun2011multi}.
 \paragraph{}
 In the following we suppose we are given a cost function $c:\mathcal{Y}\times\mathcal{Y}\to\overline{\mathbb{R}}$, such that $c(f(x),y)$ returns the error of the prediction $f(x)$ \wrt~the ground truth $y$. A loss function of a model $f$ with respect to an example $(x,y)\in\mathcal{X}\times\mathcal{Y}$ can be naturally defined from a cost function as $L(x,f,y)=c(f(x),y)$. Conceptually the function $c$ evaluate the quality of the prediction versus its ground truth $y\in\mathcal{Y}$ while the loss function $L$ evaluate the quality of the model $f$ at a training point $(x,y)\in\mathcal{X}\times\mathcal{Y}$. Moreover we suppose that we are given a training sample $\seq{u}=(x_i)_{i=N}^{N+U}\in\mathcal{X}^U$ of unlabelled exemple. We note $\seq{z}\in\left(\mathcal{X}\times\mathcal{Y}\right)^N\times\mathcal{X}^U$ the sequence $\seq{z}=\seq{s}\seq{u}$ concatenating both labeled ($\seq{s}$) and unlabelled ($\seq{u}$) training examples.
-\begin{theorem}[Representer \citep{minh2016unifying}]
+\begin{theorem}[Representer~\citep{minh2016unifying}]
 \label{th:representer}
 Let $K$ be a $\mathcal{U}$-Mercer \acl{OVK} and $\mathcal{H}_K$ its corresponding $\mathcal{U}$-Reproducing Kernel Hilbert space.
 \paragraph{}
@@ -68,9 +69,9 @@ has the form $f_{\seq{z}}=\sum_{j=1}^{N+U}K(\cdot,x_j)u_{\seq{z},j}$ where $u_{\
     \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U} \inner*{\sum_{j=1}^{N+U}K(x_i,x_j)u_j, M_{ik}\sum_{j=1}^{N+U}K(x_k,x_j)u_j}_{\mathcal{U}}
 \end{dmath}
 \end{theorem}
-The first representer theorem was first introduced by \citet{Wahba90} in the case where $\mathcal{Y}=\mathbb{R}$. The extension to an arbitrary Hilbert space $\mathcal{Y}$ has been proved by many authors in different forms \citep{Brouard2011,kadri2015operator,Micchelli2005}. The idea behind the representer theorem is that eventhough we minimize over the whole space $\mathcal{H}_K$, when $\lambda_K>0$, the solution of \cref{eq:learning_rkhs_gen} falls inevitably into the set $\mathcal{H}_{K, \seq{z}}=\Set{\sum_{j=1}^{N+U}K_{x_j}u_j| \forall (u_i)_{i=1}^{N+U} \in\mathcal{U}^{N+U}}$. Therefore the result can be expressed as a finite linear combination of basis functions of the form $K(\cdot,x_k)$. Remark that we can perform the kernel expansion of $f_{\seq{z}}=\sum_{j=1}^{N+U}K(\cdot,x_j)u_{\seq{z},j}$ eventhough $\lambda_K=0$. However $f_{\seq{z}}$ is no longer the solution of \cref{eq:learning_rkhs_gen} over the whole space $\mathcal{H}_K$ but a projection on the subspace $\mathcal{H}_{K, \seq{z}}$. While this is in general not a problem for practical applications, it might raise issues for further theoretical investigations. In particular, it makes it difficult to perform theoretical comparison the \say{exact} solution of \cref{eq:learning_rkhs_gen} with respect to the \acs{ORFF} approximation solution given in \cref{cr:orff_representer}.
+The first representer theorem was first introduced by~\citet{Wahba90} in the case where $\mathcal{Y}=\mathbb{R}$. The extension to an arbitrary Hilbert space $\mathcal{Y}$ has been proved by many authors in different forms~\citep{Brouard2011,kadri2015operator,Micchelli2005}. The idea behind the representer theorem is that eventhough we minimize over the whole space $\mathcal{H}_K$, when $\lambda_K>0$, the solution of \cref{eq:learning_rkhs_gen} falls inevitably into the set $\mathcal{H}_{K, \seq{z}}=\Set{\sum_{j=1}^{N+U}K_{x_j}u_j| \forall (u_i)_{i=1}^{N+U} \in\mathcal{U}^{N+U}}$. Therefore the result can be expressed as a finite linear combination of basis functions of the form $K(\cdot,x_k)$. Remark that we can perform the kernel expansion of $f_{\seq{z}}=\sum_{j=1}^{N+U}K(\cdot,x_j)u_{\seq{z},j}$ eventhough $\lambda_K=0$. However $f_{\seq{z}}$ is no longer the solution of \cref{eq:learning_rkhs_gen} over the whole space $\mathcal{H}_K$ but a projection on the subspace $\mathcal{H}_{K, \seq{z}}$. While this is in general not a problem for practical applications, it might raise issues for further theoretical investigations. In particular, it makes it difficult to perform theoretical comparison the \say{exact} solution of \cref{eq:learning_rkhs_gen} with respect to the \acs{ORFF} approximation solution given in \cref{cr:orff_representer}.
 \paragraph{}
-We present here the proof of the generic formulation proposed by \citet{minh2016unifying}. In the mean time we clarify some elements of the proof. Indeed the existence of a global minimizer is not trivial and we must invoke the Mazur-Schauder theorem. Moreover the coercivity of the objective function required by the Mazur-Schauder theorem is not obvious when we do not require the cost function to take only positive values. However a corollary of Hahn-Banach theorem linking strong convexity to coercivity gives the solution.
+We present here the proof of the generic formulation proposed by~\citet{minh2016unifying}. In the mean time we clarify some elements of the proof. Indeed the existence of a global minimizer is not trivial and we must invoke the Mazur-Schauder theorem. Moreover the coercivity of the objective function required by the Mazur-Schauder theorem is not obvious when we do not require the cost function to take only positive values. However a corollary of Hahn-Banach theorem linking strong convexity to coercivity gives the solution.
 \begin{proof}
 Since $f(x)=K_x^*f$ (see \cref{eq:reproducing_prop}), the optimization problem reads
 \begin{dmath*}
@@ -97,7 +98,7 @@ where $V^\adjoint V\in\mathcal{L}(\mathcal{U})$. Let
 \begin{dmath*}
 J_{\lambda_K}(f) = \underbrace{\frac{1}{N}\displaystyle\sum_{i=1}^N c(Vf(x_i), y_i)}_{=J_c} + \frac{\lambda_K}{2}\norm{f}^2_{K} \\ + \underbrace{\frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{f(x_i), M_{ik}f(x_k)}_{\mathcal{U}}}_{=J_M}
 \end{dmath*}
-To ensure that $J_{\lambda_K}$ has a global minimizer we need the following technical lemma (which is a consequence of the Hahn-Banach theorem for lower-semicontimuous functional, see \citet{kurdila2006convex}).
+To ensure that $J_{\lambda_K}$ has a global minimizer we need the following technical lemma (which is a consequence of the Hahn-Banach theorem for lower-semicontimuous functional, see~\citet{kurdila2006convex}).
 \begin{lemma}
 \label{lm:strongly_convex_is_coercive}
 Let $J$ be a proper, convex, lower semi-continuous functional, defined on a Hilbert space $\mathcal{H}$. If $J$ is strongly convex, then $J$ is coercive.
@@ -150,7 +151,7 @@ $\tildef{\omega}(x)=\tildePhi{\omega}(x)^\adjoint \theta$, where $\theta$ lives 
 \theta_{\seq{z}}=\argmin_{\theta\in \tildeH{\omega}} \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\tildeH{\omega}}
 \end{dmath}
 
-\begin{corollary}[\acs{ORFF} representer]
+\begin{theorem}[\acs{ORFF} equivalence]
 \label{cr:orff_representer}
 Let $\tildeK{\omega}$ be an \acl{OVK} such that for all $x$, $z\in\mathcal{X}$, $\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z) = \widetilde{K}(x,z)$ where $\widetilde{K}$ is a $\mathcal{U}$-Mercer \acs{OVK} and $\mathcal{H}_{\tildeK{\omega}}$ its corresponding $\mathcal{U}$-Reproducing kernel Hilbert space.
 \paragraph{}
@@ -169,7 +170,7 @@ has the form $\widetilde{f}_{\seq{z}}=\tildePhi{\omega}(\cdot)^\adjoint\theta_{\
 \begin{dmath}
 \theta_{\seq{z}}=\argmin_{\theta\in \tildeH{\omega}} \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\tildeH{\omega}}.
 \end{dmath}
-\end{corollary}
+\end{theorem}
 \begin{proof}
 Since $\tildeK{\omega}$ is an operator-valued kernel, from \cref{th:representer}, \cref{eq:argmin_RKHS_rand} has a solution of the form
 \begin{dmath*}
@@ -218,6 +219,7 @@ r_{\seq{z}} = \theta_{\seq{z}} - \sum_{j=1}^{N+U} \tildePhi{\omega}(x_j) u_{\seq
 \end{dmath*}
 Then if $r_{\seq{z}}=0$, it mkeans that $\lambda_K$ is large enough for both reprensenter theorem and \acs{ORFF} representer theorem to apply. If $r_{\seq{z}}\neq0$ but $\tildePhi{\omega}(\cdot)^\adjoint r_{\seq{z}} = 0$ means that both $\theta_{\seq{z}}$ and $\sum_{j=1}^{N+U} \tildePhi{\omega}(x_j) u_{\seq{z}}$ are in $(\Ker W)^\bot$, thus the representer theorem fails to find the \say{true} solution over the whole space $\mathcal{H}_K$ but returns a projection onto $\mathcal{H}_{\tildeK{\omega},\seq{z}}$ of the solution. If $r_{\seq{z}} \neq 0$ and $\tildePhi{\omega}(\cdot)^\adjoint r_{\seq{z}} \neq 0$ means that $\theta_{\seq{z}}$ is \emph{not} in $(\Ker W)^\bot$, thus the \acs{ORFF} representer theorem fails to apply. This remark is illustrated by \cref{fig:representer}.
 
+%----------------------------------------------------------------------------------------
 \section{Solution of the empirical risk minimization}
 % We illustrate the ORFF representer theorem (\cref{cr:orff_representer}) on two experiment involving scalar valued kernels.
 
@@ -228,7 +230,7 @@ In order to find a solution to \cref{eq:argmin_theta}, we turn our attention to 
 \label{eq:cost_functional}
 J_{\lambda_K}(\theta) = \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\tildeH{\omega}}.
 \end{dmath}
-Since the solution of \cref{eq:argmin_theta} is unique when $\lambda_K>0$, a sufficient and necessary condition is that the gradient of $J_{\lambda_K}$ at the minimizer $\theta_{\seq{z}}$ is zero. We use the Frechet derivative, the strongest notion of derivative in Banach spaces\mpar{Here we view the Hilbert space $\mathcal{H}$ (feature space) as a reflexive Banach space.} \cite{conway2013course, kurdila2006convex} which directly generalizes the notion of gradient to Banach spaces. A function $f:\mathcal{H}_0\to\mathcal{H}_1$ is call Frechet differentiable at $\theta_0\in \mathcal{H}_0$ if there exist a bounded linear operator $A:\mathcal{H}_0\to \mathcal{H}_1$ such that
+Since the solution of \cref{eq:argmin_theta} is unique when $\lambda_K>0$, a sufficient and necessary condition is that the gradient of $J_{\lambda_K}$ at the minimizer $\theta_{\seq{z}}$ is zero. We use the Frechet derivative, the strongest notion of derivative in Banach spaces\mpar{Here we view the Hilbert space $\mathcal{H}$ (feature space) as a reflexive Banach space.}~\citep{conway2013course, kurdila2006convex} which directly generalizes the notion of gradient to Banach spaces. A function $f:\mathcal{H}_0\to\mathcal{H}_1$ is call Frechet differentiable at $\theta_0\in \mathcal{H}_0$ if there exist a bounded linear operator $A:\mathcal{H}_0\to \mathcal{H}_1$ such that
 \begin{dmath*}
 \lim_{h\to 0} \frac{\norm{f(\theta_0+h)-f(\theta_0)-Ah}_{\mathcal{H}_1}}{\norm{h}_{\mathcal{H}_0}}=0
 \end{dmath*}
@@ -349,7 +351,7 @@ while the space complexity is $O_s(r^2)$.
     \caption{Naive close form for the squared error cost.}
 \end{algorithm2e}
 \end{center}}
-This complexity is to compare with the kernelized solution proposed by \citet{minh2016unifying}. Let
+This complexity is to compare with the kernelized solution proposed by~\citet{minh2016unifying}. Let
 \begin{dmath*}
 \mathbf{K}:\begin{cases}
 \mathcal{U}^{N+U} \to \mathcal{U}^{N+U} \\
@@ -383,7 +385,7 @@ The operator $\mathbf{P}$ is a projection that sets all the terms $u_j$, $N < j 
     0 & \hdots & 0 & 0 & \hdots & 0
     \end{pmatrix}
 \end{dmath*}
-Then the equivalent kernelized solution $u_{\seq{z}}$ of \cref{th:representer} is given by \cite{minh2016unifying}
+Then the equivalent kernelized solution $u_{\seq{z}}$ of \cref{th:representer} is given by~\citet{minh2016unifying}
 \begin{dmath*}
 \left(\frac{1}{N}\mathbf{C}^T \mathbf{C} \mathbf{P} \mathbf{K} + \lambda_M \mathbf{M} \mathbf{K} + \lambda_K I_{\Vect_{i=1}^{N+U}\mathcal{U}}\right)u_{\seq{z}}=\left(\Vect_{i=1}^N C^T y_i\right) \oplus \left(\Vect_{i=N+1}^{N+U} 0 \right).
 \end{dmath*}
@@ -404,7 +406,7 @@ err = representer.main()
 \begin{landscape}
 \begin{figure}[tb]
 \pyc{print(r'\centering\resizebox{\textheight}{!}{\input{./representer.pgf}}')}
-\caption[\acs{ORFF} Representer theorem]{ORFF Representer theorem. We trained a first model named $\tildeK{\omega}$ following}
+\caption[\acs{ORFF} equivalence theorem]{ORFF equivalence theorem. We trained a first model named $\tildeK{\omega}$ following}
 \label{fig:representer}
 \end{figure}
 \end{landscape}}
@@ -420,7 +422,7 @@ err = representer2.main()
 \begin{landscape}
 \begin{figure}[tb]
 \pyc{print(r'\centering\resizebox{\textheight}{!}{\input{./representer2.pgf}}')}
-\caption[\acs{ORFF} Representer theorem]{ORFF Representer theorem. We trained a first model named $\tildeK{\omega}$ following}
+\caption[\acs{ORFF} equivalence theorem]{ORFF equivalence theorem. We trained a first model named $\tildeK{\omega}$ following}
 \label{fig:representer}
 \end{figure}
 \end{landscape}}
@@ -442,7 +444,7 @@ where $\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \iid~and $B(\omega_j)\in\m
 \end{dmath}
 $\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \iid.
 \subsection{Case of study: the decomposable kernel}
-Troughout this section we show how the mathematical formulation relates to a concrete (Python) implementation. We propose a Python implementation based on NumPy \citep{oliphant2006guide}, SciPy \citep{jones2014scipy} and Scikit-learn \cite{pedregosa2011scikit}. Following \cref{eq:matrix_orff} the feature map associated to the decomposable kernel would be
+Troughout this section we show how the mathematical formulation relates to a concrete (Python) implementation. We propose a Python implementation based on NumPy~\citep{oliphant2006guide}, SciPy~\citep{jones2014scipy} and Scikit-learn~\citep{pedregosa2011scikit}. Following \cref{eq:matrix_orff}, the feature map associated to the decomposable kernel would be
 \begin{pycode}[efficient_linop][fontsize=\scriptsize]
 r"""Example of efficient implementation of the Gaussian ORFF decomposable kernel."""
 
@@ -518,7 +520,7 @@ and
 \label{eq:phi_transpose_efficient}
 \tildePhi{\omega}(x)^T\theta = \frac{1}{\sqrt{D}} \sum_{j=1}^D \cos\inner{x, \omega_j}B\theta_j + \sin\inner{x, \omega_j}B\theta_j = B\left(\frac{1}{\sqrt{D}} \sum_{j=1}^D \left(\cos\inner{x, \omega_j} + \sin\inner{x, \omega_j}\right)\theta_j\right).
 \end{dmath}
-Which requires only on evaluation of $B$ on $y$ abd can be implemented easily in Python thanks to SciPy's LinearOperator. Note that the computation of these expressions can be fully vectorized\mpar{See \citet{walt2011numpy}.} using the vectorization property of the kronecker product. In the following we consider $\Theta \in \mathcal{M}_{2D,u'}(\mathbb{R})$ and the operator $\vectorize: \mathcal{M}_{u',2D}(\mathbb{R}) \to \mathbb{R}^{2Du'}$ which turns a matrix into a vector (\ie~$\theta_{u'i+j} = \vectorize(\Theta_{ij})$, $i\in\mathbb{N}_{2D}$ and $j\in\mathbb{N}^*_{u'}$). Then
+Which requires only on evaluation of $B$ on $y$ abd can be implemented easily in Python thanks to SciPy's LinearOperator. Note that the computation of these expressions can be fully vectorized\mpar{See~\citet{walt2011numpy}.} using the vectorization property of the kronecker product. In the following we consider $\Theta \in \mathcal{M}_{2D,u'}(\mathbb{R})$ and the operator $\vectorize: \mathcal{M}_{u',2D}(\mathbb{R}) \to \mathbb{R}^{2Du'}$ which turns a matrix into a vector (\ie~$\theta_{u'i+j} = \vectorize(\Theta_{ij})$, $i\in\mathbb{N}_{2D}$ and $j\in\mathbb{N}^*_{u'}$). Then
 \begin{dmath*}
 \left(\tildephi{\omega}(x) \otimes B^T\right)^T \theta \hiderel{=} \left(\tildephi{\omega}(x)^T \otimes B\right) \vectorize(\Theta) \hiderel{=} \vectorize\left(B \Theta \tildephi{\omega}(x) \right).
 \end{dmath*}
@@ -582,37 +584,37 @@ and
 \begin{dmath*}
 U=\begin{pmatrix} u_1 & \hdots&  u_N \end{pmatrix}\hiderel{\in}\mathcal{M}_{u, N}.
 \end{dmath*}
-Given a matrix $X\in\mathcal{M}_{m,n}(\mathbb{R})$, we note $X_{\bullet i}$ the \emph{column} vector coresponding to the $i$-th column of the matrix $X$ and $X_{i \bullet}$ the \emph{row} vector (covector) corresponding to the $i$-th line of the matrix X. With these notations, if $X\in\mathcal{M}_{m,n}$ and $Y\in\mathcal{M}_{n,m'}$, $X_{i\bullet}Y_{\bullet j}\in\mathbb{R}$ is the inner product between the $i$-th row of $X$ and the $j$-th column of $Y$ and $X_{\bullet i} Y_{\j{}  \bullet}\in\mathcal{M}_{m,m'}(\mathbb{R})$ is the outer product between the $i$-th column of $X$ and $j$-th row of $X$.
+Given a matrix $X\in\mathcal{M}_{m,n}(\mathbb{R})$, we note $X_{\bullet i}$ the \emph{column} vector coresponding to the $i$-th column of the matrix $X$ and $X_{i \bullet}$ the \emph{row} vector (covector) corresponding to the $i$-th line of the matrix X. With these notations, if $X\in\mathcal{M}_{m,n}$ and $Y\in\mathcal{M}_{n,m'}$, $X_{i\bullet}Y_{\bullet j}\in\mathbb{R}$ is the inner product between the $i$-th row of $X$ and the $j$-th column of $Y$ and $X_{\bullet i} Y_{j \bullet}\in\mathcal{M}_{m,m'}(\mathbb{R})$ is the outer product between the $i$-th column of $X$ and $j$-th row of $X$.
 \paragraph{}
-For the curl-free and divergence-free kernel given in \cref{subsec:examples_ORFF} we recall the unbounded \acs{ORFF} maps are respectively
+For the curl-free and divergence-free kernel given in \cref{subsec:examples_ORFF} we recall the unbounded \acs{ORFF} maps are respectively for all $u\in\mathcal{U}$
 \begin{dmath*}
-\tildePhi{\omega}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\omega_j^T y\\ \sin{\inner{x,\omega_j}}\omega_j^T{} y\end{pmatrix},
+\tildePhi{\omega}(x)u=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\omega_j^T u\\ \sin{\inner{x,\omega_j}}\omega_j^T{} u\end{pmatrix},
 \end{dmath*}
 and
 \begin{dmath*}
-\tildePhi{\omega}(x) y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\left(\norm{\omega_j}I_d-\omega_j\omega_j^T\right) y\\ \sin{\inner{x,\omega_j}}\left(\norm{\omega_j}I_d-\omega_j\omega_j^T\right) y\end{pmatrix},
+\tildePhi{\omega}(x) u=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\left(\norm{\omega_j}I_d-\frac{\omega_j\omega_j^T}{\norm{\omega_j}}\right) u\\ \sin{\inner{x,\omega_j}}\left(\norm{\omega_j}I_d-\frac{\omega_j\omega_j^T}{\norm{\omega_j}}\right) u\end{pmatrix},
 \end{dmath*}
-where $\omega_j\sim \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$. To avoid complex index notations we decompose the feature maps $\tildePhi{\omega}(X)$ into two sub feature maps $\tildePhi{\omega}^c$ and $\tildePhi{\omega}^s$ corresponding to the cosine part and the sine part of each feature map. Namely, for the curl-free kernel
+where $\omega_j\sim \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$. To avoid complex index notations we decompose the feature maps $\tildePhi{\omega}(X)$ into two sub feature maps $\tildePhi{\omega}^c$ and $\tildePhi{\omega}^s$ corresponding to the cosine part and the sine part of each feature map. Namely, for the curl-free kernel, for all $u\in\mathcal{U}$
 \begin{dmath*}
-\tildePhi{\omega}(x) y=\begin{cases}
-\tildePhi{\omega}^c(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\omega_j^T y\end{pmatrix}, \\
-\tildePhi{\omega}^s(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\sin{\inner{x,\omega_j}}\omega_j^T y\end{pmatrix}.
+\tildePhi{\omega}(x) u=\begin{cases}
+\tildePhi{\omega}^c(x)u=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\omega_j^T u\end{pmatrix}, \\
+\tildePhi{\omega}^s(x)u=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\sin{\inner{x,\omega_j}}\omega_j^T u\end{pmatrix}.
 \end{cases}
 \end{dmath*}
 In the same way, for the divergence-free kernel,
 \begin{dmath*}
-\tildePhi{\omega}(x) y=\begin{cases}
-\tildePhi{\omega}^c(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\left(\norm{\omega_j}I_d-\omega_j\omega_j^T\right) y\end{pmatrix}, \\
-\tildePhi{\omega}^s(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\sin{\inner{x,\omega_j}}\left(\norm{\omega_j}I_d-\omega_j\omega_j^T\right) y\end{pmatrix}.
+\tildePhi{\omega}(x) u=\begin{cases}
+\tildePhi{\omega}^c(x)u=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}\left(\norm{\omega_j}I_d-\omega_j\omega_j^T\right) u\end{pmatrix}, \\
+\tildePhi{\omega}^s(x)u=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\sin{\inner{x,\omega_j}}\left(\norm{\omega_j}I_d-\omega_j\omega_j^T\right) u\end{pmatrix}.
 \end{cases}
 \end{dmath*}
-This equivalent formulation allows us to keep the notation \say{lighter}. With these notations, a summary of efficient linear operators in matrix form is given in \cref{tb:efficient-op} and \cref{tb:efficient2-op}.
+We also introduce $\tildePhi{\omega}^e$, $e\in\Set{s,c}$ which denotes either $\tildePhi{\omega}^s$ or $\tildePhi{\omega}^c$. This equivalent formulation allows us to keep the notation \say{lighter} and closer to a proper Python/Matlab implementation with vectorization. With these notations, a summary of efficient linear operators in matrix form is given in \cref{table:efficient-op}. The complexity of evaluating all this operators is given in \cref{table:efficient-complexity}.
 \afterpage{%
 \begin{landscape}
-\begin{table}[ht]
+\begin{table}[htb]{}
 \centering
 \begin{threeparttable}
-\caption[Efficient linear-operators for different \acs{ORFF}.]{Efficient linear-operator (in matrix form) for different Feature maps.}
+\caption[Efficient linear-operators for different \acs{ORFF}.]{Efficient linear-operator (in matrix form) for different Feature maps. \label{table:efficient-op}}
 % \begin{tabularx}{\textheight}{Xclcl}
 % \toprule
 %     Kernel & \multicolumn{2}{c}{$\tildePhi{\omega}(X)^T$} & \multicolumn{2}{c}{$\tildePhi{\omega}(X)$} \\
@@ -624,54 +626,76 @@ This equivalent formulation allows us to keep the notation \say{lighter}. With t
 %     Gaussian \newline divergence-free\tnote{2,3} & $\Theta^c, \Theta^s \mapsto$ & $\displaystyle\sum_{j=1}^D\left(\norm{\omega_j}_2I_d-\omega_j\omega_j^T\right)\left(\Theta^{c}_{\bullet j}\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta^{s}_{\bullet j}\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U \mapsto$ & $\begin{cases}\Theta^c_{\bullet j}=\left(\norm{\omega_j}_2I_d-\omega_j\omega_j^T\right)\displaystyle\sum_{i=1}^N \tildephi{\omega}^{c}(X)_{ji}U_{\bullet i} \\ \Theta^s_{\bullet j}=\left(\norm{\omega_j}_2I_d-\omega_j\omega_j^T\right)\displaystyle\sum_{i=1}^N \tildephi{\omega}^{s}(X)_{ji}U_{\bullet i} \end{cases}$ \\
 % \bottomrule
 % \end{tabularx}
-\begin{tabularx}{\textheight}{Xclcl}
+% \begin{tabularx}{\textheight}{Xclcl}
+% \toprule
+%     Kernel & \multicolumn{2}{c}{$\tildePhi{\omega}(X)^T$} & \multicolumn{2}{c}{$\tildePhi{\omega}(X)$} \\
+% \midrule
+%     Decomposable\tnote{1} &$\Theta\mapsto$& $B\Theta \tildephi{\omega}(X)$ & $U\mapsto$ & $B^TU\tildephi{\omega}(X)^T$ \\
+
+%     Gaussian curl-free\tnote{2} & $\Theta^c, \Theta^s\mapsto $ & $\displaystyle\sum_{j=1}^D\omega_j\left(\Theta_{j}^c\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta_{j}^s\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U\mapsto$ & $\begin{cases}\Theta_j^c=\omega_j^T U\tildephi{\omega}^{c}(X)_{\bullet j}^T \\ \Theta_j^s=\omega_j^T U\tildephi{\omega}^{s}(X)_{\bullet j}^T\end{cases}$ \\
+
+%     Gaussian divergence-free\tnote{2,3} & $\Theta^c, \Theta^s \mapsto$ & $\displaystyle\sum_{j=1}^DB(\omega_j)\left(\Theta^{c}_{\bullet j}\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta^{s}_{\bullet j}\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U \mapsto$ & $\begin{cases}\Theta^c_{\bullet j}=B(\omega_j)U(\tildephi{\omega}^{c}(X)_{j\bullet})^T \\ \Theta^s_{\bullet j}=B(\omega_j)U(\tildephi{\omega}^{s}(X)_{j\bullet})^T \end{cases}$ \\
+% \bottomrule
+% \end{tabularx}
+\begin{tabularx}{\textheight}{Xcc}
 \toprule
-    Kernel & \multicolumn{2}{c}{$\tildePhi{\omega}(X)^T$} & \multicolumn{2}{c}{$\tildePhi{\omega}(X)$} \\
+    Kernel & $\tildePhi{\omega}(X)^\adjoint$ & $\tildePhi{\omega}(X)$ \\
 \midrule
-    Decomposable\tnote{1} &$\Theta\mapsto$& $B\Theta \tildephi{\omega}(X)$ & $U\mapsto$ & $B^TU\tildephi{\omega}(X)^T$ \\
+    Decomposable\tnote{1} &$\Theta\mapsto B\left(\Theta \tildephi{\omega}(X)\right)$ & $U\mapsto B^T\left(U\tildephi{\omega}(X)^T\right)$ \\
 
-    Gaussian curl-free\tnote{2} & $\Theta^c, \Theta^s\mapsto $ & $\displaystyle\sum_{j=1}^D\omega_j\left(\Theta_{j}^c\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta_{j}^s\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U\mapsto$ & $\begin{cases}\Theta_j^c=\omega_j^T U\tildephi{\omega}^{c}(X)_{\bullet j}^T \\ \Theta_j^s=\omega_j^T U\tildephi{\omega}^{s}(X)_{\bullet j}^T\end{cases}$ \\
+    Gaussian curl-free\tnote{2} & $\Theta^c, \Theta^s\mapsto \displaystyle\sum_{j=1}^D\omega_j\left(\Theta_{j}^c\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta_{j}^s\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U\mapsto \Theta_j^e=\omega_j^T \left(U\tildephi{\omega}^{e}(X)_{\bullet j}^T\right)$ \\
 
-    Gaussian divergence-free\tnote{2,3} & $\Theta^c, \Theta^s \mapsto$ & $\displaystyle\sum_{j=1}^DB(\omega_j)\left(\Theta^{c}_{\bullet j}\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta^{s}_{\bullet j}\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $U \mapsto$ & $\begin{cases}\Theta^c_{\bullet j}=B(\omega_j)U(\tildephi{\omega}^{c}(X)_{j\bullet})^T \\ \Theta^s_{\bullet j}=B(\omega_j)U(\tildephi{\omega}^{s}(X)_{j\bullet})^T \end{cases}$ \\
+    Gaussian divergence-free\tnote{2,3} & $\Theta^c, \Theta^s \mapsto \displaystyle\sum_{j=1}^D\left(B(\omega_j)\Theta^{c}_{\bullet j}\right)\tildephi{\omega}^{c}(X)_{j\bullet} + \left(B(\omega_j)\Theta^{s}_{\bullet j}\right)\tildephi{\omega}^{s}(X)_{j\bullet}$ & $U \mapsto \Theta^e_{\bullet j}=B(\omega_j)\left(U\tildephi{\omega}^{e}(X)_{\bullet j}^T\right)$ \\
 \bottomrule
 \end{tabularx}
 \begin{tablenotes}
 \item[1] Where $\tildephi{\omega}(X)=\begin{pmatrix} \tildephi{\omega}(X_{\bullet 1}) & \hdots & \tildephi{\omega}(X_{\bullet N}) \end{pmatrix}\in\mathcal{M}_{r, N}$ is any design matrix, with scalar feature map $\tildephi{\omega}:\mathbb{R}^d\to\mathbb{R}^r$ such that $\tildephi{\omega}(x)^\adjoint \tildephi{\omega}(z)=k(x,z)\in\mathbb{R}$ for all $x$, $z\in\mathcal{X}$. The input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data $U\in\mathcal{M}_{u,N}(\mathbb{R})$, the parameter matrices $\Theta^c$ and $\Theta^s\in\mathcal{M}_{u', r}(\mathbb{R})$ and the decomposable operator $B\in\mathcal{M}_{u,u'}(\mathbb{R})$.
-\item[2] Where $\tildephi{\omega}^{c}(X)_{ji}=\cos\inner{\omega_j, x_i}$ and $\tildephi{\omega}^{s}(X)_{ji}=\sin\inner{\omega_j, x_i}$, $j\in\mathbb{N}^*_D$ and $i\in\mathbb{N}^*_N$. Thus $\tildephi{\omega}^{c}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$ and $\tildephi{\omega}^{s}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$. The input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data $U\in\mathcal{M}_{d,N}(\mathbb{R})$, the parameter matrices $\Theta^c$ and $\Theta^s\in\mathbb{R}^D$, $\omega_j\sim \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$ \iid~for all $j\in\mathbb{N}^*_D$.
-\item[3] Here, $\Theta^c$ and $\Theta^s\in\mathcal{M}_{d,D}(\mathbb{R})$ and $B(\omega)=\left(\norm{\omega}_2I_d-\frac{\omega\omega^T}{\norm{\omega}_2}\right)\in\mathcal{M}_{d,d}$.
+\item[2] Where $\tildephi{\omega}^{c}(X)_{ji}=\cos\inner{\omega_j, x_i}$ and $\tildephi{\omega}^{s}(X)_{ji}=\sin\inner{\omega_j, x_i}$, $j\in\mathbb{N}^*_D$ and $i\in\mathbb{N}^*_N$. Thus $\tildephi{\omega}^{c}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$ and $\tildephi{\omega}^{s}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$. The input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data $U\in\mathcal{M}_{d,N}(\mathbb{R})$, the parameter matrices $\Theta^c$ and $\Theta^s\in\mathbb{R}^D$, $\omega_j\sim \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$ \iid~for all $j\in\mathbb{N}^*_D$. Eventually $e\in\Set{s,c}$, namely $\Theta^c=\begin{pmatrix} \Theta^{e=c}_1 & \hdots & \Theta^{e=c}_D \end{pmatrix}^T$ and $\Theta^s=\begin{pmatrix} \Theta^{e=s}_1 & \hdots &  \Theta^{e=s}_D\end{pmatrix}^T$.
+\item[3] Here, $\Theta^c$ and $\Theta^s\in\mathcal{M}_{d,D}(\mathbb{R})$ thus $\Theta^c=\begin{pmatrix}\Theta^{e=c}_{\bullet 1} & \hdots & \Theta^{e=c}_{\bullet D}\end{pmatrix}$, $\Theta^s=\begin{pmatrix}\Theta^{e=s}_{\bullet 1} & \hdots & \Theta^{e=s}_{\bullet D}\end{pmatrix}$ and $B(\omega)=\left(\norm{\omega}_2I_d-\frac{\omega\omega^T}{\norm{\omega}_2}\right)\in\mathcal{M}_{d,d}$.
 \end{tablenotes}
 \end{threeparttable}
-\label{tb:efficient2-op}
 \end{table}
 \end{landscape}}
-\afterpage{%
-\begin{landscape}
-\begin{table}[ht]
-\centering
-\begin{threeparttable}
-\caption[Efficient linear-operators for different \acs{ORFF}.]{Efficient linear-operator (in matrix form) for different Feature maps.}
-\begin{tabularx}{\textheight}{Xclcl}
-\toprule
-    Kernel & \multicolumn{2}{c}{$\tildePhi{\omega}(X)\tildePhi{\omega}(X)^T$} & \multicolumn{2}{c}{$\tildePhi{\omega}(X)^T\tildePhi{\omega}(X)$} \\
-\midrule
-    Decomposable\tnote{1} &$\Theta\mapsto$& $B^TB\Theta \tildephi{\omega}(X)\tildephi{\omega}(X)^T$ & $U\mapsto$ & $BB^TU\tildephi{\omega}(X)^T\tildephi{\omega}(X)$ \\
 
-    Gaussian \newline curl-free\tnote{2} & $\Theta^c, \Theta^s\mapsto $ & $\begin{cases}\Theta_j^c=\omega_j^T U\tildephi{\omega}^{c}(X)_{\bullet j}^T \\ \Theta_j^s=\omega_j^T U\tildephi{\omega}^{s}(X)_{\bullet j}^T\end{cases}$ & $U\mapsto$ & $\displaystyle\sum_{j=1}^D\omega_j\omega_j^TU\left(\tildephi{\omega}^{c}(X)_{\bullet j}^T\tildephi{\omega}^{c}(X)_{j\bullet} + \tildephi{\omega}^{s}(X)_{\bullet j}^T\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ \\
+% \afterpage{%
+% \begin{landscape}
+% \begin{table}[ht]
+% \centering
+% \begin{threeparttable}
+% \caption[Efficient linear-operators for different \acs{ORFF}.]{Efficient linear-operator (in matrix form) for different Feature maps.}
+% % \begin{tabularx}{\textheight}{Xclcl}
+% % \toprule
+% %     Kernel & \multicolumn{2}{c}{$\tildePhi{\omega}(X)\tildePhi{\omega}(X)^T$} & \multicolumn{2}{c}{$\tildePhi{\omega}(X)^T\tildePhi{\omega}(X)$} \\
+% % \midrule
+% %     Decomposable\tnote{1} &$\Theta\mapsto$& $B^TB\Theta \tildephi{\omega}(X)\tildephi{\omega}(X)^T$ & $U\mapsto$ & $BB^TU\tildephi{\omega}(X)^T\tildephi{\omega}(X)$ \\
 
-    Gaussian \newline divergence-free\tnote{2,3} & $\Theta^c, \Theta^s \mapsto$ & $\begin{cases}\Theta^c_{\bullet j}=\left(\norm{\omega_j}_2I_d-\frac{\omega_j\omega_j^T}{\norm{\omega_j}_2}\right)U(\tildephi{\omega}^{c}(X)_{j\bullet})^T \\ \Theta^s_{\bullet j}=\left(\norm{\omega_j}_2I_d-\frac{\omega_j\omega_j^T}{\norm{\omega_j}_2}\right)U(\tildephi{\omega}^{s}(X)_{j\bullet})^T \end{cases}$ & $U \mapsto$ & $\displaystyle\sum_{j=1}^DA(\omega_j)U\left(\tildephi{\omega}^{c}(X)_{\bullet j}^T\tildephi{\omega}^{c}(X)_{j\bullet} + \tildephi{\omega}^{s}(X)_{\bullet j}^T\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ \\
-\bottomrule
-\end{tabularx}
-\begin{tablenotes}
-\item[1] Where $\tildephi{\omega}(X)=\begin{pmatrix} \tildephi{\omega}(X_{\bullet 1}) & \hdots & \tildephi{\omega}(X_{\bullet N}) \end{pmatrix}\in\mathcal{M}_{r, N}$ is any design matrix, with scalar feature map $\tildephi{\omega}:\mathbb{R}^d\to\mathbb{R}^r$ such that $\tildephi{\omega}(x)^\adjoint \tildephi{\omega}(z)=k(x,z)\in\mathbb{R}$ for all $x$, $z\in\mathcal{X}$. The input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data $U\in\mathcal{M}_{u,N}(\mathbb{R})$, the parameter matrices $\Theta^c$ and $\Theta^s\in\mathcal{M}_{u', r}(\mathbb{R})$ and the decomposable operator $B\in\mathcal{M}_{u,u'}(\mathbb{R})$.
-\item[2] Where $\tildephi{\omega}^{c}(X)_{ji}=\cos\inner{\omega_j, x_i}$ and $\tildephi{\omega}^{s}(X)_{ji}=\sin\inner{\omega_j, x_i}$, $j\in\mathbb{N}^*_D$ and $i\in\mathbb{N}^*_N$. Thus $\tildephi{\omega}^{c}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$ and $\tildephi{\omega}^{s}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$. The input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data $U\in\mathcal{M}_{d,N}(\mathbb{R})$, the parameter matrices $\Theta^c$ and $\Theta^s\in\mathbb{R}^D$, $\omega_j\sim \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$ \iid~for all $j\in\mathbb{N}^*_D$.
-\item[3] Here, $\Theta^c$ and $\Theta^s\in\mathcal{M}_{d,D}(\mathbb{R})$ and $A(\omega)=B(\omega)B(\omega)^T=\left(\norm{\omega}^2_2I_d-\omega\omega^T\right)\in\mathcal{M}_{d,d}$.
-\end{tablenotes}
-\end{threeparttable}
-\label{tb:efficient-op}
-\end{table}
-\end{landscape}}
+% %     Gaussian \newline curl-free\tnote{2} & $\Theta^c, \Theta^s\mapsto $ & $\begin{cases}\Theta_j^c=\omega_j^T \displaystyle\sum_{j=1}^D\omega_j\left(\Theta_{j}^c\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta_{j}^s\tildephi{\omega}^{s}(X)_{j\bullet} \right)\tildephi{\omega}^{c}(X)_{\bullet j}^T \\ \Theta_j^s=\omega_j^T \displaystyle\sum_{j=1}^D\omega_j\left(\Theta_{j}^c\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta_{j}^s\tildephi{\omega}^{s}(X)_{j\bullet} \right)\tildephi{\omega}^{s}(X)_{\bullet j}^T\end{cases}$ & $U\mapsto$ & $\displaystyle\sum_{j=1}^D\omega_j\omega_j^TU\left(\tildephi{\omega}^{c}(X)_{\bullet j}^T\tildephi{\omega}^{c}(X)_{j\bullet} + \tildephi{\omega}^{s}(X)_{\bullet j}^T\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ \\
+
+% %     Gaussian \newline divergence-free\tnote{2,3} & $\Theta^c, \Theta^s \mapsto$ & $\begin{cases}\Theta^c_{\bullet j}=B(\omega_j)\displaystyle\sum_{j=1}^DB(\omega_j)\left(\Theta^{c}_{\bullet j}\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta^{s}_{\bullet j}\tildephi{\omega}^{s}(X)_{j\bullet} \right)\tildephi{\omega}^{c}(X)_{\bullet j}^T \\ \Theta^s_{\bullet j}=B(\omega_j)\displaystyle\sum_{j=1}^DB(\omega_j)\left(\Theta^{c}_{\bullet j}\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta^{s}_{\bullet j}\tildephi{\omega}^{s}(X)_{j\bullet} \right)\tildephi{\omega}^{s}(X)_{\bullet j}^T \end{cases}$ & $U \mapsto$ & $\displaystyle\sum_{j=1}^DA(\omega_j)U\left(\tildephi{\omega}^{c}(X)_{\bullet j}^T\tildephi{\omega}^{c}(X)_{j\bullet} + \tildephi{\omega}^{s}(X)_{\bullet j}^T\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ \\
+% % \bottomrule
+% % \end{tabularx}
+% \begin{tabularx}{\textheight}{Xcc}
+% \toprule
+%     Kernel & $\tildePhi{\omega}(X)\tildePhi{\omega}(X)^T$ & $\tildePhi{\omega}(X)^T\tildePhi{\omega}(X)$ \\
+% \midrule
+%     Decomposable\tnote{1} &$\Theta\mapsto B^TB\Theta \tildephi{\omega}(X)\tildephi{\omega}(X)^T$ & $U\mapsto BB^TU\tildephi{\omega}(X)^T\tildephi{\omega}(X)$ \\
+
+%     Gaussian \newline curl-free\tnote{2} & $\Theta^c, \Theta^s\mapsto \Theta_j^e=\omega_j^T \displaystyle\sum_{j=1}^D\omega_j\left(\Theta_{j}^c\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta_{j}^s\tildephi{\omega}^{s}(X)_{j\bullet} \right)\tildephi{\omega}^{e}(X)_{\bullet j}^T$ & $U\mapsto \displaystyle\sum_{j=1}^D\omega_j\omega_j^TU\left(\tildephi{\omega}^{c}(X)_{\bullet j}^T\tildephi{\omega}^{c}(X)_{j\bullet} + \tildephi{\omega}^{s}(X)_{\bullet j}^T\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ \\
+
+%     Gaussian \newline divergence-free\tnote{2,3} & $\Theta^c, \Theta^s \mapsto \Theta^e_{\bullet j}=B(\omega_j)\displaystyle\sum_{j=1}^DB(\omega_j)\left(\Theta^{c}_{\bullet j}\tildephi{\omega}^{c}(X)_{j\bullet} + \Theta^{s}_{\bullet j}\tildephi{\omega}^{s}(X)_{j\bullet} \right)\tildephi{\omega}^{e}(X)_{\bullet j}^T$ & $U \mapsto \displaystyle\sum_{j=1}^DA(\omega_j)U\left(\tildephi{\omega}^{c}(X)_{\bullet j}^T\tildephi{\omega}^{c}(X)_{j\bullet} + \tildephi{\omega}^{s}(X)_{\bullet j}^T\tildephi{\omega}^{s}(X)_{j\bullet} \right)$ \\
+% \bottomrule
+% \end{tabularx}
+% \begin{tablenotes}
+% \item[1] Where $\tildephi{\omega}(X)=\begin{pmatrix} \tildephi{\omega}(X_{\bullet 1}) & \hdots & \tildephi{\omega}(X_{\bullet N}) \end{pmatrix}\in\mathcal{M}_{r, N}$ is any design matrix, with scalar feature map $\tildephi{\omega}:\mathbb{R}^d\to\mathbb{R}^r$ such that $\tildephi{\omega}(x)^\adjoint \tildephi{\omega}(z)=k(x,z)\in\mathbb{R}$ for all $x$, $z\in\mathcal{X}$. The input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data $U\in\mathcal{M}_{u,N}(\mathbb{R})$, the parameter matrices $\Theta^c$ and $\Theta^s\in\mathcal{M}_{u', r}(\mathbb{R})$ and the decomposable operator $B\in\mathcal{M}_{u,u'}(\mathbb{R})$.
+% \item[2] Where $\tildephi{\omega}^{c}(X)_{ji}=\cos\inner{\omega_j, x_i}$ and $\tildephi{\omega}^{s}(X)_{ji}=\sin\inner{\omega_j, x_i}$, $j\in\mathbb{N}^*_D$ and $i\in\mathbb{N}^*_N$. Thus $\tildephi{\omega}^{c}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$ and $\tildephi{\omega}^{s}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$. The input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data $U\in\mathcal{M}_{d,N}(\mathbb{R})$, the parameter matrices $\Theta^c$ and $\Theta^s\in\mathbb{R}^D$, $\omega_j\sim \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$ \iid~for all $j\in\mathbb{N}^*_D$. Eventually $e\in\Set{s,c}$, namely $\Theta^c=\begin{pmatrix} \Theta^{e=c}_1 & \hdots & \Theta^{e=c}_D \end{pmatrix}^T$ and $\Theta^s=\begin{pmatrix} \Theta^{e=s}_1 & \hdots &  \Theta^{e=s}_D\end{pmatrix}^T$.
+% \item[3] Here, $\Theta^c$ and $\Theta^s\in\mathcal{M}_{d,D}(\mathbb{R})$ thus $\Theta^c=\begin{pmatrix}\Theta^{e=c}_{\bullet 1} & \hdots & \Theta^{e=c}_{\bullet D}\end{pmatrix}$, $\Theta^s=\begin{pmatrix}\Theta^{e=s}_{\bullet 1} & \hdots & \Theta^{e=s}_{\bullet D}\end{pmatrix}$ and $A(\omega)=B(\omega)B(\omega)^T=\left(\norm{\omega}^2_2I_d-\omega\omega^T\right)\in\mathcal{M}_{d,d}$ and $B(\omega)=\left(\norm{\omega}_2I_d-\frac{\omega\omega^T}{\norm{\omega}_2}\right)\in\mathcal{M}_{d,d}$.
+% \end{tablenotes}
+% \end{threeparttable}
+% \label{tb:efficient2-op}
+% \end{table}
+% \end{landscape}}
 \paragraph{}
-It is worth mentioning that the same strategy can be applied in many different language. For instance in C{}\verb!++!, the libray Eigen \cite{eigenweb} allows to wrap a sparse matrix with a custom type, where the user overload the transpose and dot product operator (as in Python). Then the custom user operator behaves as a (sparse) matrix --see \url{https://eigen.tuxfamily.org/dox/group__MatrixfreeSolverExample.html}. With this implementation the time complexity of $\tildePhi{\omega}(x)^T\theta$ and $\tildePhi{\omega}(x)y$ falls down to $O_t(2Du'+u'u)$ and the same holds for space complexity.
+It is worth mentioning that the same strategy can be applied in many different language. For instance in C{}\verb!++!, the libray Eigen~\citep{eigenweb} allows to wrap a sparse matrix with a custom type, where the user overload the transpose and dot product operator (as in Python). Then the custom user operator behaves as a (sparse) matrix --see \url{https://eigen.tuxfamily.org/dox/group__MatrixfreeSolverExample.html}. With this implementation the time complexity of $\tildePhi{\omega}(x)^T\theta$ and $\tildePhi{\omega}(x)y$ falls down to $O_t(2Du'+u'u)$ and the same holds for space complexity.
 \paragraph{}
 A quick experiment shows the advantage of seeing the decomposable kernel as a linear operator rather than a matrix. We draw $N=100$ points $(x_i)_{i=1}^N$ in the interval $(0,1)^{20}$ and use a decomposable kernel with matrix $\Gamma=BB^T\in\mathcal{M}_{p,p}(\mathbb{R})$ where $B\in\mathcal{M}_{p,p}(\mathbb{R})$ is a random matrix with coefficients drawn uniformly in $(0,1)$. We compute $\tildePhi{\omega}(x)^T\theta$ for all $x_i$'s, where $\theta\in\mathcal{M}_{2D,1}(\mathbb{R})$, $D=100$, with the implementation \texttt{Ef\-fi\-cient\-De\-com\-po\-sa\-ble\-Gaus\-sian\-ORFF}, \cref{eq:phi_transpose_efficient}, and \texttt{Na\-ive\-De\-com\-po\-sa\-ble\-Gaus\-sian\-ORFF}, \cref{eq:matrix_decomposable_orff}. The coefficients of $\theta$ were drawn at random uniformly in $(0,1)$. We report the execution time in \cref{fig:efficient_decomposable_gaussian} for different values of $p$, $1\le p\le100$.
 \begin{pycode}[efficient_linop]
@@ -701,8 +725,19 @@ efficient_curlfree_gaussian.main()
 \label{fig:efficient_curlfree_gaussian}
 \end{figure}
 The left plot report the execution time in seconds of the construction of the feature. The middle plot report the execution time of $\tildePhi{\omega}(x)^T\theta$, and the right plot the memory used in bytes  to store $\tildePhi{\omega}(x)$ for all $x_i$'s. We average the results over fifty runs. Full code is given in \cref{code:efficient_curlfree_gaussian}. As we can see the linear-operator implementation is one order of magnitude slower than its matrix counterpart. However it uses considerably less memory.
-
-
+\begin{table}[htb]
+\centering
+\caption[Complexity of efficient linear-operators for different \acs{ORFF}.]{Complexity of efficient linear-operator (in matrix form) for different Feature maps given in \cref{table:efficient-op}. \label{table:efficient-complexity}}
+\begin{tabularx}{\textwidth}{Xcc}
+\toprule
+    Kernel & $\tildePhi{\omega}(X)^\adjoint$ & $\tildePhi{\omega}(X)$ \\
+\midrule
+    Decomposable & $O\left((u'r+u'u)N\right)$ & $O\left((uN+u'u)r\right)$ \\
+    Curl-free & $O\left(uND\right)$ & $O\left(uND\right)$ \\
+    Divergence-free & $O\left((u^2+uN)D\right)$ & $O\left((u^2+uN)D\right)$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 \subsection{Divergence-free kernel}
 We use the unbounded \acs{ORFF} map presented in \cref{eq:unbounded_div_free_orff}. We draw $N=100$ points $(x_i)_{i=1}^N$ in the interval $(0,1)^{p}$ and use a curl-free kernel. We compute $\tildePhi{\omega}(x)^T\theta$ for all $x_i$'s, where $\theta\in\mathcal{M}_{2Dp,1}(\mathbb{R})$, $D=100$, with the matrix implementation and the \texttt{LinearOperator} implementation. The coefficients of $\theta$ were drawn at random uniformly in $(0,1)$. We report the execution time in \cref{fig:efficient_curlfree_gaussian} for different values of $p$, $1\le p\le100$.
@@ -719,39 +754,14 @@ efficient_divfree_gaussian.main()
 \end{figure}
 The left plot report the execution time in seconds of the construction of the feature. The middle plot report the execution time of $\tildePhi{\omega}(x)^T\theta$, and the right plot the memory used in bytes  to store $\tildePhi{\omega}(x)$ for all $x_i$'s. We average the results over ten runs. Full code is given in \cref{code:efficient_divfree_gaussian}. We draw the same conclusions as the curl-free kernel.
 
-
-% \afterpage{%
-% \begin{landscape}
-% \begin{table}[ht]
-% \centering
-% \begin{threeparttable}
-% \caption[Efficient linear-operators for different \acs{ORFF}.]{Efficient linear-operator (in matrix form) for different Feature maps.}
-% \begin{tabularx}{\textheight}{Xcc}
-% \toprule
-%     Kernel & $\tildePhi{\omega}(X)\tildePhi{\omega}(X)^T:\Theta\mapsto$ & $\tildePhi{\omega}(X)^T\tildePhi{\omega}(X):Y\mapsto$ \\
-% \midrule
-%     Decomposable\tnote{1} & $\Theta'=B^TB\Theta \tildephi{\omega}(X)\tildephi{\omega}(X)^T$ & $Y'=BB^TY\tildephi{\omega}(X)^T\tildephi{\omega}(X)$ \\
-
-%     Gaussian curl-free\tnote{2} & $\Theta'=\displaystyle\sum_{j=1}^D\left(\tildephi{\omega}^{c}(X)\tildephi{\omega}^{c}(X)^T\right)_{\bullet j}\Theta^{c}_j\norm{\omega_j}_2^2$ & $\begin{pmatrix}\omega_j^T\displaystyle\sum_{i=1}^N \tildephi{\omega}^{c}(X)_{ji}Y_{\bullet i} \\ \omega_j^T\displaystyle\sum_{i=1}^N \tildephi{\omega}^{s}(X)_{ji}Y_{\bullet i} \end{pmatrix}_{j=1}^D$ \\
-
-%     Gaussian divergence-free\tnote{2,3} & $\displaystyle\sum_{j=1}^D\left(\norm{\omega_j}_2I_d-\omega_j\omega_j^T\right)\Theta_{j\bullet}\left( \tildephi{\omega}^{c}(X)_{j\bullet} + \tildephi{\omega}^{s}(X)_{j\bullet} \right)$ & $\begin{pmatrix}\left(\norm{\omega_j}_2I_d-\omega_j\omega_j^T\right)\displaystyle\sum_{i=1}^N \tildephi{\omega}^{c}(X)_{ji}Y_{\bullet i} \\ \left(\norm{\omega_j}_2I_d-\omega_j\omega_j^T\right)\displaystyle\sum_{i=1}^N \tildephi{\omega}^{s}(X)_{ji}Y_{\bullet i} \end{pmatrix}_{j=1}^D$ \\
-% \bottomrule
-% \end{tabularx}
-% \begin{tablenotes}
-% \item[1] Where $\tildephi{\omega}(X)=\begin{pmatrix} \tildephi{\omega}(X_{\bullet 1}) & \hdots & \tildephi{\omega}(X_{\bullet N}) \end{pmatrix}\in\mathcal{M}_{r, N}$ is any design matrix, with scalar feature map $\tildephi{\omega}:\mathbb{R}^d\to\mathbb{R}^r$ such that $\tildephi{\omega}(x)^\adjoint \tildephi{\omega}(z)=k(x,z)\in\mathbb{R}$ for all $x$, $z\in\mathcal{X}$. The input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data $Y\in\mathcal{M}_{u,N}(\mathbb{R})$, the parameter matrices $\Theta^c$ and $\Theta^s\in\mathcal{M}_{u', r}(\mathbb{R})$ and the decomposable operator $B\in\mathcal{M}_{u,u'}(\mathbb{R})$.
-% \item[2] Where $\tildephi{\omega}^{c}(X)_{ji}=\cos\inner{\omega_j, x_i}$ and $\tildephi{\omega}^{s}(X)_{ji}=\sin\inner{\omega_j, x_i}$, $j\in\mathbb{N}_D$ and $i\in\mathbb{N}_N$. Thus $\tildephi{\omega}^{c}(X)\in\mathcal{M}_{D,d}(\mathbb{R})$ and $\tildephi{\omega}^{s}(X)\in\mathcal{M}_{D,d}(\mathbb{R})$. The input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data $Y\in\mathcal{M}_{d,N}(\mathbb{R})$ (here $u=d$), the parameter matrices $\Theta^c$ and $\Theta^s\in\mathbb{R}^D$, $\omega_j\sim \mathcal{N}(0,\sigma^{-2}I_d)$ \iid~for all $j\in\mathbb{N}_D$.
-% \item[3] Here, $\Theta^c$ and $\Theta^s\in\mathcal{M}_{d,D}(\mathbb{R})$.
-% \end{tablenotes}
-% \end{threeparttable}
-% \label{tb:efficient2-op}
-% \end{table}
-% \end{landscape}}
-
 \subsection{Iterative (matrix-free) solvers}
+We have shown in this section that viewing the \acl{ORFF} maps as linear operator rather than staking matrice leads to more efficient computations.
 
+
+%----------------------------------------------------------------------------------------
 \section{Experiments}
 
-\clearpage
+
 %----------------------------------------------------------------------------------------
 \section{Conclusions}
 \label{sec:conclusions_learning}

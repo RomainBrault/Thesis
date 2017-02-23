@@ -7,22 +7,22 @@ Random Fourier Features have been proved useful to implement efficiently kernel 
  \begin{dmath*}
  \tilde{f}(x) = \tildePhi{\omega}(x)^\adjoint  \theta,
  \end{dmath*}
- where $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{H},\mathcal{Y})$ and $\theta \in \mathcal{H}$. The methodology we propose works for operator-valued kernels defined on any \acf{LCA} group, noted ($\mathcal{X}, \groupop)$, for some operation noted $\groupop$. This allows us to use the general context of Pontryagin duality for \acl{FT} of functions on \acs{LCA} groups. Building upon a generalization of Bochner's theorem for operator-valued measures, an operator-valued kernel is seen as the \emph{\acl{FT}} of an operator-valued positive measure. From that result, we extend the principle of Random Fourier Feature for scalar-valued kernels and derive a general methodology to build Operator Random Fourier Feature when operator-valued kernels are shift-invariant according to the chosen group operation. Elements of this chapter have been developped in \citet{brault2016random}.
+ where $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{H},\mathcal{Y})$ and $\theta \in \mathcal{H}$. The methodology we propose works for operator-valued kernels defined on any \acf{LCA} group, noted ($\mathcal{X}, \groupop)$, for some operation noted $\groupop$. This allows us to use the general context of Pontryagin duality for \acl{FT} of functions on \acs{LCA} groups. Building upon a generalization of Bochner's theorem for operator-valued measures, an operator-valued kernel is seen as the \emph{\acl{FT}} of an operator-valued positive measure. From that result, we extend the principle of Random Fourier Feature for scalar-valued kernels and derive a general methodology to build Operator Random Fourier Feature when operator-valued kernels are shift-invariant according to the chosen group operation. Elements of this chapter have been developped in~\citet{brault2016random}.
 \paragraph{}
 We present a construction of \acf{ORFF} such that $f: x\mapsto \tildePhi{\omega}(x)^\adjoint \theta$ is a continuous function that maps an arbitrary \acs{LCA} group $\mathcal{X}$ as input space to an arbitrary output Hilbert space $\mathcal{Y}$. First we define a functional \emph{Fourier feature map}, and then propose a Monte-Carlo sampling from this feature map to construct an approximation of a shift-invariant $\mathcal{Y}$-Mercer kernel.
 Then, we prove the convergence of the kernel approximation $\tilde{K}(x,z)=\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z)$ with high probability on \emph{compact} subsets of the \acs{LCA} $\mathcal{X}$, when $\mathcal{Y}$ is \emph{finite dimensional}. Eventually we conclude with some numerical experiments.
 
 %----------------------------------------------------------------------------------------
 \section{Theoretical study}
-The following proposition of \citet{Zhang2012,Carmeli2010} extends Bochner's theorem to any shift-invariant $\mathcal{Y}$-Mercer kernel.
-\begin{proposition}[Operator-valued Bochner's theorem \citep{Zhang2012,neeb1998operator}]\label{eq:bochner-gen}
+The following proposition of~\citet{Zhang2012,Carmeli2010} extends Bochner's theorem to any shift-invariant $\mathcal{Y}$-Mercer kernel.
+\begin{proposition}[Operator-valued Bochner's theorem~\citep{Zhang2012,neeb1998operator}]\label{eq:bochner-gen}
 If a continuous function $K$ from $\mathcal{X} \times \mathcal{X}$ to $\mathcal{Y}$ is a shift-invariant $\mathcal{Y}$-Mercer kernel on $\mathcal{X}$, then there exists a unique positive projection-valued measure $\dual{Q}: \mathcal{B}(\mathcal{X}) \to \mathcal{L}_+(\mathcal{Y})$ such that for all $x$, $z \in \mathcal{X}$,
 \begin{dmath}
 K(x, z) = \int_{\dual{\mathcal{X}}} \conj{\pairing{x \groupop \inv{z}, \omega}} d\dual{Q}(\omega),
 \end{dmath}
 where $\dual{Q}$ belongs to the set of all the projection-valued measures of bounded variation on the $\sigma$-algebra of Borel subsets of $\dual{\mathcal{X}}$. Conversely, from any positive operator-valued measure $M$, a shift-invariant kernel $K$ can be defined by \cref{eq:bochner-gen}.
 \end{proposition}
-Although this theorem is central to the spectral decomposition of shift-invariant $\mathcal{Y}$-Mercer \acs{OVK}, the following results proved by \citet{Carmeli2010} provides insights about this decomposition that are more relevant in practice. It first gives the necessary conditions to build shift-invariant $\mathcal{Y}$-Mercer kernel with  a pair $(A, \dual{\mu})$ where $A$ is an operator-valued function on $\dual{\mathcal{X}}$ and $\dual{\mu}$ is a real-valued positive measure on $\dual{\mathcal{X}}$. Note that obviously such a pair is not unique ad the choice of this paper may have an impact on theoretical properties as well as practical computations.
+Although this theorem is central to the spectral decomposition of shift-invariant $\mathcal{Y}$-Mercer \acs{OVK}, the following results proved by~\citet{Carmeli2010} provides insights about this decomposition that are more relevant in practice. It first gives the necessary conditions to build shift-invariant $\mathcal{Y}$-Mercer kernel with  a pair $(A, \dual{\mu})$ where $A$ is an operator-valued function on $\dual{\mathcal{X}}$ and $\dual{\mu}$ is a real-valued positive measure on $\dual{\mathcal{X}}$. Note that obviously such a pair is not unique ad the choice of this paper may have an impact on theoretical properties as well as practical computations.
 Secondly it also states that any \acs{OVK} have such a spectral decomposition when $\mathcal{Y}$ is finite dimensional or $\mathcal{X}$.
 
 \begin{proposition}[\citet{Carmeli2010}]\label{pr:mercer_kernel_bochner}
@@ -46,7 +46,7 @@ When $p=1$ one can always assume $A$ is reduced to the scalar $1$, $\dual{\mu}$ 
 The main difference between \cref{eq:bochner-gen} and \cref{pr:mercer_kernel_bochner} is that the first one characterize an \acs{OVK} by a unique \acf{POVM}, while the second one shows that the \acs{POVM} that uniquely characterize a $\mathcal{Y}$-Mercer \acs{OVK} has an operator-valued density with respect to a \emph{scalar} measure $\dual{\mu}$; and that this operator-valued density is not unique.
 \paragraph{}
 Finally \cref{pr:mercer_kernel_bochner} does not provide any \emph{constructive} way to obtain the pair $(A,\dual{\mu})$ that characterize an \acs{OVK}.
-The following \cref{subsec:sufficient_conditions} is based on an other proposition of \citeauthor{carmeli2006vector} and show that if the kernel signature $K_e(\delta)$ of an $\acs{OVK}$ is in $L^1$ then it is possible to construct \emph{explicitly} a pair $(C,\dual{\Haar})$ from it. Additionally, we show that we can always extract a scalar-valued \emph{probability} density function from $C$ such that we obtain a pair $(A,\probability_{\dual{\mu},\rho})$ where $\probability_{\dual{\mu},\rho}$ is a \emph{probability} distribution absolutely continuous with respect to $\dual{\mu}$ and with associated probability density function (\pdf) $\rho$. Thus for all $\mathcal{Z}\subset\mathcal{B}(\dual{\mathcal{X}})$,
+The following \cref{subsec:sufficient_conditions} is based on an other proposition of~\citeauthor{carmeli2006vector} and show that if the kernel signature $K_e(\delta)$ of an $\acs{OVK}$ is in $L^1$ then it is possible to construct \emph{explicitly} a pair $(C,\dual{\Haar})$ from it. Additionally, we show that we can always extract a scalar-valued \emph{probability} density function from $C$ such that we obtain a pair $(A,\probability_{\dual{\mu},\rho})$ where $\probability_{\dual{\mu},\rho}$ is a \emph{probability} distribution absolutely continuous with respect to $\dual{\mu}$ and with associated probability density function (\pdf) $\rho$. Thus for all $\mathcal{Z}\subset\mathcal{B}(\dual{\mathcal{X}})$,
 \begin{dmath*}
 \probability_{\dual{\mu},\rho}(\mathcal{Z})=\int_{\mathcal{Z}} \rho(\omega)d\dual{\mu}(\omega).
 \end{dmath*}
@@ -54,22 +54,22 @@ When the reference measure $\dual{\mu}$ is the Lebesgue measure, we note $\proba
 
 \subsection{Sufficient conditions of existence}
 \label{subsec:sufficient_conditions}
-While \cref{pr:mercer_kernel_bochner} gives some insights on how to build an approximation of a $\mathcal{Y}$-Mercer kernel, we need a theorem that provides an explicit construction of the pair $(A, \probability_{\dual{\mu},\rho})$ from the kernel signature $K_e$. Proposition 14 in \citet{Carmeli2010} gives the solution, and also provide a sufficient condition for \cref{pr:mercer_kernel_bochner} to apply.
+While \cref{pr:mercer_kernel_bochner} gives some insights on how to build an approximation of a $\mathcal{Y}$-Mercer kernel, we need a theorem that provides an explicit construction of the pair $(A, \probability_{\dual{\mu},\rho})$ from the kernel signature $K_e$. Proposition 14 in~\citet{Carmeli2010} gives the solution, and also provide a sufficient condition for \cref{pr:mercer_kernel_bochner} to apply.
 \begin{proposition}[\citet{Carmeli2010}]
 \label{pr:inverse_ovk_Fourier_decomposition}
 Let $K$ be a shift-invariant $\mathcal{Y}$-Mercer kernel. %
-Suppose that for all $z \in \mathcal{X}$ and for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},\Haar)$ where $\mathcal{X}$ is endowed with the group law $\groupop$. For all $\omega \in \dual{\mathcal{X}}$ and for all $y$, $y'$ in $\mathcal{Y}$, let
+Suppose that for all $z \in \mathcal{X}$ and for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}_{\mathcal{Y}}\in L^1(\mathcal{X},\Haar)$ where $\mathcal{X}$ is endowed with the group law $\groupop$. For all $\omega \in \dual{\mathcal{X}}$ and for all $y$, $y'$ in $\mathcal{Y}$, let
 \begin{dmath}\label{eq:CK0}
-\inner{y',C(\omega)y} = \int_{\mathcal{X}} \pairing{\delta, \omega}\inner{y', K_e(\delta)y}d\delta = \IFT{\inner{y', K_e(\cdot)y}}(\omega).
+\inner{y',C(\omega)y}_{\mathcal{Y}}= \int_{\mathcal{X}} \pairing{\delta, \omega}\inner{y', K_e(\delta)y}_{\mathcal{Y}}d\Haar(\delta) = \IFT{\inner{y', K_e(\cdot)y}}_{\mathcal{Y}}(\omega).
 \end{dmath}
 Then
 \begin{propenum}
 \item $C(\omega)$ is a bounded non-negative operator for all $\omega \in \dual{\mathcal{X}}$,
-\item $\inner{y, C(\cdot)y'}\in L^1(\dual{\mathcal{X}},\dual{\Haar})$ for all $y,y'\in\mathcal{X}$,
+\item $\inner{y, C(\cdot)y'}_{\mathcal{Y}}\in L^1\left(\dual{\mathcal{X}},\dual{\Haar}\right)$ for all $y,y'\in\mathcal{X}$,
 \item for all $\delta\in\mathcal{X}$ and for all $y$, $y'$ in $\mathcal{Y}$,
 \begin{dmath*}
-\inner{y', K_e(\delta)y}= \int_{\dual{\mathcal{X}}}\conj{\pairing{\delta,\omega}}\inner{y', C(\omega)y}d\dual{\Haar}(\omega)
-=\FT{\inner{y', C(\cdot)y}}(\delta).
+\inner{y', K_e(\delta)y}_{\mathcal{Y}}= \int_{\dual{\mathcal{X}}}\conj{\pairing{\delta,\omega}}\inner{y', C(\omega)y}_{\mathcal{Y}}d\dual{\Haar}(\omega)
+=\FT{\inner{y', C(\cdot)y}_{\mathcal{Y}}}(\delta).
 \end{dmath*}
 \end{propenum}
 \end{proposition}
@@ -78,34 +78,40 @@ There have been a lot of confusion in the literature whether a kernel is the \ac
 The following lemma is a direct consequence of the definition of $C(\omega)$ as the \acl{FT} of the adjoint of $K_e$ and also helps simplifying the definition of \acs{ORFF}.
 \begin{lemma}
 \label{lm:C_characterization}
-Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel and let $\inner{y', C(\cdot)y}=\IFT{\inner{y', K_e(\cdot)y}}$ for all $y$. $y'\in\mathcal{Y}$. Then
+Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel and let $\inner{y', C(\cdot)y}_{\mathcal{Y}}=\IFT{\inner{y', K_e(\cdot)y}_{\mathcal{Y}}}$ for all $y$. $y'\in\mathcal{Y}$. Then
 \begin{propenum}
 \item \label{lm:C_characterization_1} $C(\omega)$ is self-adjoint and $C$ is even.
-\item \label{lm:C_characterization_2} $\IFT{\inner{y', K_e(\cdot)y}} = \FT{\inner{y', K_e(\cdot)y}}$.
+\item \label{lm:C_characterization_2} $\IFT{\inner{y', K_e(\cdot)y}_{\mathcal{Y}}} = \FT{\inner{y', K_e(\cdot)y}_{\mathcal{Y}}}$.
 \item \label{lm:C_characterization_3} $K_e(\delta)$ is self-adjoint and $K_e$ is even.
 \end{propenum}
 \end{lemma}
 \begin{proof}
 For any function $f$ on $(\mathcal{X},\groupop)$ define the flip operator $\mathcal{R}$ by
 \begin{dmath*}
-\mathcal{R}f(x) \colonequals f\left(\inv{x}\right).
+(\mathcal{R}f)(x) \colonequals f\left(\inv{x}\right).
 \end{dmath*}
-For any shift invariant $\mathcal{Y}$-Mercer kernel and for all $\delta\in\mathcal{X}$,  $K_e(\delta)=K_e\left(\inv{\delta}\right)^\adjoint$. Indeed,
+For any shift invariant $\mathcal{Y}$-Mercer kernel and for all $\delta\in\mathcal{X}$,  $K_e(\delta)=K_e\left(\inv{\delta}\right)^\adjoint$. Indeed from the definition of a shift-invariant kernel,
 \begin{dmath*}
-\mathcal{R}\inner{y,K_e\left(x\groupop \inv{z}\right)y'}
-=\inner{y,K_e\left(\inv{\left(x\groupop \inv{z}\right)}\right)y'}
-=\inner{y,K_e\left(\inv{x}\groupop z\right)y'}
-=\inner{y,K_e\left(x\groupop \inv{z}\right)^\adjoint y'}.
+K_e\left(\inv{\delta}\right)=K\left(\inv{\delta},e\right)\hiderel{=}K\left(e,\delta\right)\hiderel{=}K\left(\delta,e\right)^\adjoint
+\hiderel{=}K_e\left(\delta\right)^\adjoint.
 \end{dmath*}
 \Cref{lm:C_characterization_1}: taking the \acl{FT} yields,
 \begin{dmath*}
-\IFT{\inner{y', K_e(\cdot)y}}=\mathcal{F}^{-1}\mathcal{R}\left[\inner{y', K_e(\cdot)y}\right]
-\hiderel{=}\mathcal{R}\inner{y', C(\cdot)y}.
+\inner{y',C(\omega)y}_{\mathcal{Y}}=\IFT{\inner{y', K_e(\cdot)y}_{\mathcal{Y}}}(\omega)
+=\IFT{\inner{y', (\mathcal{R}K_e(\cdot))^\adjoint y}_{\mathcal{Y}}}(\omega)
+=\mathcal{R}\IFT{\inner{K_e(\cdot)y', y}_{\mathcal{Y}}}(\omega)
+=\mathcal{R}\inner{C(\cdot)y',y}_{\mathcal{Y}}(\omega)
+=\inner*{y',C\left(\inv{\omega}\right)^\adjoint y}_{\mathcal{Y}}.
 \end{dmath*}
-Hence $C(\omega)=C\left(\inv{\omega}\right)^\adjoint$. Suppose that $\mathcal{Y}$ is a complex Hilbert space. Since for all $\omega\in\mathcal{\dual{X}}$, $C(\omega)$ is bounded and non-negative so $C(\omega)$ is self-adjoint. Besides we have $C(\omega)=C\left(\inv{\omega}\right)^\adjoint $ to $C$ must be pair. Suppose that $\mathcal{Y}$ is a real Hilbert space. Then we have the additional hypothesis that $K_e(\delta)=K_e(\delta)^\adjoint$. Taking the \acl{FT} yields that $C(\omega)=C(\omega)^\adjoint$. Since for any shift invariant $\mathcal{Y}$-Mercer kernel $C(\omega)=C\left(\inv{\omega}\right)^\adjoint$ we also conclude that $C\left(\inv{\omega}\right)=C(\omega)$.
-\paragraph{}
-\Cref{lm:C_characterization_2}: simply, for all $y$, $y'\in\mathcal{Y}$, $\inner{y, C(\inv{\omega})y'}$ $=$ $\inner{y', C(\omega)y}$ thus $\IFT{\inner{y', C(\cdot)y}}=\mathcal{F}\mathcal{R}\left[\inner{y', C(\cdot)y}\right]=\FT{\inner{y', C(\cdot)y}}$.
-\paragraph{}
+Hence $C(\omega)=C\left(\inv{\omega}\right)^\adjoint$. Suppose that $\mathcal{Y}$ is a complex Hilbert space. Since for all $\omega\in\mathcal{\dual{X}}$, $C(\omega)$ is bounded and non-negative so $C(\omega)$ is self-adjoint. Besides we have $C(\omega)=C\left(\inv{\omega}\right)^\adjoint $ so $C$ must be even. Suppose that $\mathcal{Y}$ is a real Hilbert space. The \acl{FT} or a real valued function obey $\FT{f}(\omega)=\conj{\FT{f}\left(\inv{\omega}\right)}$. Therefore since $C(\omega)$ is non-negative for all $\omega\in\dual{\mathcal{X}}$,
+\begin{dmath*}
+\inner{y', C(\omega)y}=\conj{\inner{y', C\left(\inv{\omega}\right)y}}\hiderel{=}\inner{C\left(\inv{\omega}\right)^* y', y}
+=\inner{C\left(\omega\right) y', y}\hiderel{=}\inner{y', C\left(\omega\right)^\adjoint y}.
+\end{dmath*}
+Hence $C(\omega)$ is self-adjoint and thus $C$ is even. \Cref{lm:C_characterization_2}: simply, for all $y$, $y'\in\mathcal{Y}$, $\inner{y, C(\inv{\omega})y'}$ $=$ $\inner{y', C(\omega)y}$ thus
+\begin{dmath*}
+\IFT{\inner{y', K_e(\cdot)y}_{\mathcal{Y}}}(\omega)=\inner{y', C(\omega)y}\hiderel{=}\mathcal{R}\inner{y', C(\cdot)y}(\omega)=\mathcal{R}\IFT{\inner{y', K_e(\cdot)y}_{\mathcal{Y}}}(\omega)=\FT{\inner{y', K_e(\cdot)y}_{\mathcal{Y}}}(\omega).
+\end{dmath*}
 \Cref{lm:C_characterization_3}: from \cref{lm:C_characterization_2} we have $\IFT{\inner{y', K_e(\cdot)y}}$ $=$ $\mathcal{F}^{-1}\mathcal{R}{\inner{y', K_e(\cdot)y}}$. By injectivity of the \acl{FT}, $K_e$ is even. Since $K_e(\delta)=K_e(\inv{\delta})^\adjoint $, we must have $K_e(\delta)=K_e(\delta)^\adjoint $.
 \end{proof}
 While \cref{pr:inverse_ovk_Fourier_decomposition} gives an explicit form of the operator $C(\omega)$ defined as the \acl{FT} of the kernel $K$, it is not really convenient to work with the Haar measure $\dual{\Haar}$ on $\mathcal{B}(\dual{\mathcal{X}})$. However it is easily possible to turn $\dual{\Haar}$ into a probability measure to allow efficient integration over an infinite domain.
@@ -164,7 +170,7 @@ K_e(x\groupop \inv{z})_{ij} \hiderel{=} \FT{A(\cdot)_{ij}\rho(\cdot)}(x\groupop 
 \begin{remark}
 Note that although the \acl{FT} of $K_e$ yields a unique operator-valued function $C(\cdot)$, the decomposition of $C(\cdot)$ into $A(\cdot)\rho(\cdot)$ is again not unique. The choice of the decomposition may be justified by the computational cost or by the nature of the constants involved in the uniform convergence of the estimator.
 \end{remark}
-Another difficulty arise from the fact that the quantity $\sup_{\omega\in\dual{\mathcal{X}}} \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}$ obtained in \cref{pr:spectral} might not bounded. The unboundedness of $\norm{A(\cdot)}_{\mathcal{Y},\mathcal{Y}}$ forbid the use of the most simple concentrations inequalities -- which require the boundedness of the random variable to be controlled. Therefore in the context of \acl{OVK} concentration inequalities for unbounded random operators should be used. However, as pointed out by \citet{minh2016operator}, under some condition on the trace of $K_e(\delta)$, it is possible to turn $A(\cdot)$ into a bounded random operator for all $\omega$ in $\dual{\mathcal{X}}$. The idea is to define a sum measure $\rho=\sum_{j\in\mathbb{N}^*}\rho_{e_j}$, which gives rise to bounded operator $A(\omega)$ and is idependant of the $\Set{e_j}_{j\in\mathbb{N}^*}$ base, instead of constructing a measure from the operator norm as in \cref{pr:spectral}. Additionally with such construction the measure associated to $A(\cdot)$ is \emph{independant} from the basis of $\mathcal{Y}$. In this proof we relax the assumptions of \citet{minh2016operator} which requires $\int_{\mathcal{X}}\abs{\Tr{K_e(\delta)}}d\Haar(\delta)$ to be well defined. We only require $\Tr{K_e(e)}$ to be well defined.
+Another difficulty arise from the fact that the quantity $\sup_{\omega\in\dual{\mathcal{X}}} \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}$ obtained in \cref{pr:spectral} might not bounded. The unboundedness of $\norm{A(\cdot)}_{\mathcal{Y},\mathcal{Y}}$ forbid the use of the most simple concentrations inequalities -- which require the boundedness of the random variable to be controlled. Therefore in the context of \acl{OVK} concentration inequalities for unbounded random operators should be used. However, as pointed out by~\citet{minh2016operator}, under some condition on the trace of $K_e(\delta)$, it is possible to turn $A(\cdot)$ into a bounded random operator for all $\omega$ in $\dual{\mathcal{X}}$. The idea is to define a sum measure $\rho=\sum_{j\in\mathbb{N}^*}\rho_{e_j}$, which gives rise to bounded operator $A(\omega)$ and is idependant of the $\Set{e_j}_{j\in\mathbb{N}^*}$ base, instead of constructing a measure from the operator norm as in \cref{pr:spectral}. Additionally with such construction the measure associated to $A(\cdot)$ is \emph{independant} from the basis of $\mathcal{Y}$. In this proof we relax the assumptions of~\citet{minh2016operator} which requires $\int_{\mathcal{X}}\abs{\Tr{K_e(\delta)}}d\Haar(\delta)$ to be well defined. We only require $\Tr{K_e(e)}$ to be well defined.
 \begin{proposition}[Bounded shift-invariant $\mathcal{Y}$-Mercer kernel spectral decomposition]
 \label{pr:trace_measure}
 Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel. If for all $y$ and $y'$ in $\mathcal{Y}$, $\inner{K_e(.)y,y'}\in L^1(\mathcal{X},\Haar)$ and $\Tr K_e(e)\in\mathbb{R}$, then
@@ -213,7 +219,7 @@ Since $C(\omega)$ is non-negative, all the $\inner{e_j,C(\omega)e_j}$. Thus usin
        =\sum_{k\in\mathbb{N}^*}\inner{e_j,K_e(e)e_j}
        =\Tr\left[K_e(e)\right]\hiderel{=}c_{\Tr}\hiderel{<}\infty.
 \end{dmath*}
-Let $A_{\Tr}(\omega)$ and $\rho_{\Tr}(\omega)$ be defined respectively as in \cref{eq:bounded_C} and \cref{eq:bounded_mu}. By definition, $\int_{\dual{\mathcal{X}}}\rho_{\Tr}(\omega)d\dual{\Haar}(\omega)=1$ and $A_{\Tr}(\omega)\rho_{\Tr}(\omega)=C(\omega)$. Now it remains to check the finiteness of $\Tr\left[C(\omega)\right]$ for all $\omega\in\dual{\mathcal{X}}$. Since for all $\omega\in\dual{\mathcal{X}}$, $\Tr\left[C(\omega)\right]\ge 0$,
+Let $A_{\Tr}(\omega)$ and $\rho_{\Tr}(\omega)$ be defined as in \cref{eq:bounded_C} and \cref{eq:bounded_mu}, respectively. By definition, $\int_{\dual{\mathcal{X}}}\rho_{\Tr}(\omega)d\dual{\Haar}(\omega)=1$ and $A_{\Tr}(\omega)\rho_{\Tr}(\omega)=C(\omega)$. Now it remains to check the finiteness of $\Tr\left[C(\omega)\right]$ for all $\omega\in\dual{\mathcal{X}}$. Since for all $\omega\in\dual{\mathcal{X}}$, $\Tr\left[C(\omega)\right]\ge 0$,
 \begin{dmath*}
 \Tr\left[C(\omega)\right] \le \int_{\dual{\mathcal{X}}} \Tr\left[C(\omega)\right] d\dual{\Haar}(\omega) \hiderel{=} \Tr\left[K_e(e)\right] \hiderel{<} \infty.
 \end{dmath*}
@@ -257,24 +263,26 @@ Then the \acl{FT} on $(\mathbb{R}^d,+)$ is
 =\int_{\mathbb{R}^d}\exp\left(-\iu\inner{\delta,\omega}\right)f(x)d\Haar(\delta)
 =\int_{\mathbb{R}^d}\exp\left(-\iu\inner{\delta,\omega}\right)f(x)\frac{d\Leb(\delta)}{\sqrt{2\pi}^d}.
 \end{dmath*}
-Since $k^{\text{gauss}}_0\in L^1$ and $\Gamma$ is bounded, it is possible to apply \cref{pr:spectral}, and obtain for all $i$, $j\in\mathbb{N}^*_p$,
+Since $k^{\text{gauss}}_0\in L^1$ and $\Gamma$ is bounded, it is possible to apply \cref{pr:spectral}, and obtain for all $y$ and $y'\in\mathcal{Y}$,
 \begin{dmath*}
-C^{dec,gauss}(\omega)_{ij}=\FT{K^{dec,gauss}_0(\cdot)_{ij}}(\omega)
-=\FT{k_0^{gauss}}(\omega)\Gamma_{ij}
-=\int_{\mathbb{R}^d}\exp\left(-\iu\inner{\omega,x}\right)\exp\left( -\frac{\norm{\delta}^2_2}{2\sigma^2}\right)\frac{d\Leb(\delta)}{\sqrt{2\pi}^d} \Gamma_{ij}
-=\frac{1}{\sqrt{2\pi\frac{1}{\sigma^2}}^d}\exp\left( -\frac{\sigma^2}{2}\norm{\omega}^2_2\right)\sqrt{2\pi}^d\Gamma_{ij}.
+\inner*{y',C^{dec,gauss}(\omega)y}=\FT{\inner*{y',K^{dec,gauss}_0(\cdot)y}}(\omega)
+=\FT{k_0^{gauss}}(\omega)\inner*{y', \Gamma y}.
+\end{dmath*}
+Thus
+\begin{dmath*}
+C^{dec,gauss}(\omega)=\int_{\mathbb{R}^d}\exp\left(-\iu\inner{\omega,x}-\frac{\norm{\delta}^2_2}{2\sigma^2}\right)\frac{d\Leb(\delta)}{\sqrt{2\pi}^d} \Gamma.
 \end{dmath*}
 Hence
 \begin{dmath*}
 C^{dec,gauss}(\omega)
 =\underbrace{\frac{1}{\sqrt{2\pi\frac{1}{\sigma^2}}^d}\exp\left( -\frac{\sigma^2}{2}\norm{\omega}^2_2\right)\sqrt{2\pi}^d}_{\rho(\cdot)
-=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d}\underbrace{\Gamma}_{A(\cdot)=\Gamma}
+=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d}\underbrace{\Gamma}_{A(\cdot)=\Gamma}.
 \end{dmath*}
 Therefore the canonical decomposition of $C^{dec,gauss}$ is $A^{dec,gauss}(\omega)=\Gamma$ and $\rho^{dec,gauss}=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d$, where $\mathcal{N}$ is the Gaussian probability distribution. Note that this decomposition is done with respect to the \emph{normalized} Lebesgue measure $\dual{\Haar}$, meaning that for all $\mathcal{Z}\in\mathcal{B}(\dual{\mathcal{X}})$,
 \begin{dmath*}
 \probability_{\dual{\Haar},\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d}(\mathcal{Z})=\int_{\mathcal{Z}}\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^dd\dual{\Haar}(\omega)
 =\int_{\dual{\mathcal{X}}}\mathcal{N}(0,\sigma^{-2}I_d)d\Leb(\omega)
-=\probability_{\mathcal{N}(0,\sigma^{-2}I_d)}(\mathcal{Z})
+=\probability_{\mathcal{N}(0,\sigma^{-2}I_d)}(\mathcal{Z}).
 \end{dmath*}
 Thus, the same decomposition with respect to the usual --non-normalized-- Lebesgue measure $\Leb$ yields
 \begin{dgroup}
@@ -282,7 +290,7 @@ Thus, the same decomposition with respect to the usual --non-normalized-- Lebesg
 A^{dec,gauss}(\cdot)=\Gamma
 \end{dmath}
 \begin{dmath}
-\rho^{dec,gauss}=\mathcal{N}(0,\sigma^{-2}I_d)
+\rho^{dec,gauss}=\mathcal{N}(0,\sigma^{-2}I_d).
 \end{dmath}
 \end{dgroup}
 If $\Gamma$ is a trace class operator, applying \cref{pr:trace_measure} yields the same decomposition since $\Tr\left[K^{dec,gauss}_0(0)\right]=\Tr\left[\Gamma\right]$ and $\Tr\left[C^{dec,gauss}(\cdot)\right]=\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d\Tr\left[\Gamma\right]$.
@@ -297,9 +305,9 @@ The identity element $e$ is $\left(1-c_k\right)_{k=1}^d$ since $(1-c) \odot x = 
 \begin{dmath}
 k^{skewed}_{1-c}(\delta)=\prod_{k=1}^d\frac{2}{\sqrt{\delta_k+c_k}+\sqrt{\frac{1}{\delta_k+c_k}}}.
 \end{dmath}
-The dual of $\mathcal{X}$ is $\dual{\mathcal{X}}\cong\mathbb{R}$ with the pairing
+The dual of $\mathcal{X}$ is $\dual{\mathcal{X}}\cong\mathbb{R}^d$ with the pairing
 \begin{dmath*}
-\pairing{\delta,\omega}=\prod_{k=1}^d\exp\left(\iu\inner{\log(\delta_k+c_k),\omega_k}\right).
+\pairing{\delta,\omega}=\prod_{k=1}^d\exp\left(\iu \log(\delta_k+c_k)\omega_k\right).
 \end{dmath*}
 The Haar measure are defined for all $\mathcal{Z}\in\mathcal{B}((-c;+\infty)^d)$ and all $\dual{\mathcal{Z}}\in\mathcal{B}(\mathbb{R}^d)$ by
 \begin{dgroup*}
@@ -312,19 +320,22 @@ The Haar measure are defined for all $\mathcal{Z}\in\mathcal{B}((-c;+\infty)^d)$
 \end{dgroup*}
 Thus the \acl{FT} is
 \begin{dmath*}
-\FT{f}(\omega)=\int_{(-c;+\infty)^d}\prod_{k=1}^d\frac{\exp\left(-\iu\inner{\log(\delta_k+c_k),\omega_k}\right)}{t_k + c_k}f(\delta)\frac{d\Leb(\delta)}{\sqrt{2\pi}^d}.
+\FT{f}(\omega)=\int_{(-c;+\infty)^d}\prod_{k=1}^d\frac{\exp\left(-\iu \log(\delta_k+c_k)\omega_k\right)}{\delta_k + c_k}f(\delta)\frac{d\Leb(\delta)}{\sqrt{2\pi}^d}.
 \end{dmath*}
-Then, applying Fubini's theorem over product space,
+Then, applying Fubini's theorem over product space, and the fact that each dimension is independent
 \begin{dmath*}
-\FT{k_0^{skewed}}(\omega)=\prod_{k=1}^d\int_{-c_k}^{\infty}\frac{2\exp\left(-\iu\inner{\log(\delta_k+c_k),\omega_k}\right)}{(t_k + c_k)\left(\sqrt{\delta_k+c_k}+\sqrt{\frac{1}{\delta_k+c_k}}\right)}\frac{d\Leb(\delta_k)}{\sqrt{2\pi}^d}
-=\prod_{k=1}^d\int_{-c_k}^{\infty} \frac{2\exp\left(-\iu\inner{\delta_k,\omega_k}\right)}{\exp\left(\frac{1}{2}\delta_k\right)+\exp\left(-\frac{1}{2}\delta_k\right)} \frac{d\Leb(\delta_k)}{\sqrt{2\pi}^d}
-=\sqrt{2\pi}^d\prod_{k=1}^d\sech(\pi\omega_k)
+\FT{k_0^{skewed}}(\omega)=\prod_{k=1}^d\int_{-c_k}^{+\infty}\frac{2\exp\left(-\iu \log(\delta_k+c_k)\omega_k\right)}{(\delta_k + c_k)\left(\sqrt{\delta_k+c_k}+\sqrt{\frac{1}{\delta_k+c_k}}\right)}\frac{d\Leb(\delta_k)}{\sqrt{2\pi}^d}.
 \end{dmath*}
-Since $k^{\text{skewed}}_{1-c}\in L^1$ and $\Gamma$ is bounded, it is possible to apply \cref{pr:spectral}, and obtain for all $i$, $j\in\mathbb{N}^*_p$,
+Making the change of variable $t_k=(\delta_k+c_k)^{-1}$ yields
+\begin{dmath*}
+\FT{k_0^{skewed}}(\omega)= \prod_{k=1}^d\int_{-\infty}^{+\infty} \frac{2\exp\left(-\iu t_k\omega_k\right)}{\exp\left(\frac{1}{2}t_k\right)+\exp\left(-\frac{1}{2}t_k\right)} \frac{d\Leb(t_k)}{\sqrt{2\pi}^d}
+=\sqrt{2\pi}^d\prod_{k=1}^d\sech(\pi\omega_k).
+\end{dmath*}
+Since $k^{\text{skewed}}_{1-c}\in L^1$ and $\Gamma$ is bounded, it is possible to apply \cref{pr:spectral}, and obtain
 \begin{dmath*}
 C^{dec,skewed}(\omega)
 =\FT{k_{1-c}^{skewed}}(\omega)\Gamma
-=\underbrace{\sqrt{2\pi}^d\prod_{k=1}^d\sech(\pi\omega_k)}_{\rho(\cdot)=\mathcal{S}(0,2^{-1})^d\sqrt{2\pi}^d}\underbrace{\Gamma}_{A(\cdot)}
+=\underbrace{\sqrt{2\pi}^d\prod_{k=1}^d\sech(\pi\omega_k)}_{\rho(\cdot)=\mathcal{S}(0,2^{-1})^d\sqrt{2\pi}^d}\underbrace{\Gamma}_{A(\cdot)}.
 \end{dmath*}
 Hence the decomposition with respect to the usual --non-normalized-- Lebesgue measure $\Leb$ yields
 \begin{dgroup}
@@ -332,7 +343,7 @@ Hence the decomposition with respect to the usual --non-normalized-- Lebesgue me
 A^{dec,skewed}(\cdot)=\Gamma
 \end{dmath}
 \begin{dmath}
-\rho^{dec,skewed}=\mathcal{S}(0,2^{-1})^d
+\rho^{dec,skewed}=\mathcal{S}\left(0,2^{-1}\right)^d.
 \end{dmath}
 \end{dgroup}
 \subsubsection{Curl-free Gaussian kernel} The curl-free Gaussian kernel is defined as $K^{curl,gauss}_0=-\nabla\nabla^T k_0^{gauss}$. Here $\mathcal{X}=(\mathbb{R}^d, +)$ so the setting is the same than \cref{par:gaussian_dec}.
@@ -354,7 +365,7 @@ Here a canonical decomposition is $A^{curl,gauss}(\omega)=\omega\omega^T$ for al
 A^{curl,gauss}(\omega)=\omega\omega^T
 \end{dmath}
 \begin{dmath}
-\mu^{curl,gauss}=\mathcal{N}(0,\sigma^{-2}I_d)
+\mu^{curl,gauss}=\mathcal{N}(0,\sigma^{-2}I_d).
 \end{dmath}
 \end{dgroup}
 Notice that in this case $\norm{A^{curl,gauss}(\cdot)}_{\mathbb{R}^d,\mathbb{R}^d}$ is not bounded. However applying \cref{pr:trace_measure} yields a different decomposition where the quantity $\norm{A^{curl,gauss}_{\Tr}(\cdot)}_{\mathbb{R}^d,\mathbb{R}^d}$ is bounded. First we have for all $\delta\in\mathbb{R}^d$ and for all $i$, $j\in\mathbb{N}^*_d$
@@ -366,7 +377,7 @@ Notice that in this case $\norm{A^{curl,gauss}(\cdot)}_{\mathbb{R}^d,\mathbb{R}^
 \end{dmath*}
 Hence
 \begin{dmath*}
--\nabla\nabla^Tk^{gauss}_0(\delta)=\left(I_d -\frac{\delta\delta^T}{\sigma^2} \right)\frac{\exp\left(-\frac{1}{2\sigma^2}\norm{\delta}^2_2\right)}{\sigma^2}
+-\nabla\nabla^Tk^{gauss}_0(\delta)=\left(I_d -\frac{\delta\delta^T}{\sigma^2} \right)\frac{\exp\left(-\frac{1}{2\sigma^2}\norm{\delta}^2_2\right)}{\sigma^2}.
 \end{dmath*}
 Thus $\Tr\left[K^{curl,gauss}_0(0)\right]=\Tr\left[\nabla\nabla^Tk^{gauss}_0(0)\right]=d\sigma^{-2}$ and $\Tr\left[C(\omega)\right]=\norm{\omega}_2^2\mathcal{N}(0,\sigma^{-2}I_d)\sqrt{2\pi}^d$. Apply \cref{pr:trace_measure} to obtain the decomposition $A^{curl,gauss}_{\Tr}(\omega)=\omega\omega^T\norm{\omega}_2^{-2}$ and the measure $\mu^{curl,gauss}_{\Tr}(\omega)=\sigma^2d^{-1}\norm{\omega}_2^2\mathcal{N}\left(0,\sigma^{-2}\right)\sqrt{2\pi}^d$ for all $\omega\in\mathbb{R}^d$, with respect to the normalized Lebesgue measure. Therefore the decomposition with respect to the usual non-normalized Lebesgue measure is
 \begin{dgroup}
@@ -374,7 +385,7 @@ Thus $\Tr\left[K^{curl,gauss}_0(0)\right]=\Tr\left[\nabla\nabla^Tk^{gauss}_0(0)\
 A^{curl,gauss}_{\Tr}(\omega)=\frac{\omega\omega^T}{\norm{\omega}_2^{2}}
 \end{dmath}
 \begin{dmath}
-\mu^{curl,gauss}_{\Tr}(\omega)=\frac{\sigma^2}{d}\norm{\omega}_2^2\mathcal{N}\left(0,\sigma^{-2}\right)(\omega)
+\mu^{curl,gauss}_{\Tr}(\omega)=\frac{\sigma^2}{d}\norm{\omega}_2^2\mathcal{N}\left(0,\sigma^{-2}\right)(\omega).
 \end{dmath}
 \end{dgroup}
 This example also illustrate that there exist many decomposition of $C(\omega)$ into $(A(\omega),\mu(\omega))$.
@@ -406,7 +417,7 @@ To obtain the bounded decomposition, again, apply \cref{pr:trace_measure}. For a
 \end{dmath*}
 Thus overall,
 \begin{dmath*}
-K^{div,gauss}_0(\delta)=\left(\frac{\delta\delta^T}{\sigma^2} + \left((d-1) - \frac{\norm{\delta}_2^2}{\sigma^2}\right)I_d \right)\frac{\exp\left(-\frac{1}{2\sigma^2}\norm{\delta}^2_2\right)}{\sigma^2},
+K^{div,gauss}_0(\delta)=\left(\frac{\delta\delta^T}{\sigma^2} + \left((d-1) - \frac{\norm{\delta}_2^2}{\sigma^2}\right)I_d \right)\frac{\exp\left(-\frac{1}{2\sigma^2}\norm{\delta}^2_2\right)}{\sigma^2}.
 \end{dmath*}
 Eventually $\Tr\left[K^{div,gauss}_0(0)\right]=\Tr\left[(\nabla\nabla^T-\Delta)k^{gauss}_0(0)\right]=d(d-1)\sigma^{-2}$ and $\Tr\left[C(\omega)\right]=(d-1)\norm{\omega}_2^2\mathcal{N}(0,\sigma^2I_d)\sqrt{2\pi}^d$. As a result the decomposition with respect to the normalized Lebesgue measure is $A^{div,gauss}_{\Tr}(\omega)=(I_d-\omega\omega^T\norm{\omega}_2^{-2})$ and $\rho^{div,gauss}_{\Tr}(\omega)=d^{-1}\sigma^2\norm{\omega}_2^2\mathcal{N}(0,\sigma^2I_d)\sqrt{2\pi}^d$. The decomposition with respect to the normalized Lebesgue measure being
 \begin{dgroup}
@@ -441,7 +452,7 @@ For all $y$, $y'\in \mathcal{Y}$ and $x$, $z\in\mathcal{X}$,
 = \int_{\dual{\mathcal{X}}}\conj{\pairing{x \groupop \myinv{z},\omega}}\inner{y B(\omega)B(\omega)^\adjoint y'}d\dual{\mu}(\omega) \\
 = \int_{\dual{\mathcal{X}}}\conj{\pairing{x \groupop \inv{z},\omega}}\inner{y,A(\omega)y'}d\dual{\mu}(\omega),
 \end{dmath*}
-which defines a $\mathcal{Y}$-Mercer according to \cref{pr:mercer_kernel_bochner} of \citet{Carmeli2010}.
+which defines a $\mathcal{Y}$-Mercer according to \cref{pr:mercer_kernel_bochner} of~\citet{Carmeli2010}.
 \end{proof}
 With this notation we have $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \dual{\mu}; \mathcal{Y}'))$ such that $\Phi_x\in \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \dual{\mu}; \mathcal{Y}'))$ where $\Phi_x\colonequals\Phi(x)$.
 
@@ -651,7 +662,7 @@ In particular we deduce the following features maps for the kernels proposed in 
 \tildePhi{\omega}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}}B^\adjoint y\\ \sin{\inner{x,\omega_j}}B^\adjoint y \end{pmatrix}
 =(\tildephi{\omega}(x)\otimes B^\adjoint)y,
 \end{dmath*}
-where $\omega_j \hiderel{\sim} \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$ \iid~and $\tildephi{\omega}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}} \\ \sin{\inner{x,\omega_j}}\end{pmatrix}$ is a scalar \acs{RFF} map \citep{Rahimi2007}.
+where $\omega_j \hiderel{\sim} \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$ \iid~and $\tildephi{\omega}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}} \\ \sin{\inner{x,\omega_j}}\end{pmatrix}$ is a scalar \acs{RFF} map~\citep{Rahimi2007}.
 \item For the curl-free gaussian kernel, $K_0^{curl,gauss}=-\nabla\nabla^T k_0^{gauss}$ an unbounded \acs{ORFF} map is
 \begin{dmath}
 \label{eq:unbounded_curl_free_orff}
@@ -701,7 +712,7 @@ when $D$ tends to infinity, in the weak operator topology.
 \tildePhi{\omega}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}}B^\adjoint y\\ \sin{\inner{\log(x+c),\omega_j}}B^\adjoint y\end{pmatrix}, \enskip \omega_j \hiderel{\sim} \probability_{\rho} \enskip\text{\iid}
 =(\tildePhi{\omega}(x) \otimes B^\adjoint)y,
 \end{dmath*}
-where $\rho=\mathcal{S}(0,2^{-1})$ and $\tildePhi{\omega}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}} \\ \sin{\inner{\log(x+c),\omega_j}}\end{pmatrix}$ is a scalar \acs{RFF} map \citep{li2010random}.
+where $\rho=\mathcal{S}(0,2^{-1})$ and $\tildePhi{\omega}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{\log(x+c),\omega_j}} \\ \sin{\inner{\log(x+c),\omega_j}}\end{pmatrix}$ is a scalar \acs{RFF} map~\citep{li2010random}.
 \end{itemize}
 \subsection{Regularization property}
 We have shown so far that it is always possible to construct a feature map that allows to approximate a shift-invariant $\mathcal{Y}$-Mercer kernel. However we could also propose a construction of such map by studying the regularization induced with respect to the \acl{FT} of a target function $f\in \mathcal{H}_K$. In other words, what is the norm in $L^2(\dual{\mathcal{X}}, \dual{\Haar}; \mathcal{Y}')$ induced by $\norm{\cdot}_K$?
@@ -740,7 +751,7 @@ Using the fact that $\IFT{\cdot}=\mathcal{F}\mathcal{R}[\cdot]$ and $\mathcal{F}
 = \displaystyle\int_{\dual{\mathcal{X}}} \frac{\inner{\FT{f}(\omega),A(\omega)^\dagger\FT{f}(\omega)}_{\mathcal{Y}}}{\rho(\omega)}d\dual{\Haar}(\omega)
 \end{dmath*}
 \end{proof}
-Note that if $K(x,z)=k(x,z)$ is a scalar kernel then for all $\omega$ in $\dual{\mathcal{X}}$, $A(\omega)=1$. Therefore we recover a well known results for kernels that is for any $f\in\mathcal{H}_k$ we have $\norm{f}_k=\int_{\dual{\mathcal{X}}}\FT{k_e}(\omega)^{-1}\FT{f}(\omega)^2d\dual{\Haar}(\omega)$ \citep{Yang2012,vertregularization,smola1998connection}. We also note that the regularization property in $\mathcal{H}_K$ does not depends (as expected) on the decomposition of $A(\omega)$ into $B(\omega)B(\omega)^\adjoint $. Therefore the decomposition should be chosen such that it optimizes the computation cost. For instance if $A(\omega)\in\mathcal{L}(\mathbb{R}^p)$ has rank $r$, one could find an operator $B(\omega)\in\mathcal{L}(\mathbb{R}^p, \mathbb{R}^r)$ such that $A(\omega)=B(\omega)B(\omega)^\adjoint$. Moreover, in light of \cref{pr:regularization} the regularization property of the kernel with respect to the \acl{FT}, it is also possible to define an approximate feature map of an \acl{OVK} from its regularization properties in the \acs{vv-RKHS} as proposed in \cref{alg:ORFF2_construction}.
+Note that if $K(x,z)=k(x,z)$ is a scalar kernel then for all $\omega$ in $\dual{\mathcal{X}}$, $A(\omega)=1$. Therefore we recover a well known results for kernels that is for any $f\in\mathcal{H}_k$ we have $\norm{f}_k=\int_{\dual{\mathcal{X}}}\FT{k_e}(\omega)^{-1}\FT{f}(\omega)^2d\dual{\Haar}(\omega)$~\citep{Yang2012,vertregularization,smola1998connection}. We also note that the regularization property in $\mathcal{H}_K$ does not depends (as expected) on the decomposition of $A(\omega)$ into $B(\omega)B(\omega)^\adjoint $. Therefore the decomposition should be chosen such that it optimizes the computation cost. For instance if $A(\omega)\in\mathcal{L}(\mathbb{R}^p)$ has rank $r$, one could find an operator $B(\omega)\in\mathcal{L}(\mathbb{R}^p, \mathbb{R}^r)$ such that $A(\omega)=B(\omega)B(\omega)^\adjoint$. Moreover, in light of \cref{pr:regularization} the regularization property of the kernel with respect to the \acl{FT}, it is also possible to define an approximate feature map of an \acl{OVK} from its regularization properties in the \acs{vv-RKHS} as proposed in \cref{alg:ORFF2_construction}.
 \SetKwInOut{Input}{Input}
 \SetKwInOut{Output}{Output}
 \begin{center}

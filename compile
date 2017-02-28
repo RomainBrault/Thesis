@@ -135,5 +135,5 @@ cp ../${OUTPUT}/*.png bck
 cd ..
 
 # Sign document with pgp
-gpg --armor --detach-sig bin/ThesisRomainBrault.pdf
-gpg --verify bin/ThesisRomainBrault.pdf.asc bin/ThesisRomainBrault.pdf
+gpg2 --armor --detach-sig bin/ThesisRomainBrault.pdf
+gpg2 --verify bin/ThesisRomainBrault.pdf.asc bin/ThesisRomainBrault.pdf

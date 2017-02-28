@@ -2,26 +2,36 @@
 
 %----------------------------------------------------------------------------------------
 \section{Notations}
+
+\subsection{Algebraic structures}
 \label{sec:notations}
 We note $\mathbb{K}$ any Abelian\mpar{Commutative.} field, $\mathbb{R}$ the Abelian field of real numbers and $\mathbb{C}$ the Abelian field of complex numbers. The unit pure imaginary number $\sqrt{-1}\in\mathbb{C}$ is denoted $\iu$ and the Euler constant $\exp(1)\in\mathbb{R}$ is denoted $\ec$. $\mathbb{N}$ represent the set of natural numbers and $\mathbb{N}_n$, $n\in\mathbb{N}$ the set of natural numbers smaller or equal to $n$. For any space $\mathcal{S}$, $\mathcal{S}^d$, $d\in\mathbb{N}$ represents the cartesian product space $\mathcal{S}^d=\mathcal{S}\times \ldots \times \mathcal{S}$. For any two algebraic structures $\mathcal{S}$ and $\mathcal{S}'$ we write $\mathcal{S}\cong\mathcal{S}'$ is there exist an isomorphism between these two structures.
+
+\subsection{Topology and continuity}
+In order to define a proper notion of continuity, we focus on topological spaces. A topological space is a pair of sets $(\mathcal{X},\mathcal{T}_x)$ where $\mathcal{X}$ describes the points considered, and $\mathcal{T}_x$ describes the possible (open) neighbours. Hence $\mathcal{T}_x\subseteq{\mathcal{P}(\mathcal{X})}$ is a collection of subsets of $\mathcal{X}$ such that the empty set and $\mathcal{X}$ itself belongs to $\mathcal{T}_x$, any (finite or infinite) union of members of $\mathcal{T}_x$ still belongs to $\mathcal{T}$ and the intersection of any finite number of members of $\mathcal{T}_x$ still belongs to $\mathcal{T}_x$. The elements of $\mathcal{T}$ are called open sets and the collection $\mathcal{T}_x$ is a topology on $\mathcal{X}$. If $(\mathcal{X},\mathcal{T}_x)$ and $(\mathcal{Y},\mathcal{T}_y)$ are topological spaces, a function $f$ is said to be continuous if for every open set $\mathcal{V}\in \mathcal{T}_y$, the inverse image $f^{-1}(\mathcal{V}) = \Set{ x \in \mathcal{X} | f ( x ) \in \mathcal{V} }$ is an open subset of $\mathcal{T}_x$. Since the continuity depends on open sets, it depends on the topology of the spaces $\mathcal{X}$ and $\mathcal{Y}$.
 \paragraph{}
-In order to define a proper notion of continuity, we focus on topological spaces. A topological space is a pair of sets $(\mathcal{X},\mathcal{T})$ where $\mathcal{X}$ describes the points considered, and $\mathcal{T}$ describes the possible (open) neighbours. Hence $\mathcal{T}\subseteq{\mathcal{P}(\mathcal{X})}$ is a collection of subsets of $\mathcal{X}$ such that the empty set and $\mathcal{X}$ itself belongs to $\mathcal{T}$, any (finite or infinite) union of members of $\mathcal{T}$ still belongs to $\mathcal{T}$ and the intersection of any finite number of members of $\mathcal{T}$ still belongs to $\mathcal{T}$. The elements of $\mathcal{T}$ are called open sets and the collection $\mathcal{T}$ is a topology on $\mathcal{X}$. If $\mathcal{X}$ and $\mathcal{Y}$ are topological spaces, a function $f$ is said to be continuous if for every open set $\mathcal{V}\subseteq \mathcal{Y}$, the inverse image $f^{-1}(\mathcal{V}) = \Set{ x \in \mathcal{X} | f ( x ) \in \mathcal{V} }$ is an open subset of $\mathcal{X}$. Since the continuity depends on open sets, it depends on the topology of the spaces $\mathcal{X}$ and $\mathcal{Y}$.
+If $\mathcal{X}$ is a topological space and $x$ is a point in $\mathcal{X}$, a neighbourhood of $x$ is a subset $\mathcal{V}$ of $\mathcal{X}$ that includes an \emph{open} set $\mathcal{U}$ containing $x$. A topological space $\mathcal{X}$ is said to be Haussdorff (T2) when all distinct points in $\mathcal{X}$ are pairwise neighborhood-separable. \Ie~if there exists a neighbourhood $\mathcal{U}$ of $x$ and a neighbourhood $\mathcal{V}$ of $y$ such that $\mathcal{U}$ and $\mathcal{V}$ are disjoint. It implies the uniqueness of limits of sequences and existence of nets used throughout this thesis. Therefore in the whole document we always assume that a topological space $\mathcal{X}$ is Haussdorff.
 \paragraph{}
-If $\mathcal{X}$ is a topological space and $x$ is a point in $\mathcal{X}$, a neighbourhood of $x$ is a subset $\mathcal{V}$ of $\mathcal{X}$ that includes an \emph{open} set $\mathcal{U}$ containing $x$. A topological space $\mathcal{X}$ is said to be Haussdorff (T2) all distinct points in $\mathcal{X}$ are pairwise neighborhood-separable. \Ie~if there exists a neighbourhood $\mathcal{U}$ of $x$ and a neighbourhood $\mathcal{V}$ of $y$ such that $\mathcal{U}$ and $\mathcal{V}$ are disjoint. It implies the uniqueness of limits of sequences and existence of nets used throughout this thesis. Therefore in the whole document we assume that a topological space $\mathcal{X}$ is separable.
+A topological space is said to be separable if there exists a sequence $(x_n)_{n\in\mathbb{N}^*}$ of elements of $\mathcal{X}$ such that every nonempty open subsets of the space contains at least one element of the sequence. Separability plays an important role in numerical analysis because many theorems have only constructive proofs for separable spaces. Such constructive proofs can be turned into algorithms which is the primary goal of this work. In this document we also assume that any topological space is separable if there is no specific mention of the contrary.
 \paragraph{}
-A topological space is said to be separable if there exists a sequence $(x_n)_{n\in\mathbb{N}^*}$ of elements of $\mathcal{X}$ such that every nonempty open subset of the space contains at least one element of the sequence. Separability plays an important role in numerical analysis because many theorems have only constructive proofs for separable spaces. Such constructive proofs can be turned into algorithms which is the primary goal of this work.
-\paragraph{}
+If $\mathcal{X}$ and $\mathcal{Y}$ are two topological spaces, we denote by $\mathcal{F}(\mathcal{X};\mathcal{Y})$ the topological vector space of functions $f:\mathcal{X}\to\mathcal{Y}$ and $\mathcal{C}(\mathcal{X};\mathcal{Y})\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$ the subspace of continuous functions, endowed with the product topology (topology of pointwise convergence).
+
+\subsection{Measure theory}
 A $\sigma$-algebra on $\mathcal{X}$ is a set $\mathcal{M}\subseteq\mathcal{P}(\mathcal{X})$ of subsets of $\mathcal{X}$, containing the empty set, which is closed under taking complements and countable unions. A pair $(\mathcal{X},\mathcal{M})$ where $\mathcal{X}$ is a set and $\mathcal{M}$ is a $\sigma$-algebra is called a measure space. The Borel $\sigma$-algebra $\mathcal{B}(\mathcal{X})$ is a $\sigma$-algebra generated by the open sets of $\mathcal{X}$. A measure on a measurable space $(\mathcal{X},\mathcal{B}(\mathcal{X}))$ is a map $\mu: \mathcal{B}(X) \to \overline{\mathbb{R}}_+$ which is zero on the empty set and countably additive, \ie~for any subset $(\mathcal{Z}_n)_{n\in\mathbb{N}}$ is a sequence of pairwise disjoint measurable sets,
 \begin{dmath*}
 \mu\left(\bigcup_{n\in\mathbb{N}}\mathcal{Z}_n\right)=\sum_{n\in\mathbb{N}}\mu(\mathcal{Z}_n).
 \end{dmath*}
+
+\subsection{Vector spaces, linear operators and matrices}
+Given any vector space $\mathcal{H}$ over an Abelian field $\mathbb{K}$, the (continuous) dual space \footnote{Or topological dual space. This must be differentiate from the \emph{algebraic} dual space, which is the space of linear functionals from the original vector-space to its base field. Hence the continuous dual space is a subset of the algebraic dual space. The continuous and the algebraic dual space only match when considering finite dimensional vector-spaces} $\mathcal{H}^\adjoint$ is defined as the set of all \emph{continuous} linear maps $x^*: \mathcal{H} \to \mathbb{K}$ (linear functionals). When $\mathcal{H}$ is a vector space, there is a natural duality pairing between $\mathcal{H}^\adjoint$ and $\mathcal{H}$ defined for all $x^\adjoint\in\mathcal{H}^\adjoint$ and all $z\in\mathcal{H}$ as $\pairing{x^\adjoint, z}_{\mathcal{H}^\adjoint,\mathcal{H}}=x^\adjoint(z)=x^\adjoint z$. The duality paring $\pairing{\cdot, \cdot}_{\mathcal{H}^\adjoint,\mathcal{H}}$ is then a bilinear form. Let $\mathcal{H}_1$ and $\mathcal{H}_2$ be two vector spaces. The transpose of an operator $W:~\mathcal{H}_1\to\mathcal{H}_2$ is defined as $W^T:\mathcal{H}_2^\adjoint \to \mathcal{H}_1^\adjoint$ such that $W^T:x^\adjoint\mapsto x^\adjoint(W)$. It is characterized by the relation $\pairing{x^\adjoint, Wz}_{\mathcal{H}_2^\adjoint,\mathcal{H}_2}=\pairing{W^Tx^\adjoint, z}_{\mathcal{H}_1^\adjoint,\mathcal{H}_1}$ for all $x^\adjoint\mathcal{H}_2^\adjoint$ and all $z\in\mathcal{H}_1$. Let $\mathcal{H}$ be a vector space. We set $\mathcal{L}(\mathcal{H})=\mathcal{L}(\mathcal{H};\mathcal{H})$ to be the space of \emph{bounded} (continuous) linear operators from $\mathcal{H}$ to itself. If $W\in\mathcal{L}(\mathcal{H})$, $\Ker W$ denotes the nullspace, $\Ima W$ the image, $W^T \in \mathcal{L}(\mathcal{H}^*)$ the transpose of operator $W$ and $\Dom W$ the domain of $W$.
 \paragraph{}
-If $\mathcal{X}$ and $\mathcal{Y}$ are two topological vector spaces, we denote by $\mathcal{F}(\mathcal{X};\mathcal{Y})$ the vector space of functions $f:\mathcal{X}\to\mathcal{Y}$ and $\mathcal{C}(\mathcal{X};\mathcal{Y})\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$ the subspace of continuous functions.
-If $\mathcal{H}$ is an Hilbert space on a field $\mathbb{K}$ we denote its scalar product by $\inner{\cdot,\cdot}_{\mathcal{H}}$ and its norm by $\norm{\cdot}_{\mathcal{H}}$.
+If $\mathcal{H}$ is an Hilbert space on a field $\mathbb{K}$ we denote its scalar product by $\inner{\cdot,\cdot}_{\mathcal{H}}$ and its norm by $\norm{\cdot}_{\mathcal{H}}$. When the base field of $\mathcal{H}$ is $\mathbb{R}$, $\inner{\cdot,\cdot}_{\mathcal{H}}$ is a \emph{bilinear} form. When the base field of $\mathcal{H}$ is $\mathbb{C}$, $\inner{\cdot,\cdot}_{\mathcal{H}}$ is a \emph{sesquilinear} form. Let $\mathcal{H}_1$ and $\mathcal{H}_2$ be two Hibert spaces. The adjoint of an operator $W:\mathcal{H}_1\to\mathcal{H}_2$ is the unique mapping $W^\adjoint:\mathcal{H}_2\to\mathcal{H}_1$ such that $\inner{W^\adjoint x, z}_{\mathcal{H}_1}=\inner{x, Wz}_{\mathcal{H}_2}$ for all $x$, $z\in\Dom W$. An operator $W:\mathcal{H}\to\mathcal{H}$ is said to be symmetric when $W^\adjoint=W$ and self-adjoint when $W$ is symmetric and $\Dom W^\adjoint = \Dom W$. If $W$ is symmetric and $\Dom W=\mathcal{H}$ then $W$ is self-adjoint.
+
+% By Riesz's representation theorem, for any $x\in\mathcal{H}$, $\iota:x\mapsto\inner{x, \cdot}_{\mathcal{H}}$ defines a unique isometric bounded linear functional.
 \paragraph{}
-If $x\in\mathcal{H}$ we note $x^*\in\mathcal{H}^*$, $x^*:\mathcal{H}\to\mathbb{K}$ the dual vector in the dual vector space $\mathcal{H}^*$ of $\mathcal{H}$. If $\mathcal{H}$ is a Hilbert space, it is reflexive (\ie~$\mathcal{H}^{**}\cong\mathcal{H}$). Let $\mathcal{H}$ be a finite dimensional Hilbert space endowed with a basis $(e_i)_{i=1}^N$. If no specific mention, we consider that $\mathcal{H}^*$ is endowed with the dual basis $(e^*_i)_{i=1}^N$ such that $e_i^*e_j=\delta_{ij}$. If $\mathcal{H}=\mathbb{R}^d$, this allows us to identify $x^*$ with $x^T$. The dual space $\mathcal{H}^*$ is isomorphic to $\mathcal{H}$ if and only if $\mathcal{H}$ is finite dimensional. For all $x$ and $y$ in $\mathcal{H}$ we have $\inner{x, y}_{\mathcal{H}}=x^*y$.
-\paragraph{}
-We set $\mathcal{L}(\mathcal{H})=\mathcal{L}(\mathcal{H};\mathcal{H})$ to be the space of linear operators from $\mathcal{H}$ to itself. If $W\in\mathcal{L}(\mathcal{H})$, $\Ker W$ denotes the nullspace, $\Ima W$ the image and $W^\adjoint \in \mathcal{L}(\mathcal{H})$ the adjoint operator.
+From the Riesz theorem, for any $x^*\in\mathcal{H}^\adjoint$, there is a unique $z\in\mathcal{H}$ such that $x^\adjoint y=x^\adjoint(y)=\inner{z,y}_{\mathcal{H}}$ for all $y\in\mathcal{H}$ and $\norm{x^\adjoint}_{\mathcal{H}^\adjoint}=\norm{z}_{\mathcal{H}}$. Thus if $\mathcal{H}$ is a Hilbert space, $\mathcal{H}$ is reflexive \ie~$\mathcal{H}^{\adjoint\adjoint}\cong\mathcal{H}$ therefore there is an isomorphism betweeen $\mathcal{H}$ and its (continuous) dual $\mathcal{H}^\adjoint$. Hence if $x\in\mathcal{H}$ we can note $x^*\in\mathcal{H}^*$, $x^*:\mathcal{H}\to\mathbb{K}$ the unique dual vector in the dual vector space $\mathcal{H}^*$ of $\mathcal{H}$.
+
+
 \paragraph{}
 We call matrix $M$ of size $(m,n)\in\mathbb{N}^2$ on an Abelian field $\mathbb{K}$ a collection of elements $M=(m_{ij})_{1\le i\le m, 1\le j \le n}$, $m_{ij}\in\mathbb{K}$. We note $\mathcal{M}_{m,n}(\mathbb{K})$ the vector space of all matrices. If $\mathcal{H}_1$ and $\mathcal{H}_2$ are two finite dimensional Hilbert spaces on an Abelian field $\mathbb{K}$, any bounded linear operator $L\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ can be viewed as a matrix. Let $n=\dim(\mathcal{H}_1)$, $m=\dim(\mathcal{H}_2)$ and let $B=(e_i)_{i=1}^{n}$ and $C=(e'_i)_{i=1}^{m}$ be the respective canonical bases of $\mathcal{H}_1$ and $\mathcal{H}_2$. We note $\text{mat}_{B, C}: \mathcal{L}(\mathcal{H}_1;\mathcal{H}_2) \to \mathcal{M}_{m,n}(\mathbb{K})$ such that $M=\text{mat}_{B, C}(L)=(\inner{e'_j, L e_i})_{1\le i\le n, 1\le j \le m}\in\mathcal{M}_{m,n}(\mathbb{K})$. Let $M_1\in\mathcal{M}_{m,n}(\mathbb{K})$ and $M_2\in\mathcal{M}_{n,l}(\mathbb{K})$. The product between two matrices is written $M_1M_2\in\mathcal{M}_{m,l}(\mathbb{K})$ and obey $(M_1M_2)_{ij} = \sum_{k=1}^n M_{ik}M_{kj}$. Given two linear operator $L_1\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ and $L2\in\mathcal{L}(\mathcal{H}_2;\mathcal{H}_3)$ we have $L_1L_2\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_3)$ and \begin{dmath*}
 \text{mat}_{B, D}(L_1L_2)=\text{mat}_{B, C}(L_1)\text{mat}_{C, D}(L_2).
@@ -99,9 +109,10 @@ A group $\mathcal{X}$ endowed with a binary operation $\groupop$ is said to be a
 Moreover given a element $z$ of al \acs{LCA} group $\mathcal{X}$, we define the set $z\groupop\mathcal{X}=\mathcal{X}\groupop z=\Set{z\groupop x|\forall x\in\mathcal{X}}$ and the set $\mathcal{X}^{-1}=\Set{x^{-1}|\forall x\in\mathcal{X}}$.
 We also note $e$ the neural element of $\mathcal{X}$ such that $x\groupop e=e \groupop x= e$ for all $x\in\mathcal{X}$.
 Throughout this thesis we focus on positive definite function. Let $\mathcal{Y}$ be a complex separable Hilbert space. A function $f:\mathcal{X}\to\mathcal{Y}$ is positive definite if for all $N\in\mathbb{B}$ and all $y\in\mathcal{Y}$,
-\begin{dmath*}
+\begin{dmath}
+\label{eq:positive_definite}
 \sum_{i,j=1}^N\inner{y_i, f(x_j^{-1}\groupop x_i)y_j}_{\mathcal{Y}}\ge 0
-\end{dmath*}
+\end{dmath}
 for all squences $(y_i)_{i\in\mathbb{N}_N^*}\in\mathcal{Y}^N$ and all sequences $(x_i)_{i\in\mathbb{N}_N^*}\in\mathcal{X}^N$. If $\mathcal{Y}$ is real we add the assumption that $f(x^{-1})=f(x)^*$ for all $x\in\mathcal{X}$.
 A consequence is that a positive definite function is bounded, as shown by \citet{falb1969theorem},
 $\norm{f(x)}_{\mathcal{Y},\mathcal{Y}}\le 2\norm{f(e)}_{\mathcal{Y},\mathcal{Y}}$ for all $x\in\mathcal{X}$, however positive definite function are not necessarily continuous. This motivates the introduction of functions of positive type which are nothing but continuous positive definite function.
@@ -270,7 +281,7 @@ Hence $\dual{\mathbb{R}^d}\cong\mathbb{R}^d$ with duality pairing
 \end{dmath*}
 Hence $h_\omega(x)=\sum_{k=1}^d \log(x_k+c_k)\omega_k=\inner{\log(x+c),\omega}_2$. Eventually the natural Haar measure on product group is the product measure. \Eg~for $\mathcal{X}=\mathbb{R}^d$, the Haar measure on $\mathbb{R}^d$ is the d-th power of the Lebesgue measure on $\mathbb{R}$. \Cref{tab:dual_and_pairing} provide an explicit list of pairings for various groups based on $\mathbb{R}^d$ or its subsets. The interested reader can refer to~\citet{folland1994course} for a more detailed construction of LCA, Pontryagin duality and \acl{FT}s on LCA.
 
-\subsection{The Fourier transform}
+\subsection{The \acl{FT}}
 For a function with values in a separable Hilbert space $f\in L^1(\mathcal{X},\Haar;\mathcal{Y})$, we denote $\FT{f}$ its \acf{FT} which is defined by
 \begin{dmath*}
     \forall \omega \in \dual{\mathcal{X}},\enskip \FT{f}(\omega) \hiderel{=}\int_{\mathcal{X}} \conj{\pairing{x,\omega}}f(x)d\Haar(x).
@@ -319,7 +330,7 @@ Hence we settle with the Haar measure on $\mathcal{X}$ defined as
 \dual{\Haar}(\mathcal{Z})=\Haar(\mathcal{Z})\hiderel{=}\frac{1}{\sqrt{2\pi}^d}\Leb(\mathcal{Z})
 \end{dmath*}
 We conclude this subsection by recalling the injectevity property of the \acl{FT}.
-\begin{corollary}[The \acl{FT} injectivity]
+\begin{corollary}[\acl{FT} injectivity]
 Given $\mu$ and $\nu$ two measures, if $\FT{\mu}=\FT{\nu}$ then $\mu=\nu$. Moreover given two functions $f$ and $g\in L^1(\mathcal{X},\Haar;\mathcal{Y})$ if $\FT{f}=\FT{g}$ then $f=g$
 \end{corollary}
 \begin{proof}
@@ -573,14 +584,14 @@ The separability of $\mathcal{X}$ assure that there exist a countable dense subs
 is separable too. We show that $\mathcal{S}$ is total in $\mathcal{H}_K$ so that $\mathcal{H}_K$ is separable. If for all $x\in\mathcal{X}_0$, $f\in\mathcal{S}^{\perp}$, then $f\in\Ker K_x^\adjoint$. Namely $f(x)=\text{ev}_xf=0$. Since $f$ is continuous and $\mathcal{X}_0$ is dense in $\mathcal{X}$, for all $x\in\mathcal{X}$, $f(x)=0$ so $f=0$.
 \end{proof}
 
-\begin{proposition}[Countable orthonormal basis for $\mathcal{Y}$-Mercer kernel~\citep{carmeli2006vector}]
+\begin{proposition}[Separable \acs{vv-RKHS} for $\mathcal{Y}$-Mercer kernel~\citep{carmeli2006vector}]
 \label{pr:mercer_countable_basis}
-Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{Y}$ be a reproducing kernel where $\mathcal{X}$ and $\mathcal{Y}$ are separable spaces. If $K$ is a $\mathcal{Y}$-Mercer kernel then $\mathcal{H}_K$ has a countable orthonormal basis.
+Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{Y}$ be a reproducing kernel where $\mathcal{X}$ and $\mathcal{Y}$ are separable spaces. If $K$ is a $\mathcal{Y}$-Mercer kernel then $\mathcal{H}_K$ is separable.
 \end{proposition}
 \begin{proof}
-From \cref{pr:characterization_mercer_kernels} $K$ is a $\mathcal{Y}$-Mercer kernel if and only if $\mathcal{H}_K\subset \mathcal{C}(\mathcal{X};\mathcal{Y})$. Applying \cref{lm:separability} of~\cite{carmeli2006vector}, we have that $\mathcal{H}_K$ is separable. Thus since $\mathcal{H}_K$ is also a Hilbert space it has a countable orthonormal basis.
+From \cref{pr:characterization_mercer_kernels} $K$ is a $\mathcal{Y}$-Mercer kernel if and only if $\mathcal{H}_K\subset \mathcal{C}(\mathcal{X};\mathcal{Y})$. Applying \cref{lm:separability} of~\cite{carmeli2006vector}, we have that $\mathcal{H}_K$ is separable.
 \end{proof}
-An important consequence is that if $K$ is a $\mathcal{Y}$-Mercer and $\mathcal{X}$ and $\mathcal{Y}$ are separable then $\mathcal{H}_K$ and any resdescription is isometrically isomorphic to $\ell^2$.
+Thus since $\mathcal{H}_K$ is also a Hilbert space and is separable it is second countable (\ie~it has a countable orthonormal basis). An important consequence is that if $K$ is a $\mathcal{Y}$-Mercer and $\mathcal{X}$ and $\mathcal{Y}$ are separable then $\mathcal{H}_K$ and any resdescription is isometrically isomorphic to $\ell^2$.
 
 %----------------------------------------------------------------------------------------
 \subsection{Shift-Invariant operator-valued kernels}
@@ -637,11 +648,11 @@ Since \begin{dmath*}
 \end{dmath*}
 is total in $\mathcal{H}_K$ (see \cref{eq:span_RKHS}), $\lambda$ is surjective and because it also leaves the inner product invariant, the firs two claims follow.
 \end{proof}
-The notation $K_e$ for the function of completely positive type associated with the reproducing kernel $K$
-is consistent with the definition given by \cref{eq:trivial_feature_op} since for all $x\in\mathcal{X}$ and all $y\in\mathcal{Y}$
+The notation $K_e$ for the function of completely positive type associated with the reproducing kernel $K$ is consistent with the definition given by \cref{eq:trivial_feature_op} since for all $x\in\mathcal{X}$ and all $y\in\mathcal{Y}$
 \begin{dmath*}
 (K_ey)(x)=K_e(x)y.
 \end{dmath*}
+Moreover notice that shift-invariant $\mathcal{Y}$-Mercer kernels are directly linked to functions of positive type (see \cref{eq:positive_definite}), since shift-invariant $\mathcal{Y}$-Mercer kernels they are nothing but functions whose signature is of positive type (continuous positive definite functions).
 
 \subsection{Examples of operator-valued kernels}
 \label{subsec:ovk-ex}

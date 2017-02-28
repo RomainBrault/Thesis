@@ -21,30 +21,6 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Embed document, not working
-% \usepackage[x-4]{pdfx}
-% ===============================
-% Embedding the color profile.
-% Requires eciRGB_v2.icc in the working directory
-% http://www.eci.org/_media/downloads/icc_profiles_from_eci/ecirgbv20.zip
-% \pdfxSetRGBcolorProfileDir{./profile}
-
-\usepackage{adforn}
-\usepackage{pythontex}
-\usepackage{multicol}
-
-%----------------------------------------------------------------------------------------
-%	CHARACTER ENCODING
-%----------------------------------------------------------------------------------------
-
-% Set the encoding of your files. UTF-8 is the only sensible encoding nowadays. If you can't read äöüßáéçèê∂åëæƒÏ€ then change the encoding setting in your editor, not the line below. If your editor does not support utf8 use another editor!
-% \usepackage[utf8]{inputenc}
-
-%----------------------------------------------------------------------------------------
-%	DOCUMENT VARIABLES
-%	Fill in the lines below to enter your information into the thesis template
-%	Each of the commands can be cited anywhere in the thesis
-%----------------------------------------------------------------------------------------
 \usepackage{silence}
 \WarningFilter{scrreprt}{Usage of package `titlesec' together}
 \WarningFilter{scrreprt}{Activating an ugly workaround}
@@ -52,24 +28,32 @@
 \PassOptionsToPackage{eulerchapternumbers,listings,subfig,beramono,eulermath,parts}{classicthesis}
 % Available options: drafting parts nochapters linedheaders eulerchapternumbers beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc manychapters listings floatperchapter subfig
 
-\newcommand{\myTitle}{Data Are Not Real!\xspace}
-\newcommand{\mySubtitle}{Large-Scale Learning On Structured Input-Output Data With Operator-Valued Kernels\xspace}
-\newcommand{\myDegree}{Engineer (Eng.)\xspace}
-\newcommand{\myName}{Romain Brault\xspace}
-% \newcommand{\myProf}{Florence d'Alch\'e-Buc\xspace}
-% \newcommand{\myOtherProf}{Put name here\xspace}
-\newcommand{\mySupervisorDegree}{Professor (Prof.)\xspace}
-\newcommand{\mySupervisor}{Florence d'Alch\'e-Buc\xspace}
-\newcommand{\myFaculty}{Informatique, Biologie Int\'egrative et Syst\`emes Complexes (IBISC)\xspace}
-\newcommand{\myDepartment}{Computer Science \xspace}
-\newcommand{\myDoctoralSchool}{Sciences et Technologies de l'Information et de la Communication (STIC)\xspace}
-\newcommand{\myUniUEVE}{Universit\'e-D'\'Evry-Val-D'Essonne \xspace}
-\newcommand{\myUniTP}{T\'el\'ecom-ParisTech \xspace}
-\newcommand{\myLocation}{15, Rue Plumet, 75015 - Paris, France\xspace}
-\newcommand{\myTime}{\today\xspace}
-\newcommand{\myVersion}{version 0.1\xspace}
-\newcommand{\NNT}{201XSACLSXXX\xspace}
-\newcommand{\EDN}{580\xspace}
+\usepackage[a-1b]{pdfx}
+% ===============================
+% Embedding the color profile.
+% Requires eciRGB_v2.icc in the working directory
+% http://www.eci.org/_media/downloads/icc_profiles_from_eci/ecirgbv20.zip
+\pdfxSetRGBcolorProfileDir{./profile}
+\setRGBcolorprofile{sRGB_IEC61966-2-1_black_scaled.icc}
+                   {sRGB_IEC61966-2-1_black_scaled}
+                   {sRGB IEC61966 v2.1 with black scaling}
+                   {http://www.color.org}
+\setCMYKcolorprofile{coated_FOGRA39L_argl.icc}
+                    {Coated FOGRA39}
+                    {FOGRA39 (ISO Coated v2 300\% (ECI))}
+                    {http://www.argyllcms.com/}
+
+\usepackage{adforn}
+\usepackage{pythontex}
+\usepackage{multicol}
+\usepackage{cmap} % copy-paste pdf
+
+%----------------------------------------------------------------------------------------
+%	CHARACTER ENCODING
+%----------------------------------------------------------------------------------------
+
+% Set the encoding of your files. UTF-8 is the only sensible encoding nowadays. If you can't read äöüßáéçèê∂åëæƒÏ€ then change the encoding setting in your editor, not the line below. If your editor does not support utf8 use another editor!
+% \usepackage[utf8]{inputenc}
 
 %----------------------------------------------------------------------------------------
 %	USEFUL COMMANDS
@@ -172,9 +156,8 @@ natbib=true % natbib compatibility mode (\citep and \citet still work)
 
 %------------------------------------------------
 
-% \PassOptionsToPackage{pdftex}{graphicx}
 \usepackage{graphicx}
-% \usepackage{tikz}
+\usepackage{tikz}
 
 %----------------------------------------------------------------------------------------
 %	FLOATS: TABLES, FIGURES AND CAPTIONS SETUP
@@ -218,14 +201,13 @@ belowcaptionskip=.75\baselineskip % Space after the "Listing #: Desciption" text
 
 \usepackage{varioref}
 
-\PassOptionsToPackage{hyperfootnotes=false,pdfpagelabels}{hyperref}
-\usepackage{hyperref}  % backref linktocpage pagebackref
 % \pdfcompresslevel=9
 % \pdfadjustspacing=1
-
 \hypersetup{
 % Uncomment the line below to remove all links (to references, figures, tables, etc), useful for b/w printouts
 %draft,
+pdflang={en-US},
+hyperfootnotes=true,
 colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
 % Uncomment the line below if you want to have black links (e.g. for printing black and white)
 %colorlinks=false, linktocpage=false, pdfborder={0 0 0}, pdfstartpage=3, pdfstartview=FitV,
@@ -234,54 +216,7 @@ plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
 hypertexnames=true, pdfhighlight=/O,%nesting=true,%frenchlinks,%
 urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,%
     %urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,%
-%------------------------------------------------
-% PDF file meta-information
-pdftitle={\myTitle},
-pdfauthor={\textcopyright\ \myName, \myUniUEVE, \myUniTP, \myFaculty},
-pdfsubject={\mySubtitle},
-pdfkeywords={Noyaux \`a Valeurs Op\'erateurs,%
-Passage \`a l'\'echelle,%
-Random Fourier Features,%
-Operator-Valued Kernels,%
-Large Scale Learning,%
-ORFF,%
-Thesis},
-pdfcreator={xelatex},
-% pdfproducer={LaTeX with hyperref and classicthesis}
-%------------------------------------------------
 }
-
-%----------------------------------------------------------------------------------------
-%	AUTOREFERENCES SETUP
-%	Redefines how references in text are prefaced for different
-%	languages (e.g. "Section 1.2" or "section 1.2")
-%----------------------------------------------------------------------------------------
-
-% \makeatletter
-% \@ifpackageloaded{babel}
-% {
-% \addto\extrasamerican{
-% \renewcommand*{\figureautorefname}{Figure}
-% \renewcommand*{\tableautorefname}{Table}
-% \renewcommand*{\partautorefname}{Part}
-% \renewcommand*{\chapterautorefname}{Chapter}
-% \renewcommand*{\sectionautorefname}{Section}
-% \renewcommand*{\subsectionautorefname}{Section}
-% \renewcommand*{\subsubsectionautorefname}{Section}
-% }
-% \addto\extrasngerman{
-% \renewcommand*{\paragraphautorefname}{Absatz}
-% \renewcommand*{\subparagraphautorefname}{Unterabsatz}
-% \renewcommand*{\footnoteautorefname}{Fu\"snote}
-% \renewcommand*{\FancyVerbLineautorefname}{Zeile}
-% \renewcommand*{\theoremautorefname}{Theorem}
-% \renewcommand*{\appendixautorefname}{Anhang}
-% \renewcommand*{\equationautorefname}{Gleichung}
-% \renewcommand*{\itemautorefname}{Punkt}
-% }
-% \providecommand{\subfigureautorefname}{\figureautorefname} % Fix to getting autorefs for subfigures right
-% }{\relax}
-% \makeatother
 
 \VerbatimFootnotes
 
@@ -374,8 +309,12 @@ pdfcreator={xelatex},
 % OSX
 \usepackage{xltxtra}
 % \setromanfont[Mapping=tex-text, Ligatures={Common, Rare, Historic}]{Hoefler Text}
+% \setmainfont[Mapping=tex-text, ItalicFeatures={Alternate=0,
+%             Contextuals={NoLineFinal,NoLineInitial}},
+%             Ligatures={Common,Rare,Historic},Alternate=1,
+%             BoldFont=Hoefler Text Black]{Hoefler Text}
 \setmainfont[Mapping=tex-text, ItalicFeatures={Alternate=0,
             Contextuals={NoLineFinal,NoLineInitial}},
-            Ligatures={Common,Rare,Historic},Alternate=1,
+            Ligatures={Common},Alternate=1,
             BoldFont=Hoefler Text Black]{Hoefler Text}
 %

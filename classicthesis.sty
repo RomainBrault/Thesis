@@ -43,7 +43,7 @@
 \NeedsTeXFormat{LaTeX2e}%[2015/01/01] % fixed via latexrelease package, see below
 \ProvidesPackage{classicthesis}[2015/09/06 v4.2 Typographic style for a classic-looking thesis]
 %\PassOptionsToPackage{latest}{latexrelease} % replacement for fixltx2e, emulate newer kernel version if older is detected
-    %\RequirePackage{latexrelease} % will be put back in once it is available in more distributions
+\RequirePackage{latexrelease} % will be put back in once it is available in more distributions
 \RequirePackage{ifthen}
     \newboolean{@tocaligned} % the left column of the toc will be aligned (no indention)
     \newboolean{@eulerchapternumbers} % use AMS Euler for chapter font (otherwise Palatino)
@@ -185,14 +185,15 @@
 \PassOptionsToPackage{dvipsnames}{xcolor}
     \RequirePackage{xcolor} % [dvipsnames]
 \definecolor{halfgray}{gray}{0.55} % chapter numbers will be semi transparent .5 .55 .6 .0
-\definecolor{webgreen}{rgb}{0,.5,0}
-\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{webgreen}{rgb}{0, .5,0}
+\definecolor{webbrown}{rgb}{.6, 0, 0}
+%\definecolor{Maroon}{RGB}{139,69,19}
 \definecolor{Maroon}{cmyk}{0, 0.87, 0.68, 0.32}
-\definecolor{RoyalBlue}{cmyk}{1, 0.50, 0, 0}
-%\definecolor{Black}{cmyk}{0, 0, 0, 0}
-%\definecolor{PSaclay}{rgb}{1,0,.6}
-\definecolor{PSaclay}{cmyk}{.4,1.,.37,.20}
-
+\definecolor{RoyalBlue}{RGB}{0, 103, 169}
+% \definecolor{RoyalBlue}{cmyk}{1, 0.50, 0, 0}
+\definecolor{Black}{cmyk}{0, 0, 0, 1}
+\definecolor{PSaclay}{RGB}{99, 0, 57}
+%\definecolor{PSaclay}{cmyk}{.45,1.,.48,.45}
 % ********************************************************************
 % Pgfplot
 % ********************************************************************

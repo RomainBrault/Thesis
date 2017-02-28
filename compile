@@ -117,14 +117,13 @@ fi
 mkdir -p ${BUILD}
 cd ${BUILD}
 if [[ ${FORCE} = true ]]; then
-    cmake -G Ninja \
-          -DCMAKE_MAKE_PROGRAM=/usr/local/Cellar/ninja/1.7.2/bin/ninja \
+    cmake -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
           -DLATEX_OUTPUT_PATH=${OUTPUT} \
           -DPDFLATEX_COMPILER=${COMPILER} \
           -DLATEX_USE_SYNCTEX=${SYNCTEX} ..
-    time ninja -v pdf
+    time make pdf
 else
-    time ninja -v pdf
+    time make pdf
 fi
 cd ..
 
@@ -134,3 +133,7 @@ mkdir -p bck
 cp ../${OUTPUT}/*.pgf bck
 cp ../${OUTPUT}/*.png bck
 cd ..
+
+# Sign document with pgp
+gpg --armor --detach-sig bin/ThesisRomainBrault.pdf
+gpg --verify bin/ThesisRomainBrault.pdf.asc bin/ThesisRomainBrault.pdf

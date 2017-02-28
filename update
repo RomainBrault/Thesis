@@ -3,6 +3,7 @@
 set -e
 
 cp bin/ThesisRomainBrault.pdf ~/Dropbox/CorrectionsRomain/Romain
+cp bin/ThesisRomainBrault.pdf.asc ~/Dropbox/CorrectionsRomain/Romain
 
 git pull github master
 git add -A

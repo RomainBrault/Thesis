@@ -230,21 +230,25 @@ In order to find a solution to \cref{eq:argmin_theta}, we turn our attention to 
 \label{eq:cost_functional}
 J_{\lambda_K}(\theta) = \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\tildeH{\omega}}.
 \end{dmath}
-Since the solution of \cref{eq:argmin_theta} is unique when $\lambda_K>0$, a sufficient and necessary condition is that the gradient of $J_{\lambda_K}$ at the minimizer $\theta_{\seq{z}}$ is zero. We use the Frechet derivative, the strongest notion of derivative in Banach spaces\mpar{Here we view the Hilbert space $\mathcal{H}$ (feature space) as a reflexive Banach space.}~\citep{conway2013course, kurdila2006convex} which directly generalizes the notion of gradient to Banach spaces. A function $f:\mathcal{H}_0\to\mathcal{H}_1$ is call Frechet differentiable at $\theta_0\in \mathcal{H}_0$ if there exist a bounded linear operator $A:\mathcal{H}_0\to \mathcal{H}_1$ such that
+Since the solution of \cref{eq:argmin_theta} is unique when $\lambda_K>0$, a sufficient and necessary condition is that the gradient of $J_{\lambda_K}$ at the minimizer $\theta_{\seq{z}}$ is zero. We use the Frechet derivative, the strongest notion of derivative in Banach spaces\mpar{Here we view the Hilbert space $\mathcal{H}$ (feature space) as a reflexive Banach space.}~\citep{conway2013course, kurdila2006convex} which directly generalizes the notion of gradient to Banach spaces. A function $f:\mathcal{H}_0\to\mathcal{H}_1$ is call Frechet differentiable at $\theta_0\in \mathcal{H}_0$ if there exist a bounded linear operator $A\in\mathcal{L}(\mathcal{H}_0,\mathcal{H}_1)$ such that
 \begin{dmath*}
-\lim_{h\to 0} \frac{\norm{f(\theta_0+h)-f(\theta_0)-Ah}_{\mathcal{H}_1}}{\norm{h}_{\mathcal{H}_0}}=0
+\lim_{\norm{h}_{\mathcal{H}_0}\to 0} \frac{\norm{f(\theta_0+h)-f(\theta_0)-Ah}_{\mathcal{H}_1}}{\norm{h}_{\mathcal{H}_0}}=0
 \end{dmath*}
 We write
 \begin{dmath*}
 (D_Ff)(\theta_0)\hiderel{=}\derivativeat{f(\theta)}{\theta}{\theta_0}\hiderel{=}A
 \end{dmath*}
-and call it Frechet derivative of $f$ with respect to $\theta$ at $\theta_0$. With mild abuse of notation we write $\derivative{f(\theta_0)}{\theta_0} = \derivativeat{f(\theta)}{\theta}{\theta_0}$. The Frechet derivative is an unbounded linear operator. The chain rule is valid in this context. Namely if a function $f:\mathcal{H}_0\to\mathcal{H}_1$ is Frechet differentiable at $\theta$ and $g:\mathcal{H}_1\to \mathcal{H}_2$ is Frechet differentiable at $f(\theta)$ then $g\circ f$ is Frechet differentiable at $\theta$ and
+and call it Frechet derivative of $f$ with respect to $\theta$ at $\theta_0$. With mild abuse of notation we write $\derivative{f(\theta_0)}{\theta_0} = \derivativeat{f(\theta)}{\theta}{\theta_0}$. The chain rule is valid in this context. Namely, let $\mathcal{H}_0$, $\mathcal{H}_1$ and $\mathcal{H}_2$ be three Hilbert spaces. If a function $f:\mathcal{H}_0\to\mathcal{H}_1$ is Frechet differentiable at $\theta$ and $g:\mathcal{H}_1\to \mathcal{H}_2$ is Frechet differentiable at $f(\theta)$ then $g\circ f$ is Frechet differentiable at $\theta$ and
 \begin{dmath*}
-\lderivative{(g\circ f)(\theta)}{\theta} = \derivative{g(f(\theta))}{f(\theta)} \circ \derivative{f(\theta)}{\theta}.
+\lderivative{(g\circ f)(\theta)}{\theta} = \derivative{g(f(\theta))}{f(\theta)} \circ \derivative{f(\theta)}{\theta},
 \end{dmath*}
-If $f:\mathcal{H}\to\mathbb{R}$ we define the gradient of $f$ as
+or equivalently,
 \begin{dmath*}
-\nabla_{\theta} f(\theta) = \left(\derivative{f(\theta)}{\theta}\right)^\adjoint
+D_F(g\circ f)(\theta)= (D_Fg)(f(\theta)) \circ (D_Ff)(\theta).
+\end{dmath*}
+If $f:\mathcal{H}\to\mathbb{R}$, $f\in\mathcal{H}^\adjoint$ and by Riesz's representation theorem we define the gradient of $f$ noted $\nabla_{\theta} f(\theta)$ as the the vector in $\mathcal{H}$ such that
+\begin{dmath*}
+\inner{\nabla_{\theta} f(\theta), h}_{\mathcal{H}} = \derivative{f(\theta)}{\theta} \circ h
 \end{dmath*}
 and in the same way, for a function $f:\mathcal{H}_0\to\mathcal{H}_1$ the jacobian of $f$ as
 \begin{dmath*}
@@ -298,7 +302,7 @@ Therefore,
 \end{dmath}
 Suppose that $\mathcal{Y}\subseteq\mathbb{R}^p$, $V:\mathcal{U}\to\mathcal{Y}$ where $\mathcal{U}\subseteq\mathbb{R}^u$ and for all $x\in\mathcal{X}$, $\tildePhi{\omega}(x): \mathbb{R}^{r}\to\mathbb{R}^u$ where all spaces are endowed with the euclidean inner product. From this we can derive \cref{alg:close_form} which return the close form solution of \cref{eq:cost_functional} for $c(y,y')=\norm{y-y'}_2^2$.
 \end{example}
-In the following, if no specific mention, we suppose that for any finite dimensional Hilbert space $\mathcal{H}\cong\mathbb{R}^d$, the adjoint space $\mathcal{H}^*$ is endowed with the dual basis. For any $x\in\mathcal{H}$, this allows us to identify $x^*=x^T$, and the inner product in any $\mathcal{H}$ is given for any $x$, $y\in\mathcal{H}$ by $\inner{x,y}=x^Ty$. If one consider a Mahalanobis inner product, evaluation of operators has to be done with extra care since the basis of the dual space is \emph{not} the dual basis (see \cref{rq:mahalanobis}).
+In the following, if no specific mention, we suppose that for any real Hilbert space $\mathcal{H}\cong\mathbb{R}^d$, the adjoint space $\mathcal{H}^*$ is endowed with the dual basis. For any $x\in\mathcal{H}$, this allows us to identify $x^*=x^T$, and the inner product in any $\mathcal{H}$ is given for any $x$, $y\in\mathcal{H}$ by $\inner{x,y}=x^Ty$. If one consider a Mahalanobis inner product, evaluation of operators has to be done with extra care since the basis of the dual space is \emph{not} the dual basis (see \cref{rq:mahalanobis}).
 \begin{remark}
 \label{rq:mahalanobis}
 Notice that the evaluation of each operator $\nabla_{\theta} J_{\lambda_K}(\theta)$, $V^*$, $\tildePhi{\omega}(x_i)^*$'s and $M_{ik}$'s depends on the inner product of the respective spaces they are defined. Namely $\mathcal{Y}$, $\mathcal{U}$ and $\tildeH{\omega}$. For instance if one choose $\tildeH{\omega}=\vect_{j=1}^D \mathcal{U}'$, $\mathcal{U}'=\mathbb{R}^{u'}$ endowed with a Mahalanobis inner product $\inner{x,y}_{\mathcal{U}'}=x^T\Sigma^{-1} z$ where $\Sigma$ is some positive semi-definite matrix, then for all $x\in\mathcal{X}$,

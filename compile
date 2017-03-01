@@ -17,6 +17,9 @@
 #%    -s, --synctex                 Use synctex, default OFF
 #%    -h, --help                    Print this help
 #%    -v, --version                 Print script information
+#%    -S, --sign                    Sign document with pgp
+#%    -V, --verify                  Verify document with pgp
+#%    -g, --generate                Generate figures with pythontex
 #%
 #% EXAMPLES
 #%    ${SCRIPT_NAME} -o DEFAULT arg1 arg2
@@ -65,6 +68,12 @@ for arg in "$@"; do
         set -- "$@" "-b" ;;
     "--synctex")
         set -- "$@" "-s" ;;
+    "--sign")
+        set -- "$@" "-S" ;;
+    "--verify")
+        set -- "$@" "-V" ;;
+    "--generate")
+        set -- "$@" "-g" ;;
     *)
         set -- "$@" "$arg" ;;
   esac
@@ -74,12 +83,15 @@ done
 OPTIND=1         # Reset in case getopts has been used previously in the shell.
 UPDATE=false
 FORCE=false
+SIGN=false
+VERIFY=false
+GENERATE=false
 OUTPUT=bin
 BUILD=build
 SYNCTEX=OFF
 COMPILER=xelatex
 
-while getopts ":hvufo:b:s" opt; do
+while getopts ":hvufo:b:sSVg" opt; do
     case "$opt" in
     h)
         usagefull; exit 0  ;;
@@ -91,12 +103,18 @@ while getopts ":hvufo:b:s" opt; do
         FORCE=true ;;
     s)
         SYNCTEX=ON ;;
+    S)
+        SIGN=true ;;
+    V)
+        VERIFY=true ;;
     o)
         OUTPUT=${OPTARG} ;;
     c)
         COMPILER=${OPTARG} ;;
     b)
         BUILD=${OPTARG} ;;
+    g)
+        GENERATE=true ;;
     \?)
         usage; exit 0 ;;
     esac
@@ -121,10 +139,12 @@ if [[ ${FORCE} = true ]]; then
           -DLATEX_OUTPUT_PATH=${OUTPUT} \
           -DPDFLATEX_COMPILER=${COMPILER} \
           -DLATEX_USE_SYNCTEX=${SYNCTEX} ..
-    time make pdf
-else
-    time make pdf
 fi
+if [[ ${GENERATE} = false ]]; then
+    cp -r ../gfx/bck/* ../${OUTPUT}
+fi
+time make ThesisRomainBrault_pdf
+
 cd ..
 
 # Backup
@@ -135,5 +155,10 @@ cp ../${OUTPUT}/*.png bck
 cd ..
 
 # Sign document with pgp
-gpg2 --armor --detach-sig bin/ThesisRomainBrault.pdf
-gpg2 --verify bin/ThesisRomainBrault.pdf.asc bin/ThesisRomainBrault.pdf
+if [[ ${SIGN} = true ]]; then
+    gpg2 --armor --detach-sig ${OUTPUT}/ThesisRomainBrault.pdf
+fi
+if [[ ${VERIFY} = true ]]; then
+    gpg2 --verify ${OUTPUT}/ThesisRomainBrault.pdf.asc \
+                  ${OUTPUT}/ThesisRomainBrault.pdf
+fi

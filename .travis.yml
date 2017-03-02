@@ -32,7 +32,8 @@ addons:
 #   - cp -r .fonts $HOME/.fonts
 #   - fc-cache -fv
 
-# script:
+script:
+    - echo "test"
 #   - ./compile -f
 
 # after_success:

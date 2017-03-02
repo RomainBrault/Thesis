@@ -238,7 +238,7 @@ We write
 \begin{dmath*}
 (D_Ff)(\theta_0)\hiderel{=}\derivativeat{f(\theta)}{\theta}{\theta_0}\hiderel{=}A
 \end{dmath*}
-and call it Frechet derivative of $f$ with respect to $\theta$ at $\theta_0$. With mild abuse of notation we write $\derivative{f(\theta_0)}{\theta_0} = \derivativeat{f(\theta)}{\theta}{\theta_0}$. The chain rule is valid in this context. Namely, let $\mathcal{H}_0$, $\mathcal{H}_1$ and $\mathcal{H}_2$ be three Hilbert spaces. If a function $f:\mathcal{H}_0\to\mathcal{H}_1$ is Frechet differentiable at $\theta$ and $g:\mathcal{H}_1\to \mathcal{H}_2$ is Frechet differentiable at $f(\theta)$ then $g\circ f$ is Frechet differentiable at $\theta$ and
+and call it Frechet derivative of $f$ with respect to $\theta$ at $\theta_0$. With mild abuse of notation we write $\derivative{f(\theta_0)}{\theta_0} = \derivativeat{f(\theta)}{\theta}{\theta_0}$. The chain rule is valid in this context \cite[theorem 4.1.1 page 140]{kurdila2006convex}. Namely, let $\mathcal{H}_0$, $\mathcal{H}_1$ and $\mathcal{H}_2$ be three Hilbert spaces. If a function $f:\mathcal{H}_0\to\mathcal{H}_1$ is Frechet differentiable at $\theta$ and $g:\mathcal{H}_1\to \mathcal{H}_2$ is Frechet differentiable at $f(\theta)$ then $g\circ f$ is Frechet differentiable at $\theta$ and
 \begin{dmath*}
 \lderivative{(g\circ f)(\theta)}{\theta} = \derivative{g(f(\theta))}{f(\theta)} \circ \derivative{f(\theta)}{\theta},
 \end{dmath*}

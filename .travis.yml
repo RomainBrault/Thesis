@@ -17,7 +17,6 @@ notifications:
         on_failure: never
 
 before_install:
-  - pushd $HOME
   - brew update
   - brew upgrade
   - brew outdated cmake || brew upgrade cmake
@@ -27,8 +26,6 @@ before_install:
   # - brew cask install mactex
 
 script:
-  - pwd
-  - ls
   - ./compile -f
 
 # after_success:

@@ -27,6 +27,8 @@ before_install:
   # - brew cask install mactex
 
 script:
+  - pwd
+  - ls
   - ./compile -f
 
 # after_success:

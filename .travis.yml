@@ -26,8 +26,8 @@ before_install:
   # - brew install caskroom/cask/brew-cask
   # - brew cask install mactex
 
-# script:
-#   - ./compile -f
+script:
+  - ./compile -f
 
 # after_success:
 #   # CREATE GIT TAG

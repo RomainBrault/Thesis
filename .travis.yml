@@ -22,14 +22,22 @@ before_install:
   - brew update
   - brew upgrade
   - brew outdated cmake || brew upgrade cmake
-  - brew install caskroom/cask/brew-cask
-  - brew cask install mactex
   - brew install ghostscript
   - brew install imagemagick
+  # - brew install caskroom/cask/brew-cask
+  # - brew cask install mactex
 
 script:
   - chmod u+x compile
   - ./compile -f
+
+# deploy:
+#   provider: releases
+#   api_key: "GITHUB OAUTH TOKEN"
+#   file: bin/ThesisRomainBrault.pdf
+#   skip_cleanup: true
+#   on:
+#     tags: true
 
 after_success:
   # CREATE GIT TAG

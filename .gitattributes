@@ -2,24 +2,64 @@
 * text=auto
 *.tex diff=tex
 
+# Source files
+# ============
 #
 # The above will handle all files NOT found below
 #
 # These files are text and should be normalized (Convert crlf => lf)
-*.gitattributes text
-.gitignore text
-*.md text
+*.gitattributes  text
+*.md             text
+*.tex            text
+*.txt            text
+*.tikz           text
+*.pgf            text
+*.bib            text
+*.py             text
+*.pxd            text
+*.py             text
+*.py3            text
+*.pyw            text
+*.pyx            text
+.gitignore       text
 
-CMakeLatex/ export-ignore
+# Binary files
+# ============
+*.db             binary
+*.png            binary
+*.p              binary
+*.pkl            binary
+*.pyc            binary
+*.pyd            binary
+*.pyo            binary
+*.pdf            binary
+
+
+# Ignore
+# ======
+CMakeLatex/      export-ignore
 FrontBackMatter/ export-ignore
-gfx/ export-ignore
-Parts/ export-ignore
-*.tex export-ignore
-*.bib export-ignore
-*.sty export-ignore
-*.txt export-ignore
-*.md export-ignore
-*.yml export-ignore
+gfx/             export-ignore
+Parts/           export-ignore
+*.tex            export-ignore
+*.bib            export-ignore
+*.sty            export-ignore
+*.txt            export-ignore
+*.md             export-ignore
+*.yml            export-ignore
 *.sh
-.gitattributes export-ignore
-.gitignore export-ignore
+
+.gitattributes   export-ignore
+.gitignore       export-ignore
+
+# Whitespace
+# ==========
+*.pxd       whitespace=space-before-tab,tab-in-indent,trailing-space,tab
+*.py        whitespace=space-before-tab,tab-in-indent,trailing-space,tab
+*.py3       whitespace=space-before-tab,tab-in-indent,trailing-space,tab
+*.pyw       whitespace=space-before-tab,tab-in-indent,trailing-space,tab
+*.pyx       whitespace=space-before-tab,tab-in-indent,trailing-space,tab
+*.tex       whitespace=space-before-tab,tab-in-indent,trailing-space,tab
+*.md        whitespace=space-before-tab,tab-in-indent,trailing-space,tab
+*.bib       whitespace=space-before-tab,tab-in-indent,trailing-space,tab
+*.txt       whitespace=space-before-tab,tab-in-indent,trailing-space,tab

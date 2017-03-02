@@ -2,5 +2,4 @@ numpy
 scipy
 scikit-learn
 matplotlib
-pydflatex
-pympler
+

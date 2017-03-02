@@ -24,7 +24,7 @@ before_install:
   - brew install ghostscript
   - brew install imagemagick
   - brew install caskroom/cask/brew-cask
-  - travis_wait 30 brew cask install mactex
+  - travis_wait 60 brew cask install mactex
 
 script:
   - ./compile -f

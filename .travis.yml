@@ -9,10 +9,15 @@ branches:
   only:
     - master
 
+notifications:
+  email:
+    on_success: never
+    on_failure: never
+
 addons:
   apt:
     sources:
-      - sourceline: 'ppa:jonathonf/texlive'
+      - sourceline: 'ppa:jonathonf/texlive-2016'
     packages:
       - ghostscript
       - imagemagick

@@ -222,14 +222,14 @@ Then if $r_{\seq{z}}=0$, it mkeans that $\lambda_K$ is large enough for both rep
 %----------------------------------------------------------------------------------------
 \section{Solution of the empirical risk minimization}
 % We illustrate the ORFF representer theorem (\cref{cr:orff_representer}) on two experiment involving scalar valued kernels.
-
-\subsection{Gradient methods}
-\label{subsec:gradient_methods}
 In order to find a solution to \cref{eq:argmin_theta}, we turn our attention to gradient descent methods. In the following we let
 \begin{dmath}
 \label{eq:cost_functional}
 J_{\lambda_K}(\theta) = \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}} \\ + \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{\theta, \tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \theta}_{\tildeH{\omega}}.
 \end{dmath}
+
+\subsection{Gradient methods}
+\label{subsec:gradient_methods}
 Since the solution of \cref{eq:argmin_theta} is unique when $\lambda_K>0$, a sufficient and necessary condition is that the gradient of $J_{\lambda_K}$ at the minimizer $\theta_{\seq{z}}$ is zero. We use the Frechet derivative, the strongest notion of derivative in Banach spaces\mpar{Here we view the Hilbert space $\mathcal{H}$ (feature space) as a reflexive Banach space.}~\citep{conway2013course, kurdila2006convex} which directly generalizes the notion of gradient to Banach spaces. A function $f:\mathcal{H}_0\to\mathcal{H}_1$ is call Frechet differentiable at $\theta_0\in \mathcal{H}_0$ if there exist a bounded linear operator $A\in\mathcal{L}(\mathcal{H}_0,\mathcal{H}_1)$ such that
 \begin{dmath*}
 \lim_{\norm{h}_{\mathcal{H}_0}\to 0} \frac{\norm{f(\theta_0+h)-f(\theta_0)-Ah}_{\mathcal{H}_1}}{\norm{h}_{\mathcal{H}_0}}=0
@@ -240,7 +240,7 @@ We write
 \end{dmath*}
 and call it Frechet derivative of $f$ with respect to $\theta$ at $\theta_0$. With mild abuse of notation we write
 \begin{dmath*}
-\derivative{f(\theta_0)}{\theta_0} = \derivativeat{f(\theta)}{\theta}{\theta_0}.
+\derivativeat{f(\theta)}{\theta}{\theta_0}=\derivative{f(\theta_0)}{\theta_0}.
 \end{dmath*}
 The chain rule is valid in this context \cite[theorem 4.1.1 page 140]{kurdila2006convex}. Namely, let $\mathcal{H}_0$, $\mathcal{H}_1$ and $\mathcal{H}_2$ be three Hilbert spaces. If a function $f:\mathcal{H}_0\to\mathcal{H}_1$ is Frechet differentiable at $\theta$ and $g:\mathcal{H}_1\to \mathcal{H}_2$ is Frechet differentiable at $f(\theta)$ then $g\circ f$ is Frechet differentiable at $\theta$ and for all $h\in\mathcal{H}_0$
 \begin{dmath*}

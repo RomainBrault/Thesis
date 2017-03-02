@@ -4,6 +4,7 @@ os: osx
 osx_image: xcode8.2
 
 cache:
+  bundler: true
   directories:
     - $HOME/Library/Caches/Homebrew
 
@@ -22,8 +23,8 @@ before_install:
   - brew outdated cmake || brew upgrade cmake
   - brew install ghostscript
   - brew install imagemagick
-  # - brew install caskroom/cask/brew-cask
-  # - brew cask install mactex
+  - brew install caskroom/cask/brew-cask
+  - travis_wait 30 brew cask install mactex
 
 script:
   - ./compile -f

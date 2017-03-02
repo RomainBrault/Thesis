@@ -238,17 +238,17 @@ We write
 \begin{dmath*}
 (D_Ff)(\theta_0)\hiderel{=}\derivativeat{f(\theta)}{\theta}{\theta_0}\hiderel{=}A
 \end{dmath*}
-and call it Frechet derivative of $f$ with respect to $\theta$ at $\theta_0$. With mild abuse of notation we write $\derivative{f(\theta_0)}{\theta_0} = \derivativeat{f(\theta)}{\theta}{\theta_0}$. The chain rule is valid in this context \cite[theorem 4.1.1 page 140]{kurdila2006convex}. Namely, let $\mathcal{H}_0$, $\mathcal{H}_1$ and $\mathcal{H}_2$ be three Hilbert spaces. If a function $f:\mathcal{H}_0\to\mathcal{H}_1$ is Frechet differentiable at $\theta$ and $g:\mathcal{H}_1\to \mathcal{H}_2$ is Frechet differentiable at $f(\theta)$ then $g\circ f$ is Frechet differentiable at $\theta$ and
+and call it Frechet derivative of $f$ with respect to $\theta$ at $\theta_0$. With mild abuse of notation we write $\derivative{f(\theta_0)}{\theta_0} = \derivativeat{f(\theta)}{\theta}{\theta_0}$. The chain rule is valid in this context \cite[theorem 4.1.1 page 140]{kurdila2006convex}. Namely, let $\mathcal{H}_0$, $\mathcal{H}_1$ and $\mathcal{H}_2$ be three Hilbert spaces. If a function $f:\mathcal{H}_0\to\mathcal{H}_1$ is Frechet differentiable at $\theta$ and $g:\mathcal{H}_1\to \mathcal{H}_2$ is Frechet differentiable at $f(\theta)$ then $g\circ f$ is Frechet differentiable at $\theta$ and for all $h\in\mathcal{H}_0$
 \begin{dmath*}
-\lderivative{(g\circ f)(\theta)}{\theta} = \derivative{g(f(\theta))}{f(\theta)} \circ \derivative{f(\theta)}{\theta},
+\lderivative{(g\circ f)(\theta)}{\theta}\circ h = \derivative{g(f(\theta))}{f(\theta)} \circ \derivative{f(\theta)}{\theta}\circ h,
 \end{dmath*}
 or equivalently,
 \begin{dmath*}
-D_F(g\circ f)(\theta)= (D_Fg)(f(\theta)) \circ (D_Ff)(\theta).
+D_F(g\circ f)(\theta)\circ h= (D_Fg)(f(\theta)) \circ (D_Ff)(\theta)\circ h.
 \end{dmath*}
 If $f:\mathcal{H}\to\mathbb{R}$ then $(D_F f)(\theta_0) \in\mathcal{H}^\adjoint$ for all $\theta_0\in\mathcal{H}$, and by Riesz's representation theorem we define the gradient of $f$ noted $\nabla_{\theta} f(\theta)$ as the the vector in $\mathcal{H}$ such that
 \begin{dmath*}
-\inner{\nabla_{\theta} f(\theta), h}_{\mathcal{H}} = (D_Ff)(\theta_0)\circ h \hiderel{=} \derivative{f(\theta)}{\theta} \circ h.
+\inner{\nabla_{\theta} f(\theta), h}_{\mathcal{H}} = (D_Ff)(\theta)\circ h \hiderel{=} \derivative{f(\theta)}{\theta} \circ h.
 \end{dmath*}
 For a function $f:\mathcal{H}_0\to\mathcal{H}_1$ we note the jacobian of $f$ as
 $\jacobian_{\theta} f(\theta) = \derivative{f(\theta)}{\theta}$. In this context if $f:\mathcal{H}_0\to\mathcal{H}_1$ and $g:\mathcal{H}_1\to\mathbb{R}$ the chain rule reads

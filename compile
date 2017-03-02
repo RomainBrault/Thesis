@@ -142,6 +142,8 @@ if [[ ${FORCE} = true ]]; then
 fi
 if [[ ${GENERATE} = false ]]; then
     cp -r ../gfx/bck/* ../${OUTPUT}
+else
+    pip install -r ../requirements.txt
 fi
 time make ThesisRomainBrault_pdf
 
@@ -159,6 +161,8 @@ if [[ ${SIGN} = true ]]; then
     gpg2 --armor --detach-sig ${OUTPUT}/ThesisRomainBrault.pdf
 fi
 if [[ ${VERIFY} = true ]]; then
+    gpg --keyserver pgp.mit.edu \
+        --recv-keys A276D73294A106E2544FFF9E3E5B5D0B181C5E04
     gpg2 --verify ${OUTPUT}/ThesisRomainBrault.pdf.asc \
                   ${OUTPUT}/ThesisRomainBrault.pdf
 fi

@@ -250,16 +250,25 @@ or equivalently,
 \begin{dmath*}
 D_F(g\circ f)(\theta)\circ h= (D_Fg)(f(\theta)) \circ (D_Ff)(\theta)\circ h.
 \end{dmath*}
-If $f:\mathcal{H}\to\mathbb{R}$ then $(D_F f)(\theta_0) \in\mathcal{H}^\adjoint$ for all $\theta_0\in\mathcal{H}$, and by Riesz's representation theorem we define the gradient of $f$ noted $\nabla_{\theta} f(\theta)$ as the the vector in $\mathcal{H}$ such that
+If $f:\mathcal{H}\to\mathbb{R}$ then $(D_F f)(\theta_0) \in\mathcal{H}^\adjoint$ for all $\theta_0\in\mathcal{H}$, and by Riesz's representation theorem we define the gradient of $f$ noted $\nabla_{\theta} f(\theta)\in\mathcal{H}$ as the the vector in $\mathcal{H}$ such that
 \begin{dmath*}
 \inner{\nabla_{\theta} f(\theta), h}_{\mathcal{H}} = (D_Ff)(\theta)\circ h \hiderel{=} \derivative{f(\theta)}{\theta} \circ h.
 \end{dmath*}
 For a function $f:\mathcal{H}_0\to\mathcal{H}_1$ we note the jacobian of $f$ as
-$\jacobian_{\theta} f(\theta) = \derivative{f(\theta)}{\theta}$. In this context if $f:\mathcal{H}_0\to\mathcal{H}_1$ and $g:\mathcal{H}_1\to\mathbb{R}$ the chain rule reads
+$\jacobian_{\theta} f(\theta) = \derivative{f(\theta)}{\theta}$. In this context if $f:\mathcal{H}_0\to\mathcal{H}_1$ and $g:\mathcal{H}_1\to\mathbb{R}$ the chain rule reads for all $h\in\mathcal{H}_0$
 \begin{dmath*}
-\nabla_{\theta} (g\circ f)(\theta) = \jacobian_{\theta}f(\theta) \circ \nabla_{f(\theta)}g(f(\theta)).
+\lderivative{(g\circ f)(\theta)}{\theta} \circ h = \derivative{g(f(\theta))}{f(\theta)} \circ \jacobian_{\theta}f(\theta) \circ h.
 \end{dmath*}
-By linearity and applying the chaine rule to \cref{eq:argmin_theta} and since $M_{ik}^\adjoint = M_{ki}$ for all $i$, $k\in\mathbb{N}^*_{N+U}$, we have
+By Riesz's representation theorem,
+\begin{dmath*}
+\inner{\nabla_\theta(g\circ f)(\theta), h}_{\mathcal{H}_0} = \inner{\nabla_{f(\theta)}g(f(\theta)) , \jacobian_{\theta}f(\theta) h}_{\mathcal{H}_0}.
+= \inner{\left(\jacobian_{\theta}f(\theta)\right)^\adjoint\nabla_{f(\theta)}g(f(\theta)), h}_{\mathcal{H}_0}
+\end{dmath*}
+Hence
+\begin{dmath*}
+\nabla_{\theta}(g\circ f)(\theta) = \left(\jacobian_{\theta}f(\theta)\right)^\adjoint\nabla_{f(\theta)}g(f(\theta)).
+\end{dmath*}
+Thus by linearity and applying the chaine rule to \cref{eq:argmin_theta} and since $M_{ik}^\adjoint = M_{ki}$ for all $i$, $k\in\mathbb{N}^*_{N+U}$, we have
 \begin{dgroup*}
 \begin{dmath*}
 \nabla_{\theta}c\left(V\tildePhi{\omega}(x_i)^\adjoint \theta, y_i\right)= \tildePhi{\omega}(x_i)V^\adjoint \left(\lderivativeat{c\left(y, y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint,

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="longs_longs_i.liga" format="1">
+  <advance width="719"/>
+  <outline>
+    <component base="ssxmaker"/>
+    <component base="longs_i.liga" xOffset="240"/>
+    <contour>
+      <point x="120" y="0" type="move" name="bottom_1"/>
+    </contour>
+    <contour>
+      <point x="360" y="330" type="move" name="top_2"/>
+    </contour>
+    <contour>
+      <point x="479" y="0" type="move" name="caret_2"/>
+    </contour>
+    <contour>
+      <point x="240" y="0" type="move" name="caret_1"/>
+    </contour>
+    <contour>
+      <point x="599" y="0" type="move" name="bottom_3"/>
+    </contour>
+    <contour>
+      <point x="120" y="330" type="move" name="top_1"/>
+    </contour>
+    <contour>
+      <point x="360" y="0" type="move" name="bottom_2"/>
+    </contour>
+    <contour>
+      <point x="599" y="330" type="move" name="top_3"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.layer.leftMetricsKey</key>
+      <string>==longs</string>
+      <key>com.schriftgestaltung.Glyphs.layer.rightMetricsKey</key>
+      <string>==longs_i.liga</string>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+      <string>longs</string>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+      <string>i</string>
+    </dict>
+  </lib>
+</glyph>

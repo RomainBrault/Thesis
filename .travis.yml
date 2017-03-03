@@ -1,4 +1,4 @@
-sudo: true
+sudo: false
 language: python
 python:
   - "3.6"
@@ -28,14 +28,16 @@ addons:
       - cmake
       - texlive-full
 
-install: "pip install -r requirements.txt"
+install:
+  - pip install -r requirements.txt
 
 # before_script:
 #   - cp -r .fonts $HOME/.fonts
 #   - fc-cache -fv
 
 script:
-  - ./compile -f
+  - chmod +x compile
+  - bash compile -f
 
 # after_success:
 #   # CREATE GIT TAG

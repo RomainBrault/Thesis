@@ -1,4 +1,4 @@
-sudo: false
+sudo: true
 language: python
 python:
   - "3.6"
@@ -6,6 +6,8 @@ dist: trusty
 
 cache:
   apt: true
+  pip: true
+  bundler: true
 
 branches:
   only:

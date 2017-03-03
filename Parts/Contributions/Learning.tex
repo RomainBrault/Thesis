@@ -69,7 +69,11 @@ has the form $f_{\seq{z}}=\sum_{j=1}^{N+U}K(\cdot,x_j)u_{\seq{z},j}$ where $u_{\
     \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U} \inner*{\sum_{j=1}^{N+U}K(x_i,x_j)u_j, M_{ik}\sum_{j=1}^{N+U}K(x_k,x_j)u_j}_{\mathcal{U}}
 \end{dmath}
 \end{theorem}
-The first representer theorem was first introduced by~\citet{Wahba90} in the case where $\mathcal{Y}=\mathbb{R}$. The extension to an arbitrary Hilbert space $\mathcal{Y}$ has been proved by many authors in different forms~\citep{Brouard2011,kadri2015operator,Micchelli2005}. The idea behind the representer theorem is that eventhough we minimize over the whole space $\mathcal{H}_K$, when $\lambda_K>0$, the solution of \cref{eq:learning_rkhs_gen} falls inevitably into the set $\mathcal{H}_{K, \seq{z}}=\Set{\sum_{j=1}^{N+U}K_{x_j}u_j| \forall (u_i)_{i=1}^{N+U} \in\mathcal{U}^{N+U}}$. Therefore the result can be expressed as a finite linear combination of basis functions of the form $K(\cdot,x_k)$. Remark that we can perform the kernel expansion of $f_{\seq{z}}=\sum_{j=1}^{N+U}K(\cdot,x_j)u_{\seq{z},j}$ eventhough $\lambda_K=0$. However $f_{\seq{z}}$ is no longer the solution of \cref{eq:learning_rkhs_gen} over the whole space $\mathcal{H}_K$ but a projection on the subspace $\mathcal{H}_{K, \seq{z}}$. While this is in general not a problem for practical applications, it might raise issues for further theoretical investigations. In particular, it makes it difficult to perform theoretical comparison the \say{exact} solution of \cref{eq:learning_rkhs_gen} with respect to the \acs{ORFF} approximation solution given in \cref{cr:orff_representer}.
+The first representer theorem was first introduced by~\citet{Wahba90} in the case where $\mathcal{Y}=\mathbb{R}$. The extension to an arbitrary Hilbert space $\mathcal{Y}$ has been proved by many authors in different forms~\citep{Brouard2011,kadri2015operator,Micchelli2005}. The idea behind the representer theorem is that eventhough we minimize over the whole space $\mathcal{H}_K$, when $\lambda_K>0$, the solution of \cref{eq:learning_rkhs_gen} falls inevitably into the set
+\begin{dmath*}
+\mathcal{H}_{K, \seq{z}}=\Set{\sum_{j=1}^{N+U}K_{x_j}u_j| \forall (u_i)_{i=1}^{N+U} \in\mathcal{U}^{N+U}}.
+\end{dmath*}
+Therefore the result can be expressed as a finite linear combination of basis functions of the form $K(\cdot,x_k)$. Remark that we can perform the kernel expansion of $f_{\seq{z}}=\sum_{j=1}^{N+U}K(\cdot,x_j)u_{\seq{z},j}$ eventhough $\lambda_K=0$. However $f_{\seq{z}}$ is no longer the solution of \cref{eq:learning_rkhs_gen} over the whole space $\mathcal{H}_K$ but a projection on the subspace $\mathcal{H}_{K, \seq{z}}$. While this is in general not a problem for practical applications, it might raise issues for further theoretical investigations. In particular, it makes it difficult to perform theoretical comparison the \say{exact} solution of \cref{eq:learning_rkhs_gen} with respect to the \acs{ORFF} approximation solution given in \cref{cr:orff_representer}.
 \paragraph{}
 We present here the proof of the generic formulation proposed by~\citet{minh2016unifying}. In the mean time we clarify some elements of the proof. Indeed the existence of a global minimizer is not trivial and we must invoke the Mazur-Schauder theorem. Moreover the coercivity of the objective function required by the Mazur-Schauder theorem is not obvious when we do not require the cost function to take only positive values. However a corollary of Hahn-Banach theorem linking strong convexity to coercivity gives the solution.
 \begin{proof}
@@ -290,11 +294,11 @@ Therefore after factorization, considering $\lambda_K > 0$,
 \end{dmath*}
 We note the quantity
 \begin{dmath}
-\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)}=I_{\tildeH{\omega}} + \frac{\lambda_M}{\lambda_K}\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \in \mathcal{L}(\tildeH{\omega})
+\widetilde{\mathbf{M}}_{\left(\lambda_K,\lambda_M\right)}=I_{\tildeH{\omega}} + \frac{\lambda_M}{\lambda_K}\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^\adjoint \hiderel{\in} \mathcal{L}(\tildeH{\omega})
 \end{dmath}
 so that
 \begin{dmath*}
-\nabla_{\theta} J_{\lambda_K}(\theta) = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint \left(\lderivativeat{c\left(y, y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint + \lambda_K\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)}\theta
+\nabla_{\theta} J_{\lambda_K}(\theta) = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint \left(\lderivativeat{c\left(y, y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint + \lambda_K\widetilde{\mathbf{M}}_{\left(\lambda_K,\lambda_M\right)}\theta
 \end{dmath*}
 \begin{example}[Naive close form for the squared error cost]
 Consider the cost function defined for all $y$, $y'\in\mathcal{Y}$ by $c(y,y')=\norm{y-y}_{\mathcal{Y}}^2$. Then
@@ -303,12 +307,12 @@ Consider the cost function defined for all $y$, $y'\in\mathcal{Y}$ by $c(y,y')=\
 \end{dmath*}
 Thus, since the optimal solution $\theta_{\seq{z}}$ verifies $\nabla_{\theta_{\seq{z}}} J_{\lambda_K}(\theta_{\seq{z}}) = 0$ we have
 \begin{dmath*}
-\frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint\left(V\tildePhi{\omega}(x_i)^\adjoint \theta_{\seq{z}}-y_i\right) + \lambda_K\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)}\theta_{\seq{z}}= 0.
+\frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint\left(V\tildePhi{\omega}(x_i)^\adjoint \theta_{\seq{z}}-y_i\right) + \lambda_K\widetilde{\mathbf{M}}_{\left(\lambda_K,\lambda_M\right)}\theta_{\seq{z}}= 0.
 \end{dmath*}
 Therefore,
 \begin{dmath}
 \label{eq:iff_solution}
-\left(\frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint V\tildePhi{\omega}(x_i)^\adjoint + \lambda_K\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)}\right)\theta_{\seq{z}} \\ = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint y_i.
+\left(\frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint V\tildePhi{\omega}(x_i)^\adjoint + \lambda_K\widetilde{\mathbf{M}}_{\left(\lambda_K,\lambda_M\right)}\right)\theta_{\seq{z}} \\ = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint y_i.
 \end{dmath}
 Suppose that $\mathcal{Y}\subseteq\mathbb{R}^p$, $V:\mathcal{U}\to\mathcal{Y}$ where $\mathcal{U}\subseteq\mathbb{R}^u$ and for all $x\in\mathcal{X}$, $\tildePhi{\omega}(x): \mathbb{R}^{r}\to\mathbb{R}^u$ where all spaces are endowed with the euclidean inner product. From this we can derive \cref{alg:close_form} which return the close form solution of \cref{eq:cost_functional} for $c(y,y')=\norm{y-y'}_2^2$.
 \end{example}
@@ -322,12 +326,12 @@ Notice that the evaluation of each operator $\nabla_{\theta} J_{\lambda_K}(\thet
 \paragraph{}
 If one choose $\mathcal{U}=\mathbb{R}^u$, $\tildeH{\omega}=\mathbb{R}^{r}$ with dual vector space endowed with the dual basis and $\mathcal{Y}=\mathbb{R}^p$ endowed with a Mahalanobis inner product $\inner{y,y'}_{\mathcal{Y}'}=y^T\Sigma^{-1} y'$, then for any $y\in\mathcal{Y}$, $V^*y=V^T\Sigma^{-1}y$, thus \cref{eq:iff_solution} reads
 \begin{dmath*}
-\left(\frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^T \Sigma^{-1}V\tildePhi{\omega}(x_i)^T + \lambda_K\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)}\right)\theta_{\seq{z}} = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^T \Sigma^{-1} y_i.
+\left(\frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^T \Sigma^{-1}V\tildePhi{\omega}(x_i)^T + \lambda_K\widetilde{\mathbf{M}}_{\left(\lambda_K,\lambda_M\right)}\right)\theta_{\seq{z}} = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^T \Sigma^{-1} y_i.
 \end{dmath*}
-where $\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)}=I_{r} + \frac{\lambda_M}{\lambda_K}\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^T$.
+where $\widetilde{\mathbf{M}}_{\left(\lambda_K,\lambda_M\right)}=I_{r} + \frac{\lambda_M}{\lambda_K}\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^T$.
 \end{remark}
 \subsection{Complexity analysis}
-\Cref{alg:close_form} constitute our first step toward large-scale learning with operator-valued kernels. We can easily compute the time complexity of \cref{alg:close_form} when all the operators act on finite dimensional Hilbert spaces. Suppose that $u=\dim(\mathcal{U})<+\infty$ and $u'=\dim(\mathcal{U}')<+\infty$ and for all $x\in\mathcal{X}$, $\tildePhi{\omega}(x):\mathcal{U}'\to\tildeH{\omega}$ where $r=\dim(\tildeH{\omega})<+\infty$ is the dimension of the redescription space $\tildeH{\omega}=\mathbb{R}^{r}$. Since $u$, $u'$, and $r<+\infty$, we view the operators $\tildePhi{\omega}(x)$, $V$ and $\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)}$ as matrices. Computing $V^\adjoint V$ cost $O_t(u^2p)$. Step 1 costs $O_t(r^2u + ru^2)$. Steps 5 (optional) has the same cost except that the sum is done over all pair of $N+U$ points thus it costs $O_t((N+U)^2(r^2u + r u^2))$. Steps 7 costs $O_t(N(ru + up))$. For step 8, the naive inversion of the operator costs $O_t(r^3)$. Eventually the overall complexity of \cref{alg:close_form} is
+\Cref{alg:close_form} constitute our first step toward large-scale learning with operator-valued kernels. We can easily compute the time complexity of \cref{alg:close_form} when all the operators act on finite dimensional Hilbert spaces. Suppose that $u=\dim(\mathcal{U})<+\infty$ and $u'=\dim(\mathcal{U}')<+\infty$ and for all $x\in\mathcal{X}$, $\tildePhi{\omega}(x):\mathcal{U}'\to\tildeH{\omega}$ where $r=\dim(\tildeH{\omega})<+\infty$ is the dimension of the redescription space $\tildeH{\omega}=\mathbb{R}^{r}$. Since $u$, $u'$, and $r<+\infty$, we view the operators $\tildePhi{\omega}(x)$, $V$ and $\widetilde{\mathbf{M}}_{\left(\lambda_K,\lambda_M\right)}$ as matrices. Computing $V^\adjoint V$ cost $O_t(u^2p)$. Step 1 costs $O_t(r^2u + ru^2)$. Steps 5 (optional) has the same cost except that the sum is done over all pair of $N+U$ points thus it costs $O_t((N+U)^2(r^2u + r u^2))$. Steps 7 costs $O_t(N(ru + up))$. For step 8, the naive inversion of the operator costs $O_t(r^3)$. Eventually the overall complexity of \cref{alg:close_form} is
 \begin{dmath*}
 O_t\left(ru(r + u) \begin{cases} (N+U)^2 & \text{if $\lambda_M > 0$} \\ N & \text{if $\lambda_M = 0$} \end{cases}+ r^3 + Nu(r+p)
 \right),
@@ -354,13 +358,13 @@ while the space complexity is $O_s(r^2)$.
     such that $\theta_{\seq{z}}$ minimize \cref{eq:cost_functional}, where $c(y,y')=\norm{y-y'}_2^2$.}
     $\mathbf{P} \gets \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^T V\tildePhi{\omega}(x_i)^T \in\mathcal{L}(\mathbb{R}^{r}, \mathbb{R}^{r})  $\;
     \uIf{$\lambda_M = 0$}{
-        $\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)} \gets I_{r} \in\mathcal{L}(\mathbb{R}^{r}, \mathbb{R}^{r})$\;
+        $\widetilde{\mathbf{M}}_{\left(\lambda_K,\lambda_M\right)} \gets I_{r} \in\mathcal{L}(\mathbb{R}^{r}, \mathbb{R}^{r})$\;
     }
     \Else{
-        $\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)} \gets \left(I_{r} + \frac{\lambda_M}{\lambda_K}\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^T \right) \in\mathcal{L}(\mathbb{R}^{r}, \mathbb{R}^{r}) $\;
+        $\widetilde{\mathbf{M}}_{\left(\lambda_K,\lambda_M\right)} \gets \left(I_{r} + \frac{\lambda_M}{\lambda_K}\sum_{i,k=1}^{N+U}\tildePhi{\omega}(x_i)M_{ik}\tildePhi{\omega}(x_k)^T \right) \in\mathcal{L}(\mathbb{R}^{r}, \mathbb{R}^{r}) $\;
     }
     $\mathbf{Y} \gets \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^T y_i \in \mathbb{R}^{r} $\;
-    $\theta_{\seq{z}} \gets \left(P + \lambda_K\mathbf{\widetilde{M}}_{\left(\lambda_K,\lambda_M\right)}\right)^{-1}Y \in \mathbb{R}^{r} $\;
+    $\theta_{\seq{z}} \gets \left(P + \lambda_K\widetilde{\mathbf{M}}_{\left(\lambda_K,\lambda_M\right)}\right)^{-1}Y \in \mathbb{R}^{r} $\;
     \Return $h: x \mapsto \tildePhi{\omega}(x)^T\theta_{\seq{z}}$\;
     \caption{Naive close form for the squared error cost.}
 \end{algorithm2e}

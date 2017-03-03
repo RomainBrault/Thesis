@@ -25,8 +25,7 @@
 \WarningFilter{scrreprt}{Usage of package `titlesec' together}
 \WarningFilter{scrreprt}{Activating an ugly workaround}
 % Remove drafting to get rid of the '[ Date - classicthesis version 4.0 ]' text at the bottom of every page
-\PassOptionsToPackage{eulerchapternumbers,listings,subfig,parts,linedheaders,floatperchapter,pdfspacing,dottedtoc}{classicthesis}
-\usepackage[LGRgreek]{mathastext} % No italic for math
+\PassOptionsToPackage{listings,subfig,parts,linedheaders,floatperchapter,pdfspacing,dottedtoc}{classicthesis}
 % Available options: drafting parts nochapters linedheaders eulerchapternumbers beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc manychapters listings floatperchapter subfig
 
 \usepackage[a-1b]{pdfx}
@@ -320,22 +319,17 @@ urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,
 % \usepackage[urw-garamond]{mathdesign} % <-- no osf support :-(
 %\usepackage[default,osfigures]{opensans} % scale=0.95
 % \usepackage[MnSymbol]{mathspec}
-\usepackage[no-sscript]{xltxtra}
+% \usepackage{xltxtra}
 % Ubuntu
 % \usepackage[sfdefault]{FiraSans}
 % OSX
-% \setmainfont[Mapping=tex-text, ItalicFeatures={Alternate=0,
-%             Contextuals={NoLineFinal,NoLineInitial}},
-%             Ligatures={Common,Rare,Historic},Alternate=1,
-%             BoldFont=Hoefler Text Black]{Hoefler Text}
+% \usepackage{ebgaramond}
+\usepackage[urw-garamond]{mathdesign}
+\usepackage{fontspec-xetex}
 \setmainfont[Mapping=tex-text,
              Ligatures={Common, Required, Rare, Contextual, Historic},
-             UprightFont={*-Medium},
+             UprightFont={*-SemiBold},
              BoldFont={*-Bold},
-             ItalicFont={*-MediumItalic},
+             ItalicFont={*-SemiBoldItalic},
              BoldItalicFont={*-BoldItalic}
              ]{CormorantGaramond}
-
-% \setmathsfont(Digits,Latin){CormorantGaramond-Medium}
-% \setmathsfont(Latin){CormorantGaramond-Medium}
-%

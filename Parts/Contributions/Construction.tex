@@ -9,7 +9,7 @@ Random Fourier Features have been proved useful to implement efficiently kernel 
  \end{dmath*}
  where $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{H},\mathcal{Y})$ and $\theta \in \mathcal{H}$. The methodology we propose works for operator-valued kernels defined on any \acf{LCA} group, noted ($\mathcal{X}, \groupop)$, for some operation noted $\groupop$. This allows us to use the general context of Pontryagin duality for \acl{FT} of functions on \acs{LCA} groups. Building upon a generalization of Bochner's theorem for operator-valued measures, an operator-valued kernel is seen as the \emph{\acl{FT}} of an operator-valued positive measure. From that result, we extend the principle of Random Fourier Feature for scalar-valued kernels and derive a general methodology to build Operator Random Fourier Feature when operator-valued kernels are shift-invariant according to the chosen group operation. Elements of this chapter have been developped in~\citet{brault2016random}.
 \paragraph{}
-We present a construction of \acf{ORFF} such that $f: x\mapsto \tildePhi{\omega}(x)^\adjoint \theta$ is a continuous function that maps an arbitrary \acs{LCA} group $\mathcal{X}$ as input space to an arbitrary output Hilbert space $\mathcal{Y}$. First we define a functional \emph{Fourier feature map}, and then propose a Monte-Carlo sampling from this feature map to construct an approximation of a shift-invariant $\mathcal{Y}$-Mercer kernel.
+We present a construction of feature maps called \acf{ORFF}, such that $f: x\mapsto \tildePhi{\omega}(x)^\adjoint \theta$ is a continuous function that maps an arbitrary \acs{LCA} group $\mathcal{X}$ as input space to an arbitrary output Hilbert space $\mathcal{Y}$. First we define a functional \emph{Fourier feature map}, and then propose a Monte-Carlo sampling from this feature map to construct an approximation of a shift-invariant $\mathcal{Y}$-Mercer kernel.
 Then, we prove the convergence of the kernel approximation $\tilde{K}(x,z)=\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z)$ with high probability on \emph{compact} subsets of the \acs{LCA} $\mathcal{X}$, when $\mathcal{Y}$ is \emph{finite dimensional}. Eventually we conclude with some numerical experiments.
 
 %----------------------------------------------------------------------------------------
@@ -78,7 +78,11 @@ There have been a lot of confusion in the literature whether a kernel is the \ac
 The following lemma is a direct consequence of the definition of $C(\omega)$ as the \acl{FT} of the adjoint of $K_e$ and also helps simplifying the definition of \acs{ORFF}.
 \begin{lemma}
 \label{lm:C_characterization}
-Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel such that for all $y$, $y'\in\mathcal{Y}$, $\inner{y', K_e(\cdot)y}_{\mathcal{Y}}\in L^1(\mathcal{X},\Haar)$ and let $\inner{y', C(\cdot)y}_{\mathcal{Y}}=\IFT{\inner{y', K_e(\cdot)y}_{\mathcal{Y}}}$. Then
+Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel such that for all $y$, $y'\in\mathcal{Y}$, $\inner{y', K_e(\cdot)y}_{\mathcal{Y}}\in L^1(\mathcal{X},\Haar)$ and let
+\begin{dmath*}
+\inner{y', C(\cdot)y}_{\mathcal{Y}}=\IFT{\inner{y', K_e(\cdot)y}_{\mathcal{Y}}}.
+\end{dmath*}
+Then
 \begin{propenum}
 \item \label{lm:C_characterization_1} $C(\omega)$ is self-adjoint and $C$ is even.
 \item \label{lm:C_characterization_2} $\IFT{\inner{y', K_e(\cdot)y}_{\mathcal{Y}}} = \FT{\inner{y', K_e(\cdot)y}_{\mathcal{Y}}}$.

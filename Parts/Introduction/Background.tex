@@ -126,7 +126,7 @@ We also note $e$ the neural element of $\mathcal{X}$ such that $x\groupop e=e \g
 Throughout this thesis we focus on positive definite function. Let $\mathcal{Y}$ be a complex separable Hilbert space. A function $f:\mathcal{X}\to\mathcal{Y}$ is positive definite if for all $N\in\mathbb{B}$ and all $y\in\mathcal{Y}$,
 \begin{dmath}
 \label{eq:positive_definite}
-\sum_{i,j=1}^N\inner{y_i, f(x_j^{-1}\groupop x_i)y_j}_{\mathcal{Y}}\ge 0
+\sum_{i,j=1}^N\inner*{y_i, f\left(x_j^{-1}\groupop x_i\right)y_j}_{\mathcal{Y}}\ge 0
 \end{dmath}
 for all squences $(y_i)_{i\in\mathbb{N}_N^*}\in\mathcal{Y}^N$ and all sequences $(x_i)_{i\in\mathbb{N}_N^*}\in\mathcal{X}^N$. If $\mathcal{Y}$ is real we add the assumption that $f(x^{-1})=f(x)^*$ for all $x\in\mathcal{X}$.
 A consequence is that a positive definite function is bounded, as shown by \citet{falb1969theorem},
@@ -166,7 +166,7 @@ Such a measure on a \acs{LCA} group $\mathcal{X}$ is called a Haar measure\mpar{
 \begin{dmath*}
 \int_{\mathcal{X}}f(s\groupop x)d\Haar(x)=\int_{\mathcal{X}}f(x)d\Haar(x).
 \end{dmath*}
-It can be shown that $\Haar(U) > 0$ for every non-empty open subset $U$. In particular, if $\mathcal{X}$ is compact then $\Haar(\mathcal{X})$ is finite and positive, so we can uniquely specify a left Haar measure on $\mathcal{X}$ by adding the normalization condition $\Haar(\mathcal{X})=1$. We call measured space the space $(\mathcal{X},\mathcal{B}(\mathcal{X}),\Haar)$ the space $\mathcal{X}$ endowed with its Borel $\sigma$-algebra and some measure $\Haar$. If $\Haar(\mathcal{X})=1$ then the space $(\mathcal{X},\mathcal{B}(\mathcal{X}),\Haar)$ is called a probability space. Last but not least, on the additive group $(\mathbb{R},+)$, the Lebesgue measure noted $\Leb$ is a valid Haar measure. For a concise introduction and important properties we refer the reader to the lecture of \citet{tornier2014haar}.
+It can be shown that $\Haar(U) > 0$ for every non-empty open subset $U$. In particular, if $\mathcal{X}$ is compact then $\Haar(\mathcal{X})$ is finite and positive, so we can uniquely specify a Haar measure on $\mathcal{X}$ by adding the normalization condition $\Haar(\mathcal{X})=1$. We call measured space the space $(\mathcal{X},\mathcal{B}(\mathcal{X}),\Haar)$ the space $\mathcal{X}$ endowed with its Borel $\sigma$-algebra and some measure $\Haar$. If $\Haar(\mathcal{X})=1$ then the space $(\mathcal{X},\mathcal{B}(\mathcal{X}),\Haar)$ is called a probability space. Last but not least, on the additive group $(\mathbb{R},+)$, the Lebesgue measure noted $\Leb$ is a valid Haar measure. For a concise introduction and important properties we refer the reader to the lecture of \citet{tornier2014haar}.
 \subsection{Even and odd functions}
 Let $\mathcal{X}$ be a \acs{LCA} group and $\mathbb{K}$ be a field viewed as an additive group. We say that a function $f:\mathcal{X}\to\mathbb{K}$ is even if for all $x\in\mathcal{X}$, $f(x)=f\left(\inv{x}\right)$ and odd if $f(x)=-f\left(\inv{x}\right)$. The definition can be extended to operator-valued functions.
 \begin{definition}[Even and odd operator-valued function on a \acs{LCA} group]

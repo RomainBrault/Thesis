@@ -9,7 +9,7 @@ set(LATEX_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/${LATEX_OUTPUT_PATH}"
     CACHE STRING "Output directory")
 set(PDFLATEX_COMPILER ${PDFLATEX_COMPILER}
     CACHE STRING "Latex compiler")
-set(LATEX_COMPILER_FLAGS "-file-line-error -shell-escape -output-driver=\"xdvipdfmx -z 0\""
+set(LATEX_COMPILER_FLAGS "-file-line-error -shell-escape -output-driver=\"xdvipdfmx -z 0\" -bite"
     CACHE STRING "Flags passed to latex")
 set(LATEX_USE_SYNCTEX ${LATEX_USE_SYNCTEX}
     CACHE STRING "Use Synctex")

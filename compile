@@ -142,6 +142,7 @@ if [[ ${FORCE} = true ]]; then
 fi
 if [[ ${GENERATE} = false ]]; then
     cp -r ../gfx/bck/* ../${OUTPUT}
+    ./timeout 10 make ThesisRomainBrault_pdf || true
 else
     pip install -r ../requirements.txt
 fi

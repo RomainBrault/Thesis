@@ -20,16 +20,16 @@ $F(x \groupop \inv{z}) =\tilde{K}(x,z)-K(x,z)$ and study how the uniform norm
   \norm{\tilde{K}(x,z)-K(x,z)}_{\mathcal{Y},\mathcal{Y}}
 \end{dmath}
 behaves according to $D$. \Cref{fig:approximation_error} empirically shows convergence of three different \acs{OVK} approximations for $x,z$ sampled from the compact $[-1,1]^4$ and using an increasing number of sample points $D$. The log-log plot shows that all three kernels have the same convergence rate, up to a multiplicative factor.
-\begin{pycode}[approximation]
-sys.path.append('../src/')
-import approximation
+% \begin{pycode}[approximation]
+% sys.path.append('../src/')
+% import approximation
 
-err = approximation.main()
-\end{pycode}
+% err = approximation.main()
+% \end{pycode}
 
 \begin{figure}[!ht]
  \centering
- \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./approximation.pgf}}')}
+ % \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./approximation.pgf}}')}
  \caption[\acs{ORFF} reconstruction error]{Error reconstructing the target operator-valued kernel $K$ with \acs{ORFF}
  approximation $\tilde{K}$ for the decomposable, curl-free and divergence-free
  kernel.}
@@ -184,7 +184,7 @@ with $\kappa_2=4\sigma_p^2\epsilon^{-2}$ and
 \begin{dmath*}
 \kappa_1 = 2p(4 \abs{\mathcal{C}})^d\begin{cases} \exp\left( -\frac{\epsilon^2 D}{16\left(b+\frac{\epsilon}{6}\bar{u}\right)}\right) & \text{if}\enskip \epsilon\bar{u}\le 2(e-1)b \\\exp\left( -\frac{\epsilon D}{2(e-1)\bar{u}} \right) & \text{otherwise}.\end{cases}
 \end{dmath*}
-We choose $r$ such that $d\kappa_1r^{-d-1}-2\kappa_2r=0$, \ie~$r=\left(\frac{d\kappa_1}{2\kappa_2}\right)^{\frac{1}{d+2}}$.
+We choose $r$ such that $d\kappa_1r^{-d-1}-2\kappa_2r=0$, \acs{ie}~$r=\left(\frac{d\kappa_1}{2\kappa_2}\right)^{\frac{1}{d+2}}$.
 The bound becomes
 \begin{dmath*}
 \probability_{\mu} \Set{(\omega_j)_{j=1}^D | \sup_{\delta\in\mathcal{C}_{\Delta}} \norm{F(\delta)}\textbf{} \ge \epsilon }
@@ -208,7 +208,7 @@ Let $K$ be a $\mathcal{Y}$-Mercer kernel on $\mathcal{C}$, a compact subset of $
 \end{dmath*}
 \end{proposition}
 \begin{proof}
-It relies on the \iid~property of the random vectors $\omega_j$ and trigonometric identities (see the proof in \cref{sec:variance_bound} of the supplementary material).
+It relies on the \ac{iid}~property of the random vectors $\omega_j$ and trigonometric identities (see the proof in \cref{sec:variance_bound} of the supplementary material).
 \end{proof}
 % \begin{figure}[!ht]
 %   \centering

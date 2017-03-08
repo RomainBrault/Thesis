@@ -24,11 +24,12 @@
 \usepackage{silence}
 \WarningFilter{scrreprt}{Usage of package `titlesec' together}
 \WarningFilter{scrreprt}{Activating an ugly workaround}
-% Remove drafting to get rid of the '[ Date - classicthesis version 4.0 ]' text at the bottom of every page
-\PassOptionsToPackage{eulerchapternumbers,eulermath,listings,subfig,parts,linedheaders,floatperchapter,pdfspacing,dottedtoc}{classicthesis}
-% Available options: drafting parts nochapters linedheaders eulerchapternumbers beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc manychapters listings floatperchapter subfig
 
+\if@PDFX@
 \usepackage[a-1b]{pdfx}
+\else
+\usepackage{hyperref}
+\fi
 
 \usepackage{adforn}
 \usepackage{pythontex}
@@ -36,54 +37,32 @@
 \usepackage{cmap} % copy-paste pdf
 
 %----------------------------------------------------------------------------------------
-%	CHARACTER ENCODING
-%----------------------------------------------------------------------------------------
-
-% Set the encoding of your files. UTF-8 is the only sensible encoding nowadays. If you can't read äöüßáéçèê∂åëæƒÏ€ then change the encoding setting in your editor, not the line below. If your editor does not support utf8 use another editor!
-% \usepackage[utf8]{inputenc}
-
-%----------------------------------------------------------------------------------------
 %	USEFUL COMMANDS
 %----------------------------------------------------------------------------------------
-
-\newcommand{\pdf}{p.\,d.\,f.}
-\newcommand{\Pdf}{P.\,d.\,f.}
-\newcommand{\wrt}{w.\,r.\,t.}
-\newcommand{\Wrt}{W.\,r.\,t.}
-\newcommand{\ie}{i.\,e.}
-\newcommand{\iid}{i.\,i.\,d.}
-\newcommand{\proba}{p.}
-\newcommand{\asurely}{a.\,s.}
-\newcommand{\aeverywhere}{a.\,e.}
-\newcommand{\Ie}{I.\,e.}
-\newcommand{\eg}{e.\,g.}
-\newcommand{\Eg}{E.\,g.}
-
 \newcounter{dummy} % Necessary for correct hyperlinks (to index, bib, etc.)
 \providecommand{\mLyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
 \newlength{\abcd} % for ab..z string length calculation
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 %	PACKAGES
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 % \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 
-%------------------------------------------------
+%------------------------------------------------------------------------------
 
 % Spanish languages need extra options in order to work with this template
 %\PassOptionsToPackage{spanish,es-lcroman}{babel}
 \usepackage[american]{babel}
-\hyphenation{un-boun-ded}
 
- %------------------------------------------------
+%------------------------------------------------------------------------------
 
 \usepackage[absolute]{textpos}
 \usepackage{afterpage}
 \usepackage{pdflscape}
 \usepackage{rotating}
 
-%------------------------------------------------
+%------------------------------------------------------------------------------
 
 \usepackage{csquotes}
 \PassOptionsToPackage{%
@@ -102,46 +81,38 @@ natbib=true % natbib compatibility mode (\citep and \citet still work)
 }{biblatex}
 \usepackage{biblatex}
 
- %------------------------------------------------
+%------------------------------------------------------------------------------
 
 \PassOptionsToPackage{fleqn}{amsmath} % Math environments and more by the AMS
- \usepackage{amsmath}
- \usepackage{amssymb}
- %------------------------------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+%------------------------------------------------------------------------------
 
 \PassOptionsToPackage{T1}{fontenc} % T2A for cyrillics
 \usepackage{fontenc}
 
-%------------------------------------------------
+%------------------------------------------------------------------------------
 
 \usepackage{textcomp} % Fix warning with missing font shapes
 
-%------------------------------------------------
+%------------------------------------------------------------------------------
 
 \usepackage{scrhack} % Fix warnings when using KOMA with listings package
 
-%------------------------------------------------
+%------------------------------------------------------------------------------
 
 \usepackage{xspace} % To get the spacing after macros right
 
-%------------------------------------------------
+%------------------------------------------------------------------------------
 
 \usepackage{mparhack} % To get marginpar right
 
-%------------------------------------------------
+%------------------------------------------------------------------------------
 
 % Not necessary for overleaf's LaTeX version.
 % \usepackage{fixltx2e} % Fixes some LaTeX stuff
 
-%------------------------------------------------
-
-\PassOptionsToPackage{smaller}{acronym} % Include printonlyused in the first bracket to only show acronyms used in the text
-\usepackage{acronym} % Nice macros for handling all acronyms in the thesis
-
-%\renewcommand*{\acsfont}[1]{\textssc{#1}} % For MinionPro
-\renewcommand*{\aclabelfont}[1]{\acsfont{#1}}
-
-%------------------------------------------------
+%------------------------------------------------------------------------------
 
 \usepackage{graphicx}
 \usepackage{tikz}
@@ -161,9 +132,9 @@ natbib=true % natbib compatibility mode (\citep and \citet still work)
 \def\pgf@matrix@yscale{1}
 \makeatother
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 %	FLOATS: TABLES, FIGURES AND CAPTIONS SETUP
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 \usepackage{ltablex}
 \usepackage{threeparttablex}
 \setlength{\extrarowheight}{3pt} % Increase table row height
@@ -173,9 +144,9 @@ natbib=true % natbib compatibility mode (\citep and \citet still work)
 \captionsetup{font=small}
 \usepackage{subfig}
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 %	CODE LISTINGS SETUP
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \usepackage{listings}
 %\lstset{emph={trueIndex,root},emphstyle=\color{BlueViolet}}%\underbar} % For special keywords
@@ -197,9 +168,9 @@ frame=single, % Frame border - none/leftline/topline/bottomline/lines/single/sha
 belowcaptionskip=.75\baselineskip % Space after the "Listing #: Desciption" text and the listing box
 }
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 %	HYPERREFERENCES
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \usepackage{varioref}
 
@@ -222,16 +193,17 @@ urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,
 
 \VerbatimFootnotes
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 \usepackage[shortlabels]{enumitem}
 \usepackage{braket}
 \usepackage{dirtytalk}
 \usepackage{numprint}
+% Remove drafting to get rid of the '[ Date - classicthesis version 4.0 ]' text at the bottom of every page
+\PassOptionsToPackage{eulerchapternumbers,listings,subfig,parts,dottedtoc,floatperchapter,linedheaders,dottedtoc}{classicthesis}
+% Available options: drafting parts nochapters linedheaders eulerchapternumbers beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc manychapters listings floatperchapter subfig
 \usepackage{classicthesis}
 \usepackage{breqn}
 \usepackage{colonequals}
-% \usepackage{amsthm,thmtools}
-% \usepackage[amsthm,thmtools,noconfig]{ntheorem}
 \usepackage{amssymb,amsmath}
 \usepackage[amsmath,thmmarks]{ntheorem}
 \usepackage{mathtools}
@@ -273,51 +245,52 @@ urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,
 \DeclareFlexSymbol{\Phi}    {Var}{latin}{08}
 \DeclareFlexSymbol{\Psi}    {Var}{latin}{09}
 \DeclareFlexSymbol{\Omega}  {Var}{latin}{0A}
-\DeclareFlexSymbol{0}{Var}{latin}{30}
-\DeclareFlexSymbol{1}{Var}{latin}{31}
-\DeclareFlexSymbol{2}{Var}{latin}{32}
-\DeclareFlexSymbol{3}{Var}{latin}{33}
-\DeclareFlexSymbol{4}{Var}{latin}{34}
-\DeclareFlexSymbol{5}{Var}{latin}{35}
-\DeclareFlexSymbol{6}{Var}{latin}{36}
-\DeclareFlexSymbol{7}{Var}{latin}{37}
-\DeclareFlexSymbol{8}{Var}{latin}{38}
-\DeclareFlexSymbol{9}{Var}{latin}{39}
+\DeclareFlexSymbol{0}{Var}{digit}{30}
+\DeclareFlexSymbol{1}{Var}{digit}{31}
+\DeclareFlexSymbol{2}{Var}{digit}{32}
+\DeclareFlexSymbol{3}{Var}{digit}{33}
+\DeclareFlexSymbol{4}{Var}{digit}{34}
+\DeclareFlexSymbol{5}{Var}{digit}{35}
+\DeclareFlexSymbol{6}{Var}{digit}{36}
+\DeclareFlexSymbol{7}{Var}{digit}{37}
+\DeclareFlexSymbol{8}{Var}{digit}{38}
+\DeclareFlexSymbol{9}{Var}{digit}{39}
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\PassOptionsToPackage{smaller}{acronym} % Include printonlyused in the first bracket to only show acronyms used in the text
+\usepackage{acronym} % Nice macros for handling all acronyms in the thesis
+%\renewcommand*{\acsfont}[1]{\textssc{#1}} % For MinionPro
+\renewcommand*{\aclabelfont}[1]{\acsfont{#1}}
+
+%------------------------------------------------------------------------------
 %	CHANGING TEXT AREA
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
-\linespread{1.05} % a bit more for Palatino
+% \linespread{1.0} % a bit more for Palatino
 %\areaset[current]{312pt}{761pt} % 686 (factor 2.2) + 33 head + 42 head \the\footskip
 %\setlength{\marginparwidth}{7em}%
 %\setlength{\marginparsep}{2em}%
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 %	USING DIFFERENT FONTS
-%----------------------------------------------------------------------------------------
-
-% \usepackage[oldstylenums]{kpfonts} % oldstyle notextcomp
-% \usepackage[osf]{libertine}
-% \usepackage[light,condensed,math]{iwona}
-%\renewcommand{\sfdefault}{iwona}
-% \usepackage{lmodern} % <-- no osf support :-(
-% \usepackage{cfr-lm} %
-% \usepackage[urw-garamond]{mathdesign} % <-- no osf support :-(
-%\usepackage[default,osfigures]{opensans} % scale=0.95
-% \usepackage[MnSymbol]{mathspec}
-% \usepackage{xltxtra}
-% Ubuntu
-% \usepackage[sfdefault]{FiraSans}
-% OSX
-% \usepackage{ebgaramond}
-% \usepackage[urw-garamond]{mathdesign}
-\usepackage{fontspec-xetex}
-\setmainfont[Mapping=tex-text,
-             Ligatures={Common, Required, Rare, Contextual, Historic},
-             UprightFont={*-SemiBold},
-             BoldFont={*-Bold},
-             ItalicFont={*-SemiBoldItalic},
-             BoldItalicFont={*-BoldItalic}
-             ]{CormorantGaramond}
-\usepackage[oldstylenums,notext,nomath,frenchstyle,oldstylenumsmath,oldstylemath]{kpfonts}
+%------------------------------------------------------------------------------
+\usepackage[quiet]{mathspec}
+\usepackage{xltxtra} %also loads xunicode
+\setmathfont(Digits,Latin)[
+  Numbers={Lining,Proportional},
+  Mapping=tex-text,
+  Ligatures={Common, Rare, Historic},
+]{Hoefler Text}
+\setmathfont(Greek)[
+  Lowercase=Regular,
+  Uppercase=Regular
+]{Hoefler Text}
+\setmainfont[
+Mapping=tex-text,
+Ligatures={TeX, Common, Rare, Historic},
+% UprightFont={*-Medium},
+% BoldFont={*-Bold},
+% ItalicFont={*-MediumItalic},
+% BoldItalicFont={*-BoldItalic}
+]{Hoefler Text}

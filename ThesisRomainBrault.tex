@@ -68,7 +68,7 @@
 \newcommand{\NNT}{201XSACLSXXX}
 \newcommand{\EDN}{580}
 
-\immediate\write18{rm \jobname.xmpdata creationdate.lua}
+\immediate\write18{rm \jobname.xmpdata creationdate.lua || true}
 \begin{filecontents*}{\jobname.xmpdata}
     \Title{\myTitle}
     \Author{\myName}
@@ -95,13 +95,11 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[
-        a4paper,
         twoside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,
         footinclude=true,cleardoublepage=empty,
         dottedtoc, % Make page numbers in the table of contents flushed right with dots leading to them
-        BCOR=5mm,paper=a4,fontsize=11pt, % Binding correction, paper type and font size
-        american, % Languages, change this to your language(s)
-        drafting=false %
+        BCOR=5mm,paper=A4,fontsize=11pt, % Binding correction, paper type and font size
+        american % Languages, change this to your language(s)
         ]{scrreprt}
 
 % Includes the file which contains all the document configurations and packages - make sure to edit this file
@@ -110,7 +108,11 @@
 \addbibresource{Bibliography.bib} % The file housing your bibliography
 %\addbibresource[label=ownpubs]{Self_Publications.bib} % Uncomment for optional self-publications
 
-%\hyphenation{Put special hyphenation here}
+% https://www.hyphenation24.com/word/namely/
+\hyphenation{un-bound-ed}
+\hyphenation{Le-bes-gue}
+\hyphenation{Ra-don}
+\hyphenation{Hil-bert}
 
 \begin{document}
 \frenchspacing % Reduces space after periods to make text more compact

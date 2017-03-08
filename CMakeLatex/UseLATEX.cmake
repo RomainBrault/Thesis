@@ -418,14 +418,17 @@ function(latex_execute_latex)
     message(SEND_ERROR "Need to define LATEX_FULL_COMMAND")
   endif()
 
+  if(NOT PYTHONTEX_FULL_COMMAND)
+    message(SEND_ERROR "Need to define PYTHONTEX_FULL_COMMAND")
+  endif()
+
   set(full_command_original "${LATEX_FULL_COMMAND}")
   separate_arguments(LATEX_FULL_COMMAND)
   execute_process(
-    COMMAND ${LATEX_FULL_COMMAND}
+    COMMAND ${LATEX_FULL_COMMAND} -output-driver='xdvipdfmx -z 0'
     WORKING_DIRECTORY ${LATEX_WORKING_DIRECTORY}
     RESULT_VARIABLE execute_result
     )
-
   if(NOT ${execute_result} EQUAL 0)
     message("LaTeX command failed")
     message("${full_command_original}")
@@ -793,7 +796,7 @@ function(latex_setup_variables)
   latex_wantit(PS2PDF_CONVERTER ps2pdf)
   latex_wantit(PDFTOPS_CONVERTER pdftops)
 
-  set(LATEX_COMPILER_FLAGS "-shell-escape -output-driver=\"xdvipdfmx -z 0\" -interaction=batchmode -file-line-error"
+  set(LATEX_COMPILER_FLAGS "-interaction=batchmode -file-line-error"
     CACHE STRING "Flags passed to latex.")
   set(PDFLATEX_COMPILER_FLAGS ${LATEX_COMPILER_FLAGS}
     CACHE STRING "Flags passed to pdflatex.")
@@ -1328,7 +1331,8 @@ function(add_latex_targets_internal)
   set(pythontex_build_command
     ${PYTHONTEX_COMPILER} "--jobs" "1" "--verbose" ${LATEX_MAIN_INPUT}
     )
-  if(LATEX_COMPILER_ARGS MATCHES ".*batchmode.*")
+  if((LATEX_COMPILER_ARGS MATCHES ".*batchmode.*") OR
+     (LATEX_COMPILER_ARGS MATCHES ".*nonstopmode.*"))
     # Wrap command in script that dumps the log file on error. This makes sure
     # errors can be seen.
     set(latex_build_command
@@ -1344,7 +1348,8 @@ function(add_latex_targets_internal)
   set(pdflatex_build_command
     ${PDFLATEX_COMPILER} ${PDFLATEX_COMPILER_ARGS} ${synctex_flags} ${LATEX_MAIN_INPUT}
     )
-  if(PDFLATEX_COMPILER_ARGS MATCHES ".*batchmode.*")
+  if((PDFLATEX_COMPILER_ARGS MATCHES ".*batchmode.*") OR
+     (PDFLATEX_COMPILER_ARGS MATCHES ".*nonstopmode.*"))
     # Wrap command in script that dumps the log file on error. This makes sure
     # errors can be seen.
     set(pdflatex_build_command

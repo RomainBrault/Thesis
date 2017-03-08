@@ -37,7 +37,7 @@
 
    \path[-stealth, very thick]
     (del-top-1.south) edge [bend right] node [below, text width=10cm] {\centering\huge Fourier, \\ $\quad\Phi_x(\omega)y=\pairing{x,\omega}B(\omega)^\adjoint y$.} (del-top-2.south)
-    (del-top-2.south) edge [bend right] node [below, text width=14cm] {\centering\huge Monte-Carlo, \\ $\tildePhi{\omega}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D(\Phi_x y)(\omega_j)$, \\ \qquad\quad $\omega_j\sim \probability_{\dual{\Haar},\rho}$ \iid.} (del-top-3.south)
+    (del-top-2.south) edge [bend right] node [below, text width=14cm] {\centering\huge Monte-Carlo, \\ $\tildePhi{\omega}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D(\Phi_x y)(\omega_j)$, $\omega_j\sim \probability_{\dual{\Haar},\rho}$ \ac{iid}.} (del-top-3.south)
     ;
 
 \end{tikzpicture}

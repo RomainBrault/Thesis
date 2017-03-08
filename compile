@@ -120,6 +120,8 @@ while getopts ":hvufo:b:sSVg" opt; do
     esac
 done
 
+echo ${GENERATE}
+
 # Update
 if [[ ${UPDATE} = true ]]; then
     git pull github master
@@ -135,14 +137,14 @@ fi
 mkdir -p ${BUILD}
 cd ${BUILD}
 if [[ ${FORCE} = true ]]; then
-    cmake -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
+    cmake -DCMAKE_VERBOSE_MAKEFILE:BOOL=OFF \
           -DLATEX_OUTPUT_PATH=${OUTPUT} \
           -DPDFLATEX_COMPILER=${COMPILER} \
-          -DLATEX_USE_SYNCTEX=${SYNCTEX} ..
+          -DLATEX_USE_SYNCTEX:BOOL=${SYNCTEX} \
+          -DPDFX=true ..
 fi
 if [[ ${GENERATE} = false ]]; then
     cp -r ../gfx/bck/* ../${OUTPUT}
-    ./timeout 10 make ThesisRomainBrault_pdf || true
 else
     pip install -r ../requirements.txt
 fi
@@ -153,8 +155,10 @@ cd ..
 # Backup
 cd gfx
 mkdir -p bck
-cp ../${OUTPUT}/*.pgf bck
-cp ../${OUTPUT}/*.png bck
+cp ../${OUTPUT}/*.pgf bck || true
+cp ../${OUTPUT}/*.png bck || true
+cp ../${OUTPUT}/*.pytxcode bck || true
+cp -r ../${OUTPUT}/pythontex-files-ThesisRomainBrault bck || true
 cd ..
 
 # Sign document with pgp

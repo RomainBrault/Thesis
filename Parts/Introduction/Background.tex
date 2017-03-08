@@ -1,6 +1,6 @@
 %!TEX root = ../../ThesisRomainbrault.tex
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 \section{Notations}
 In this section with summarize briefly important notions used throughout this document. It is mainly base on books and lecture notes of \citet{kurdila2006convex,cotaescu2016elements}.
 
@@ -11,14 +11,14 @@ We note $\mathbb{K}$ any Abelian\mpar{Commutative.} field, $\mathbb{R}$ the Abel
 \subsection{Topology and continuity}{}
 In order to define a proper notion of continuity, we focus on topological spaces. A topological space is a pair of sets $(\mathcal{X},\mathcal{T}_x)$ where $\mathcal{X}$ describes the points considered, and $\mathcal{T}_x$ describes the possible neighbours. The standards axioms of topology suppose that $\mathcal{T}_x\subseteq{\mathcal{P}(\mathcal{X})}$ is a collection of subsets of $\mathcal{X}$ such that the empty set and $\mathcal{X}$ itself belongs to $\mathcal{T}_x$, any (finite or infinite) union of members of $\mathcal{T}_x$ still belongs to $\mathcal{T}_x$ and the intersection of any finite number of members of $\mathcal{T}_x$ still belongs to $\mathcal{T}_x$. The elements of $\mathcal{T}_x$ are called open sets and the collection $\mathcal{T}_x$ is a topology on $\mathcal{X}$. If $(\mathcal{X},\mathcal{T}_x)$ and $(\mathcal{Y},\mathcal{T}_y)$ are topological spaces, a function $f$ is said to be continuous if for every open set $\mathcal{V}\in \mathcal{T}_y$, the inverse image $f^{-1}(\mathcal{V}) = \Set{ x \in \mathcal{X} | f ( x ) \in \mathcal{V} }$ is an open subset of $\mathcal{T}_x$. Since the notion of continuity depends on open sets, it depends on the topology of the spaces $\mathcal{X}$ and $\mathcal{Y}$.
 \paragraph{}
-If $\mathcal{X}$ is a topological space and $x$ is a point in $\mathcal{X}$, a neighbourhood of $x$ is a subset $\mathcal{V}$ of $\mathcal{X}$ that includes an \emph{open} set $\mathcal{U}$ containing $x$. A topological space $\mathcal{X}$ is said to be Haussdorff (T2) when all distinct points in $\mathcal{X}$ are pairwise neighborhood-separable. \Ie~if there exists a neighbourhood $\mathcal{U}$ of $x$ and a neighbourhood $\mathcal{V}$ of $y$ such that $\mathcal{U}$ and $\mathcal{V}$ are disjoint. It implies the uniqueness of limits of sequences and existence of nets used throughout this thesis. Therefore in the whole document we always assume that a topological space $\mathcal{X}$ is Haussdorff.
+If $\mathcal{X}$ is a topological space and $x$ is a point in $\mathcal{X}$, a neighbourhood of $x$ is a subset $\mathcal{V}$ of $\mathcal{X}$ that includes an \emph{open} set $\mathcal{U}$ containing $x$. A topological space $\mathcal{X}$ is said to be Haussdorff (T2) when all distinct points in $\mathcal{X}$ are pairwise neighborhood-separable. \acs{Ie}~if there exists a neighbourhood $\mathcal{U}$ of $x$ and a neighbourhood $\mathcal{V}$ of $y$ such that $\mathcal{U}$ and $\mathcal{V}$ are disjoint. It implies the uniqueness of limits of sequences and existence of nets used throughout this thesis. Therefore in the whole document we always assume that a topological space $\mathcal{X}$ is Haussdorff.
 \paragraph{}
-A topological space is said to be separable if there exists a sequence $(x_n)_{n\in\mathbb{N}^*}$ of elements of $\mathcal{X}$ such that every nonempty open subsets of the space contains at least one element of the sequence. Separability plays an important role in numerical analysis because many theorems have only constructive proofs for separable spaces. Such constructive proofs can be turned into algorithms which is the primary goal of this work. In this document we also assume that any topological space is separable if there is no specific mention of the contrary.
+A topological space is said to be separable if there exists a sequence $(x_n)_{n\in\mathbb{N}^*}$ of elements of $\mathcal{X}$ such that every nonempty open subsets of the space contains at least one element of the sequence. Separability plays an important role in numerical analysis because many theorems have only constructive proofs for separable spaces. Such constructive proofs can be turned into algorithms which is the primary goal of this work. In this document we also assume that any topological space is separable if there is no specific mention of the contrary. Moreover we recall that a Hilbert space is separable if and only if it has a countable orthonormal basis. Hence an operator between two separable Hilbert spaces can be written as an infinite dimensional matrix.
 \paragraph{}
 If $\mathcal{X}$ and $\mathcal{Y}$ are two topological spaces, we denote by $\mathcal{F}(\mathcal{X};\mathcal{Y})$ the topological vector space of functions $f:\mathcal{X}\to\mathcal{Y}$ and $\mathcal{C}(\mathcal{X};\mathcal{Y})\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$ the subspace of continuous functions, endowed with the product topology (topology of pointwise convergence).
 
 \subsection{Measure theory}
-A $\sigma$-algebra on $\mathcal{X}$ is a set $\mathcal{M}\subseteq\mathcal{P}(\mathcal{X})$ of subsets of $\mathcal{X}$, containing the empty set, which is closed under taking complements and countable unions. A pair $(\mathcal{X},\mathcal{M})$ where $\mathcal{X}$ is a set and $\mathcal{M}$ is a $\sigma$-algebra is called a measure space. The Borel $\sigma$-algebra $\mathcal{B}(\mathcal{X})$ is a $\sigma$-algebra generated by the open sets of $\mathcal{X}$. A measure on a measurable space $(\mathcal{X},\mathcal{B}(\mathcal{X}))$ is a map $\mu: \mathcal{B}(X) \to \overline{\mathbb{R}}_+$ which is zero on the empty set and countably additive, \ie~for any subset $(\mathcal{Z}_n)_{n\in\mathbb{N}}$ is a sequence of pairwise disjoint measurable sets,
+A $\sigma$-algebra on $\mathcal{X}$ is a set $\mathcal{M}\subseteq\mathcal{P}(\mathcal{X})$ of subsets of $\mathcal{X}$, containing the empty set, which is closed under taking complements and countable unions. A pair $(\mathcal{X},\mathcal{M})$ where $\mathcal{X}$ is a set and $\mathcal{M}$ is a $\sigma$-algebra is called a measure space. The Borel $\sigma$-algebra $\mathcal{B}(\mathcal{X})$ is a $\sigma$-algebra generated by the open sets of $\mathcal{X}$. A measure on a measurable space $(\mathcal{X},\mathcal{B}(\mathcal{X}))$ is a map $\mu: \mathcal{B}(X) \to \overline{\mathbb{R}}_+$ which is zero on the empty set and countably additive, \acs{ie}~for any subset $(\mathcal{Z}_n)_{n\in\mathbb{N}}$ is a sequence of pairwise disjoint measurable sets,
 \begin{dmath*}
 \mu\left(\bigcup_{n\in\mathbb{N}}\mathcal{Z}_n\right)=\sum_{n\in\mathbb{N}}\mu(\mathcal{Z}_n).
 \end{dmath*}
@@ -26,34 +26,32 @@ A $\sigma$-algebra on $\mathcal{X}$ is a set $\mathcal{M}\subseteq\mathcal{P}(\m
 \subsection{Vector spaces, linear operators and matrices}
 Given any vector space $\mathcal{H}$ over an Abelian field $\mathbb{K}$, the (continuous) dual space \footnote{Or topological dual space. This must be differentiate from the \emph{algebraic} dual space, which is the space of linear functionals from the original vector-space to its base field. Hence the continuous dual space is a subset of the algebraic dual space. The continuous and the algebraic dual space only match when considering finite dimensional vector-spaces} $\mathcal{H}^\adjoint$ is defined as the set of all \emph{continuous} linear functionals $x^*: \mathcal{H} \to \mathbb{K}$. When $\mathcal{H}$ is a vector space, there is a natural duality pairing between $\mathcal{H}^\adjoint$ and $\mathcal{H}$ defined for all $x^\adjoint\in\mathcal{H}^\adjoint$ and all $z\in\mathcal{H}$ as $\pairing{x^\adjoint, z}_{\mathcal{H}^\adjoint,\mathcal{H}}=x^\adjoint(z)=x^\adjoint z$. The duality paring $\pairing{\cdot, \cdot}_{\mathcal{H}^\adjoint,\mathcal{H}}$ is then a bilinear form.
 \paragraph{}
-Let $\mathcal{H}_1$ and $\mathcal{H}_2$ be two vector spaces. The transpose (or dual) of an operator $W:~\mathcal{H}_1\to\mathcal{H}_2$ is defined as $W^T:\mathcal{H}_2^\adjoint \to \mathcal{H}_1^\adjoint$ such that $W^T:x^\adjoint\mapsto x^\adjoint(W)$. It is characterized by the relation $\pairing*{x^\adjoint, Wz}_{\mathcal{H}_2^\adjoint,\mathcal{H}_2}=\pairing*{W^Tx^\adjoint, z}_{\mathcal{H}_1^\adjoint,\mathcal{H}_1}$ for all $x^\adjoint\in\mathcal{H}_2^\adjoint$ and all $z\in\mathcal{H}_1$. An operator is called self-dual when $W^T=W$.
+Let $\mathcal{H}_1$ and $\mathcal{H}_2$ be two vector spaces. The transpose (or dual) of an operator $W:~\mathcal{H}_1\to\mathcal{H}_2$ is defined as $W^\transpose :\mathcal{H}_2^\adjoint \to \mathcal{H}_1^\adjoint$ such that $W^\transpose :x^\adjoint\mapsto x^\adjoint(W)$. It is characterized by the relation $\pairing*{x^\adjoint, Wz}_{\mathcal{H}_2^\adjoint,\mathcal{H}_2}=\pairing*{W^\transpose x^\adjoint, z}_{\mathcal{H}_1^\adjoint,\mathcal{H}_1}$ for all $x^\adjoint\in\mathcal{H}_2^\adjoint$ and all $z\in\mathcal{H}_1$. An operator is called self-dual when $W^\transpose =W$.
 \paragraph{}
-Let $\mathcal{H}$ be a vector space. We set $\mathcal{L}(\mathcal{H})=\mathcal{L}(\mathcal{H};\mathcal{H})$ to be the space of \emph{bounded} (continuous) linear operators from $\mathcal{H}$ to itself. If $W\in\mathcal{L}(\mathcal{H})$, $\Ker W$ denotes the nullspace, $\Ima W$ the image, $W^T \in \mathcal{L}(\mathcal{H}^*)$ the transpose and $\Dom W$ the domain of $W$.
+Let $\mathcal{H}$ be a vector space. We set $\mathcal{L}(\mathcal{H})=\mathcal{L}(\mathcal{H};\mathcal{H})$ to be the space of \emph{bounded} (continuous) linear operators from $\mathcal{H}$ to itself. If $W\in\mathcal{L}(\mathcal{H})$, $\Ker W$ denotes the nullspace, $\Ima W$ the image, $W^\transpose  \in \mathcal{L}(\mathcal{H}^*)$ the transpose and $\Dom W$ the domain of $W$.
 \paragraph{}
-If $\mathcal{H}$ is an Hilbert space on a field $\mathbb{K}$ we denote its scalar product by $\inner{\cdot,\cdot}_{\mathcal{H}}$ and its norm by $\norm{\cdot}_{\mathcal{H}}$. When the base field of $\mathcal{H}$ is $\mathbb{R}$, $\inner{\cdot,\cdot}_{\mathcal{H}}$ is a \emph{bilinear} form. When the base field of $\mathcal{H}$ is $\mathbb{C}$, $\inner{\cdot,\cdot}_{\mathcal{H}}$ is a \emph{sesquilinear} form. Let $\mathcal{H}_1$ and $\mathcal{H}_2$ be two Hibert spaces. The adjoint of an operator $W:\mathcal{H}_1\to\mathcal{H}_2$ is the unique mapping $W^\adjoint:\mathcal{H}_2\to\mathcal{H}_1$ such that $\inner{W^\adjoint x, z}_{\mathcal{H}_1}=\inner{x, Wz}_{\mathcal{H}_2}$ for all $x$, $z\in\Dom W$. An operator $W:\mathcal{H}\to\mathcal{H}$ is said to be symmetric when $W^\adjoint=W$ and self-adjoint when $W$ is symmetric and $\Dom W^\adjoint = \Dom W$. If $W$ is symmetric and $\Dom W=\mathcal{H}$ then $W$ is self-adjoint.
+If $\mathcal{H}$ is an Hilbert space on a field $\mathbb{K}$ we denote its scalar product by $\inner{\cdot,\cdot}_{\mathcal{H}}$ and its norm by $\norm{\cdot}_{\mathcal{H}}$. When the base field of $\mathcal{H}$ is $\mathbb{R}$, $\inner{\cdot,\cdot}_{\mathcal{H}}$ is a \emph{bilinear} form. When the base field of $\mathcal{H}$ is $\mathbb{C}$, $\inner{\cdot,\cdot}_{\mathcal{H}}$ is a \emph{sesquilinear} form. Let $\mathcal{H}_1$ and $\mathcal{H}_2$ be two Hibert spaces. The adjoint of a bounded operator $W:\mathcal{H}_1\to\mathcal{H}_2$ is the unique mapping $W^\adjoint:\mathcal{H}_2\to\mathcal{H}_1$ such that $\inner{W^\adjoint x, z}_{\mathcal{H}_1}=\inner{x, Wz}_{\mathcal{H}_2}$ for all $x$, $z\in\Dom W$. An operator $W:\mathcal{H}\to\mathcal{H}$ is said to be symmetric when $W^\adjoint=W$ and self-adjoint when $W$ is symmetric and $\Dom W^\adjoint = \Dom W$. If $W$ is symmetric and $\Dom W=\mathcal{H}$ then $W$ is self-adjoint.
 
 % By Riesz's representation theorem, for any $x\in\mathcal{H}$, $\iota:x\mapsto\inner{x, \cdot}_{\mathcal{H}}$ defines a unique isometric bounded linear functional.
 \paragraph{}
-Let $\mathcal{H}$ be a Hilbert space. From Riesz's representation theorem, there is a unique isometric isomorphism $\iota_R:\mathcal{H}\to\mathcal{H}^\adjoint$ such that for any $x$ and $y\in\mathcal{H}$, $\pairing{\iota_R(x), y}_{\mathcal{H}^\adjoint, \mathcal{H}}=\inner{x,y}_{\mathcal{H}}$ and $\norm{\iota_R(x)}_{\mathcal{H}^\adjoint}=\norm{x}_{\mathcal{H}}$. The riesz map $\iota_R$ is self-dual, thus if $\mathcal{H}$ is a Hilbert space, $\mathcal{H}$ is reflexive. \Ie~$\mathcal{H}^{\adjoint\adjoint}\cong\mathcal{H}$.  When the base field of $\mathcal{H}$ is $\mathbb{C}$, then $\iota_R$ is an \emph{anti-linear} form since $\inner{\cdot,\cdot}_{\mathcal{H}}$ is sesquilinear and $\pairing{\cdot, \cdot}_{\mathcal{H}^\adjoint, \mathcal{H}}$ is bilinear. In the same way when the base field of $\mathcal{H}$ is $\mathbb{R}$ then $\iota_R$ \emph{linear} since both $\inner{\cdot,\cdot}_{\mathcal{H}}$ and $\pairing{\cdot, \cdot}_{\mathcal{H}^\adjoint, \mathcal{H}}$ are linear. If $\mathcal{H}$ is a Hilbert space we make the dual space $\mathcal{H}^\adjoint$ a Hilbert space by endowing it with the inner product $\inner{x^\adjoint, z^\adjoint}_{\mathcal{H}^\adjoint}=\inner{\iota_R^{-1}(x^\adjoint), \iota_R^{-1}(z^\adjoint)}_{\mathcal{H}}$ for all $x^\adjoint$, $z^\adjoint\in\mathcal{H}^\adjoint$
+Let $\mathcal{H}$ be a Hilbert space. From Riesz's representation theorem, there is a unique isometric isomorphism $\iota_R:\mathcal{H}\to\mathcal{H}^\adjoint$ such that for any $x$ and $y\in\mathcal{H}$, $\pairing{\iota_R(x), y}_{\mathcal{H}^\adjoint, \mathcal{H}}=\inner{x,y}_{\mathcal{H}}$ and $\norm{\iota_R(x)}_{\mathcal{H}^\adjoint}=\norm{x}_{\mathcal{H}}$. The riesz map $\iota_R$ is self-dual, thus if $\mathcal{H}$ is a Hilbert space, $\mathcal{H}$ is reflexive. \acs{Ie}~$\mathcal{H}^{\adjoint\adjoint}\cong\mathcal{H}$.  When the base field of $\mathcal{H}$ is $\mathbb{C}$, then $\iota_R$ is an \emph{anti-linear} form since $\inner{\cdot,\cdot}_{\mathcal{H}}$ is sesquilinear and $\pairing{\cdot, \cdot}_{\mathcal{H}^\adjoint, \mathcal{H}}$ is bilinear. In the same way when the base field of $\mathcal{H}$ is $\mathbb{R}$ then $\iota_R$ \emph{linear} since both $\inner{\cdot,\cdot}_{\mathcal{H}}$ and $\pairing{\cdot, \cdot}_{\mathcal{H}^\adjoint, \mathcal{H}}$ are bilinear. If $\mathcal{H}$ is a Hilbert space we make the dual space $\mathcal{H}^\adjoint$ a Hilbert space by endowing it with the inner product $\inner{x^\adjoint, z^\adjoint}_{\mathcal{H}^\adjoint}=\inner{\iota_R^{-1}(x^\adjoint), \iota_R^{-1}(z^\adjoint)}_{\mathcal{H}}$ for all $x^\adjoint$, $z^\adjoint\in\mathcal{H}^\adjoint$. Notice that the transpose is linked to the adjoint by the relation $W^\adjoint = \iota_R^{-1} W^\transpose  \iota_R$, \acs{ie}~$W^\adjoint = \conj{W}^\transpose $.
+ % Notice that $\inner{x, Az}=x^\adjoint(A)z=\inner{A^\adjoint x,z}=A^\adjoint$
 \begin{figure}[htb]
 \centering
 \begin{tikzcd}[matrix scale=3]
-    \mathcal{H}_2 \arrow[r, "W^\adjoint"] \arrow[d, "\iota_R"] & \mathcal{H}_1  \arrow[d, "\iota_R"] \arrow[l, bend left, "W"] \\
-    \mathcal{H}_2^\adjoint  \arrow[r, "W^T"] & \mathcal{H}_1^\adjoint
+    \mathcal{H}_2 \arrow[r, "W^\adjoint"] \arrow[d, "\iota_R"] & \mathcal{H}_1  \arrow[d, bend left, "\iota_R"] \\
+    \mathcal{H}_2^\adjoint  \arrow[r, "W^\transpose "] & \mathcal{H}_1^\adjoint \arrow[u, bend left, "\iota_R^{-1}"]
 \end{tikzcd}
 \caption{\label{fig:riesz_map}Riesz map, dual spaces and adjoints.}
 \end{figure}
-
- % therefore there is an isomorphism betweeen $\mathcal{H}$ and its (continuous) dual $\mathcal{H}^\adjoint$. Hence if $x\in\mathcal{H}$ we can note $x^*\in\mathcal{H}^*$, $x^*=\inner{x,\cdot}_{\mathcal{H}}:\mathcal{H}\to\mathbb{K}$ the unique dual vector in the dual vector space $\mathcal{H}^*$ of $\mathcal{H}$.
-
+Let $\mathcal{H}$ be a \emph{separable} Hilbert space and let $(e_i)_{i\in\mathbb{N}^*}$ be an orthonormal basis of $\mathcal{H}$. We call $(e_i^\adjoint)_{i\in\mathbb{N}^*}$ the dual basis of $\mathcal{H}$, the basis of $\mathcal{H}^\adjoint$ such that for all $i$, $j\in\mathbb{N}^*$, $e_i^\adjoint(e_j)=\inner{e_i, e_j}_{\mathcal{H}}=\delta_{ij}$. In the whole document we consider that $\mathcal{H}^\adjoint$ is always equipped with the dual basis of $\mathcal{H}$.
+For a vector $x\in\mathcal{H}$ with an orthonormal basis $(e_i)_{i\in\mathbb{N}^*}$ we write $x_i=\inner{x, e_i}$. For a linear operator $W:\mathcal{H}_1\to\mathcal{H}_2$ where $\mathcal{H}_1$ and $\mathcal{H}_2$ are Hilbert spaces with respective orthonormal basis $(e_i)_{i\in\mathbb{N}^*}$ and $(e'_j)_{j\in\mathbb{N}^*}$, we note $W_i=We_i$ and $W_{ij}=\inner{e_j, We_i}_{\mathcal{H}_1}$.
 
 \paragraph{}
 We call matrix $M$ of size $(m,n)\in\mathbb{N}^2$ on an Abelian field $\mathbb{K}$ a collection of elements $M=(m_{ij})_{1\le i\le m, 1\le j \le n}$, $m_{ij}\in\mathbb{K}$. We note $\mathcal{M}_{m,n}(\mathbb{K})$ the vector space of all matrices. If $\mathcal{H}_1$ and $\mathcal{H}_2$ are two finite dimensional Hilbert spaces on an Abelian field $\mathbb{K}$, any bounded linear operator $L\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ can be viewed as a matrix. Let $n=\dim(\mathcal{H}_1)$, $m=\dim(\mathcal{H}_2)$ and let $B=(e_i)_{i=1}^{n}$ and $C=(e'_i)_{i=1}^{m}$ be the respective canonical bases of $\mathcal{H}_1$ and $\mathcal{H}_2$. We note $\text{mat}_{B, C}: \mathcal{L}(\mathcal{H}_1;\mathcal{H}_2) \to \mathcal{M}_{m,n}(\mathbb{K})$ such that $M=\text{mat}_{B, C}(L)=(\inner{e'_j, L e_i})_{1\le i\le n, 1\le j \le m}\in\mathcal{M}_{m,n}(\mathbb{K})$. Let $M_1\in\mathcal{M}_{m,n}(\mathbb{K})$ and $M_2\in\mathcal{M}_{n,l}(\mathbb{K})$. The product between two matrices is written $M_1M_2\in\mathcal{M}_{m,l}(\mathbb{K})$ and obey $(M_1M_2)_{ij} = \sum_{k=1}^n M_{ik}M_{kj}$. Given two linear operator $L_1\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ and $L2\in\mathcal{L}(\mathcal{H}_2;\mathcal{H}_3)$ we have $L_1L_2\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_3)$ and \begin{dmath*}
 \text{mat}_{B, D}(L_1L_2)=\text{mat}_{B, C}(L_1)\text{mat}_{C, D}(L_2).
 \end{dmath*}
 The operator $\text{mat}_{B, C}$ is a vector space isomorphism allowing us to identify $\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ with $\mathcal{M}_{mn}(\mathbb{K})$ where $n=\dim(\mathcal{H}_1)$ and $m=\dim(\mathcal{H}_2)$. All these notations are summarized in \cref{table:notations}.
-
-
 
 \afterpage{%
 \begin{table}[!ht]
@@ -69,8 +67,8 @@ $\mathbb{C}$ & The Abelian field of complex numbers. \\
 $\iu \in\mathbb{C}$ & Unit pure imaginary number $\sqrt{-1}$. \\
 $\ec \in\mathbb{R}$ & Euler constant. \\
 $\delta_{ij}$ & Kronecker delta function. $\delta_{ij}=0$ if $i \neq j$, $1$ otherwise. \\
-$\inner{\cdot,\cdot}$ & Euclidean inner product. \\
-$\norm{\cdot}$ & Euclidean norm. \\
+$\inner{\cdot,\cdot}_2$ & Euclidean inner product. \\
+$\norm{\cdot}_2$ & Euclidean norm. \\
 $\mathcal{X}$ & Input space. \\
 $\dual{\mathcal{X}}$ & The Pontryagin dual of $\mathcal{X}$. \\
 $\mathcal{Y}$ & Output space (Hilbert space). \\
@@ -92,11 +90,11 @@ $\Vect_{j=1}^D x_i$ & The direct sum of $D$ vectors $x_i$'s in $\mathcal{H}$. \\
 \end{tabularx}
 \end{table}}
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 \section{About statistical learning}
 \label{sec:about_statistical_learning}
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 \section{On large-scale learning}
 \label{sec:on_large-scale_learning}
 
@@ -113,13 +111,13 @@ $\Vect_{j=1}^D x_i$ & The direct sum of $D$ vectors $x_i$'s in $\mathcal{H}$. \\
 
 \subsection{Recent extensions}
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 \section{Elements of abstract harmonic analysis}
 \label{sec:abstract_harmonic}
 
 \subsection{Locally compact Abelian groups}
 \begin{definition}[\acf{LCA} group.]
-A group $\mathcal{X}$ endowed with a binary operation $\groupop$ is said to be a Locally Compact Abelian group if $\mathcal{X}$ is a topological \emph{commutative} group \wrt~$\groupop$ for which every point has a compact neighborhood and is Hausdorff (T2).
+A group $\mathcal{X}$ endowed with a binary operation $\groupop$ is said to be a Locally Compact Abelian group if $\mathcal{X}$ is a topological \emph{commutative} group \acs{wrt}~$\groupop$ for which every point has a compact neighborhood and is Hausdorff (T2).
 \end{definition}
 Moreover given a element $z$ of al \ac{LCA} group $\mathcal{X}$, we define the set $z\groupop\mathcal{X}=\mathcal{X}\groupop z=\Set{z\groupop x|\forall x\in\mathcal{X}}$ and the set $\mathcal{X}^{-1}=\Set{x^{-1}|\forall x\in\mathcal{X}}$.
 We also note $e$ the neural element of $\mathcal{X}$ such that $x\groupop e=e \groupop x= e$ for all $x\in\mathcal{X}$.
@@ -201,7 +199,7 @@ Let $(\mathcal{X}, \groupop)$ be a \ac{LCA} group with $e$ its neutral element a
 (\omega_1 \groupop \omega_2)(x)=\omega_1(x)\omega_2(x) \hiderel{\in} \mathbb{U}.
 \end{dmath*}
 \paragraph{}
-The Pontryagin duality theorem states that $\dual{\dual{\mathcal{X}}}\cong \mathcal{X}$. \Ie~there is a canonical isomorphism between any \ac{LCA} group and its double dual. To emphasize this duality the following notation is usually adopted
+The Pontryagin duality theorem states that $\dual{\dual{\mathcal{X}}}\cong \mathcal{X}$. \acs{Ie}~there is a canonical isomorphism between any \ac{LCA} group and its double dual. To emphasize this duality the following notation is usually adopted
 \begin{dmath}
 \label{eq:paringdef}
 \omega(x)=\pairing{x,\omega}\hiderel{=}\pairing{\omega,x}\hiderel{=}x(\omega),
@@ -294,9 +292,9 @@ Hence $\dual{\mathbb{R}^d}\cong\mathbb{R}^d$ with duality pairing
 \label{eq:pairing-skewed}
 \pairing{x, \omega} = \exp\left(\iu\sum_{k=1}^d\log(x_k+c_k)\omega_k\right).
 \end{dmath*}
-Hence $h_\omega(x)=\sum_{k=1}^d \log(x_k+c_k)\omega_k=\inner{\log(x+c),\omega}_2$. Eventually the natural Haar measure on product group is the product measure. \Eg~for $\mathcal{X}=\mathbb{R}^d$, the Haar measure on $\mathbb{R}^d$ is the d-th power of the Lebesgue measure on $\mathbb{R}$. \Cref{tab:dual_and_pairing} provide an explicit list of pairings for various groups based on $\mathbb{R}^d$ or its subsets. The interested reader can refer to~\citet{folland1994course} for a more detailed construction of \ac{LCA}, Pontryagin duality and \acl{FT}s on \ac{LCA}.
+Hence $h_\omega(x)=\sum_{k=1}^d \log(x_k+c_k)\omega_k=\inner{\log(x+c),\omega}_2$. Eventually the natural Haar measure on product group is the product measure. \acs{Eg}~for $\mathcal{X}=\mathbb{R}^d$, the Haar measure on $\mathbb{R}^d$ is the d-th power of the Lebesgue measure on $\mathbb{R}$. \Cref{tab:dual_and_pairing} provide an explicit list of pairings for various groups based on $\mathbb{R}^d$ or its subsets. The interested reader can refer to~\citet{folland1994course} for a more detailed construction of \ac{LCA}, Pontryagin duality and \acl{FT}s on \ac{LCA}.
 
-\subsection{The \acl{FT}}
+\subsection[The Fourier Transform]{The \acl{FT}}
 For a function with values in a separable Hilbert space $f\in L^1(\mathcal{X},\Haar;\mathcal{Y})$, we denote $\FT{f}$ its \acf{FT} which is defined by
 \begin{dmath*}
     \forall \omega \in \dual{\mathcal{X}},\enskip \FT{f}(\omega) \hiderel{=}\int_{\mathcal{X}} \conj{\pairing{x,\omega}}f(x)d\Haar(x).
@@ -313,14 +311,18 @@ Given a measure $\Haar$ defined on $\mathcal{X}$, there exists a unique suitably
 \label{fourier-l1}
 f(x)\hiderel{=}\int_{\dual{\mathcal{X}}}\pairing{x,\omega}\FT{f}(\omega) d\dual{\Haar}(\omega) \condition{for $\Haar$-almost all $x\in \mathcal{X}$.}
 \end{dmath}
-\ie~such that $(\mathcal{R}\mathcal{F}\FT{f})(x)=\mathcal{F}^{-1}\FT{f}(x)=f(x)$ for $\Haar$-almost all $x\in\mathcal{X}$. If $f$ is continuous this relation holds for all $x\in\mathcal{X}$.
+\acs{ie}~such that $(\mathcal{R}\mathcal{F}\FT{f})(x)=\mathcal{F}^{-1}\FT{f}(x)=f(x)$ for $\Haar$-almost all $x\in\mathcal{X}$. If $f$ is continuous this relation holds for all $x\in\mathcal{X}$.
 \end{theorem}
 \begin{proof}
 The proof is based on Bochner's theorem and the Pontryagin duality theorem. We refer the reader to \citet[theorem~4.22 page~105 and theorem~4.33 page~111]{folland1994course} for the full proof.
 \end{proof}
 Thus when a Haar measure $\Haar$ on $\mathcal{X}$ is given, the measure on $\dual{\mathcal{X}}$ that makes \cref{th:fourier_inversion} true is called the dual measure of $\Haar$, noted $\dual{\Haar}$. Let $c\in\mathbb{R}_*$ If $c\Haar$ is the measure on $\mathcal{X}$, then $c^{-1}\dual{\Haar}$ is the dual measure on $\dual{\mathcal{X}}$. Hence one must replace $\dual{\Haar}$ by $c^{-1}\dual{\Haar}$ in the inversion formula to compensate. Therefore, \emph{we always take the Haar measure $\dual{\Haar}$ on $\dual{\mathcal{X}}$ to be the dual of the given Haar measure $\Haar$ on $\mathcal{X}$}. Whenever $\dual{\Haar}=\Haar$ we say that the Haar measure is self-dual.
 \paragraph{}
-Moreover if $\dual{\Haar}$ is normalized, the \acl{FT} on $L^1(\mathcal{X},\Haar;\mathcal{Y})\cap L^2(\mathcal{X},\Haar;\mathcal{Y})$ extends uniquely to a unitary isomorphism from $L^2(\mathcal{X}, \Haar, \mathcal{Y})$ onto $L^2(\dual{\mathcal{X}}, \dual{\Haar}; \mathcal{Y})$ (Plancherel theorem). For the familiar case of a scalar-valued function $f$ on the \ac{LCA} group $(\mathbb{R}^d, +)$, we have for all $\omega\in \dual{\mathcal{X}}=\mathbb{R}^d$
+Moreover if $\dual{\Haar}$ is normalized, the \acl{FT} on
+\begin{dmath*}
+L^1(\mathcal{X},\Haar;\mathcal{Y})\cap L^2(\mathcal{X},\Haar;\mathcal{Y})
+\end{dmath*}
+extends uniquely to a unitary isomorphism from $L^2(\mathcal{X}, \Haar, \mathcal{Y})$ onto $L^2(\dual{\mathcal{X}}, \dual{\Haar}; \mathcal{Y})$ (Plancherel theorem). For the familiar case of a scalar-valued function $f$ on the \ac{LCA} group $(\mathbb{R}^d, +)$, we have for all $\omega\in \dual{\mathcal{X}}=\mathbb{R}^d$
 \begin{dmath}
 \label{fourier-R-plus}
 \FT{f}(\omega)
@@ -365,12 +367,15 @@ is called the representation space of $\pi$. A representation $\pi$ of a group $
 v &\mapsto \pi(x)v.
 \end{cases}
 \end{dmath*}
-If for all $x\in\mathcal{X}$, $\pi(x)$ is a unitary operator, then the group representation $\pi$ is said to be unitary (\ie~$\forall x\in\mathcal{X}$, $\pi(x)$ is isometric and surjective). Thus $\pi$ is unitary when for all $x\in\mathcal{X}$
+If for all $x\in\mathcal{X}$, $\pi(x)$ is a unitary operator, then the group representation $\pi$ is said to be unitary (\acs{ie}~$\forall x\in\mathcal{X}$, $\pi(x)$ is isometric and surjective). Thus $\pi$ is unitary when for all $x\in\mathcal{X}$
 \begin{dmath*}
 \pi(x)^*\hiderel{=}\pi(x)^{-1}\hiderel{=}\pi\left(x^{-1}\right).
 \end{dmath*}
 \paragraph{}
-The representation $\pi$ of $\mathcal{X}$ in $\mathcal{H}$ is said to be irreducible when $\mathcal{H}\neq \Set{0}$ and are the only two stable invariant subspaces under all operators $\pi(x)$ for all $x\in\mathcal{X}$. \Ie~for all $ U\subset\mathcal{H}$, $U\neq \Set{0}$, $\Set{\pi(x)v|\forall x\in\mathcal{X},\forall v\in\mathcal{U}}\neq \mathcal{U}$.
+The representation $\pi$ of $\mathcal{X}$ in $\mathcal{H}$ is said to be irreducible when $\mathcal{H}\neq \Set{0}$ and are the only two stable invariant subspaces under all operators $\pi(x)$ for all $x\in\mathcal{X}$. \acs{Ie}~for all $ U\subset\mathcal{H}$, $U\neq \Set{0}$,
+\begin{dmath*}
+\Set{\pi(x)v|\forall x\in\mathcal{X},\forall v\in\mathcal{U}}\neq \mathcal{U}.
+\end{dmath*}
 \paragraph{}
 To study \ac{LCA} groups we also introduce the left regular representation of $\mathcal{X}$ acting on a Hilbert space of function $\mathcal{H}\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$. For all $x$, $z\in\mathcal{X}$ and for all $f\in\mathcal{H}$,
 \begin{dmath*}
@@ -389,7 +394,7 @@ A \acf{vv-RKHS} is a functional vector space defined as follow.
 \begin{definition}[\acl{vv-RKHS}~\citep{carmeli2006vector,Micchelli2005}]
 Let $\mathcal{Y}$ be a (real or complex) Hilbert space. A \acl{vv-RKHS} on $\mathcal{X}$, a locally compact second countable topological space is a Hilbert space $\mathcal{H}$ such that
 \begin{propenum}
-\item the elements of $\mathcal{H}$ are functions from $\mathcal{X}$ to $\mathcal{Y}$ (\ie~$\mathcal{H} \subset \mathcal{F}(\mathcal{X}, \mathcal{Y})$);
+\item the elements of $\mathcal{H}$ are functions from $\mathcal{X}$ to $\mathcal{Y}$ (\acs{ie}~$\mathcal{H} \subset \mathcal{F}(\mathcal{X}, \mathcal{Y})$);
 \item for all $x\in\mathcal{X}$, there exists a positive constant $C_x$ such that for all $f\in\mathcal{H}$
 \begin{dmath}
 \label{eq:RKHS_bounded}
@@ -407,7 +412,7 @@ Given $\mathcal{X}$ a locally compact second countable topological space and  $\
 for all $N\in\mathbb{N}$, for all sequences of points $(x_i)_{i=1}^N$ in $\mathcal{X}^N$ and all sequences of points $(y_i)_{i=1}^N$ in $\mathcal{Y}^N$.
 \label{def:ovk}
 \end{definition}
-if $\mathcal{Y}$ is a complex Hilbert space, a positive-definite \acl{OVK} is always self-adjoint, \ie~$K(x,z)=K(z,x)^\adjoint$. This gives rise to the following definition of positive definite \acl{OVK} acting on a real Hilbert space.
+if $\mathcal{Y}$ is a complex Hilbert space, a positive-definite \acl{OVK} is always self-adjoint, \acs{ie}~$K(x,z)=K(z,x)^\adjoint$. This gives rise to the following definition of positive definite \acl{OVK} acting on a real Hilbert space.
 \begin{definition}[positive-definite \acl{OVK} acting on a real Hilbert space]
 \label{def:reproducing_kernel_real}
 Given $\mathcal{X}$ a locally compact second countable topological space and $\mathcal{Y}$ a real Hilbert Space, a map $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called a positive-definite \acl{OVK} kernel if
@@ -505,7 +510,7 @@ K_{\mathcal{H}}(x,z)y\hiderel{=}(\text{ev}^\adjoint_zy)(x)\hiderel{=}K(x,z)y.
 \end{dmath*}
 The uniqueness of $\mathcal{H}$ comes from the uniqueness of the completion of $\mathcal{H}_0$ up to an isometry.
 \end{proof}
-The above theorem also holds if $\mathcal{Y}$ is a real Hilbert space provided we add the assumption that $K(x,z)$ is self-adjoint \ie~$K(x,z)=K(z,x)^\adjoint$ for all $x$, $z\in\mathcal{X}$. Then $K(x,z)$ still defines a valid symmetric bilinear form on $\mathcal{Y}$ when $\mathcal{Y}$ is a \emph{real} Hilbert space.
+The above theorem also holds if $\mathcal{Y}$ is a real Hilbert space provided we add the assumption that $K(x,z)$ is self-adjoint \acs{ie}~$K(x,z)=K(z,x)^\adjoint$ for all $x$, $z\in\mathcal{X}$. Then $K(x,z)$ still defines a valid symmetric bilinear form on $\mathcal{Y}$ when $\mathcal{Y}$ is a \emph{real} Hilbert space.
 \paragraph{}
 Since an positive-definite \acl{OVK} defines a unique \acf{vv-RKHS} and conversely a \ac{vv-RKHS} defines a unique \acl{OVK}, we denotes the Hilbert space $\mathcal{H}$ endowed with the scalar product $\inner{\cdot,\cdot}$ respectively $\mathcal{H}_K$ and $\inner{\cdot,\cdot}_K$. From now we refer to positive-definite \acl{OVK} or reproducing \acl{OVK} as \acl{OVK} whether they act on complex or real Hilbert spaces. As a consequence, given $K$ an \acl{OVK}, define $K_x=K(\cdot,x)$ we have
 \begin{dgroup}
@@ -606,7 +611,7 @@ Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{Y}$ be a reproducing kernel where
 \begin{proof}
 From \cref{pr:characterization_mercer_kernels} $K$ is a $\mathcal{Y}$-Mercer kernel if and only if $\mathcal{H}_K\subset \mathcal{C}(\mathcal{X};\mathcal{Y})$. Applying \cref{lm:separability} of~\citet{carmeli2006vector}, we have that $\mathcal{H}_K$ is separable.
 \end{proof}
-Thus since $\mathcal{H}_K$ is also a Hilbert space and is separable it is second countable (\ie~it has a countable orthonormal basis). An important consequence is that if $K$ is a $\mathcal{Y}$-Mercer and $\mathcal{X}$ and $\mathcal{Y}$ are separable then $\mathcal{H}_K$ and any resdescription is isometrically isomorphic to $\ell^2$.
+Thus since $\mathcal{H}_K$ is also a Hilbert space and is separable it is second countable (\acs{ie}~it has a countable orthonormal basis). An important consequence is that if $K$ is a $\mathcal{Y}$-Mercer and $\mathcal{X}$ and $\mathcal{Y}$ are separable then $\mathcal{H}_K$ and any resdescription is isometrically isomorphic to $\ell^2$.
 
 %----------------------------------------------------------------------------------------
 \subsection{Shift-Invariant operator-valued kernels}
@@ -710,13 +715,13 @@ Assume $\mathcal{X}=(\mathbb{R}^d, +)$ and $\mathcal{Y}=\mathbb{R}^p$ with $d=p$
 The \emph{divergence-free} kernel is defined as %
 \begin{dmath*}\label{div-def}
 K^{div}(x,z)=K^{div}_0(\delta)
-\hiderel{=} (\nabla\nabla^T - \Delta I) k_0(\delta)
+\hiderel{=} (\nabla\nabla^\transpose  - \Delta I) k_0(\delta)
 \end{dmath*} %
 and the \emph{curl-free} kernel as %
 \begin{dmath*}\label{curl-def}
-K^{curl}(x,z)\hiderel{=}K_0^{curl}(\delta)=-\nabla\nabla^T k_0(\delta),
+K^{curl}(x,z)\hiderel{=}K_0^{curl}(\delta)=-\nabla\nabla^\transpose  k_0(\delta),
 \end{dmath*} %
-where $\nabla$ is the gradient operator\mpar{See \cref{subsec:gradient_methods} for a formal definition of the operator $\nabla$.}, $\nabla\nabla^T$ is the Hessian operator and $\Delta$ is the Laplacian operator. %
+where $\nabla$ is the gradient operator\mpar{See \cref{subsec:gradient_methods} for a formal definition of the operator $\nabla$.}, $\nabla\nabla^\transpose $ is the Hessian operator and $\Delta$ is the Laplacian operator. %
 \end{definition}
 Although taken separately these kernels are not universal, a convex combination of the curl-free and divergence-free kernels allows to learn any vector field that satisfies the Helmholtz decomposition theorem~\citep{Macedo2008, Baldassare2012}.
 

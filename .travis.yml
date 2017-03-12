@@ -32,7 +32,7 @@ install:
   - pip install -r requirements.txt
 
 before_script:
-  - cp -r .fonts $HOME/.fonts
+  - cp -r fonts $HOME/.fonts
   - fc-cache -fv
 
 script:

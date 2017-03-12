@@ -5,8 +5,8 @@ set -e
 GPG_TTY=$(tty)
 export GPG_TTY
 
-cp bin/ThesisRomainBrault.pdf ~/Dropbox/CorrectionsRomain/Romain
-cp bin/ThesisRomainBrault.pdf.asc ~/Dropbox/CorrectionsRomain/Romain
+cp bin/ThesisRomainBrault.pdf ~/Dropbox/CorrectionsRomain/Romain || true
+cp bin/ThesisRomainBrault.pdf.asc ~/Dropbox/CorrectionsRomain/Romain || true
 
 git pull origin master
 git add -A

@@ -3,18 +3,24 @@
 
 \refstepcounter{dummy}
 
-\pdfbookmark[1]{\contentsname}{tableofcontents} % Bookmark name visible in a PDF viewer
+% Bookmark name visible in a PDF viewer
+\pdfbookmark[1]{\contentsname}{tableofcontents}
+% Depth of sections to include in the table of contents - currently up to
+% subsections
+\setcounter{tocdepth}{2}
 
-\setcounter{tocdepth}{2} % Depth of sections to include in the table of contents - currently up to subsections
+% Depth of sections to number in the text itself - currently up to
+% subsubsections
+\setcounter{secnumdepth}{3}
 
-\setcounter{secnumdepth}{3} % Depth of sections to number in the text itself - currently up to subsubsections
-
-\manualmark
-\markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}}
+\manualmark\markboth{\spacedlowsmallcaps{\contentsname}}{%
+\spacedlowsmallcaps{\contentsname}}
 \tableofcontents
 \automark[section]{chapter}
-\renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}}
+\renewcommand{\chaptermark}[1]{\markboth{%
+\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
+\renewcommand{\sectionmark}[1]{\markright{%
+\thesection\enspace\spacedlowsmallcaps{#1}}}
 
 \clearpage
 
@@ -23,76 +29,89 @@
 \let\cleardoublepage\relax
 \let\cleardoublepage\relax
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 %	List of Figures
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \refstepcounter{dummy}
-%\addcontentsline{toc}{chapter}{\listfigurename} % Uncomment if you would like the list of figures to appear in the table of contents
-\pdfbookmark[1]{\listfigurename}{lof} % Bookmark name visible in a PDF viewer
+% Uncomment if you would like the list of figures to appear in the table of
+% contents 
+% \addcontentsline{toc}{chapter}{\listfigurename}
 
+% Bookmark name visible in a PDF viewer
+\pdfbookmark[1]{\listfigurename}{lof}
 \listoffigures
 
 \vspace{8ex}
 \newpage
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 %	List of Tables
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \refstepcounter{dummy}
-%\addcontentsline{toc}{chapter}{\listtablename} % Uncomment if you would like the list of tables to appear in the table of contents
-\pdfbookmark[1]{\listtablename}{lot} % Bookmark name visible in a PDF viewer
+% Uncomment if you would like the list of tables to appear in the table of
+% contents
+% \addcontentsline{toc}{chapter}{\listtablename}
 
+% Bookmark name visible in a PDF viewer
+\pdfbookmark[1]{\listtablename}{lot}
 \listoftables
 
 \vspace{8ex}
 \newpage
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 %	List of Listings
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 %
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 %	Acronyms
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \refstepcounter{dummy}
-%\addcontentsline{toc}{chapter}{Acronyms} % Uncomment if you would like the acronyms to appear in the table of contents
-\pdfbookmark[1]{Acronyms}{acronyms} % Bookmark name visible in a PDF viewer
+% Uncomment if you would like the acronyms to appear in the table of contents
+% \addcontentsline{toc}{chapter}{Acronyms}
+
+% Bookmark name visible in a PDF viewer
+\pdfbookmark[1]{Acronyms}{acronyms}
 
 \markboth{\spacedlowsmallcaps{Acronyms}}{\spacedlowsmallcaps{Acronyms}}
 
 \chapter*{Acronyms}
 
 \begin{acronym}[vv-RKHS]
-\acro{iid}[i.\,i.\,d.]{in\-de\-pen\-dent iden\-ti\-cal\-ly dis\-tri\-bu\-ted}.
-\acro{Iid}[I.\,i.\,d.]{In\-de\-pen\-dent iden\-ti\-cal\-ly dis\-tri\-bu\-ted}.
-\acro{pdf}[p.\,d.\,f.]{pro\-bi\-bi\-li\-ty den\-si\-ty func\-tion}.
-\acro{Pdf}[P.\,d.\,f.]{Pro\-ba\-bi\-li\-ty den\-si\-ty func\-tion}.
-\acro{proba}[p.]{in pro\-ba\-bi\-li\-ty}.
-\acro{Proba}[P.]{In pro\-ba\-bi\-li\-ty}.
-\acro{asurely}[a.\,s.]{al\-most su\-re\-ly}.
-\acro{Asurely}[A.\,s.]{Al\-most su\-re\-ly}.
-\acro{aeverywhere}[a.\,e.]{al\-most eve\-ry\-where}.
-\acro{Aeverywhere}[A.\,e.]{Al\-most eve\-ry\-where}.
-\acro{eg}[e.\,g.]{ex\-em\-pli gra\-tia}.
-\acro{Eg}[E.\,g.]{Ex\-em\-pli gra\-tia}.
-\acro{wrt}[w.\,r.\,t.]{with res\-pect to}.
-\acro{Wrt}[W.\,r.\,t.]{With res\-pect to}.
-\acro{ie}[i.\,e.]{id est}.
-\acro{Ie}[I.\,e.]{Id est}.
-\acro{MSE}{Mean Squa\-red Er\-ror}.
-\acro{OVK}{Op\-er\-a\-tor-Va\-lued Ker\-nel}.
-\acro{RFF}{Random Fourier Feature}.
-\acro{ORFF}{Op\-er\-a\-tor-va\-lued Ran\-dom Fou\-rier Fea\-ture}.
-\acro{POVM}{Po\-si\-ti\-ve Ope\-ra\-tor-Va\-lued Mea\-sure}.
-\acro{RKHS}{Re\-pro\-du\-cing Ker\-nel Hil\-bert Spa\-ce}.
-\acro{vv-RKHS}[\texorpdfstring{$\mathcal{Y}$}--RKHS]{\texorpdfstring{$\mathcal{Y}$}--Re\-pro\-du\-cing Ker\-nel Hil\-bert Spa\-ce}.
-\acro{LCA}{Lo\-cal\-ly Com\-pact Abe\-lian}.
-\acro{FT}{Fou\-rier Trans\-form}.
-\acro{IFT}{In\-ver\-se Fou\-rier Trans\-form}.
+	\acro{iid}[i.\,i.\,d.]{in\-de\-pen\-dent iden\-ti\-cal\-ly
+	dis\-tri\-bu\-ted}.
+	\acro{Iid}[I.\,i.\,d.]{In\-de\-pen\-dent iden\-ti\-cal\-ly
+	dis\-tri\-bu\-ted}.
+	\acro{pdf}[p.\,d.\,f.]{pro\-bi\-bi\-li\-ty den\-si\-ty func\-tion}.
+	\acro{Pdf}[P.\,d.\,f.]{Pro\-ba\-bi\-li\-ty den\-si\-ty func\-tion}.
+	\acro{proba}[p.]{in pro\-ba\-bi\-li\-ty}.
+	\acro{Proba}[P.]{In pro\-ba\-bi\-li\-ty}.
+	\acro{asurely}[a.\,s.]{al\-most su\-re\-ly}.
+	\acro{Asurely}[A.\,s.]{Al\-most su\-re\-ly}.
+	\acro{aeverywhere}[a.\,e.]{al\-most eve\-ry\-where}.
+	\acro{Aeverywhere}[A.\,e.]{Al\-most eve\-ry\-where}.
+	\acro{eg}[e.\,g.]{ex\-em\-pli gra\-tia}.
+	\acro{Eg}[E.\,g.]{Ex\-em\-pli gra\-tia}.
+	\acro{wrt}[w.\,r.\,t.]{with res\-pect to}.
+	\acro{Wrt}[W.\,r.\,t.]{With res\-pect to}.
+	\acro{ie}[i.\,e.]{id est}.
+	\acro{Ie}[I.\,e.]{Id est}.
+	\acro{MSE}{Mean Squa\-red Er\-ror}.
+	\acro{OVK}{Op\-er\-a\-tor-Va\-lued Ker\-nel}.
+	\acro{RFF}{Random Fourier Feature}.
+	\acro{ORFF}{Op\-er\-a\-tor-va\-lued Ran\-dom Fou\-rier Fea\-ture}.
+	\acro{POVM}{Po\-si\-ti\-ve Ope\-ra\-tor-Va\-lued Mea\-sure}.
+	\acro{RKHS}{Re\-pro\-du\-cing Ker\-nel Hil\-bert Spa\-ce}.
+	\acro{vv-RKHS}[\texorpdfstring{$\mathcal{Y}$}--RKHS]{%
+	\texorpdfstring{$\mathcal{Y}$}--Re\-pro\-du\-cing Ker\-nel Hil\-bert
+	Spa\-ce}.
+	\acro{LCA}{Lo\-cal\-ly Com\-pact Abe\-lian}.
+	\acro{FT}{Fou\-rier Trans\-form}.
+	\acro{IFT}{In\-ver\-se Fou\-rier Trans\-form}.
 \end{acronym}
 
 \endgroup

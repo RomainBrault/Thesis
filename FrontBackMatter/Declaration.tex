@@ -2,9 +2,12 @@
 % Declaration
 
 \refstepcounter{dummy}
-\pdfbookmark[0]{Declaration}{declaration} % Bookmark name visible in a PDF viewer
 
-\chapter*{Declaration} % Declaration section text
+% Bookmark name visible in a PDF viewer
+\pdfbookmark[0]{Declaration}{declaration}
+
+% Declaration section text
+\chapter*{Declaration}
 
 \thispagestyle{empty}
 
@@ -16,8 +19,7 @@ Put your declaration here.
 \smallskip
 
 \begin{flushright}
-\begin{tabular}{m{5cm}}
-\\ \hline
-\centering\myName \\
-\end{tabular}
+	\begin{tabular}{m{5cm}}
+		\\ \midrule \centering\myName\\
+	\end{tabular}
 \end{flushright}

@@ -31,9 +31,9 @@ addons:
 install:
   - pip install -r requirements.txt
 
-# before_script:
-#   - cp -r .fonts $HOME/.fonts
-#   - fc-cache -fv
+before_script:
+  - cp -r .fonts $HOME/.fonts
+  - fc-cache -fv
 
 script:
   - chmod +x compile

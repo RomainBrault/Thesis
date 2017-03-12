@@ -1,14 +1,19 @@
 %!TEX root = ../../ThesisRomainbrault.tex
 % Bibliography
 
-\label{app:bibliography} % Reference the bibliography elsewhere with \autoref{app:bibliography}
+% Reference the bibliography elsewhere with \autoref{app:bibliography}
+\label{app:bibliography}
 
-\manualmark % Work-around to have small caps also here in the headline
-\markboth{\spacedlowsmallcaps{\bibname}}{\spacedlowsmallcaps{\bibname}} % Work-around to have small caps also
+% Work-around to have small caps also here in the headline
+\manualmark
+
+% Work-around to have small caps also
+\markboth{\spacedlowsmallcaps{\bibname}}{\spacedlowsmallcaps{\bibname}}
 %\phantomsection
 \refstepcounter{dummy}
 
-\addtocontents{toc}{\protect\vspace{\beforebibskip}} % Place the bibliography slightly below the rest of the document content in the table of contents
+% Place the bibliography slightly below the rest of the document content in the table of contents
+\addtocontents{toc}{\protect\vspace{\beforebibskip}}
 \addcontentsline{toc}{chapter}{\tocEntry{\bibname}}
 
 \printbibliography

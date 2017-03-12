@@ -18,6 +18,8 @@
 \newcommand{\ec}{\mathrm{e}\mkern1mu}
 \newcommand{\iu}{{\mathrm{i}\mkern1mu}}
 
+\newcommand{\operator}[1]{\text{#1}}
+
 % Florence's notations.
 % \def\expectation{{\mathbb{E}}}
 % \def\variance{{\mathbb{V}}}
@@ -49,8 +51,10 @@
 \newcommand{\derivative}[2]{\frac{\partial {#1}}{\partial {#2}}}
 \newcommand{\lderivative}[2]{\frac{\partial}{\partial {#2}} {#1}}
 
-\newcommand{\derivativeat}[3]{\left. \frac{\partial {#1}}{\partial {#2}} \right|_{\scriptscriptstyle {#2}={#3}}}
-\newcommand{\lderivativeat}[3]{\left. \frac{\partial}{\partial {#2}} {#1} \right|_{\scriptscriptstyle {#2}={#3}}}
+\newcommand{\derivativeat}[3]{\left. \frac{\partial {#1}}{\partial {#2}}
+\right|_{\scriptscriptstyle {#2}={#3}}}
+\newcommand{\lderivativeat}[3]{\left.  \frac{\partial}{\partial {#2}} {#1}
+\right|_{\scriptscriptstyle {#2}={#3}}}
 
 \newcommand{\tildephi}[1]{\widetilde{\phi}}
 \newcommand{\tildePhi}[1]{\widetilde{\Phi}}
@@ -59,17 +63,22 @@
 \newcommand{\tildef}[1]{\widetilde{f}}
 \newcommand{\tildeK}[1]{\widetilde{K}}
 
-% \newcommand{\tildePhi}[1]{\widetilde{\Phi}_{{\scriptstyle \boldsymbol{\mathbf{#1}}}}}
-% \newcommand{\tildephi}[1]{\widetilde{\phi}_{{\scriptstyle \boldsymbol{\mathbf{#1}}}}}
-% \newcommand{\tildeW}[1]{\widetilde{W}_{{\scriptstyle \boldsymbol{\mathbf{#1}}}}}
-% \newcommand{\tildef}[1]{\widetilde{f}_{{\scriptstyle \boldsymbol{\mathbf{#1}}}}}
-% \newcommand{\tildeH}[1]{\widetilde{\mathcal{H}}_{{\scriptstyle \boldsymbol{\mathbf{#1}}}}}
+% \newcommand{\tildePhi}[1]{\widetilde{\Phi}_{{\scriptstyle
+% \boldsymbol{\mathbf{#1}}}}}
+% \newcommand{\tildephi}[1]{\widetilde{\phi}_{{\scriptstyle
+% \boldsymbol{\mathbf{#1}}}}}
+% \newcommand{\tildeW}[1]{\widetilde{W}_{{\scriptstyle
+% \boldsymbol{\mathbf{#1}}}}}
+% \newcommand{\tildef}[1]{\widetilde{f}_{{\scriptstyle
+% \boldsymbol{\mathbf{#1}}}}}
+% \newcommand{\tildeH}[1]{\widetilde{\mathcal{H}}_{{\scriptstyle
+% \boldsymbol{\mathbf{#1}}}}}
 
 \newcommand{\risk}[1]{\mathcal{R}(#1)}
 \newcommand{\riskemp}[1]{\mathcal{R_{\text{emp}}}(#1)}
 
-% \let\Phi\phi
-% \let\phi\varphi
+\let\Phi\phi
+\let\phi\varphi
 
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
@@ -96,18 +105,19 @@
 \newcommand\density{p_{\mu}}
 \newcommand\measure{\mu}
 \newcommand\adjoint{*}
-\newcommand\transpose{\intercal}
+\newcommand\transpose{\mkern-1.5mu\mathsf{T}}
 \newcommand\sech{\text{sech}}
 \newcommand\groupop{\star}
 \newcommand\inv[1]{{#1}^{-1}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                               PROOF, THEOREM, and FRIENDS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makeatletter
 \renewtheoremstyle{plain}%
 {\item[\hskip\labelsep \theorem@headerfont ##1\ ##2 \theorem@separator]}%
-{\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\ \theorem@separator] {\theorem@headerfont (##3).} \theorem@separator}
+{\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\ \theorem@separator]
+{\theorem@headerfont (##3).} \theorem@separator}
 \makeatother
 
 \newtheorem{assumption}{Assumption}[chapter]

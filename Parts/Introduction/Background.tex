@@ -34,8 +34,10 @@ If $\mathcal{H}$ is an Hilbert space on a field $\mathbb{K}$ we denote its scala
 
 % By Riesz's representation theorem, for any $x\in\mathcal{H}$, $\iota:x\mapsto\inner{x, \cdot}_{\mathcal{H}}$ defines a unique isometric bounded linear functional.
 \paragraph{}
-Let $\mathcal{H}$ be a Hilbert space. From Riesz's representation theorem, there is a unique isometric isomorphism $\iota_R:\mathcal{H}\to\mathcal{H}^\adjoint$ such that for any $x$ and $y\in\mathcal{H}$, $\pairing{\iota_R(x), y}_{\mathcal{H}^\adjoint, \mathcal{H}}=\inner{x,y}_{\mathcal{H}}$ and $\norm{\iota_R(x)}_{\mathcal{H}^\adjoint}=\norm{x}_{\mathcal{H}}$. The riesz map $\iota_R$ is self-dual, thus if $\mathcal{H}$ is a Hilbert space, $\mathcal{H}$ is reflexive. \acs{Ie}~$\mathcal{H}^{\adjoint\adjoint}\cong\mathcal{H}$.  When the base field of $\mathcal{H}$ is $\mathbb{C}$, then $\iota_R$ is an \emph{anti-linear} form since $\inner{\cdot,\cdot}_{\mathcal{H}}$ is sesquilinear and $\pairing{\cdot, \cdot}_{\mathcal{H}^\adjoint, \mathcal{H}}$ is bilinear. In the same way when the base field of $\mathcal{H}$ is $\mathbb{R}$ then $\iota_R$ \emph{linear} since both $\inner{\cdot,\cdot}_{\mathcal{H}}$ and $\pairing{\cdot, \cdot}_{\mathcal{H}^\adjoint, \mathcal{H}}$ are bilinear. If $\mathcal{H}$ is a Hilbert space we make the dual space $\mathcal{H}^\adjoint$ a Hilbert space by endowing it with the inner product $\inner{x^\adjoint, z^\adjoint}_{\mathcal{H}^\adjoint}=\inner{\iota_R^{-1}(x^\adjoint), \iota_R^{-1}(z^\adjoint)}_{\mathcal{H}}$ for all $x^\adjoint$, $z^\adjoint\in\mathcal{H}^\adjoint$. Notice that the transpose is linked to the adjoint by the relation $W^\adjoint = \iota_R^{-1} W^\transpose  \iota_R$, \acs{ie}~$W^\adjoint = \conj{W}^\transpose $.
- % Notice that $\inner{x, Az}=x^\adjoint(A)z=\inner{A^\adjoint x,z}=A^\adjoint$
+Let $\mathcal{H}$ be a Hilbert space. From Riesz's representation theorem, there is a unique isometric isomorphism $\iota_R:\mathcal{H}\to\mathcal{H}^\adjoint$ such that for any $x$ and $y\in\mathcal{H}$, $\pairing{\iota_R(x), y}_{\mathcal{H}^\adjoint, \mathcal{H}}=\inner{x,y}_{\mathcal{H}}$ and $\norm{\iota_R(x)}_{\mathcal{H}^\adjoint}=\norm{x}_{\mathcal{H}}$. The riesz map $\iota_R$ is self-dual, thus if $\mathcal{H}$ is a Hilbert space, $\mathcal{H}$ is reflexive. \acs{Ie}~$\mathcal{H}^{\adjoint\adjoint}\cong\mathcal{H}$.  When the base field of $\mathcal{H}$ is $\mathbb{C}$, then $\iota_R$ is an \emph{anti-linear} form since $\inner{\cdot,\cdot}_{\mathcal{H}}$ is sesquilinear and $\pairing{\cdot, \cdot}_{\mathcal{H}^\adjoint, \mathcal{H}}$ is bilinear. In the same way when the base field of $\mathcal{H}$ is $\mathbb{R}$ then $\iota_R$ \emph{linear} since both $\inner{\cdot,\cdot}_{\mathcal{H}}$ and $\pairing{\cdot, \cdot}_{\mathcal{H}^\adjoint, \mathcal{H}}$ are bilinear. If $\mathcal{H}$ is a Hilbert space we make the dual space $\mathcal{H}^\adjoint$ a Hilbert space by endowing it with the inner product $\inner{x^\adjoint, z^\adjoint}_{\mathcal{H}^\adjoint}=\inner{\iota_R^{-1}(x^\adjoint), \iota_R^{-1}(z^\adjoint)}_{\mathcal{H}}$ for all $x^\adjoint$, $z^\adjoint\in\mathcal{H}^\adjoint$. Notice that the transpose is linked to the adjoint by the relation $W^\adjoint = \iota_R^{-1} W^\transpose  \iota_R$. When $\mathcal{H}$ is a Hilbert space, if $x\in\mathcal{H}$, we always define $x^\adjoint\in\mathcal{H}^\adjoint$ to be
+\begin{dmath*}
+x^\adjoint\hiderel{=}\iota_R(x)\hiderel{=}\inner{x, \cdot}_{\mathcal{H}}.
+\end{dmath*}
 \begin{figure}[htb]
 \centering
 \begin{tikzcd}[matrix scale=3]
@@ -44,11 +46,15 @@ Let $\mathcal{H}$ be a Hilbert space. From Riesz's representation theorem, there
 \end{tikzcd}
 \caption{\label{fig:riesz_map}Riesz map, dual spaces and adjoints.}
 \end{figure}
-Let $\mathcal{H}$ be a \emph{separable} Hilbert space and let $(e_i)_{i\in\mathbb{N}^*}$ be an orthonormal basis of $\mathcal{H}$. We call $(e_i^\adjoint)_{i\in\mathbb{N}^*}$ the dual basis of $\mathcal{H}$, the basis of $\mathcal{H}^\adjoint$ such that for all $i$, $j\in\mathbb{N}^*$, $e_i^\adjoint(e_j)=\inner{e_i, e_j}_{\mathcal{H}}=\delta_{ij}$. In the whole document we consider that $\mathcal{H}^\adjoint$ is always equipped with the dual basis of $\mathcal{H}$.
-For a vector $x\in\mathcal{H}$ with an orthonormal basis $(e_i)_{i\in\mathbb{N}^*}$ we write $x_i=\inner{x, e_i}$. For a linear operator $W:\mathcal{H}_1\to\mathcal{H}_2$ where $\mathcal{H}_1$ and $\mathcal{H}_2$ are Hilbert spaces with respective orthonormal basis $(e_i)_{i\in\mathbb{N}^*}$ and $(e'_j)_{j\in\mathbb{N}^*}$, we note $W_i=We_i$ and $W_{ij}=\inner{e_j, We_i}_{\mathcal{H}_1}$.
-
 \paragraph{}
-We call matrix $M$ of size $(m,n)\in\mathbb{N}^2$ on an Abelian field $\mathbb{K}$ a collection of elements $M=(m_{ij})_{1\le i\le m, 1\le j \le n}$, $m_{ij}\in\mathbb{K}$. We note $\mathcal{M}_{m,n}(\mathbb{K})$ the vector space of all matrices. If $\mathcal{H}_1$ and $\mathcal{H}_2$ are two finite dimensional Hilbert spaces on an Abelian field $\mathbb{K}$, any bounded linear operator $L\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ can be viewed as a matrix. Let $n=\dim(\mathcal{H}_1)$, $m=\dim(\mathcal{H}_2)$ and let $B=(e_i)_{i=1}^{n}$ and $C=(e'_i)_{i=1}^{m}$ be the respective canonical bases of $\mathcal{H}_1$ and $\mathcal{H}_2$. We note $\text{mat}_{B, C}: \mathcal{L}(\mathcal{H}_1;\mathcal{H}_2) \to \mathcal{M}_{m,n}(\mathbb{K})$ such that $M=\text{mat}_{B, C}(L)=(\inner{e'_j, L e_i})_{1\le i\le n, 1\le j \le m}\in\mathcal{M}_{m,n}(\mathbb{K})$. Let $M_1\in\mathcal{M}_{m,n}(\mathbb{K})$ and $M_2\in\mathcal{M}_{n,l}(\mathbb{K})$. The product between two matrices is written $M_1M_2\in\mathcal{M}_{m,l}(\mathbb{K})$ and obey $(M_1M_2)_{ij} = \sum_{k=1}^n M_{ik}M_{kj}$. Given two linear operator $L_1\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ and $L2\in\mathcal{L}(\mathcal{H}_2;\mathcal{H}_3)$ we have $L_1L_2\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_3)$ and \begin{dmath*}
+Let $\mathcal{H}$ be a \emph{separable} Hilbert space and let $(e_i)_{i\in\mathbb{N}^*}$ be a basis of $\mathcal{H}$. We call $(e_i^\adjoint)_{i\in\mathbb{N}^*}$ the dual basis of $\mathcal{H}$, the basis of $\mathcal{H}^\adjoint$ such that for all $i$, $j\in\mathbb{N}^*$, $e_i^\adjoint(e_j)=\inner{e_i, e_j}_{\mathcal{H}}=\delta_{ij}$. In the whole document we consider that $\mathcal{H}^\adjoint$ is always equipped with the dual basis of $\mathcal{H}$.
+For a vector $x\in\mathcal{H}$ with a basis $(e_i)_{i\in\mathbb{N}^*}$ we write $x_i=e_i^\adjoint(x)$. For a linear operator $W:\mathcal{H}_1\to\mathcal{H}_2$ where $\mathcal{H}_1$ and $\mathcal{H}_2$ are Hilbert spaces with respective basis $(e_i)_{i\in\mathbb{N}^*}$ and $(e'_j)_{j\in\mathbb{N}^*}$, we note $W_i=We_i$ and $W_{ij}=e_j^\adjoint(We_i)$. Eventually given two separable Hilbert spaces $\mathcal{H}_1$ and $\mathcal{H}_2$, an operator $W:\mathcal{H}_1\to\mathcal{H}_2$, $(e_i)_{i\in\mathbb{N}^*}$ a basis of $\mathcal{H}_1$ and $(e'_i)_{i\in\mathbb{N}^*}$ a basis of $\mathcal{H}_2$ we have
+\begin{dmath*}
+(W^\transpose)_{ij}=e_j^{\adjoint\adjoint}W^\transpose {e'}_i^\adjoint\hiderel{=}
+e_j^{\adjoint\adjoint}{e'}_i^\adjoint W \hiderel{=} {e'}_i^\adjoint W e_j \hiderel{=} W_{ji}.
+\end{dmath*}
+\paragraph{}
+We call matrix $M$ of size $(m,n)\in\mathbb{N}^2$ on an Abelian field $\mathbb{K}$ a collection of elements $M=(m_{ij})_{1\le i\le m, 1\le j \le n}$, $m_{ij}\in\mathbb{K}$. We note $\mathcal{M}_{m,n}(\mathbb{K})$ the vector space of all matrices. If $\mathcal{H}_1$ and $\mathcal{H}_2$ are two separable Hilbert spaces on an Abelian field $\mathbb{K}$, any linear operator $L\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ can be viewed as a (potentially infinite) matrix. Let $n=\dim(\mathcal{H}_1)$, $m=\dim(\mathcal{H}_2)$ and let $B=(e_i)_{i=1}^{n}$ and $C=(e'_i)_{i=1}^{m}$ be the respective bases of $\mathcal{H}_1$ and $\mathcal{H}_2$. We note $\text{mat}_{B, C}: \mathcal{L}(\mathcal{H}_1;\mathcal{H}_2) \to \mathcal{M}_{m,n}(\mathbb{K})$ such that $M=\text{mat}_{B, C}(L)=({e'}_j^\adjoint L e_i)_{1\le i\le n, 1\le j \le m}\in\mathcal{M}_{m,n}(\mathbb{K})$. Let $M_1\in\mathcal{M}_{m,n}(\mathbb{K})$ and $M_2\in\mathcal{M}_{n,l}(\mathbb{K})$. The product between two matrices is written $M_1M_2\in\mathcal{M}_{m,l}(\mathbb{K})$ and obey $(M_1M_2)_{ij} = \sum_{k=1}^n M_{ik}M_{kj}$. Given two linear operator $L_1\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ and $L2\in\mathcal{L}(\mathcal{H}_2;\mathcal{H}_3)$ we have $L_1L_2\in\mathcal{L}(\mathcal{H}_1;\mathcal{H}_3)$ and \begin{dmath*}
 \text{mat}_{B, D}(L_1L_2)=\text{mat}_{B, C}(L_1)\text{mat}_{C, D}(L_2).
 \end{dmath*}
 The operator $\text{mat}_{B, C}$ is a vector space isomorphism allowing us to identify $\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ with $\mathcal{M}_{mn}(\mathbb{K})$ where $n=\dim(\mathcal{H}_1)$ and $m=\dim(\mathcal{H}_2)$. All these notations are summarized in \cref{table:notations}.
@@ -168,7 +174,7 @@ It can be shown that $\Haar(U) > 0$ for every non-empty open subset $U$. In part
 \subsection{Even and odd functions}
 Let $\mathcal{X}$ be a \ac{LCA} group and $\mathbb{K}$ be a field viewed as an additive group. We say that a function $f:\mathcal{X}\to\mathbb{K}$ is even if for all $x\in\mathcal{X}$, $f(x)=f\left(\inv{x}\right)$ and odd if $f(x)=-f\left(\inv{x}\right)$. The definition can be extended to operator-valued functions.
 \begin{definition}[Even and odd operator-valued function on a \ac{LCA} group]
-Let $\mathcal{X}$ be a measured \ac{LCA} group and $\mathcal{Y}$ be a Hilbert space, and $\mathcal{L}(\mathcal{Y})$ the space of bounded linear operators from $\mathcal{Y}$ to itself viewed as an additive group. A function $f:\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is (weakly) even if for all $x\in\mathcal{X}$ and all $y$, $y'\in\mathcal{Y}$ where $\mathcal{}$
+Let $\mathcal{X}$ be a measured \ac{LCA} group and $\mathcal{Y}$ be a Hilbert space, and $\mathcal{L}(\mathcal{Y})$ the space of bounded linear operators from $\mathcal{Y}$ to itself viewed as an additive group. A function $f:\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is (weakly) even if for all $x\in\mathcal{X}$ and all $y$, $y'\in\mathcal{Y}$,
 \begin{dmath}
 \inner{y,f\left(\inv{x}\right)y'}_{\mathcal{Y}}=\inner{y,f(x)y'}_{\mathcal{Y}}
 \end{dmath}
@@ -316,9 +322,7 @@ f(x)\hiderel{=}\int_{\dual{\mathcal{X}}}\pairing{x,\omega}\FT{f}(\omega) d\dual{
 \begin{proof}
 The proof is based on Bochner's theorem and the Pontryagin duality theorem. We refer the reader to \citet[theorem~4.22 page~105 and theorem~4.33 page~111]{folland1994course} for the full proof.
 \end{proof}
-Thus when a Haar measure $\Haar$ on $\mathcal{X}$ is given, the measure on $\dual{\mathcal{X}}$ that makes \cref{th:fourier_inversion} true is called the dual measure of $\Haar$, noted $\dual{\Haar}$. Let $c\in\mathbb{R}_*$ If $c\Haar$ is the measure on $\mathcal{X}$, then $c^{-1}\dual{\Haar}$ is the dual measure on $\dual{\mathcal{X}}$. Hence one must replace $\dual{\Haar}$ by $c^{-1}\dual{\Haar}$ in the inversion formula to compensate. Therefore, \emph{we always take the Haar measure $\dual{\Haar}$ on $\dual{\mathcal{X}}$ to be the dual of the given Haar measure $\Haar$ on $\mathcal{X}$}. Whenever $\dual{\Haar}=\Haar$ we say that the Haar measure is self-dual.
-\paragraph{}
-Moreover if $\dual{\Haar}$ is normalized, the \acl{FT} on
+Thus when a Haar measure $\Haar$ on $\mathcal{X}$ is given, the measure on $\dual{\mathcal{X}}$ that makes \cref{th:fourier_inversion} true is called the dual measure of $\Haar$, noted $\dual{\Haar}$. Let $c\in\mathbb{R}_*$ If $c\Haar$ is the measure on $\mathcal{X}$, then $c^{-1}\dual{\Haar}$ is the dual measure on $\dual{\mathcal{X}}$. Hence one must replace $\dual{\Haar}$ by $c^{-1}\dual{\Haar}$ in the inversion formula to compensate. Therefore, \emph{we always take the Haar measure $\dual{\Haar}$ on $\dual{\mathcal{X}}$ to be the dual of the given Haar measure $\Haar$ on $\mathcal{X}$}. Whenever $\dual{\Haar}=\Haar$ we say that the Haar measure is self-dual. Moreover if $\dual{\Haar}$ is normalized, the \acl{FT} on
 \begin{dmath*}
 L^1(\mathcal{X},\Haar;\mathcal{Y})\cap L^2(\mathcal{X},\Haar;\mathcal{Y})
 \end{dmath*}
@@ -386,13 +390,15 @@ The representation $\lambda$ of $\mathcal{X}$ defines an action $\lambda_x$ on $
 %----------------------------------------------------------------------------------------
 \section{On operator-valued kernels}
 \label{sec:background_on_operator-valued_kernels}
-We now introduce the theory of \acf{vv-RKHS} that provides a flexible framework to study and learn vector-valued functions. The fundations of the general theory of scalar kernel is mostly due to \citet{Aronszajn1950}  and provides a unifying point of view for the study of an important class of Hilbert spaces of real or complex valued functions. It has been first applied in the theory of partial differential equation. The theory of operator-valued kernel which extends the scalar-valued kernel was first developped by \citet{Pedrick57} in his Ph.~D Thesis. Since then it has been successfully applied to machine learning by many authors. In particular we introduce the notion of operator-valued kernel following the results of \citet{Micchelli2005,carmeli2006vector,Carmeli2010}.
+We now introduce the theory of \acf{vv-RKHS} that provides a flexible framework to study and learn vector-valued functions. The fundations of the general theory of scalar kernel is mostly due to \citet{Aronszajn1950}  and provides a unifying point of view for the study of an important class of Hilbert spaces of real or complex valued functions. It has been first applied in the theory of partial differential equation. The theory of \acfp{OVK} which extends the scalar-valued kernel was first developped by \citet{Pedrick57} in his Ph.~D Thesis. Since then it has been successfully applied to machine learning by many authors. In particular we introduce the notion of \aclp{OVK} following the propositions of \citet{Micchelli2005,carmeli2006vector,Carmeli2010}.
 
 \subsection{Definitions and properties}
 \label{subsec:def_properties}
-A \acf{vv-RKHS} is a functional vector space defined as follow.
+In machine learning the goal is often to find a function $f$ belonging to a space of function $\mathcal{F}(\mathcal{X};\mathcal{Y})$ that minimize some criterion. The class of functions we consider are functions living in a Hilbert space $\mathcal{H}\subset\mathcal{F}(\mathcal{X};\mathcal{Y})$. The completeness allows to consider sequences of functions $f_n \in\mathcal{H}$ where the limit $f_n\to f$ is in $\mathcal{H}$. Moreover the existence of an inner product gives rise to a norm and also makes $\mathcal{H}$ a metric space.
+\paragraph{}
+Amongs all these functions $f\in\mathcal{H}$, we consider a subset of functions $f\in\mathcal{H}_K\subset\mathcal{H}$ such that the evaluation map $\text{ev}_x:f\mapsto f(x)$ is bounded for all $x$. \acs{Ie} such that~$\norm{\text{ev}_x}_K\le C_x$ for all $x$. For scalar valued kernel the evaluation map is a linear functional. Thus by Riesz's reprensentation theorem there is an isomorphism between evaluating a function at a point and an inner product: $f(x)=\text{ev}_x f = \inner{K_x, f}_K$. From this we deduce the reproducing property $K(x,z)=\inner{K_x, K_z}_K$ which is the cornerstone of many proofs in machine learning and functional analysis. When dealing with vector-valued functions, the evaluation map $\text{ev}_x$ is no longer a linear functional, since it is vector-valued. However, inspired by the theory of scalar valued kernel, many authors showed that if the evaluation map of functions with values in a Hilbert space $\mathcal{Y}$ is bounded an similar reproducing property can be obtained, namely $\inner{y', K(x,z)y}=\inner{K_x y', K_z y}_K$ for all $y$, $y'\in\mathcal{Y}$. This motivates the following definition of a \acf{vv-RKHS}.
 \begin{definition}[\acl{vv-RKHS}~\citep{carmeli2006vector,Micchelli2005}]
-Let $\mathcal{Y}$ be a (real or complex) Hilbert space. A \acl{vv-RKHS} on $\mathcal{X}$, a locally compact second countable topological space is a Hilbert space $\mathcal{H}$ such that
+Let $\mathcal{Y}$ be a (real or complex) Hilbert space. A \acl{vv-RKHS} on a locally compact second countable topological space $\mathcal{X}$ is a Hilbert space $\mathcal{H}$ such that
 \begin{propenum}
 \item the elements of $\mathcal{H}$ are functions from $\mathcal{X}$ to $\mathcal{Y}$ (\acs{ie}~$\mathcal{H} \subset \mathcal{F}(\mathcal{X}, \mathcal{Y})$);
 \item for all $x\in\mathcal{X}$, there exists a positive constant $C_x$ such that for all $f\in\mathcal{H}$
@@ -402,8 +408,8 @@ Let $\mathcal{Y}$ be a (real or complex) Hilbert space. A \acl{vv-RKHS} on $\mat
 \end{dmath}
 \end{propenum}
 \end{definition}
-An operator-valued kernel is defined here as a positive-definite \acl{OVK}~\citet{Carmeli2010}.
-\begin{definition}[positive-definite \acl{OVK} acting on a complex space]
+Throughout this section we show that a \ac{vv-RKHS} defines a unique positive-definite function called \acf{OVK} and conversely an \ac{OVK} uniquely defines a \ac{vv-RKHS}. We follow here the definition of~\citet{Carmeli2010}.
+\begin{definition}[positive-definite \acl{OVK} acting on a complex Hilbert space]
 \label{def:reproducing_kernel}
 Given $\mathcal{X}$ a locally compact second countable topological space and  $\mathcal{Y}$ a complex Hilbert Space, a map $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called an positive-definite \acl{OVK} kernel if
 \begin{dmath}
@@ -491,7 +497,7 @@ so that the sesquilinear form on $\mathcal{H}_0\times\mathcal{H}_0$
 \begin{dmath*}
 \inner{f,g}_{\mathcal{H}_0}=\sum_{i,j=1}^Nc_i\conj{d_j}\inner{K(z_j,x_i)y_i,y_j'}_{\mathcal{Y}}
 \end{dmath*}
-is well defined. Since $K$ is an positive-definite \acl{OVK}, we have for all $f\in\mathcal{H}_0$ that $\inner{f,f}\ge 0$. Moreover the sesquilinear form is positive, so that it is also Hermitian. Choosing $g=K_{x,y}$ in the above definition yields for all $x\in \mathcal{X}$, all $f\in\mathcal{H}_0$ and all $y\in \mathcal{Y}$
+is well defined. Since $K$ is a positive-definite \acl{OVK}, we have that $\inner{f,f}_{\mathcal{H}_0}\ge 0$ for all $f\in\mathcal{H}_0$. Because the sesquilinear form is positive if $\mathcal{Y}$ is a complex Hilbert space, it is also Hermitian. If $\mathcal{Y}$ is a real Hilbert space, by assumption $K(x,z)=K(z,x)^\adjoint$, making $\inner{\cdot,\cdot}_{\mathcal{H}_0}$ an Hermitian sesquilinear form. Choosing $g=K_{x,y}$ in the above definition yields for all $x\in \mathcal{X}$, all $f\in\mathcal{H}_0$ and all $y\in \mathcal{Y}$
 \begin{dmath*}
 \inner{f,K_{x,y}}_{\mathcal{H}_0}=\inner{f(x),y}_{\mathcal{Y}}.
 \end{dmath*}
@@ -504,7 +510,7 @@ which implies that
 \begin{dmath*}
 \norm{f(x)}_{\mathcal{Y}} \le \norm{f}_{\mathcal{H}_0}\sqrt{\norm{K(x,x)}_{\mathcal{Y},\mathcal{Y}}}
 \end{dmath*}
-Therefore if $\inner{f,f}_{\mathcal{H}_0}$ then $f=0$. Eventually we deduce that $\inner{\cdot,\cdot}_{\mathcal{H}_0}$ is a scalar product on $\mathcal{H}_0$. Hence $\mathcal{H}_0$ is a pre-Hilbert space. To make it a (complete) Hilbert space we need to take the completion of this space. Let $\mathcal{H}$ be the completion of $\mathcal{H}_0$. Moreover let $K_x:\mathcal{Y}\to\mathcal{H}$ where $K_xy=K_{x,y}$. By construction $K_x$ is bounded. Let $W:\mathcal{H}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ where $(Wf)(x)=K_x^\adjoint f$. The operator $W$ is injective. Indeed if $Wf=0$ then for all $x\in\mathcal{X}$, $f\in\Ker K_x^\adjoint=(\Ima f)^{\perp}$. since the set $\cup_{x\in\mathcal{X}}\Ima K_x=\Set{K_xy|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}$ generates by definition $\mathcal{H}_0$, we have $f=0$. Besides, as $W$ is injective, we have for all $f_1$, $f_2\in\mathcal{H}_0$ $(Wf_1)(x)=(Wf_2)(x){\scriptstyle\implies} f_1(x)=f_2(x)$ pointwise in $\mathcal{H}$ so that we can identify $\mathcal{H}$ with a \emph{subspace} of $\mathcal{F}(\mathcal{X};\mathcal{Y})$. Hence $K_x^\adjoint f=(Wf)(x)=f(x)=\text{ev}_xf$, showing that $\mathcal{H}$ is a \acl{vv-RKHS} with reproducing kernel
+Therefore if $\inner{f,f}_{\mathcal{H}_0}=0$ then $f=0$. Eventually we deduce that $\inner{\cdot,\cdot}_{\mathcal{H}_0}$ is an inner product on $\mathcal{H}_0$. Hence $\mathcal{H}_0$ is a pre-Hilbert space. To make it a (complete) Hilbert space we need to take the completion of this space. Let $\mathcal{H}$ be the completion of $\mathcal{H}_0$. Moreover let $K_x:\mathcal{Y}\to\mathcal{H}$ where $K_xy=K_{x,y}$. By construction $K_x$ is bounded. Let $W:\mathcal{H}\to\mathcal{F}(\mathcal{X};\mathcal{Y})$ where $(Wf)(x)=K_x^\adjoint f$. The operator $W$ is injective. Indeed if $Wf=0$ then for all $x\in\mathcal{X}$, $f\in\Ker K_x^\adjoint=(\Ima f)^{\perp}$. Since the set $\cup_{x\in\mathcal{X}}\Ima K_x=\Set{K_xy|\forall x\in\mathcal{X}, \forall y\in\mathcal{Y}}$ generates by definition $\mathcal{H}_0$, we have $f=0$. Besides, as $W$ is injective, we have for all $f_1$, $f_2\in\mathcal{H}_0$ $(Wf_1)(x)=(Wf_2)(x){\scriptstyle\implies} f_1(x)=f_2(x)$ pointwise in $\mathcal{H}$ so that we can identify $\mathcal{H}$ with a \emph{subspace} of $\mathcal{F}(\mathcal{X};\mathcal{Y})$. Hence $K_x^\adjoint f=(Wf)(x)=f(x)=\text{ev}_xf$, showing that $\mathcal{H}$ is a \acl{vv-RKHS} with reproducing kernel
 \begin{dmath*}
 K_{\mathcal{H}}(x,z)y\hiderel{=}(\text{ev}^\adjoint_zy)(x)\hiderel{=}K(x,z)y.
 \end{dmath*}
@@ -591,8 +597,8 @@ then the \acl{vv-RKHS}
 \end{dmath*}
 is also a subset of $\mathcal{C}(\mathcal{X};\mathcal{Y})$ by the uniform convergence theorem.
 \end{proof}
-
-\begin{lemma}
+The next lemma shows that when $\mathcal{X}$ and $\mathcal{Y}$ are separable and $\mathcal{H}_K$ is a space of continuous functions then $\mathcal{H}_K$ is separable. It is worth mentioning that when the Hilbert space $\mathcal{H}_K$ is separable, it admit a countable orthonormal basis.
+\begin{lemma}[Separable \ac{vv-RKHS}~\citep{carmeli2006vector}]
 \label{lm:separability}
 Let $\mathcal{H}_K$ be a \acl{vv-RKHS} of continuous function $f:\mathcal{X}\to\mathcal{Y}$. If $\mathcal{X}$ and $\mathcal{Y}$ are separable then $\mathcal{H}_K$ is separable.
 \end{lemma}
@@ -603,7 +609,7 @@ The separability of $\mathcal{X}$ assure that there exist a countable dense subs
 \end{dmath*}
 is separable too. We show that $\mathcal{S}$ is total in $\mathcal{H}_K$ so that $\mathcal{H}_K$ is separable. If for all $x\in\mathcal{X}_0$, $f\in\mathcal{S}^{\perp}$, then $f\in\Ker K_x^\adjoint$. Namely $f(x)=\text{ev}_xf=0$. Since $f$ is continuous and $\mathcal{X}_0$ is dense in $\mathcal{X}$, for all $x\in\mathcal{X}$, $f(x)=0$ so $f=0$.
 \end{proof}
-
+Since a $\mathcal{Y}$-Mercer kernel $K$ defines a \ac{vv-RKHS} $\mathcal{H}_K$ of continuous functions, $\mathcal{H}_K$ is separable when $\mathcal{X}$ and $\mathcal{Y}$ are separables.
 \begin{proposition}[Separable \ac{vv-RKHS} for $\mathcal{Y}$-Mercer kernel~\citep{carmeli2006vector}]
 \label{pr:mercer_countable_basis}
 Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{Y}$ be a reproducing kernel where $\mathcal{X}$ and $\mathcal{Y}$ are separable spaces. If $K$ is a $\mathcal{Y}$-Mercer kernel then $\mathcal{H}_K$ is separable.
@@ -614,7 +620,7 @@ From \cref{pr:characterization_mercer_kernels} $K$ is a $\mathcal{Y}$-Mercer ker
 Thus since $\mathcal{H}_K$ is also a Hilbert space and is separable it is second countable (\acs{ie}~it has a countable orthonormal basis). An important consequence is that if $K$ is a $\mathcal{Y}$-Mercer and $\mathcal{X}$ and $\mathcal{Y}$ are separable then $\mathcal{H}_K$ and any resdescription is isometrically isomorphic to $\ell^2$.
 
 %----------------------------------------------------------------------------------------
-\subsection{Shift-Invariant operator-valued kernels}
+\subsection{Shift-Invariant operator-valued kernels on LCA groups}
 The main subjects of interest of \cref{ch:operator-valued_random_fourier_features} are shift-invariant \acl{OVK}. When referring to a shift-invariant \ac{OVK} $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ we assume that $\mathcal{X}$ is a locally compact second countable topological group with identity
 $e$.
 \begin{definition}[Shift-invariant \ac{OVK}] A reproducing \acl{OVK} $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called shift-invariant\mpar{Also referred to as \emph{translation-invariant} \ac{OVK}.} if for all $x$, $z$, $t\in\mathcal{X}$,

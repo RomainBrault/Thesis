@@ -21,7 +21,7 @@ def main():
     r"""Plot figure: Kernel approximation with ORFF."""
     d = 4
     p = 4
-    Dmax = 100000
+    d_max = 100000
     T, R, RR = 10, 1000, 10
 
     # seed(0)
@@ -33,7 +33,7 @@ def main():
 
     seed(0)
     for i in range(RR):
-        for j, D in enumerate(logspace(0, log10(Dmax), T)):
+        for j, D in enumerate(logspace(0, log10(d_max), T)):
             for _ in range(R):
                 X1 = 2 * rand(1, d) - 1
                 X2 = 2 * rand(1, d) - 1
@@ -49,7 +49,7 @@ def main():
     sp2 = zeros((RR, T))
     seed(0)
     for i in range(RR):
-        for j, D in enumerate(logspace(0, log10(Dmax), T)):
+        for j, D in enumerate(logspace(0, log10(d_max), T)):
             for _ in range(R):
                 X1 = 2 * rand(1, d) - 1
                 X2 = 2 * rand(1, d) - 1
@@ -65,25 +65,25 @@ def main():
     sp3 = zeros((RR, T))
     seed(0)
     for i in range(RR):
-        for j, D in enumerate(logspace(0, log10(Dmax), T)):
+        for j, D in enumerate(logspace(0, log10(d_max), T)):
             for _ in range(R):
                 X1 = 2 * rand(1, d) - 1
                 X2 = 2 * rand(1, d) - 1
 
-                phiX1 = EfficientDivergenceFreeGaussianORFF(X1, .5, int(D))
-                phiX2 = EfficientDivergenceFreeGaussianORFF(X2, .5, int(D))
-                Ktilde = dot(phiX1, phiX2.H)
+                phi_x1 = EfficientDivergenceFreeGaussianORFF(X1, .5, int(D))
+                phi_x2 = EfficientDivergenceFreeGaussianORFF(X2, .5, int(D))
+                Ktilde = dot(phi_x1, phi_x2.H)
                 v = abs(eigsh(Ktilde - K(X1, X2), k=1, which='LM')[0])
                 if v > sp3[i, j]:
                     sp3[i, j] = v
 
-    errorbar(logspace(0, log10(Dmax), T).astype(int),
+    errorbar(logspace(0, log10(d_max), T).astype(int),
              sp1.mean(axis=0), sp1.std(axis=0),
              label=r'Gaussian decomposable')
-    errorbar(logspace(0, log10(Dmax), T).astype(int),
+    errorbar(logspace(0, log10(d_max), T).astype(int),
              sp2.mean(axis=0), sp2.std(axis=0),
              label=r'Gaussian curl-free')
-    errorbar(logspace(0, log10(Dmax), T).astype(int),
+    errorbar(logspace(0, log10(d_max), T).astype(int),
              sp3.mean(axis=0), sp3.std(axis=0),
              label=r'Gaussian divergence-free')
     xscale('log')

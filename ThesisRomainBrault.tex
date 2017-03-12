@@ -1,23 +1,25 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Copyright (c) <2016> <Romain Brault romain.brault@telecom-paritech.fr,
-%                       Florence d'Alche-Buc florence.dalche@telecom-paristech.fr,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Copyright (c) <2016> <Romain Brault
+%                           romain.brault@telecom-paritech.fr,
+%                       Florence d'Alche-Buc
+%                           florence.dalche@telecom-paristech.fr,
 %                       Universite d'Evry val d'Essone, Telecom-ParisTech>
 
-% This program is free software: you can redistribute it and/or modify
-% it under the terms of the GNU General Public License as published by
-% the Free Software Foundation, either version 2 of the License, or
-% (at your option) any later version.
+% This program is free software: you can redistribute it and/or modify it under
+% the terms of the GNU General Public License as published by the Free Software
+% Foundation, either version 2 of the License, or (at your option) any later
+% version.
 
-% This program is distributed in the hope that it will be useful,
-% but WITHOUT ANY WARRANTY; without even the implied warranty of
-% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-% GNU General Public License for more details.
+% This program is distributed in the hope that it will be useful, but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+% FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+% details.
 
-% You should have received a copy of the GNU General Public License
-% along with this program.  If not, see <http://www.gnu.org/licenses/>.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You should have received a copy of the GNU General Public License along with
+% this program.  If not, see <http://www.gnu.org/licenses/>.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Classicthesis Typographic Thesis
 % LaTeX Template
 % Version 1.4 (1/1/16)
@@ -34,21 +36,22 @@
 %
 % General Tips:
 % 1) Make sure to edit the classicthesis-config.file
-% 2) New enumeration (A., B., C., etc in small caps): \begin{aenumerate} \end{aenumerate}
-% 3) For margin notes: \marginpar or \graffito{}
+% 2) New enumeration (A., B., C., etc in small caps): \begin{aenumerate}
+%    \end{aenumerate} 3) For margin notes: \marginpar or \graffito{}
 % 4) Do not use bold fonts in this style, it is designed around them
 % 5) Use tables as in the examples
 % 6) See classicthesis-preamble.sty for useful commands
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 % DOCUMENT VARIABLES
 % Fill in the lines below to enter your information into the thesis template
 % Each of the commands can be cited anywhere in the thesis
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 \newcommand{\myTitle}{Data Are Not Real!}
-\newcommand{\mySubtitle}{Large-Scale Learning On Structured Input-Output Data With Operator-Valued Kernels}
+\newcommand{\mySubtitle}{Large-Scale Learning On Structured Input-Output Data
+With Operator-Valued Kernels}
 \newcommand{\myDegree}{Engineer (Eng.)}
 \newcommand{\myName}{Romain Brault}
 \newcommand{\myFullName}{Romain Raymond Brault}
@@ -56,13 +59,15 @@
 % \newcommand{\myOtherProf}{Put name here\xspace}
 \newcommand{\mySupervisorDegree}{Professor (Prof.)}
 \newcommand{\mySupervisor}{Florence d'Alch\'e-Buc}
-\newcommand{\myFaculty}{Informatique, Biologie Int\'egrative et Syst\`emes Complexes (IBISC)}
+\newcommand{\myFaculty}{Informatique, Biologie Int\'egrative et Syst\`emes
+Complexes (IBISC)}
 \newcommand{\myDepartment}{Computer Science}
-\newcommand{\myDoctoralSchool}{Sciences et Technologies de l'Information et de la Communication (STIC)}
+\newcommand{\myDoctoralSchool}{Sciences et Technologies de l'Information et de
+la Communication (STIC)}
 \newcommand{\myUni}{Universit\'e Paris-Saclay}
 \newcommand{\myUniUEVE}{Universit\'e d'\'Evry-Val-d'Essonne}
 \newcommand{\myUniTP}{T\'el\'ecom-ParisTech}
-\newcommand{\myLocation}{15, Rue Plumet, 75015 - Paris, France}
+\newcommand{\myLocation}{15, Rue Plumet, 75015 --- Paris, France}
 \newcommand{\myTime}{\today}
 \newcommand{\myVersion}{version 0.1}
 \newcommand{\NNT}{201XSACLSXXX}
@@ -85,28 +90,31 @@
     \Publisher{\myUni}
     \Copyrighted{True}
     \Copyright{Public Domain\sep \copyright{\myFullName}}
-    \CopyrightURL{https://github.com/RomainBrault/Thesis/blob/master/LICENSE.txt}
+    \CopyrightURL{%
+        https://github.com/RomainBrault/Thesis/blob/master/LICENSE.txt}
     \Creator{XeTeX + classicthesis.sty}
     \pdfxEnableCommands{\def\utext#1{#1,}}
 \end{filecontents*}
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \documentclass[
         twoside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,
         footinclude=true,cleardoublepage=empty,
-        dottedtoc, % Make page numbers in the table of contents flushed right with dots leading to them
-        BCOR=5mm,paper=A4,fontsize=11pt, % Binding correction, paper type and font size
+        dottedtoc, % Make page numbers in the table of contents flushed right
+        with dots leading to them BCOR=5mm,paper=A4,fontsize=11pt, % Binding
+        correction, paper type and font size
         american % Languages, change this to your language(s)
         ]{scrreprt}
-
-% Includes the file which contains all the document configurations and packages - make sure to edit this file
+% Includes the file which contains all the document configurations and packages
+% - make sure to edit this file
 \input{classicthesis-config}
 
 \addbibresource{Bibliography.bib} % The file housing your bibliography
-%\addbibresource[label=ownpubs]{Self_Publications.bib} % Uncomment for optional self-publications
+% Uncomment for optional self-publications
+%\addbibresource[label=ownpubs]{Self_Publications.bib}
 
 % https://www.hyphenation24.com/word/namely/
 \hyphenation{un-bound-ed}
@@ -115,90 +123,136 @@
 \hyphenation{Hil-bert}
 
 \begin{document}
-\frenchspacing % Reduces space after periods to make text more compact
+% Reduces space after periods to make text more compact
+\frenchspacing
 
-\raggedbottom % Makes all pages the height of the text on that page
+% Makes all pages the height of the text on that page
+\raggedbottom
 
-\selectlanguage{american} % Select your default language - e.g. american or ngerman
+% Select your default language - e.g. american or ngerman
+\selectlanguage{american}
 
-%\renewcommand*{\bibname}{new name} % Uncomment to change the name of the bibliography
-%\setbibpreamble{} % Uncomment to include a preamble to the bibliography - some text before the reference list starts
+% Uncomment to change the name of the bibliography
+%\renewcommand*{\bibname}{new name}
 
-\pagenumbering{roman} % Roman page numbering prior to the start of the thesis content (i, ii, iii, etc)
+% Uncomment to include a preamble to the bibliography - some text before the
+% reference list starts
+%\setbibpreamble{}
 
-\pagestyle{plain} % Suppress headers for the pre-content pages
+% Roman page numbering prior to the start of the thesis content (i, ii, iii,
+% etc)
+\pagenumbering{roman}
 
-%----------------------------------------------------------------------------------------
+% Suppress headers for the pre-content pages
+\pagestyle{plain}
+
+%------------------------------------------------------------------------------
 %	PRE-CONTENT THESIS PAGES
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+% Main title page
+\include{FrontBackMatter/Titlepage}
 
-\include{FrontBackMatter/Titlepage} % Main title page
+% Back of the title page
+\include{FrontBackMatter/Titleback}
 
-\include{FrontBackMatter/Titleback} % Back of the title page
+% Dedication page
+\cleardoublepage\include{FrontBackMatter/Dedication}
 
-\cleardoublepage\include{FrontBackMatter/Dedication} % Dedication page
+% Uncomment and create a Foreword.tex to include a foreword
+%\cleardoublepage\include{FrontBackMatter/Foreword}
 
-%\cleardoublepage\include{FrontBackMatter/Foreword} % Uncomment and create a Foreword.tex to include a foreword
+% Abstract page
+\cleardoublepage\include{FrontBackMatter/Abstract}
 
-\cleardoublepage\include{FrontBackMatter/Abstract} % Abstract page
+% Publications from the thesis page
+\cleardoublepage\include{FrontBackMatter/Publications}
 
-\cleardoublepage\include{FrontBackMatter/Publications} % Publications from the thesis page
+% Acknowledgements page
+\cleardoublepage\include{FrontBackMatter/Acknowledgments}
 
-\cleardoublepage\include{FrontBackMatter/Acknowledgments} % Acknowledgements page
+% Show chapter titles as headings
+\pagestyle{scrheadings}
 
-\pagestyle{scrheadings} % Show chapter titles as headings
-
-\cleardoublepage\include{FrontBackMatter/Contents} % Contents, list of figures/tables/listings and acronyms
+% Contents, list of figures/tables/listings and acronyms
+\cleardoublepage\include{FrontBackMatter/Contents}
 
 \cleardoublepage
 
-\pagenumbering{arabic} % Arabic page numbering for thesis content (1, 2, 3, etc)
-%\setcounter{page}{90} % Uncomment to manually start the page counter at an arbitrary value (for example if you wish to count the pre-content pages in the page count)
+% Arabic page numbering for thesis content (1, 2, 3, etc)
+\pagenumbering{arabic}
 
-\cleardoublepage % Avoids problems with pdfbookmark
-%----------------------------------------------------------------------------------------
+% Uncomment to manually start the page counter at an arbitrary value (for
+% example if you wish to count the pre-content pages in the page count)
+%\setcounter{page}{90}
+
+% Avoids problems with pdfbookmark
+\cleardoublepage
+
+%------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
-%----------------------------------------------------------------------------------------
-\ctparttext{You can put some informational part preamble text here. Illo principalmente su nos. Non message \emph{occidental} angloromanic da. Debitas effortio simplificate sia se, auxiliar summarios da que, se avantiate publicationes via. Pan in terra summarios, capital interlingua se que. Al via multo esser specimen, campo responder que da. Le usate medical addresses pro, europa origine sanctificate nos.}
+%------------------------------------------------------------------------------
+\ctparttext{You can put some informational part preamble text here. Illo
+principalmente su nos. Non message \emph{occidental} angloromanic da. Debitas
+effortio simplificate sia se, auxiliar summarios da que, se avantiate
+publicationes via. Pan in terra summarios, capital interlingua se que. Al via
+multo esser specimen, campo responder que da. Le usate medical addresses pro,
+europa origine sanctificate nos.}
 
 \part{Introduction}
 \input{Parts/Introduction.tex}
 \cleardoublepage
-%------------------------------------------------
-\ctparttext{You can put some informational part preamble text here. Illo principalmente su nos. Non message \emph{occidental} angloromanic da. Debitas effortio simplificate sia se, auxiliar summarios da que, se avantiate publicationes via. Pan in terra summarios, capital interlingua se que. Al via multo esser specimen, campo responder que da. Le usate medical addresses pro, europa origine sanctificate nos se.}
+
+%------------------------------------------------------------------------------
+\ctparttext{You can put some informational part preamble text here. Illo
+principalmente su nos. Non message \emph{occidental} angloromanic da. Debitas
+effortio simplificate sia se, auxiliar summarios da que, se avantiate
+publicationes via. Pan in terra summarios, capital interlingua se que. Al via
+multo esser specimen, campo responder que da. Le usate medical addresses pro,
+europa origine sanctificate nos se.}
 
 \part{Contributions}
 \input{Parts/Contributions.tex}
 \cleardoublepage
 
-%------------------------------------------------
-\ctparttext{You can put some informational part preamble text here. Illo principalmente su nos. Non message \emph{occidental} angloromanic da. Debitas effortio simplificate sia se, auxiliar summarios da que, se avantiate publicationes via. Pan in terra summarios, capital interlingua se que. Al via multo esser specimen, campo responder que da. Le usate medical addresses pro, europa origine sanctificate nos se.}
+%------------------------------------------------------------------------------
+\ctparttext{You can put some informational part preamble text here. Illo
+principalmente su nos. Non message \emph{occidental} angloromanic da. Debitas
+effortio simplificate sia se, auxiliar summarios da que, se avantiate
+publicationes via. Pan in terra summarios, capital interlingua se que. Al via
+multo esser specimen, campo responder que da. Le usate medical addresses pro,
+europa origine sanctificate nos se.}
 
 \part{Final words and perspectives}
 \input{Parts/Final_words.tex}
-\cleardoublepage % Empty page before the start of the next part
 
+% Empty page before the start of the next part
+\cleardoublepage
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \appendix
 
 \part{Appendix}
 \input{Parts/Appendix.tex}
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 %	POST-CONTENT THESIS PAGES
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+% Bibliography
+\cleardoublepage\include{FrontBackMatter/Bibliography}
 
-\cleardoublepage\include{FrontBackMatter/Bibliography} % Bibliography
+% Declaration
+\cleardoublepage\include{FrontBackMatter/Declaration}
 
-\cleardoublepage\include{FrontBackMatter/Declaration} % Declaration
+% Colophon
+\cleardoublepage\include{FrontBackMatter/Colophon}
 
-\cleardoublepage\include{FrontBackMatter/Colophon} % Colophon
+% Blurb
+\clearpage\include{FrontBackMatter/Blurb}
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
 \end{document}
 

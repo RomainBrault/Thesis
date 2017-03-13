@@ -33,7 +33,7 @@ install:
 
 before_script:
   - cp -r fonts $HOME/.fonts
-  - fc-cache -fv
+  - fc-cache -fg
 
 script:
   - chmod +x compile

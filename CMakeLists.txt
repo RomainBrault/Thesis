@@ -10,7 +10,7 @@ set(LATEX_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/${LATEX_OUTPUT_PATH}"
 set(PDFLATEX_COMPILER ${PDFLATEX_COMPILER}
     CACHE STRING "Latex compiler")
 set(LATEX_COMPILER_FLAGS 
-    "-shell-escape -file-line-error -interaction=interactive" 
+    "-shell-escape -file-line-error -interaction=batchmode" 
     CACHE STRING "Flags passed to latex")
 separate_arguments(LATEX_COMPILER_FLAGS)
 message(STATUS ${LATEX_COMPILER_FLAGS})

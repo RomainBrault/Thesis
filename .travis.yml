@@ -40,24 +40,24 @@ script:
   - bash compile -f
 
 after_success:
-    # CREATE GIT TAG
-    - cp bin/ThesisRomainBrault.pdf .
-    - git config --global user.email "ro.brault@gmail.com"
-    - git config --global user.name "Travis CI"
-    - export GIT_TAG=build-$TRAVIS_BRANCH-$(date -u "+%Y-%m-%d")-$TRAVIS_BUILD_NUMBER
-    - git add ThesisRomainBrault.pdf
-    - git commit -m "Travis generation of ThesisRomainBrault.pdf"
-    - git tag $GIT_TAG -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
-    - git push --quiet git@github.com:RomainBrault/Thesis.git $GIT_TAG > /dev/null 2>&1
+  # CREATE GIT TAG
+  - cp bin/ThesisRomainBrault.pdf .
+  - git config --global user.email "ro.brault@gmail.com"
+  - git config --global user.name "Travis CI"
+  - export GIT_TAG=build-$TRAVIS_BRANCH-$(date -u "+%Y-%m-%d")-$TRAVIS_BUILD_NUMBER
+  - git add ThesisRomainBrault.pdf
+  - git commit -m "Travis generation of ThesisRomainBrault.pdf"
+  - git tag $GIT_TAG -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
+  - git push --quiet git@github.com:RomainBrault/Thesis.git $GIT_TAG > /dev/null 2>&1
 
-    # push on publish branch
-    - git checkout --orphan publish
-    - git rm -r .
-    - rm -r .
-    - cp bin/ThesisRomainBrault.pdf .
-    - git add -A
-    - git commit -m "Travis generation of ThesisRomainBrault.pdf"
-    - git push -u publish
+#  # push on publish branch
+#  - git checkout --orphan publish
+#  - git rm -r .
+#  - rm -r .
+#  - cp bin/ThesisRomainBrault.pdf .
+#  - git add -A
+#  - git commit -m "Travis generation of ThesisRomainBrault.pdf"
+#  - git push -u publish
 
   branches:
     except:

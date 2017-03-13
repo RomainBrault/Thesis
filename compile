@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
-#================================================================
+#==============================================================================
 # HEADER
-#================================================================
+#==============================================================================
 #% SYNOPSIS
 #+    ${SCRIPT_NAME} [-ocbfushv]
 #%
@@ -24,7 +24,7 @@
 #% EXAMPLES
 #%    ${SCRIPT_NAME} -o DEFAULT arg1 arg2
 #%
-#================================================================
+#==============================================================================
 #- IMPLEMENTATION
 #     name            ${SCRIPT_NAME}
 #-    version         0.1
@@ -32,13 +32,13 @@
 #-    copyright       Copyright (c) Romain Brault
 #-    license         GNU General Public License
 #-
-#================================================================
+#==============================================================================
 #  HISTORY
 #     2017/01/01 : RomainBrault : Script creation
 #
-#================================================================
+#==============================================================================
 # END_OF_HEADER
-#================================================================
+#==============================================================================
 
 set -e
 
@@ -47,9 +47,22 @@ SCRIPT_HEADSIZE=$(head -200 ${0} |grep -n "^# END_OF_HEADER" | cut -f1 -d:)
 SCRIPT_NAME="$(basename ${0})"
 
 # Usage functions
-usage() { printf "Usage: "; head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e "^#+" | sed -e "s/^#+[ ]*//g" -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g" ; }
-usagefull() { head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e "^#[%+-]" | sed -e "s/^#[%+-]//g" -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g" ; }
-scriptinfo() { head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e "^#-" | sed -e "s/^#-//g" -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g"; }
+usage() { 
+    printf "Usage: "; 
+    head -${SCRIPT_HEADSIZE:-99} ${0} \
+    | grep -e "^#+" | \
+    sed -e "s/^#+[ ]*//g" -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g" ; 
+}
+usagefull() { 
+    head -${SCRIPT_HEADSIZE:-99} ${0} \
+    | grep -e "^#[%+-]" | \
+    sed -e "s/^#[%+-]//g" -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g" ; 
+}
+scriptinfo() { 
+    head -${SCRIPT_HEADSIZE:-99} ${0} \
+    | grep -e "^#-" | \
+    sed -e "s/^#-//g" -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g"; 
+}
 
 for arg in "$@"; do
   shift

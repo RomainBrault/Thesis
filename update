@@ -10,6 +10,6 @@ cp bin/ThesisRomainBrault.pdf.asc ~/Dropbox/CorrectionsRomain/Romain || true
 
 git pull origin master
 git add -A
-git commit -S -m"Sync with Overleaf"
+git commit -S -m"Syncf"
 git push origin master
 

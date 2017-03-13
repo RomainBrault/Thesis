@@ -716,10 +716,11 @@ Thus $A^\adjoint=\Sigma^{-1}\conj{A}^{\transpose}\Sigma$.
     the respective spaces they are defined. Namely $\mathcal{Y}$, $\mathcal{U}$
     and $\tildeH{\omega}$. For instance if one choose
     $\tildeH{\omega}=\vect_{j=1}^D \mathcal{U}'$,
-    $\mathcal{U}'=\mathbb{R}^{u'}$ endowed with the euclidean inner product
-    $\inner{\theta',\theta}_{\mathcal{U}'}=\inner{\theta', \theta}_2$ and endow
-    $\mathcal{U}$ with a Mahalanobis inner product $\inner{y',
-    y}_{\mathcal{U}}=\inner{y, \Sigma^{-1} y}_2$ where $\Sigma$ is some
+    $\mathcal{U}'=\mathbb{R}^{u'}$ endowed with the Euclidean inner product
+    $\inner{\theta',\theta}_{\mathcal{U}'}=\inner{\theta', \theta}_2$,
+    $\mathcal{Y}$ also endowed with the Euclidean inner product and
+    $\mathcal{U}$ endowed with a Mahalanobis inner product $\inner{u',
+    u}_{\mathcal{U}}=\inner{u', \Sigma^{-1} u}_2$ where $\Sigma$ is some
     symmetric positive definite operator, then for all $x\in\mathcal{X}$,
     \begin{dmath*}
         \tildePhi{\omega}(x)_{ij}=\inner{e_j \tildePhi{\omega}(x)e_i}_2
@@ -736,7 +737,7 @@ Thus $A^\adjoint=\Sigma^{-1}\conj{A}^{\transpose}\Sigma$.
         \lambda_K \widetilde{\mathbf{M}}_{\left(\lambda_K,
         \lambda_M\right)}\right) \theta_{\seq{z}}
         = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)\Sigma^{-1}
-        V^\transpose  \Sigma y_i.
+        V^\transpose y_i.
     \end{dmath*}
     where $\widetilde{\mathbf{M}}_{\left(\lambda_K,\lambda_M\right)}=I_{r} +
     \frac{\lambda_M}{\lambda_K} \sum_{i,k=1}^{N+U} \tildePhi{\omega}(x_i)M_{ik}

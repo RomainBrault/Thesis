@@ -37,7 +37,7 @@ before_script:
 
 script:
   - chmod +x compile
-  - bash compile -f
+  - travis_wait 180 bash compile -fg
 
 after_success:
   # CREATE GIT TAG

@@ -1318,6 +1318,25 @@ operator behaves as a (sparse) matrix --see
 this implementation the time complexity of $\tildePhi{\omega}(x)^\transpose
 \theta$ and $\tildePhi{\omega}(x)y$ falls down to $O_t(2Du'+u'u)$ and the same
 holds for space complexity.
+\begin{table}[thb]
+    \centering
+    \caption[Complexity of efficient linear-operators for different
+    \acs{ORFF}.]{Complexity of efficient linear-operator (in matrix form) for
+    different Feature maps given in \cref{table:efficient-op}.
+    \label{table:efficient-complexity}}
+    \begin{tabularx}{\textwidth}{Xcc}
+        \toprule
+            Kernel & $\tildePhi{\omega}(X)^\adjoint$ & $\tildePhi{\omega}(X)$
+            \\
+        \midrule
+            Decomposable & $O\left((u'r+u'u)N\right)$ &
+            $O\left((uN+u'u)r\right)$ \\
+            Curl-free & $O\left(uND\right)$ & $O\left(uND\right)$ \\
+            Divergence-free & $O\left((u^2+uN)D\right)$ &
+            $O\left((u^2+uN)D\right)$ \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
 \paragraph{}
 A quick experiment shows the advantage of seeing the decomposable kernel as a
 linear operator rather than a matrix. We draw $N=100$ points $(x_i)_{i=1}^N$ in
@@ -1339,7 +1358,7 @@ import efficient_decomposable_gaussian
 
 efficient_decomposable_gaussian.main()
 \end{pycode}
-\begin{figure}[h]
+\begin{figure}[htb]
     \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_decomposable_gaussian.pgf}}')}
     \caption[Efficient decomposable gaussian \acs{ORFF}]{Efficient decomposable
     gaussian ORFF (lower is better).}
@@ -1381,25 +1400,6 @@ bytes  to store $\tildePhi{\omega}(x)$ for all $x_i$'s. We average the results
 over fifty runs. Full code is given in \cref{code:efficient_curlfree_gaussian}.
 As we can see the linear-operator implementation is one order of magnitude
 slower than its matrix counterpart. However it uses considerably less memory.
-\begin{table}[htb]
-    \centering
-    \caption[Complexity of efficient linear-operators for different
-    \acs{ORFF}.]{Complexity of efficient linear-operator (in matrix form) for
-    different Feature maps given in \cref{table:efficient-op}.
-    \label{table:efficient-complexity}}
-    \begin{tabularx}{\textwidth}{Xcc}
-        \toprule
-            Kernel & $\tildePhi{\omega}(X)^\adjoint$ & $\tildePhi{\omega}(X)$
-            \\
-        \midrule
-            Decomposable & $O\left((u'r+u'u)N\right)$ &
-            $O\left((uN+u'u)r\right)$ \\
-            Curl-free & $O\left(uND\right)$ & $O\left(uND\right)$ \\
-            Divergence-free & $O\left((u^2+uN)D\right)$ &
-            $O\left((u^2+uN)D\right)$ \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
 
 \subsection{Divergence-free kernel}
 We use the unbounded \acs{ORFF} map presented in

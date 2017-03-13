@@ -41,16 +41,21 @@ CMakeLatex/      export-ignore
 FrontBackMatter/ export-ignore
 gfx/             export-ignore
 Parts/           export-ignore
+fonts/           export-ignore
+profile/         export-ignore
 *.tex            export-ignore
 *.bib            export-ignore
 *.sty            export-ignore
 *.txt            export-ignore
 *.md             export-ignore
 *.yml            export-ignore
-*.sh
+*.sh             export-ignore
 
 .gitattributes   export-ignore
 .gitignore       export-ignore
+parselog.py      export-ignore
+compile          export-ignore
+update           export-ignore
 
 # Whitespace
 # ==========

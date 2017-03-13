@@ -59,6 +59,6 @@ after_success:
 #  - git commit -m "Travis generation of ThesisRomainBrault.pdf"
 #  - git push -u publish
 
-  branches:
-    except:
-      - /^build-[0-9a-z\-]*/
+branches:
+  except:
+    - /^build-[0-9a-z\-]*/

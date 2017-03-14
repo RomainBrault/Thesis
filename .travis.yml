@@ -23,7 +23,7 @@ before_install:
   - brew upgrade
   - brew install ghostscript
   - brew install imagemagick
-  - travis_wait 180 brew cask install mactex
+  - travis_retry travis_wait 180 brew cask install mactex
 
   - pushd $HOME
   - chmod u+x travis-script/install-miniconda && ./travis-script/install-miniconda

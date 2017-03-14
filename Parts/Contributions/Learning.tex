@@ -1447,7 +1447,7 @@ framework for OVK Learning.
 \subsection{Learning with ORFF vs learning with OVK}
 \subsubsection{Datasets}
 The \emph{first dataset} considered is the handwritten digits recognition
-dataset MNIST\footnote{available at \url{http://yann.lecun.com/exdb/mnist}.} We
+dataset \textsc{MNIST} available at \url{http://yann.lecun.com/exdb/mnist}. We
 select a training set of $12,000$ images and a test set of $10,000$ images. The
 inputs are images represented as a vector $x_i\in[0,255]^{784}$ and the targets
 are integers between $0$ and $9$.
@@ -1478,8 +1478,28 @@ where $u=\begin{pmatrix} -p^{-2} & \hdots & -p^{-2}
 targets on the simplex as a preprocessing step, before learning with the 
 decomposable $K_0(\delta)=I_p k_0(\delta)$, where $k_0$ is a scalar Gaussian kernel.
 \paragraph{}
-The \emph{second dataset} is a simulated $5D$ vector field with structure. We generate a scalar field as a random function $f:[-1,1]^5\to\mathbb{R}$, where $\tildef{\omega}(x)=\tildephi{\omega}(x)^\adjoint \theta$ where $\theta$ is a random matrix with each entry following a standard normal distribution, $\tildephi{\omega}$ is a scalar Gaussian RFF with bandwidth $\sigma=0.4$. The input data $x$ are generated from a uniform probability distribution. We take the gradient of $\tildef{\omega}$ to generate the curl-free $5D$ vector field.
+The \emph{second dataset} is a simulated five dimensional ($5D$) vector field with structure. We generate a scalar field as a random function $f:[-1,1]^5\to\mathbb{R}$, where $\tildef{\omega}(x)=\tildephi{\omega}(x)^\adjoint \theta$ where $\theta$ is a random matrix with each entry following a standard normal distribution, $\tildephi{\omega}$ is a scalar Gaussian RFF with bandwidth $\sigma=0.4$. The input data $x$ are generated from a uniform probability distribution. We take the gradient of $\tildef{\omega}$ to generate the curl-free $5D$ vector field.
 
+
+\paragraph{}
+We trained both an \ac{ORFF} and an \ac{OVK} model on synthetic data from
+$\mathbb{R}^{20}\to\mathbb{R}^4$ as described in \citet{audiffren2013online}.
+In this dataset, inputs ($x_1, \hdots, x_{20}$) are generated independently and
+uniformly over $[0, 1]$ and the different outputs are computed as follows. Let
+\begin{dmath*}
+    \phi(x)=(x_1^2, x_4^2, x_1x_2, x_3x_5, x_2, x_4, 1)
+\end{dmath*}
+and $(w_i)$ denotes the \acs{iid}~copies of a seven dimensional Gaussian
+distribution with zero mean and covariance $\Sigma\in\mathcal{M}_{7,7}(\mathbb{R})$ such that
+\begin{dmath*}
+    \Sigma=\text{Diag}
+    \begin{pmatrix}
+        0.5 & 0.25 & 0.1 & 0.05 & 0.15 & 0.1 & 0.15
+    \end{pmatrix}
+\end{dmath*}
+Then, the outputs of the different tasks are generated as $y_i=w_i\phi(x)$.  We
+use this dataset with $p=4$, $10^5$ instances and for the train set and also
+$10^5$ instances for the test set.
 
 %------------------------------------------------------------------------------
 \section{Conclusions}

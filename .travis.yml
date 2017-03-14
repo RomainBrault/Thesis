@@ -1,9 +1,9 @@
-sudo: false
+sudo: required
 os: osx
 osx_image: xcode8.2
 language: python
 python:
-  - "3.5"
+  - "3.6"
 
 cache:
   directories:

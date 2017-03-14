@@ -46,7 +46,7 @@ profile/         export-ignore
 *.tex            export-ignore
 *.bib            export-ignore
 *.sty            export-ignore
-*.txt            export-ignore
+CMakeLists.txt   export-ignore
 *.md             export-ignore
 *.yml            export-ignore
 *.sh             export-ignore

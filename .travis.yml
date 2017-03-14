@@ -21,17 +21,12 @@ notifications:
 before_install:
   - brew update
   - brew upgrade
-  - brew outdated cmake || brew upgrade cmake
   - brew install ghostscript
   - brew install imagemagick
   - travis_wait 180 brew cask install mactex
 
   - pushd $HOME
-  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh
-  - chmod u+x miniconda.sh
-  - ./miniconda.sh -b
-  - export PATH=$HOME/miniconda3/bin:$PATH
-  - conda update --yes conda
+  - chmod u+x travis-script/install-miniconda && ./travis-script/install-miniconda
   - popd
 
 install:
@@ -39,8 +34,7 @@ install:
   - source activate thesis
 
 script:
-  - chmod +x compile
-  - travis_wait 180 bash compile -fg
+  - chmod +x compile && travis_wait 180 bash compile -fg
 
 after_success:
   # CREATE GIT TAG

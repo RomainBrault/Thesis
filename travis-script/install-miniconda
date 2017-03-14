@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# For osx
+if [ -d "miniconda" ]; then
+    wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh
+    chmod u+x miniconda.sh
+    ./miniconda.sh -b -p $HOME/miniconda
+    export PATH=$HOME/miniconda/bin:$PATH
+    conda update --yes conda
+fi
+
+

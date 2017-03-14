@@ -23,6 +23,7 @@ before_install:
   - brew upgrade
   - brew install ghostscript
   - brew install imagemagick
+  - brew install caskroom/cask/brew-cask
   - travis_retry travis_wait 180 brew cask install mactex
 
   - pushd $HOME

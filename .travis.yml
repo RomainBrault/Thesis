@@ -24,14 +24,10 @@ before_script:
   - brew outdated cmake || brew upgrade cmake
   - brew install ghostscript
   - brew install imagemagick
-  - brew cask install mactex
+  - travis wait 180 brew cask install mactex
 
 install:
   - pip install -r requirements.txt
-
-before_script:
-  - cp -r fonts $HOME/.fonts
-  - fc-cache -fv
 
 script:
   - chmod +x compile

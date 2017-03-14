@@ -25,7 +25,7 @@ before_install:
   - brew install ghostscript
   - brew install imagemagick
   - brew install caskroom/cask/brew-cask
-  - travis wait 180 brew cask install mactex
+  - travis_wait 180 brew cask install mactex
 
   - pushd $HOME
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh
@@ -62,7 +62,3 @@ after_success:
 #  - git add -A
 #  - git commit -m "Travis generation of ThesisRomainBrault.pdf"
 #  - git push -u publish
-
-branches:
-  except:
-    - /^build-[0-9a-z\-]*/

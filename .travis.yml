@@ -24,7 +24,6 @@ before_install:
   - brew outdated cmake || brew upgrade cmake
   - brew install ghostscript
   - brew install imagemagick
-  - brew install caskroom/cask/brew-cask
   - travis_wait 180 brew cask install mactex
 
   - pushd $HOME

@@ -1,4 +1,6 @@
-DATA ARE NOT REAL! [![Build Status](https://travis-ci.com/RomainBrault/Thesis.svg?token=BGkmfYrnrsiGdq17pxis&branch=master)](https://travis-ci.com/RomainBrault/Thesis) [![License](https://img.shields.io/badge/License-GPL%202-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) [![Python](https://img.shields.io/badge/Python-3.6%20tested-blue.svg)](https://www.python.org/downloads/release/python-360/) [![TeXLive](https://img.shields.io/badge/TeXLive-2016-blue.svg)](https://www.tug.org/texlive/) [![OS](https://img.shields.io/badge/OS-macOS%20Sierra%20tested-blue.svg)](http://www.apple.com/fr/macos/sierra/)
+[![Build Status](https://travis-ci.com/RomainBrault/Thesis.svg?token=BGkmfYrnrsiGdq17pxis&branch=master)](https://travis-ci.com/RomainBrault/Thesis) [![License](https://img.shields.io/badge/License-GPL%202-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) [![Python](https://img.shields.io/badge/Python-3.6%20tested-blue.svg)](https://www.python.org/downloads/release/python-360/) [![TeXLive](https://img.shields.io/badge/TeXLive-2016-blue.svg)](https://www.tug.org/texlive/) [![OS](https://img.shields.io/badge/OS-macOS%20Sierra%20tested-blue.svg)](http://www.apple.com/macos/sierra/)
+
+DATA ARE NOT REAL!
 ==============
 
 # About

@@ -38,18 +38,19 @@
 \usepackage{multicol}
 \usepackage{cmap} % copy-paste pdf
 
-%----------------------------------------------------------------------------------------
-%	USEFUL COMMANDS
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+%  USEFUL COMMANDS
+%------------------------------------------------------------------------------
 \newcounter{dummy} % Necessary for correct hyperlinks (to index, bib, etc.)
 \providecommand{\mLyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
 \newlength{\abcd} % for ab..z string length calculation
 
 %------------------------------------------------------------------------------
-%	PACKAGES
+%  PACKAGES
 %------------------------------------------------------------------------------
 
-% \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+% Used for inserting dummy 'Lorem ipsum' text into the template
+% \usepackage{lipsum}
 
 %------------------------------------------------------------------------------
 
@@ -179,18 +180,20 @@ belowcaptionskip=.75\baselineskip % Space after the "Listing #: Desciption" text
 % \pdfcompresslevel=9
 % \pdfadjustspacing=1
 \hypersetup{
-% Uncomment the line below to remove all links (to references, figures, tables, etc), useful for b/w printouts
-%draft,
+% Uncomment the line below to remove all links (to references, figures, tables,
+% etc), useful for b/w printouts draft,
 pdflang={en-US},
 hyperfootnotes=true,
 colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
-% Uncomment the line below if you want to have black links (e.g. for printing black and white)
-%colorlinks=false, linktocpage=false, pdfborder={0 0 0}, pdfstartpage=3, pdfstartview=FitV,
-breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
-plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
-hypertexnames=true, pdfhighlight=/O,%nesting=true,%frenchlinks,%
-urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,%
-    %urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,%
+% Uncomment the line below if you want to have black links (e.g. for printing
+% black and white)
+%colorlinks=false, linktocpage=false, pdfborder={0 0 0}, pdfstartpage=3,
+%pdfstartview=FitV,
+breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,
+plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,
+hypertexnames=true, pdfhighlight=/O, %nesting=true,%frenchlinks,%
+urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen, 
+%pagecolor=Black,%
 }
 
 \VerbatimFootnotes
@@ -200,9 +203,13 @@ urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,
 \usepackage{braket}
 \usepackage{dirtytalk}
 \usepackage{numprint}
-% Remove drafting to get rid of the '[ Date - classicthesis version 4.0 ]' text at the bottom of every page
-\PassOptionsToPackage{eulerchapternumbers,listings,subfig,parts,dottedtoc,floatperchapter,linedheaders,dottedtoc}{classicthesis}
-% Available options: drafting parts nochapters linedheaders eulerchapternumbers beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc manychapters listings floatperchapter subfig
+% Remove drafting to get rid of the '[ Date - classicthesis version 4.0 ]' text
+% at the bottom of every page
+\PassOptionsToPackage{eulerchapternumbers, listings, subfig, parts, dottedtoc,
+floatperchapter, linedheaders, dottedtoc}{classicthesis}
+% Available options: drafting parts nochapters linedheaders eulerchapternumbers
+% beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc
+% manychapters listings floatperchapter subfig
 \usepackage{classicthesis}
 \usepackage{breqn}
 \usepackage{colonequals}
@@ -230,7 +237,7 @@ urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,
 \setlist[propenum]{label=\arabic*., ref=\theproposition~item~\arabic*}
 \crefalias{propenumi}{proposition}
 
-\newcommand{\chapterendsymbol}{
+\newcommand{\chapterendsymbol}{%
     \par
     \begin{center}\adforn{60}\end{center}
     }
@@ -259,8 +266,9 @@ urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,
 \DeclareFlexSymbol{9}{Var}{digit}{39}
 
 %------------------------------------------------------------------------------
-
-\PassOptionsToPackage{smaller}{acronym} % Include printonlyused in the first bracket to only show acronyms used in the text
+% Include printonlyused in the first bracket to only show acronyms used in the
+% text
+\PassOptionsToPackage{smaller}{acronym} 
 \usepackage{acronym} % Nice macros for handling all acronyms in the thesis
 %\renewcommand*{\acsfont}[1]{\textssc{#1}} % For MinionPro
 \renewcommand*{\aclabelfont}[1]{\acsfont{#1}}
@@ -269,8 +277,9 @@ urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,
 %	CHANGING TEXT AREA
 %------------------------------------------------------------------------------
 
-% \linespread{1.0} % a bit more for Palatino
-%\areaset[current]{312pt}{761pt} % 686 (factor 2.2) + 33 head + 42 head \the\footskip
+%\linespread{1.0} % a bit more for Palatino
+% 686 (factor 2.2) + 33 head + 42 head \the\footskip
+%\areaset[current]{312pt}{761pt} 
 %\setlength{\marginparwidth}{7em}%
 %\setlength{\marginparsep}{2em}%
 
@@ -280,19 +289,19 @@ urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,
 \usepackage[quiet]{mathspec}
 \usepackage{xltxtra} %also loads xunicode
 \setmathfont(Digits,Latin)[
-  Numbers={Lining,Proportional},
-  Mapping=tex-text,
-  Ligatures={Common, Rare, Historic},
+    Path=./fonts/,
+    Numbers={Lining,Proportional},
+    Mapping=tex-text,
+    Ligatures={Common, Rare, Historic},
 ]{Hoefler Text}
 \setmathfont(Greek)[
-  Lowercase=Regular,
-  Uppercase=Regular
+    Path=./fonts/,
+    Mapping=tex-text,
+    Lowercase=Regular,
+    Uppercase=Regular
 ]{Hoefler Text}
 \setmainfont[
-Mapping=tex-text,
-Ligatures={TeX, Common, Rare, Historic},
-% UprightFont={*-Medium},
-% BoldFont={*-Bold},
-% ItalicFont={*-MediumItalic},
-% BoldItalicFont={*-BoldItalic}
+    Path=./fonts/,
+    Mapping=tex-text,
+    Ligatures={TeX, Common, Rare, Historic}
 ]{Hoefler Text}

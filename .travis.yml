@@ -2,7 +2,8 @@ sudo: false
 language: python
 python:
   - "3.6"
-dist: trusty
+os: osx
+osx_image: xcode8.2
 
 cache:
   apt: true
@@ -18,15 +19,12 @@ notifications:
     on_success: never
     on_failure: never
 
-addons:
-  apt:
-    sources:
-      - sourceline: 'ppa:jonathonf/texlive-2016'
-    packages:
-      - ghostscript
-      - imagemagick
-      - cmake
-      - texlive-full
+before_script:
+  - brew update
+  - brew outdated cmake || brew upgrade cmake
+  - brew install ghostscript
+  - brew install imagemagick
+  - brew cask install mactex
 
 install:
   - pip install -r requirements.txt

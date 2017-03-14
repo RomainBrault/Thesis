@@ -10,7 +10,7 @@ set(LATEX_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/${LATEX_OUTPUT_PATH}"
 set(PDFLATEX_COMPILER ${PDFLATEX_COMPILER}
     CACHE STRING "Latex compiler")
 set(LATEX_COMPILER_FLAGS 
-    "-shell-escape -file-line-error -interaction=batchmode" 
+    "-shell-escape -file-line-error -interaction=nonstopmode" 
     CACHE STRING "Flags passed to latex")
 separate_arguments(LATEX_COMPILER_FLAGS)
 message(STATUS ${LATEX_COMPILER_FLAGS})
@@ -22,7 +22,7 @@ set(PYTHONTEX_COMPILER pythontex
 include(${CMAKE_SOURCE_DIR}/CMakeLatex/UseLATEX.cmake)
 
 file(GLOB_RECURSE contents_files RELATIVE 
-     ${CMAKE_SOURCE_DIR} *.tex *.icc *.tikz *.pgf)
+     ${CMAKE_SOURCE_DIR} *.tex *.icc *.tikz *.pgf *.otf *.ttc)
 foreach(item ${contents_files})
   if((${item} MATCHES "bin/*") OR
      (${item} MATCHES "build/*") OR

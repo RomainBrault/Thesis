@@ -1,12 +1,13 @@
 sudo: false
+os: osx
+osx_image: xcode8.2
 language: python
 python:
   - "3.6"
-os: osx
-osx_image: xcode8.2
 
 cache:
-  apt: true
+  directories:
+    - $HOME/Library/Caches/Homebrew
   pip: true
   bundler: true
 

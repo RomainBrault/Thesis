@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+while :
+do
+    echo "Press [CTRL+C] to stop.."
+    ./compile
+done

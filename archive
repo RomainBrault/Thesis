@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+gs -dPDFA=1 -dNOOUTERSAVE -sProcessColorModel=DeviceRGB -sDEVICE=pdfwrite \
+   -o bin/ThesisRomainBrault_pdfa.pdf ThesisRomainBrault_def.ps \
+   -dPDFACompatibilityPolicy=1 -dCompatibilityLevel=1.4 -dFastWebView \
+   bin/ThesisRomainBrault.pdf

@@ -15,11 +15,16 @@ square root of the largest eigenvalue of $A$. For $x$ and $z$ in some compact
 $\mathcal{C} \subset \mathbb{R}^d$, we consider:
 $F(x \groupop \inv{z}) =\tilde{K}(x,z)-K(x,z)$ and study how the uniform norm
 \begin{dmath}\label{eq:norm_inf}
-  \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}}=\norm{F}_{\infty}
-  \hiderel{=}\sup_{(x,z)\in\mathcal{C}\times\mathcal{C}}
-  \norm{\tilde{K}(x,z)-K(x,z)}_{\mathcal{Y},\mathcal{Y}}
+    \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}}=\norm{F}_{\infty}
+    \hiderel{=}\sup_{(x,z)\in\mathcal{C}\times\mathcal{C}}
+    \norm{\tilde{K}(x,z)-K(x,z)}_{\mathcal{Y},\mathcal{Y}}
 \end{dmath}
-behaves according to $D$. \Cref{fig:approximation_error} empirically shows convergence of three different \acs{OVK} approximations for $x,z$ sampled from the compact $[-1,1]^4$ and using an increasing number of sample points $D$. The log-log plot shows that all three kernels have the same convergence rate, up to a multiplicative factor.
+behaves according to $D$. Throughout this document we note $\delta=x\groupop
+z^{-1}$ for all $x$ and $z\in\mathcal{X}$. \Cref{fig:approximation_error}
+empirically shows convergence of three different \acs{OVK} approximations for
+$x,z$ sampled from the compact $[-1,1]^4$ and using an increasing number of
+sample points $D$. The log-log plot shows that all three kernels have the same
+convergence rate, up to a multiplicative factor.
 % \begin{pycode}[approximation]
 % sys.path.append('../src/')
 % import approximation
@@ -30,26 +35,41 @@ behaves according to $D$. \Cref{fig:approximation_error} empirically shows conve
 \begin{figure}[!ht]
  \centering
  % \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./approximation.pgf}}')}
- \caption[\acs{ORFF} reconstruction error]{Error reconstructing the target operator-valued kernel $K$ with \acs{ORFF}
+ \caption[\acs{ORFF} reconstruction error]{Error reconstructing the target
+ operator-valued kernel $K$ with \acs{ORFF}
  approximation $\tilde{K}$ for the decomposable, curl-free and divergence-free
  kernel.}
  \label{fig:approximation_error}
 \end{figure}
 \paragraph{}
-In order to bound the error with high probability, we turn to concentration inequalities devoted to random matrices~\citep{Boucheron}. Prior to the presentation of general results, we briefly recall the uniform convergence of \acs{RFF} approximation for a scalar shift invariant kernel on the additive \acs{LCA} group $\mathbb{R}^d$ and introduce a direct corollary about decomposable shift-invariant \acs{OVK} on the \acs{LCA} group $(\mathbb{R}^d, +)$.
-
-
-
-
-
+In order to bound the error with high probability, we turn to concentration
+inequalities devoted to random matrices~\citep{Boucheron}. Prior to the
+presentation of general results, we briefly recall the uniform convergence of
+\acs{RFF} approximation for a scalar shift invariant kernel on the additive
+\acs{LCA} group $\mathbb{R}^d$ and introduce a direct corollary about
+decomposable shift-invariant \acs{OVK} on the \acs{LCA} group $(\mathbb{R}^d,
++)$.
 
 \subsection{Scalar random Fourier Features and decomposable kernel}
-\citet{Rahimi2007} proved the uniform convergence of \acf{RFF} approximation for a scalar shift invariant kernel on the \acs{LCA} group $\mathbb{R}^d$ endowed with the group operation $\groupop=+$. In the case of the shift-invariant decomposable \acs{OVK}, an upper bound on the error can be directly obtained as a consequence of the result in the scalar case obtained by~\citet{Rahimi2007} and other authors~\citep{sutherland2015, sriper2015} since in this case
-\begin{theorem}[Uniform error bound for \acs{RFF},~\citet{Rahimi2007}]\label{rff-scalar-bound}
-Let $\mathcal{C}$ be a compact of subset of $\mathbb{R}^d$ of diameter $\abs{\mathcal{C}}$. Let $k$ be a shift invariant kernel, differentiable with a bounded second derivative and $\mu$ its normalized \acl{IFT} such that is defines a probability measure. Let $D$ the dimension of the Fourier feature vectors. Then for the mapping $\tildephi{1:D}$ described in Section 1, we have
+\citet{Rahimi2007} proved the uniform convergence of \acf{RFF} approximation
+for a scalar shift invariant kernel on the \acs{LCA} group $\mathbb{R}^d$
+endowed with the group operation $\groupop=+$. In the case of the
+shift-invariant decomposable \acs{OVK}, an upper bound on the error can be
+directly obtained as a consequence of the result in the scalar case obtained
+by~\citet{Rahimi2007} and other authors~\citep{sutherland2015, sriper2015}
+since in this case
+\begin{theorem}[Uniform error bound for \ac)s{RFF},~\citet{Rahimi2007}]
+\label{rff-scalar-bound}
+Let $\mathcal{C}$ be a compact of subset of $\mathbb{R}^d$ of diameter
+$\abs{\mathcal{C}}$. Let $k$ be a shift invariant kernel, differentiable with a
+bounded second derivative and $\mu$ its normalized \acl{IFT} such that is
+defines a probability measure. Let $D$ the dimension of the Fourier feature
+vectors. Then for the mapping $\tildephi{1:D}$ described in Section 1, we have
 \begin{dmath*}
-\probability_{\mu}\Set{(\omega_j)_{j=1}^D|\norm{\tilde{k}-k}_{\mathcal
-{C}\times\mathcal{C}}\ge \epsilon } \le 2^8\left( \frac{d\sigma \abs{\mathcal{C}}}{\epsilon} \right)^2\exp\left( -\frac{\epsilon^2D}{4(d+2)} \right)
+    \probability_{\mu}\Set{(\omega_j)_{j=1}^D|\norm{\tilde{k}-k}_{\mathcal
+    {C}\times\mathcal{C}}\ge \epsilon } \le 2^8\left( \frac{d\sigma
+    \abs{\mathcal{C}}}{\epsilon} \right)^2\exp\left(
+    -\frac{\epsilon^2D}{4(d+2)} \right)
 \end{dmath*}
 \end{theorem}
 From \cref{rff-scalar-bound}, we can deduce the following corollary about the uniform convergence of the ORFF approximation of the decomposable kernel. We recall that for a given pair $x$, $z$ in $\mathcal{C}$, $\tilde{K}(x,z)= \tildePhi{1:D}(x)^* \tildePhi{1:D}(z)=A\tilde{k}(x,z)$ and $K_0(x-z)=A \expectation_{\mu}[\tilde{k}(x,z)]$.

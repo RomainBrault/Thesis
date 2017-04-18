@@ -44,12 +44,14 @@ The following proposition of~\citet{Zhang2012,Carmeli2010} extends Bochner's
 theorem to any shift-invariant $\mathcal{Y}$-Mercer kernel.
 \begin{proposition}[Operator-valued Bochner's theorem~\citep{Zhang2012,
 neeb1998operator}]
-    \label{eq:bochner-gen} If a continuous function $K$ from $\mathcal{X}
-    \times \mathcal{X}$ to $\mathcal{Y}$ is a shift-invariant
-    $\mathcal{Y}$-Mercer kernel on $\mathcal{X}$, then there exists a unique
-    positive projection-valued measure $\dual{Q}: \mathcal{B}(\mathcal{X}) \to
+    \label{pr:operator_valued_bochner}
+    If a function $K$ from $\mathcal{X} \times \mathcal{X}$ to $\mathcal{Y}$ is
+    a shift-invariant $\mathcal{Y}$-Mercer kernel on $\mathcal{X}$, then there
+    exists a unique positive projection-valued measure $\dual{Q}:
+    \mathcal{B}(\mathcal{X}) \to
     \mathcal{L}_+(\mathcal{Y})$ such that for all $x$, $z \in \mathcal{X}$,
-    \begin{dmath}
+    \begin{dmath} 
+        \label{eq:bochner-gen} 
         K(x, z) = \int_{\dual{\mathcal{X}}} \conj{\pairing{x \groupop \inv{z},
         \omega}} d\dual{Q}(\omega),
     \end{dmath}
@@ -70,7 +72,8 @@ theoretical properties as well as practical computations.  Secondly it also
 states that any \acs{OVK} have such a spectral decomposition when $\mathcal{Y}$
 is finite dimensional or $\mathcal{X}$.
 
-\begin{proposition}[\citet{Carmeli2010}]\label{pr:mercer_kernel_bochner}
+\begin{proposition}[\citet{Carmeli2010}]
+    \label{pr:mercer_kernel_bochner}
     Let $\dual{\mu}$ be a positive measure on
     $\mathcal{B}(\mathcal{\dual{\mathcal{X}}})$ and $A: \dual{\mathcal{X}}\to
     \mathcal{L}(\mathcal{Y})$ such that $\inner{A(\cdot)y,y'}\in
@@ -111,9 +114,10 @@ kernel we can write
 $\mathcal{H}_{(A,\dual{\mu})}{\scriptstyle\implies}\mathcal{H}_K$ where $K$ is
 defined as in \cref{eq:AK0}. However the converse is to true: Given a
 $\mathcal{Y}$-Mercer shift invariant \acl{OVK}, there exist infinitely many
-pairs $(A,\dual{\mu})$ that characterize an \acs{OVK}.  \paragraph{}
+pairs $(A,\dual{\mu})$ that characterize an \acs{OVK}.
+\paragraph{}
 The main difference between \cref{eq:bochner-gen} and
-\cref{pr:mercer_kernel_bochner} is that the first one characterize an \acs{OVK}
+\cref{eq:AK0} is that the first one characterize an \acs{OVK}
 by a unique \acf{POVM}, while the second one shows that the \acs{POVM} that
 uniquely characterize a $\mathcal{Y}$-Mercer \acs{OVK} has an operator-valued
 density with respect to a \emph{scalar} measure $\dual{\mu}$; and that this
@@ -1272,7 +1276,7 @@ $(\mathbb{R}^d,+)$.
     The (Pontryagin) dual of $\mathcal{X}=\mathbb{R}^d$ is
     $\dual{\mathcal{X}}\cong\mathbb{R}^d$, and the duality pairing is
     $\pairing{x-z,\omega}=\exp(i\inner{x-z, \omega}_2)$. The kernel
-    approximation yields:
+    approximation yields
     \begin{dmath*}
         \tilde{K}(x,z)=\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z)
         = \frac{1}{D} \sum_{j=1}^D \begin{pmatrix} \cos{\inner{x,\omega_j}_2} &

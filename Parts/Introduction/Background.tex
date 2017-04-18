@@ -231,34 +231,53 @@ $m=\dim(\mathcal{H}_2)$. All these notations are summarized in
         \toprule
             Symbol & \multicolumn{1}{c}{Meaning} \\
         \cmidrule{1-2}
-            $\mathbb{K}$ & Any Abelian field. \\ $\mathbb{R}$ & The Abelian
-            field of real numbers. \\ $\mathbb{C}$ & The Abelian field of
-            complex numbers. \\ $\iu \in\mathbb{C}$ & Unit pure imaginary
-            number $\sqrt{-1}$. \\ $\ec \in\mathbb{R}$ & Euler constant. \\
+        \endhead
+            $\mathbb{K}$ & Any Abelian field. \\
+            $\mathbb{R}$ & The Abelian field of real numbers. \\
+            $\mathbb{C}$ & The Abelian field of complex numbers. \\
+            $\iu \in\mathbb{C}$ & Unit pure imaginary number $\sqrt{-1}$. \\
+            $\ec \in\mathbb{R}$ & Euler constant. \\
+            $e \in \mathcal{X}$ &  The neutral element of the group
+            $\mathcal{X}$. \\
             $\delta_{ij}$ & Kronecker delta function. $\delta_{ij}=0$ if $i
-            \neq j$, $1$ otherwise. \\ $\inner{\cdot,\cdot}_2$ & Euclidean
-            inner product. \\ $\norm{\cdot}_2$ & Euclidean norm. \\
-            $\mathcal{X}$ & Input space. \\ $\dual{\mathcal{X}}$ & The
-            Pontryagin dual of $\mathcal{X}$. \\ $\mathcal{Y}$ & Output space
-            (Hilbert space). \\ $\mathcal{H}$ & Feature space (Hilbert space).
-            \\ $\inner{\cdot,\cdot}_{\mathcal{Y}}$ & The canonical inner
+            \neq j$, $1$ otherwise. \\
+            $\inner{\cdot,\cdot}_2$ & Euclidean inner product. \\
+            $\norm{\cdot}_2$ & Euclidean norm. \\
+            $\mathcal{X}$ & Input space. \\
+            $\dual{\mathcal{X}}$ & The Pontryagin dual of $\mathcal{X}$ when
+            $\mathcal{X}$ is a \acs{LCA} group. \\
+            $\mathcal{Y}$ & Output space (Hilbert space). \\
+            $\mathcal{H}$ & Feature space (Hilbert space).  \\ 
+            $\inner{\cdot,\cdot}_{\mathcal{Y}}$ & The canonical inner
             product of the Hilbert space $\mathcal{Y}$. \\
             $\norm{\cdot}_{\mathcal{Y}}$ & The canonical norm induced by the
             inner product of the Hilbert space $\mathcal{Y}$. \\
             $\mathcal{F}(\mathcal{X};\mathcal{Y})$ & Vector space of function
             from $\mathcal{X}$ to $\mathcal{Y}$. \\
+            $\norm{\cdot}_{\infty}$ & The uniform norm $\norm{f}_{\infty}= \sup
+            \set{\norm{f(x)}_{\mathcal{Y}} | x\in\mathcal{X}}$ for all
+            $f\in\mathcal{F}(\mathcal{X};\mathcal{Y})$. \\
             $\mathcal{C}(\mathcal{X};\mathcal{Y})$ & The vector subspace of
             $\mathcal{F}$ of continuous function from $\mathcal{X}$ to
-            $\mathcal{Y}$. \\ $\mathcal{L}(\mathcal{H};\mathcal{Y})$ & The set
-            of bounded linear operator from a Hilbert space $\mathcal{H}$ to a
-            Hilbert space $\mathcal{Y}$. \\ $\mathcal{M}_{m,n}(\mathbb{K})$ &
-            The set of matrices of size $(m,n)$. \\ $\mathcal{L}(\mathcal{Y})$
-            & The set of bounded linear operator from a Hilbert space
-            $\mathcal{H}$ to itself. \\ $\mathcal{L}_{+}(\mathcal{Y})$ & The
-            set of non-negative bounded linear operator from a Hilbert space
-            $\mathcal{H}$ to itself. \\ $\mathcal{B}(\mathcal{X})$ & Borel
-            $\sigma$-algebra on a topological space $\mathcal{X}$. \\
+            $\mathcal{Y}$. \\
+            $\mathcal{L}(\mathcal{H};\mathcal{Y})$ & The set of bounded linear
+            operator from a Hilbert space $\mathcal{H}$ to a
+            Hilbert space $\mathcal{Y}$. \\
+            $\norm{\cdot}_{\mathcal{Y},\mathcal{Y}'}$ & The operator norm
+            $\norm{\Gamma}_{\mathcal{Y}, \mathcal{Y'}} =
+            \sup_{\norm{y}_{\mathcal{Y}}=1}\norm{\Gamma y}_{\mathcal{Y}'}$ for
+            all $\Gamma\in\mathcal{L}(\mathcal{Y},\mathcal{Y'})$ \\
+            $\mathcal{M}_{m,n}(\mathbb{K})$ & The set of matrices of size
+            $(m,n)$. \\
+            $\mathcal{L}(\mathcal{Y})$ & The set of bounded linear operator
+            from a Hilbert space $\mathcal{H}$ to itself. \\
+            $\mathcal{L}_{+}(\mathcal{Y})$ & The set of non-negative bounded
+            linear operator from a Hilbert space $\mathcal{H}$ to itself. \\
+            $\mathcal{B}(\mathcal{X})$ & Borel $\sigma$-algebra on a
+            topological space $\mathcal{X}$. \\
             $\mu(\mathcal{X})$ & A scalar positive measure of $\mathcal{X}$. \\
+            $\Leb(\mathcal{X})$ & The Lebesgue measure of $\mathcal{X}$. \\
+            $\Haar(\mathcal{X})$ & A Haar measure of $\mathcal{X}$.  \\
             $L^p(\mathcal{X}, \mu)$ & The Banach space of
             $\abs{\cdot}^p$-integrable function from
             $(\mathcal{X},\mathcal{B}(\mathcal{X}), \mu)$ to $\mathbb{C}$. \\
@@ -267,6 +286,12 @@ $m=\dim(\mathcal{H}_2)$. All these notations are summarized in
             $(\mathcal{X},\mathcal{B}(\mathcal{X}), \mu)$ to $\mathcal{Y}$. \\
             $\Vect_{j=1}^D x_i$ & The direct sum of $D$ vectors $x_i$'s in
             $\mathcal{H}$. \\
+            $\sigma(\Gamma)$ & The spectrum of the linear operator $Gamma$,
+            \acs{ie}~$\sigma(\Gamma)=\Set{\lambda\in\mathbb{C} | \nexists s,
+            s(\lambda e - \Gamma) = e}$. \\
+            $\rho(\Gamma)$ & The spectral radius of the linear operator
+            $\Gamma$ \acs{ie}~$\rho(\Gamma)=\sup\set{\abs{\lambda} | \lambda
+            \in \sigma(\Gamma)}$. \\
         \bottomrule
     \end{tabularx}
 \end{table}}

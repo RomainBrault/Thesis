@@ -1,70 +1,261 @@
-# Auto detect text files and perform LF normalization
-* text=auto
-*.tex diff=tex
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
 
-# Source files
-# ============
-#
-# The above will handle all files NOT found below
-#
-# These files are text and should be normalized (Convert crlf => lf)
-*.gitattributes  text
-*.md             text
-*.tex            text
-*.txt            text
-*.tikz           text
-*.pgf            text
-*.bib            text
-*.py             text
-*.pxd            text
-*.py             text
-*.py3            text
-*.pyw            text
-*.pyx            text
-.gitignore       text
+## Intermediate documents:
+*.dvi
+*-converted-to.*
+# these rules might exclude image files for figures etc.
+*.ps
+*.eps
+*.pdf
+!ThesisRomainBrault.pdf
 
-# Binary files
-# ============
-*.db             binary
-*.png            binary
-*.p              binary
-*.pkl            binary
-*.pyc            binary
-*.pyd            binary
-*.pyo            binary
-*.pdf            binary
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.brf
+*.run.xml
 
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
 
-# Ignore
-# ======
-CMakeLatex/      export-ignore
-FrontBackMatter/ export-ignore
-gfx/             export-ignore
-Parts/           export-ignore
-fonts/           export-ignore
-profile/         export-ignore
-*.tex            export-ignore
-*.bib            export-ignore
-*.sty            export-ignore
-CMakeLists.txt   export-ignore
-*.md             export-ignore
-*.yml            export-ignore
-*.sh             export-ignore
+# Folders
+.ipynb_checkpoints
 
-.gitattributes   export-ignore
-.gitignore       export-ignore
-parselog.py      export-ignore
-compile          export-ignore
-update           export-ignore
+## Auxiliary and intermediate files from other packages:
+# algorithms
+*.alg
+*.loa
 
-# Whitespace
-# ==========
-*.pxd       whitespace=space-before-tab,tab-in-indent,trailing-space,tab
-*.py        whitespace=space-before-tab,tab-in-indent,trailing-space,tab
-*.py3       whitespace=space-before-tab,tab-in-indent,trailing-space,tab
-*.pyw       whitespace=space-before-tab,tab-in-indent,trailing-space,tab
-*.pyx       whitespace=space-before-tab,tab-in-indent,trailing-space,tab
-*.tex       whitespace=space-before-tab,tab-in-indent,trailing-space,tab
-*.md        whitespace=space-before-tab,tab-in-indent,trailing-space,tab
-*.bib       whitespace=space-before-tab,tab-in-indent,trailing-space,tab
-*.txt       whitespace=space-before-tab,tab-in-indent,trailing-space,tab
+# achemso
+acs-*.bib
+
+# amsthm
+*.thm
+
+# beamer
+*.nav
+*.snm
+*.vrb
+
+# cprotect
+*.cpt
+
+#(e)ledmac/(e)ledpar
+*.end
+*.[1-9]
+*.[1-9][0-9]
+*.[1-9][0-9][0-9]
+*.[1-9]R
+*.[1-9][0-9]R
+*.[1-9][0-9][0-9]R
+*.eledsec[1-9]
+*.eledsec[1-9]R
+*.eledsec[1-9][0-9]
+*.eledsec[1-9][0-9]R
+*.eledsec[1-9][0-9][0-9]
+*.eledsec[1-9][0-9][0-9]R
+
+# glossaries
+*.acn
+*.acr
+*.glg
+*.glo
+*.gls
+
+# gnuplottex
+*-gnuplottex-*
+
+# hyperref
+*.brf
+
+# knitr
+*-concordance.tex
+*-tikzDictionary
+
+# listings
+*.lol
+
+# makeidx
+*.idx
+*.ilg
+*.ind
+*.ist
+
+# minitoc
+*.maf
+*.mtc
+*.mtc[0-9]
+*.mtc[1-9][0-9]
+
+# minted
+_minted*
+*.pyg
+
+# morewrites
+*.mw
+
+# mylatexformat
+*.fmt
+
+# nomencl
+*.nlo
+
+# sagetex
+*.sagetex.sage
+*.sagetex.py
+*.sagetex.scmd
+
+# sympy
+*.sout
+*.sympy
+sympy-plots-for-*.tex/
+
+# pdfcomment
+*.upa
+*.upb
+
+#pythontex
+*.pytxcode
+pythontex-files-*/
+
+# Texpad
+.texpadtmp
+
+# TikZ & PGF
+*.dpth
+*.md5
+*.auxlock
+
+# todonotes
+*.tdo
+
+# xindy
+*.xdy
+
+# xypic precompiled matrices
+*.xyc
+
+# WinEdt
+*.bak
+*.sav
+
+# endfloat
+*.ttt
+*.fff
+
+# Latexian
+TSWLatexianTemp*
+
+# OSX
+.DS_Store
+
+# Temporary and build
+build/
+bin/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# dotenv
+.env
+
+# virtualenv
+.venv
+venv/
+ENV/
+
+# Spyder project settings
+.spyderproject
+
+# Rope project settings
+.ropeproject

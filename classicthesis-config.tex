@@ -27,6 +27,7 @@
 \WarningFilter{scrreprt}{Usage of package `titlesec' together}
 \WarningFilter{scrreprt}{Activating an ugly workaround}
 
+\usepackage{varioref}
 \if@PDFX@
 \usepackage[a-1b]{pdfx}
 \else
@@ -89,6 +90,7 @@ natbib=true % natbib compatibility mode (\citep and \citet still work)
 \PassOptionsToPackage{fleqn}{amsmath} % Math environments and more by the AMS
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{dsfont}
 %------------------------------------------------------------------------------
 
 \PassOptionsToPackage{T1}{fontenc} % T2A for cyrillics
@@ -175,15 +177,17 @@ belowcaptionskip=.75\baselineskip % Space after the "Listing #: Desciption" text
 %	HYPERREFERENCES
 %------------------------------------------------------------------------------
 
-\usepackage{varioref}
+% \usepackage{varioref}
 
 \pdfminorversion=9
 \pdfcompresslevel=0
 % \pdfadjustspacing=1
-\hypersetup{
+\hypersetup{%
 % Uncomment the line below to remove all links (to references, figures, tables,
 % etc), useful for b/w printouts draft,
 pdflang={en-US},
+pdfauthor={Romain Raymond Brault},
+xetex,
 hyperfootnotes=true,
 colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
 % Uncomment the line below if you want to have black links (e.g. for printing
@@ -215,10 +219,10 @@ floatperchapter, linedheaders, dottedtoc}{classicthesis}
 \usepackage{breqn}
 \usepackage{colonequals}
 \usepackage{amssymb,amsmath}
-\usepackage[amsmath,thmmarks]{ntheorem}
-\usepackage{mathtools}
 \usepackage{nameref}
-\usepackage[noabbrev]{cleveref}
+\usepackage[amsmath,thmmarks,hyperref]{ntheorem}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{mathtools}
 \usepackage[algo2e,ruled,linesnumbered]{algorithm2e}
 \newcommand{\theHalgorithm}{\arabic{algorithm}}
 \usepackage{commands}
@@ -231,6 +235,14 @@ floatperchapter, linedheaders, dottedtoc}{classicthesis}
 \Crefname{table}{Table}{Tables}
 \crefname{figure}{figure}{figures}
 \Crefname{figure}{Figure}{Figures}
+\crefname{chapter}{chapter}{chapters}
+\Crefname{chapter}{Chapter}{Chapters}
+\crefname{section}{section}{sections}
+\Crefname{section}{Section}{Sections}
+\crefname{subsection}{subsection}{subsections}
+\Crefname{subsection}{Subsection}{Subsections}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
 
 \creflabelformat{equation}{#2\textup{#1}#3}
 

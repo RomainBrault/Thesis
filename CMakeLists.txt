@@ -22,7 +22,7 @@ set(PYTHONTEX_COMPILER pythontex
 include(${CMAKE_SOURCE_DIR}/CMakeLatex/UseLATEX.cmake)
 
 file(GLOB_RECURSE contents_files RELATIVE 
-     ${CMAKE_SOURCE_DIR} *.tex *.icc *.tikz *.pgf *.otf *.ttc)
+     ${CMAKE_SOURCE_DIR} *.tex *.icc *.tikz *.pgf *.otf *.ttc *.txt)
 foreach(item ${contents_files})
   if((${item} MATCHES "bin/*") OR
      (${item} MATCHES "build/*") OR
@@ -36,5 +36,5 @@ add_latex_document(ThesisRomainBrault.tex
     INPUTS ${contents_files}
     CONFIGURE classicthesis-config.tex
     IMAGE_DIRS gfx
-    BIBFILES Bibliography.bib
+    BIBFILES Bibliography.bib MVExtrem.bib
     FORCE_PDF)

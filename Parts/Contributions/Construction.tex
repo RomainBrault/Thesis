@@ -421,7 +421,7 @@ spectral decomposition]
         L^1(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho_{\Tr}})$.
         \item $A_{\Tr}(\omega)$ is non-negative for all
         $\omega\in\dual{\mathcal{X}}$,
-        \item $\sup_{\omega \in \dual{\mathcal{X}}}
+        \item $\esssup_{\omega \in \dual{\mathcal{X}}}
         \norm{A_{\Tr}(\omega)}_{\mathcal{Y}, \mathcal{Y}} \le c_p$,
         \item $A_{\Tr}(\cdot)$ and $\rho_{\Tr}$ are even functions.
     \end{propenum}
@@ -458,23 +458,28 @@ spectral decomposition]
         \Tr\left[K_e(e)\right] \hiderel{<} \infty.
     \end{dmath*}
     Since $\Tr\left[C(\omega)\right]$ is positive and its integral is finite,
-    $\rho_{\Tr}$ is a probability density function. The Schatten norms
-    $\norm{\cdot}_p$ verifies
-    $\Tr\left[\abs{\cdot}\right]=\norm{\cdot}_1\ge\norm{\cdot}_p\ge
-    \norm{\cdot}_q \ge
-    \norm{\cdot}_{\mathcal{Y},\mathcal{Y}}=\norm{\cdot}_{\infty}$ for all $p$,
-    $q\in\mathbb{N}^*$ such that $1\le p \le q$. Therefore since for all
-    $\omega\in\dual{\mathcal{X}}$, $C(\omega)$ is non-negative,
+    $\rho_{\Tr}$ is a probability density function. In particular $C(\omega)$
+    is self-adjoint operator thus
+    $\norm{C(\omega)}_{\sigma,\infty}=\norm{C(\omega)}_{\mathcal{Y},\mathcal{Y}}$
+    for all $\omega\in\dual{\mathcal{X}}$. Thus the Schatten norms
+    $\norm{\cdot}_{\sigma, p}$ verifies
+    $\Tr\left[\abs{\cdot}\right]=\norm{\cdot}_{\sigma,
+    1}\ge\norm{\cdot}_{\sigma, p}\ge \norm{\cdot}_{\sigma, q} \ge
+    \norm{\cdot}_{\sigma, \infty}= \norm{\cdot}_{\mathcal{Y},\mathcal{Y}}$ for
+    all $p$, $q\in\mathbb{N}^*$ such that $1\le p \le q \le \infty$. Therefore
+    since for all $\omega\in\dual{\mathcal{X}}$, $C(\omega)$ is non-negative,
+    we have for $\probability_{\dual{\Haar}, \rho}$-almost all
+    $\omega\in\dual{\mathcal{X}}$,
     \begin{dmath*}
         \norm{A_{\Tr}(\omega)}_{\mathcal{Y},\mathcal{Y}}
-        =c_{\Tr}\Tr\left[C(\omega)\right]^{-1}\norm{C(\omega)}_{\infty}
-        \le c_{\Tr}\Tr\left[C(\omega)\right]^{-1}\norm{C(\omega)}_{1}
+        =c_{\Tr}\Tr\left[C(\omega)\right]^{-1}\norm{C(\omega)}_{\sigma, \infty}
+        \le c_{\Tr}\Tr\left[C(\omega)\right]^{-1}\norm{C(\omega)}_{\sigma, 1}
         =c_{\Tr}\Tr\left[C(\omega)\right]^{-1}\Tr\left[\abs{C(\omega)}\right]
         =c_{\Tr}\Tr\left[C(\omega)\right]^{-1}\Tr\left[C(\omega)\right]
         \le c_{\Tr} \hiderel{<} \infty.
     \end{dmath*}
     Thus
-    $\sup_{\omega\in\dual{\mathcal{X}}} \norm{A(\omega)}_{\mathcal{Y},
+    $\esssup_{\omega\in\dual{\mathcal{X}}} \norm{A(\omega)}_{\mathcal{Y},
     \mathcal{Y}} \le c_{\Tr} < \infty$. As $C$ is an even function, so are
     $A_{\Tr}$ and $\rho_{\Tr}$. Eventually $\inner{y', C(\cdot)y}$ is in
     $L^1(\dual{\mathcal{X}}, \dual{\Haar})$, thus $\inner{y,
@@ -1024,7 +1029,7 @@ realization of the random sequence $\seq{\omega}$ gives birth to a (different)
 same function for different realization of $\tildeK{\omega}\approx K$. We
 generated $250$ points equally separated on the segment $(-1;1)$.
 \begin{pycode}[not_mercer]
-sys.path.append('../src/')
+sys.path.append('./src/')
 import not_mercer
 
 not_mercer.main()
@@ -1097,9 +1102,8 @@ shift-invariant $\mathcal{Y}$-Mercer \acl{OVK}) and the random Fourier feature
 map is presented in \cref{fig:rel_features}.
 \begin{proposition}
     \label{pr:phitilde_phi_rel}
-    For any $g\in
-    \mathcal{H}=L^2(\mathcal{\dual{X}},\probability_{\dual{\Haar},\rho};\mathcal{Y}')$,
-    let
+    For any $g\in \mathcal{H}=L^2(\mathcal{\dual{X}},
+    \probability_{\dual{\Haar},\rho}; \mathcal{Y}')$, let
     \begin{dmath*}
         \theta \colonequals \frac{1}{\sqrt{D}}\Vect_{j=1}^D g(\omega_j),
         \enskip \omega_j \sim \probability_{\dual{\Haar},\rho}
@@ -1391,7 +1395,7 @@ multiplicative group --described in \cref{subsec:characters} and
             \sin{\inner{\log(x+c),\omega_j}_2}B(\omega_j)^\adjoint y
         \end{pmatrix},
     \end{dmath*}
-    $\omega_j \sim \probability_{\dual{\Haar},\rho}$ iid, for all
+    $\omega_j \sim \probability_{\dual{\Haar},\rho}$ \ac{iid}, for all
     $y\in\mathcal{Y}$.
 \end{example}
 \begin{proof}
@@ -1406,8 +1410,9 @@ multiplicative group --described in \cref{subsec:characters} and
     \end{dmath*}
     which converges almost surely to
     \begin{dmath*}
-        \expectation_{\rho}[\exp(-i\inner*{\log(x\odot z^{-1}+c)}_2)A(\omega) ]
-        \hiderel{=} \expectation_{\rho}[\conj{\pairing{x\odot
+        \expectation_{\rho}\left[\exp\left(-i\inner*{\log(x\odot
+        z^{-1}+c)}_2\right)A(\omega) \right] \hiderel{=}
+        \expectation_{\rho}[\conj{\pairing{x\odot
         z^{-1},\omega}}A(\omega)]
         \hiderel{=} K(x, z)
     \end{dmath*}

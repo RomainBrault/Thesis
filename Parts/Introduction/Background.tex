@@ -53,6 +53,10 @@ uniqueness of limits of sequences and existence of nets used throughout this
 thesis. Therefore in the whole document we always assume that a topological
 space $\mathcal{X}$ is Haussdorff.
 \paragraph{}
+A topological space is said to be second countable if it has a countable base.
+Every second-countable space is separable and Lindel\"of (The reverse
+implications do not hold). The
+\paragraph{}
 A topological space is said to be separable if there exists a sequence
 $(x_n)_{n\in\mathbb{N}^*}$ of elements of $\mathcal{X}$ such that every
 nonempty open subsets of the space contains at least one element of the
@@ -62,8 +66,9 @@ constructive proofs can be turned into algorithms which is the primary goal of
 this work. In this document we also assume that any topological space is
 separable if there is no specific mention of the contrary. Moreover we recall
 that a Hilbert space is separable if and only if it has a countable orthonormal
-basis. Hence an operator between two separable Hilbert spaces can be written as
-an infinite dimensional matrix.
+basis (Hence separable Hilbert spaces are second countable). Hence an operator
+between two separable Hilbert spaces can be written as an infinite dimensional
+matrix.
 \paragraph{}
 If $\mathcal{X}$ and $\mathcal{Y}$ are two topological spaces, we denote by
 $\mathcal{F}(\mathcal{X};\mathcal{Y})$ the topological vector space of
@@ -221,21 +226,24 @@ The operator $\text{mat}_{B, C}$ is a vector space isomorphism allowing us to
 identify $\mathcal{L}(\mathcal{H}_1;\mathcal{H}_2)$ with
 $\mathcal{M}_{mn}(\mathbb{K})$ where $n=\dim(\mathcal{H}_1)$ and
 $m=\dim(\mathcal{H}_2)$. All these notations are summarized in
-\cref{table:notations}.
-\afterpage{%
-\begin{table}[!ht]
+\cref{table:notations1,table:notations2}.
+\begin{table}
     \centering
     \caption{Mathematical symbols used throughout the parper and their
-    signification. \label{table:notations}}
+    signification (part 1). \label{table:notations1}}
     \begin{tabularx}{\textwidth}{cX}
         \toprule
             Symbol & \multicolumn{1}{c}{Meaning} \\
         \cmidrule{1-2}
         \endhead
-            $\mathbb{K}$ & Any Abelian field. \\
+            $\colonequals$ & Equal by definition. \\
+            $\mathbb{N}$ & The semi-group of natural numbers. \\
+            $\mathbb{K}$ & Any non-discrete Abelian field endowed with an
+            absolute value. Elements of $\mathbb{K}$ are called scalars. \\
             $\mathbb{R}$ & The Abelian field of real numbers. \\
             $\mathbb{C}$ & The Abelian field of complex numbers. \\
-            $\iu \in\mathbb{C}$ & Unit pure imaginary number $\sqrt{-1}$. \\
+            $\iu \in\mathbb{C}$ & Unit pure imaginary number
+            $\iu^2\colonequals-1$.  \\
             $\ec \in\mathbb{R}$ & Euler constant. \\
             $e \in \mathcal{X}$ &  The neutral element of the group
             $\mathcal{X}$. \\
@@ -252,14 +260,11 @@ $m=\dim(\mathcal{H}_2)$. All these notations are summarized in
             product of the Hilbert space $\mathcal{Y}$. \\
             $\norm{\cdot}_{\mathcal{Y}}$ & The canonical norm induced by the
             inner product of the Hilbert space $\mathcal{Y}$. \\
-            $\mathcal{F}(\mathcal{X};\mathcal{Y})$ & Vector space of function
-            from $\mathcal{X}$ to $\mathcal{Y}$. \\
-            $\norm{\cdot}_{\infty}$ & The uniform norm $\norm{f}_{\infty}= \sup
-            \set{\norm{f(x)}_{\mathcal{Y}} | x\in\mathcal{X}}$ for all
-            $f\in\mathcal{F}(\mathcal{X};\mathcal{Y})$. \\
-            $\mathcal{C}(\mathcal{X};\mathcal{Y})$ & The vector subspace of
-            $\mathcal{F}$ of continuous function from $\mathcal{X}$ to
-            $\mathcal{Y}$. \\
+            $\mathcal{F}(\mathcal{X};\mathcal{Y})$ & Topological vector space
+            of functions from $\mathcal{X}$ to $\mathcal{Y}$. \\
+            $\mathcal{C}(\mathcal{X};\mathcal{Y})$ & The topological vector
+            subspace of $\mathcal{F}$ of continuous functions from
+            $\mathcal{X}$ to $\mathcal{Y}$. \\
             $\mathcal{L}(\mathcal{H};\mathcal{Y})$ & The set of bounded linear
             operator from a Hilbert space $\mathcal{H}$ to a
             Hilbert space $\mathcal{Y}$. \\
@@ -277,24 +282,78 @@ $m=\dim(\mathcal{H}_2)$. All these notations are summarized in
             topological space $\mathcal{X}$. \\
             $\mu(\mathcal{X})$ & A scalar positive measure of $\mathcal{X}$. \\
             $\Leb(\mathcal{X})$ & The Lebesgue measure of $\mathcal{X}$. \\
-            $\Haar(\mathcal{X})$ & A Haar measure of $\mathcal{X}$.  \\
+            $\Haar(\mathcal{X})$ & A Haar measure of $\mathcal{X}$. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+\begin{table}
+    \centering
+    \caption{Mathematical symbols used throughout the parper and their
+    signification (part 2). \label{table:notations2}}
+    \begin{tabularx}{\textwidth}{cX}
+        \toprule
+            Symbol & \multicolumn{1}{c}{Meaning} \\
+        \cmidrule{1-2}
+        \endhead
+            $\probability_{\mu, \rho}(\mathcal{X})$ & A probability measure of
+            $\mathcal{X}$ whose Radon-Nikodym derivative with respect to the
+            measure $\mu$ is $\rho$. \\
+            $\FT{\cdot}$ & The \acl{FT} operator. \\
+            $\IFT{\cdot}$ & The \acl{IFT} operator. \\
+            $\esssup$ & The essential supremum. \\
             $L^p(\mathcal{X}, \mu)$ & The Banach space of
             $\abs{\cdot}^p$-integrable function from
-            $(\mathcal{X},\mathcal{B}(\mathcal{X}), \mu)$ to $\mathbb{C}$. \\
+            $(\mathcal{X},\mathcal{B}(\mathcal{X}), \mu)$ to $\mathbb{C}$ for
+            $p\in\mathbb{R}_+$. \\
             $L^p(\mathcal{X}, \mu;\mathcal{Y})$ & The Banach space of
-            $\norm{\cdot}_{\mathcal{Y}^p}$ (Bochner)-integrable function from
-            $(\mathcal{X},\mathcal{B}(\mathcal{X}), \mu)$ to $\mathcal{Y}$. \\
-            $\Vect_{j=1}^D x_i$ & The direct sum of $D$ vectors $x_i$'s in
-            $\mathcal{H}$. \\
-            $\sigma(\Gamma)$ & The spectrum of the linear operator $Gamma$,
-            \acs{ie}~$\sigma(\Gamma)=\Set{\lambda\in\mathbb{C} | \nexists s,
-            s(\lambda e - \Gamma) = e}$. \\
+            $\norm{\cdot}_{\mathcal{Y}}^p$ (Bochner)-integrable function from
+            $(\mathcal{X},\mathcal{B}(\mathcal{X}), \mu)$ to $\mathcal{Y}$ for
+            $p\in\mathbb{R}_+$. $L^p(\mathcal{X},\mu,\mathbb{R}) \colonequals
+            L^p(\mathcal{X},\mu)$. \\
+            $\Vect_{j=1}^D x_i$ & The direct sum of $D\in\mathbb{N}$ vectors
+            $x_i$'s in the Hilbert spaces $\mathcal{H}_i$. \\
+            $\norm{\cdot}_p$ & The $L^p(\mathcal{X}, \mu, \mathcal{Y})$ norm.
+            $\norm{f}_p^p\colonequals \int_{\mathcal{X}}
+            \norm{f(x)}_{\mathcal{Y}}^p d\mu(x)$.  When
+            $\mathcal{X}=\mathbb{N}^*$, $\mathcal{Y}\subseteq \mathbb{R}$ and
+            $\mu$ is the counting measure and $p=2$ it co\"incide with the
+            Euclidean norm $\norm{\cdot}_2$ for finite dimensional vectors. \\
+            $\norm{\cdot}_{\infty}$ & The uniform norm $\norm{f}_{\infty}=
+            \esssup \set{\norm{f(x)}_{\mathcal{Y}} |
+            x\in\mathcal{X}}=\lim_{p\to\infty}\norm{f}_p$. \\
+            ${}^\transpose$ & The transpose operator of a linear operator. \\
+            ${}^\adjoint$ & The adjoint operator of a linear operator. \\
+            $\abs{\Gamma}$ & The absolute value of the linear operator
+            $\Gamma\in\mathcal{L}(\mathcal{Y})$, \acs{ie}
+            $\abs{\Gamma}^2=\Gamma^{\adjoint}\Gamma$. \\
+            $\Tr\left[\Gamma\right]$ & The trace of a linear operator
+            $\Gamma\in\mathcal{L}(\mathcal{Y})$. \\
+            $\sigma(\Gamma)$ & The spectrum of the bounded linear operator
+            $Gamma\in\mathcal{L}(\mathcal{Y})$ where $\mathcal{Y}$ is a Hilbert
+            space, \acs{ie}~$\sigma(\Gamma)=\Set{\lambda\in\mathbb{C} |
+            \nexists s, s(\lambda e - \Gamma) = e}$. \\
+            $\lambda_i(\Gamma)$ & The $i$-th eigenvalue of
+            $\Gamma\in\mathcal{L}(\mathcal{Y})$, ranked by increasing modulus,
+            where $\mathcal{Y}$ is a \emph{separable} Hilbert space and
+            $i\in\mathbb{N}^*$. \\
             $\rho(\Gamma)$ & The spectral radius of the linear operator
             $\Gamma$ \acs{ie}~$\rho(\Gamma)=\sup\set{\abs{\lambda} | \lambda
             \in \sigma(\Gamma)}$. \\
+            $\norm{\cdot}_{\sigma, p}$ & The Schatten $p$-norm,
+            $\norm{\Gamma}_{\sigma,
+            p}^p=\Tr\left[\abs{\Gamma}^p\right]$ for
+            $\Gamma\in\mathcal{L}(\mathcal{Y})$, where $\mathcal{Y}$ is a
+            Hilbert space. Note that $\norm{\Gamma}_{\sigma,\infty} =
+            \rho(\Gamma) \le \norm{\Gamma}_{\mathcal{Y},\mathcal{Y}}$.  \\
+            $\succcurlyeq$ & \say{Greater than} in the Loewner partial order of
+            operators. $\Gamma_1 \succcurlyeq \Gamma_2$ if $\sigma(\Gamma_1 -
+            \Gamma_2) \subseteq \mathbb{R}_+$. \\
+            $\bar{\mathbb{R}}$ & The one point compacification of the real
+            line $\mathbb{R} \cup \Set{\infty}$. \\
         \bottomrule
     \end{tabularx}
-\end{table}}
+\end{table}
+% \FloatBarrier
 
 %------------------------------------------------------------------------------
 \section{About statistical learning}
@@ -1436,9 +1495,9 @@ Curl-free and divergence-free kernels provide an interesting application of
 operator-valued kernels~\citep{Macedo2008, Baldassare2012, Micheli2013} to
 \emph{vector field} learning, for which input and output spaces have the same
 dimensions ($d=p$). Applications cover shape deformation
-analysis~\citep{Micheli2013} and magnetic fields
-approximations~\citep{Wahlstrom2013}. These kernels discussed
-in~\citep{Fuselier2006} allow encoding input-dependent similarities between
+analysis \citep{Micheli2013} and magnetic fields
+approximations \citep{Wahlstrom2013}. These kernels discussed
+in \citep{Fuselier2006} allow encoding input-dependent similarities between
 vector-fields.
 \begin{definition}[Curl-free and Div-free kernel]\label{curl-div-free}
     Assume $\mathcal{X}=(\mathbb{R}^d, +)$ and $\mathcal{Y}=\mathbb{R}^p$ with

@@ -161,7 +161,7 @@ if [[ ${GENERATE} = false ]]; then
 else
     pip install -r ../requirements.txt
 fi
-time make ThesisRomainBrault_pdf
+time make VERBOSE=1 ThesisRomainBrault_pdf
 
 cd ..
 

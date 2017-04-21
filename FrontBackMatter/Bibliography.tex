@@ -15,6 +15,11 @@
 % Place the bibliography slightly below the rest of the document content in the
 % table of contents
 \addtocontents{toc}{\protect\vspace{\beforebibskip}}
-\addcontentsline{toc}{chapter}{\tocEntry{\bibname}}
+\addcontentsline{toc}{part}{\tocEntry{\bibname}}
 
-\printbibliography
+
+\printbibliography[keyword=ownpubs, title=Own Publication]
+\printbibliography[keyword=ovks, title=Bibliography on Operator-Valued
+Kernels]
+\printbibliography[keyword=extrems, title=Bibliography on Extrems]
+

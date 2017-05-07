@@ -2,8 +2,8 @@
 
 %------------------------------------------------------------------------------
 \section{Notations}
-In this section with summarize briefly important notions used throughout this
-document. It is mainly base on books and lecture notes of
+In this section we briefly summarize important notions used all along this
+document. It is mainly based on books and lecture notes of
 \citet{kurdila2006convex,cotaescu2016elements}.
 
 \subsection{Algebraic structures}
@@ -373,7 +373,37 @@ $m=\dim(\mathcal{H}_2)$. All these notations are summarized in
 \subsection{Gradient descents}
 
 \subsection{Mercer Theorem, Nystr\"om method and feature maps}
+\subsubsection{Nystr\¨om approximations}
+To overcome the bottleneck of Gram matrix computations in kernel methods, Williams and Seeger \cite{Williams200-nystrom} have proposed to generate a low-rank matrix approximation of the Gram matrix using a subset of its columns.
+\subsubsection{Random Fourier Feature maps}
+Random Fourier Feature methodology introduced  by Rahimi and Recht \cite{Rahimi2007} provides a way to scale up kernel methods when kernels are Mercer and \emph{translation-invariant}  for the group law considered on the input space $\mathcal{X}. We describe here the original approach proposed in  \cite{Rahimi2007}, focusing on the group $(\mathbb{R}^d, +)$. Extensions to other group laws such as \cite{Li2010} will be described in \ref{sec:harmonic} in the general framework of operator-valued kernels.\\
 
+Denote $k: \mathbb{R}^d \times \mathbb{R}^d \rightarrow \mathbb{R}$ a positive definite kernel on $\mathbb{R}^d$. A kernel $k$ is said to be \emph{shift-invariant} or \emph{translation-invariant} for the addition if for any $a \in \mathbb{R}^d$, $
+\forall (x,x') \in \mathbb{R}^d \times \mathbb{R}^d, k(x+a,z+a) = k(x,z)$.
+Then, we define $k_0: \mathbb{R}^d \rightarrow \mathbb{R}$ the function such that $k(x,z)= k_0(x-z)$. $k_0$ is called the \emph{signature} of kernel $k$. Bochner theorem \cite{folland1994course} is the theoretical result that leads to the Random Fourier Features.
+\begin{theorem}[Bochner's theorem]\label{th:bochner-scalar}
+Every positive definite complex function is the Fourier transform of a non-negative measure.
+ \end{theorem}
+ It implies that any positive definite, continuous and shift-invariant kernel $k$ is the Fourier transform of a non-negative measure $\mu$ we therefore have the following corollary.
+\begin{corollary}\label{c:bochner-app}
+With the previous notations and assumptions on $k$,
+\begin{equation}\label{bochner-scalar}
+k(x,z)=k_0(x-z) = \int_{\mathbb{R}^d} e^{-i \inner{\omega,x - z}} d\mu(\omega).
+\end{equation}
+\end{corollary}
+
+Without loss of generality, we assume that $\mu$ is a probability measure, i.e. $\int_{\mathbb{R}^d} d\mu(\omega)=1$.
+Then we can write \cref{bochner-scalar} as an expectation over $\mu$: $k_0(x-z) = \expectation_{\mu}\left[e^{-i \inner{\omega,x - z}}\right]$.
+If $k$ is real valued we thus only write the real part: $k(x,z)$ = $\expectation_{\mu}[\cos \inner{\omega,x - z}]$ =$\expectation_{\mu}[ \cos \inner{\omega,z}$ $\cos \inner{\omega,x}$ + $\sin \inner{\omega,z}$ $\sin \inner{\omega,x}]$.
+Let $\Vect_{j=1}^D x_j$ denote the $Dm$-length column vector obtained by stacking vectors $x_j \in \mathbb{R}^m$. The feature map $\tilde{\phi}: \mathbb{R}^d \rightarrow \mathbb{R}^{2D}$ defined as
+\begin{equation}\label{eq:rff}
+\begin{aligned}
+\tilde{\phi}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}} \\ \sin{\inner{x,\omega_j}}\end{pmatrix}, \enskip \omega_j \sim \mu
+\end{aligned}
+\end{equation}
+is called a \emph{Random Fourier Feature} (map). Each $\omega_{j}, j=1, \ldots, D$ is independently sampled from the inverse Fourier transform $\mu$ of $k_0$.
+This Random Fourier Feature map provides the following Monte-Carlo estimator of the kernel: $\tilde{k}(x, z) = \tilde{\phi}(x)^* \tilde{\phi}(z)$. The dimension $D$ governs the precision of this approximation, whose uniform convergence towards the target kernel (as defined in \cref{bochner-scalar}) can be found in \citet{Rahimi2007} and in more recent papers with some refinements proposed in \citet{sutherland2015} and \citet{sriper2015}.
+Finally, it is important to notice that Random Fourier Feature approach \emph{only} requires two steps before the application of a learning algorithm: (1) define the inverse Fourier transform of the given shift-invariant kernel, (2) compute the randomized feature map using the spectral distribution $\mu$. \citet{Rahimi2007} show that for the Gaussian kernel $k_0(x-z) = exp(-\gamma \norm{x - z}^2)$, the spectral distribution $\mu(\omega)$ is Gaussian.
 \subsection{Recent extensions}
 
 %------------------------------------------------------------------------------

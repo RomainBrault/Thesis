@@ -5,7 +5,7 @@
 We are now interested on a non-asymptotic analysis of the ORFF approximation of
 shift-invariant $\mathcal{Y}$-Mercer kernels on \acs{LCA} group $\mathcal{X}$
 endowed with the operation group $\groupop$ with $\mathcal{X} \subset
-\mathbb{R}^d$. For a given $D$, we study how close is the approximation
+\mathbb{R}^d$. For a given $N$, we study how close is the approximation
 $\tilde{K}(x,z)=\tildePhi{1:D}(x)^*\tildePhi{1:D}(z)$ to the target kernel
 $K(x,z)$ for any $x,z$ in $\mathcal{X}$.
 \paragraph{}
@@ -20,7 +20,7 @@ study how the uniform norm
     \hiderel{=}\sup_{(x,z)\in\mathcal{C}\times\mathcal{C}}
     \norm{\tilde{K}(x,z)-K(x,z)}_{\mathcal{Y},\mathcal{Y}}
 \end{dmath}
-behaves according to $D$. Throughout this document we note $\delta=x\groupop
+behaves according to $D$. All along this document we denote $\delta=x\groupop
 z^{-1}$ for all $x$ and $z\in\mathcal{X}$. \Cref{fig:approximation_error}
 empirically shows convergence of three different \acs{OVK} approximations for
 $x,z$ sampled from the compact $[-1,1]^4$ and using an increasing number of
@@ -51,14 +51,14 @@ presentation of general results, we briefly recall the uniform convergence of
 decomposable shift-invariant \acs{OVK} on the \acs{LCA} group $(\mathbb{R}^d,
 +)$.
 
-\subsection{Scalar random Fourier Features and decomposable kernel}
+\subsection{Random Fourier Features in the scalar case and decomposable OVK}
 \citet{Rahimi2007} proved the uniform convergence of \acf{RFF} approximation
-for a scalar shift invariant kernel on the \acs{LCA} group $\mathbb{R}^d$
+for a scalar shift-invariant kernel on the \acs{LCA} group $\mathbb{R}^d$
 endowed with the group operation $\groupop=+$. In the case of the
 shift-invariant decomposable \acs{OVK}, an upper bound on the error can be
-directly obtained as a consequence of the result in the scalar case obtained
-by~\citet{Rahimi2007} and other authors~\citep{sutherland2015, sriper2015}
-since in this case
+obtained as a direct consequence of the result in the scalar case obtained
+by~\citet{Rahimi2007} and other authors~\citep{sutherland2015, sriper2015}.
+
 \begin{theorem}[Uniform error bound for \ac{RFF},~\citet{Rahimi2007}]
     \label{rff-scalar-bound}
     Let $\mathcal{C}$ be a compact of subset of $\mathbb{R}^d$ of diameter
@@ -135,8 +135,8 @@ inequality. More recently~\citet{sriper2015} showed an optimal bound for
 \acl{RFF}. The improvement of~\citet{sriper2015} is mainly in the constant
 factors where the bound does not depend linearly on the diameter
 $\abs{\mathcal{C}}$ of $\mathcal{C}$ but exhibit a logarithmic dependency
-$\log\left(\abs{\mathcal{C}}\right)$, hence requirering significantly less
-random feature to reach a desire uniform error with high probability. Moreover,
+$\log\left(\abs{\mathcal{C}}\right)$, hence requiring significantly less
+random features to reach a desired uniform error with high probability. Moreover,
 \citet{sutherland2015} also considered a bound on the expected max error
 $\expectation_{\dual{\Haar}, \rho} \norm{\widetilde{K}-K}_{\infty}$, which is
 obtained using Dudley's entropy integral~\citep{dudley1967sizes, Boucheron} as
@@ -177,7 +177,7 @@ random operator.  We call \emph{variance} of $X$ the quantity
 $\variance_{\mu}[X]=\expectation_ {\mu}[X-\expectation_{\mu}[X]]^2$.  With this
 convention if $X$ is a $p\times p$ Hermitian matrix, $\variance_{\mu}[X]_{\ell
 m}=\sum_{r=1}^p\covariance{X_{\ell r}, X_{rm}}$. Among the possible
-concentration inequalities adapated to random operators
+concentration inequalities adapted to random operators
 \citep{tropp2015introduction, minsker2011some, ledoux2013probability,
 pinelis1994optimum}. In this proposition we use the results of
 \citet{minsker2011some}.
@@ -204,7 +204,7 @@ pinelis1994optimum}. In this proposition we use the results of
         $\delta\in\mathcal{D}_{\mathcal{C}}$}
     \end{dmath*}
     and $H_\omega$ be the Lipschitz constant of the function $h: x\mapsto
-    \pairing{x,\omega}$. If the three following constant exists
+    \pairing{x,\omega}$. If the three following constants exist
     \begin{dmath*}
         m \ge \int_{\dual{\mathcal{X}}} H_\omega
         \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}} d\probability_{\dual{\Haar},

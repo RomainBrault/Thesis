@@ -13,6 +13,7 @@
 % subsubsections
 \setcounter{secnumdepth}{3}
 
+\dominitoc
 \manualmark\markboth{\spacedlowsmallcaps{\contentsname}}{%
 \spacedlowsmallcaps{\contentsname}}
 \tableofcontents
@@ -80,60 +81,8 @@
 \markboth{\spacedlowsmallcaps{Acronyms}}{\spacedlowsmallcaps{Acronyms}}
 
 \chapter*{Acronyms}
-
-\begin{acronym}[OCRFsampling]
-    \acro{iid}[i.\,i.\,d.]{in\-de\-pen\-dent iden\-ti\-cal\-ly
-    dis\-tri\-bu\-ted}.
-    \acro{Iid}[I.\,i.\,d.]{In\-de\-pen\-dent iden\-ti\-cal\-ly
-    dis\-tri\-bu\-ted}.
-    \acro{pdf}[p.\,d.\,f.]{pro\-bi\-bi\-li\-ty den\-si\-ty func\-tion}.
-    \acro{Pdf}[P.\,d.\,f.]{Pro\-ba\-bi\-li\-ty den\-si\-ty func\-tion}.
-    \acro{proba}[p.]{in pro\-ba\-bi\-li\-ty}.
-    \acro{Proba}[P.]{In pro\-ba\-bi\-li\-ty}.
-    \acro{asurely}[a.\,s.]{al\-most su\-re\-ly}.
-    \acro{Asurely}[A.\,s.]{Al\-most su\-re\-ly}.
-    \acro{aeverywhere}[a.\,e.]{al\-most eve\-ry\-where}.
-    \acro{Aeverywhere}[A.\,e.]{Al\-most eve\-ry\-where}.
-    \acro{eg}[e.\,g.]{ex\-em\-pli gra\-tia}.
-    \acro{Eg}[E.\,g.]{Ex\-em\-pli gra\-tia}.
-    \acro{wrt}[w.\,r.\,t.]{with res\-pect to}.
-    \acro{Wrt}[W.\,r.\,t.]{With res\-pect to}.
-    \acro{ie}[i.\,e.]{id est}.
-    \acro{Ie}[I.\,e.]{Id est}.
-    \acro{cf}[c.\,f.]{confer}.
-    \acro{Cf}[C.\,f.]{Confer}.
-    \acro{Cum}[Cum.]{Cumulative}.
-    \acro{NA}[N.\,A.]{Not Avai\-la\-ble}.
-    \acro{ROC}{Re\-cei\-ver Ope\-ra\-ting Cha\-rac\-te\-ris\-tic}.
-    \acro{AUC}{Area Un\-der the Cur\-ve}.
-    \acro{PR}{Pre\-ci\-sion Re\-call}.
-    \acro{MSE}{Mean Squa\-red Er\-ror}.
-    \acro{MGF}{Mo\-ment Ge\-ne\-ra\-ting Func\-tion}.
-    \acro{OVK}{Op\-er\-a\-tor-Va\-lued Ker\-nel}.
-    \acro{RFF}{Random Fourier Feature}.
-    \acro{ORFF}{Op\-er\-a\-tor-va\-lued Ran\-dom Fou\-rier Fea\-ture}.
-    \acro{POVM}{Po\-si\-ti\-ve Ope\-ra\-tor-Va\-lued Mea\-sure}.
-    \acro{RKHS}{Re\-pro\-du\-cing Ker\-nel Hil\-bert Spa\-ce}.
-    \acro{vv-RKHS}[\texorpdfstring{$\mathcal{Y}$}--RKHS]{%
-    \texorpdfstring{$\mathcal{Y}$}--Re\-pro\-du\-cing Ker\-nel Hil\-bert
-    Spa\-ce}.
-    \acro{LCA}{Lo\-cal\-ly Com\-pact Abe\-lian}.
-    \acro{FT}{Fou\-rier Trans\-form}.
-    \acro{IFT}{In\-ver\-se Fou\-rier Trans\-form}.
-    \acro{SVM}{Sup\-port Vec\-tor Ma\-chine}.
-    \acro{OCSVM}{One-Class Sup\-port Vec\-tor Ma\-chine}.
-    \acro{OCRFsampling}{One-Class Ran\-dom Fo\-rest Sam\-pling}.
-    \acro{OneClassRF}{One-Class Ran\-dom Fo\-rest}.
-    \acro{iForest}{Iso\-la\-tion Fo\-rest}.
-    \acro{LSAD}{Least Squares Ano\-ma\-ly De\-tec\-tion}.
-    \acro{LOF}{Lo\-cal Out\-lier Fact\-or}.
-    \acro{RFC}{Ran\-dom Fo\-rest Clus\-ter\-ing}.
-    \acro{RF}{Ran\-dom Fo\-rest}.
-    \acro{rv}[r.\,v.]{ran\-dom va\-ria\-ble}.
-    \acro{UCI}{University of California, Irvine}.
-    \acro{KDD}{The Asso\-tia\-tion for Com\-pu\-ting Ma\-chi\-ne\-ry's
-    Spe\-tial In\-te\-rest Group on Know\-ledge Dis\-co\-ve\-ry and Da\-ta
-    Mining}.
-\end{acronym}
-
+\acsetup{list-style = longtable, 
+         sort = true, extra-style=comma}
+\renewcommand{\descriptionlabel}[1]{\hspace*{\labelsep}{#1}}
+\printacronyms[heading = none]
 \endgroup

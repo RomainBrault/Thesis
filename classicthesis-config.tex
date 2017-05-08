@@ -24,9 +24,8 @@
 \listfiles
 
 \usepackage{silence}
-\WarningFilter{scrreprt}{Usage of package `titlesec' together}
-\WarningFilter{scrreprt}{Activating an ugly workaround}
 
+\usepackage[utf8]{inputenc}
 \usepackage{varioref}
 \if@PDFX@
 \usepackage[a-1b]{pdfx}
@@ -34,10 +33,16 @@
 \usepackage{hyperref}
 \fi
 
+
+
+%------------------------------------------------------------------------------
+
 \usepackage{adforn}
 \usepackage{pythontex}
 \usepackage{multicol}
 \usepackage{cmap} % copy-paste pdf
+\usepackage{ragged2e}
+\usepackage{minitoc}
 
 %------------------------------------------------------------------------------
 %  USEFUL COMMANDS
@@ -45,6 +50,7 @@
 \newcounter{dummy} % Necessary for correct hyperlinks (to index, bib, etc.)
 \providecommand{\mLyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
 \newlength{\abcd} % for ab..z string length calculation
+
 
 %------------------------------------------------------------------------------
 %  PACKAGES
@@ -194,15 +200,19 @@ colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
 % Uncomment the line below if you want to have black links (e.g. for printing
 % black and white)
 %colorlinks=false, linktocpage=false, pdfborder={0 0 0}, pdfstartpage=3,
-%pdfstartview=FitV,
+pdfstartview=FitV,
+pdfpagelayout=TwoColumnRight,
 breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,
 plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,
-hypertexnames=true, pdfhighlight=/O, %nesting=true,%frenchlinks,%
+hypertexnames=true, pdfhighlight=/O, nesting=true, %frenchlinks,%
 urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen, 
 %pagecolor=Black,%
 }
 
 \VerbatimFootnotes
+
+
+
 
 %------------------------------------------------------------------------------
 \usepackage[shortlabels]{enumitem}
@@ -211,13 +221,16 @@ urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen,
 \usepackage{numprint}
 % Remove drafting to get rid of the '[ Date - classicthesis version 4.0 ]' text
 % at the bottom of every page
-\PassOptionsToPackage{eulerchapternumbers, listings, subfig, parts, dottedtoc,
-floatperchapter, linedheaders, dottedtoc}{classicthesis}
+\PassOptionsToPackage{eulerchapternumbers, listings, subfig, parts,
+floatperchapter, linedheaders}{classicthesis}
 % Available options: drafting parts nochapters linedheaders eulerchapternumbers
 % beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc
 % manychapters listings floatperchapter subfig
 \usepackage{classicthesis}
 \usepackage{breqn}
+
+%------------------------------------------------------------------------------
+
 \usepackage{colonequals}
 \usepackage{amssymb,amsmath}
 \usepackage{nameref}
@@ -279,13 +292,6 @@ floatperchapter, linedheaders, dottedtoc}{classicthesis}
 \DeclareFlexSymbol{8}{Var}{digit}{38}
 \DeclareFlexSymbol{9}{Var}{digit}{39}
 
-%------------------------------------------------------------------------------
-% Include printonlyused in the first bracket to only show acronyms used in the
-% text
-\PassOptionsToPackage{smaller}{acronym} 
-\usepackage{acronym} % Nice macros for handling all acronyms in the thesis
-%\renewcommand*{\acsfont}[1]{\textssc{#1}} % For MinionPro
-\renewcommand*{\aclabelfont}[1]{\acsfont{#1}}
 
 %------------------------------------------------------------------------------
 %	CHANGING TEXT AREA
@@ -296,6 +302,14 @@ floatperchapter, linedheaders, dottedtoc}{classicthesis}
 %\areaset[current]{312pt}{761pt} 
 %\setlength{\marginparwidth}{7em}%
 %\setlength{\marginparsep}{2em}%
+
+%------------------------------------------------------------------------------
+% Include printonlyused in the first bracket to only show acronyms used in the
+% text
+\usepackage{acro} 
+% Nice macros for handling all acronyms in the thesis
+%\renewcommand*{\acsfont}[1]{\textssc{#1}} % For MinionPro
+% \newcommand*{\aclabelfont}[1]{\acsfont{#1}}
 
 %------------------------------------------------------------------------------
 %	USING DIFFERENT FONTS

@@ -2,28 +2,21 @@
 
 \section{Convegence with high probability of the \acpdfstring{ORFF} estimator}
 \label{sec:consistency_of_the_ORFF_estimator}
-<<<<<<< HEAD
-We are now interested on a non-asymptotic analysis of the ORFF approximation of
-shift-invariant $\mathcal{Y}$-Mercer kernels on \acs{LCA} group $\mathcal{X}$
-endowed with the operation group $\groupop$ with $\mathcal{X} \subset
-\mathbb{R}^d$. For a given $N$, we study how close is the approximation
-$\tilde{K}(x,z)=\tildePhi{1:D}(x)^*\tildePhi{1:D}(z)$ to the target kernel
-$K(x,z)$ for any $x,z$ in $\mathcal{X}$.
-=======
 We are now interested in a non-asymptotic analysis of the \ac{ORFF}
 approximation of shift-invariant $\mathcal{Y}$-Mercer kernels on \acs{LCA}
-group $\mathcal{X}$ endowed with the operation group $\groupop$ with
-$\mathcal{X} \subset \mathbb{R}^d$. For a given $D$, we study how close is the
+group $\mathcal{X}$ endowed with the operation group $\groupop$ where
+$\mathcal{X}$ is a Banach space (The more general case where $\mathcal{X}$ is
+a Polish space is discussed in the appendix \cref{subsec:concentration_proof}).
+For a given $D$, we study how close is the
 approximation $\tilde{K}(x,z)=\tildePhi{1:D}(x)^*\tildePhi{1:D}(z)$ to the
 target kernel $K(x,z)$ for any $x,z$ in $\mathcal{X}$.
->>>>>>> a6efb9a2f772d1813cee36fd6002d847f4c2bec5
 \paragraph{}
 If $A\in\mathcal{L}_+(\mathcal{Y})$ we denote
 $\norm{A}_{\mathcal{Y},\mathcal{Y}}$ its operator norm, which amounts to the
-square root of the largest eigenvalue of $A$ when $\mathcal{Y}$ is finite
-dimensional. For $x$ and $z$ in some non-empty compact $\mathcal{C} \subset
-\mathbb{R}^d$, we consider: $F(x \groupop \inv{z}) =\tilde{K}(x,z)-K(x,z)$ and
-study how the uniform norm
+square root of the largest eigenvalue of $A$ when $\mathcal{Y}=\mathbb{R}^p$ is
+finite dimensional. For $x$ and $z$ in some non-empty compact $\mathcal{C}
+\subset \mathbb{R}^d$, we consider: $F(x \groupop \inv{z})
+=\tilde{K}(x,z)-K(x,z)$ and study how the uniform norm
 \begin{dmath}\label{eq:norm_inf}
     \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}}
     = \sup_{(x,z)\in\mathcal{C}\times\mathcal{C}}
@@ -53,13 +46,69 @@ err = approximation.main()
 \end{figure}
 \paragraph{}
 In order to bound the error with high probability, we turn to concentration
-inequalities devoted to random matrices~\citep{Boucheron}. Prior to the
-presentation of general results, we briefly recall the uniform convergence of
-\acs{RFF} approximation for a scalar shift invariant kernel on the additive
-\acs{LCA} group $\mathbb{R}^d$ and introduce a direct corollary about
-decomposable shift-invariant \acs{OVK} on the \acs{LCA} group $(\mathbb{R}^d,
-+)$.
-
+inequalities devoted to random matrices~\citep{Boucheron}. The concentration
+phenomenon can be summarized in the following sentence of
+\citet{ledoux2005concentration}. \say{A random variable that depends (in a
+smooth way) on the influence of many random variables (but not too much on any
+of them) is essentially constant}. 
+\paragraph{}
+A typical application is the study of the deviation of the empirical mean of
+\acl{iid} random variables to their expectation. This means that given an error
+$\epsilon$ between the kernel approximation $\tildeK{\omega}$ and the true
+kernel $K$, if we are given enough samples to construct $\tildeK{\omega}$, the
+probability of measuring an error greater than $\epsilon$ is essentially zero
+(it drops at an exponential rate with respect to the number of samples $D$). To
+measure the error between the kernel approximation and the true kernel at a
+given point many metrics are possible. \acs{eg} any matrix norm such as the
+Hilbert-Schmidt norm, trace norm, the operator norm or Schatten norms. In this
+work we focus on measuring the error in terms of operator norm. For all $x$,
+$z\in\mathcal{X}$ we look for a bound on
+\begin{dmath*}
+    \probability_{\rho} \Set{(\omega_j)_{j=1}^D | \norm{\tildeK{\omega}(x, z) -
+    K(x, z)}_{\mathcal{Y}, \mathcal{Y}} \ge \epsilon }
+    = 
+    \probability_{\rho} \Set{(\omega_j)_{j=1}^D | \sup_{0\neq y\in\mathcal{Y}}
+    \frac{\norm{(\tildeK{\omega}(x, z) - K(x,
+    z))y}_{\mathcal{Y}}}{\norm{y}_{\mathcal{Y}}} \ge \epsilon}
+\end{dmath*}
+In other words, given any vector $y\in\mathcal{Y}$ we study how the residual
+operator $\tildeK{\omega} - K$ is able to send $y$ to zero. We believe that
+this way of measuring the \say{error} to be more intuitive. Moreover, on
+contrary to an error measure with the Hilbert-Schmidt norm, the operator norm
+error does not grows linearly with the dimension of the output space as the
+Hilbert-Schmidt norm does. On the other hand the Hilbert-schmidt norm makes the
+studied random variables Hilbert space valued, for which it is much easier to
+derive concentration inequalities \citep{smale2007learning, pinelis1994optimum,
+naor2012banach}. Note that in the scalar case ($A(\omega)= 1$) the
+Hilbert-Schmidt norm error and the operator norm are the same and measure the
+deviation between $\tildeK{\omega}$ and $K$ as the absolute value of their
+difference.
+\paragraph{}
+A raw concentration inequality of the kernel estimator gives the error on one
+point. If one is interresting in bounding the maximum error over $N$ points,
+applying a union bound on all the point would yoeld a bound that grows linearly
+with $N$. This would suggest that when the number of points increase, even if
+all of them are concentrated in a small subset of $\mathcal{X}$, we should draw
+increasingly more features to have an error below $\epsilon$ with high
+probability. However if we restrict ourselves to study the error on a compact
+subset of $\mathcal{X}$ (and in practice data points lies often in a closed
+bounded subset of $\mathbb{R}^d$), we can cover this compact subset by a finite
+number of closed balls and apply the concentration inequality and the union
+bound only on the center of each ball. Then if the function
+$\norm{\tildeK{\omega}_e-K_e}$ is smooth enough on each ball (\acs{ie}
+Lipschitz) we can guaranee with high probability that the error between the
+centers of the balls will not be too high. Eventually we obtain a bound in the
+worst case scenarion on all the points in a subset $\mathcal{C}$ of
+$\mathcal{X}$. This bound depends on the covering number
+$\mathcal{N}(\mathcal{C}, r)$ of $\mathcal{X}$ with ball of radius $r$. When
+$\mathcal{X}$ is a Banach space, the covering number is proportional to the
+diameter of the diameter of $\mathcal{C}\subseteq\mathcal{X}$.
+\paragraph{}
+Prior to the presentation of general results, we briefly recall the uniform
+convergence of \acs{RFF} approximation for a scalar shift invariant kernel on
+the additive \acs{LCA} group $\mathbb{R}^d$ and introduce a direct corollary
+about decomposable shift-invariant \acs{OVK} on the \acs{LCA} group
+$(\mathbb{R}^d, +)$.
 \subsection{Random Fourier Features in the scalar case and decomposable OVK}
 \citet{Rahimi2007} proved the uniform convergence of \acf{RFF} approximation
 for a scalar shift-invariant kernel on the \acs{LCA} group $\mathbb{R}^d$
@@ -144,13 +193,8 @@ inequality. More recently~\citet{sriper2015} showed an optimal bound for
 \acl{RFF}. The improvement of~\citet{sriper2015} is mainly in the constant
 factors where the bound does not depend linearly on the diameter
 $\abs{\mathcal{C}}$ of $\mathcal{C}$ but exhibit a logarithmic dependency
-<<<<<<< HEAD
 $\log\left(\abs{\mathcal{C}}\right)$, hence requiring significantly less
 random features to reach a desired uniform error with high probability. Moreover,
-=======
-$\log\left(\abs{\mathcal{C}}\right)$, hence requiering significantly less
-random feature to reach a desire uniform error with high probability. Moreover,
->>>>>>> a6efb9a2f772d1813cee36fd6002d847f4c2bec5
 \citet{sutherland2015} also considered a bound on the expected max error
 $\expectation_{\dual{\Haar}, \rho} \norm{\widetilde{K}-K}_{\infty}$, which is
 obtained using Dudley's entropy integral~\citep{dudley1967sizes, Boucheron} as
@@ -188,13 +232,6 @@ Here, the function $\psi$ is chosen as $\psi(u)=\psi_{\alpha}(u)$ where
 $\psi_{\alpha}(u) \colonequals e^{u^{\alpha}}-1$. When $\alpha=1$, a random
 variable with finite Orlicz norm is called a \emph{subexponential variable}
 because its tails decrease at an exponential rate. Let $X$ be a self-adjoint 
-<<<<<<< HEAD
-random operator.  We call \emph{variance} of $X$ the quantity
-$\variance_{\mu}[X]=\expectation_ {\mu}[X-\expectation_{\mu}[X]]^2$.  With this
-convention if $X$ is a $p\times p$ Hermitian matrix, $\variance_{\mu}[X]_{\ell
-m}=\sum_{r=1}^p\covariance{X_{\ell r}, X_{rm}}$. Among the possible
-concentration inequalities adapted to random operators
-=======
 random operator. Given a scalar-valued measure $\mu$, we call \emph{variance}
 of an operator $X$ the quantity $\variance_{\mu}[X]=\expectation_
 {\mu}[X-\expectation_{\mu}[X]]^2$. With this convention if $X$ is a $p\times
@@ -203,7 +240,6 @@ p$ Hermitian matrix,
     \variance_{\mu}[X]_{\ell m}=\sum_{r=1}^p\covariance{X_{\ell r}, X_{rm}}.
 \end{dmath*}
 Among the possible concentration inequalities adapted to random operators
->>>>>>> a6efb9a2f772d1813cee36fd6002d847f4c2bec5
 \citep{tropp2015introduction, minsker2011some, ledoux2013probability,
 pinelis1994optimum, koltchinskii2013remark}, we focus on the results of
 \citet{tropp2015introduction, minsker2011some}, for their robustness to high or
@@ -701,11 +737,14 @@ As a result in practive we seek a function $f_{\seq{s}}$ such that
     f_{\seq{s}} = \argmin_{f\in\mathcal{F}} \riskemp{f,\seq{s}} \hiderel{=}
     \argmin_{f\in\mathcal{F}}\frac{1}{N}\sum_{i=1}^Nc(f(x_i),y_i)
 \end{dmath*}
-The goal of a generalization bound is to study, for any $f\in\mathcal{F}$ the
-difference between $\risk{f}$ and $\risk{f,\seq{s}}$. That is quantify the
-impact of having a limited number of observations and not knowing their latent
-distribution. In the following we consider functions living in a \acl{vv-RKHS},
-with kernel $K$ (or $\tildeK{\omega}$).
+The basic requirement for any learning algorithm is generalization: the empir-
+ical error must be a good proxy of the expected error, that is the difference
+between the two must be \say{small}. \acs{ie} the goal of a generalization
+bound is to study, for any $f\in\mathcal{F}$ the difference between $\risk{f}$
+and $\risk{f,\seq{s}}$. That is quantify the impact of having a limited number
+of observations and not knowing their latent distribution. In the following we
+consider functions living in a \acl{vv-RKHS}, with kernel $K$ (or
+$\tildeK{\omega}$).
 \begin{proposition}[\citet{bartlett2002rademacher, maurer2016vector}]
     Suppose that $f\in\mathcal{H}_K$ a \acs{vv-RKHS} where
     \begin{dmath*}
@@ -830,11 +869,11 @@ with kernel $K$ (or $\tildeK{\omega}$).
     Conclude by plugin \cref{eq:ker_bound} in \cref{th:gen_rad_bound}.
 \end{proof}
 As an example, let us consider \cref{eq:learning_rkhs}, which is a solution of
-$\cref{alg:close_form}$ when $\lambda_M=0$. We first list the following
-assumptions useful in the rest of the section. Let $\seq{s}=(x_i,
-y_i)_{i=1}^N\in \mathcal{X}^N\times \mathcal{Y}^N$ be the training samples.
-\begin{assumption}
-    \label{ass:bounded_norm}
+the regularized empirical risk, $\cref{alg:close_form}$ when $\lambda_M=0$. We
+first list the following assumptions useful in the rest of the section. Let
+$\seq{s}=(x_i, y_i)_{i=1}^N\in \mathcal{X}^N\times \mathcal{Y}^N$ be the
+training samples.
+\begin{assumption}\label{ass:bounded_norm}
     There exists a positive constant $\kappa\in\mathbb{R}_{\ge 0}$ such that
     \begin{dmath*}
         \max_{i\in\mathbb{N}^*_N} \norm{K(x_i,x_i)}_{\mathcal{Y}, \mathcal{Y}}
@@ -842,19 +881,20 @@ y_i)_{i=1}^N\in \mathcal{X}^N\times \mathcal{Y}^N$ be the training samples.
     \end{dmath*}
 \end{assumption}
 
-\begin{assumption}
-    \label{ass:bounded_trace}
+\begin{assumption}\label{ass:bounded_trace}
     There exists a positive constant $T\in\mathbb{R}_{\ge 0}$ such that
     \begin{dmath*}
         \max_{i\in\mathbb{N}^*_N} \Tr\left[ K(x_i,x_i)\right] < T.
     \end{dmath*}
 \end{assumption}
-\begin{assumption}
-    \label{ass:bounded_outputs}
+\begin{assumption}\label{ass:bounded_outputs}
     There exists a positive constant $C\in\mathbb{R}_{\ge 0}$ such that
     \begin{dmath*}
         \max_{i\in\mathbb{N}^*_N}\norm{y_i}_{\mathcal{Y}} \le C.
     \end{dmath*}
+\end{assumption}
+\begin{assumption}
+    x
 \end{assumption}
 Under \cref{ass:bounded_outputs}, from \cref{rk:rkhs_bound}, we know that
 $\norm{f}_{\mathcal{H}_K}\le \sqrt{\frac{2}{\lambda}}\sigma_y$, where
@@ -864,18 +904,35 @@ $\norm{f}_{\mathcal{H}_K}\le \sqrt{\frac{2}{\lambda}}\sigma_y$, where
 \end{dmath*}
 Thus we immediatly see that it is possible to choose
 $B=\sqrt{\frac{2}{\lambda}} C$. Let $\kappa = \norm{K_e(e)}_{\mathcal{Y},
-\mathcal{Y}}$ The Lipschitz constant of the least square loss
-$c(f(x), y)=\frac{1}{2}\norm{f(x) - y}_{\mathcal{Y}}^2$ with respect to $f(x)$ is
+\mathcal{Y}}$ The Lipschitz constant of the least square loss $c(f(x),
+y)=\frac{1}{2}\norm{f(x) - y}_{\mathcal{Y}}^2$ with respect to $f(x)$ is
 $L=\max\left(\sqrt{\frac{2\kappa}{\lambda}}C, C\right)$ and the loss takes
 values in $\left[0, \frac{1}{2}L^2\right]$. Hence under assumption that
-$\lambda < 2\kappa$ and \cref{ass:bounded_trace}, \cref{pr:ovk_gen} reads
+$\lambda < 2\kappa$ and \cref{ass:bounded_trace, ass:bounded_outputs},
+\cref{pr:ovk_gen} reads that given $f_{\seq{s}}\in\mathcal{H}_K$ a solution of
+\cref{alg:close_form},
 \begin{dmath}
-    \risk{f} \le \riskemp{f, \seq{s}}  +
+    \risk{f_{\seq{s}}} \le \riskemp{f_{\seq{s}}, \seq{s}}  +
     8\frac{C^2}{\lambda}\sqrt{\frac{\kappa}{N}}\left( T^{1/2} +
     \sqrt{\frac{\kappa\ln(1/\delta)}{2}}\right).
 \end{dmath}
 This bound is to compare to the results of \citet{kadri2015operator} using
 $\beta$-stability arguments.
+\begin{definition}[Uniform stability {\citet[definition
+6]{bousquet2002stability}}]
+A learning algorithm $\seq{s}\mapsto f_{\seq{s}}$ has uniform stability $\beta$
+with respect to the loss function $L$ if the following holds
+\begin{dmath*}
+    \forall i \in \mathbb{N}_N^*, \forall \seq{s}\hiderel{\in}\mathcal{X}^N
+    \sup_{x\in\mathcal{X}, y\in\mathcal{Y}} \abs{L(x, f_{\seq{s}}, y) - L(x,
+    f_{\seq{s}^{\setminus i}}, y)} \hiderel{\le} \beta.
+\end{dmath*}
+\end{definition}
+
+\begin{theorem}[{\citet[theorem 12]{bousquet2002stability}}]
+    Let $\seq{s}\mapsto f_{\seq{s}}$ be a learning algorithm with uniform
+    stability $\beta$ with respect to a loss $L$ that satisfies \cref{ass}.
+\end{theorem}
 
 \begin{dmath}
     \risk{f} \le \riskemp{f, \seq{s}}  + \frac{4\kappa^2 C^2 \left(1 +

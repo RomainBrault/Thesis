@@ -597,10 +597,11 @@ $\Tr\left[K^{dec,gauss}_0(0)\right]=\Tr\left[\Gamma\right]$ and
 
 \subsubsection{Skewed-$\chi^2$ decomposable kernel}
 \label{subsubsec:skewedchi2}
-The skewed-$\chi^2$ scalar kernel is defined on the \acs{LCA} group
-$\mathcal{X}=(-c_k;+\infty)_{k=1}^d$, with $c_k\in\mathbb{R}_{+}$ and endowed
-with the group operation $\odot$. Let $(e_k)_{k=1}^d$ be the standard basis of
-$\mathcal{X}$ and ${}_k:x\mapsto \inner{x,e_k}$. The operator $\odot:
+The skewed-$\chi^2$ scalar kernel \citep{li2010random} is defined on the
+\acs{LCA} group $\mathcal{X}=(-c_k;+\infty)_{k=1}^d$, with
+$c_k\in\mathbb{R}_{+}$ and endowed with the group operation $\odot$. Let
+$(e_k)_{k=1}^d$ be the standard basis of $\mathcal{X}$ and ${}_k:x\mapsto
+\inner{x,e_k}$. The operator $\odot:
 \mathcal{X}\times\mathcal{X}\to\mathcal{X}$ is defined by
 \begin{dmath*}
     x\odot z = \left((x_k + c_k)(z_k + c_k) - c_k\right)_{k=1}^d.
@@ -1490,6 +1491,7 @@ multiplicative group --described in \cref{subsec:characters} and
 \end{itemize}
 
 \subsection{Regularization property}
+\label{subsec:regularization_property}
 We have shown so far that it is always possible to construct a feature map that
 allows to approximate a shift-invariant $\mathcal{Y}$-Mercer kernel. However we
 could also propose a construction of such map by studying the regularization
@@ -1580,10 +1582,17 @@ $\dual{\mathcal{X}}$, $A(\omega)=1$. Therefore we recover the well known result
 for kernels that is for any $f\in\mathcal{H}_k$ we have $\norm{f}_k =
 \int_{\dual{\mathcal{X}}} \FT{k_e}(\omega)^{-1} \FT{f}(\omega)^2
 d\dual{\Haar}(\omega)$~\citep{Yang2012, vertregularization,
-smola1998connection}. We also note that the regularization property in
-$\mathcal{H}_K$ does not depends (as expected) on the decomposition of
-$A(\omega)$ into $B(\omega)B(\omega)^\adjoint $. Therefore the decomposition
-should be chosen such that it optimizes the computation cost. For instance if
+smola1998connection}. Eventually from this last equation we also recover
+\cref{pr:kernel_reg} for decomposable kernels. If
+$A(\omega)=\Gamma\in\mathcal{L}_+(\mathbb{R}^p)$,
+\begin{dmath}
+    \norm{f}_K = \sum_{i,j=1}^p
+    \left(\Gamma^\dagger\right)_{ij}\inner{f_i,f_j}_k
+\end{dmath}
+We also note that the regularization property in $\mathcal{H}_K$ does not
+depends (as expected) on the decomposition of $A(\omega)$ into
+$B(\omega)B(\omega)^\adjoint $.  Therefore the decomposition should be chosen
+such that it optimizes the computation cost. For instance if
 $A(\omega)\in\mathcal{L}(\mathbb{R}^p)$ has rank $r$, one could find an
 operator $B(\omega)\in\mathcal{L}(\mathbb{R}^p, \mathbb{R}^r)$ such that
 $A(\omega)=B(\omega)B(\omega)^\adjoint$. Moreover, in light of

@@ -3,21 +3,14 @@
 %------------------------------------------------------------------------------
 \section{Learning with {ORFF}}
 \label{sec:learning_with_operator-valued_random-fourier_features} We now turn
-<<<<<<< HEAD
-our attention to the use of ORFF in the framework of supervised and semi-supervised learning. 
-%supervised learning function with an ORFF model that approximate an OVK
-  \subsection{Warm-up: vector-valued regression} Let $\seq{s} =
-(x_i,y_i)_{i=1}^N\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$ be a training random sample. Given a local loss function $L:
-=======
 our attention to learning function with an ORFF model that approximate an OVK
 model.
 \subsection{Warm-up: supervised regression} 
 Let $\seq{s} = (x_i,y_i)_{i=1}^N\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$
 be a sequence of training samples. Given a local loss function $L:
->>>>>>> a6efb9a2f772d1813cee36fd6002d847f4c2bec5
 \mathcal{X}\times\mathcal{F}\times\mathcal{Y}\to \overline{\mathbb{R}}$ such
-that $L$ is proper, convex and lower semi-continous in $\mathcal{F}$, we are interested
-in finding a \emph{vector-valued function}
+that $L$ is proper, convex and lower semi-continous in $\mathcal{F}$, we are
+interested in finding a \emph{vector-valued function}
 $f_{\seq{s}}:\mathcal{X}\to\mathcal{Y}$, that lives in a \acs{vv-RKHS} and
 minimize a tradeoff between a data fitting term $L$ and a regularization term
 to prevent from overfitting. Namely finding $f_{\seq{s}}\in\mathcal{H}_K$ such
@@ -25,27 +18,20 @@ that
 \begin{dmath}
     f_{\seq{s}} = \argmin_{f\in\mathcal{H}_K}
     \frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f, y_i) +
-<<<<<<< HEAD
-    \frac{\lambda}{2}\norm{f}^2_{K}, \label{eq:learning_rkhs}
-\end{dmath} where
-$\lambda\in\mathbb{R}_+$ is a regularization\mpar{Tychonov regularization.}
-parameter. The quantity
-=======
     \frac{\lambda}{2}\norm{f}^2_{K}
     \label{eq:learning_rkhs}
 \end{dmath}
 where $\lambda\in\mathbb{R}_+$ is a regularization\mpar{Tychonov
 regularization.} parameter. We call the quantity
->>>>>>> a6efb9a2f772d1813cee36fd6002d847f4c2bec5
 \begin{dmath*}
     \mathcal{R}(f)=\frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f, y_i)
     \condition{$\forall f\in\mathcal{H}_K$, $\forall
     \seq{s}\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$.}
 \end{dmath*}
-is called the empirical risk of the model $f\in\mathcal{H}_K$ according the local loss $L$. A common choice of data
-fitting term for regression is $L:(x, f, y) \mapsto
-\norm{f(x)-y}_{\mathcal{Y}}^2$.  We introduce a corollary from Mazur and
-Schauder proposed in 1936 (see~\citet{kurdila2006convex,
+is called the empirical risk of the model $f\in\mathcal{H}_K$ according the
+local loss $L$. A common choice of data fitting term for regression is $L:(x,
+f, y) \mapsto \norm{f(x)-y}_{\mathcal{Y}}^2$.  We introduce a corollary from
+Mazur and Schauder proposed in 1936 (see~\citet{kurdila2006convex,
 gorniewicz1999topological}) showing that \cref{eq:learning_rkhs} --and
 \cref{eq:learning_rkhs_gen}-- attains a unique mimimizer.
 \begin{theorem}[Mazur-Schauder]
@@ -106,13 +92,8 @@ Brouard2016_jmlr}, and a cornerstone of learning in \acs{vv-RKHS} is the
 representer theorem\mpar{Sometimes referred to as minimal norm interpolation
 theorem.}, which allows to replace the search of a minimizer in a infinite
 dimensional \acs{vv-RKHS} by a finite number of paramaters $(u_i)_{i=1}^N$,
-<<<<<<< HEAD
-$u_i\in\mathcal{Y}$. We present here the very genreal form
-of~\citet{minh2016unifying}. This framework encompasses Vector-valued Manifold
-=======
 $u_i\in\mathcal{Y}$. We present here the general form
 of~\citet{minh2016unifying}. This framework includes Vector-valued Manifold
->>>>>>> a6efb9a2f772d1813cee36fd6002d847f4c2bec5
 Regularization~\citep{belkin2006manifold,Brouard2011,minh2013unifying} and
 Co-regularized Multi-view
 Learning~\citep{brefeld2006efficient,sindhwani2008rkhs,rosenberg2009kernel,

@@ -2,11 +2,7 @@
 
 %------------------------------------------------------------------------------
 \section{Notations}
-<<<<<<< HEAD
-In this section we briefly summarize important notions used all along this
-=======
 In this section we summarize briefly important notions used throughout this
->>>>>>> a6efb9a2f772d1813cee36fd6002d847f4c2bec5
 document. It is mainly based on books and lecture notes of
 \citet{kurdila2006convex,cotaescu2016elements}.
 
@@ -48,7 +44,7 @@ depends on the topology of the spaces $\mathcal{X}$ and $\mathcal{Y}$.
 If $\mathcal{X}$ is a topological space and $x$ is a point in $\mathcal{X}$, a
 neighbourhood of $x$ is a subset $\mathcal{V}$ of $\mathcal{X}$ that includes
 an \emph{open} set $\mathcal{U}$ containing $x$. A topological space
-$\mathcal{X}$ is said to be Haussdorff (T2) when all distinct points in
+$\mathcal{X}$ is said to be Hausdorff (T2) when all distinct points in
 $\mathcal{X}$ are pairwise neighborhood-separable. \acs{ie}~if there exists a
 neighbourhood $\mathcal{U}$ of $x$ and a neighbourhood $\mathcal{V}$ of $y$
 such that $\mathcal{U}$ and $\mathcal{V}$ are disjoint. It implies the
@@ -57,8 +53,9 @@ thesis. Therefore in the whole document we always assume that a topological
 space $\mathcal{X}$ is Haussdorff.
 \paragraph{}
 A topological space is said to be second countable if it has a countable base.
-Every second-countable space is separable and Lindel\"of (The reverse
-implications do not hold). The
+Every second-countable space is separable and Lindel\"of\mpar{Every open cover
+has a countable subcover.} (The reverse implications do not hold). A space is
+metrisable if and only if it is second countable.
 \paragraph{}
 A topological space is said to be separable if there exists a sequence
 $(x_n)_{n\in\mathbb{N}^*}$ of elements of $\mathcal{X}$ such that every
@@ -71,7 +68,12 @@ separable if there is no specific mention of the contrary. Moreover we recall
 that a Hilbert space is separable if and only if it has a countable orthonormal
 basis (Hence separable Hilbert spaces are second countable). Hence an operator
 between two separable Hilbert spaces can be written as an infinite dimensional
-matrix.
+matrix. In some cases we also introduce \emph{Polish spaces} which are
+separable topological spaces $\mathcal{X}$ that pocess at least one $d$ metric
+such that $(\mathcal{X}, d)$ is complete. Then $d$ induces the topology
+$\mathcal{T}_x$ of $\mathcal{X}$. As metrisable spaces, Polish spaces are always
+second countable. Moreover ervery second countable locally compact Hausdorff
+space is a Polish space and every separable Banach space is a Polish space.
 \paragraph{}
 If $\mathcal{X}$ and $\mathcal{Y}$ are two topological spaces, we denote by
 $\mathcal{F}(\mathcal{X};\mathcal{Y})$ the topological vector space of
@@ -398,42 +400,93 @@ $m=\dim(\mathcal{H}_2)$. All these notations are summarized in
 
 \subsection{Introduction to kernel methods}
 
+
+
 \subsection{Quadratic programing, subsampling}
 
 \subsection{Gradient descents}
 
 \subsection{Mercer Theorem, Nystr\"om method and feature maps}
-\subsubsection{Nystr\¨om approximations}
-To overcome the bottleneck of Gram matrix computations in kernel methods, Williams and Seeger \cite{Williams200-nystrom} have proposed to generate a low-rank matrix approximation of the Gram matrix using a subset of its columns.
+\subsubsection{Nystr\"om approximations}
+To overcome the bottleneck of Gram matrix computations in kernel methods,
+Williams and Seeger \cite{Williams2000-nystrom} have proposed to generate a
+low-rank matrix approximation of the Gram matrix using a subset of its columns.
 \subsubsection{Random Fourier Feature maps}
-Random Fourier Feature methodology introduced  by Rahimi and Recht \cite{Rahimi2007} provides a way to scale up kernel methods when kernels are Mercer and \emph{translation-invariant}  for the group law considered on the input space $\mathcal{X}. We describe here the original approach proposed in  \cite{Rahimi2007}, focusing on the group $(\mathbb{R}^d, +)$. Extensions to other group laws such as \cite{Li2010} will be described in \ref{sec:harmonic} in the general framework of operator-valued kernels.\\
-
-Denote $k: \mathbb{R}^d \times \mathbb{R}^d \rightarrow \mathbb{R}$ a positive definite kernel on $\mathbb{R}^d$. A kernel $k$ is said to be \emph{shift-invariant} or \emph{translation-invariant} for the addition if for any $a \in \mathbb{R}^d$, $
-\forall (x,x') \in \mathbb{R}^d \times \mathbb{R}^d, k(x+a,z+a) = k(x,z)$.
-Then, we define $k_0: \mathbb{R}^d \rightarrow \mathbb{R}$ the function such that $k(x,z)= k_0(x-z)$. $k_0$ is called the \emph{signature} of kernel $k$. Bochner theorem \cite{folland1994course} is the theoretical result that leads to the Random Fourier Features.
+Random Fourier Feature methodology introduced  by Rahimi and Recht
+\cite{Rahimi2007} provides a way to scale up kernel methods when kernels are
+Mercer and \emph{translation-invariant}  for the group law considered on the
+input space $\mathcal{X}$. We describe here the original approach proposed in
+\cite{Rahimi2007}, focusing on the group $(\mathbb{R}^d, +)$. Extensions to
+other group laws such as \cite{li2010random} are described in
+\cref{subsubsec:skewedchi2} within the general framework of operator-valued
+kernels.
+\paragraph{}
+Denote $k: \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}$ a positive
+definite kernel on $\mathbb{R}^d$. A kernel $k$ is said to be
+\emph{shift-invariant} or \emph{translation-invariant} for the addition if for
+any $a \in \mathbb{R}^d$, and for all $(x,x') \in \mathbb{R}^d \times
+\mathbb{R}^d$ we have $k(x+a,z+a) = k(x,z)$.  Then, we define $k_0: \mathbb{R}^d
+\to \mathbb{R}$ the function such that $k(x,z)= k_0(x-z)$. $k_0$ is
+called the \emph{signature} of kernel $k$. Bochner's theorem
+\cite{folland1994course} is the theoretical result that leads to the Random
+Fourier Features.
 \begin{theorem}[Bochner's theorem]\label{th:bochner-scalar}
-Every positive definite complex function is the Fourier transform of a non-negative measure.
- \end{theorem}
- It implies that any positive definite, continuous and shift-invariant kernel $k$ is the Fourier transform of a non-negative measure $\mu$ we therefore have the following corollary.
+    Any continuous positive definite complex function is the \acl{FT} of a
+    non-negative measure.
+\end{theorem}
+It implies that any positive definite, continuous and shift-invariant kernel
+$k$, have a continuous and positive definite signature $k_0$, which is the
+\acl{FT} of a non-negative measure $\mu$. We therefore have the following
+corollary.
 \begin{corollary}\label{c:bochner-app}
-With the previous notations and assumptions on $k$,
-\begin{equation}\label{bochner-scalar}
-k(x,z)=k_0(x-z) = \int_{\mathbb{R}^d} e^{-i \inner{\omega,x - z}} d\mu(\omega).
-\end{equation}
+    With the previous notations and assumptions on $k$,
+    \begin{dmath}\label{bochner-scalar}
+        k(x,z)=k_0(x-z) = \int_{\mathbb{R}^d} e^{-\iu \inner{\omega,x - z}}
+        d\mu(\omega).
+    \end{dmath}
 \end{corollary}
-
-Without loss of generality, we assume that $\mu$ is a probability measure, i.e. $\int_{\mathbb{R}^d} d\mu(\omega)=1$.
-Then we can write \cref{bochner-scalar} as an expectation over $\mu$: $k_0(x-z) = \expectation_{\mu}\left[e^{-i \inner{\omega,x - z}}\right]$.
-If $k$ is real valued we thus only write the real part: $k(x,z)$ = $\expectation_{\mu}[\cos \inner{\omega,x - z}]$ =$\expectation_{\mu}[ \cos \inner{\omega,z}$ $\cos \inner{\omega,x}$ + $\sin \inner{\omega,z}$ $\sin \inner{\omega,x}]$.
-Let $\Vect_{j=1}^D x_j$ denote the $Dm$-length column vector obtained by stacking vectors $x_j \in \mathbb{R}^m$. The feature map $\tilde{\phi}: \mathbb{R}^d \rightarrow \mathbb{R}^{2D}$ defined as
-\begin{equation}\label{eq:rff}
-\begin{aligned}
-\tilde{\phi}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D\begin{pmatrix}\cos{\inner{x,\omega_j}} \\ \sin{\inner{x,\omega_j}}\end{pmatrix}, \enskip \omega_j \sim \mu
-\end{aligned}
-\end{equation}
-is called a \emph{Random Fourier Feature} (map). Each $\omega_{j}, j=1, \ldots, D$ is independently sampled from the inverse Fourier transform $\mu$ of $k_0$.
-This Random Fourier Feature map provides the following Monte-Carlo estimator of the kernel: $\tilde{k}(x, z) = \tilde{\phi}(x)^* \tilde{\phi}(z)$. The dimension $D$ governs the precision of this approximation, whose uniform convergence towards the target kernel (as defined in \cref{bochner-scalar}) can be found in \citet{Rahimi2007} and in more recent papers with some refinements proposed in \citet{sutherland2015} and \citet{sriper2015}.
-Finally, it is important to notice that Random Fourier Feature approach \emph{only} requires two steps before the application of a learning algorithm: (1) define the inverse Fourier transform of the given shift-invariant kernel, (2) compute the randomized feature map using the spectral distribution $\mu$. \citet{Rahimi2007} show that for the Gaussian kernel $k_0(x-z) = exp(-\gamma \norm{x - z}^2)$, the spectral distribution $\mu(\omega)$ is Gaussian.
+Without loss of generality, we assume that $\mu$ is a probability measure,
+\acs{ie} $\int_{\mathbb{R}^d} d\mu(\omega)=1$ by renormalising the kernel since
+$\int_{\mathbb{R}^d}d\mu(\omega)= \int_{\mathbb{R}^d}e^{-\iu \inner{\omega,
+0}d\mu(\omega)}=k_0(0)$. Then we can write \cref{bochner-scalar} as an
+expectation over $\mu$. For all $x$,
+$z\in\mathbb{R}^d$
+\begin{dmath*}
+    k_0(x-z) = \expectation_{\mu}\left[e^{-\iu \inner{\omega,x - z}}\right].
+\end{dmath*}
+Eventuallt, if $k$ is real valued we only write the real part, $k(x,z)$ =
+$\expectation_{\mu}[\cos \inner{\omega,x - z}]$ =$\expectation_{\mu}[ \cos
+\inner{\omega,z}$ $\cos \inner{\omega,x}$ + $\sin \inner{\omega,z}$ $\sin
+\inner{\omega,x}]$.  Let $\Vect_{j=1}^D x_j$ denote the $Dm$-length column
+vector obtained by stacking vectors $x_j \in \mathbb{R}^m$.  The feature map
+$\tilde{\phi}: \mathbb{R}^d \rightarrow \mathbb{R}^{2D}$ defined as
+\begin{dmath}
+\label{eq:rff}
+    \tilde{\phi}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D
+    \begin{pmatrix} 
+        \cos{\inner{x,\omega_j}} \\
+        \sin{\inner{x,\omega_j}}
+    \end{pmatrix}, \enskip \omega_j \hiderel{\sim} d\mu
+\end{dmath}
+is called a \emph{Random Fourier Feature} (map). Each $\omega_{j}, j=1, \ldots,
+D$ is independently and identically sampled from the inverse Fourier transform
+$\mu$ of $k_0$.  This Random Fourier Feature map provides the following
+Monte-Carlo estimator of the kernel: $\tilde{k}(x, z) = \tilde{\phi}(x)^*
+\tilde{\phi}(z)$. 
+\paragraph{}
+The dimension $D$ governs the precision of this
+approximation, whose uniform convergence towards the target kernel (as defined
+in \cref{bochner-scalar}) can be found in \citet{Rahimi2007} and in more recent
+papers with some refinements proposed in \citet{sutherland2015} and
+\citet{sriper2015}.  Finally, it is important to notice that Random Fourier
+Feature approach \emph{only} requires two steps before the application of a
+learning algorithm: (1) define the inverse Fourier transform of the given
+shift-invariant kernel, (2) compute the randomized feature map using the
+spectral distribution $\mu$.  \citet{Rahimi2007} show that for the Gaussian
+kernel $k_0(x-z) = exp(-\gamma \norm{x - z}_2^2)$, the spectral distribution
+$\mu(\omega)$ is a Gaussian distribution. For the Laplacian kernel $k_0(x-z) =
+exp(-\gamma \norm{x - z}_1)$, the spectral distribution is a Cauchy
+distribution.
 \subsection{Recent extensions}
 
 %------------------------------------------------------------------------------
@@ -846,13 +899,14 @@ $\pairing{x,\omega}=\exp(\iu x\omega)$, then
 The pairing $\pairing{x,\omega}=\exp(2\iu\pi x\omega)$ looks more attractive in
 theory since it limits the messy factor outside the integral sign and make the
 Haar measure self-dual. However it is of lesser use in practice since it yields
-additional unnecessary computation when evaluating the pairing.
-
-Hence we settle with the Haar measure on $\mathcal{X}$ defined as
+additional unnecessary computation when evaluating the pairing. Hence for
+symmetry reason on $(\mathbb{R}^d, +)$ and reduce computations we settle with
+the Haar measure on $\mathbb{R}^d$ groups (additive and multiplicative) defined
+as
 \begin{dmath*}
     \dual{\Haar}(\mathcal{Z})
     = \Haar(\mathcal{Z})
-    \hiderel{=} \frac{1}{\sqrt{2\pi}^d} \Leb(\mathcal{Z})
+    \hiderel{=} \frac{1}{\sqrt{2\pi}^d} \Leb(\mathcal{Z}).
 \end{dmath*}
 We conclude this subsection by recalling the injectevity property of the
 \acl{FT}.
@@ -1490,22 +1544,27 @@ whose signature is of positive type (continuous positive definite functions).
 
 \subsection{Examples of \aclp{OVK}}
 \label{subsec:ovk-ex}
+In this subsection we list some operator-valued kernel that have been used
+successfully in the litterature. We do not recall the proof that the following
+kernels are well defined are refer the interrested reader to the respective
+authors original work.
+\paragraph{}
 Operator-valued kernels have been first introduced in Machine Learning to solve
 multi-task regression problems. Multi-task regression is encountered in many
 fields such as structured classification when classes belong to a hierarchy for
 instance. Instead of solving independently $p$ single output regression task,
 one would like to take advantage of the relationships between output variables
 when learning and making a decision.
-\begin{definition}[Decomposable kernel]
+\begin{definition}[Decomposable kernel \citep{Micheli2013}]
     \label{dec-kernel}
     Let $\Gamma$ be a non-negative operator of $\mathcal{L}_+(\mathcal{Y})$.
-    $K$ is said to be a $\mathcal{Y}$-Mercer \emph{decomposable}
+    $K$ is said to be a \emph{decomposable}
     kernel\mpar{Some authors also refer to as \emph{separable} kernels.} if for
     all $(x,z) \in \mathcal{X}^2$,
     \begin{dmath*}
         K(x,z) \colonequals k(x,z)\Gamma,
     \end{dmath*}
-    where $k$ is a \emph{scalar} Mercer kernel.
+    where $k$ is a \emph{scalar} kernel.
 \end{definition}
 When $\mathcal{Y}=\mathbb{R}^p$, the matrix $\Gamma$ is
 interpreted as encoding the relationships between the outputs coordinates.
@@ -1538,22 +1597,28 @@ Lim2015}. Another interesting property of the decomposable kernel is its
 universality (a kernel which may approximate an arbitrary continuous target
 function uniformly on any compact subset of the input space). A reproducing
 kernel $K$ is said \emph{universal} if the associated \ac{vv-RKHS}
-$\mathcal{H}_K$ is dense in the space $\mathcal{C}(\mathcal{X},\mathcal{Y})$.
-The conditions for a kernel to be universal have been discussed
-in~\citet{caponnetto2008,Carmeli2010}. In particular they show that a
-decomposable kernel is universal provided that the scalar kernel $k$ is
-universal and the operator $\Gamma$ is injective.
+$\mathcal{H}_K$ is dense in the space of continuous functions
+$\mathcal{C}(\mathcal{X},\mathcal{Y})$.  The conditions for a kernel to be
+universal have been discussed in~\citet{caponnetto2008,Carmeli2010}. In
+particular they show that a decomposable kernel is universal provided that the
+scalar kernel $k$ is universal and the operator $\Gamma$ is injective.
+Given $(e_k)_{k=1}^p$ a basis of $\mathcal{Y}$, we recall here how the matrix
+$\Gamma$ act as a regularizer between the components of the outputs $f_k =
+\inner{f(\cdot), e_k}_{\mathcal{Y}}$ of a function $f\in\mathcal{H}_K$.
 \begin{proposition}[Kernels and Regularizers~\citep{Alvarez2012}]
+    \label{pr:kernel_reg}
     Let $K(x,z) \colonequals k(x,z)\Gamma$ for all $x$, $z\in\mathcal{X}$ be a
     decomposable kernel where $\Gamma$ is a matrix of size $p\times p$. Then
     for all $f\in\mathcal{H}_K$,
     \begin{dmath}
-        \norm{f}_K = \sum_{i,j=1}^p \Gamma^\dagger_{ij}\inner{f_i,f_j}_k
+        \norm{f}_K = \sum_{i,j=1}^p
+        \left(\Gamma^\dagger\right)_{ij}\inner{f_i,f_j}_k
     \end{dmath}
     where $f_i=\inner{f,e_i}$ (resp $f_j=\inner{f,e_j}$), denotes the $i$-th
     (resp $j$-th) component of $f$.
 \end{proposition}
-
+We prove a generalized version of \cref{pr:kernel_reg} to any \acl{OVK} in
+\cref{subsec:regularization_property}.
 \paragraph{}
 Curl-free and divergence-free kernels provide an interesting application of
 operator-valued kernels~\citep{Macedo2008, Baldassare2012, Micheli2013} to
@@ -1584,8 +1649,55 @@ vector-fields.
 Although taken separately these kernels are not universal, a convex combination
 of the curl-free and divergence-free kernels allows to learn any vector field
 that satisfies the Helmholtz decomposition theorem~\citep{Macedo2008,
-Baldassare2012}.
-
-
+Baldassare2012}. The next class of kernel we present are transformable kernels,
+whose action on each coordinate of an outputs vector is determined by a
+\say{views} of an input data.
+\begin{definition}[Transformable kernel\citep{caponnetto2008}]
+    Let $k:\mathcal{X}'\times\mathcal{X}'\to\mathbb{R}$ be a scalar-valued
+    kernels and $\psi_1, \dots, \psi_p$ be a collection functions from
+    $\mathcal{X}\to\mathcal{X}'$. Then the transformable kernel is defined for
+    all $(i, j)\in(\mathbb{N}^*_p)^2$ as
+    \begin{dmath*}
+        K(x,z)_{ij} = \inner{e_i, K(x, z)e_j}_{\mathcal{Y}} \hiderel{=}
+        k(\psi_i(x), \psi_j(z)),
+    \end{dmath*}
+    for all $x$, $z\in\mathcal{X}$.
+\end{definition}
+Transformable kernels have successfully used for network inference from time
+series by means of autoregressive models (\citet{lim2013okvar,
+lim2015operator}), and by \citet{vazquez2003multi} for cokriging the
+multi-output version of kriging\mpar{Gaussian process regression.}, which takes
+into account the correlations between the outputs.
+\paragraph{}
+We also introduce an example of \acl{OVK} acting on a function space which
+found applications in \citet{kadri2015operator}.
+\begin{definition}[Hilbert Schmidt Integral kernel \citep{kadri2015operator}]
+    Let $k_{\mathcal{X}}:\mathcal{X}\times\mathcal{X}\to\mathbb{R}$ be a scalar
+    valued kernel acting on the inputs and
+    $k_{\mathcal{T}}:\mathcal{T}\times\mathcal{T} \to \mathbb{R}$ be a scalar
+    valued kernel acting on the outputs. Define the integral operator
+    $L_{\mathcal{T}} g = \int_{\mathcal{Y}}k_{\mathcal{T}}(\cdot,
+    t)g(t)d\mu(t)$. Then the Hilbert Schmidt Integral kernel is defined as
+    \begin{dmath*}
+        K:
+        \begin{cases}
+            \mathcal{X}\times\mathcal{X} &\to \mathcal{L}(\mathcal{Y}) \\
+            (x, z) &\mapsto k_{\mathcal{X}}(x, z) L_{\mathcal{T}}.
+        \end{cases}
+    \end{dmath*}
+\end{definition}
+This kernel is useful to learn functions $f$ that are function valued. In other
+words, $f\in\mathcal{F}(\mathcal{X}; \mathcal{F}(\mathcal{T}; \mathbb{R}))$ and
+the \acl{OVK} $K$ act on a function $g$ in the following way.
+\begin{dmath}
+    K(x, z)g = k_{\mathcal{X}}(x, z)\int_{\mathcal{Y}}k_{\mathcal{Y}}(\cdot,
+    t)g(t)d\mu(t).
+\end{dmath}
+In \citet{kadri2015operator}, the author studied the case where
+$\mathcal{T}=\mathbb{R}$ with $k_{\mathcal{Y}}(t, s)=\exp(-\abs{t-s})$ and
+applied it to speech inversion (Which and how Human articulators are activated
+from an audible speech signal). Notice that the Hilbert Schmidt integral kernel
+is a particular case of decomposable kernel where
+$\mathcal{Y}=\mathcal{F}(\mathcal{T}; \mathbb{R})$.
 
 \chapterend

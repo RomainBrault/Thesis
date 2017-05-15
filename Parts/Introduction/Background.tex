@@ -447,8 +447,11 @@ corollary.
 \end{corollary}
 Without loss of generality, we assume that $\mu$ is a probability measure,
 \acs{ie} $\int_{\mathbb{R}^d} d\mu(\omega)=1$ by renormalising the kernel since
-$\int_{\mathbb{R}^d}d\mu(\omega)= \int_{\mathbb{R}^d}e^{-\iu \inner{\omega,
-0}d\mu(\omega)}=k_0(0)$. Then we can write \cref{bochner-scalar} as an
+\begin{dmath*}
+    \int_{\mathbb{R}^d}d\mu(\omega)= \int_{\mathbb{R}^d}e^{-\iu \inner{\omega,
+    0}d\mu(\omega)}=k_0(0). 
+\end{dmath*}
+Then we can write \cref{bochner-scalar} as an
 expectation over $\mu$. For all $x$,
 $z\in\mathbb{R}^d$
 \begin{dmath*}
@@ -466,7 +469,7 @@ $\tilde{\phi}: \mathbb{R}^d \rightarrow \mathbb{R}^{2D}$ defined as
     \begin{pmatrix} 
         \cos{\inner{x,\omega_j}} \\
         \sin{\inner{x,\omega_j}}
-    \end{pmatrix}, \enskip \omega_j \hiderel{\sim} d\mu
+    \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \mu
 \end{dmath}
 is called a \emph{Random Fourier Feature} (map). Each $\omega_{j}, j=1, \ldots,
 D$ is independently and identically sampled from the inverse Fourier transform
@@ -973,7 +976,7 @@ $\lambda_x\lambda_z=\lambda_{\inv{x}\groupop z}$. Such representations are
 faithful, that is $\lambda_x=1 \iff x=e$.
 
 %----------------------------------------------------------------------------------------
-\section{On operator-valued kernels}
+\section{On Operator-Valued Kernels}
 \label{sec:background_on_operator-valued_kernels} We now introduce the theory
 of \acf{vv-RKHS} that provides a flexible framework to study and learn
 vector-valued functions. The fundations of the general theory of scalar kernel
@@ -1030,7 +1033,10 @@ definition of a \acf{vv-RKHS}.
 \end{definition}
 Throughout this section we show that a \ac{vv-RKHS} defines a unique
 positive-definite function called \acf{OVK} and conversely an \ac{OVK} uniquely
-defines a \ac{vv-RKHS}. We follow here the definition of~\citet{Carmeli2010}.
+defines a \ac{vv-RKHS}. The bijection between \acsp{OVK}s and \acsp{vv-RKHS}s has
+been first proved by~\citet{Senkene73} in 1973. In this introduction to
+\acsp{OVK} we follow the definitions and most recent proofs
+of~\citet{Carmeli2010}.
 \begin{definition}[positive-definite \acl{OVK} acting on a complex Hilbert
 space]
     \label{def:reproducing_kernel}
@@ -1339,6 +1345,7 @@ $g\in\mathcal{H}$ such that $Wg=f$, the only one making the norm in the
 In this work we mainly focus on the class kernels inducing a \ac{vv-RKHS} of
 continuous functions. Such kernels are named $\mathcal{Y}$-Mercer kernels.
 \begin{definition}[$\mathcal{Y}$-Mercer kernel \citep{Carmeli2010}]
+    \label{def:mercer_kernel}
     A reproducing kernel $K:\mathcal{X}\times
     \mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is called $\mathcal{Y}$-Mercer
     kernel if $\mathcal{H}_K$ is a subspace of
@@ -1625,9 +1632,24 @@ operator-valued kernels~\citep{Macedo2008, Baldassare2012, Micheli2013} to
 \emph{vector field} learning, for which input and output spaces have the same
 dimensions ($d=p$). Applications cover shape deformation
 analysis \citep{Micheli2013} and magnetic fields
-approximations \citep{Wahlstrom2013}. These kernels discussed
-in \citep{Fuselier2006} allow encoding input-dependent similarities between
-vector-fields.
+approximations \citep{Wahlstrom2013}. These kernels discussed in
+\citep{Fuselier2006} allow encoding input-dependent similarities between
+vector-fields. An illustration of a synthetic $2D$ curl-free and divergence
+free fields are given respectively in \cref{fig:curl-field} and
+\cref{fig:div-field}. To obain the curl-free field we took the gradient of
+a mixture of five two dimensional gaussians (since the gradient of a potential
+is always curl-free). We generated the divergence-free field by taking the
+orthogonal of the curl-free field.
+\begin{figure}
+    \centering
+    \includegraphics[trim=1.8cm 1cm 2cm 1cm,width=\textwidth,clip=true]{./gfx/curl_field.eps}
+    \caption{Synthetic $2D$ curl-free field \label{fig:curl-field}.}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[trim=1.8cm 1cm 2cm 1cm,width=\textwidth,clip=true]{./gfx/div_field.eps}
+    \caption{Synthetic $2D$ divergence-free field \label{fig:div-field}.}
+\end{figure}
 \begin{definition}[Curl-free and Div-free kernel \citep{Macedo2008}]
     \label{curl-div-free}
     Assume $\mathcal{X}=(\mathbb{R}^d, +)$ and $\mathcal{Y}=\mathbb{R}^p$ with

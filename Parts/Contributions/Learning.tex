@@ -173,7 +173,7 @@ not a problem for practical applications, it might raise issues for further
 theoretical investigations. In particular, it makes it difficult to perform
 theoretical comparison of the \say{exact} solution of
 \cref{eq:learning_rkhs_gen} with respect to the \acs{ORFF} approximation
-solution given in \cref{cr:orff_representer}.
+solution given in \cref{th:orff_representer}.
 \paragraph{}
 We present here the proof of the generic formulation proposed
 by~\citet{minh2016unifying}. In the mean time we clarify some elements of the
@@ -339,10 +339,13 @@ The following theorem states that when $\lambda_K > 0$ then learning with a
 feature map is equivalent to learn with a kernel. Moreover if
 $f_{\seq{z}}\in\mathcal{H}_K$ is a solution of \cref{eq:argmin_RKHS_rand} and
 $\theta_{\seq{z}}\in\mathcal{H}$ is the solution of
-\cref{eq:argmin_RKHS_rand_feat}, then $f_{\seq{z}}=\Phi(\cdot)^\adjoint
-\theta_{\seq{z}}$.
+\cref{eq:argmin_RKHS_rand}, then $f_{\seq{z}}=\Phi(\cdot)^\adjoint
+\theta_{\seq{z}}$. To the best of our knowledge no such results exist in the
+litterature even for scalar-valued kernel. Usually the author suppose that
+the class of function $\mathcal{H}_K$ can be replace with $\mathcal{H}$ but
+do not study the link between these spaces.
 \begin{theorem}[Feature equivalence]
-    \label{cr:orff_representer} Let $\tildeK{\omega}$ be an \acl{OVK} such that
+    \label{th:orff_representer} Let $\tildeK{\omega}$ be an \acl{OVK} such that
     for all $x$, $z\in\mathcal{X}$, $\tildePhi{\omega}(x)^\adjoint
     \tildePhi{\omega}(z) = \widetilde{K}(x,z)$ where $\widetilde{K}$ is a
     $\mathcal{U}$-Mercer \acs{OVK} and $\mathcal{H}_{\tildeK{\omega}}$ its
@@ -501,18 +504,21 @@ $\theta_{\seq{z}}\in\mathcal{H}$ is the solution of
         \tildePhi{\omega}(x_i)M_{ik} \tildePhi{\omega}(x_k)^\adjoint
         \theta}_{\tildeH{\omega}}. \qed
     \end{dmath*}
-\end{proof}
-This shows that when $\lambda_K>0$ the solution of \cref{eq:argmin_u} with the
-approximated kernel $K(x,z) \approx \tildeK{\omega}(x,z) =
-\tildePhi{\omega}(x)^\adjoint\tildePhi{\omega}(z)$ is the same than the
-solution of \cref{eq:argmin_theta} up to a linear transformation. Namely, if
+\end{proof} This shows that when $\lambda_K>0$ the solution of
+\cref{eq:argmin_u} with the approximated kernel $K(x,z) \approx
+\tildeK{\omega}(x,z) = \tildePhi{\omega}(x)^\adjoint\tildePhi{\omega}(z)$ is
+the same than the solution of \cref{eq:argmin_theta} up to a linear
+transformation. Namely, if
 $u_{\seq{z}}$ is the solution of \cref{eq:argmin_u}, $\theta_{\seq{z}}$ is the
-solution of \cref{eq:argmin_theta} and $\lambda_K>0$ we have \begin{dmath*}
-\theta_{\seq{z}} = \sum_{j=1}^{N+U} \tildePhi{\omega}(x_j) u_{\seq{z}}
-\hiderel{\in}\tildeH{\omega}.  \end{dmath*} If $\lambda_K=0$ we can still find
-a solution $u_{\seq{z}}$ of \cref{eq:argmin_u}. By construction of the kernel
-expansion, we have $u_{\seq{z}}\in(\Ker W)^\bot$. However looking at the proof
-of \cref{cr:orff_representer} we see that $\theta_{\seq{z}}$ might \emph{not}
+solution of \cref{eq:argmin_theta} and $\lambda_K>0$ we have 
+\begin{dmath*}
+    \theta_{\seq{z}} = \sum_{j=1}^{N+U} \tildePhi{\omega}(x_j) u_{\seq{z}}
+    \hiderel{\in}\tildeH{\omega}.
+\end{dmath*} 
+If $\lambda_K=0$ we can still find a solution $u_{\seq{z}}$ of
+\cref{eq:argmin_u}. By construction of the kernel expansion, we have
+$u_{\seq{z}}\in(\Ker W)^\bot$. However looking at the proof of
+\cref{th:orff_representer} we see that $\theta_{\seq{z}}$ might \emph{not}
 belong to $(\Ker W)^\bot$. Then we can compute a residual vector 
 \begin{dmath*}
     r_{\seq{z}} = \theta_{\seq{z}} - \sum_{j=1}^{N+U} \tildePhi{\omega}(x_j)
@@ -668,13 +674,14 @@ We note the quantity
     \mathcal{L}(\tildeH{\omega})
 \end{dmath}
 so that
-\begin{dmath*}
+\begin{dmath}
+    \label{eq:grad_final}
     \nabla_{\theta} J_{\lambda_K}(\theta)
     = \frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i)V^\adjoint
     \left(\lderivativeat{c\left(y,
     y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint +
     \lambda_K\widetilde{\mathbf{M}}_{\left(\lambda_K,\lambda_M\right)}\theta
-\end{dmath*}
+\end{dmath}
 \begin{example}[Naive closed form for the squared error cost]
     Consider the cost function defined for all $y$, $y'\in\mathcal{Y}$ by
     $c(y,y')=\frac{1}{2}\norm{y-y}_{\mathcal{Y}}^2$. Then
@@ -793,7 +800,7 @@ while the space complexity is $O_s(r^2)$.
             \mathbb{R}^{r}\right)$ a feature map defined for all
             $x_i\in\mathcal{X}$,
             \item $(M_{ik})_{i,k=1}^{N+U}$ a sequence of data dependent
-            operators (see \cref{cr:orff_representer}),
+            operators (see \cref{th:orff_representer}),
             \item $V \in \mathcal{L}\left(\mathbb{R}^u, \mathbb{R}^p\right)$ a
             combination operator, \item $\lambda_K \in\mathbb{R}_{>0}$ the
             Tychonov regularization term,
@@ -953,7 +960,7 @@ $\tildePhi{\omega}(x)^\transpose  \theta$ has a time complexity of $O(r^2u)$.
 While this holds true in the most generic senario, in many cases the feature
 maps present some structure or sparsity allowing to reduce the computational
 cost of evaluating the feature map. We focus on the \acl{ORFF} given by
-\cref{alg:ORFF_construction}, developped in \cref{subsec:building_ORFF} and
+\cref{alg:ORFF_construction}, developped in \cref{sec:building_ORFF} and
 \cref{subsec:examples_ORFF} and treat the decomposable kernel, the curl-free
 kernel and the divergence-free kernel as an example. We recall that if
 $\mathcal{U}'=\mathbb{R}^{u'}$ and $\mathcal{U}=\mathbb{R}^u$, then
@@ -989,6 +996,7 @@ matrix
 $\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \ac{iid}.
 
 \subsection{Case of study: the decomposable kernel}
+\label{subsec:fast_decomposable}
 Troughout this section we show how the mathematical formulation relates to a
 concrete (Python) implementation. We propose a Python implementation based on
 NumPy~\citep{oliphant2006guide}, SciPy~\citep{jones2014scipy} and
@@ -1144,6 +1152,7 @@ def EfficientDecomposableGaussianORFF(X, A, gamma=1.,
 \end{pyblock}
 
 \subsection{Linear operators in matrix form}
+\label{subsec:efficient_linop}
 For convenience we give the operators corresponding to the decomposable,
 curl-free and divergence-free kernels in matrix form. Let $(x_i)_{i=1}^N$,
 $N\in\mathbb{N}^*$, $x_i$'s in $\mathbb{R}^d$, $d\le\infty$ be a sequence of
@@ -1160,7 +1169,7 @@ mathematical formulations. In this document we adopt the \emph{column major}
 formulation used by Matlab, Fortran or Julia. Moreover although C{}\verb!++! is
 commonly row major, some libraries such as Eigen are column major. When dealing
 with row major formulation, one should \say{transpose} all the equations given
-in \cref{tb:efficient-op}.}. Naturally if
+in \cref{table:efficient-op}.}. Naturally if
 $\tildePhi{\omega}(x):\mathbb{R}^u\to\mathbb{R}^{r_1}$ and
 $\tildephi{\omega}(x):\mathbb{R}\to\mathbb{R}^{r_2}$, for all
 $x\in\mathbb{R}^d$ we define
@@ -1454,7 +1463,7 @@ operator rather than staking matrices leads to more efficient computations.
 We present a set of experiments to complete the theoretical contribution and
 illustrate the behavior of ORFF-regression. First we study how well the ORFF
 regression recover the result of operator-valued kernel regression. Second we
-show the advantages of ORFF regression over independent RFF regression.Code
+show the advantages of ORFF regression over independent RFF regression. A code
 implementing ORFF is available at \url{https://github.com/operalib/operalib} a
 framework for OVK Learning.
 
@@ -1508,10 +1517,8 @@ random matrix with each entry following a standard normal distribution,
 $\tildephi{\omega}$ is a scalar Gaussian RFF with bandwidth $\sigma=0.4$. The
 input data $x$ are generated from a uniform probability distribution. We take
 the gradient of $\tildef{\omega}$ to generate the curl-free $5D$ vector field.
-
-
 \paragraph{}
-We trained both an \ac{ORFF} and an \ac{OVK} model on synthetic data from
+The \emph{third dataset} is a synthetic of data from
 $\mathbb{R}^{20}\to\mathbb{R}^4$ as described in \citet{audiffren2013online}.
 In this dataset, inputs ($x_1, \hdots, x_{20}$) are generated independently and
 uniformly over $[0, 1]$ and the different outputs are computed as follows. Let
@@ -1531,8 +1538,103 @@ Then, the outputs of the different tasks are generated as $y_i=w_i\phi(x)$. We
 use this dataset with $p=4$, $10^5$ instances and for the train set and also
 $10^5$ instances for the test set.
 
+\subsubsection{Results}
+\textbf{Performance of ORFF regression on the first dataset.} 
+We trained both \acs{ORFF} and \acs{OVK} models on \textsc{MNIST} dataset with
+a decomposable Gaussian kernel with signature
+$K_0(\delta)=\exp(-\norm{\delta}/\sigma^2)\Gamma$.  To apply
+$\cref{alg:close_form}$ after noticing that in the case of the decomposable
+kernel with $\lambda_M=0$, it boilds down to a Stein equation
+\citep[section 5.1]{brault2016scaling}, we use an off-the-shelf
+solver\footnote{Available at
+\url{http://ta.twi.tudelft.nl/nw/users/gijzen/IDR.html}} able to handle Stein's
+equation. For both methods we choose $\sigma=20$ and use a $2$-fold cross
+validation on the training set to select the optimal $\lambda$. First,
+\cref{fig:learning_accuracy} compares the running time between OVK and ORFF
+models using $D=1000$ Fourier features against the number of data\-points $N$.
+The log-log plot shows ORFF scaling better than the OVK \acs{wrt} the number of
+points.  Second, \cref{fig:learning_accuracy} shows the test prediction error
+versus the number of ORFFs $D$, when using $N=1000$ training points. As
+expected, the ORFF model converges toward the OVK model when the number of
+features increases.
+\begin{figure}[htb]
+    \centering
+    \resizebox{\textwidth}{!}{\input{./gfx/learning_accuracy_MNIST.tikz}} \\
+    \resizebox{\textwidth}{!}{\input{./gfx/learning_time_MNIST.tikz}}
+    % \includegraphics[\textwidth]{./gfx/learning_time_MNIST.tikz}
+    \caption[Prediction Error in percent on the MNIST dataset versus $D$, the
+    number of Fourier features]{Empirical comparison of ORFF and OVK regression
+    on MNIST dataset and empirical behavior of ORFF regression versus $D$ and
+    $N$.\label{fig:learning_accuracy}}
+\end{figure}
+\paragraph{}
+\textbf{Performance of ORFF regression on the second dataset.} 
+We perform a similar experiment on the second dataset ($5$D-vector field with
+structure). We use a Gaussian curl-free kernel with bandwidth equal to the
+median of the pairwise distances and tune the hyperparameter $\lambda$ on a
+grid. Here we optimize \cref{eq:argmin_theta} using Scipy's \acs{L-BFGS-B}
+\citep{byrd1995limited} solver\footnote{Available at
+\url{http://docs.scipy.org/doc/scipy/reference/optimize.html}} with the
+gradients given in \cref{eq:grad_final} and the efficient linear operator
+described in \cref{subsec:efficient_linop}.  \Cref{fig:curl_experiment} (bottom
+row) reports the $R2$ score on the test set versus the number of
+curl-\acs{ORFF} $D$ with a comparison with curl-\acs{OVK}.  In this experiment,
+we see that curl-\acs{ORFF} can even be better than curl-\acs{OVK}, suggesting
+that \acs{ORFF} might play an additional regularizing role. It also shows the
+computation time of curl-\acs{ORFF} and curl-\acs{OVK}. We see that \acs{OVK}
+regression does not scale with large datasets, while \acs{ORFF} regression
+does. When $N>10^4$, \acs{OVK} regression exceeds memory capacity.
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{\input{./gfx/Curl_ORFFvsOVK.pgf}}
+    \caption{Empirical comparison between curl-free ORFF, curl-free OVK,
+    independent ORFF, independent OVK on a synthetic vector field regression
+    task. \label{fig:curl_experiment}}
+\end{figure}
+\paragraph{}
+\textbf{Structured prediction vs Independent (RFF) prediction.}
+On the second dataset, \cref{fig:curl_experiment} (top row) compares R2 score
+and time of \acs{ORFF} regression using the trivial identity decomposable
+kernel, \acs{eg} independent \acsp{RFF}, to curl-free \acs{ORFF} regression.
+Curl-free \acs{ORFF} outperforms independent \acsp{RFF}, as expected, since the
+dataset involves structured outputs.
+\paragraph{}
+\textbf{Impact of the number of random features ($D$).}
+In this setting we solved the optimisation problem for both \acs{ORFF} and
+\acs{OVK} using a \acs{L-BFGS-B}. \Cref{fig:ORFFvsOVK_dec} top row shows that
+for a fixed number of instance in the train set, \acs{OVK} performs better than
+\acs{ORFF} in terms of accuracy ($R2$). However \acs{ORFF} scales better than
+\acs{OVK} \acs{wrt} the number of data. \acs{ORFF} is able to process more data
+than \acs{OVK} in the same time and thus reach a better accuracy for a given
+amount of time. Bottom row shows that \acs{ORFF} tends to reach \acs{OVK}'s
+accuracy for a fixed number of data when the number of features increase.
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \input{./gfx/ORFFvsOVK.pgf}}
+    \caption{Decomposable kernel on the third dataset: $R2$ score vs number of
+    data in the train set ($N$) \label{fig:ORFFvsOVK_dec}}
+\end{figure}
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \input{./gfx/ORFFvsOVK_Dvariation.pgf}}
+    \caption{Decomposable kernel on the third dataset: $R2$ score vs number of
+    data in the train set ($N$) for different number for different number of
+    random samples ($D$). \label{fig:ORFFvsOVK}}
+\end{figure}
+
 %------------------------------------------------------------------------------
 \section{Conclusions}
+We introduced \acs{ORFF}, a general and versatile framework for shift-invariant
+\acs{OVK} approximation. We proved the uniform convergence of the approximation
+error for bounded and unbounded \acsp{ORFF}. The complexity in time of these
+approximations together with the linear learning algorithm make this
+implementation scalable with the data size and thus appealing compared to
+\acs{OVK} regression as shown in numerical experiments. Further work concerns
+generalization bounds and consistency for \acs{ORFF}-regression. Finally this
+work opens the door to building deeper architectures by stacking vector-valued
+functions while keeping a kernel view for large datasets.
 \label{sec:conclusions_learning}
 
 \chapterend

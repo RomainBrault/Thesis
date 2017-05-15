@@ -22,7 +22,7 @@ set(PYTHONTEX_COMPILER pythontex
 include(${CMAKE_SOURCE_DIR}/CMakeLatex/UseLATEX.cmake)
 
 file(GLOB_RECURSE contents_files RELATIVE 
-     ${CMAKE_SOURCE_DIR} *.tex *.icc *.tikz *.pgf *.otf *.ttc *.txt ./src/*.py acro.cfg)
+     ${CMAKE_SOURCE_DIR} *.tex *.icc *.tikz *.pgf *.otf *.ttc *.txt ./src/*.py ./gfx/*.eps acro.cfg)
 foreach(item ${contents_files})
   if((${item} MATCHES "bin/*") OR
      (${item} MATCHES "build/*") OR

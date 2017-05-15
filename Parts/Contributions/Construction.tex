@@ -40,6 +40,7 @@ numerical experiments.
 
 %------------------------------------------------------------------------------
 \section{Theoretical study}
+\label{sec:theoretical_study}
 The following proposition of~\citet{Zhang2012,Carmeli2010} extends Bochner's
 theorem to any shift-invariant $\mathcal{Y}$-Mercer kernel.
 \begin{proposition}[Operator-valued Bochner's theorem~\citep{Zhang2012,
@@ -1429,7 +1430,7 @@ In particular we deduce the following features maps for the kernels proposed in
     $\omega\in\mathbb{R}^d$.
 \end{itemize}
 The second example extends scalar-valued Random Fourier Features on the skewed
-multiplicative group --described in \cref{subsec:characters} and
+multiplicative group --described in \cref{subsec:character} and
 \cref{subsubsec:skewedchi2}-- to the operator-valued case.
 \begin{example}[Matrix-valued kernel on the skewed multiplicative group]
     In the following, $K(x,z)=K_{1-c}(x\odot z^{-1})$ is a $\mathcal{Y}$-Mercer
@@ -1499,6 +1500,7 @@ induced with respect to the \acl{FT} of a target function $f\in \mathcal{H}_K$.
 In other words, what is the norm in $L^2(\dual{\mathcal{X}}, \dual{\Haar};
 \mathcal{Y}')$ induced by $\norm{\cdot}_K$?
 \begin{proposition}
+    \label{pr:fourier_reg_ovk}
     Let $K$ be a shift-invariant $\mathcal{Y}$-Mercer Kernel such that for all
     $y$, $y'$ in $\mathcal{Y}$, $\inner{y', K_e(\cdot)y}_{\mathcal{Y}}\in
     L^1(\mathcal{X}, \Haar)$. Then for all $f\in\mathcal{H}_K$
@@ -1636,34 +1638,34 @@ in \cref{alg:ORFF2_construction}.
         \caption{Construction of \acs{ORFF}}
     \end{algorithm2e}
 \end{center}
-\section{Operator Random Feature engineering}
-As in the scalar case, it is possible to construct. We list some examples in
-the following.
-\subsubsection{Sum of kernels}
-\begin{proposition}[Sum of kernels]
-    Let $I$ be a countable set and let $(K^i)_{i\in I}$ be a familly of
-    $\mathcal{Y}$-reproducing kernels such that for all $y\in\mathcal{Y}$
-    \begin{dmath*}
-        \sum_{i\in I}\inner{y, K^i(x,x)y} < \infty.
-    \end{dmath*}
-    Given $x$, $z\in\mathcal{X}$, the serie $\sum_{i\in I}K^i(x,z)$ converges
-    to a bounded operator $K(x,z)$ in the strong operator topology, and the map
-    $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ defined by
-    \begin{dmath*}
-        K(x,z)y=\sum_{i\in I}K^{i}(x,z)y
-    \end{dmath*}
-    is a $\mathcal{Y}$-reproducing kernel. The corresponding space
-    $\mathcal{H}_K$ is embedded in $\oplus_{i\in I} \mathcal{H}_{K^i}$ by means
-    of the feature operator
-    \begin{dmath*}
-        (Wf)(x)=\sum_{i\in I} f_i
-    \end{dmath*}
-    where $f=\oplus_{i\in I} f_i$, $f_i\in\mathcal{H}_{K^i}$, and the sum
-    converges in norm. Moreover if each $K^i$ is a Mercer kernel
-    --resp.~$\mathcal{C}_0$-kernel-- and $x\mapsto \sum_{i\in
-    I}\norm{K^i(x,x)}_{\mathcal{Y},\mathcal{Y}}$ is locally bounded
-    --resp.~bounded-- then $K$ is Mercer --resp. $\mathcal{C}_0$.
-\end{proposition}
+%\section{Operator Random Feature engineering}
+%As in the scalar case, it is possible to construct. We list some examples in
+%the following.
+%\subsubsection{Sum of kernels}
+%\begin{proposition}[Sum of kernels]
+    %Let $I$ be a countable set and let $(K^i)_{i\in I}$ be a familly of
+    %$\mathcal{Y}$-reproducing kernels such that for all $y\in\mathcal{Y}$
+    %\begin{dmath*}
+        %\sum_{i\in I}\inner{y, K^i(x,x)y} < \infty.
+    %\end{dmath*}
+    %Given $x$, $z\in\mathcal{X}$, the serie $\sum_{i\in I}K^i(x,z)$ converges
+    %to a bounded operator $K(x,z)$ in the strong operator topology, and the map
+    %$K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ defined by
+    %\begin{dmath*}
+        %K(x,z)y=\sum_{i\in I}K^{i}(x,z)y
+    %\end{dmath*}
+    %is a $\mathcal{Y}$-reproducing kernel. The corresponding space
+    %$\mathcal{H}_K$ is embedded in $\oplus_{i\in I} \mathcal{H}_{K^i}$ by means
+    %of the feature operator
+    %\begin{dmath*}
+        %(Wf)(x)=\sum_{i\in I} f_i
+    %\end{dmath*}
+    %where $f=\oplus_{i\in I} f_i$, $f_i\in\mathcal{H}_{K^i}$, and the sum
+    %converges in norm. Moreover if each $K^i$ is a Mercer kernel
+    %--resp.~$\mathcal{C}_0$-kernel-- and $x\mapsto \sum_{i\in
+    %I}\norm{K^i(x,x)}_{\mathcal{Y},\mathcal{Y}}$ is locally bounded
+    %--resp.~bounded-- then $K$ is Mercer --resp. $\mathcal{C}_0$.
+%\end{proposition}
 
 %----------------------------------------------------------------------------------------
 \section{Conclusions}

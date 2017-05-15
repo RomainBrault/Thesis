@@ -96,7 +96,7 @@ bounded subset of $\mathbb{R}^d$), we can cover this compact subset by a finite
 number of closed balls and apply the concentration inequality and the union
 bound only on the center of each ball. Then if the function
 $\norm{\tildeK{\omega}_e-K_e}$ is smooth enough on each ball (\acs{ie}
-Lipschitz) we can guaranee with high probability that the error between the
+Lipschitz) we can guarantee with high probability that the error between the
 centers of the balls will not be too high. Eventually we obtain a bound in the
 worst case scenarion on all the points in a subset $\mathcal{C}$ of
 $\mathcal{X}$. This bound depends on the covering number
@@ -140,16 +140,16 @@ by~\citet{Rahimi2007} and other authors~\citep{sutherland2015, sriper2015}.
 From \cref{rff-scalar-bound}, we can deduce the following corollary about the
 uniform convergence of the \acs{ORFF} approximation of the decomposable kernel.
 We recall that for a given pair $x$, $z$ in $\mathcal{C}$, $\tilde{K}(x,z)=
-\tildePhi{\omega}(x)^* \tildePhi{\omega}(z)=A\tilde{k}(x,z)$ and $K_0(x-z)=A
-\expectation_{\dual{\Haar},\rho}[\tilde{k}(x,z)]$.
+\tildePhi{\omega}(x)^* \tildePhi{\omega}(z)=\Gamma\tilde{k}(x,z)$ and
+$K_0(x-z)=\Gamma \expectation_{\dual{\Haar},\rho}[\tilde{k}(x,z)]$.
 \begin{corollary}[Uniform error bound for decomposable \acs{ORFF}]
     \label{c:dec-bound}
     Let $\mathcal{C}$ be a compact of subset of $\mathbb{R}^d$ of diameter
     $\abs{\mathcal{C}}$. Let $K$ be a decomposable kernel built from a positive
-    operator self-adjoint $A$, and $k$ a shift invariant kernel with bounded
+    operator self-adjoint $\Gamma$, and $k$ a shift invariant kernel with bounded
     second derivative such that
     \begin{dmath*}
-        \widetilde{K}=\sum_{j=1}^D\cos{\inner{\cdot, \omega_j}}A
+        \widetilde{K}=\sum_{j=1}^D\cos{\inner{\cdot, \omega_j}}\Gamma
         \hiderel{\approx} K \enskip\text{and}\enskip
         \sigma^2\hiderel{=}\expectation_{\rho}
         \norm{\omega}^2_2.
@@ -159,8 +159,8 @@ We recall that for a given pair $x$, $z$ in $\mathcal{C}$, $\tilde{K}(x,z)=
         \probability_{%
         \rho}\Set{(\omega_j)_{j=1}^D|\norm{\widetilde{K}-K}_{\mathcal{C} \times
         \mathcal{C}}\ge \epsilon } \le 2^8\left( \frac{\sigma
-        \norm{A}_{\mathcal{Y},\mathcal{Y}} \abs{\mathcal{C}}}{\epsilon}
-        \right)^2\exp\left( -\frac{\epsilon^2D}{4\norm{A}_2^2(d+2)} \right)
+        \norm{\Gamma}_{\mathcal{Y},\mathcal{Y}} \abs{\mathcal{C}}}{\epsilon}
+        \right)^2\exp\left( -\frac{\epsilon^2D}{4\norm{\Gamma}_2^2(d+2)} \right)
     \end{dmath*}
 \end{corollary}
 \begin{proof}
@@ -171,18 +171,18 @@ We recall that for a given pair $x$, $z$ in $\mathcal{C}$, $\tilde{K}(x,z)=
         \sup_{(x,z)\in\mathcal{C}\times\mathcal{C}}\norm{\widetilde{K}(x,z) -
         K(x,z)}_{\mathcal{Y},\mathcal{Y}} =
         \sup_{(x,z)\in\mathcal{C}\times\mathcal{C}}
-        \norm{A}_{\mathcal{Y},\mathcal{Y}} \abs{\widetilde{K}(x,z) - k(x,z)},
+        \norm{\Gamma}_{\mathcal{Y},\mathcal{Y}} \abs{\widetilde{K}(x,z) - k(x,z)},
     \end{dmath*}
-    taking $\epsilon' = \norm{A}_{\mathcal{Y},\mathcal{Y}} \epsilon$ gives the
+    taking $\epsilon' = \norm{\Gamma}_{\mathcal{Y},\mathcal{Y}} \epsilon$ gives the
     following result for all positive $\epsilon'$:
     \begin{dmath*}
         \probability_{%
-        \rho}\Set{(\omega_j)_{j=1}^D|\sup_{x,z\in\mathcal{C}}\norm{A
+        \rho}\Set{(\omega_j)_{j=1}^D|\sup_{x,z\in\mathcal{C}}\norm{\Gamma
         \left(\widetilde{k}(x,z)-k(x,z)\right)}_{\mathcal{Y},\mathcal{Y}}\ge
         \epsilon' } \le 2^8\left( \frac{\sigma
-        \norm{A}_{\mathcal{Y},\mathcal{Y}} \abs{\mathcal{C}}}{\epsilon'}
+        \norm{\Gamma}_{\mathcal{Y},\mathcal{Y}} \abs{\mathcal{C}}}{\epsilon'}
         \right)^2\exp\left( -\frac{\left(\epsilon'\right)^2D}{4
-        \norm{A}_{\mathcal{Y}, \mathcal{Y}}^2(d + 2)} \right)
+        \norm{\Gamma}_{\mathcal{Y}, \mathcal{Y}}^2(d + 2)} \right)
     \end{dmath*}
     which concludes the proof.
 \end{proof}
@@ -591,7 +591,13 @@ dimension on the bound is limited.
 \subsection{Variance of the \acpdfstring{ORFF} approximation}
 We now provide a bound on the norm of the variance of $\tilde{K}$, required to
 apply \cref{corr:unbounded_consistency,corr:bounded_infinite_dim_consistency}.
+This is an extension of the proof of \citet{sutherland2015} to the
+operator-valued case, and we recover their results in the scalar case when
+$A(\omega)=1$. An illustration of the bound is provided in
+\cref{fig:approximation_error_var} for the decomposable and the curl-free
+\acs{OVK}.
 \begin{proposition}[Bounding the \emph{variance} of $\tilde{K}$]
+    \label{pr:variance_bound}
     Let $K$ be a shift invariant $\mathcal{Y}$-Mercer
     kernel on a second countable \ac{LCA} topological space $\mathcal{X}$. Let
     $A:\dual{\mathcal{X}}\to\mathcal{L}(\mathcal{Y})$ and
@@ -616,7 +622,23 @@ apply \cref{corr:unbounded_consistency,corr:bounded_infinite_dim_consistency}.
     trigonometric identities (see the proof in \cref{pr:variance_bound} of the
     appendix).
 \end{proof}
-\subsection{Application on decomposable, curl-free and div-free
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{./gfx/variance_dec.tikz}
+    \caption[decomposable ORFF variance bound]{Comparison between an empirical
+    bound on the norm of the variance of the decomposable ORFF obtained and the
+    theoretical bound proposed in \cref{pr:variance_bound} versus $D$
+    \label{fig:approximation_error_var}}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{./gfx/variance_curl.tikz}
+    \caption[Curl-free ORFF variance bound]{Comparison between an empirical
+    bound on the norm of the variance of the curl-free ORFF obtained and the
+    theoretical bound proposed in \cref{pr:variance_bound} versus $D$
+    \label{fig:approximation_error_var}}
+\end{figure}
+\subsection{Application on decomposable, curl-free and divergence-free
 \acpdfstring{OVK}}
 First, the two following examples discuss the form of $H_\omega$ for the
 additive group and the skewed-multiplicative group. Here we view
@@ -650,7 +672,7 @@ $k_0(\delta)=1$, then we have
     \right]}_{\mathcal{Y},\mathcal{Y}}\leq
     (1+k_0(2\delta))\norm{A}_{\mathcal{Y},\mathcal{Y}}/2 + k_0(\delta)^2.
 \end{equation*}
-\subsubsection{Curl-free and div-free kernels:} 
+\subsubsection{Curl-free and divergence-free kernels:} 
 recall that in this case $p=d$. For the (Gaussian) curl-free kernel,
 $A(\omega)=\omega\omega^*$ where $\omega\in\mathbb{R}^d\sim\mathcal{N}(0,
 \sigma^{-2}I_d)$ thus $\expectation_\mu [A(\omega)] = I_d/\sigma^2$ and
@@ -695,259 +717,14 @@ $\MGF(x)(t)=(1-2t/\sigma^2)^{-(p/2)}$. Eventually
     \frac{\sigma^2}{2}\left(1-4^{-\frac{1}{p}}\right).
 \end{equation*}
 
+\section{Conclusions}
+In this chapter we have seen how to bound $\norm{\widetilde{K} - K}$ in the
+operator norm with high probability
+(\cref{sec:consistency_of_the_ORFF_estimator}). We studied the case of
+unbounded finite dimensional \acsp{OVK} and bounded potentially infinite
+dimensional \acsp{OVK}. The current lack of concentration inequalities working
+for both unbounded and infinite dimensional with the operator norm (Banach
+space) in the litterature provides us to unify these bounds.
+
+\chapterend
 % \clearpage
-\section{Generalization bound}
-In this section are interested in finding a funcion
-$f_*:\mathcal{X}\to\mathcal{Y}$, where $\mathcal{X}$ is a Polish space and
-$\mathcal{Y}$ a separable Hilbert space such that for all $x_i$ in
-$\mathcal{X}$ and all $y_i$ in $\mathcal{Y}$ that minimize a criterion. In
-statistical supervised learning, we consider a training set sequence
-$\seq{s}=(x_i,y_i)_{i=1}^N\in(\mathcal{X}\times\mathcal{Y})^N$,
-$N\in\mathbb{N^*}$ drawn \acs{iid}~from an unknown probability law
-$\probability$. We suppose we are given a cost function
-$c:\mathcal{X}\times\mathcal{Y}\to\mathbb{R}$, such that $c(f(x),y)$ returns
-the error of the prediction $f(x)$ \acs{wrt}~the ground truth $y$. We define
-the true risk the sum of the cost over all possible training examples drawn
-from a latent probability law $\probability$
-\begin{dmath*}
-    \risk{f}=\int_{\mathcal{X}\times\mathcal{Y}}L(x,f,y)d\probability(x,y)
-    \hiderel{=}\int_{\mathcal{X}\times\mathcal{Y}}c(f(x), y)d\probability(x,y)
-\end{dmath*}
-Thus given a class of function $\mathcal{F}$, the goal of a learning algorithm
-is to find an optimal model $f_*$ that minimize the true risk. Namely
-\begin{dmath*}
-    f_* = \argmin_{f\in\mathcal{F}} \risk{f}
-    \hiderel{=}\argmin_{f\in\mathcal{F}}\int_{\mathcal{X}\times\mathcal{Y}}c(f(x),
-    y)d\probability(x,y).
-\end{dmath*}
-Since in practice we do not have access to the probability $\probability$ of
-the points in the dataset, we define its empirical counterpart as the empirical
-mean estimate, where the sequence $\seq{s}=(x_i,y_i)_{i=1}^N$ is made of
-$\mathcal{X}$-valued random vectors drawn \acs{iid}~from some law
-$\probability$.
-% Moreover we often add a regularization term on the norm of the functions in
-% $\mathcal{F}$ to \say{reduce} the size of the class of function.
-The empirical risk then reads
-\begin{dmath*}
-    \riskemp{f, \seq{s}}=\frac{1}{N}\sum_{i=1}^Nc(f(x_i),y_i) \condition{$(x_i
-    , y_i)\sim \probability$ \acs{iid}.}
-\end{dmath*}
-As a result in practive we seek a function $f_{\seq{s}}$ such that
-\begin{dmath*}
-    f_{\seq{s}} = \argmin_{f\in\mathcal{F}} \riskemp{f,\seq{s}} \hiderel{=}
-    \argmin_{f\in\mathcal{F}}\frac{1}{N}\sum_{i=1}^Nc(f(x_i),y_i)
-\end{dmath*}
-The basic requirement for any learning algorithm is generalization: the empir-
-ical error must be a good proxy of the expected error, that is the difference
-between the two must be \say{small}. \acs{ie} the goal of a generalization
-bound is to study, for any $f\in\mathcal{F}$ the difference between $\risk{f}$
-and $\risk{f,\seq{s}}$. That is quantify the impact of having a limited number
-of observations and not knowing their latent distribution. In the following we
-consider functions living in a \acl{vv-RKHS}, with kernel $K$ (or
-$\tildeK{\omega}$).
-\begin{proposition}[\citet{bartlett2002rademacher, maurer2016vector}]
-    Suppose that $f\in\mathcal{H}_K$ a \acs{vv-RKHS} where
-    \begin{dmath*}
-        \sup_{x\in\mathcal{X}} \Tr[K(x,x)] < T
-    \end{dmath*}
-    and $\norm{f}_{\mathcal{H}_K}<B$. Moreover let $c:\mathcal{Y}\to[0, C]$ be
-    a $L$-Lipschitz cost function and $\mathcal{Y}$ a separable Hilbert space.
-    Then if we are given $N$ \acs{iid} random variables with values in
-    $\mathcal{X}$ (training samples, noted $\seq{s}$), then we have with at
-    least probability $1-\delta$, $\delta\in(0, 1)$ over the drawn training
-    samples $\seq{s}$ that for any $f\in\mathcal{H}_K$,
-    \begin{dmath}
-        \risk{f} \le \riskemp{f, \seq{s}}  + 2\sqrt{\frac{2}{N}}\left(
-        LBT^{1/2} + C\sqrt{\ln(2/\delta)}\right).
-    \end{dmath}
-    \label{pr:ovk_gen}
-\end{proposition}
-\begin{proof}
-    This proof is due to \citet{maurer2016vector} generalizing the work of
-    \citet[section 4.3]{bartlett2002rademacher} and we do not claim any
-    originality for this proof. First let us introduce the notion of Rademacher
-    complexity of a class of function $\mathcal{F}$. We recall that then
-    probability mass function of a uniformly distributed Rademacher random
-    variable is given for any $k\in\Set{-1,1}$ by
-    \begin{dmath*}
-        f(k)=
-        \begin{cases}
-            1/2 & \text{if $k=-1$} \\
-            1/2 & \text{otherwise.}
-        \end{cases}
-    \end{dmath*}
-    \begin{definition}[\citet{bartlett2002rademacher}]
-        Let $\mathcal{X}$ be any set. Let $\epsilon_1,\hdots,\epsilon_N$ be $N$
-        independent Rademacher random variables, identically uniformly
-        distributed on $\{-1;1\}$. For any class of functions
-        $F:~\mathcal{X}\to\mathbb{R}$, then for all $x_1, \hdots x_N\in
-        \mathcal{X}$ the quantity
-        \begin{dmath*}
-            \mathcal{R}_N(F) \colonequals \expectation\left[ \sup_{f\in
-            \mathcal{F}} \sum_{i=1}^N \epsilon_i f(x_i) \;\middle|\; x_1,
-            \dots, x_N \right]
-        \end{dmath*}
-        is called Rademacher complexity of the class $\mathcal{F}$.
-    \end{definition}
-    In a few words the Rademacher complexity measure the richness of a class a
-    function by its capacity to be correlated to noise. In generalization
-    bounds the Rademacher complexity of a class of function often involves a
-    composition between a target function to be learn and a cost function, part
-    of the risk we want to minimize. The idea is to bound the Rademacher
-    complexity with a term that does not depends on the cost function, but only
-    on the target function.
-    \begin{proposition}[\citet{maurer2016vector}]
-        \label{pr:radswap}
-        Let $\mathcal{X}$ be any set, $x_1, \hdots, x_N$ in $\mathcal{X}$, let
-        $\mathcal{F}$ be a class of function $f:~\mathcal{X}\to\mathcal{Y}$ and
-        $h_i:~\mathcal{Y}\to\mathbb{R}$ be a $L$-Lipschitz function, where
-        $\mathcal{Y}$ is a separable Hilbert space endowed with
-        euclidean inner product. Then
-        \begin{dmath*}
-            \expectation\left[ \sup_{f\in \mathcal{F}} \sum_{i=1}^N \epsilon_i
-            h_i(f(x_i)) \;\middle|\; x_1, \dots, x_N \right] \le
-            \sqrt{2}L\expectation\left[\sup_{f\in F}\sum_{i=1,k}^{i=N}
-            \epsilon_{ik}f_k(x_i) \;\middle|\; x_1, \dots, x_N \right],
-        \end{dmath*}
-        where $\epsilon_{ik}$ is a doubly indexed independent Rademacher
-        sequence and $f_k(x_i)$ is the $k$-th component of $f(x_i)$.
-    \end{proposition}
-    From now on we consider functions $f\in\mathcal{H}_K$ a \acl{vv-RKHS}. Then
-    there exists an induced feature-map $\Phi:~\mathcal{X}\to
-    \mathcal{L}(\mathcal{Y}, \mathcal{H})$ such that for all $y,
-    y'\in\mathcal{Y}$ the kernel is given by
-    \begin{dmath*}
-        \inner{y, K(x,z)y'} = \inner{\Phi_xy, \Phi_zy'}.
-    \end{dmath*}
-    We say that the feature space $\mathcal{H}$ is embed into the RKHS
-    $\mathcal{H}_K$ by means of the \emph{feature operator}
-    $(W\theta)(x)\colonequals(\Phi_x^*\theta)$. Indeed $W$ defines a partial
-    isometry between $\mathcal{H}$ and $\mathcal{H}_K$. Suppose that
-    $\mathcal{Y}$ a is separable Hilbert space and let the class of
-    $\mathcal{Y}$-valued functions $F$ be
-    \begin{dmath*}
-        \mathcal{F}=\Set{f | f:~x \mapsto (W \theta)(x), \enskip
-        \norm{\theta}_{\mathcal{H}} < B } \hiderel{\subset} \mathcal{H}_K.
-    \end{dmath*}
-    Let $c_{y_i}=c(\cdot - y_i)$, for all $in\in\mathbb{N}_N$.  Then from
-    \cref{pr:radswap} and if $K$ is trace class, we have
-    \begin{dmath*}
-        \expectation \sup_{\norm{\theta}_{\mathcal{H}}<B} \sum_{i=1}^N
-        \epsilon_i c_{y_i}(\Phi_{x_i}^\adjoint \theta) 
-        \le \sqrt{2}L\expectation \sup_{\norm{\theta}_{\mathcal{H}}<B}
-        \sum_{i=1,k}^{i=N}\epsilon_{ik}\inner{\Phi_{x_i}^\adjoint \theta, e_k}
-        = \sqrt{2}L\expectation \sup_{\norm{\theta}_{\mathcal{H}}<B}
-        \inner*{\theta,
-        \sum_{i=1,k}^{i=N}\epsilon_{ik}\Phi_{x_i}e_k}_{\mathcal{Y}}.
-    \end{dmath*}
-    Thus
-    \begin{dmath}
-        \label{eq:ker_bound}
-        \expectation \sup_{\norm{\theta}_{\mathcal{H}}<B} \sum_{i=1}^N
-        \epsilon_i c_{y_i}(\Phi_{x_i}^\adjoint \theta) 
-        \le \sqrt{2}LB\expectation
-        \norm{\sum_{i=1,k}^{i=N}\epsilon_{ik}\Phi_{x_i}e_k}_{\mathcal{Y}}
-        \le \sqrt{2}LB\sqrt{\sum_{i=1,k}^{i=N}
-        \norm{\Phi_{x_i}e_k}_{\mathcal{Y}}^2 }
-        \le \sqrt{2}LB\sqrt{\sum_{i=1}^{N} \Tr\left[ K(x_i, x_i) \right] }
-        \le \sqrt{2}LB\sqrt{N}\sqrt{\sup_{x\in\mathcal{X}}\Tr\left[ K(x,
-        x)\right]}.
-    \end{dmath}
-    From \citet{maurer2016vector, bartlett2002rademacher},
-    \begin{theorem}
-    \label{th:gen_rad_bound}
-    Let $\mathcal{X}$ be any set, $\mathcal{F}$ a class of functions
-    $f:~\mathcal{X}\to[0, C]$ and let $X_1, \hdots, X_N$ be a sequence of iid
-    random variable with value in $\mathcal{X}$. Then for $\delta \in (0, 1)$,
-    with probability at least $1-\delta$, we have for all $f\in \mathcal{F}$
-    that
-    \begin{equation}
-        \expectation f(X) \le \frac{1}{N} \sum_{i=1}^Nf(X_i) +
-        \frac{2}{N}\mathcal{R}_N(F) + C\sqrt{\frac{8\ln(2/\delta)}{N}}
-    \end{equation}
-    \end{theorem}
-    Conclude by plugin \cref{eq:ker_bound} in \cref{th:gen_rad_bound}.
-\end{proof}
-As an example, let us consider \cref{eq:learning_rkhs}, which is a solution of
-the regularized empirical risk, $\cref{alg:close_form}$ when $\lambda_M=0$. We
-first list the following assumptions useful in the rest of the section. Let
-$\seq{s}=(x_i, y_i)_{i=1}^N\in \mathcal{X}^N\times \mathcal{Y}^N$ be the
-training samples.
-\begin{assumption}\label{ass:bounded_norm}
-    There exists a positive constant $\kappa\in\mathbb{R}_{\ge 0}$ such that
-    \begin{dmath*}
-        \max_{i\in\mathbb{N}^*_N} \norm{K(x_i,x_i)}_{\mathcal{Y}, \mathcal{Y}}
-        < \kappa.
-    \end{dmath*}
-\end{assumption}
-
-\begin{assumption}\label{ass:bounded_trace}
-    There exists a positive constant $T\in\mathbb{R}_{\ge 0}$ such that
-    \begin{dmath*}
-        \max_{i\in\mathbb{N}^*_N} \Tr\left[ K(x_i,x_i)\right] < T.
-    \end{dmath*}
-\end{assumption}
-\begin{assumption}\label{ass:bounded_outputs}
-    There exists a positive constant $C\in\mathbb{R}_{\ge 0}$ such that
-    \begin{dmath*}
-        \max_{i\in\mathbb{N}^*_N}\norm{y_i}_{\mathcal{Y}} \le C.
-    \end{dmath*}
-\end{assumption}
-\begin{assumption}
-    x
-\end{assumption}
-Under \cref{ass:bounded_outputs}, from \cref{rk:rkhs_bound}, we know that
-$\norm{f}_{\mathcal{H}_K}\le \sqrt{\frac{2}{\lambda}}\sigma_y$, where
-\begin{dmath*}
-    \frac{1}{N}\sum_{i=1}^N\norm{y_i}_{\mathcal{Y}}^2 \le \sigma_y^2
-    \hiderel{\le} C^2.
-\end{dmath*}
-Thus we immediatly see that it is possible to choose
-$B=\sqrt{\frac{2}{\lambda}} C$. Let $\kappa = \norm{K_e(e)}_{\mathcal{Y},
-\mathcal{Y}}$ The Lipschitz constant of the least square loss $c(f(x),
-y)=\frac{1}{2}\norm{f(x) - y}_{\mathcal{Y}}^2$ with respect to $f(x)$ is
-$L=\max\left(\sqrt{\frac{2\kappa}{\lambda}}C, C\right)$ and the loss takes
-values in $\left[0, \frac{1}{2}L^2\right]$. Hence under assumption that
-$\lambda < 2\kappa$ and \cref{ass:bounded_trace, ass:bounded_outputs},
-\cref{pr:ovk_gen} reads that given $f_{\seq{s}}\in\mathcal{H}_K$ a solution of
-\cref{alg:close_form},
-\begin{dmath}
-    \risk{f_{\seq{s}}} \le \riskemp{f_{\seq{s}}, \seq{s}}  +
-    8\frac{C^2}{\lambda}\sqrt{\frac{\kappa}{N}}\left( T^{1/2} +
-    \sqrt{\frac{\kappa\ln(1/\delta)}{2}}\right).
-\end{dmath}
-This bound is to compare to the results of \citet{kadri2015operator} using
-$\beta$-stability arguments.
-\begin{definition}[Uniform stability {\citet[definition
-6]{bousquet2002stability}}]
-A learning algorithm $\seq{s}\mapsto f_{\seq{s}}$ has uniform stability $\beta$
-with respect to the loss function $L$ if the following holds
-\begin{dmath*}
-    \forall i \in \mathbb{N}_N^*, \forall \seq{s}\hiderel{\in}\mathcal{X}^N
-    \sup_{x\in\mathcal{X}, y\in\mathcal{Y}} \abs{L(x, f_{\seq{s}}, y) - L(x,
-    f_{\seq{s}^{\setminus i}}, y)} \hiderel{\le} \beta.
-\end{dmath*}
-\end{definition}
-
-\begin{theorem}[{\citet[theorem 12]{bousquet2002stability}}]
-    Let $\seq{s}\mapsto f_{\seq{s}}$ be a learning algorithm with uniform
-    stability $\beta$ with respect to a loss $L$ that satisfies \cref{ass}.
-\end{theorem}
-
-\begin{dmath}
-    \risk{f} \le \riskemp{f, \seq{s}}  + \frac{4\kappa^2 C^2 \left(1 +
-    \frac{\kappa}{\sqrt{\lambda}} \right)^2 }{\lambda N} + C^2\left( 1 +
-    \frac{\kappa}{\sqrt{\lambda}} \right)^2\left( \frac{8\kappa^2}{\lambda} + 1
-    \right)\sqrt{\frac{\ln(1/\delta)}{2N}}.
-\end{dmath}
-% \begin{dmath}uuu
-% f_* = \argmin_{f\in\mathcal{H}_K} \sum_{i=1}^NL(x_i, f, y _i) \hiderel{=} \argmin_{f\in\mathcal{H}_K} \mathcal{R}_{emp}(f, L),
-% \label{eq:pbOVK}
-% \end{dmath}
-% where $\mathcal{H}_K$ is a \acs{vv-RKHS}. The empirical risk is the empirical counterpart of the generalization risk defined as
-
-
-
-% How does a function trained as in \cref{eq:pbOVK} generalizes on a test set?
-
- % and $\forall (x_i,y_i) \in \mathcal{X}\times\mathcal{Y}$, $L(x_i,f,y_i)$ a $L$-Lipschitz cost function.

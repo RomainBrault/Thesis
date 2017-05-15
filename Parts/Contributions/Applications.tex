@@ -1,29 +1,494 @@
 %!TEX root = ../../ThesisRomainbrault.tex
 
 %------------------------------------------------------------------------------
+
 \section{Introduction}
-\label{sec:ch05_background}
+Time series are ubiquitous in various fields such as climate, biomedical signal
+processing, videos understanding to name but a few. When linear models are not
+appropriate, a generic nonparametric approach to modeling is relevant. In this
+work we build on a recent work about Vector Autoregressive models using
+\aclp{OVK} \cite{Lim2013,Lim2015}. Vector autoregression is
+addressed in a \acl{vv-RKHS} with the important property to allow for couplings
+between outputs. Given a $d$-dimensional time series of $N$ data points
+$\Set{x_1,\dots, x_N}$, autoregressive models based on operator-valued kernels
+have the form $\hat{x}_{t+1}=h(x_t)=\sum_{\ell=1}^{N-1}K(x_t,x_\ell){c}_\ell$
+where coefficients ${c}_\ell\in\mathbb{R}^d, \ell=1,\dots,N-1$ are the model
+parameters. A naive approach for training such a model requires a memory
+complexity $O(N^2d^2)$, which makes the method prohibitive for large-scale
+problems.
+% While stochastic gradient descent can be applied reducing the complexity in
+% time to be linear, the cost in memory is still important with kernel methods.
+\paragraph{}
+To scale up standard algorithms, we define an approximated operator-valued
+feature map $\tilde{\Phi}:\mathbb{R}^d\to\mathbb{R}^D$ that allows to
+approximate the aforementioned model $h$ in the \ac{RKHS} by the following
+function 
+\begin{dmath*}
+    \tilde{h}(x_t) = \tilde{\Phi}(x_t)^*\theta \hiderel{\approx} h(x_t).
+\end{dmath*}
+The features maps are matrices of size $D\times  d$ where $D$ controls the
+quality of the approximation, $d$ is the dimension of the inputs and $\theta$
+is here the parameter vector to learn. This formulation allows to reduce the
+memory complexity to $O((N-1)D + (N-1)d)$ which is now linear \acs{wrt} the
+number of data points
+(see \cref{sec:learning_with_operator-valued_random-fourier_features}). The
+principle used for building the feature map extends the idea of scalar
+\aclp{RFF} to the operator-valued case \citep{Rahimi2007,sutherland2015}.
 
+\section{Operator-Valued Kernels for Vector Autoregression}
+Assume that we observe a dynamical system composed of $d\in\mathbb{N}^*$ state
+variables at $N\in\mathbb{N}^*$ evenly-spaced time points. The resulting
+discrete multivariate time series is denoted by $x_{1:N}=(x_\ell)_{i=1}^N$
+where $x_\ell\in\mathbb{R}^d$ denotes the state of the system at time
+$t_\ell$, $\ell\in\mathbb{N}_N^*$. It is generally assumed that the evolution
+of the state of the system is governed by a function $h$, such that
+$x_{t}=h(x_{t-p},\dots,x_{t-1}) + u_{t}$ where $t$ is a discrete
+measure of time and $u_t$ is a zero-mean noise random vector. %
+% of possibly correlated innovation shocks.
+Then $h$ is usually referred to as a vector autoregressive model of order $p$.
+In the remainder of the paper, we consider first-order vector autoregressive
+models, that is $p=1$. In a supervised learning setting, the vector
+autoregression problem consists in learning a model $\hat{h}:\mathbb{R}^d \to
+\mathbb{R}^d$ from a given training set 
+\begin{dmath*}
+    \seq{s} = ((x_{1},x_{2}),\dots,(x_{N-1},x_{N}))\hiderel{\in}
+    \left(\mathbb{R}^d\times\mathbb{R}^d\right)^N.
+\end{dmath*}
+In the literature, a standard approach to vector autoregressive modeling is to
+fit a \ac{VAR} model. The \ac{VAR}(1) model reads $h(x_t) = Ax_t$ where $A$
+is an $d\times d$ matrix whose structure encodes the temporal relationships
+among the $d$ state variables.
+\paragraph{}
+However, due to their intrinsically linear nature, \acs{VAR} models fail to
+capture the nonlinearities underlying realistic dynamical systems. This paper
+builds upon the work of \citet{Lim2015} where the authors introduced a
+family of nonparametric nonlinear autoregressive models called \ac{OKVAR}.
+\ac{OKVAR} models rely on the theory of operator-valued kernels
+\cite{Pedrick57, Senkene73}, which provides a versatile framework for learning
+vector-valued functions \citep{Micchelli2005,Carmeli2010,Alvarez2012}. Those
+models can be regarded as natural extensions of VAR models to the nonlinear
+case.
+\paragraph{}
+Next, we recall key elements of the theory of \ac{vv-RKHS} of functions from
+$\mathbb{R}^d$ to $\mathbb{R}^d$ (see \cref{sec:theoretical_study} for the
+detailed construction). We first introduced the matrix-valued kernel which
+is an instance of \acsp{OVK}s.
+\begin{definition} [Matrix-valued kernels] A function
+    $K:\mathbb{R}^d\times\mathbb{R}^d\to\mathbb{R}^{d\times d}$ is said to be a
+    positive $\mathbb{R}^{d\times d}$-valued kernel  if :
+    \begin{propenum}
+        \item $\forall x,\enskip z \in\mathbb{R}^d,\enskip K(x, z)= K(z,
+        x)^\adjoint$, \item $\forall m \in \mathbb{N},\enskip \forall ((x_i,
+        y_i))_{i=1}^m\in\left(\mathbb{R}^d\times\mathbb{R}^d\right)^m,\enskip
+        \sum_{i,j=1}^m y_i^\adjoint K(x_i, x_j)y_j \geq  0$.
+    \end{propenum}
+    % where $\bmL(\bmY)$ is the set of bounded linear operators from $\bmY$ onto
+    % itself and $\adjoint{A}$ denotes the adjoint of $A\in\bmL(\bmY)$.
+\end{definition}
+Furthermore, for a given $\mathbb{R}^{d\times d}$-valued kernel $K$, we
+associate $K$ with a unique \acs{vv-RKHS}
+$(\mathcal{H}_K,\inner{\cdot,\cdot}_{\mathcal{H}_K})$ of functions from
+$\mathbb{R}^d$ to $\mathbb{R}^d$. The precise construction of $\mathcal{H}_k$
+can be found in \cref{sec:background_on_operator-valued_kernels}. In this
+section, we assume that all functions $h\in\mathcal{H}_K$ are continuous. Then
+$K$ is called an $\mathbb{R}^d$-Mercer kernel (see \cref{def:mercer_kernel}).
+\paragraph{}
+Similarly to the case of scalar-valued kernels, working within the framework of
+\acs{vv-RKHS} allows to take advantage of representer theorems
+(\cref{th:representer}) for a class of regularized loss functions such as ridge
+regression. More precisely, we consider $h$, a nonparametric vector
+autoregressive model of the following form assuming we have observed $N$ data
+points. Given $x_t$ the state vector at time $t$, we have $
+\hat{x}_{t+1}=\sum_{\ell=1}^{N-1} K(x_t, x_\ell){c_\ell}$ where
+$x_{1:N}=(x_i)_{i=1}^N\in\left(\mathbb{R}^d\right)^N$ is the observed time
+series, $K:\mathbb{R}^d\times\mathbb{R}^d\to\mathbb{R}^{d\times d}$ is a
+matrix-valued kernel and $(c_1)_{i=1}^{N-1}\in\left(\mathbb{R}^d\right)^{N-1}$
+are the model parameters. We call \acs{OKVAR} any model of the above form. In
+\citet{Lim2015}, the authors developed a family of \acs{OKVAR} models based on
+appropriate choices of kernels to address the problem of network inference
+where both the parameters $c_\ell$, $\ell\in\mathbb{N}_{N-1}^*$ and the
+\acs{OVK} itself are learned using a proximal block coordinate descent
+algorithm \mpar{See for instance \citet{parikh2014proximal} about proximal
+algorithms and \citet{richtarik2016parallel, fercoq2013smooth,
+fercoq2015accelerated} for proximal block coordinate descent.} under sparsity
+constraints. In the following, we will not consider the kernel learning problem
+and will use a simple ridge loss. We will also illustrate our approach to a
+well known class of \acs{OVK}, called \emph{decomposable} or \emph{separable}
+matrix-valued kernels \citep{Micchelli2005,caponnetto2008}, and intance of
+Decomposable \acs{OVK} that were originally introduced to solve multi-task
+learning problems \citep{Evgeniou2005}.  Other kernels may also be considered
+as developed in \cref{subsec:ovk-ex}.
+\begin{proposition}[Decomposable matrix-valued kernels]
+    Let the function $k:\mathbb{R}^d\times\mathbb{R}^d\to\mathbb{R}$ be a
+    scalar-valued kernel and $\Gamma\in\mathbb{R}^{d\times d}$ a positive
+    semidefinite matrix of size $d\times d$. Then function
+    $K:\mathbb{R}^d\times\mathbb{R}^d\to\mathbb{R}^{d\times d}$ defined for all
+    $(x,z)\in\mathbb{R}^d\times\mathbb{R}^d$ as $K(x,z) = k(x,z) \Gamma$ is a
+    decomposable matrix-valued kernel.
+\end{proposition} 
+A common choice for the scalar-valued kernel is the Gaussian kernel
+\begin{dmath*}
+    k_{\text{Gauss}}(x,z)=\exp(-\norm{x-z}_2^2/(2\sigma^2))
+\end{dmath*}
+for any $x$, $z\in\mathbb{R}^d$ and $\sigma\in\mathbb{R}_+$. The corresponding
+decomposable kernel is referred to as $K_{\text{dec}}$ and is as
+$K_{\text{dec}}(x,z) = k_{\text{Gauss}}(x,z) \Gamma$ with $\Gamma$ a positive
+semidefinite matrix.
+\paragraph{}
+While the model parameters $c_\ell$'s are estimated under sparsity constraints
+in \citet{Lim2015}, here we consider the classic kernel ridge regression
+setting where the loss function to minimize is
+\begin{dmath}
+    \label{eq:rkhs_okvar}
+    \mathcal{J}_{\lambda}(h) =
+    \frac{1}{N-1}\sum_{\ell=2}^{N}\norm{h(x_{\ell-1})-x_\ell}_2^2 +
+    \lambda\norm{h}_{\mathcal{H}_K}^2
+\end{dmath}
+with $\lambda \ge 0$ and $\norm{h}_{\mathcal{H}_K}^2 =
+\sum_{t,\ell=1}^{N-1}c_t^*K(x_t,x_\ell)c_\ell$. The optimization problem is
+solved using a \acs{L-BFGS-B} \citep{byrd1995limited} which is well suited for
+optimization problems with a large number of parameters, and is wildly used as
+a training algorithm on small/medium-scale problems. However, like standard
+kernel methods, \acs{OKVAR} suffers from unfavorable computational complexity
+both in time and memory since it needs to store the full Gram matrix,
+preventing its ability to scale to large data sets and making it really slow on
+medium scale problem. We argue that this obstacle can be effectively overcome:
+in the following we develop a method to scale up \acs{OKVAR} to successfully
+tackle medium/large scale autoregression problems.
+\section{Operator-Valued Random Fourier Features}
+We now introduce our methodology to approximate \acsp{OVK}.  Given a
+translation-invariant kernel $K(x,z)=K_0(x-z)$, we approximate $K$ by finding
+an explicit feature map such that
+$\tilde{\Phi}(x)^\adjoint\tilde{\Phi}(z)\approx K_0(x-z)$. The idea is to use a
+generalization of Bochner's theorem for the \acs{OVK} family that states that
+any translation-invariant OVK can be written as the Fourier transform of a
+positive operator-valued measure. More precisely, we build on the following
+proposition first proved in \cite{Carmeli2010}. More details can be found in
+\cref{sec:theoretical_study}. 
+\paragraph{}
+In the following, suppose that $K_0=k_0(\cdot) A$ is a decomposable kernel.
+Decomposable kernels belong to the family of translation-invariant \acsp{OVK}.
+From \cref{pr:inverse_ovk_Fourier_decomposition} we see that
+$C(\omega)_{ij}=\IFT{k_0(\cdot)}(\omega)A_{ij}$. We decompose $A$ as
+$A=BB^\adjoint$, note that $A$ does not depend on $\omega$, and we denote
+$\Vect_{j=1}^D z_j$ the $Dm$-long column vector obtained by stacking vectors
+$z_j \in \mathbb{R}^m$. Then we define an approximate feature map for $K_0$,
+called \acf{ORFF} map \citep{brault2016scaling} as follows (see
+\cref{subsec:dec_examples,sec:building_ORFF}). For all $x\in\mathbb{R}^d$,
+\begin{dmath*}
+    \tilde{\Phi}^{dec}(x) = \frac{1}{\sqrt{D}}\Vect_{j=1}^D
+    \begin{pmatrix}
+        \cos{\inner{x,\omega_j}}B^\adjoint \\
+        \sin{\inner{x,\omega_j}}B^\adjoint
+    \end{pmatrix} \condition{$\omega_j \sim \IFT{k_0}$},
+    \label{eq:generation}
+\end{dmath*}
+which can also be expressed as a Kronecker product $\otimes$ of a scalar
+feature map with a matrix (see \cref{subsec:fast_decomposable}):
+$\tilde{\Phi}^{dec}(x) = \tilde{\phi}(x)\otimes B^\adjoint$ where
+\begin{dmath*}
+    \tilde{\phi}(x) = \frac{1}{\sqrt{D}}\Vect_{j=1}^D
+    \begin{pmatrix}
+        \cos{\inner{x,\omega_j}} \\ 
+        \sin{\inner{x,\omega_j}}
+    \end{pmatrix}\condition{$\omega_j \sim \IFT{k_0}$}
+\end{dmath*}
+is a scalar-valued feature map. In particular, if $k_0$ is a Gaussian kernel
+with bandwidth $\sigma^2$, then $\IFT{k_0}=\mathcal{N}(0, 1/\sigma^2)$ as
+proven in \citet{Rahimi2007}. More examples on different OVK can be found in
+\cref{subsec:dec_examples} as well as a proof of the uniform convergence of the
+kernel approximation in \cref{sec:consistency_of_the_ORFF_estimator} defined by
+$\tilde{K}(x,z)=\tilde{\Phi}(x)^\adjoint\tilde{\Phi}(z)$ towards the true
+kernel. In the case of vector autoregression, we consider a model $\tilde{h}$
+of the form: $\hat{x}_{t+1}=\tilde{\Phi}(x_t)^*\theta$. That model is referred
+to as \ac{ORFFVAR} in the remainder of the section. Now, given the
+operator-valued feature map, we get a linear model, and we want to minimize the
+regularized risk
+\begin{dmath*}
+    \mathcal{J}_{\lambda}(\theta) =
+    \frac{1}{N-1}\sum_{\ell=2}^{N}\norm{(\tilde{\phi}(x_{\ell-1})^*\otimes
+    B)\theta-x_\ell}_2^2 + \lambda\norm{\theta}_2^2
+\end{dmath*}
+with $\lambda > 0$ instead of \cref{eq:rkhs_okvar} (see
+\cref{th:orff_representer}). In their paper \citet{brault2016scaling} proposed
+to formulate the learning problem as a Stein equation when dealing with
+decomposable kernels, and then used an appropriate solver
+\citep{sonneveld2008idr}. We opted here for a more general algorithm, which is
+a variant of the doubly stochastic gradient descent \citep{dai2014scalable}.
+In a few words, this algorithm is a stochastic gradient descent that takes
+advantage of the feature representation of the kernel allowing the number of
+features to grow along with the number of points. \citet{dai2014scalable} show
+that the number of iterations needed for achieving a desired accuracy
+$\epsilon$  using a stochastic approximation is $\Omega(1/\epsilon)$, making it
+competitive compared to other stochastic methods for kernels such as
+\acs{NORMA} \citep{kivinen2004online} and its \acs{OVK} adaptation \acs{ONORMA}
+\citep{audiffren2013online}. We propose here in \cref{alg:doubly_sgd},  an
+extension of the doubly stochastic gradient descent of \citet{dai2014scalable}
+to \acsp{OVK}.  Additionally we consider a batch approach \acs{wrt} the data
+and the features, and make it possible to \say{cap} the maximum number of
+features.  The inputs of the algorithm are: $\mathcal{X}$ the input data,
+$\mathcal{Y}$ the targets, $K_e$ the \acs{OVK} used for learning,
+$\gamma_t$ the learning rate (see \citet{dai2014scalable} for a discussion on
+the selection of a proper learning rate), $T$ the number of iterations, $n$ the
+size of data batch, $b$ the size of the feature batch, and $D$ the maximum
+number of features. Note that if $K_0$ is a scalar kernel, $D=T$, $b=1$ and
+$n=1$, we retrieve the algorithm formulated in \citet{dai2014scalable}.
+\begin{center}
+    \begin{algorithm2e}
+        \KwData{$\mathcal{X}$, $\mathcal{Y}$, $K_e$, $\gamma_t$, $\lambda$,
+        $T$, $n$, $D$, $b$}
+        \KwResult{Find $\theta$}
+        Let $D_b=D/b$ and find $\pairing{\omega, x}$, $B(\omega)$ and
+        $\mu(\omega)$ from $K_e$\;
+        \For{$i = 1 $ \KwTo $D_b$ }{%
+            $\theta^1_{i,.} = 0$\;
+        }
+        \For{$t = 1 $ \KwTo $T$}{%
+            $\mathcal{A}_t=\mathcal{X}_t\times \mathcal{Y}_t$, a random
+            subsample of $n$ data from $\mathcal{X}\times\mathcal{Y}$\;
+            $h\left(\mathcal{X}_t\right) = \text{predict}\left(
+            \mathcal{X}_t, \theta^t,  K_e \right)$\tcp*{Make a prediction.}
+            $\Omega_i \sim \mu$ with seed $i$, where
+            $i=((t-1)\enskip\text{mod}\enskip  D_b) + 1$ \tcp*{Sample $b$
+            features from $\mu$.}
+            \For{$\omega\in\Omega_i$ \tcp{Update the parameters from the
+            gradient.}}{%
+                $\theta^{t+1}_{i,\omega} = \theta^t_{i,\omega} -
+                \gamma_t\left(\frac{1}{|\mathcal{A}_t|}
+                \displaystyle\sum_{(x,y)\in\mathcal{A}_t}
+                \frac{B(\omega)^\adjoint\pairing{\omega,
+                x}(h(x)-y)}{\sqrt{D}}+\lambda \theta^t_{i,\omega}\right)$\;
+        }
+    }
+    \KwRet{$\theta^{t+1}$}
+    \caption{Block-coordinate mini-batch doubly SGD. \label{alg:doubly_sgd}}
+    \end{algorithm2e}
+\end{center}
+In addition, the convergence of the algorithm can be speeded-up by
+preconditioning by the Hessian of the system. An experimental C{}\verb!++! code
+is available at \url{https://github.com/RomainBrault/OV2SGD}.
+\begin{center}
+    \begin{algorithm2e}
+        \KwData{$\mathcal{X}$, $\theta$, $K_0$}
+        Find $\pairing{\omega, x}$, $B(\omega)$ and $\mu(\omega)$
+        from $K_0$\; $f(\mathcal{X}) = 0$\;
+        \For{$x\in\mathcal{X}$}{%
+            \For{$i = 1 $ \KwTo $D$}{%
+                $\Omega_i \sim \mu(\omega)$ with seed $i$\;
+                \For{$\omega\in\Omega_i$}{%
+                      $h(x) = h(x) + \conj{\pairing{\omega,
+                      x}}B(\omega)\theta_{i,\omega}$\;
+                }
+              }
+        }
+        \KwRet{$h(\mathcal{X})$}
+        \caption{$h\left(\mathcal{X}\right)$ ={predict}$\left(\mathcal{X},
+        \theta, K_e\right)$ \label{alg:ODSGD}}
+    \end{algorithm2e}
+\end{center}
+\subsection{Numerical Performance}
+We now apply \cref{alg:doubly_sgd} to toy and real datasets.
+\subsection{Simulated data} 
+To assess the performance of our models, we start our investigation by
+generating discrete $d$-dimensional time series $(x_t)_{t\geq 1}$ as follows
+\begin{dmath}
+    \begin{cases}
+        x_1 \sim \mathcal{N}(0, \Sigma_x) & \\
+        x_{t+1} = h(x_{t}) + u_{t+1}, & \forall t > 0.
+    \end{cases}
+    \label{eq:gen_1}
+\end{dmath}
+where the residuals are homoscedastic and distributed according to $u_{t}\sim
+\mathcal{N}(0, \Sigma_u)$.  We study two different kinds of noise: an isotropic
+noise with covariance $\Sigma_u=\sigma_u^2 I_d$ and an anisotropic noise with
+Toeplitz structure $\Sigma_{u,ij}=\nu^{\abs{i-j}}$, where $\nu$ lives in $(0,
+1)$. We generated $N=1000$ data points and used a \ac{SCV} with time windows
+$N_t=N / 2$ to measure the Mean Squared Error \acs{SCV-MSE} of the different
+models. Next, we compare the performances of \acs{VAR}(1), \acs{OKVAR} and
+\acs{ORFFVAR} through three scenarios. Across the simulations, the topological
+structures of the underlying dynamical systems are encoded by a matrix $A$ of
+size $5\times 5$. All entries of $A$ are set to zero except for the diagonal
+where all coefficients are equal to $0.9$ for Settings 1 and 3 and $0.5$ for
+Setting 2. Then five off-diagonal coefficients are drawn randomly from
+$\mathcal{N}(0, 0.3)$ for Settings 1 and 3 and $\mathcal{N}(0, 0.5)$ for
+Setting 2. We check that all the eigenvalues of $A$ are less than one to ensure
+the stability of the system. More specifically, we picked the following values
+of parameters for each scenario.
+\begin{itemize}
+    \item \textbf{Setting 1: Linear model.}:  $h(x_t)=Ax_t$, $\nu=0.9$
+    and $\sigma_u=0.9$,
+    \item \textbf{Setting 2: Exponential model.}: $h(x_t)=A\exp(x_t)$
+    where $\exp$ is the element-wise exponential function, $\nu=0.09$ and
+    $\sigma_u=0.09$,
+    \item \textbf{Setting 3: Sine model.}: $h(x_t)=A\sin(x_t)$ where
+    $\sin$ is the element-wise sine function, $\nu=0.9$ and
+    $\sigma_u=0.009$.
+\end{itemize}
+\acs{ORFFVAR} is instantiated with $D=25$ random features in presence of a
+white noise while we set $D=50$ in case of a Toeplitz noise.  We summarize the
+computational efficiency and the statistical accuracy of the models in
+\cref{table:setting_1}. Throughout all the experiments, we set $B$ as the
+identity matrix of size $d\times d$. This reflects the absence of a prior on
+the structure of the data. A further study on the influence of the choice of
+$B$ can be found in \citet{Alvarez2012} and
+\cref{pr:kernel_reg,pr:fourier_reg_ovk}.
+\paragraph{}
+In Setting 1, we observe that OKVAR does not provide any advantage over
+\acs{VAR}(1) as expected since the data were generated according to a linear
+\acs{VAR}(1) model.  Note that \acs{OKVAR} takes orders of magnitude more time
+to achieve the same performance as \acs{VAR}(1) while \acs{ORFFVAR} performs
+equally well with a competitive timing. In nonlinear scenarios (Settings 2 and
+3), \acs{OKVAR} and \acs{ORFFVAR} consistently outperform \acs{VAR}(1).
+Noticeably, \acs{ORFFVAR} reaches the accuracy of OKVAR with the computation
+time of \acs{VAR}(1).
+\begin{table}[htb]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{ccccccccccc} 
+        \toprule
+            \multicolumn{2}{c}{Setting} & \multicolumn{3}{c}{1} &
+            \multicolumn{3}{c}{2} & \multicolumn{3}{c}{3} \\
+            model & noise & SVC-MSE & variance & time & SVC-MSE & variance &
+            time & SVC-MSE & variance & time \\
+        \midrule
+            \multirow{2}{*}{VAR(1)} & White & \textbf{0.914979} &
+            \textbf{0.572485} & 0.002467(s) & 0.001275 & 0.000994 & 0.002346(s)
+            & 0.009534 & 0.006003 & \textbf{0.001697(s)} \\
+            & Toeplitz & \textbf{1.091096} & \textbf{1.267880} & 0.004822(s) &
+            0.017014 & 0.013498 & \textbf{0.002050(s)} & \textbf{0.116901} &
+            0.127396 & 0.001702(s) \\ 
+             & & & & & & & & & & \\
+            \multirow{2}{*}{ORFFVAR} & White & 0.919663 & 0.572936 & \textbf{%
+            0.000994(s)} & \textbf{0.001003} & \textbf{0.000647} & \textbf{%
+            0.001284(s)} & 0.009536 & 0.005998 & 0.002377(s) \\
+            & Toeplitz & 1.097183 & 1.268978 & \textbf{0.001022(s)} & \textbf{%
+            0.012635} & \textbf{0.008837} & 0.012144(s) & 0.116964 & \textbf{%
+            0.127395} & \textbf{0.000934(s)} \\
+             & & & & & & & & & & \\
+            \multirow{2}{*}{OKVAR} & White & 0.958790 & 0.591934 & 0.104706(s)
+            & 0.001100 & 0.000731 & 0.027099(s) & \textbf{0.009227} &
+            \textbf{0.005717} & 0.014458(s) \\
+            & Toeplitz & 1.410969 & 1.312243 & 0.289046(s) & 0.013854 &
+            0.010977 & 1.856988(s) & 0.160133 & 0.136570 & 0.019170(s) \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{Sequential \acs{SCV-MSE} and computation times for \acs{VAR}(1),
+    \acs{ORFFVAR} and \acs{OKVAR} on synthetic data (Settings 1, 2 and 3).
+    \label{table:setting_1}}
+\end{table}
+\subsection{Influence of the number of random features}
+Here, we investigate the impact of $D$, the number of random features for
+\acs{ORFFVAR}. To this end, we generated $N=10000$ data points following
+\cref{eq:gen_1}, with exponential nonlinearities and white noise as in Setting
+2. We performed a sequential cross-validation on a window of $N/2$ data.  As
+expected the error decreases with the number of random features $D$
+(\cref{table:feature_study}). For the same computation time ($D=25$) as
+\acs{VAR}(1), \acs{ORFFVAR} achieves an \acs{SCV-MSE} that is twice as small.
+\begin{table}[htb]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lccccccc}
+        \toprule
+            model & $D=1$ & $D=5$ & $D=10$ & $D=25$ & $D=50$ & $D=100$ &
+            \acs{VAR}(1) \\
+        \midrule
+            SVC-MSE & 0.005342 & 0.001111 & 0.000991 & 0.000962 & 0.000949 &
+            0.000944 & 0.001660 \\
+            variance & 0.008639 &0.000793 & 0.000660 & 0.000618 & 0.000608 &
+            0.000605 & 0.001363\\
+            time & 0.001191(s) & 0.002384(s) & 0.003614(s) & 0.018469(s) &
+            0.038229(s) & 0.069294(s) & 0.019634(s) \\ 
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{SVC-MSE with respect to $D$ the number of random features for
+    ORFFVAR. \label{table:feature_study}}
+\end{table}
+\subsection{Real datasets}
+We now investigate three real datasets. The performances of the models on those
+datasets are recorded in \cref{table:real_data}. Throughout the
+experiments, the hyperparameters are set as follows: the bandwidth of the
+Gaussian kernel $\sigma$ is chosen as the median of the Euclidean pairwise
+distances and the regularization parameter $\lambda$ was tuned on a grid. The
+number of random features $D$ and the parameters in \cref{alg:doubly_sgd} were
+picked so as to reach the level of accuracy of \acs{OKVAR}/\acs{VAR}.
 
-\section{Time series modelling}
+\paragraph{Macrodata}
+This dataset is part of the Python library
+\texttt{Statmodels}\footnote{\url{https://github.com/statsmodels/statsmodels}}.
+It contains $204$ US macroeconomic data points collected on the period
+$1959$--$2009$.  Each data point represents $12$ economic features. No
+pre-processing is applied before learning. We measure \acs{SCV-MSE} using a
+window of $25$ years ($50$ points). We instantiated \cref{alg:doubly_sgd} as
+follows: $\gamma_t = 1$, $\lambda = 10^{-3}$, $D=100$, $T=2$ and $b=50$ for
+ORFF and $\lambda=0.00025$ and $\sigma=11.18$ for \acs{OKVAR}.
+\paragraph{Gesture phase.} 
+This dataset\footnote{%
+\url{https://archive.ics.uci.edu/ml/datasets/Gesture+Phase+Segmentation}} is
+constructed using features extracted from seven videos with people
+gesticulating. We present the results for videos $1$ and $4$, consisting in
+$1069$ data points and $31$ features. Data are normalized prior to learning. We
+measure \acs{SCV-MSE} using a time window of $200$ points. We implemented
+\acs{ORFFVAR} with $\gamma_t = 1$, $\lambda = 10^{-3}$, $D=100$, $T=2$ and
+$b=50$.
+\paragraph{Climate.} 
+This dataset \citep{liu2010learning} contains monthly meteorological
+measurements of $18$ variables (temperature, CO2 concentration,\,$\dots$)
+collected at 135 different locations throughout the USA and recorded over $13$
+years, thus resulting in $135$ time series of dimension $18$ and length $156$.
+Data are standardized at each station. A unique model is learned for all
+stations.  \acs{SCV-MSE} is measured on a window of $1872$ points,
+corresponding to the data of all the $135$ stations over one year.
+Specifically, we set the parameters of \acs{ORFFVAR} as follows: $\gamma_t =
+1$, $\lambda = 10^{-6}$, $D=100$, $T=1$ and $b=100$.
+\paragraph{Heart.}
+The dataset is a multivariate time-serie recorded from a patient in the sleep
+laboratory of the Beth Israel Hospital in Boston, Massachusetts\footnote{%
+\url{http://www-psych.stanford.edu/~andreas/Time-Series/SantaFe.html}}.
+The attributes are the heart rate, the chest volume (respiration force) and the
+blood oxygen concentration. The time-serie contains $17000$ points recorded at
+$2$Hz during roughly $4$ hours $30$ minutes. We used a window of $240$ points
+for the sequential cross-validation (corresponding to $2$ minutes of
+observations).
+\begin{table}[htb]
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{l c c ccc ccc ccc} 
+        \toprule
+            &  &  & \multicolumn{3}{c}{\acs{ORFFVAR}} &
+            \multicolumn{3}{c}{\acs{VAR}(1)} & \multicolumn{3}{c}{\acs{OKVAR}}
+            \\ Dataset & $N$ & $d$ & \acs{SCV-MSE} & variance & time &
+            \acs{SCV-MSE} & variance & time & \acs{SCV-MSE} & variance & time
+            \\ 
+        \midrule
+            Macrodata & \#203 & \#12 & \textbf{445.9} & 84.5 & 0.014(s) &
+            449.1 & 1021 & 0.0005(s) & 499.8 & 793.0 & 0.641(s) \\
+            Gesture phase 1 & \#1743 & \#31 & \textbf{0.741} & 2.999 & 0.009(s)
+            & 0.980 & 3.370 & 0.0014(s) & \acs{NA} & \acs{NA} & \acs{NA} \\
+            Gesture phase 4 & \#1069 & \#31 & \textbf{0.473} & 2.406 & 0.061(s)
+            & 0.768 & 6.49 & 0.0075(s) & \acs{NA} & \acs{NA} & \acs{NA} \\
+            Climate & \#19375 & \#18 & \textbf{0.237} & 0.2128 & 0.396(s) &
+            0.266 & 0.218 & 0.0124(s) & \acs{NA} & \acs{NA} & \acs{NA} \\
+            Heart & \#16999 & \#3 & 0.262 & 1.020 & 0.011(s) & \textbf{0.259} &
+            1.040 & 0.0010(s) & \acs{NA} & \acs{NA} & \acs{NA} \\
+        \bottomrule
+    \end{tabular}}
+    \caption{SCV-MSE and computation times for ORFFVAR, VAR(1) and OKVAR on
+    real datasets.\label{table:real_data}}
+\end{table}
 
-\section{Functional data analysis}
-\subsubsection{One class SVM revisited}
+\section{Discussion}
+Operator-Valued Random Fourier Feature provides a way to approximate OVK and in
+the context of time series, allows for nonlinear Vector Autoregressive models
+that can be efficiently learned both in terms of computing time and memory. We
+illustrate the approach with a simple family of Operator-valued kernels, the
+so-called decomposable kernels but other kernels may be used. While we focused
+on first-order autoregressive models, we will consider extensions of our models
+for higher orders. In this work, the kernel hyperparameter $B$ is given prior
+to learning, however it would be interesting to learn $B$ as in \acs{OKVAR}.
+Thus, a promising perspective is to use these models in tasks such as network
+inference and search for causality graphs among the state variables for
+large-scale time series \cite{Lim2013,Lim2015}.
 
-\subsubsection{Many quantile regression}
-% %----------------------------------------------------------------------------
-% \section{The Nystr\"om method}
-% \label{sec:the_nystrom_method}
-
-% %----------------------------------------------------------------------------
-% \section{Sub-sampling the data}
-% \label{sec:sub_sampling_the_data}
-\section{Neural networks, deep learning}
-
-\section{Operalib}
-
-%------------------------------------------------------------------------------
-\section{Conclusions}
-\label{sec:conslusions_contrib}
 
 \chapterend

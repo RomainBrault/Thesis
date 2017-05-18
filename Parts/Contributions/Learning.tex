@@ -114,10 +114,10 @@ $(x,y)\in\mathcal{X}\times\mathcal{Y}$.
     $y\in\mathcal{Y}$.
     \paragraph{}
     Eventually let $\lambda\in\mathbb{R}_{>0}$ be the Tychonov regularization
-    hyperparameters The solution $f_{\seq{z}}\in\mathcal{H}_K$ of the
+    hyperparameters The solution $f_{\seq{s}}\in\mathcal{H}_K$ of the
     regularized optimization problem
     \begin{dmath}
-        f_{\seq{z}} = \argmin_{f\in\mathcal{H}_K}
+        f_{\seq{s}} = \argmin_{f\in\mathcal{H}_K}
         \frac{1}{N}\displaystyle\sum_{i=1}^N c(f(x_i), y_i) +
         \frac{\lambda}{2}\norm{f}^2_{K}
         \label{eq:learning_rkhs_gen}
@@ -146,7 +146,7 @@ $\mathcal{H}_K$, when $\lambda>0$, the solution of
 Therefore the result can be expressed as a finite linear combination of basis
 functions of the form $K(\cdot,x_k)$. Remark that we can perform the kernel
 expansion of $f_{\seq{s}}=\sum_{j=1}^{N}K(\cdot,x_j)u_{\seq{s},j}$ eventhough
-$\lambda=0$. However $f_{\seq{z}}$ is no longer the solution of
+$\lambda=0$. However $f_{\seq{s}}$ is no longer the solution of
 \cref{eq:learning_rkhs_gen} over the whole space $\mathcal{H}_K$ but a
 projection on the subspace $\mathcal{H}_{K, \seq{s}}$. While this is in general
 not a problem for practical applications, it might raise issues for further
@@ -238,7 +238,7 @@ solution given in \cref{th:orff_representer}.
     the coercivity of $J_{\lambda}$, and then \cref{cor:unique_minimizer} to
     show that $J_{\lambda}$ has a unique minimizer and is attained. Then let
     \begin{dmath*}
-        \mathcal{H}_{K, \seq{z}}=\Set{\sum_{j=1}^{N}K_{x_j}u_j| \forall
+        \mathcal{H}_{K, \seq{s}}=\Set{\sum_{j=1}^{N}K_{x_j}u_j| \forall
         (u_i)_{i=1}^{N} \in\mathcal{Y}^{N}}.
     \end{dmath*}
     For $f\in\mathcal{H}_{K, \seq{s}}^\perp$\mpar{$\mathcal{H}_{K,
@@ -257,7 +257,7 @@ solution given in \cref{th:orff_representer}.
     In the same way,
     \begin{dmath*}
         \sum_{i=1}^{N}\inner{K_{x_i}^* f, u_i}_{\mathcal{Y}} \hiderel{=}
-        \inner{\underbrace{f}_{\in\mathcal{H}_{K, \seq{z}}^\perp},
+        \inner{\underbrace{f}_{\in\mathcal{H}_{K, \seq{s}}^\perp},
         \underbrace{\sum_{j=1}^{N}K_{x_j}u_j}_{\in\mathcal{H}_{K,
         \seq{s}}}}_{\mathcal{H}_K} \hiderel{=} 0.
     \end{dmath*}
@@ -267,8 +267,8 @@ solution given in \cref{th:orff_representer}.
     \end{dmath}
     Now for an arbitrary $f\in\mathcal{H_K}$, consider the orthogonal
     decomposition $f = f^{\perp} + f^{\parallel}$, where $f^{\perp} \in
-    \mathcal{H}_{K, \seq{z}}^\perp$ and $f^{\parallel} \in \mathcal{H}_{K,
-    \seq{z}}$. Then since $\norm{f^{\perp} + f^{\parallel}}_{\mathcal{H}_K}^2
+    \mathcal{H}_{K, \seq{s}}^\perp$ and $f^{\parallel} \in \mathcal{H}_{K,
+    \seq{s}}$. Then since $\norm{f^{\perp} + f^{\parallel}}_{\mathcal{H}_K}^2
     =\norm{f^{\perp}}_{\mathcal{H}_K}^2 +
     \norm{f^{\parallel}}_{\mathcal{H}_K}^2$, \cref{eq:null1} and
     \cref{eq:null2} shows that if $\lambda > 0$, clearly then
@@ -279,7 +279,7 @@ solution given in \cref{th:orff_representer}.
     The last inequality holds only when $\norm{f^{\perp}}_{\mathcal{H}_K}=0$,
     that is when $f^{\perp}=0$. As a result since the minimizer of
     $J_{\lambda}$is unique and attained, it must lies in $\mathcal{H}_{K,
-    \seq{z}}$.
+    \seq{s}}$.
 \end{proof}
 The representer theorem show that minimizing a functional in a \acs{vv-RKHS}
 yields a solution which depends on all the points in the training set. Assuming
@@ -326,14 +326,14 @@ do not study the link between these spaces.
     $f_{\seq{s}}\in\mathcal{H}_{\tildeK{\omega}}$ of the regularized
     optimization problem
     \begin{dmath}
-        \label{eq:argmin_RKHS_rand} \widetilde{f}_{\seq{z}} =
+        \label{eq:argmin_RKHS_rand} \widetilde{f}_{\seq{s}} =
         \argmin_{\widetilde{f}\in\mathcal{H}_{\tildeK{\omega}}}
         \frac{1}{N}\displaystyle\sum_{i=1}^N c\left(\widetilde{f}(x_i),
         y_i\right) +
         \frac{\lambda}{2}\norm{\widetilde{f}}^2_{\tildeK{\omega}}
     \end{dmath}
     has the form $\widetilde{f}_{\seq{s}} = \tildePhi{\omega}(\cdot)^\adjoint
-    \theta_{\seq{z}}$, where $\theta_{\seq{s}} \in (\Ker
+    \theta_{\seq{s}}$, where $\theta_{\seq{s}} \in (\Ker
     \tildeW{\omega})^{\perp}$ and
     \begin{dmath}
         \theta_{\seq{s}}=\argmin_{\theta\in \tildeH{\omega}}
@@ -421,35 +421,49 @@ do not study the link between these spaces.
         y_i\right) + \frac{\lambda}{2}\norm{\theta}^2_{\tildeH{\omega}}. \qed
     \end{dmath*}
 \end{proof} 
-This shows that when $\lambda>0$ the solution of \cref{eq:argmin_u} with the
-approximated kernel $K(x,z) \approx \tildeK{\omega}(x,z) =
-\tildePhi{\omega}(x)^\adjoint\tildePhi{\omega}(z)$ is the same than the
-solution of \cref{eq:argmin_theta} up to a linear transformation. Namely, if
-$u_{\seq{s}}$ is the solution of \cref{eq:argmin_u}, $\theta_{\seq{s}}$ is the
-solution of \cref{eq:argmin_theta} and $\lambda>0$ we have 
+In the aforemention theorem, we use the notation $\widetilde{K}$ and
+$\tildePhi{\omega}$ because our main subject of interest is the \acs{ORFF} map.
+However this theorem works for \emph{any} feature maps $\Phi(x):
+\mathcal{L}(\mathcal{Y}, \mathcal{H})$ even when $\mathcal{H}$ is infinite
+dimensional.\footnote{If $\Phi(x): \mathcal{L}(\mathcal{Y}, \mathcal{H})$ and
+$\dim(\mathcal{H})=\infty$, the decomposition $\mathcal{H}=(\Ker W) \oplus
+(\Ker W)^\perp$ holds since $\mathcal{H}$ is a Hilbert space and $W$ is a
+closed operator.}.  This shows that when $\lambda>0$ the solution of
+\cref{eq:argmin_u} with the approximated kernel $K(x,z) \approx
+\tildeK{\omega}(x,z) = \tildePhi{\omega}(x)^\adjoint\tildePhi{\omega}(z)$ is
+the same than the solution of \cref{eq:argmin_theta} up to a linear
+transformation. Namely, if $u_{\seq{s}}$ is the solution of \cref{eq:argmin_u},
+$\theta_{\seq{s}}$ is the solution of \cref{eq:argmin_theta} and $\lambda>0$ we
+have 
 \begin{dmath*}
-    \theta_{\seq{z}} = \sum_{j=1}^{N} \tildePhi{\omega}(x_j) u_{\seq{s}}
-    \hiderel{\in}\tildeH{\omega}.
+    \theta_{\seq{s}} = \sum_{i=1}^{N} \tildePhi{\omega}(x_i) (u_{\seq{s}})_i
+    \hiderel{\in} (\Ker W)^{\perp} \hiderel{\subseteq} \tildeH{\omega}.
 \end{dmath*} 
 If $\lambda_K=0$ we can still find a solution $u_{\seq{s}}$ of
 \cref{eq:argmin_u}. By construction of the kernel expansion, we have
-$u_{\seq{z}}\in(\Ker W)^\bot$. However looking at the proof of
+$u_{\seq{s}}\in(\Ker W)^\bot$. However looking at the proof of
 \cref{th:orff_representer} we see that $\theta_{\seq{s}}$ might \emph{not}
-belong to $(\Ker W)^\bot$. Then we can compute a residual vector 
+belong to $(\Ker W)^\bot$. We can compute a residual vector 
 \begin{dmath*}
-    r_{\seq{s}} = \theta_{\seq{s}} - \sum_{j=1}^{N} \tildePhi{\omega}(x_j)
-    u_{\seq{s}} \hiderel{\in}\tildeH{\omega}.
+    r_{\seq{s}} = \sum_{i=1}^{N} \tildePhi{\omega}(x_i)
+    (u_{\seq{s}})_i \hiderel{\in}\tildeH{\omega} - \theta_{\seq{s}}.
 \end{dmath*}
-Then if $r_{\seq{s}}=0$, it means that $\lambda_K$ is large enough for both
-reprensenter theorem and \acs{ORFF} representer theorem to apply. If
-$r_{\seq{s}}\neq 0$ but $\tildePhi{\omega}(\cdot)^\adjoint r_{\seq{s}} = 0$ it
-means that both $\theta_{\seq{s}}$ and $\sum_{j=1}^{N} \tildePhi{\omega}(x_j)
-u_{\seq{s}}$ are in $(\Ker W)^\bot$, thus the representer theorem fails to find
-the \say{true} solution over the whole space $\mathcal{H}_K$ but returns a
-projection onto $\mathcal{H}_{\tildeK{\omega},\seq{s}}$ of the solution. If
-$r_{\seq{s}} \neq 0$ and $\tildePhi{\omega}(\cdot)^\adjoint r_{\seq{s}} \neq 0$
-means that $\theta_{\seq{s}}$ is \emph{not} in $(\Ker W)^\bot$, thus the
-feature equivalence theorem fails to apply. This remark is illustrated by
+Since $\sum_{j=1}^N \tildePhi{\omega}(x_j)\in(\Ker W)^\bot$ by
+construction, if $r_{\seq{s}}=0$, it means that $\lambda_K$ is large
+enough for both representer theorem and \acs{ORFF} representer theorem to
+apply. If $r_{\seq{s}}\neq 0$ but $\tildePhi{\omega}(\cdot)^\adjoint
+r_{\seq{s}} = 0$ it means that both $\theta_{\seq{s}}$ and $\sum_{j=1}^{N}
+\tildePhi{\omega}(x_j) u_{\seq{s}}$ are in $(\Ker W)^\bot$, thus the
+representer theorem fails to find the \say{true} solution over the whole space
+$\mathcal{H}_{\widetilde{K}}$ but returns a projection onto
+$\mathcal{H}_{\tildeK{\omega},\seq{s}}$ of the solution. If $r_{\seq{s}} \neq
+0$ and $\tildePhi{\omega}(\cdot)^\adjoint r_{\seq{s}} \neq 0$ means that
+$\theta_{\seq{s}}$ is \emph{not} in $(\Ker W)^\bot$, thus the feature
+equivalence theorem fails to apply. Since $r_{\seq{s}} = \sum_{i=1}^N
+\tildePhi{\omega}(x_i)(u_{\seq{s}})_i - \theta_{\seq{s}}^\perp -
+\theta_{\seq{s}}^\parallel$ and $\sum_{i=1}^N
+\tildePhi{\omega}(x_i)(u_{\seq{s}})_i$ is in $(\Ker W)^\perp$, with mild abuse
+of notation we write $r_{\seq{s}}=\theta^\perp$. This remark is illustrated in
 \cref{fig:representer}.
 
 %----------------------------------------------------------------------------------------
@@ -459,9 +473,9 @@ feature equivalence theorem fails to apply. This remark is illustrated by
 In order to find a solution to \cref{eq:argmin_theta}, we turn our attention to
 gradient descent methods. In the following we let
 \begin{dmath}
-    \label{eq:cost_functional} J_{\lambda_K}(\theta) =
-    \frac{1}{N}\sum_{i=1}^Nc\left(V\tildePhi{\omega}(x_i)^\adjoint \theta,
-    y_i\right) + \frac{\lambda_K}{2}\norm{\theta}^2_{\tildeH{\omega}}
+    \label{eq:cost_functional} J_{\lambda}(\theta) =
+    \frac{1}{N}\sum_{i=1}^Nc\left(\tildePhi{\omega}(x_i)^\adjoint \theta,
+    y_i\right) + \frac{\lambda}{2}\norm{\theta}^2_{\tildeH{\omega}}
 \end{dmath}
 
 \subsection{Gradient methods}
@@ -546,7 +560,7 @@ have
         \nabla_{\theta}c\left(\tildePhi{\omega}(x_i)^\adjoint \theta,
         y_i\right)= \tildePhi{\omega}(x_i)V^\adjoint
         \left(\lderivativeat{c\left(y,
-        y_i\right)}{y}{V\tildePhi{\omega}(x_i)^\adjoint
+        y_i\right)}{y}{\tildePhi{\omega}(x_i)^\adjoint
         \theta}\right)^\adjoint,
     \end{dmath*}
     \begin{dmath*}
@@ -557,7 +571,7 @@ Provided that $c(y,y_i)$ is Frechet differentiable \acs{wrt}~$y$, for all $y$
 and $y_i\in\mathcal{Y}$ we have $\nabla_{\theta} J_{\lambda}(\theta) \in
 \tildeH{\omega}$ and
 \begin{dmath*}
-    \nabla_{\theta} J_{\lambda_K}(\theta) = \frac{1}{N}\sum_{i=1}^N
+    \nabla_{\theta} J_{\lambda}(\theta) = \frac{1}{N}\sum_{i=1}^N
     \tildePhi{\omega}(x_i) \left(\lderivativeat{c\left(y,
     y_i\right)}{y}{\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint +
     \lambda\theta
@@ -607,7 +621,7 @@ calculations shows that given an operator $A\in\mathcal{L}(\mathcal{Y})$,
 Thus $A^\adjoint=\Sigma^{-1}\conj{A}^{\transpose}\Sigma$.
 \begin{remark}
     \label{rq:mahalanobis} Notice that the evaluation of each operator
-    $\nabla_{\theta} J_{\lambda_K}(\theta)$, $V^*$,
+    $\nabla_{\theta} J_{\lambda}(\theta)$, $V^*$,
     $\tildePhi{\omega}(x_i)^*$'s and $M_{ik}$'s depends on the inner product of
     the respective spaces in which they are defined. Namely $\mathcal{Y}$,
     and $\tildeH{\omega}$. For instance if one chooses
@@ -633,6 +647,7 @@ Thus $A^\adjoint=\Sigma^{-1}\conj{A}^{\transpose}\Sigma$.
     \end{dmath*}
 \end{remark}
 \subsection{Complexity analysis}
+\label{subsec:complexity}
 \Cref{alg:close_form} constitutes our first step toward large-scale learning
 with \aclp{OVK}. We can easily compute the time complexity of
 \cref{alg:close_form} when all the operators act on finite dimensional Hilbert
@@ -667,7 +682,7 @@ while the space complexity is $O_s(r^2)$.
         \begin{dmath*} %
             h:\begin{cases} \mathcal{X} \to \mathbb{R}^p \\
             x\mapsto\tildePhi{\omega}(x)^\transpose
-            \theta_{\seq{z}},\end{cases} %
+            \theta_{\seq{s}},\end{cases} %
         \end{dmath*} %
         such that $\theta_{\seq{s}}$ minimize \cref{eq:cost_functional}, where
         $c(y,y')=\norm{y-y'}_2^2$ and $\mathbb{R}^r$ and
@@ -681,7 +696,7 @@ while the space complexity is $O_s(r^2)$.
         $\theta_{\seq{s}} \gets \text{solve}_{\theta}\left((\mathbf{P} +
         \lambda I_r)\theta = \mathbf{Y} \right)$ \;
         \Return $h: x \mapsto \tildePhi{\omega}(x)^\transpose
-        \theta_{\seq{z}}$\;
+        \theta_{\seq{s}}$\;
         \caption{Naive closed form for the squared error cost.}
     \end{algorithm2e}
 \end{center}}
@@ -703,10 +718,10 @@ When $\mathcal{Y}=\mathbb{R}$,
 is called the Gram matrix of $K$. When $\mathcal{Y}=\mathbb{R}^p$, $\mathbf{K}$
 is a matrix-valued Gram matrix of size $pN\times pN$ where each entry
 $\mathbf{K}_{ij}\in\mathcal{M}_{p,p}(\mathbb{R})$. Then the equivalent
-kernelized solution $u_{\seq{z}}$ of \cref{th:representer} is
+kernelized solution $u_{\seq{s}}$ of \cref{th:representer} is
 \begin{dmath*}
     \left(\frac{1}{N} \mathbf{K}  + \lambda
-    I_{\Vect_{i=1}^{N}\mathcal{Y}}\right)u_{\seq{z}}=\Vect_{i=1}^N y_i.
+    I_{\Vect_{i=1}^{N}\mathcal{Y}}\right)u_{\seq{s}}=\Vect_{i=1}^N y_i.
 \end{dmath*}
 which has time complexity $O\left(N^3p^3\right)$ and space complexity
 $O_s\left(N^2p^2\right)$. Suppose we are given a generic \acs{ORFF} map (see
@@ -1370,7 +1385,7 @@ $10^5$ instances for the test set.
 We trained both \acs{ORFF} and \acs{OVK} models on \textsc{MNIST} dataset with
 a decomposable Gaussian kernel with signature
 \begin{dmath*}
-    K_0(\delta)=\exp(-\norm{\delta}/\sigma^2)\Gamma.
+    K_0(\delta)=\exp\left(-\norm{\delta}/(2\sigma^2)\right)\Gamma.
 \end{dmath*} 
 To apply $\cref{alg:close_form}$ after noticing that in the case of the
 decomposable kernel with $\lambda_M=0$, it boilds down to a Stein equation
@@ -1485,7 +1500,8 @@ We used a model $h$ based on the decomposable kernel
     h(x)= (\phi(x)^T \otimes B) \theta
 \end{equation}
 we chose $B$ such that $BB^T=A$, where $A$ is the inverse graph Laplacian $L$
-of the similarities between the tasks.
+of the similarities between the tasks, parametrized by an hyperparameter
+$\gamma \in \mathbb{R}_+$.
 \begin{equation}
     L_{kl}=\exp\left(-\gamma\sqrt{\sum_{i=1}^N \left(y_i^k -
     y_i^l\right)^2}\right).

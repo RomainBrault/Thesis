@@ -1,0 +1,334 @@
+%!TEX root = ./ThesisRomainbrault.tex
+%!TeX program = xelatex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Classicthesis Typographic Thesis
+% Configuration File
+%
+% This file has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% André Miede (http://www.miede.de) with extensive commenting changes by:
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% GNU General Public License (v2)
+%
+% Important note:
+% The main lines to change in this file are in the thref VARIABLES
+% section, the rest of the file is for advanced configuration.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\listfiles
+
+\usepackage{silence}
+
+\usepackage[utf8]{inputenc}
+\usepackage{varioref}
+\iftrue
+\usepackage[a-1b]{pdfx}
+\else
+\usepackage{hyperref}
+\fi
+
+
+
+%------------------------------------------------------------------------------
+
+\usepackage{adforn}
+\usepackage{pythontex}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{cmap} % copy-paste pdf
+\usepackage{ragged2e}
+\usepackage{minitoc}
+
+%------------------------------------------------------------------------------
+%  USEFUL COMMANDS
+%------------------------------------------------------------------------------
+\newcounter{dummy} % Necessary for correct hyperlinks (to index, bib, etc.)
+\providecommand{\mLyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+\newlength{\abcd} % for ab..z string length calculation
+
+
+%------------------------------------------------------------------------------
+%  PACKAGES
+%------------------------------------------------------------------------------
+
+% Used for inserting dummy 'Lorem ipsum' text into the template
+% \usepackage{lipsum}
+
+%------------------------------------------------------------------------------
+
+% Spanish languages need extra options in order to work with this template
+%\PassOptionsToPackage{spanish,es-lcroman}{babel}
+\usepackage[american]{babel}
+
+%------------------------------------------------------------------------------
+
+\usepackage[absolute]{textpos}
+\usepackage{afterpage}
+\usepackage{pdflscape}
+\usepackage{rotating}
+\usepackage{placeins}
+
+%------------------------------------------------------------------------------
+
+\usepackage{csquotes}
+\PassOptionsToPackage{%
+backend=biber, % Instead of bibtex
+% backend=bibtex8, %
+bibencoding=ascii,%
+language=auto,%
+style=numeric-comp,%
+firstinits=true, %
+% style=authoryear-comp, % Author 1999, 2010
+% bibstyle=authoryear,dashed=false, % dashed: substitute rep. author with ---
+sorting=nyt, % name, year, title
+maxbibnames=10, % default: 3, et al.
+backref=true, %
+block=space, %
+natbib=true % natbib compatibility mode (\citep and \citet still work)
+}{biblatex}
+\usepackage{biblatex}
+
+%------------------------------------------------------------------------------
+
+\PassOptionsToPackage{fleqn}{amsmath} % Math environments and more by the AMS
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+%------------------------------------------------------------------------------
+
+\PassOptionsToPackage{T1}{fontenc} % T2A for cyrillics
+\usepackage{fontenc}
+
+%------------------------------------------------------------------------------
+
+\usepackage{textcomp} % Fix warning with missing font shapes
+
+%------------------------------------------------------------------------------
+
+\usepackage{scrhack} % Fix warnings when using KOMA with listings package
+
+%------------------------------------------------------------------------------
+
+\usepackage{xspace} % To get the spacing after macros right
+
+%------------------------------------------------------------------------------
+
+\usepackage{mparhack} % To get marginpar right
+
+%------------------------------------------------------------------------------
+
+% Not necessary for overleaf's LaTeX version.
+% \usepackage{fixltx2e} % Fixes some LaTeX stuff
+
+%------------------------------------------------------------------------------
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usetikzlibrary{matrix}
+
+\makeatletter
+\tikzset{
+  column sep/.code=\def\pgfmatrixcolumnsep{\pgfxscale*(#1)},
+  row sep/.code   =\def\pgfmatrixrowsep{\pgfyscale*(#1)},
+  matrix xscale/.code=%
+    \pgfmathsetmacro\pgfxscale{\pgfxscale*(#1)},
+  matrix yscale/.code=%
+    \pgfmathsetmacro\pgfyscale{\pgfyscale*(#1)},
+  matrix scale/.style={/tikz/matrix xscale={#1},/tikz/matrix yscale={#1}}}
+\def\pgfxscale{1}
+\def\pgfyscale{1}
+\makeatother
+
+%------------------------------------------------------------------------------
+%	FLOATS: TABLES, FIGURES AND CAPTIONS SETUP
+%------------------------------------------------------------------------------
+\usepackage{ltablex}
+\usepackage{threeparttablex}
+\setlength{\extrarowheight}{3pt} % Increase table row height
+\newcommand{\tableheadline}[1]{\multicolumn{1}{c}{\spacedlowsmallcaps{#1}}}
+\newcommand{\myfloatalign}{\centering} % To be used with each float for alignment
+\usepackage{caption}
+\captionsetup{font=small}
+\usepackage{subfig}
+
+%------------------------------------------------------------------------------
+%	CODE LISTINGS SETUP
+%------------------------------------------------------------------------------
+
+\usepackage{listings}
+%\lstset{emph={trueIndex,root},emphstyle=\color{BlueViolet}}%\underbar} % For special keywords
+\lstset{language=[LaTeX]Tex,%C++ % Specify the language(s) for listings here
+morekeywords={PassOptionsToPackage,selectlanguage},
+keywordstyle=\color{RoyalBlue}, % Add \bfseries for bold
+basicstyle=\small\ttfamily, % Makes listings a smaller font size and a different font
+identifierstyle=\color{NavyBlue}, % Color of text inside brackets
+commentstyle=\color{Green}\ttfamily, % Color of comments
+stringstyle=\rmfamily, % Font type to use for strings
+numbers=left, % Change left to none to remove line numbers
+numberstyle=\scriptsize, % Font size of the line numbers
+stepnumber=5, % Increment of line numbers
+numbersep=8pt, % Distance of line numbers from code listing
+showstringspaces=false, % Sets whether spaces in strings should appear underlined
+breaklines=true, % Force the code to stay in the confines of the listing box
+%frameround=ftff, % Uncomment for rounded frame
+frame=single, % Frame border - none/leftline/topline/bottomline/lines/single/shadowbox/L
+belowcaptionskip=.75\baselineskip % Space after the "Listing #: Desciption" text and the listing box
+}
+
+%------------------------------------------------------------------------------
+%	HYPERREFERENCES
+%------------------------------------------------------------------------------
+
+% \usepackage{varioref}
+
+\pdfminorversion=9
+\pdfcompresslevel=0
+% \pdfadjustspacing=1
+\hypersetup{%
+% Uncomment the line below to remove all links (to references, figures, tables,
+% etc), useful for b/w printouts draft,
+pdflang={en-US},
+pdfauthor={Romain Raymond Brault},
+xetex,
+hyperfootnotes=true,
+colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
+% Uncomment the line below if you want to have black links (e.g. for printing
+% black and white)
+%colorlinks=false, linktocpage=false, pdfborder={0 0 0}, pdfstartpage=3,
+pdfstartview=FitV,
+pdfpagelayout=TwoColumnRight,
+breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,
+plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,
+hypertexnames=true, pdfhighlight=/O, nesting=true, %frenchlinks,%
+urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen, 
+%pagecolor=Black,%
+}
+
+\VerbatimFootnotes
+
+
+
+
+%------------------------------------------------------------------------------
+\usepackage[shortlabels]{enumitem}
+\usepackage{braket}
+\usepackage{dirtytalk}
+\usepackage{numprint}
+% Remove drafting to get rid of the '[ Date - classicthesis version 4.0 ]' text
+% at the bottom of every page
+\PassOptionsToPackage{eulerchapternumbers, listings, subfig, parts,
+floatperchapter, linedheaders}{classicthesis}
+% Available options: drafting parts nochapters linedheaders eulerchapternumbers
+% beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc
+% manychapters listings floatperchapter subfig
+\usepackage{classicthesis}
+\usepackage{breqn}
+
+%------------------------------------------------------------------------------
+
+\usepackage{colonequals}
+\usepackage{amssymb,amsmath}
+\usepackage{nameref}
+\usepackage[amsmath,thmmarks,hyperref]{ntheorem}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{mathtools}
+\usepackage[algo2e,ruled,linesnumbered]{algorithm2e}
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+\usepackage{commands}
+
+\crefname{algocfline}{algorithm}{algorithms}
+\Crefname{algocfline}{Algorithm}{Algorithms}
+\crefname{algocf}{algorithm}{algorithm}
+\Crefname{algocf}{Algorithm}{Algorithms}
+\crefname{table}{table}{tables}
+\Crefname{table}{Table}{Tables}
+\crefname{figure}{figure}{figures}
+\Crefname{figure}{Figure}{Figures}
+\crefname{chapter}{chapter}{chapters}
+\Crefname{chapter}{Chapter}{Chapters}
+\crefname{section}{section}{sections}
+\Crefname{section}{Section}{Sections}
+\crefname{subsection}{subsection}{subsections}
+\Crefname{subsection}{Subsection}{Subsections}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+
+\creflabelformat{equation}{#2\textup{#1}#3}
+
+\newlist{propenum}{enumerate}{1} % also creates a counter called 'propenumi'
+\setlist[propenum]{label=\arabic*., ref=\theproposition~item~\arabic*}
+\crefalias{propenumi}{proposition}
+
+\newcommand{\chapterendsymbol}{%
+    \par
+    \begin{center}\adforn{60}\end{center}
+    }
+\newcommand{\chapterend}{\chapterendsymbol}
+
+\DeclareFlexSymbol{\Gamma}  {Var}{latin}{00}
+\DeclareFlexSymbol{\Delta}  {Var}{latin}{01}
+\DeclareFlexSymbol{\Theta}  {Var}{latin}{02}
+\DeclareFlexSymbol{\Lambda} {Var}{latin}{03}
+\DeclareFlexSymbol{\Xi}     {Var}{latin}{04}
+\DeclareFlexSymbol{\Pi}     {Var}{latin}{05}
+\DeclareFlexSymbol{\Sigma}  {Var}{latin}{06}
+\DeclareFlexSymbol{\Upsilon}{Var}{latin}{07}
+\DeclareFlexSymbol{\Phi}    {Var}{latin}{08}
+\DeclareFlexSymbol{\Psi}    {Var}{latin}{09}
+\DeclareFlexSymbol{\Omega}  {Var}{latin}{0A}
+\DeclareFlexSymbol{0}{Var}{digit}{30}
+\DeclareFlexSymbol{1}{Var}{digit}{31}
+\DeclareFlexSymbol{2}{Var}{digit}{32}
+\DeclareFlexSymbol{3}{Var}{digit}{33}
+\DeclareFlexSymbol{4}{Var}{digit}{34}
+\DeclareFlexSymbol{5}{Var}{digit}{35}
+\DeclareFlexSymbol{6}{Var}{digit}{36}
+\DeclareFlexSymbol{7}{Var}{digit}{37}
+\DeclareFlexSymbol{8}{Var}{digit}{38}
+\DeclareFlexSymbol{9}{Var}{digit}{39}
+
+
+%------------------------------------------------------------------------------
+%	CHANGING TEXT AREA
+%------------------------------------------------------------------------------
+
+%\linespread{1.0} % a bit more for Palatino
+% 686 (factor 2.2) + 33 head + 42 head \the\footskip
+%\areaset[current]{312pt}{761pt} 
+%\setlength{\marginparwidth}{7em}%
+%\setlength{\marginparsep}{2em}%
+
+%------------------------------------------------------------------------------
+% Include printonlyused in the first bracket to only show acronyms used in the
+% text
+\usepackage{acro} 
+% Nice macros for handling all acronyms in the thesis
+%\renewcommand*{\acsfont}[1]{\textssc{#1}} % For MinionPro
+% \newcommand*{\aclabelfont}[1]{\acsfont{#1}}
+
+%------------------------------------------------------------------------------
+%	USING DIFFERENT FONTS
+%------------------------------------------------------------------------------
+\usepackage[quiet]{mathspec}
+\usepackage{xltxtra} %also loads xunicode
+\setmathfont(Digits,Latin)[
+    Numbers={Lining,Proportional},
+    Mapping=tex-text,
+    Ligatures={Common, Rare, Historic},
+]{Hoefler Text}
+\setmathfont(Greek)[
+    Mapping=tex-text,
+    Lowercase=Regular,
+    Uppercase=Regular
+]{Hoefler Text}
+\setmainfont[
+    Mapping=tex-text,
+    Ligatures={TeX, Common, Rare, Historic}
+]{Hoefler Text}

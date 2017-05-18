@@ -1,0 +1,23 @@
+=>PYTHONTEX:STDERR#0#code#
+Traceback (most recent call last):
+  File "pythontex-files-ThesisRomainBrault/py_approximation_default.py", line 51, in <module>
+    import approximation
+  File "../src/approximation.py", line 12, in <module>
+    from efficient_decomposable_gaussian import EfficientDecomposableGaussianORFF
+  File "../src/efficient_decomposable_gaussian.py", line 13, in <module>
+    from matplotlib.pyplot import savefig, subplots, tight_layout
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/matplotlib/pyplot.py", line 30, in <module>
+    from matplotlib import style
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/matplotlib/style/__init__.py", line 3, in <module>
+    from .core import use, context, available, library, reload_library
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/matplotlib/style/core.py", line 213, in <module>
+    _base_library = load_base_library()
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/matplotlib/style/core.py", line 158, in load_base_library
+    library.update(read_style_directory(BASE_LIBRARY_PATH))
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/matplotlib/style/core.py", line 191, in read_style_directory
+    styles[name] = rc_params_from_file(path, use_default_template=False)
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/matplotlib/__init__.py", line 1151, in rc_params_from_file
+    config_from_file = _rc_params_in_file(fname, fail_on_error)
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/matplotlib/__init__.py", line 1093, in _rc_params_in_file
+    raise
+KeyboardInterrupt

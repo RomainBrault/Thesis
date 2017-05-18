@@ -1,0 +1,551 @@
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{i}{Doc-Start}
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {american}
+\defcounter {refsection}{0}\relax 
+\vspace {-\cftbeforepartskip }
+\defcounter {refsection}{0}\relax 
+\select@language {american}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{v}{chapter*.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{v}{chapter*.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{v}{chapter*.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{ix}{chapter*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{ix}{chapter*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{ix}{chapter*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\numberline {i}\spacedlowsmallcaps {Introduction}}{1}{part.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}\spacedlowsmallcaps {Motivations}}{3}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}About statistical learning}{4}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{4}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{4}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{5}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{5}{example.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{5}{example.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{5}{example.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{5}{example.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{6}{example.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.1}Introduction to kernel methods}{6}{subsection.1.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{8}{figure.caption.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}On large-scale learning}{8}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}History and state of the art of large scale learning with kernels}{8}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.1}Quadratic programing, subsampling}{8}{subsection.1.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.2}Gradient descents}{8}{subsection.1.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.3}Mercer Theorem, Nystr\"om method and feature maps}{8}{subsection.1.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.3.3.1}Nystr\"om approximations}{8}{subsubsection.1.3.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.3.3.2}Random Fourier Feature maps}{8}{subsubsection.1.3.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{8}{subsubsection.1.3.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{9}{corollary.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.4}Recent extensions}{9}{subsection.1.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}\spacedlowsmallcaps {Background}}{11}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Notations}{12}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.1}Algebraic structures}{12}{subsection.2.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.2}Topology and continuity}{12}{subsection.2.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{12}{subsection.2.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{12}{subsection.2.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{13}{mparcnt.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{13}{mparcnt.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.3}Measure theory}{13}{subsection.2.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.4}Vector spaces, linear operators and matrices}{13}{subsection.2.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{14}{subsection.2.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{14}{subsection.2.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{14}{subsection.2.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{14}{subsection.2.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{15}{subsection.2.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{15}{figure.caption.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{15}{figure.caption.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Elements of abstract harmonic analysis}{16}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Locally compact Abelian groups}{16}{subsection.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}The Haar measure}{16}{subsection.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}Even and odd functions}{19}{subsection.2.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.4}Characters}{20}{subsection.2.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{20}{subsection.2.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{21}{table.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.5}The Fourier Transform}{23}{subsection.2.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.6}Representations of Groups}{25}{subsection.2.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{25}{subsection.2.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{25}{subsection.2.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}On Operator-Valued Kernels}{25}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.1}Definitions and properties}{26}{subsection.2.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{26}{subsection.2.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{28}{proof.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{30}{proof.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{30}{proof.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{31}{proof.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{31}{definition.2.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.2}Shift-Invariant \acs {OVK} on \acs {LCA} groups}{32}{subsection.2.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{32}{mparcnt.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{33}{proof.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.3}Examples of \aclp {OVK}}{34}{subsection.2.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{34}{subsection.2.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{35}{proposition.2.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{36}{mparcnt.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\numberline {ii}\spacedlowsmallcaps {Contributions}}{39}{part.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {Operator-valued Random Fourier Features}}{41}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Motivations}{42}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{42}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Theoretical study}{42}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{43}{proposition.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{43}{proposition.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{43}{proposition.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{44}{proposition.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.1}Sufficient conditions of existence}{44}{subsection.3.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{45}{Item.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{46}{proof.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{47}{proof.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.2}Examples of spectral decomposition}{49}{subsection.3.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.2.2.1}Gaussian decomposable kernel}{49}{subsubsection.3.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.2.2.2}Skewed-$\chi ^2$ decomposable kernel}{51}{subsubsection.3.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.2.2.3}Curl-free Gaussian kernel}{52}{subsubsection.3.2.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.2.2.4}Divergence-free kernel}{53}{subsubsection.3.2.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.3}Functional Fourier feature map}{54}{subsection.3.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Building Operator-valued Random Fourier Features}{55}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{55}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{59}{figure.caption.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.1}Examples of Operator Random Fourier Feature maps}{61}{subsection.3.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.2}Regularization property}{64}{subsection.3.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}Conclusions}{66}{section.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Bounding the error of the ORFF approximation}}{67}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Convegence with high probability of the ORFF estimator}{68}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{68}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{69}{figure.caption.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{69}{figure.caption.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{69}{figure.caption.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{70}{figure.caption.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.1}Random Fourier Features in the scalar case and decomposable OVK}{70}{subsection.4.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.2}Uniform convergence of ORFF approximation on LCA groups}{71}{subsection.4.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.3}Dealing with infinite dimensional operators}{75}{subsection.4.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{76}{subsection.4.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.4}Variance of the ORFF approximation}{77}{subsection.4.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.5}Application on decomposable, curl-free and divergence-free OVK}{77}{subsection.4.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.1.5.1}Decomposable kernel}{78}{subsubsection.4.1.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.1.5.2}Curl-free and divergence-free kernels:}{79}{subsubsection.4.1.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.1.5.3}Computing the Orlicz norm}{79}{subsubsection.4.1.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Conclusions}{79}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Learning with Feature maps}}{81}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Learning with {ORFF}}{82}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.1}Supervised regression}{82}{subsection.5.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.2}Representer theorem and Feature equivalence}{83}{subsection.5.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{83}{mparcnt.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{83}{theorem.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{83}{theorem.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{84}{theorem.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{86}{mparcnt.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{86}{theorem.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{87}{theorem.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Solution of the empirical risk minimization}{89}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.1}Gradient methods}{89}{subsection.5.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.2}Complexity analysis}{91}{subsection.5.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{92}{algocf.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.3}Efficient matrix-free operators}{95}{subsection.5.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.4}Case of study: the decomposable kernel}{95}{subsection.5.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{97}{mparcnt.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.5}Linear operators in matrix form}{98}{subsection.5.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{98}{subsection.5.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{99}{subsection.5.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{101}{table.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.6}Curl-free kernel}{101}{subsection.5.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.7}Divergence-free kernel}{102}{subsection.5.2.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.8}Iterative (matrix-free) solvers}{102}{subsection.5.2.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Experiments}{103}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3.1}Learning with {ORFF} vs learning with {OVK}}{103}{subsection.5.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.3.1.1}Datasets}{103}{subsubsection.5.3.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{103}{subsubsection.5.3.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{103}{subsubsection.5.3.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{104}{subsubsection.5.3.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.3.1.2}Results}{104}{subsubsection.5.3.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{104}{figure.caption.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{105}{figure.caption.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{105}{figure.caption.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{106}{figure.caption.33}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.4}Conclusions}{108}{section.5.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Consistency and Generalization bound for ORFF}}{111}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Generalization bound}{112}{section.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.1}Generalization by bounding the function space complexity}{113}{subsection.6.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.2}Algorithm stability}{116}{subsection.6.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Consitency of learning with ORFF}{117}{section.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.3}Discussion}{120}{section.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{120}{section.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{120}{section.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}\spacedlowsmallcaps {Application to time series modelling}}{123}{chapter.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}Introduction}{124}{section.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{124}{section.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}Operator-Valued Kernels for Vector Autoregression}{124}{section.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{125}{section.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{125}{section.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{125}{Item.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{126}{proposition.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.3}Operator-Valued Random Fourier Features}{126}{section.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{126}{section.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.3.1}Numerical Performance}{129}{subsection.7.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.3.2}Simulated data}{129}{subsection.7.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{129}{subsection.7.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.3.3}Influence of the number of random features}{130}{subsection.7.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.3.4}Real datasets}{130}{subsection.7.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Macrodata}{131}{subsection.7.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Gesture phase.}{131}{subsection.7.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Climate.}{131}{subsection.7.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Heart.}{131}{subsection.7.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.4}Discussion}{132}{section.7.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\numberline {iii}\spacedlowsmallcaps {Perspectives and final words}}{133}{part.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}\spacedlowsmallcaps {Perspectives}}{135}{chapter.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.1}Learning functions}{136}{section.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {8.1.0.1}One class SVM revisited}{136}{subsubsection.8.1.0.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {8.1.0.2}Many quantile regression}{136}{subsubsection.8.1.0.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.2}Neural networks, deep learning}{136}{section.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.3}Operalib}{136}{section.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {9}\spacedlowsmallcaps {Conlusions}}{137}{chapter.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\numberline {iv}\spacedlowsmallcaps {Appendix}}{139}{part.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}\spacedlowsmallcaps {Proofs of theorems}}{141}{appendix.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.1}Proof of the error bound with high probability of the ORFF estimator}{142}{section.A.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.1.1}Epsilon-net}{142}{subsection.A.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{142}{subsection.A.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.1.2}Bounding the Lipschitz constant}{143}{subsection.A.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.1.3}Bounding the error on a given anchor point}{144}{subsection.A.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{146}{theorem.A.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.1.4}Union Bound and examples}{148}{subsection.A.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.2}Proof of the ORFF estimator variance bound}{153}{section.A.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {B}\spacedlowsmallcaps {Miscellaneous}}{155}{appendix.B}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B.1}Operator-valued functions and integration}{156}{section.B.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B.2}About concentration inequalities}{156}{section.B.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B.3}ORFF Engineering}{156}{section.B.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B.4}Learning with semi-supervision}{156}{section.B.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {B.4.1}Representer theorem and feature equivalence}{156}{subsection.B.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{156}{theorem.B.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{156}{theorem.B.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{158}{theorem.B.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{159}{theorem.B.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {B.4.2}Gradients}{161}{subsection.B.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {B.4.3}Complexity}{164}{subsection.B.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {C}\spacedlowsmallcaps {Relevant piece of code}}{167}{appendix.C}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {C.1}Python code for figure 3.1}{168}{section.C.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {C.2}Python code for figure 5.1}{169}{section.C.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {C.3}Python code for figure 5.3}{171}{section.C.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {C.4}Python code for figure 5.4}{173}{section.C.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {C.5}Python code for figure 5.5}{176}{section.C.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {D}\spacedlowsmallcaps {One Class Splitting Criteria for Random Forests}}{181}{appendix.D}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{182}{appendix.D}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{182}{appendix.D}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{182}{appendix.D}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{183}{appendix.D}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{183}{appendix.D}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{184}{appendix.D}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{184}{appendix.D}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{184}{appendix.D}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{184}{appendix.D}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.1}Background on decision trees}{184}{section.D.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{185}{section.D.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.2}Adaptation to the one-class setting}{186}{section.D.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.2.1}One-class splitting criterion}{186}{subsection.D.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {D.2.1.1}Naive approach}{186}{subsubsection.D.2.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {D.2.1.2}Adaptive approach}{187}{subsubsection.D.2.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{187}{figure.caption.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{187}{figure.caption.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {D.2.1.3}Resulting outlier distribution}{188}{subsubsection.D.2.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.2.2}Prediction: scoring function of the forest}{189}{subsection.D.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.2.3}OneClassRF: a Generic One-Class Random Forest algorithm}{190}{subsection.D.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{190}{table.D.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{190}{table.D.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.3}Benchmarks}{191}{section.D.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.3.1}Default parameters of OneClassRF}{191}{subsection.D.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{192}{subsection.D.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.3.2}Results}{192}{subsection.D.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.4}Theoretical analysis}{192}{section.D.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.4.1}Underlying model}{192}{subsection.D.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {D.4.1.1}Existing Two-Class Model (n, $\boldsymbol {\alpha }$).}{194}{subsubsection.D.4.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {D.4.1.2}One-Class-Model ($n$, $\boldsymbol {\alpha }$).}{194}{subsubsection.D.4.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{194}{subsubsection.D.4.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.4.2}Adaptive approach}{195}{subsection.D.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.5}Conclusion}{197}{section.D.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.6}Further insights on the algorithm}{197}{section.D.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.6.1}Interpretation of parameter gamma}{197}{subsection.D.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.6.2}Alternative scoring functions}{197}{subsection.D.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.6.3}Alternative stopping criteria}{198}{subsection.D.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.6.4}Variable importance}{198}{subsection.D.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.7}Hyper-parameters of tested algorithms}{198}{section.D.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{198}{section.D.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{198}{section.D.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{199}{section.D.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{199}{section.D.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{199}{section.D.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{200}{section.D.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{200}{section.D.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.8}Description of the datasets}{200}{section.D.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{200}{section.D.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.9}Further details on benchmarks and outlier detection results}{201}{section.D.9}
+\defcounter {refsection}{0}\relax 
+\vspace {\beforebibskip }
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\spacedlowsmallcaps {Bibliography}}{211}{dummy.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{225}{chapter*.70}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{227}{chapter*.70}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{228}{chapter*.70}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{228}{chapter*.70}

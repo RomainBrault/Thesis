@@ -1,0 +1,29 @@
+=>PYTHONTEX:STDERR#0#code#
+Traceback (most recent call last):
+  File "pythontex-files-ThesisRomainBrault/py_not_mercer_default.py", line 51, in <module>
+    import not_mercer
+  File "../src/not_mercer.py", line 3, in <module>
+    import matplotlib
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/matplotlib/__init__.py", line 129, in <module>
+    from six.moves.urllib.request import urlopen
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/six.py", line 92, in __get__
+    result = self._resolve()
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/six.py", line 160, in _resolve
+    module = _import_module(self.mod)
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/six.py", line 82, in _import_module
+    __import__(name)
+  File "/Users/Romain/anaconda/lib/python3.5/urllib/request.py", line 88, in <module>
+    import http.client
+  File "/Users/Romain/anaconda/lib/python3.5/http/client.py", line 71, in <module>
+    import email.parser
+  File "/Users/Romain/anaconda/lib/python3.5/email/parser.py", line 12, in <module>
+    from email.feedparser import FeedParser, BytesFeedParser
+  File "/Users/Romain/anaconda/lib/python3.5/email/feedparser.py", line 27, in <module>
+    from email import message
+  File "/Users/Romain/anaconda/lib/python3.5/email/message.py", line 16, in <module>
+    from email import utils
+  File "/Users/Romain/anaconda/lib/python3.5/email/utils.py", line 29, in <module>
+    import socket
+  File "/Users/Romain/anaconda/lib/python3.5/socket.py", line 49, in <module>
+    import _socket
+KeyboardInterrupt

@@ -1,0 +1,904 @@
+
+\makeatletter
+\def\PYGdefault@reset{\let\PYGdefault@it=\relax \let\PYGdefault@bf=\relax%
+    \let\PYGdefault@ul=\relax \let\PYGdefault@tc=\relax%
+    \let\PYGdefault@bc=\relax \let\PYGdefault@ff=\relax}
+\def\PYGdefault@tok#1{\csname PYGdefault@tok@#1\endcsname}
+\def\PYGdefault@toks#1+{\ifx\relax#1\empty\else%
+    \PYGdefault@tok{#1}\expandafter\PYGdefault@toks\fi}
+\def\PYGdefault@do#1{\PYGdefault@bc{\PYGdefault@tc{\PYGdefault@ul{%
+    \PYGdefault@it{\PYGdefault@bf{\PYGdefault@ff{#1}}}}}}}
+\def\PYGdefault#1#2{\PYGdefault@reset\PYGdefault@toks#1+\relax+\PYGdefault@do{#2}}
+
+\expandafter\def\csname PYGdefault@tok@s1\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@vi\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PYGdefault@tok@mb\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYGdefault@tok@kd\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@ch\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PYGdefault@tok@gt\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PYGdefault@tok@no\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@nn\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@na\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PYGdefault@tok@err\endcsname{\def\PYGdefault@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PYGdefault@tok@gd\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@nt\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@nd\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@vg\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PYGdefault@tok@gs\endcsname{\let\PYGdefault@bf=\textbf}
+\expandafter\def\csname PYGdefault@tok@gr\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@kc\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@cm\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PYGdefault@tok@kn\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@s\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@mo\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYGdefault@tok@k\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@sh\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@sc\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@gi\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@ni\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PYGdefault@tok@kr\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@se\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@bp\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@gu\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PYGdefault@tok@nb\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@gh\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PYGdefault@tok@go\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PYGdefault@tok@cpf\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PYGdefault@tok@w\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PYGdefault@tok@ss\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PYGdefault@tok@nf\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@mi\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYGdefault@tok@si\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PYGdefault@tok@sa\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@vc\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PYGdefault@tok@sd\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@dl\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@mh\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYGdefault@tok@sr\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PYGdefault@tok@nl\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@m\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYGdefault@tok@nc\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@vm\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PYGdefault@tok@nv\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PYGdefault@tok@cp\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@ne\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PYGdefault@tok@c1\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PYGdefault@tok@sb\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@cs\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PYGdefault@tok@il\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYGdefault@tok@sx\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@kt\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PYGdefault@tok@s2\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@fm\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@kp\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@ge\endcsname{\let\PYGdefault@it=\textit}
+\expandafter\def\csname PYGdefault@tok@mf\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYGdefault@tok@gp\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PYGdefault@tok@c\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PYGdefault@tok@ow\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@o\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+
+\def\PYGdefaultZbs{\char`\\}
+\def\PYGdefaultZus{\char`\_}
+\def\PYGdefaultZob{\char`\{}
+\def\PYGdefaultZcb{\char`\}}
+\def\PYGdefaultZca{\char`\^}
+\def\PYGdefaultZam{\char`\&}
+\def\PYGdefaultZlt{\char`\<}
+\def\PYGdefaultZgt{\char`\>}
+\def\PYGdefaultZsh{\char`\#}
+\def\PYGdefaultZpc{\char`\%}
+\def\PYGdefaultZdl{\char`\$}
+\def\PYGdefaultZhy{\char`\-}
+\def\PYGdefaultZsq{\char`\'}
+\def\PYGdefaultZdq{\char`\"}
+\def\PYGdefaultZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYGdefaultZat{@}
+\def\PYGdefaultZlb{[}
+\def\PYGdefaultZrb{]}
+\makeatother
+\begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@PYGpython@EXT:./src/not_mercer.py@defaultverb@0}
+\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Plot figure: Different outcomes of a Gaussian kernel approximation.\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+
+\PYGdefault{k+kn}{import} \PYGdefault{n+nn}{matplotlib}
+\PYGdefault{k+kn}{import} \PYGdefault{n+nn}{numpy} \PYGdefault{k+kn}{as} \PYGdefault{n+nn}{np}
+\PYGdefault{k+kn}{import} \PYGdefault{n+nn}{matplotlib.pyplot} \PYGdefault{k+kn}{as} \PYGdefault{n+nn}{plt}
+
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{sklearn.metrics} \PYGdefault{k+kn}{import} \PYGdefault{n}{pairwise\PYGdefaultZus{}kernels}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{phi}\PYGdefault{p}{(}\PYGdefault{n}{x}\PYGdefault{p}{,} \PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}RFF map.\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{n}{Z} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{x}\PYGdefault{p}{,} \PYGdefault{n}{w}\PYGdefault{p}{)}
+    \PYGdefault{k}{return} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{hstack}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{cos}\PYGdefault{p}{(}\PYGdefault{n}{Z}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{sin}\PYGdefault{p}{(}\PYGdefault{n}{Z}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{)} \PYGdefault{o}{/} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{sqrt}\PYGdefault{p}{(}\PYGdefault{n}{D}\PYGdefault{p}{)}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{createColorbar}\PYGdefault{p}{(}\PYGdefault{n}{lwr}\PYGdefault{p}{,} \PYGdefault{n}{upr}\PYGdefault{p}{,} \PYGdefault{n}{fig}\PYGdefault{p}{,} \PYGdefault{n}{axes}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Create colorbar for multiple Pyplot plot.\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{n}{cax} \PYGdefault{o}{=} \PYGdefault{n}{fig}\PYGdefault{o}{.}\PYGdefault{n}{add\PYGdefaultZus{}axes}\PYGdefault{p}{(}\PYGdefault{p}{[}\PYGdefault{o}{.}\PYGdefault{l+m+mi}{92}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{0.1}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{0.01}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{0.8}\PYGdefault{p}{]}\PYGdefault{p}{)}
+    \PYGdefault{n}{norm} \PYGdefault{o}{=} \PYGdefault{n}{matplotlib}\PYGdefault{o}{.}\PYGdefault{n}{colors}\PYGdefault{o}{.}\PYGdefault{n}{LogNorm}\PYGdefault{p}{(}\PYGdefault{n}{vmin}\PYGdefault{o}{=}\PYGdefault{n}{lwr}\PYGdefault{p}{,} \PYGdefault{n}{vmax}\PYGdefault{o}{=}\PYGdefault{n}{upr}\PYGdefault{p}{,} \PYGdefault{n}{clip}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{False}\PYGdefault{p}{)}
+    \PYGdefault{n}{c} \PYGdefault{o}{=} \PYGdefault{n}{matplotlib}\PYGdefault{o}{.}\PYGdefault{n}{colorbar}\PYGdefault{o}{.}\PYGdefault{n}{ColorbarBase}\PYGdefault{p}{(}\PYGdefault{n}{cax}\PYGdefault{p}{,} \PYGdefault{n}{cmap}\PYGdefault{o}{=}\PYGdefault{n}{plt}\PYGdefault{o}{.}\PYGdefault{n}{get\PYGdefaultZus{}cmap}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{rainbow}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                                         \PYGdefault{n}{norm}\PYGdefault{o}{=}\PYGdefault{n}{norm}\PYGdefault{p}{,} \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{D=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{plt}\PYGdefault{o}{.}\PYGdefault{n}{title}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{widetilde\PYGdefaultZob{}K\PYGdefaultZcb{}\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{k}{return} \PYGdefault{n}{c}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{main}\PYGdefault{p}{(}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Plot figure: Different outcomes of a Gaussian kernel approximation.\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{n}{T} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{25}  \PYGdefault{c+c1}{\PYGdefaultZsh{} Number of curves}
+
+    \PYGdefault{n}{cm\PYGdefaultZus{}subsection} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{linspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{n}{T} \PYGdefault{o}{+} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}
+    \PYGdefault{n}{colors} \PYGdefault{o}{=} \PYGdefault{p}{[}\PYGdefault{n}{matplotlib}\PYGdefault{o}{.}\PYGdefault{n}{cm}\PYGdefault{o}{.}\PYGdefault{n}{rainbow}\PYGdefault{p}{(}\PYGdefault{n}{x}\PYGdefault{p}{)} \PYGdefault{k}{for} \PYGdefault{n}{x} \PYGdefault{o+ow}{in} \PYGdefault{n}{cm\PYGdefaultZus{}subsection}\PYGdefault{p}{]}
+
+    \PYGdefault{n}{d} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{1}  \PYGdefault{c+c1}{\PYGdefaultZsh{} Dimension of the input}
+    \PYGdefault{n}{N} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{250}  \PYGdefault{c+c1}{\PYGdefaultZsh{} Number of points per curves}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Generate N data in (\PYGdefaultZhy{}1, 1) and exact Gram matrix}
+    \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{random}\PYGdefault{o}{.}\PYGdefault{n}{seed}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}
+    \PYGdefault{n}{X} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{linspace}\PYGdefault{p}{(}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{n}{N}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{N}\PYGdefault{p}{,} \PYGdefault{n}{d}\PYGdefault{p}{)}\PYGdefault{p}{)}
+    \PYGdefault{n}{K} \PYGdefault{o}{=} \PYGdefault{n}{pairwise\PYGdefaultZus{}kernels}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{metric}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{rbf}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1.} \PYGdefault{o}{/} \PYGdefault{p}{(}\PYGdefault{l+m+mf}{2.} \PYGdefault{o}{*} \PYGdefault{o}{.}\PYGdefault{l+m+mi}{1} \PYGdefault{o}{*}\PYGdefault{o}{*} \PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}\PYGdefault{p}{)}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} A Matrix for the decomposable kernel. Link the outputs to some mean value}
+    \PYGdefault{n}{c} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{random}\PYGdefault{o}{.}\PYGdefault{n}{randn}\PYGdefault{p}{(}\PYGdefault{n}{N}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}
+    \PYGdefault{n}{A} \PYGdefault{o}{=} \PYGdefault{o}{.}\PYGdefault{l+m+mi}{5} \PYGdefault{o}{*} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{eye}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{)} \PYGdefault{o}{+} \PYGdefault{o}{.}\PYGdefault{l+m+mi}{5} \PYGdefault{o}{*} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{ones}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}\PYGdefault{p}{)}
+
+    \PYGdefault{n}{plt}\PYGdefault{o}{.}\PYGdefault{n}{close}\PYGdefault{p}{(}\PYGdefault{p}{)}
+    \PYGdefault{n}{plt}\PYGdefault{o}{.}\PYGdefault{n}{rc}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{text}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{usetex}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)}
+    \PYGdefault{n}{plt}\PYGdefault{o}{.}\PYGdefault{n}{rc}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{font}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{family}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{serif}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{f}\PYGdefault{p}{,} \PYGdefault{n}{axes} \PYGdefault{o}{=} \PYGdefault{n}{plt}\PYGdefault{o}{.}\PYGdefault{n}{subplots}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{2}\PYGdefault{p}{,} \PYGdefault{n}{figsize}\PYGdefault{o}{=}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{12}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{8}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{sharex}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{,} \PYGdefault{n}{sharey}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} For each curve with different D}
+    \PYGdefault{k}{for} \PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{n}{D} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{enumerate}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{4}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{:}
+        \PYGdefault{n}{D} \PYGdefault{o}{=} \PYGdefault{n+nb}{int}\PYGdefault{p}{(}\PYGdefault{n}{D}\PYGdefault{p}{)}
+        \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{random}\PYGdefault{o}{.}\PYGdefault{n}{seed}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}
+
+        \PYGdefault{n}{w} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{random}\PYGdefault{o}{.}\PYGdefault{n}{randn}\PYGdefault{p}{(}\PYGdefault{n}{d}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)} \PYGdefault{o}{/} \PYGdefault{o}{.}\PYGdefault{l+m+mi}{1}
+        \PYGdefault{n}{phiX} \PYGdefault{o}{=} \PYGdefault{n}{phi}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)}
+        \PYGdefault{n}{Kt} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{p}{,} \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{T}\PYGdefault{p}{)}
+
+        \PYGdefault{c+c1}{\PYGdefaultZsh{} Generate outputs with the exact Gram matrix}
+        \PYGdefault{n}{pred} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{Kt}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{A}\PYGdefault{p}{)}
+        \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{plot}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{pred}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{o}{=}\PYGdefault{n}{colors}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{lw}\PYGdefault{o}{=}\PYGdefault{o}{.}\PYGdefault{l+m+mi}{5}\PYGdefault{p}{,} \PYGdefault{n}{linestyle}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZhy{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}ylabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}y\PYGdefaultZus{}1\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{plot}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{pred}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{o}{=}\PYGdefault{n}{colors}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{lw}\PYGdefault{o}{=}\PYGdefault{o}{.}\PYGdefault{l+m+mi}{5}\PYGdefault{p}{,} \PYGdefault{n}{linestyle}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZhy{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}ylabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}y\PYGdefaultZus{}2\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+
+        \PYGdefault{c+c1}{\PYGdefaultZsh{} Generate outputs with the a realization of the random Gram matrix}
+        \PYGdefault{n}{w} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{random}\PYGdefault{o}{.}\PYGdefault{n}{randn}\PYGdefault{p}{(}\PYGdefault{n}{d}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)} \PYGdefault{o}{/} \PYGdefault{o}{.}\PYGdefault{l+m+mi}{1}
+        \PYGdefault{n}{phiX} \PYGdefault{o}{=} \PYGdefault{n}{phi}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)}
+        \PYGdefault{n}{Kt} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{p}{,} \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{T}\PYGdefault{p}{)}
+
+        \PYGdefault{n}{pred} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{Kt}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{A}\PYGdefault{p}{)}
+        \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{plot}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{pred}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{o}{=}\PYGdefault{n}{colors}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{lw}\PYGdefault{o}{=}\PYGdefault{o}{.}\PYGdefault{l+m+mi}{5}\PYGdefault{p}{,} \PYGdefault{n}{linestyle}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZhy{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}x\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}ylabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}y\PYGdefaultZus{}1\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{plot}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{pred}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{o}{=}\PYGdefault{n}{colors}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{lw}\PYGdefault{o}{=}\PYGdefault{o}{.}\PYGdefault{l+m+mi}{5}\PYGdefault{p}{,} \PYGdefault{n}{linestyle}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZhy{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}x\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}ylabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}y\PYGdefaultZus{}2\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{plot}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{K}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{A}\PYGdefault{p}{)}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{k}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{lw}\PYGdefault{o}{=}\PYGdefault{o}{.}\PYGdefault{l+m+mi}{5}\PYGdefault{p}{,} \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{K}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{plot}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{K}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{A}\PYGdefault{p}{)}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{k}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{lw}\PYGdefault{o}{=}\PYGdefault{o}{.}\PYGdefault{l+m+mi}{5}\PYGdefault{p}{,} \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{K}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{plot}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{K}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{A}\PYGdefault{p}{)}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{k}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{lw}\PYGdefault{o}{=}\PYGdefault{o}{.}\PYGdefault{l+m+mi}{5}\PYGdefault{p}{,} \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{K}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{plot}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{K}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{A}\PYGdefault{p}{)}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{k}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{lw}\PYGdefault{o}{=}\PYGdefault{o}{.}\PYGdefault{l+m+mi}{5}\PYGdefault{p}{,} \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{K}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}title}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{widetilde\PYGdefaultZob{}K\PYGdefaultZcb{}u }\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{approx Ku\PYGdefaultZdl{}, realization 1}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{x}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1.1}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}title}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{widetilde\PYGdefaultZob{}K\PYGdefaultZcb{}u }\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{approx Ku\PYGdefaultZdl{}, realization 2}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{x}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1.1}\PYGdefault{p}{)}
+
+    \PYGdefault{k}{for} \PYGdefault{n}{xx} \PYGdefault{o+ow}{in} \PYGdefault{n}{axes}\PYGdefault{o}{.}\PYGdefault{n}{ravel}\PYGdefault{p}{(}\PYGdefault{p}{)}\PYGdefault{p}{:}
+        \PYGdefault{n}{xx}\PYGdefault{o}{.}\PYGdefault{n}{legend}\PYGdefault{p}{(}\PYGdefault{n}{loc}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{4}\PYGdefault{p}{)}
+
+    \PYGdefault{n}{createColorbar}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{,} \PYGdefault{n}{f}\PYGdefault{p}{,} \PYGdefault{n}{axes}\PYGdefault{p}{)}
+    \PYGdefault{n}{plt}\PYGdefault{o}{.}\PYGdefault{n}{savefig}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{not\PYGdefaultZus{}Mercer.pgf}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{bbox\PYGdefaultZus{}inches}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{tight}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+
+\PYGdefault{k}{if} \PYGdefault{n+nv+vm}{\PYGdefaultZus{}\PYGdefaultZus{}name\PYGdefaultZus{}\PYGdefaultZus{}} \PYGdefault{o}{==} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{l+s+s2}{\PYGdefaultZus{}\PYGdefaultZus{}main\PYGdefaultZus{}\PYGdefaultZus{}}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{p}{:}
+    \PYGdefault{n}{main}\PYGdefault{p}{(}\PYGdefault{p}{)}
+\end{pytx@SaveVerbatim}
+
+\begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@PYGpython@EXT:./src/efficient_divfree_gaussian.py@defaultverb@0}
+\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Efficient implementation of the Gaussian divergence\PYGdefaultZhy{}free kernel.\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{time} \PYGdefault{k+kn}{import} \PYGdefault{n}{time}
+
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{pympler.asizeof} \PYGdefault{k+kn}{import} \PYGdefault{n}{asizeof}
+
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{numpy.random} \PYGdefault{k+kn}{import} \PYGdefault{n}{rand}\PYGdefault{p}{,} \PYGdefault{n}{seed}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{numpy.linalg} \PYGdefault{k+kn}{import} \PYGdefault{n}{norm}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{numpy} \PYGdefault{k+kn}{import} \PYGdefault{n}{dot}\PYGdefault{p}{,} \PYGdefault{n}{zeros}\PYGdefault{p}{,} \PYGdefault{n}{logspace}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{,} \PYGdefault{n}{matrix}\PYGdefault{p}{,} \PYGdefault{n+nb}{int}\PYGdefault{p}{,} \PYGdefault{n}{eye}\PYGdefault{p}{,} \PYGdefault{n+nb}{float}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{scipy.sparse.linalg} \PYGdefault{k+kn}{import} \PYGdefault{n}{LinearOperator}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{sklearn.kernel\PYGdefaultZus{}approximation} \PYGdefault{k+kn}{import} \PYGdefault{n}{RBFSampler}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{matplotlib.pyplot} \PYGdefault{k+kn}{import} \PYGdefault{n}{savefig}\PYGdefault{p}{,} \PYGdefault{n}{subplots}\PYGdefault{p}{,} \PYGdefault{n}{tight\PYGdefaultZus{}layout}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{\PYGdefaultZus{}rebase}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{p}{,} \PYGdefault{n}{W}\PYGdefault{p}{,} \PYGdefault{n}{Wn}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{k}{return} \PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{)} \PYGdefault{o}{*}
+            \PYGdefault{p}{(}\PYGdefault{n}{eye}\PYGdefault{p}{(}\PYGdefault{n}{W}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{n}{W}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{W}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{)} \PYGdefault{o}{*} \PYGdefault{n}{Wn} \PYGdefault{o}{\PYGdefaultZhy{}}
+            \PYGdefault{n}{W} \PYGdefault{o}{*} \PYGdefault{n}{W}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{n}{W}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)} \PYGdefault{o}{/} \PYGdefault{n}{Wn}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}
+        \PYGdefault{p}{(}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{n}{W}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]} \PYGdefault{o}{*} \PYGdefault{n}{Wn}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{3}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{)}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{NaiveDivergenceFreeGaussianORFF}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1.}\PYGdefault{p}{,}
+                                    \PYGdefault{n}{D}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{100}\PYGdefault{p}{,} \PYGdefault{n}{eps}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1e\PYGdefaultZhy{}5}\PYGdefault{p}{,} \PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Return the Naive ORFF map associated with the data X.}
+
+\PYGdefault{l+s+sd}{    Parameters}
+\PYGdefault{l+s+sd}{    \PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+\PYGdefault{l+s+sd}{    X : \PYGdefaultZob{}array\PYGdefaultZhy{}like\PYGdefaultZcb{}, shape = [n\PYGdefaultZus{}samples, n\PYGdefaultZus{}features]}
+\PYGdefault{l+s+sd}{        Samples.}
+\PYGdefault{l+s+sd}{    gamma : \PYGdefaultZob{}float\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Gamma parameter of the RBF kernel.}
+\PYGdefault{l+s+sd}{    D : \PYGdefaultZob{}integer\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Number of random features.}
+\PYGdefault{l+s+sd}{    eps : \PYGdefaultZob{}float\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Cutoff threshold for the singular values of A.}
+\PYGdefault{l+s+sd}{    random\PYGdefaultZus{}state : \PYGdefaultZob{}integer\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Seed of the generator.}
+
+\PYGdefault{l+s+sd}{    Returns}
+\PYGdefault{l+s+sd}{    \PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+\PYGdefault{l+s+sd}{    \PYGdefaultZbs{}tilde\PYGdefaultZob{}\PYGdefaultZbs{}Phi\PYGdefaultZcb{}(X) : array}
+\PYGdefault{l+s+sd}{    \PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{n}{phi\PYGdefaultZus{}s} \PYGdefault{o}{=} \PYGdefault{n}{RBFSampler}\PYGdefault{p}{(}\PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{n}{gamma}\PYGdefault{p}{,} \PYGdefault{n}{n\PYGdefaultZus{}components}\PYGdefault{o}{=}\PYGdefault{n}{D}\PYGdefault{p}{,}
+                       \PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{o}{=}\PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{p}{)}
+
+    \PYGdefault{n}{phiX} \PYGdefault{o}{=} \PYGdefault{n}{\PYGdefaultZus{}rebase}\PYGdefault{p}{(}\PYGdefault{n}{phi\PYGdefaultZus{}s}\PYGdefault{o}{.}\PYGdefault{n}{fit\PYGdefaultZus{}transform}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                   \PYGdefault{n}{phi\PYGdefaultZus{}s}\PYGdefault{o}{.}\PYGdefault{n}{random\PYGdefaultZus{}weights\PYGdefaultZus{}}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                   \PYGdefault{n}{norm}\PYGdefault{p}{(}\PYGdefault{n}{phi\PYGdefaultZus{}s}\PYGdefault{o}{.}\PYGdefault{n}{random\PYGdefaultZus{}weights\PYGdefaultZus{}}\PYGdefault{p}{,} \PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{)}
+
+    \PYGdefault{k}{return} \PYGdefault{n}{matrix}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{p}{)}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{EfficientDivergenceFreeGaussianORFF}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1.}\PYGdefault{p}{,}
+                                        \PYGdefault{n}{D}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{100}\PYGdefault{p}{,} \PYGdefault{n}{eps}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1e\PYGdefaultZhy{}5}\PYGdefault{p}{,} \PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Return the Efficient ORFF map associated with the data X.}
+
+\PYGdefault{l+s+sd}{    Parameters}
+\PYGdefault{l+s+sd}{    \PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+\PYGdefault{l+s+sd}{    X : \PYGdefaultZob{}array\PYGdefaultZhy{}like\PYGdefaultZcb{}, shape = [n\PYGdefaultZus{}samples, n\PYGdefaultZus{}features]}
+\PYGdefault{l+s+sd}{        Samples.}
+\PYGdefault{l+s+sd}{    gamma : \PYGdefaultZob{}float\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Gamma parameter of the RBF kernel.}
+\PYGdefault{l+s+sd}{    D : \PYGdefaultZob{}integer\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Number of random features.}
+\PYGdefault{l+s+sd}{    eps : \PYGdefaultZob{}float\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Cutoff threshold for the singular values of A.}
+\PYGdefault{l+s+sd}{    random\PYGdefaultZus{}state : \PYGdefaultZob{}integer\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Seed of the generator.}
+
+\PYGdefault{l+s+sd}{    Returns}
+\PYGdefault{l+s+sd}{    \PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+\PYGdefault{l+s+sd}{    \PYGdefaultZbs{}tilde\PYGdefaultZob{}\PYGdefaultZbs{}Phi\PYGdefaultZcb{}(X) : array}
+\PYGdefault{l+s+sd}{    \PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{n}{phi\PYGdefaultZus{}s} \PYGdefault{o}{=} \PYGdefault{n}{RBFSampler}\PYGdefault{p}{(}\PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{n}{gamma}\PYGdefault{p}{,} \PYGdefault{n}{n\PYGdefaultZus{}components}\PYGdefault{o}{=}\PYGdefault{n}{D}\PYGdefault{p}{,}
+                       \PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{o}{=}\PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{p}{)}
+    \PYGdefault{n}{phiX} \PYGdefault{o}{=} \PYGdefault{n}{phi\PYGdefaultZus{}s}\PYGdefault{o}{.}\PYGdefault{n}{fit\PYGdefaultZus{}transform}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{)}
+    \PYGdefault{n}{W} \PYGdefault{o}{=} \PYGdefault{n}{phi\PYGdefaultZus{}s}\PYGdefault{o}{.}\PYGdefault{n}{random\PYGdefaultZus{}weights\PYGdefaultZus{}}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{)}
+    \PYGdefault{n}{Wn} \PYGdefault{o}{=} \PYGdefault{n}{norm}\PYGdefault{p}{(}\PYGdefault{n}{phi\PYGdefaultZus{}s}\PYGdefault{o}{.}\PYGdefault{n}{random\PYGdefaultZus{}weights\PYGdefaultZus{}}\PYGdefault{p}{,} \PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}\PYGdefault{p}{)}
+    \PYGdefault{k}{return} \PYGdefault{n}{LinearOperator}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]} \PYGdefault{o}{*} \PYGdefault{n}{X}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,}
+                           \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]} \PYGdefault{o}{*} \PYGdefault{n}{X}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                          \PYGdefault{n}{matvec}\PYGdefault{o}{=}\PYGdefault{k}{lambda} \PYGdefault{n}{b}\PYGdefault{p}{:} \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{\PYGdefaultZus{}rebase}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{p}{,} \PYGdefault{n}{W}\PYGdefault{p}{,} \PYGdefault{n}{Wn}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{b}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                          \PYGdefault{n}{rmatvec}\PYGdefault{o}{=}\PYGdefault{k}{lambda} \PYGdefault{n}{r}\PYGdefault{p}{:} \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{\PYGdefaultZus{}rebase}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{p}{,} \PYGdefault{n}{W}\PYGdefault{p}{,} \PYGdefault{n}{Wn}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{T}\PYGdefault{p}{,} \PYGdefault{n}{r}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                          \PYGdefault{n}{dtype}\PYGdefault{o}{=}\PYGdefault{n+nb}{float}\PYGdefault{p}{)}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{main}\PYGdefault{p}{(}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Plot figure: Efficient decomposable gaussian ORFF.\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{n}{N} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{100}  \PYGdefault{c+c1}{\PYGdefaultZsh{} Number of points}
+    \PYGdefault{n}{dmax} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{100}  \PYGdefault{c+c1}{\PYGdefaultZsh{} Input dimension}
+    \PYGdefault{n}{D} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{100}  \PYGdefault{c+c1}{\PYGdefaultZsh{} Number of random features}
+
+    \PYGdefault{n}{seed}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}
+
+    \PYGdefault{n}{R}\PYGdefault{p}{,} \PYGdefault{n}{T} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{10}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{10}
+    \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{,} \PYGdefault{n}{mem\PYGdefaultZus{}Efficient} \PYGdefault{o}{=} \PYGdefault{n}{zeros}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{zeros}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{p}{)}
+    \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{,} \PYGdefault{n}{mem\PYGdefaultZus{}naive} \PYGdefault{o}{=} \PYGdefault{n}{zeros}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{zeros}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{p}{)}
+
+    \PYGdefault{k}{for} \PYGdefault{n}{i}\PYGdefault{p}{,} \PYGdefault{n}{d} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{enumerate}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{dmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{:}
+        \PYGdefault{n}{X} \PYGdefault{o}{=} \PYGdefault{n}{rand}\PYGdefault{p}{(}\PYGdefault{n}{N}\PYGdefault{p}{,} \PYGdefault{n+nb}{int}\PYGdefault{p}{(}\PYGdefault{n}{d}\PYGdefault{p}{)}\PYGdefault{p}{)}
+
+        \PYGdefault{c+c1}{\PYGdefaultZsh{} Perform \PYGdefaultZbs{}Phi(X)\PYGdefaultZca{}T \PYGdefaultZbs{}theta with Efficient implementation}
+        \PYGdefault{k}{for} \PYGdefault{n}{j} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{)}\PYGdefault{p}{:}
+            \PYGdefault{n}{start} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)}
+            \PYGdefault{n}{phiX1} \PYGdefault{o}{=} \PYGdefault{n}{EfficientDivergenceFreeGaussianORFF}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)}
+            \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{start}
+            \PYGdefault{n}{theta} \PYGdefault{o}{=} \PYGdefault{n}{rand}\PYGdefault{p}{(}\PYGdefault{n}{phiX1}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}
+            \PYGdefault{n}{start} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)}
+            \PYGdefault{n}{phiX1} \PYGdefault{o}{*} \PYGdefault{n}{theta}
+            \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{start}
+            \PYGdefault{n}{mem\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{asizeof}\PYGdefault{p}{(}\PYGdefault{n}{phiX1}\PYGdefault{p}{,} \PYGdefault{n}{code}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)}
+
+        \PYGdefault{c+c1}{\PYGdefaultZsh{} Perform \PYGdefaultZbs{}Phi(X)\PYGdefaultZca{}T \PYGdefaultZbs{}theta with naive implementation}
+        \PYGdefault{k}{for} \PYGdefault{n}{j} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{)}\PYGdefault{p}{:}
+            \PYGdefault{n}{start} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)}
+            \PYGdefault{n}{phiX2} \PYGdefault{o}{=} \PYGdefault{n}{NaiveDivergenceFreeGaussianORFF}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)}
+            \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{start}
+            \PYGdefault{n}{theta} \PYGdefault{o}{=} \PYGdefault{n}{rand}\PYGdefault{p}{(}\PYGdefault{n}{phiX2}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}
+            \PYGdefault{n}{start} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)}
+            \PYGdefault{n}{phiX2} \PYGdefault{o}{*} \PYGdefault{n}{theta}
+            \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{start}
+            \PYGdefault{n}{mem\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{asizeof}\PYGdefault{p}{(}\PYGdefault{n}{phiX2}\PYGdefault{p}{,} \PYGdefault{n}{code}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Plot}
+    \PYGdefault{n}{f}\PYGdefault{p}{,} \PYGdefault{n}{axes} \PYGdefault{o}{=} \PYGdefault{n}{subplots}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{3}\PYGdefault{p}{,} \PYGdefault{n}{figsize}\PYGdefault{o}{=}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{10}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{4}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{sharex}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{,} \PYGdefault{n}{sharey}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{False}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{dmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Efficient decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{dmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Naive decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{dmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Efficient decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{dmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Naive decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{dmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{mem\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{mem\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Efficient decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{dmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{mem\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{mem\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Naive decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}yscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}yscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}yscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}p=}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{dim(}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{mathcal\PYGdefaultZob{}Y\PYGdefaultZcb{})\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}p=}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{dim(}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{mathcal\PYGdefaultZob{}Y\PYGdefaultZcb{})\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}p=}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{dim(}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{mathcal\PYGdefaultZob{}Y\PYGdefaultZcb{})\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}ylabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{time (s)}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}ylabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{memory (bytes)}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}title}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Preprocessing time}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}title}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{widetilde\PYGdefaultZob{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{Phi\PYGdefaultZcb{}(X)\PYGdefaultZca{}T }\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{theta\PYGdefaultZdl{} computation time}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}title}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{widetilde\PYGdefaultZob{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{Phi\PYGdefaultZcb{}(X)\PYGdefaultZca{}T\PYGdefaultZdl{} required memory}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{legend}\PYGdefault{p}{(}\PYGdefault{n}{loc}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}
+    \PYGdefault{n}{tight\PYGdefaultZus{}layout}\PYGdefault{p}{(}\PYGdefault{p}{)}
+    \PYGdefault{n}{savefig}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{efficient\PYGdefaultZus{}divfree\PYGdefaultZus{}gaussian.pgf}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{bbox\PYGdefaultZus{}inches}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{tight}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+
+\PYGdefault{k}{if} \PYGdefault{n+nv+vm}{\PYGdefaultZus{}\PYGdefaultZus{}name\PYGdefaultZus{}\PYGdefaultZus{}} \PYGdefault{o}{==} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{l+s+s2}{\PYGdefaultZus{}\PYGdefaultZus{}main\PYGdefaultZus{}\PYGdefaultZus{}}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{p}{:}
+    \PYGdefault{n}{main}\PYGdefault{p}{(}\PYGdefault{p}{)}
+\end{pytx@SaveVerbatim}
+
+\begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@PYGpython@EXT:./src/efficient_decomposable_gaussian.py@defaultverb@0}
+\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Efficient implementation of the Gaussian ORFF decomposable kernel.\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{time} \PYGdefault{k+kn}{import} \PYGdefault{n}{time}
+
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{pympler.asizeof} \PYGdefault{k+kn}{import} \PYGdefault{n}{asizeof}
+
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{numpy.linalg} \PYGdefault{k+kn}{import} \PYGdefault{n}{svd}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{numpy.random} \PYGdefault{k+kn}{import} \PYGdefault{n}{rand}\PYGdefault{p}{,} \PYGdefault{n}{seed}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{numpy} \PYGdefault{k+kn}{import} \PYGdefault{p}{(}\PYGdefault{n}{dot}\PYGdefault{p}{,} \PYGdefault{n}{diag}\PYGdefault{p}{,} \PYGdefault{n}{sqrt}\PYGdefault{p}{,} \PYGdefault{n}{kron}\PYGdefault{p}{,} \PYGdefault{n}{zeros}\PYGdefault{p}{,}
+                   \PYGdefault{n}{logspace}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{,} \PYGdefault{n}{matrix}\PYGdefault{p}{,} \PYGdefault{n}{eye}\PYGdefault{p}{,} \PYGdefault{n+nb}{int}\PYGdefault{p}{,} \PYGdefault{n+nb}{float}\PYGdefault{p}{)}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{scipy.sparse.linalg} \PYGdefault{k+kn}{import} \PYGdefault{n}{LinearOperator}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{sklearn.kernel\PYGdefaultZus{}approximation} \PYGdefault{k+kn}{import} \PYGdefault{n}{RBFSampler}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{matplotlib.pyplot} \PYGdefault{k+kn}{import} \PYGdefault{n}{savefig}\PYGdefault{p}{,} \PYGdefault{n}{subplots}\PYGdefault{p}{,} \PYGdefault{n}{tight\PYGdefaultZus{}layout}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{NaiveDecomposableGaussianORFF}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{A}\PYGdefault{p}{,} \PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1.}\PYGdefault{p}{,}
+                                  \PYGdefault{n}{D}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{100}\PYGdefault{p}{,} \PYGdefault{n}{eps}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1e\PYGdefaultZhy{}5}\PYGdefault{p}{,} \PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Return the Naive ORFF map associated with the data X.}
+
+\PYGdefault{l+s+sd}{    Parameters}
+\PYGdefault{l+s+sd}{    \PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+\PYGdefault{l+s+sd}{    X : \PYGdefaultZob{}array\PYGdefaultZhy{}like\PYGdefaultZcb{}, shape = [n\PYGdefaultZus{}samples, n\PYGdefaultZus{}features]}
+\PYGdefault{l+s+sd}{        Samples.}
+\PYGdefault{l+s+sd}{    A : \PYGdefaultZob{}array\PYGdefaultZhy{}like\PYGdefaultZcb{}, shape = [n\PYGdefaultZus{}targets, n\PYGdefaultZus{}targets]}
+\PYGdefault{l+s+sd}{        Operator of the Decomposable kernel (positive semi\PYGdefaultZhy{}definite)}
+\PYGdefault{l+s+sd}{    gamma : \PYGdefaultZob{}float\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Gamma parameter of the RBF kernel.}
+\PYGdefault{l+s+sd}{    D : \PYGdefaultZob{}integer\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Number of random features.}
+\PYGdefault{l+s+sd}{    eps : \PYGdefaultZob{}float\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Cutoff threshold for the singular values of A.}
+\PYGdefault{l+s+sd}{    random\PYGdefaultZus{}state : \PYGdefaultZob{}integer\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Seed of the generator.}
+
+\PYGdefault{l+s+sd}{    Returns}
+\PYGdefault{l+s+sd}{    \PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+\PYGdefault{l+s+sd}{    \PYGdefaultZbs{}tilde\PYGdefaultZob{}\PYGdefaultZbs{}Phi\PYGdefaultZcb{}(X) : array}
+\PYGdefault{l+s+sd}{    \PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Decompose A=BB\PYGdefaultZca{}T}
+    \PYGdefault{n}{u}\PYGdefault{p}{,} \PYGdefault{n}{s}\PYGdefault{p}{,} \PYGdefault{n}{v} \PYGdefault{o}{=} \PYGdefault{n}{svd}\PYGdefault{p}{(}\PYGdefault{n}{A}\PYGdefault{p}{,} \PYGdefault{n}{full\PYGdefaultZus{}matrices}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{False}\PYGdefault{p}{,} \PYGdefault{n}{compute\PYGdefaultZus{}uv}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)}
+    \PYGdefault{n}{B} \PYGdefault{o}{=} \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{diag}\PYGdefault{p}{(}\PYGdefault{n}{sqrt}\PYGdefault{p}{(}\PYGdefault{n}{s}\PYGdefault{p}{[}\PYGdefault{n}{s} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{n}{eps}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{v}\PYGdefault{p}{[}\PYGdefault{n}{s} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{n}{eps}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{]}\PYGdefault{p}{)}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Sample a RFF from the scalar Gaussian kernel}
+    \PYGdefault{n}{phi\PYGdefaultZus{}s} \PYGdefault{o}{=} \PYGdefault{n}{RBFSampler}\PYGdefault{p}{(}\PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{n}{gamma}\PYGdefault{p}{,} \PYGdefault{n}{n\PYGdefaultZus{}components}\PYGdefault{o}{=}\PYGdefault{n}{D}\PYGdefault{p}{,} \PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{o}{=}\PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{p}{)}
+    \PYGdefault{n}{phiX} \PYGdefault{o}{=} \PYGdefault{n}{phi\PYGdefaultZus{}s}\PYGdefault{o}{.}\PYGdefault{n}{fit\PYGdefaultZus{}transform}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{)}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Create the ORFF linear operator}
+    \PYGdefault{k}{return} \PYGdefault{n}{matrix}\PYGdefault{p}{(}\PYGdefault{n}{kron}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{p}{,} \PYGdefault{n}{B}\PYGdefault{p}{)}\PYGdefault{p}{)}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{EfficientDecomposableGaussianORFF}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{A}\PYGdefault{p}{,} \PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1.}\PYGdefault{p}{,}
+                                      \PYGdefault{n}{D}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{100}\PYGdefault{p}{,} \PYGdefault{n}{eps}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1e\PYGdefaultZhy{}5}\PYGdefault{p}{,} \PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Return the Efficient ORFF map associated with the data X.}
+
+\PYGdefault{l+s+sd}{    Parameters}
+\PYGdefault{l+s+sd}{    \PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+\PYGdefault{l+s+sd}{    X : \PYGdefaultZob{}array\PYGdefaultZhy{}like\PYGdefaultZcb{}, shape = [n\PYGdefaultZus{}samples, n\PYGdefaultZus{}features]}
+\PYGdefault{l+s+sd}{        Samples.}
+\PYGdefault{l+s+sd}{    A : \PYGdefaultZob{}array\PYGdefaultZhy{}like\PYGdefaultZcb{}, shape = [n\PYGdefaultZus{}targets, n\PYGdefaultZus{}targets]}
+\PYGdefault{l+s+sd}{        Operator of the Decomposable kernel (positive semi\PYGdefaultZhy{}definite)}
+\PYGdefault{l+s+sd}{    gamma : \PYGdefaultZob{}float\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Gamma parameter of the RBF kernel.}
+\PYGdefault{l+s+sd}{    D : \PYGdefaultZob{}integer\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Number of random features.}
+\PYGdefault{l+s+sd}{    eps : \PYGdefaultZob{}float\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Cutoff threshold for the singular values of A.}
+\PYGdefault{l+s+sd}{    random\PYGdefaultZus{}state : \PYGdefaultZob{}integer\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Seed of the generator.}
+
+\PYGdefault{l+s+sd}{    Returns}
+\PYGdefault{l+s+sd}{    \PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+\PYGdefault{l+s+sd}{    \PYGdefaultZbs{}tilde\PYGdefaultZob{}\PYGdefaultZbs{}Phi\PYGdefaultZcb{}(X) : Linear Operator, callable}
+\PYGdefault{l+s+sd}{    \PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Decompose A=BB\PYGdefaultZca{}T}
+    \PYGdefault{n}{u}\PYGdefault{p}{,} \PYGdefault{n}{s}\PYGdefault{p}{,} \PYGdefault{n}{v} \PYGdefault{o}{=} \PYGdefault{n}{svd}\PYGdefault{p}{(}\PYGdefault{n}{A}\PYGdefault{p}{,} \PYGdefault{n}{full\PYGdefaultZus{}matrices}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{False}\PYGdefault{p}{,} \PYGdefault{n}{compute\PYGdefaultZus{}uv}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)}
+    \PYGdefault{n}{B} \PYGdefault{o}{=} \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{diag}\PYGdefault{p}{(}\PYGdefault{n}{sqrt}\PYGdefault{p}{(}\PYGdefault{n}{s}\PYGdefault{p}{[}\PYGdefault{n}{s} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{n}{eps}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{v}\PYGdefault{p}{[}\PYGdefault{n}{s} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{n}{eps}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{]}\PYGdefault{p}{)}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Sample a RFF from the scalar Gaussian kernel}
+    \PYGdefault{n}{phi\PYGdefaultZus{}s} \PYGdefault{o}{=} \PYGdefault{n}{RBFSampler}\PYGdefault{p}{(}\PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{n}{gamma}\PYGdefault{p}{,} \PYGdefault{n}{n\PYGdefaultZus{}components}\PYGdefault{o}{=}\PYGdefault{n}{D}\PYGdefault{p}{,} \PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{o}{=}\PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{p}{)}
+    \PYGdefault{n}{phiX} \PYGdefault{o}{=} \PYGdefault{n}{phi\PYGdefaultZus{}s}\PYGdefault{o}{.}\PYGdefault{n}{fit\PYGdefaultZus{}transform}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{)}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Create the ORFF linear operator}
+    \PYGdefault{n}{cshape} \PYGdefault{o}{=} \PYGdefault{p}{(}\PYGdefault{n}{D}\PYGdefault{p}{,} \PYGdefault{n}{B}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{)}
+    \PYGdefault{n}{rshape} \PYGdefault{o}{=} \PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{B}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}
+    \PYGdefault{k}{return} \PYGdefault{n}{LinearOperator}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]} \PYGdefault{o}{*} \PYGdefault{n}{B}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{D} \PYGdefault{o}{*} \PYGdefault{n}{B}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                          \PYGdefault{n}{matvec}\PYGdefault{o}{=}\PYGdefault{k}{lambda} \PYGdefault{n}{b}\PYGdefault{p}{:} \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{p}{,} \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{b}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{n}{cshape}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                                               \PYGdefault{n}{B}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                          \PYGdefault{n}{rmatvec}\PYGdefault{o}{=}\PYGdefault{k}{lambda} \PYGdefault{n}{r}\PYGdefault{p}{:} \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{T}\PYGdefault{p}{,} \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{r}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{n}{rshape}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                                                \PYGdefault{n}{B}\PYGdefault{o}{.}\PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                          \PYGdefault{n}{dtype}\PYGdefault{o}{=}\PYGdefault{n+nb}{float}\PYGdefault{p}{)}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{main}\PYGdefault{p}{(}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Plot figure: Efficient decomposable gaussian ORFF.\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{n}{N} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{100}  \PYGdefault{c+c1}{\PYGdefaultZsh{} Number of points}
+    \PYGdefault{n}{pmax} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{100}  \PYGdefault{c+c1}{\PYGdefaultZsh{} Maximum output dimension}
+    \PYGdefault{n}{d} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{20}  \PYGdefault{c+c1}{\PYGdefaultZsh{} Input dimension}
+    \PYGdefault{n}{D} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{100}  \PYGdefault{c+c1}{\PYGdefaultZsh{} Number of random features}
+
+    \PYGdefault{n}{seed}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}
+    \PYGdefault{n}{X} \PYGdefault{o}{=} \PYGdefault{n}{rand}\PYGdefault{p}{(}\PYGdefault{n}{N}\PYGdefault{p}{,} \PYGdefault{n}{d}\PYGdefault{p}{)}
+
+    \PYGdefault{n}{R}\PYGdefault{p}{,} \PYGdefault{n}{T} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{10}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{10}
+    \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{,} \PYGdefault{n}{mem\PYGdefaultZus{}Efficient} \PYGdefault{o}{=} \PYGdefault{n}{zeros}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{zeros}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{p}{)}
+    \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{,} \PYGdefault{n}{mem\PYGdefaultZus{}naive} \PYGdefault{o}{=} \PYGdefault{n}{zeros}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{zeros}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{p}{)}
+
+    \PYGdefault{k}{for} \PYGdefault{n}{i}\PYGdefault{p}{,} \PYGdefault{n}{p} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{enumerate}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{pmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{:}
+        \PYGdefault{n}{A} \PYGdefault{o}{=} \PYGdefault{n}{rand}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{(}\PYGdefault{n}{p}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n+nb}{int}\PYGdefault{p}{(}\PYGdefault{n}{p}\PYGdefault{p}{)}\PYGdefault{p}{)}
+        \PYGdefault{n}{A} \PYGdefault{o}{=} \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{A}\PYGdefault{o}{.}\PYGdefault{n}{T}\PYGdefault{p}{,} \PYGdefault{n}{A}\PYGdefault{p}{)} \PYGdefault{o}{+} \PYGdefault{n}{eye}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{(}\PYGdefault{n}{p}\PYGdefault{p}{)}\PYGdefault{p}{)}
+
+        \PYGdefault{c+c1}{\PYGdefaultZsh{} Perform \PYGdefaultZbs{}Phi(X)\PYGdefaultZca{}T \PYGdefaultZbs{}theta with Efficient implementation}
+        \PYGdefault{k}{for} \PYGdefault{n}{j} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{)}\PYGdefault{p}{:}
+            \PYGdefault{n}{start} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)}
+            \PYGdefault{n}{phiX1} \PYGdefault{o}{=} \PYGdefault{n}{EfficientDecomposableGaussianORFF}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{A}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)}
+            \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{start}
+            \PYGdefault{n}{theta} \PYGdefault{o}{=} \PYGdefault{n}{rand}\PYGdefault{p}{(}\PYGdefault{n}{phiX1}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}
+            \PYGdefault{n}{start} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)}
+            \PYGdefault{n}{phiX1} \PYGdefault{o}{*} \PYGdefault{n}{theta}
+            \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{start}
+            \PYGdefault{n}{mem\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{asizeof}\PYGdefault{p}{(}\PYGdefault{n}{phiX1}\PYGdefault{p}{,} \PYGdefault{n}{code}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)}
+
+        \PYGdefault{c+c1}{\PYGdefaultZsh{} Perform \PYGdefaultZbs{}Phi(X)\PYGdefaultZca{}T \PYGdefaultZbs{}theta with naive implementation}
+        \PYGdefault{k}{for} \PYGdefault{n}{j} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{)}\PYGdefault{p}{:}
+            \PYGdefault{n}{start} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)}
+            \PYGdefault{n}{phiX2} \PYGdefault{o}{=} \PYGdefault{n}{NaiveDecomposableGaussianORFF}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{A}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)}
+            \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{start}
+            \PYGdefault{n}{theta} \PYGdefault{o}{=} \PYGdefault{n}{rand}\PYGdefault{p}{(}\PYGdefault{n}{phiX2}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}
+            \PYGdefault{n}{start} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)}
+            \PYGdefault{n}{phiX2} \PYGdefault{o}{*} \PYGdefault{n}{theta}
+            \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{start}
+            \PYGdefault{n}{mem\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{asizeof}\PYGdefault{p}{(}\PYGdefault{n}{phiX2}\PYGdefault{p}{,} \PYGdefault{n}{code}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Plot}
+    \PYGdefault{n}{f}\PYGdefault{p}{,} \PYGdefault{n}{axes} \PYGdefault{o}{=} \PYGdefault{n}{subplots}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{3}\PYGdefault{p}{,} \PYGdefault{n}{figsize}\PYGdefault{o}{=}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{10}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{4}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{sharex}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{,} \PYGdefault{n}{sharey}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{False}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{pmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Efficient decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{pmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Naive decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{pmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Efficient decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{pmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Naive decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{pmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{mem\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{mem\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Efficient decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{pmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{mem\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{mem\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Naive decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}yscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}yscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}yscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}p=}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{dim(}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{mathcal\PYGdefaultZob{}Y\PYGdefaultZcb{})\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}p=}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{dim(}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{mathcal\PYGdefaultZob{}Y\PYGdefaultZcb{})\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}p=}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{dim(}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{mathcal\PYGdefaultZob{}Y\PYGdefaultZcb{})\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}ylabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{time (s)}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}ylabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{memory (bytes)}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}title}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Preprocessing time}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}title}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{widetilde\PYGdefaultZob{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{Phi\PYGdefaultZcb{}(X)\PYGdefaultZca{}T }\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{theta\PYGdefaultZdl{} computation time}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}title}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{widetilde\PYGdefaultZob{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{Phi\PYGdefaultZcb{}(X)\PYGdefaultZca{}T\PYGdefaultZdl{} required memory}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{legend}\PYGdefault{p}{(}\PYGdefault{n}{loc}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}
+    \PYGdefault{n}{tight\PYGdefaultZus{}layout}\PYGdefault{p}{(}\PYGdefault{p}{)}
+    \PYGdefault{n}{savefig}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{efficient\PYGdefaultZus{}decomposable\PYGdefaultZus{}gaussian.pgf}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{bbox\PYGdefaultZus{}inches}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{tight}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+
+\PYGdefault{k}{if} \PYGdefault{n+nv+vm}{\PYGdefaultZus{}\PYGdefaultZus{}name\PYGdefaultZus{}\PYGdefaultZus{}} \PYGdefault{o}{==} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{l+s+s2}{\PYGdefaultZus{}\PYGdefaultZus{}main\PYGdefaultZus{}\PYGdefaultZus{}}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{p}{:}
+    \PYGdefault{n}{main}\PYGdefault{p}{(}\PYGdefault{p}{)}
+\end{pytx@SaveVerbatim}
+
+\begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@py@efficient_linop@default@1}
+\PYGdefault{k}{def} \PYGdefault{n+nf}{NaiveDecomposableGaussianORFF}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{A}\PYGdefault{p}{,} \PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1.}\PYGdefault{p}{,}
+                                  \PYGdefault{n}{D}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{100}\PYGdefault{p}{,} \PYGdefault{n}{eps}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1e\PYGdefaultZhy{}5}\PYGdefault{p}{,} \PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Return the Naive ORFF map associated with the data X.}
+
+\PYGdefault{l+s+sd}{    Parameters}
+\PYGdefault{l+s+sd}{    \PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+\PYGdefault{l+s+sd}{    X : \PYGdefaultZob{}array\PYGdefaultZhy{}like\PYGdefaultZcb{}, shape = [n\PYGdefaultZus{}samples, n\PYGdefaultZus{}features]}
+\PYGdefault{l+s+sd}{        Samples.}
+\PYGdefault{l+s+sd}{    A : \PYGdefaultZob{}array\PYGdefaultZhy{}like\PYGdefaultZcb{}, shape = [n\PYGdefaultZus{}targets, n\PYGdefaultZus{}targets]}
+\PYGdefault{l+s+sd}{        Operator of the Decomposable kernel (positive semi\PYGdefaultZhy{}definite)}
+\PYGdefault{l+s+sd}{    gamma : \PYGdefaultZob{}float\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Gamma parameter of the RBF kernel.}
+\PYGdefault{l+s+sd}{    D : \PYGdefaultZob{}integer\PYGdefaultZcb{}}
+\PYGdefault{l+s+sd}{        Number of random features.}
+\PYGdefault{l+s+sd}{    eps : \PYGdefaultZob{}float\PYGdefaultZcb{}}
+\PYGdefault{l+s+sd}{        Cutoff threshold for the singular values of A.}
+\PYGdefault{l+s+sd}{    random\PYGdefaultZus{}state : \PYGdefaultZob{}integer\PYGdefaultZcb{}}
+\PYGdefault{l+s+sd}{        Seed of the generator.}
+
+\PYGdefault{l+s+sd}{    Returns}
+\PYGdefault{l+s+sd}{    \PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+\PYGdefault{l+s+sd}{    \PYGdefaultZbs{}tilde\PYGdefaultZob{}\PYGdefaultZbs{}Phi\PYGdefaultZcb{}(X) : array}
+\PYGdefault{l+s+sd}{    \PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Decompose A=BB\PYGdefaultZca{}\PYGdefaultZbs{}transpose}
+    \PYGdefault{n}{u}\PYGdefault{p}{,} \PYGdefault{n}{s}\PYGdefault{p}{,} \PYGdefault{n}{v} \PYGdefault{o}{=} \PYGdefault{n}{svd}\PYGdefault{p}{(}\PYGdefault{n}{A}\PYGdefault{p}{,} \PYGdefault{n}{full\PYGdefaultZus{}matrices}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{False}\PYGdefault{p}{,} \PYGdefault{n}{compute\PYGdefaultZus{}uv}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)}
+    \PYGdefault{n}{B} \PYGdefault{o}{=} \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{diag}\PYGdefault{p}{(}\PYGdefault{n}{sqrt}\PYGdefault{p}{(}\PYGdefault{n}{s}\PYGdefault{p}{[}\PYGdefault{n}{s} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{n}{eps}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{v}\PYGdefault{p}{[}\PYGdefault{n}{s} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{n}{eps}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{]}\PYGdefault{p}{)}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Sample a RFF from the scalar Gaussian kernel}
+    \PYGdefault{n}{phi\PYGdefaultZus{}s} \PYGdefault{o}{=} \PYGdefault{n}{RBFSampler}\PYGdefault{p}{(}\PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{n}{gamma}\PYGdefault{p}{,} \PYGdefault{n}{n\PYGdefaultZus{}components}\PYGdefault{o}{=}\PYGdefault{n}{D}\PYGdefault{p}{,} \PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{o}{=}\PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{p}{)}
+    \PYGdefault{n}{phiX} \PYGdefault{o}{=} \PYGdefault{n}{phi\PYGdefaultZus{}s}\PYGdefault{o}{.}\PYGdefault{n}{fit\PYGdefaultZus{}transform}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{)}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Create the ORFF linear operator}
+    \PYGdefault{k}{return} \PYGdefault{n}{matrix}\PYGdefault{p}{(}\PYGdefault{n}{kron}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{p}{,} \PYGdefault{n}{B}\PYGdefault{p}{)}\PYGdefault{p}{)}
+\end{pytx@SaveVerbatim}
+
+\begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@py@efficient_linop@default@2}
+\PYGdefault{k}{def} \PYGdefault{n+nf}{EfficientDecomposableGaussianORFF}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{A}\PYGdefault{p}{,} \PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1.}\PYGdefault{p}{,}
+                                      \PYGdefault{n}{D}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{100}\PYGdefault{p}{,} \PYGdefault{n}{eps}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1e\PYGdefaultZhy{}5}\PYGdefault{p}{,} \PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Return the efficient ORFF map associated with the data X.}
+
+\PYGdefault{l+s+sd}{    Parameters}
+\PYGdefault{l+s+sd}{    \PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+\PYGdefault{l+s+sd}{    X : \PYGdefaultZob{}array\PYGdefaultZhy{}like\PYGdefaultZcb{}, shape = [n\PYGdefaultZus{}samples, n\PYGdefaultZus{}features]}
+\PYGdefault{l+s+sd}{        Samples.}
+\PYGdefault{l+s+sd}{    A : \PYGdefaultZob{}array\PYGdefaultZhy{}like\PYGdefaultZcb{}, shape = [n\PYGdefaultZus{}targets, n\PYGdefaultZus{}targets]}
+\PYGdefault{l+s+sd}{        Operator of the Decomposable kernel (positive semi\PYGdefaultZhy{}definite)}
+\PYGdefault{l+s+sd}{    gamma : \PYGdefaultZob{}float\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Gamma parameter of the RBF kernel.}
+\PYGdefault{l+s+sd}{    D : \PYGdefaultZob{}integer\PYGdefaultZcb{}}
+\PYGdefault{l+s+sd}{        Number of random features.}
+\PYGdefault{l+s+sd}{    eps : \PYGdefaultZob{}float\PYGdefaultZcb{}}
+\PYGdefault{l+s+sd}{        Cutoff threshold for the singular values of A.}
+\PYGdefault{l+s+sd}{    random\PYGdefaultZus{}state : \PYGdefaultZob{}integer\PYGdefaultZcb{}}
+\PYGdefault{l+s+sd}{        Seed of the generator.}
+
+\PYGdefault{l+s+sd}{    Returns}
+\PYGdefault{l+s+sd}{    \PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+\PYGdefault{l+s+sd}{    \PYGdefaultZbs{}tilde\PYGdefaultZob{}\PYGdefaultZbs{}Phi\PYGdefaultZcb{}(X) : Linear Operator, callable}
+\PYGdefault{l+s+sd}{    \PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Decompose A=BB\PYGdefaultZca{}\PYGdefaultZbs{}transpose}
+    \PYGdefault{n}{u}\PYGdefault{p}{,} \PYGdefault{n}{s}\PYGdefault{p}{,} \PYGdefault{n}{v} \PYGdefault{o}{=} \PYGdefault{n}{svd}\PYGdefault{p}{(}\PYGdefault{n}{A}\PYGdefault{p}{,} \PYGdefault{n}{full\PYGdefaultZus{}matrices}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{False}\PYGdefault{p}{,} \PYGdefault{n}{compute\PYGdefaultZus{}uv}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)}
+    \PYGdefault{n}{B} \PYGdefault{o}{=} \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{diag}\PYGdefault{p}{(}\PYGdefault{n}{sqrt}\PYGdefault{p}{(}\PYGdefault{n}{s}\PYGdefault{p}{[}\PYGdefault{n}{s} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{n}{eps}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{v}\PYGdefault{p}{[}\PYGdefault{n}{s} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{n}{eps}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{]}\PYGdefault{p}{)}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Sample a RFF from the scalar Gaussian kernel}
+    \PYGdefault{n}{phi\PYGdefaultZus{}s} \PYGdefault{o}{=} \PYGdefault{n}{RBFSampler}\PYGdefault{p}{(}\PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{n}{gamma}\PYGdefault{p}{,} \PYGdefault{n}{n\PYGdefaultZus{}components}\PYGdefault{o}{=}\PYGdefault{n}{D}\PYGdefault{p}{,} \PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{o}{=}\PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{p}{)}
+    \PYGdefault{n}{phiX} \PYGdefault{o}{=} \PYGdefault{n}{phi\PYGdefaultZus{}s}\PYGdefault{o}{.}\PYGdefault{n}{fit\PYGdefaultZus{}transform}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{)}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Create the ORFF linear operator}
+    \PYGdefault{n}{cshape} \PYGdefault{o}{=} \PYGdefault{p}{(}\PYGdefault{n}{D}\PYGdefault{p}{,} \PYGdefault{n}{B}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{)}
+    \PYGdefault{n}{rshape} \PYGdefault{o}{=} \PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{B}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}
+    \PYGdefault{k}{return} \PYGdefault{n}{LinearOperator}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]} \PYGdefault{o}{*} \PYGdefault{n}{B}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{D} \PYGdefault{o}{*} \PYGdefault{n}{B}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                          \PYGdefault{n}{matvec}\PYGdefault{o}{=}\PYGdefault{k}{lambda} \PYGdefault{n}{b}\PYGdefault{p}{:} \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{p}{,} \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{b}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{n}{cshape}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                                               \PYGdefault{n}{B}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                          \PYGdefault{n}{rmatvec}\PYGdefault{o}{=}\PYGdefault{k}{lambda} \PYGdefault{n}{r}\PYGdefault{p}{:} \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{T}\PYGdefault{p}{,} \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{r}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{n}{rshape}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                                                \PYGdefault{n}{B}\PYGdefault{o}{.}\PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{)}
+\end{pytx@SaveVerbatim}
+
+\begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@PYGpython@EXT:./src/representer.py@defaultverb@0}
+\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Plot figure: ORFF Representer theorem pt.1.\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+
+\PYGdefault{k+kn}{import} \PYGdefault{n+nn}{numpy} \PYGdefault{k+kn}{as} \PYGdefault{n+nn}{np}
+\PYGdefault{k+kn}{import} \PYGdefault{n+nn}{matplotlib.pyplot} \PYGdefault{k+kn}{as} \PYGdefault{n+nn}{plt}
+\PYGdefault{k+kn}{import} \PYGdefault{n+nn}{matplotlib}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{phi}\PYGdefault{p}{(}\PYGdefault{n}{x}\PYGdefault{p}{,} \PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}RFF map.\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{n}{Z} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{x}\PYGdefault{p}{,} \PYGdefault{n}{w}\PYGdefault{p}{)}
+    \PYGdefault{k}{return} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{hstack}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{cos}\PYGdefault{p}{(}\PYGdefault{n}{Z}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{sin}\PYGdefault{p}{(}\PYGdefault{n}{Z}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{)} \PYGdefault{o}{/} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{sqrt}\PYGdefault{p}{(}\PYGdefault{n}{D}\PYGdefault{p}{)}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{main}\PYGdefault{p}{(}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Plot figure: ORFF Representer theorem pt.1.\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{n}{d} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{1}  \PYGdefault{c+c1}{\PYGdefaultZsh{} dimensionality of the inputs}
+    \PYGdefault{n}{D} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{50}  \PYGdefault{c+c1}{\PYGdefaultZsh{} number of random features}
+
+    \PYGdefault{n}{N} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{50}
+    \PYGdefault{n}{Nt} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{200}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} N training points in (0,1)}
+    \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{random}\PYGdefault{o}{.}\PYGdefault{n}{seed}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}
+    \PYGdefault{n}{x} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{2} \PYGdefault{o}{*} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{random}\PYGdefault{o}{.}\PYGdefault{n}{rand}\PYGdefault{p}{(}\PYGdefault{n}{N}\PYGdefault{p}{,} \PYGdefault{n}{d}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{1}
+    \PYGdefault{n}{y} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{sin}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{10} \PYGdefault{o}{*} \PYGdefault{n}{x}\PYGdefault{p}{)}
+    \PYGdefault{n}{y} \PYGdefault{o}{+}\PYGdefault{o}{=} \PYGdefault{o}{.}\PYGdefault{l+m+mi}{5} \PYGdefault{o}{*} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{random}\PYGdefault{o}{.}\PYGdefault{n}{randn}\PYGdefault{p}{(}\PYGdefault{n}{y}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{y}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)} \PYGdefault{o}{+} \PYGdefault{l+m+mf}{2.} \PYGdefault{o}{*} \PYGdefault{n}{x} \PYGdefault{o}{*}\PYGdefault{o}{*} \PYGdefault{l+m+mi}{2}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Nt testing points in (0,1)}
+    \PYGdefault{n}{xt} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{linspace}\PYGdefault{p}{(}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{n}{Nt}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}\PYGdefault{p}{)}
+    \PYGdefault{n}{yt} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{sin}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{10} \PYGdefault{o}{*} \PYGdefault{n}{xt}\PYGdefault{p}{)} \PYGdefault{o}{+} \PYGdefault{l+m+mf}{2.} \PYGdefault{o}{*} \PYGdefault{n}{xt} \PYGdefault{o}{*}\PYGdefault{o}{*} \PYGdefault{l+m+mi}{2}
+    \PYGdefault{n}{yt} \PYGdefault{o}{+}\PYGdefault{o}{=} \PYGdefault{o}{.}\PYGdefault{l+m+mi}{5} \PYGdefault{o}{*} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{random}\PYGdefault{o}{.}\PYGdefault{n}{randn}\PYGdefault{p}{(}\PYGdefault{n}{yt}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{yt}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}
+
+    \PYGdefault{n}{sigma} \PYGdefault{o}{=} \PYGdefault{o}{.}\PYGdefault{l+m+mi}{3}
+    \PYGdefault{n}{w} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{random}\PYGdefault{o}{.}\PYGdefault{n}{randn}\PYGdefault{p}{(}\PYGdefault{n}{d}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)} \PYGdefault{o}{/} \PYGdefault{n}{sigma}  \PYGdefault{c+c1}{\PYGdefaultZsh{} Realization of (\PYGdefaultZbs{}omega\PYGdefaultZus{}j)\PYGdefaultZus{}\PYGdefaultZob{}j=1\PYGdefaultZcb{}\PYGdefaultZca{}D}
+
+    \PYGdefault{n}{phiX} \PYGdefault{o}{=} \PYGdefault{n}{phi}\PYGdefault{p}{(}\PYGdefault{n}{x}\PYGdefault{p}{,} \PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)}  \PYGdefault{c+c1}{\PYGdefaultZsh{} Train RFF}
+    \PYGdefault{n}{phiXt} \PYGdefault{o}{=} \PYGdefault{n}{phi}\PYGdefault{p}{(}\PYGdefault{n}{xt}\PYGdefault{p}{,} \PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)}  \PYGdefault{c+c1}{\PYGdefaultZsh{} Test RFF}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Create plot}
+    \PYGdefault{n}{plt}\PYGdefault{o}{.}\PYGdefault{n}{close}\PYGdefault{p}{(}\PYGdefault{p}{)}
+    \PYGdefault{n}{plt}\PYGdefault{o}{.}\PYGdefault{n}{rc}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{text}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{usetex}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)}
+    \PYGdefault{n}{plt}\PYGdefault{o}{.}\PYGdefault{n}{rc}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{font}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{family}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{serif}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{f}\PYGdefault{p}{,} \PYGdefault{n}{axis} \PYGdefault{o}{=} \PYGdefault{n}{plt}\PYGdefault{o}{.}\PYGdefault{n}{subplots}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{4}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{3}\PYGdefault{p}{,} \PYGdefault{n}{gridspec\PYGdefaultZus{}kw}\PYGdefault{o}{=}\PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{width\PYGdefaultZus{}ratios}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{p}{[}\PYGdefault{l+m+mi}{3}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{3}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{1.5}\PYGdefault{p}{]}\PYGdefault{p}{\PYGdefaultZcb{}}\PYGdefault{p}{,}
+                           \PYGdefault{n}{figsize}\PYGdefault{o}{=}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{16}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{6}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{sharex}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{col}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{sharey}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{col}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{f}\PYGdefault{o}{.}\PYGdefault{n}{subplots\PYGdefaultZus{}adjust}\PYGdefault{p}{(}\PYGdefault{n}{hspace}\PYGdefault{o}{=}\PYGdefault{o}{.}\PYGdefault{l+m+mi}{25}\PYGdefault{p}{)}
+    \PYGdefault{n}{formatter} \PYGdefault{o}{=} \PYGdefault{n}{matplotlib}\PYGdefault{o}{.}\PYGdefault{n}{ticker}\PYGdefault{o}{.}\PYGdefault{n}{ScalarFormatter}\PYGdefault{p}{(}\PYGdefault{p}{)}
+    \PYGdefault{n}{formatter}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}powerlimits}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{3}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{4}\PYGdefault{p}{)}\PYGdefault{p}{)}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} For different hyperparameters \PYGdefaultZbs{}lambda}
+    \PYGdefault{k}{for} \PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{n}{lbda} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{enumerate}\PYGdefault{p}{(}\PYGdefault{p}{[}\PYGdefault{l+m+mf}{1e\PYGdefaultZhy{}2}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{5e\PYGdefaultZhy{}6}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{1e\PYGdefaultZhy{}10}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{:}
+        \PYGdefault{c+c1}{\PYGdefaultZsh{} Train with ORFF with kernel approximation (dual)}
+        \PYGdefault{n}{ck} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{linalg}\PYGdefault{o}{.}\PYGdefault{n}{lstsq}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{p}{,} \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{T}\PYGdefault{p}{)} \PYGdefault{o}{+} \PYGdefault{n}{lbda} \PYGdefault{o}{*} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{eye}\PYGdefault{p}{(}\PYGdefault{n}{N}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                             \PYGdefault{n}{y}\PYGdefault{p}{,} \PYGdefault{n}{rcond}\PYGdefault{o}{=}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}
+        \PYGdefault{c+c1}{\PYGdefaultZsh{} Train with ORFF without kernel approximation (primal)}
+        \PYGdefault{n}{c} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{linalg}\PYGdefault{o}{.}\PYGdefault{n}{lstsq}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{T}\PYGdefault{p}{,} \PYGdefault{n}{phiX}\PYGdefault{p}{)} \PYGdefault{o}{+} \PYGdefault{n}{lbda} \PYGdefault{o}{*} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{eye}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{2} \PYGdefault{o}{*} \PYGdefault{n}{D}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                            \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{T}\PYGdefault{p}{,} \PYGdefault{n}{y}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{rcond}\PYGdefault{o}{=}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}
+        \PYGdefault{n}{cc} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{sum}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{phi}\PYGdefault{p}{(}\PYGdefault{n}{x}\PYGdefault{p}{,} \PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)} \PYGdefault{o}{*} \PYGdefault{n}{ck}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}
+        \PYGdefault{c+c1}{\PYGdefaultZsh{} Link dual coefficient with primal coefficients}
+        \PYGdefault{n}{cr} \PYGdefault{o}{=} \PYGdefault{p}{(}\PYGdefault{n}{cc} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{c}\PYGdefault{o}{.}\PYGdefault{n}{ravel}\PYGdefault{p}{(}\PYGdefault{p}{)}\PYGdefault{p}{)} \PYGdefault{o}{/} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{linalg}\PYGdefault{o}{.}\PYGdefault{n}{norm}\PYGdefault{p}{(}\PYGdefault{n}{c}\PYGdefault{p}{)} \PYGdefault{o}{*} \PYGdefault{l+m+mi}{100}
+        \PYGdefault{n}{err} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{array}\PYGdefault{p}{(}\PYGdefault{p}{[}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{linalg}\PYGdefault{o}{.}\PYGdefault{n}{norm}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{phiXt}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{yt}\PYGdefault{p}{)} \PYGdefault{o}{*}\PYGdefault{o}{*} \PYGdefault{l+m+mi}{2} \PYGdefault{o}{/} \PYGdefault{n}{Nt}\PYGdefault{p}{,}
+                        \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{linalg}\PYGdefault{o}{.}\PYGdefault{n}{norm}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{phiXt}\PYGdefault{p}{,}
+                                                     \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                                              \PYGdefault{n}{ck}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{yt}\PYGdefault{p}{)} \PYGdefault{o}{*}\PYGdefault{o}{*} \PYGdefault{l+m+mi}{2} \PYGdefault{o}{/} \PYGdefault{n}{Nt}\PYGdefault{p}{,}
+                        \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{linalg}\PYGdefault{o}{.}\PYGdefault{n}{norm}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{phiXt}\PYGdefault{p}{,} \PYGdefault{n}{cr}\PYGdefault{p}{)}\PYGdefault{p}{)} \PYGdefault{o}{*}\PYGdefault{o}{*} \PYGdefault{l+m+mi}{2} \PYGdefault{o}{/} \PYGdefault{n}{Nt}\PYGdefault{p}{,}
+                        \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{linalg}\PYGdefault{o}{.}\PYGdefault{n}{norm}\PYGdefault{p}{(}\PYGdefault{n}{cr}\PYGdefault{p}{)}\PYGdefault{p}{]}\PYGdefault{p}{)}
+
+        \PYGdefault{c+c1}{\PYGdefaultZsh{} Plot}
+        \PYGdefault{n}{lmin} \PYGdefault{o}{=} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mf}{1.8}
+        \PYGdefault{n}{lmax} \PYGdefault{o}{=} \PYGdefault{l+m+mf}{3.}
+        \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlim}\PYGdefault{p}{(}\PYGdefault{p}{[}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mf}{1.5}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}
+        \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}ylim}\PYGdefault{p}{(}\PYGdefault{p}{[}\PYGdefault{n}{lmin}\PYGdefault{p}{,} \PYGdefault{n}{lmax}\PYGdefault{p}{]}\PYGdefault{p}{)}
+        \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{plot}\PYGdefault{p}{(}\PYGdefault{n}{xt}\PYGdefault{p}{,} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{phiXt}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                        \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{widetilde\PYGdefaultZob{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{Phi\PYGdefaultZcb{}\PYGdefaultZca{}* }\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{theta\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{plot}\PYGdefault{p}{(}\PYGdefault{n}{xt}\PYGdefault{p}{,} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{phiXt}\PYGdefault{p}{,} \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{ck}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                        \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{widetilde\PYGdefaultZob{}K\PYGdefaultZcb{}u\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{linestyle}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZhy{}.}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{scatter}\PYGdefault{p}{(}\PYGdefault{n}{x}\PYGdefault{p}{,} \PYGdefault{n}{y}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{marker}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{+}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{train}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{lw}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}
+        \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{scatter}\PYGdefault{p}{(}\PYGdefault{n}{xt}\PYGdefault{p}{,} \PYGdefault{n}{yt}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{k}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{marker}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{.}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{test}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{legend}\PYGdefault{p}{(}\PYGdefault{n}{loc}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{3}\PYGdefault{p}{)}
+        \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}ylabel}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{y}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{k}{if} \PYGdefault{n}{k} \PYGdefault{o}{==} \PYGdefault{l+m+mi}{3}\PYGdefault{p}{:}
+            \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlabel}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{x}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+
+        \PYGdefault{n}{lmin} \PYGdefault{o}{=} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mf}{1.8}
+        \PYGdefault{n}{lmax} \PYGdefault{o}{=} \PYGdefault{l+m+mf}{3.}
+        \PYGdefault{n}{pred} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{phi}\PYGdefault{p}{(}\PYGdefault{n}{xt}\PYGdefault{p}{,} \PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{cr}\PYGdefault{p}{)}
+        \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlim}\PYGdefault{p}{(}\PYGdefault{p}{[}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mf}{1.5}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}
+        \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}ylim}\PYGdefault{p}{(}\PYGdefault{p}{[}\PYGdefault{n}{lmin}\PYGdefault{p}{,} \PYGdefault{n}{lmax}\PYGdefault{p}{]}\PYGdefault{p}{)}
+        \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{plot}\PYGdefault{p}{(}\PYGdefault{n}{xt}\PYGdefault{p}{,} \PYGdefault{n}{pred}\PYGdefault{p}{,}
+                        \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{widetilde\PYGdefaultZob{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{Phi\PYGdefaultZcb{}\PYGdefaultZca{}* }\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{theta\PYGdefaultZca{}\PYGdefaultZob{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{parallel\PYGdefaultZcb{}\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{scatter}\PYGdefault{p}{(}\PYGdefault{n}{x}\PYGdefault{p}{,} \PYGdefault{n}{y}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{marker}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{+}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{train}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{lw}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}
+        \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{scatter}\PYGdefault{p}{(}\PYGdefault{n}{xt}\PYGdefault{p}{,} \PYGdefault{n}{yt}\PYGdefault{p}{,} \PYGdefault{n}{c}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{k}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{marker}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{.}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{test}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{legend}\PYGdefault{p}{(}\PYGdefault{n}{loc}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{3}\PYGdefault{p}{)}
+        \PYGdefault{k}{if} \PYGdefault{n}{k} \PYGdefault{o}{==} \PYGdefault{l+m+mi}{3}\PYGdefault{p}{:}
+            \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlabel}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{x}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+
+        \PYGdefault{n}{xs} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{arange}\PYGdefault{p}{(}\PYGdefault{n}{cr}\PYGdefault{o}{.}\PYGdefault{n}{size}\PYGdefault{p}{)}
+        \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{barh}\PYGdefault{p}{(}\PYGdefault{n}{xs}\PYGdefault{p}{,} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{abs}\PYGdefault{p}{(}\PYGdefault{n}{cr}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{edgecolor}\PYGdefault{o}{=}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{l+s+s2}{none}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{n}{log}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)}
+        \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}ylabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}j\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{k}{if} \PYGdefault{n}{k} \PYGdefault{o}{==} \PYGdefault{l+m+mi}{3}\PYGdefault{p}{:}
+            \PYGdefault{n}{axis}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlabel}\PYGdefault{p}{(}
+                \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}|}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{theta\PYGdefaultZca{}\PYGdefaultZob{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{parallel\PYGdefaultZcb{}\PYGdefaultZus{}j|\PYGdefaultZdl{}, }\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+si}{\PYGdefaultZpc{} o}\PYGdefault{l+s+s1}{f relative error}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{plt}\PYGdefault{o}{.}\PYGdefault{n}{savefig}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{representer.pgf}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{bbox\PYGdefaultZus{}inches}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{tight}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+
+    \PYGdefault{k}{return} \PYGdefault{n}{err}
+
+\PYGdefault{k}{if} \PYGdefault{n+nv+vm}{\PYGdefaultZus{}\PYGdefaultZus{}name\PYGdefaultZus{}\PYGdefaultZus{}} \PYGdefault{o}{==} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{l+s+s2}{\PYGdefaultZus{}\PYGdefaultZus{}main\PYGdefaultZus{}\PYGdefaultZus{}}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{p}{:}
+    \PYGdefault{n}{main}\PYGdefault{p}{(}\PYGdefault{p}{)}
+\end{pytx@SaveVerbatim}
+
+\begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@PYGpython@EXT:./src/efficient_curlfree_gaussian.py@defaultverb@0}
+\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Efficient implementation of the Gaussian curl\PYGdefaultZhy{}free kernel.\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{time} \PYGdefault{k+kn}{import} \PYGdefault{n}{time}
+
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{pympler.asizeof} \PYGdefault{k+kn}{import} \PYGdefault{n}{asizeof}
+
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{numpy.random} \PYGdefault{k+kn}{import} \PYGdefault{n}{rand}\PYGdefault{p}{,} \PYGdefault{n}{seed}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{numpy} \PYGdefault{k+kn}{import} \PYGdefault{n}{dot}\PYGdefault{p}{,} \PYGdefault{n}{zeros}\PYGdefault{p}{,} \PYGdefault{n}{logspace}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{,} \PYGdefault{n}{matrix}\PYGdefault{p}{,} \PYGdefault{n+nb}{int}\PYGdefault{p}{,} \PYGdefault{n+nb}{float}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{scipy.sparse.linalg} \PYGdefault{k+kn}{import} \PYGdefault{n}{LinearOperator}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{sklearn.kernel\PYGdefaultZus{}approximation} \PYGdefault{k+kn}{import} \PYGdefault{n}{RBFSampler}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{matplotlib.pyplot} \PYGdefault{k+kn}{import} \PYGdefault{n}{savefig}\PYGdefault{p}{,} \PYGdefault{n}{subplots}\PYGdefault{p}{,} \PYGdefault{n}{tight\PYGdefaultZus{}layout}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{NaiveCurlFreeGaussianORFF}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1.}\PYGdefault{p}{,}
+                              \PYGdefault{n}{D}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{100}\PYGdefault{p}{,} \PYGdefault{n}{eps}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1e\PYGdefaultZhy{}5}\PYGdefault{p}{,} \PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Return the Naive ORFF map associated with the data X.}
+
+\PYGdefault{l+s+sd}{    Parameters}
+\PYGdefault{l+s+sd}{    \PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+\PYGdefault{l+s+sd}{    X : \PYGdefaultZob{}array\PYGdefaultZhy{}like\PYGdefaultZcb{}, shape = [n\PYGdefaultZus{}samples, n\PYGdefaultZus{}features]}
+\PYGdefault{l+s+sd}{        Samples.}
+\PYGdefault{l+s+sd}{    gamma : \PYGdefaultZob{}float\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Gamma parameter of the RBF kernel.}
+\PYGdefault{l+s+sd}{    D : \PYGdefaultZob{}integer\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Number of random features.}
+\PYGdefault{l+s+sd}{    eps : \PYGdefaultZob{}float\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Cutoff threshold for the singular values of A.}
+\PYGdefault{l+s+sd}{    random\PYGdefaultZus{}state : \PYGdefaultZob{}integer\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Seed of the generator.}
+
+\PYGdefault{l+s+sd}{    Returns}
+\PYGdefault{l+s+sd}{    \PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+\PYGdefault{l+s+sd}{    \PYGdefaultZbs{}tilde\PYGdefaultZob{}\PYGdefaultZbs{}Phi\PYGdefaultZcb{}(X) : array}
+\PYGdefault{l+s+sd}{    \PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{n}{phi\PYGdefaultZus{}s} \PYGdefault{o}{=} \PYGdefault{n}{RBFSampler}\PYGdefault{p}{(}\PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{n}{gamma}\PYGdefault{p}{,} \PYGdefault{n}{n\PYGdefaultZus{}components}\PYGdefault{o}{=}\PYGdefault{n}{D}\PYGdefault{p}{,}
+                       \PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{o}{=}\PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{p}{)}
+    \PYGdefault{n}{phiX} \PYGdefault{o}{=} \PYGdefault{n}{phi\PYGdefaultZus{}s}\PYGdefault{o}{.}\PYGdefault{n}{fit\PYGdefaultZus{}transform}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{)}
+    \PYGdefault{n}{phiX} \PYGdefault{o}{=} \PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{)} \PYGdefault{o}{*}
+            \PYGdefault{n}{phi\PYGdefaultZus{}s}\PYGdefault{o}{.}\PYGdefault{n}{random\PYGdefaultZus{}weights\PYGdefaultZus{}}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{)}
+
+    \PYGdefault{k}{return} \PYGdefault{n}{matrix}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{)}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{EfficientCurlFreeGaussianORFF}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1.}\PYGdefault{p}{,}
+                                  \PYGdefault{n}{D}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{100}\PYGdefault{p}{,} \PYGdefault{n}{eps}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{1e\PYGdefaultZhy{}5}\PYGdefault{p}{,} \PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Return the Efficient ORFF map associated with the data X.}
+
+\PYGdefault{l+s+sd}{    Parameters}
+\PYGdefault{l+s+sd}{    \PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+\PYGdefault{l+s+sd}{    X : \PYGdefaultZob{}array\PYGdefaultZhy{}like\PYGdefaultZcb{}, shape = [n\PYGdefaultZus{}samples, n\PYGdefaultZus{}features]}
+\PYGdefault{l+s+sd}{        Samples.}
+\PYGdefault{l+s+sd}{    gamma : \PYGdefaultZob{}float\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Gamma parameter of the RBF kernel.}
+\PYGdefault{l+s+sd}{    D : \PYGdefaultZob{}integer\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Number of random features.}
+\PYGdefault{l+s+sd}{    eps : \PYGdefaultZob{}float\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Cutoff threshold for the singular values of A.}
+\PYGdefault{l+s+sd}{    random\PYGdefaultZus{}state : \PYGdefaultZob{}integer\PYGdefaultZcb{},}
+\PYGdefault{l+s+sd}{        Seed of the generator.}
+
+\PYGdefault{l+s+sd}{    Returns}
+\PYGdefault{l+s+sd}{    \PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+\PYGdefault{l+s+sd}{    \PYGdefaultZbs{}tilde\PYGdefaultZob{}\PYGdefaultZbs{}Phi\PYGdefaultZcb{}(X) : array}
+\PYGdefault{l+s+sd}{    \PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{n}{phi\PYGdefaultZus{}s} \PYGdefault{o}{=} \PYGdefault{n}{RBFSampler}\PYGdefault{p}{(}\PYGdefault{n}{gamma}\PYGdefault{o}{=}\PYGdefault{n}{gamma}\PYGdefault{p}{,} \PYGdefault{n}{n\PYGdefaultZus{}components}\PYGdefault{o}{=}\PYGdefault{n}{D}\PYGdefault{p}{,}
+                       \PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{o}{=}\PYGdefault{n}{random\PYGdefaultZus{}state}\PYGdefault{p}{)}
+    \PYGdefault{n}{phiX} \PYGdefault{o}{=} \PYGdefault{n}{phi\PYGdefaultZus{}s}\PYGdefault{o}{.}\PYGdefault{n}{fit\PYGdefaultZus{}transform}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{)}
+
+    \PYGdefault{k}{return} \PYGdefault{n}{LinearOperator}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]} \PYGdefault{o}{*} \PYGdefault{n}{X}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                          \PYGdefault{n}{matvec}\PYGdefault{o}{=}\PYGdefault{k}{lambda} \PYGdefault{n}{b}\PYGdefault{p}{:}
+                          \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{)} \PYGdefault{o}{*}
+                          \PYGdefault{n}{phi\PYGdefaultZus{}s}\PYGdefault{o}{.}\PYGdefault{n}{random\PYGdefaultZus{}weights\PYGdefaultZus{}}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,}
+                                                         \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{b}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                          \PYGdefault{n}{rmatvec}\PYGdefault{o}{=}\PYGdefault{k}{lambda} \PYGdefault{n}{r}\PYGdefault{p}{:}
+                          \PYGdefault{n}{dot}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{,}
+                                             \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{)} \PYGdefault{o}{*}
+                               \PYGdefault{n}{phi\PYGdefaultZus{}s}\PYGdefault{o}{.}\PYGdefault{n}{random\PYGdefaultZus{}weights\PYGdefaultZus{}}\PYGdefault{o}{.}\PYGdefault{n}{reshape}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,}
+                                                              \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}
+                                                              \PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{reshape}
+                          \PYGdefault{p}{(}\PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]} \PYGdefault{o}{*} \PYGdefault{n}{X}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{n}{phiX}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{T}\PYGdefault{p}{,} \PYGdefault{n}{r}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                          \PYGdefault{n}{dtype}\PYGdefault{o}{=}\PYGdefault{n+nb}{float}\PYGdefault{p}{)}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{main}\PYGdefault{p}{(}\PYGdefault{p}{)}\PYGdefault{p}{:}
+    \PYGdefault{l+s+sa}{r}\PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Plot figure: Efficient decomposable gaussian ORFF.\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{n}{N} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{1000}  \PYGdefault{c+c1}{\PYGdefaultZsh{} Number of points}
+    \PYGdefault{n}{dmax} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{100}  \PYGdefault{c+c1}{\PYGdefaultZsh{} Input dimension}
+    \PYGdefault{n}{D} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{500}  \PYGdefault{c+c1}{\PYGdefaultZsh{} Number of random features}
+
+    \PYGdefault{n}{seed}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}
+
+    \PYGdefault{n}{R}\PYGdefault{p}{,} \PYGdefault{n}{T} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{50}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{10}
+    \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{,} \PYGdefault{n}{mem\PYGdefaultZus{}Efficient} \PYGdefault{o}{=} \PYGdefault{n}{zeros}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{zeros}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{p}{)}
+    \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{,} \PYGdefault{n}{mem\PYGdefaultZus{}naive} \PYGdefault{o}{=} \PYGdefault{n}{zeros}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{zeros}\PYGdefault{p}{(}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{p}{)}
+
+    \PYGdefault{k}{for} \PYGdefault{n}{i}\PYGdefault{p}{,} \PYGdefault{n}{d} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{enumerate}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{dmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{p}{)}\PYGdefault{p}{:}
+        \PYGdefault{n}{X} \PYGdefault{o}{=} \PYGdefault{n}{rand}\PYGdefault{p}{(}\PYGdefault{n}{N}\PYGdefault{p}{,} \PYGdefault{n+nb}{int}\PYGdefault{p}{(}\PYGdefault{n}{d}\PYGdefault{p}{)}\PYGdefault{p}{)}
+
+        \PYGdefault{c+c1}{\PYGdefaultZsh{} Perform \PYGdefaultZbs{}Phi(X)\PYGdefaultZca{}T \PYGdefaultZbs{}theta with Efficient implementation}
+        \PYGdefault{k}{for} \PYGdefault{n}{j} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{)}\PYGdefault{p}{:}
+            \PYGdefault{n}{start} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)}
+            \PYGdefault{n}{phiX1} \PYGdefault{o}{=} \PYGdefault{n}{EfficientCurlFreeGaussianORFF}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)}
+            \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{start}
+            \PYGdefault{n}{start} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)}
+            \PYGdefault{n}{phiX1} \PYGdefault{o}{*} \PYGdefault{n}{rand}\PYGdefault{p}{(}\PYGdefault{n}{phiX1}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}
+            \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{start}
+            \PYGdefault{n}{mem\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{asizeof}\PYGdefault{p}{(}\PYGdefault{n}{phiX1}\PYGdefault{p}{,} \PYGdefault{n}{code}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)}
+
+        \PYGdefault{c+c1}{\PYGdefaultZsh{} Perform \PYGdefaultZbs{}Phi(X)\PYGdefaultZca{}T \PYGdefaultZbs{}theta with naive implementation}
+        \PYGdefault{k}{for} \PYGdefault{n}{j} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n}{R}\PYGdefault{p}{)}\PYGdefault{p}{:}
+            \PYGdefault{n}{start} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)}
+            \PYGdefault{n}{phiX2} \PYGdefault{o}{=} \PYGdefault{n}{NaiveCurlFreeGaussianORFF}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{D}\PYGdefault{p}{)}
+            \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{start}
+            \PYGdefault{n}{start} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)}
+            \PYGdefault{n}{phiX2} \PYGdefault{o}{*} \PYGdefault{n}{rand}\PYGdefault{p}{(}\PYGdefault{n}{phiX2}\PYGdefault{o}{.}\PYGdefault{n}{shape}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}
+            \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{time}\PYGdefault{p}{(}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{start}
+            \PYGdefault{n}{mem\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{n}{j}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{asizeof}\PYGdefault{p}{(}\PYGdefault{n}{phiX2}\PYGdefault{p}{,} \PYGdefault{n}{code}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Plot}
+    \PYGdefault{n}{f}\PYGdefault{p}{,} \PYGdefault{n}{axes} \PYGdefault{o}{=} \PYGdefault{n}{subplots}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{3}\PYGdefault{p}{,} \PYGdefault{n}{figsize}\PYGdefault{o}{=}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{10}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{4}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{sharex}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{,} \PYGdefault{n}{sharey}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{False}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{dmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Efficient decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{dmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Naive decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{dmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Efficient decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{dmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{time\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Naive decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{dmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{mem\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{mem\PYGdefaultZus{}Efficient}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Efficient decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{errorbar}\PYGdefault{p}{(}\PYGdefault{n}{logspace}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{log10}\PYGdefault{p}{(}\PYGdefault{n}{dmax}\PYGdefault{p}{)}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{astype}\PYGdefault{p}{(}\PYGdefault{n+nb}{int}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{mem\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{mean}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{mem\PYGdefaultZus{}naive}\PYGdefault{p}{[}\PYGdefault{p}{:}\PYGdefault{p}{,} \PYGdefault{p}{:}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{std}\PYGdefault{p}{(}\PYGdefault{n}{axis}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}\PYGdefault{p}{,}
+                     \PYGdefault{n}{label}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Naive decomposable ORFF}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}yscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}yscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}yscale}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{log}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}p=}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{dim(}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{mathcal\PYGdefaultZob{}Y\PYGdefaultZcb{})\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}p=}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{dim(}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{mathcal\PYGdefaultZob{}Y\PYGdefaultZcb{})\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}p=}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{dim(}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{mathcal\PYGdefaultZob{}Y\PYGdefaultZcb{})\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}ylabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{time (s)}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}ylabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{memory (bytes)}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}title}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{Preprocessing time}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}title}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{widetilde\PYGdefaultZob{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{Phi\PYGdefaultZcb{}(X)\PYGdefaultZca{}T }\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{theta\PYGdefaultZdl{} computation time}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}title}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{\PYGdefaultZdl{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{widetilde\PYGdefaultZob{}}\PYGdefault{l+s+s1}{\PYGdefaultZbs{}}\PYGdefault{l+s+s1}{Phi\PYGdefaultZcb{}(X)\PYGdefaultZca{}T\PYGdefaultZdl{} required memory}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{axes}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{legend}\PYGdefault{p}{(}\PYGdefault{n}{loc}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}
+    \PYGdefault{n}{tight\PYGdefaultZus{}layout}\PYGdefault{p}{(}\PYGdefault{p}{)}
+    \PYGdefault{n}{savefig}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{efficient\PYGdefaultZus{}curlfree\PYGdefaultZus{}gaussian.pgf}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{bbox\PYGdefaultZus{}inches}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+s1}{tight}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{)}
+
+\PYGdefault{k}{if} \PYGdefault{n+nv+vm}{\PYGdefaultZus{}\PYGdefaultZus{}name\PYGdefaultZus{}\PYGdefaultZus{}} \PYGdefault{o}{==} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{l+s+s2}{\PYGdefaultZus{}\PYGdefaultZus{}main\PYGdefaultZus{}\PYGdefaultZus{}}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{p}{:}
+    \PYGdefault{n}{main}\PYGdefault{p}{(}\PYGdefault{p}{)}
+\end{pytx@SaveVerbatim}
+

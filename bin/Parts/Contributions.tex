@@ -1,0 +1,61 @@
+%!TEX root = ../ThesisRomainbrault.tex
+
+\chapter{Operator-valued Random Fourier Features}
+\label{ch:operator-valued_random_fourier_features}
+\bigskip
+\begin{justify}
+\end{justify}
+\minitoc
+\include{Parts/Contributions/Construction}
+
+\chapter{Bounding the error of the ORFF approximation} % Chapter title
+\label{ch:concistency_and_generalization}
+\bigskip
+\begin{justify}
+    In this chapter we refine the bound on the \ac{OVK} approximation with
+    \ac{ORFF} we first proposed in \cite{brault2016random} and presented in
+    \cite{braultborne}. It generalizes the proof technique of
+    \citet{Rahimi2007} to \ac{OVK} on \ac{LCA} groups thanks to the recent
+    results of \citet{sutherland2015, tropp2015introduction, minsker2011some,
+    koltchinskii2013remark}. As a Bernstein bound it depends on the variance of
+    the estimator for which we derive an \say{upper bound}.
+\end{justify}
+\minitoc
+\include{Parts/Contributions/Concentration}
+
+\chapter{Learning with Feature maps}
+\label{ch:learning operator-valued_random_fourier_features}
+\bigskip
+\begin{justify} 
+\end{justify}
+\minitoc
+\include{Parts/Contributions/Learning}
+
+\chapter{Consistency and Generalization bound for ORFF}
+\label{ch:generalization_for_ORFF}
+\bigskip
+\begin{justify} 
+    This short chapter deals with a generalization bound for the a regression
+    problem with ORFF based on the results of \citet{rahimi2009weighted,
+    maurer2016vector}. We also discuss the case of Ridge regression presented
+    in \cref{ch:learnin operator-valued_random_fourier_features}.
+\end{justify}
+\minitoc
+\include{Parts/Contributions/Generalization}
+
+
+\chapter{Application to time series modelling} % Chapter title
+\label{ch:applications}
+\bigskip
+\begin{justify}
+This chapter shows how to use the \acs{ORFF} methodology to non-linear vector
+autoregression. It is an instanciation of the \acs{ORFF} framework to
+$\mathcal{X}=\mathcal{Y}=(\mathbb{R}^d, +)$. We also give a generalization of a
+stochastic gradient descent \citep{dai2014scalable} to \acs{ORFF}. This is a
+joint work with N\'eh\'emy Lim and Florence d'Alch\'e-Buc and has been
+published at a workshop of \acs{ECML}. It is based on the previous work
+\citet{Lim2015} for time series vector autoregression with operator-valued
+kernels \cite{brault2016scaling}.
+\end{justify}
+\minitoc
+\include{Parts/Contributions/Applications}

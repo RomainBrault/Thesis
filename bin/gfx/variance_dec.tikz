@@ -1,0 +1,92 @@
+\begin{tikzpicture}[x=1mm,y=-1mm]
+\definecolor{mycolorD0D0E0}{rgb}{0.82,0.82,0.88}
+\definecolor{mycolor0000FF}{rgb}{0,0,1}
+\definecolor{mycolor362A35}{rgb}{0.21,0.16,0.21}
+\definecolor{mycolor6C606B}{rgb}{0.42,0.38,0.42}
+\definecolor{mycolor000000}{rgb}{0,0,0}
+\definecolor{mycolor564A55}{rgb}{0.34,0.29,0.33}
+\definecolor{mycolor000000}{rgb}{0,0,0}
+\definecolor{mycolorFF0000}{rgb}{1,0,0}
+\definecolor{mycolor4C404B}{rgb}{0.3,0.25,0.29}
+\begin{scope}
+\begin{scope}
+% \fontspec{PT Sans}
+\draw (50.76,64.59) node [text=mycolor564A55,draw=mycolor000000,draw opacity=0,rotate around={-0: (0,1.81)},inner sep=0.0]{\fontsize{3.88mm}{4.66mm}\selectfont $\text{D}$};
+\end{scope}
+\begin{scope}
+% \fontspec{PT Sans Caption}
+\draw (22.74,56.58) node [text=mycolor6C606B,rotate around={-0: (28.01,2.01)},inner sep=0.0]{\fontsize{2.82mm}{3.39mm}\selectfont $\text{10}^{\text{0}}\text{}$};
+\draw (33.95,56.58) node [text=mycolor6C606B,rotate around={-0: (16.81,2.01)},inner sep=0.0]{\fontsize{2.82mm}{3.39mm}\selectfont $\text{10}^{\text{1}}\text{}$};
+\draw (45.15,56.58) node [text=mycolor6C606B,rotate around={-0: (5.6,2.01)},inner sep=0.0]{\fontsize{2.82mm}{3.39mm}\selectfont $\text{10}^{\text{2}}\text{}$};
+\draw (56.36,56.58) node [text=mycolor6C606B,rotate around={-0: (-5.6,2.01)},inner sep=0.0]{\fontsize{2.82mm}{3.39mm}\selectfont $\text{10}^{\text{3}}\text{}$};
+\draw (67.56,56.58) node [text=mycolor6C606B,rotate around={-0: (-16.81,2.01)},inner sep=0.0]{\fontsize{2.82mm}{3.39mm}\selectfont $\text{10}^{\text{4}}\text{}$};
+\draw (78.77,56.58) node [text=mycolor6C606B,rotate around={-0: (-28.01,2.01)},inner sep=0.0]{\fontsize{2.82mm}{3.39mm}\selectfont $\text{10}^{\text{5}}\text{}$};
+\end{scope}
+\begin{scope}
+\begin{scope}
+% \fontspec{PT Sans}
+\draw (84.58,36.09) node [text=mycolor4C404B,rotate around={-0: (4.1,0)},right,inner sep=0.0]{\fontsize{2.82mm}{3.39mm}\selectfont $\text{Empirical}$};
+\draw (84.58,39.72) node [text=mycolor4C404B,rotate around={-0: (4.1,-3.63)},right,inner sep=0.0]{\fontsize{2.82mm}{3.39mm}\selectfont $\text{Upper Bound}$};
+\end{scope}
+\begin{scope}
+\path [fill=mycolor0000FF,draw=mycolor000000,draw opacity=0] (81.77,35.19) rectangle +(1.81,1.81);
+\path [fill=mycolorFF0000,draw=mycolor000000,draw opacity=0] (81.77,38.81) rectangle +(1.81,1.81);
+\end{scope}
+\begin{scope}
+% \fontspec{PT Sans}
+\draw (81.77,30.27) node [text=mycolor362A35,draw=mycolor000000,draw opacity=0,rotate around={-0: (7.92,0.19)},right,inner sep=0.0]{\fontsize{3.88mm}{4.66mm}\selectfont $\text{Variance}$};
+\end{scope}
+\end{scope}
+\begin{scope}
+\clip  (20.74,12.61) -- (80.77,12.61) -- (80.77,55.58) -- (20.74,55.58);
+\begin{scope}
+\clip  (20.74,12.61) -- (80.77,12.61) -- (80.77,55.58) -- (20.74,55.58);
+\path [fill=mycolor000000,fill opacity=0,draw=mycolor000000,draw opacity=0] (20.74,12.61) rectangle +(60.02,42.97);
+\end{scope}
+\begin{scope}
+[dash pattern=on 0.5mm off 0.5mm,line width=0.2mm]
+\path [fill=mycolor000000,draw=mycolorD0D0E0]  (20.74,53.58) -- (80.77,53.58);
+\path [fill=mycolor000000,draw=mycolorD0D0E0]  (20.74,47.08) -- (80.77,47.08);
+\path [fill=mycolor000000,draw=mycolorD0D0E0]  (20.74,40.59) -- (80.77,40.59);
+\path [fill=mycolor000000,draw=mycolorD0D0E0]  (20.74,34.09) -- (80.77,34.09);
+\path [fill=mycolor000000,draw=mycolorD0D0E0]  (20.74,27.6) -- (80.77,27.6);
+\path [fill=mycolor000000,draw=mycolorD0D0E0]  (20.74,21.11) -- (80.77,21.11);
+\path [fill=mycolor000000,draw=mycolorD0D0E0]  (20.74,14.61) -- (80.77,14.61);
+\end{scope}
+\begin{scope}
+[dash pattern=on 0.5mm off 0.5mm,line width=0.2mm]
+\path [fill=mycolor000000,draw=mycolorD0D0E0]  (22.74,12.61) -- (22.74,55.58);
+\path [fill=mycolor000000,draw=mycolorD0D0E0]  (33.95,12.61) -- (33.95,55.58);
+\path [fill=mycolor000000,draw=mycolorD0D0E0]  (45.15,12.61) -- (45.15,55.58);
+\path [fill=mycolor000000,draw=mycolorD0D0E0]  (56.36,12.61) -- (56.36,55.58);
+\path [fill=mycolor000000,draw=mycolorD0D0E0]  (67.56,12.61) -- (67.56,55.58);
+\path [fill=mycolor000000,draw=mycolorD0D0E0]  (78.77,12.61) -- (78.77,55.58);
+\end{scope}
+\begin{scope}
+\begin{scope}
+[line width=0.3mm]
+\path [fill=mycolor000000,fill opacity=0,draw=mycolor0000FF]  (22.74,19.85) -- (33.95,26.37) -- (45.15,32.91) -- (56.36,39.38) -- (67.56,45.86) -- (78.77,52.35);
+\path [fill=mycolor000000,fill opacity=0,draw=mycolorFF0000]  (22.74,19.88) -- (33.95,26.38) -- (45.15,32.87) -- (56.36,39.37) -- (67.56,45.86) -- (78.77,52.36);
+\end{scope}
+\end{scope}
+\end{scope}
+\begin{scope}
+% \fontspec{PT Sans Caption}
+\draw (19.74,53.58) node [text=mycolor6C606B,rotate around={-0: (-3.07,-19.48)},left,inner sep=0.0]{\fontsize{2.82mm}{3.39mm}\selectfont $\text{10}^{\text{-4}}\text{}$};
+\draw (19.74,47.08) node [text=mycolor6C606B,rotate around={-0: (-3.07,-12.99)},left,inner sep=0.0]{\fontsize{2.82mm}{3.39mm}\selectfont $\text{10}^{\text{-3}}\text{}$};
+\draw (19.74,40.59) node [text=mycolor6C606B,rotate around={-0: (-3.07,-6.49)},left,inner sep=0.0]{\fontsize{2.82mm}{3.39mm}\selectfont $\text{10}^{\text{-2}}\text{}$};
+\draw (19.74,34.09) node [text=mycolor6C606B,rotate around={-0: (-3.07,0)},left,inner sep=0.0]{\fontsize{2.82mm}{3.39mm}\selectfont $\text{10}^{\text{-1}}\text{}$};
+\draw (19.74,27.6) node [text=mycolor6C606B,rotate around={-0: (-3.07,6.49)},left,inner sep=0.0]{\fontsize{2.82mm}{3.39mm}\selectfont $\text{10}^{\text{0}}\text{}$};
+\draw (19.74,21.11) node [text=mycolor6C606B,rotate around={-0: (-3.07,12.99)},left,inner sep=0.0]{\fontsize{2.82mm}{3.39mm}\selectfont $\text{10}^{\text{1}}\text{}$};
+\draw (19.74,14.61) node [text=mycolor6C606B,rotate around={-0: (-3.07,19.48)},left,inner sep=0.0]{\fontsize{2.82mm}{3.39mm}\selectfont $\text{10}^{\text{2}}\text{}$};
+\end{scope}
+\begin{scope}
+% \fontspec{PT Sans}
+\draw (8.81,32.1) node [text=mycolor564A55,draw=mycolor000000,draw opacity=0,rotate around={90: (0,2)},inner sep=0.0]{\fontsize{3.88mm}{4.66mm}\selectfont $\text{Error}$};
+\end{scope}
+\begin{scope}
+% \fontspec{PT Sans}
+\draw (50.76,10.61) node [text=mycolor564A55,draw=mycolor000000,draw opacity=0,rotate around={-0: (0,-1.81)},inner sep=0.0]{\fontsize{3.88mm}{4.66mm}\selectfont $\text{Decomposable kernel}$};
+\end{scope}
+\end{scope}
+\end{tikzpicture}

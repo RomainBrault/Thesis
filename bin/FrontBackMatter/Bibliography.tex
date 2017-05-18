@@ -1,0 +1,27 @@
+%!TEX root = ../../ThesisRomainbrault.tex
+% Bibliography
+
+% Reference the bibliography elsewhere with \autoref{app:bibliography}
+\label{app:bibliography}
+
+% Work-around to have small caps also here in the headline
+\manualmark
+
+% Work-around to have small caps also
+\markboth{\spacedlowsmallcaps{\bibname}}{\spacedlowsmallcaps{\bibname}}
+%\phantomsection
+\refstepcounter{dummy}
+
+% Place the bibliography slightly below the rest of the document content in the
+% table of contents
+\addtocontents{toc}{\protect\vspace{\beforebibskip}}
+\addcontentsline{toc}{part}{\tocEntry{\bibname}}
+
+
+\printbibliography[keyword=ownpubs, title=Publications]
+\printbibliography[keyword=ovks, title=References on Operator-Valued
+Kernels]
+\printbibliography[keyword=extrems, title=References on Extrems]
+
+\chapterend
+

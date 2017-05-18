@@ -1,0 +1,919 @@
+%!TEX root = ../../ThesisRomainbrault.tex
+
+\section{Proof of the error bound with high probability of the ORFF
+estimator}
+\label{subsec:concentration_proof}
+We recall the notations $\delta=x\groupop z^{-1}$, for all $x$,
+$z\in\mathcal{X}$,
+$\tilde{K} (x,z) = {\tildePhi{\omega} (x)}^\adjoint \tildePhi{\omega} (z)$,
+$\tilde{K}^j (x,z) = {\Phi_x (\omega_j)}^\adjoint \Phi_z (\omega_j)$, where
+$\omega_j\sim\probability_{\dual{\Haar,\rho}}$ and $K_e (\delta)=K(x,z)$ and
+$\tilde{K}_e(\delta)=\tilde{K}(x,z)$. For the sake of readabilty, we use
+throughout the proof the quantities
+\begin{dgroup*}
+    \begin{dmath*}
+        F (\delta)\colonequals\tilde{K} (x,z) - K (x,z)
+    \end{dmath*}
+    \begin{dmath*}
+        F^j (\delta)\colonequals\frac{1}{D} \left(\tilde{K}^j (x,z) - K
+        (x,z)\right) 
+    \end{dmath*}
+\end{dgroup*}
+We also view $\mathcal{X}$ as a metric space endowed with the distance
+$d_{\mathcal{X}}:\mathcal{X}\times\mathcal{X}\to\mathbb{R}_+$. Compared to the
+scalar case, the proof follows the same scheme as the one described in
+\citep{Rahimi2007, sutherland2015}, but we consider an operator norm as measure
+of the error and therefore concentration inequality dealing with these operator
+norm.  The main feature of \cref{pr:bound_approx_unbounded} is that it covers
+the case of bounded \acs{ORFF} as well as unbounded \acs{ORFF}. In the case of
+bounded \acs{ORFF}, a Bernstein inequality for matrix concentration such that
+the one proved in \citet[Corollary 5.2]{Mackey2014} or the formulation of
+\citet{Tropp} recalled in \citet{koltchinskii2013remark}~is suitable. However
+some kernels like the curl and the divergence-free kernels do not have obvious
+bounded $\norm{F^j}_{\mathcal{Y},\mathcal{Y}}$ but exhibit $F^j$ with
+subexponential tails. Therefore, we use an operator Bernstein concentration
+inequality adapted for random matrices with subexponential norms.
+\subsection{Epsilon-net}
+\label{subsec:epsilon-net}
+Let $\mathcal{C}\subseteq\mathcal{X}$ be a compact subset of $\mathcal{X}$. Let
+$\mathcal{D}_{\mathcal{C}} = \Set{x\groupop z^{-1} | x, z\in\mathcal{C} }$ with
+diameter at most $2\abs{\mathcal{C}}$ where $\abs{\mathcal{C}}$ is the diameter
+of $\mathcal{C}$. Since $\mathcal{C}$ is supposed compact, so is
+$\mathcal{D}_{\mathcal{C}}$. Since $\mathcal{D}_{\mathcal{C}}$ is also a metric
+space it is well known that a compact metric space is totally bounded. Thus it
+is possible to find a finite $\epsilon$-net covering
+$\mathcal{D}_{\mathcal{C}}$. We call $T=\mathcal{N}(\mathcal{D}_{\mathcal{C}},
+r)$ the number of closed balls of radius $r$ required to cover
+$\mathcal{D}_{\mathcal{C}}$. For instance if $\mathcal{D}_{\mathcal{C}}$ is a
+subspace finite dimensional Banach space with diameter at most
+$2\abs{\mathcal{C}}$ it is possible to cover the space with at most
+$T={(4\abs{\mathcal{C}}/r)}^d$ balls of radius $r$
+(see \citet[proposition 5]{cucker2001mathematical}).
+\paragraph{}
+Let us call $\delta_i,i=1,\ldots,T$ the center of the $i$-th ball, also called
+anchor of the $\epsilon$-net. Denote $L_{F}$ the Lipschitz constant of $F$. Let
+$\norm{\cdot}_{\mathcal{Y},\mathcal{Y}}$ be the operator norm on
+$\mathcal{L}(\mathcal{Y})$ (largest eigenvalue). We introduce the following
+technical lemma.
+\begin{lemma}\label{lm:error_decomposition}
+    $\forall \delta \in \mathcal{D}_{\mathcal{C}}$, if
+    \begin{dmath}
+        L_{F}\le\frac{\epsilon}{2r}\label{condition1}
+    \end{dmath}
+    and
+    \begin{dmath}
+        \norm{F (\delta_i)}_{\mathcal{Y},\mathcal{Y}}
+        \le\frac{\epsilon}{2}\condition{for all
+        $i\in\mathbb{N}^*_T$}\label{condition2}
+    \end{dmath}
+    then $\norm{F(\delta)}_{\mathcal{Y},\mathcal{Y}} \leq \epsilon$.
+\end{lemma}
+\begin{proof}
+    \begin{dmath*}
+        \norm{F (\delta)}_{\mathcal{Y},\mathcal{Y}} = \norm{F (\delta) -
+        F(\delta_i) + F(\delta_i)}_{\mathcal{Y},\mathcal{Y} }\le
+        \norm{F(\delta) - F(\delta_i)}_{\mathcal{Y},\mathcal{Y}} +
+        \norm{F(\delta_i)}_{\mathcal{Y},\mathcal{Y}}
+    \end{dmath*}
+    for all $0<i<T$. Using the Lipschitz continuity of $F$ we have 
+    \begin{dmath*}
+        \norm{F(\delta) - F(\delta_i)}_{\mathcal{Y},\mathcal{Y}} \le
+        d_{\mathcal{X}}(\delta,\delta_i) L_{F} \hiderel{\le} rL_{F}
+    \end{dmath*}
+    hence
+    \begin{dmath*}
+        \norm{F(\delta)}_{\mathcal{Y},\mathcal{Y}} \le rL_{F} +
+        \norm{F(\delta_i)}_{\mathcal{Y},\mathcal{Y}} \hiderel{=}
+        \frac{r\epsilon}{2 r} + \frac{\epsilon}{2} \hiderel{=} \epsilon.
+    \end{dmath*}
+\end{proof}
+To apply the lemma, we must bound the Lipschitz constant of the operator-valued
+function $F$ (\cref{condition1}) and
+$\norm{F(\delta_i)}_{\mathcal{Y},\mathcal{Y}}$, for all $i=1, \ldots, T$ as
+well (\cref{condition2}).
+\subsection{Bounding the Lipschitz constant}
+This proof is a slight generalization of \citet{minh2016operator} to arbitrary
+metric spaces. It differ from our first approach \citep{brault2016random},
+based on the proof of \citet{sutherland2015} which was only valid for a finite
+dimensional input space $\mathcal{X}$ and imposed a twice differentiability
+condition on the considered kernel.
+\begin{lemma}
+    \label{lm:LipschitzK}
+    Let $H_\omega \in \mathbb{R}_+$ be the Lipschitz constant of
+    $h_\omega(\cdot)$ and assume that
+    \begin{dmath*}
+        \int_{\dual{\mathcal{X}}} H_\omega
+        \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}d\probability_{\dual{\Haar},
+        \rho}(\omega) < \infty.
+    \end{dmath*}
+    Then the operator-valued function
+    $K_e:\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is Lipschitz with
+    \begin{dmath}
+        \norm{K_e(x) - K_e(z)}_{\mathcal{Y},\mathcal{Y}}\le
+        d_{\mathcal{X}}(x,z) \int_{\dual{\mathcal{X}}} H_\omega
+        \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}d\probability_{\dual{\Haar},
+        \rho}(\omega).
+    \end{dmath}
+\end{lemma}
+\begin{proof}
+    We use the fact that the cosine function is Lipschitz with constant $1$ and
+    $h_{\omega}$ Lipschitz with constant $H_\omega$. For all $x$,
+    $z\in\mathcal{X}$ we have
+    \begin{dmath*}
+        \norm{\tilde{K}_e(x) - K_e(z)}_{\mathcal{Y},\mathcal{Y}}
+        = \norm{\int_{\dual{\mathcal{X}}} \left(\cos h_\omega(x) - \cos
+        h_\omega(z)\right)A(\omega)d\probability_{\dual{\Haar},\rho}
+        }_{\mathcal{Y},\mathcal{Y}}
+        \le \int_{\dual{\mathcal{X}}} \abs{\cos h_\omega(x) - \cos
+        h_\omega(z)}\norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}
+        d\probability_{\dual{\Haar},\rho}
+        \le \int_{\dual{\mathcal{X}}} \abs{h_\omega(x) -
+        h_\omega(z)}\norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}
+        d\probability_{\dual{\Haar},\rho}
+        \le d_{\mathcal{X}}(x, z) \int_{\dual{\mathcal{X}}} H_{\omega}
+        \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}
+        d\probability_{\dual{\Haar},\rho}
+    \end{dmath*}
+\end{proof}
+In the same way, considering $\tilde{K}_e(\delta)=\frac{1}{D}\sum_{j=1}^D\cos
+h_{\omega_j}(\delta)A(\omega_j)$, where
+$\omega_j\sim\probability_{\dual{\Haar},\rho}$, we can show that $\tilde{K}_e$
+is Lipschitz with
+\begin{dmath*}
+    \norm{\tilde{K}_e(x) - \tilde{K}_e(z)}_{\mathcal{Y},\mathcal{Y}}
+    \le d_{\mathcal{X}}(x,z)\frac{1}{D}\sum_{j=1}^DH_{\omega_j}
+    \norm{A(\omega_j)}_{\mathcal{Y},\mathcal{Y}}.
+\end{dmath*}
+Combining the Lipschitz continuity of $\tilde{K}_e$ and $\tilde{K}$
+(\cref{lm:LipschitzK}) we obtain
+\begin{dmath*}
+    \norm{F(x)-F(z)}_{\mathcal{Y},\mathcal{Y}}
+    = \norm{\tilde{K}_e(x) - \tilde{K}_e(x) - \tilde{K}_e(z) +
+    K_e(z)}_{\mathcal{Y}, \mathcal{Y}} 
+    \le \norm{\tilde{K}_e(x) -
+    \tilde{K}_e(z)}_{\mathcal{Y}, \mathcal{Y}} + \norm{K_e(x) -
+    K_e(z)}_{\mathcal{Y}, \mathcal{Y}}
+    \le d_{\mathcal{X}}(x,z)\left(\int_{\dual{\mathcal{X}}} H_\omega
+    \norm{A(\omega)}_{\mathcal{Y}, \mathcal{Y}}
+    d\probability_{\dual{\Haar},\rho} +
+    \frac{1}{D}\sum_{j=1}^DH_{\omega_j}\norm{A(\omega_j)}_{\mathcal{Y},
+    \mathcal{Y}} \right)
+\end{dmath*}
+Taking the expectation yields
+\begin{dmath*}
+    \expectation_{\dual{\Haar},\rho}\left[ L_F \right] = 2
+    \int_{\dual{\mathcal{X}}} H_\omega
+    \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}d\probability_{\dual{\Haar},\rho}
+\end{dmath*}
+Thus by Markov's inequality,
+\begin{dmath}
+    \probability_{\dual{\Haar},\rho}\set{(\omega_j)_{j=1}^D | L_F \ge \epsilon}
+    \le \frac{\expectation_{\dual{\Haar},\rho}\left[ L_F \right]}{\epsilon} \le
+    \frac{2}{\epsilon} \int_{\dual{\mathcal{X}}} H_\omega
+    \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}
+    d\probability_{\dual{\Haar},\rho}.
+    \label{eq:Lipschitz_constant}
+\end{dmath}
+
+\subsection[Bounding the error on a given anchor point]{Bounding $F$ on a given
+anchor point $\delta_i$}
+
+To bound $\norm{F(\delta_i)}_{\mathcal{Y}, \mathcal{Y}}$, Hoeffding inequality
+devoted to matrix concentration \citep{Mackey2014}~can be applied. We prefer
+here to turn to tighter and refined inequalities such as Matrix Bernstein
+inequalities (\citet{sutherland2015}~also pointed that for the scalar case).
+The first non-commutative (matrix) concetration inequalities are due to the
+pioneer work of \citet{Ahls2002}, using bound on the moment generating
+function. This gave rise to many applications
+\citet{Tropp,oliveira2009concentration,koltchinskii2013remark}~ranging from
+analysis of randomized optimization algorithm to analysis of random graphs and
+generalization bounds usefull in machine learning. The following inequality has
+been proposed in \cite{koltchinskii2013remark}.
+\begin{theorem}[Bounded non-commutative Bernstein]\label{th:Bernstein1}
+    From Theorem 3 of \citet{koltchinskii2013remark}, consider a sequence
+    $(X_{j})_{j=1}^D$ of $D$ independent Hermitian $p \times p$ random matrices
+    acting on a finite dimensional Hilbert space $\mathcal{Y}$ that satisfy
+    $\expectation X_{j} = 0$, and suppose that there exist some constant $U \ge
+    \norm{X_{j}}_{\mathcal{Y},\mathcal{Y}}$ for each index $j$. Denote the
+    proxy bound on the matrix variance 
+    \begin{dmath*}
+        V \succcurlyeq \sum_{j=1}^D \expectation X_j^2.
+    \end{dmath*}
+    Then, for all $\epsilon \geq 0$,
+    \begin{dmath*}
+        \probability\Set{\norm{\sum_{j=1}^D X_{j}}_{\mathcal{Y}, \mathcal{Y}}
+        \geq \epsilon } \leq p
+        \exp\left(-\frac{\epsilon^2}{2\norm{V}_{\mathcal{Y},\mathcal{Y}} +
+        2U\epsilon/3}\right)
+    \end{dmath*}
+\end{theorem}
+This bound we used in our original paper \cite{brault2016random}~has the
+default to grow lineraly with the dimension $p$ of the output space
+$\mathcal{Y}$. However if the evaluation of the operator-valued kernel at two
+points yields a low-rank matrix, this bound could be improved since only a few
+principal dimensions are relevent. Moreover this bound cannot be used when
+dealing with operator-valued kernel acting on infinite dimensional Hilbert
+spaces. Yet when the evaluation of the kernel at two points is a compact
+operator, we could expect the concentration inequality to be valid since it has
+finite trace. Recent results of \citet{minsker2011some} consider the notion of
+intrinsic dimension to avoid this \say{curse of dimensionality}.
+\begin{definition}
+    Let $A$ be a trace class operator acting on a Hilbert space
+    $\mathcal{Y}$. We call intrinsic dimension the quantity
+    \begin{dmath*}
+        \intdim(A) = \frac{\Tr\left[A\right]}{\norm{A}_{\mathcal{Y},
+        \mathcal{Y}}}.
+    \end{dmath*}
+\end{definition}
+When $A$ is approximately low-rank (\acs{ie} many eigenvalues are small), or
+go quickly to zero, the intrinsic dimension can be much lower than the
+dimensionality. Indeed,
+\begin{dmath*}
+    1 \le\intdim(A) \hiderel{\le} \rank(A) \hiderel{\le} \dim(A).
+\end{dmath*}
+\begin{theorem}[Bounded non-commutative Bernstein with intrinsic dimension 
+\citep{minsker2011some, tropp2015introduction}]\label{th:Bernstein2}
+    Consider a sequence ${(X_j)}_{j=1}^D$ of $D$ independent Hilbert-Schmidt
+    self-adjoint random operators acting on a separable Hilbert $\mathcal{Y}$
+    space that satisfy $\expectation X_j = 0$ for all $j\in\mathbb{N}^*_D$.
+    Suppose that there exist some constant $U \ge
+    2\norm{X_j}_{\mathcal{Y},\mathcal{Y}}$ almost surely for all
+    $j\in\mathbb{N}^*_D$. Define a semi-definite upper bound for the the
+    operator-valued variance 
+    \begin{dmath*}
+        V \succcurlyeq \sum_{j=1}^D \expectation X_j^2.
+    \end{dmath*}
+    Then for all $\epsilon \ge \sqrt{\norm{V}_{\mathcal{Y}, \mathcal{Y}}} + U/3$,
+    \begin{dmath*}
+        \probability\Set{\norm{\sum_{j=1}^D X_{j}}_{\mathcal{Y}, \mathcal{Y}}
+        \ge \epsilon } \le 4\intdim(V)\exp\left(-\psi_{V,U}(\epsilon)\right)
+    \end{dmath*}
+    where $\psi_{V, U}(\epsilon)=\frac{\epsilon^2}{2\norm{V}_{\mathcal{Y},
+    \mathcal{Y}} + 2 U \epsilon / 3}$
+\end{theorem}
+Essentially, compared to \cref{th:Bernstein1}, \cref{th:Bernstein2} replace the
+dimension of $\mathcal{Y}$ by four times the intrinsic dimension of the
+variance of the matrix valued random variable. The concentration inequality is
+restricted to the case where $\epsilon \ge \sqrt{\norm{V}_{\mathcal{Y},
+\mathcal{Y}}} + U/3$ since the probability is vacuous on the contrary. The 
+assumption that $X_j$'s are Hilbert-Schmidt operators comes from the fact that
+the product of two such operator yields a trace-class operator, for which the
+intrinsic dimension is well defined.
+\paragraph{}
+However, to cover the general case including unbounded \acp{ORFF} like curl and
+divergence-free \acp{ORFF}, we choose a version of Bernstein matrix
+concentration inequality proposed in~\cite{koltchinskii2013remark} that allows
+to consider matrices that are not uniformly bounded but have subexponential
+tails.  In the following we use the notion of Orlicz norm to bound random
+variable by their tail behavior rather than their value.
+\begin{definition}[Orlicz norm]
+    We follow the definition given by \citet{koltchinskii2013remark}.  Let
+    $\psi:\mathbb{R}_+\to\mathbb{R}_+$ be a non-decreasing convex function with
+    $\psi(0)=0$. For a random variable $X$ on a measured space
+    $(\Omega,\mathcal{T}(\Omega),\mu)$
+    \begin{dmath*}
+        \norm{X}_{\psi} \hiderel{\colonequals} \inf
+        \Set{C \hiderel{>} 0 \,\, | \,\, \expectation[\psi\left( \abs{X}/C
+        \right)] \hiderel{\le} 1}.
+    \end{dmath*}
+\end{definition}
+For the sake of simplicity, we now fix $\psi(t)=\psi_1(t)=\exp(t)-1$. Although
+the Orlicz norm should be adapted to the tail of the distribution of the random
+operator we want to quantify to obtain the sharpest bounds.  We also introduce
+two technical lemmas related to Orlicz norm. The first one relates the
+$\psi_1$-Orlicz norm to the moment generating function ($\MGF$).
+\begin{lemma}\label{lm:orlicz_mgf}
+    Let $X$ be a random variable with a strictly monotonic moment-generating
+    function. We have $\norm{X}_{\psi_1}^{-1}=\MGF_{\abs{X}}^{-1}(2)$.
+\end{lemma}
+\begin{proof}
+    We have 
+    \begin{dmath*}
+        \norm{X}_{\psi_1}=\inf \Set{C \hiderel{>} 0 \,\, | \,\,
+        \expectation[\exp\left( \abs{X}/C \right)] \hiderel{\le} 2 } =
+        \frac{1}{\sup \Set{C \hiderel{>} 0 \,\, | \,\,
+        \MGF_{\abs{X}}(C)\le 2 }}
+    \end{dmath*}
+    $X$ has strictly monotonic moment-generating thus
+    $C^{-1}=\MGF^{-1}_{\abs{X}}(2)$. Hence
+    \begin{dmath*}
+        \norm{X}_{\psi_1}^{-1}=\MGF^{-1}_{\abs{X}}(2).
+    \end{dmath*}
+\end{proof}
+The second lemma gives the Orlicz norm of a positive constant.
+\begin{lemma}
+    If $a\in\mathbb{R}_+$ then $\norm{a}_{\psi_1} = \frac{a}{\ln(2)}<2a$.
+    \label{lm:orlicz_cte}
+\end{lemma}
+\begin{proof}
+    We consider $a$ as a positive constant random variable, whose \ac{MGF} is
+    \begin{dmath*}
+        \MGF_a(t)=\exp(at).
+    \end{dmath*}
+    From \cref{lm:orlicz_mgf}, $\norm{a}_{\psi_1}=\frac{1}{\MGF_X^{-1}(2)}$.
+    Then $\MGF^{-1}_{\abs{a}}(2)=\frac{\ln(2)}{\abs{a}}$, $a \neq 0$. If $a=0$
+    then $\norm{a}_{\psi_1}=0$ by definition of a norm. Thus $\norm{a}_{\psi_1}
+    = \frac{a}{\ln(2)}$.
+\end{proof}
+We now turn our attention to \citet{minsker2011some}'s theorem to for unbounded
+random variables.
+\begin{theorem}[Unbounded non-commutative Bernstein with intrinsic dimension]
+    \label{th:Bernstein3}
+    Consider a sequence $(X_j)_{j=1}^D$ of $D$ independent self-adjoint random
+    operators acting on a finite dimensional Hilbert space $\mathcal{Y}$ of
+    dimension $p$ that satisfy $\expectation X_j = 0$ for all
+    $j\in\mathbb{N}^*_D$.  Suppose that there exist some constant $U \ge
+    \norm{\norm{X_j}_{\mathcal{Y},\mathcal{Y}}}_{\psi}$ for all
+    $j\in\mathbb{N}^*_D$. Define a semi-definite upper bound for the the
+    operator-valued variance
+    \begin{dmath*}
+        V \succcurlyeq \sum_{j=1}^D \expectation X_j^2.
+    \end{dmath*}
+    Then for all $\epsilon > 0$,
+    \begin{dmath*}
+        \probability\Set{\norm{\sum_{j=1}^D X_{j}}_{\mathcal{Y}, \mathcal{Y}}
+        \ge \epsilon } \le 
+        \begin{cases}
+            2\intdim(V)\exp\left(-\frac{\epsilon^2}{2
+            \norm{V}_{\mathcal{Y},\mathcal{Y}}\left(1 + \frac{1}{p}\right)}
+            \right) r_{V}(\epsilon) \condition{$\epsilon \le
+            \frac{\norm{V}_{\mathcal{Y},\mathcal{Y}}}{2U}\frac{1+1/p}{K(V,
+            p)}$} \\
+            2\intdim(V)\exp\left(-\frac{\epsilon}{4UK(V,
+            p)}\right)r_{V}(\epsilon) \condition{otherwise.}
+        \end{cases}
+    \end{dmath*}
+    where $K(V,p)=\log\left(16\sqrt{2}p\right)+\log\left(\frac{D
+    U^2}{\norm{V}_{\mathcal{Y}, \mathcal{Y}}}\right)$ and $r_V(\epsilon)= 1 +
+    \frac{3}{\epsilon^2\log^2(1 + \epsilon /
+    \norm{V}_{\mathcal{Y},\mathcal{Y}})}$
+\end{theorem}
+Let $\psi=\psi_1$. To use \cref{th:Bernstein3}, we set $X_j=F^j(\delta_i)$. We
+have indeed $\expectation_{\dual{\Haar},\rho}[F^j(\delta_i)] = 0$ since
+$\tilde{K}(\delta_i)$ is the Monte-Carlo approximation of $K_e(\delta_i)$ and
+the matrices $F^j(\delta_i)$ are self-adjoint. We assume we can bound all the
+Orlicz norms of the $F^j(\delta_i)=\frac{1}{D}(\tilde{K}^j(\delta_i) -
+K_e(\delta_i))$. In the following we use constants $u_i$ such that $u_i=D U$.
+Using \cref{lm:orlicz_cte} and the sub-additivity of the
+$\norm{\cdot}_{\mathcal{Y},\mathcal{Y}}$ and $\norm{\cdot}_{\psi_1}$ norm,
+\begin{dmath*}
+    u_i=2D\max_{1\le j\le
+    D}\norm{\norm{F^j(\delta_i)}_{\mathcal{Y},\mathcal{Y}}}_{\psi_1} \le
+    2\max_{1\le j\le
+    D}\norm{\norm{\tilde{K}^j(\delta_i)}_{\mathcal{Y},\mathcal{Y}}}_{\psi_1} +
+    2\norm{\norm{K_e(\delta_i)}_{\mathcal{Y},\mathcal{Y}}}_{\psi_1}
+    <4\max_{1\le j\le
+    D}\norm{\norm{A(\omega_j)}_{\mathcal{Y},\mathcal{Y}}}_{\psi_1} + 4
+    \norm{K_e(\delta_i)}_{\mathcal{Y},\mathcal{Y}}
+    =4\left(\norm{\norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}}_{\psi_1} +
+    \norm{K_e(\delta_i)}_{\mathcal{Y},\mathcal{Y}}\right)
+\end{dmath*}
+In the same way we defined the constants $v_i=DV$,
+\begin{dmath*}
+    v_i=
+    D\sum_{j=1}^D\expectation_{\dual{\Haar,\rho}} F^j(\delta_i)^2
+    =D\variance_{\dual{\Haar},\rho}\left[ \tilde{K}(\delta_i) \right]
+\end{dmath*}
+Then applying \cref{th:Bernstein3}, we get for all
+$i\in\mathbb{N}^*_{\mathcal{N}(\mathcal{D}_{\mathcal{C}},r)}$ ($i$ is the index
+of each anchor)
+\begin{dmath*}
+    \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D |
+    \norm{F(\delta_i)}_{\mathcal{Y}, \mathcal{Y}} \ge \epsilon } \le 
+    \begin{cases}
+        4 \intdim(v_i)\exp\left(-D\frac{\epsilon^2}{2
+        \norm{v_i}_{\mathcal{Y},\mathcal{Y}}\left(1 + \frac{1}{p}\right)}
+        \right) r_{v_i/D}(\epsilon) \condition{$\epsilon \le
+        \frac{\norm{v_i}_{\mathcal{Y},\mathcal{Y}}}{2u_i}\frac{1+1/p}{K(v_i,
+        p)}$} \\
+        4 \intdim(v_i)\exp\left(-D\frac{\epsilon}{4u_iK(v_i,
+        p)}\right)r_{v_i/D}(\epsilon) \condition{otherwise.}
+    \end{cases}
+\end{dmath*}
+with 
+\begin{dmath*}
+    K(v_i,p)=\log\left(16 \sqrt{2}
+    p\right)+\log\left(\frac{u_i^2}{\norm{v_i}_{\mathcal{Y},
+    \mathcal{Y}}}\right)
+\end{dmath*}
+and 
+\begin{dmath*}
+    r_{v_i/D}= 1 + \frac{3}{\epsilon^2\log^2(1 + D \epsilon /
+    \norm{v_i}_{\mathcal{Y},\mathcal{Y}})}.
+\end{dmath*}
+To unify the bound on each anchor we
+define two constant
+\begin{dmath*}
+    u = 4\left(\norm{\norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}}_{\psi_1} +
+    \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+    \norm{K_e(\delta)}_{\mathcal{Y},\mathcal{Y}}\right)
+    \hiderel{\ge} \max_{i=1,\hdots T} u_i
+\end{dmath*}
+and
+\begin{dmath*}
+    v = \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+    D\variance_{\dual{\Haar},\rho}\left[ \tilde{K}_e(\delta) \right]
+    \hiderel{\ge} \max_{i=1,\hdots T} v_i.
+\end{dmath*}
+
+\subsection{Union Bound and examples}
+Taking the union bound over the anchors yields
+\begin{dmath}
+    \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D |
+    \bigcup_{i=1}^{\mathcal{N}(\mathcal{D}_{\mathcal{C}}, r)}
+    \norm{F(\delta_i)}_{\mathcal{Y}, \mathcal{Y}} \ge \epsilon
+    } \le 4 \mathcal{N}(\mathcal{D}_{\mathcal{C}}, r) r_{v/D}(\epsilon)
+    \intdim(v ) \\
+    \begin{cases}
+        \exp\left(-D\frac{\epsilon^2}{2
+        \norm{v}_{\mathcal{Y},\mathcal{Y}}\left(1 + \frac{1}{p}\right)}
+        \right) \condition{$\epsilon \le
+        \frac{\norm{v}_{\mathcal{Y},\mathcal{Y}}}{2u}\frac{1+1/p}{K(v,
+        p)}$} \\
+        \exp\left(-D\frac{\epsilon}{4uK(v,
+        p)}\right)\condition{otherwise.}
+    \end{cases}
+    \label{eq:anchor_bound}
+\end{dmath}
+Hence combining \cref{eq:Lipschitz_constant} and \cref{eq:anchor_bound} gives
+and summing up the hypothesis yields the following proposition
+\begin{proposition}
+    \label{pr:bound_approx_unbounded}
+    Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ be a
+    shift-invariant $\mathcal{Y}$-Mercer kernel, where $\mathcal{Y}$ is a
+    finite dimensional Hilbert space of dimension $p$ and $\mathcal{X}$ a
+    metric space. Moreover, let $\mathcal{C}$ be a compact
+    subset of $\mathcal{X}$, $A:\dual{\mathcal{X}}\to\mathcal{L}(\mathcal{Y})$
+    and $\probability_{\dual{\Haar},\rho}$ a pair such that
+    \begin{dmath*}
+        \tilde{K}_e = \sum_{j=1}^D \cos{\pairing{\cdot,\omega_j}}A(\omega_j)
+        \hiderel{\approx}
+        K_e\condition{$\omega_j\sim\probability_{\dual{\Haar}, \rho}$
+        \acs{iid}.}.
+    \end{dmath*}
+    Let
+    \begin{dmath*}
+        V(\delta) \succcurlyeq \variance_{\dual{\Haar},\rho}
+        \tilde{K}_e(\delta) \condition{for all
+        $\delta\in\mathcal{D}_{\mathcal{C}}$}
+    \end{dmath*}
+    and $H_\omega$ be the Lipschitz constant of the function $h: x\mapsto
+    \pairing{x,\omega}$. If the three following constant exists
+    \begin{dmath*}
+        m \ge \int_{\dual{\mathcal{X}}} H_\omega
+        \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}} d\probability_{\dual{\Haar},
+        \rho} \hiderel{<} \infty
+    \end{dmath*}
+    and
+    \begin{dmath*}
+        u \ge 4\left(\norm{\norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}}_{\psi_1}
+        + \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+        \norm{K_e(\delta)}_{\mathcal{Y},\mathcal{Y}}\right) \hiderel{<} \infty
+    \end{dmath*}
+    and
+    \begin{dmath*}
+        v \ge \sup_{\delta\in\mathcal{D}_{\mathcal{C}}} D
+        \norm{V(\delta)}_{\mathcal{Y}, \mathcal{Y}} \hiderel{<} \infty.
+    \end{dmath*}
+    Define $p_{int}\ge \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+    \intdim(V(\delta))$ then for all $r\in\mathbb{R}_+^*$ and all
+    $\epsilon\in\mathbb{R}_+^*$,
+    \begin{dmath*}
+        \label{eq:bound1}
+        \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D | 
+        \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}} \ge \epsilon}
+        \le 4\left(\frac{r m}{\epsilon} +
+        p_{int} \mathcal{N}(\mathcal{D}_{\mathcal{C}},r) r_{v/D}(\epsilon)
+        \\
+        \begin{cases}
+            \exp\left(-D\frac{\epsilon^2}{8
+            v\left(1 + \frac{1}{p}\right)}
+            \right) \condition{$\epsilon \le
+            \frac{v}{u}\frac{1+1/p}{K(v,
+            p)}$} \\
+            \exp\left(-D\frac{\epsilon}{8uK(v,
+            p)}\right)\condition{otherwise.}
+        \end{cases}\right)
+    \end{dmath*}
+    where 
+    \begin{dmath*}
+        K(v, p)=\log\left(16 \sqrt{2}
+        p\right)+\log\left(\frac{u^2}{\norm{v}_{\mathcal{Y},
+        \mathcal{Y}}}\right)
+    \end{dmath*}
+    and 
+    \begin{dmath*}
+        r_{v/D}(\epsilon)=1 + \frac{3}{\epsilon^2\log^2(1 + D \epsilon /
+        \norm{v}_{\mathcal{Y},\mathcal{Y}})}.
+    \end{dmath*}
+\end{proposition}
+\begin{proof}
+    Let $m=\int_{\dual{\mathcal{X}}} H_\omega
+    \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}} d\probability_{\dual{\Haar},
+    \rho}$. From \cref{lm:LipschitzK},
+    \begin{dmath*}
+        \probability_{\dual{\Haar},\rho}\Set{(\omega_j)_{j=1}^D | L_F \ge
+        \frac{\epsilon}{2r}} \le \frac{4 r m}{\epsilon}.
+    \end{dmath*}
+    Thus from \cref{lm:error_decomposition}, for all $r\in\mathbb{R}_+^*$,
+    \begin{dmath*}
+        \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D |
+        \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+        \norm{F(\delta)}_{\mathcal{Y}, \mathcal{Y}} \ge \epsilon
+        } \le \probability_{\dual{\Haar},\rho}\Set{(\omega_j)_{j=1}^D | L_F \ge
+        \frac{\epsilon}{2r}} +
+        \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D |
+        \bigcup_{i=1}^{\mathcal{N}(\mathcal{D}_{\mathcal{C}}, r)}
+        \norm{F(\delta_i)}_{\mathcal{Y}, \mathcal{Y}} \ge \epsilon }
+        = 4\frac{r m}{\epsilon} + 4 \mathcal{N}(\mathcal{D}_{\mathcal{C}}, r)
+        r_{v/D}(\epsilon) \intdim(v ) \\
+        \begin{cases}
+            \exp\left(-D\frac{\epsilon^2}{8
+            \norm{v}_{\mathcal{Y},\mathcal{Y}}\left(1 + \frac{1}{p}\right)}
+            \right) \condition{$\epsilon \le
+            \frac{\norm{v}_{\mathcal{Y},\mathcal{Y}}}{u}\frac{1+1/p}{K(v,
+            p)}$} \\
+            \exp\left(-D\frac{\epsilon}{8uK(v,
+            p)}\right)\condition{otherwise.}
+        \end{cases}
+    \end{dmath*}
+\end{proof}
+With slight modification we can obtain a second inequality for the case where
+the random operators $A(\omega_j)$ are bounded almost surely. This second bound
+with more restrictions on $A$ has the advantage of working in infinite
+dimension as long as $A(\omega_j)$ is a Hilbert-Schmidt operator.
+\begin{proposition}
+    \label{pr:bound_approx_bounded}
+    Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ be a
+    shift-invariant $\mathcal{Y}$-Mercer kernel, where $\mathcal{Y}$ is a
+    Hilbert space and $\mathcal{X}$ a
+    metric space. Moreover, let $\mathcal{C}$ be a compact
+    subset of $\mathcal{X}$, $A:\dual{\mathcal{X}}\to\mathcal{L}(\mathcal{Y})$
+    and $\probability_{\dual{\Haar},\rho}$ a pair such that
+    \begin{dmath*}
+        \tilde{K}_e = \sum_{j=1}^D \cos{\pairing{\cdot,\omega_j}}A (\omega_j)
+        \hiderel{\approx}
+        K_e\condition{$\omega_j\sim\probability_{\dual{\Haar}, \rho}$
+        \acs{iid}.}.
+    \end{dmath*}
+    where $A(\omega_j)$ is a Hilbert-Schmidt operator for all $j \in
+    \mathbb{N}^*_D$. Let $\mathcal{D}_{\mathcal{C}}=\mathcal{C} \groupop
+    \mathcal{C}^{-1}$ and
+    \begin{dmath*}
+        V (\delta) \succcurlyeq\variance_{\dual{\Haar},\rho}
+        \tilde{K}_e (\delta) \condition{for all
+        $\delta\in\mathcal{D}_{\mathcal{C}}$}
+    \end{dmath*}
+    and $H_\omega$ be the Lipschitz constant of the function $h: x\mapsto
+    \pairing{x,\omega}$. If the three following constant exists
+    \begin{dmath*}
+        m \ge\int_{\dual{\mathcal{X}}} H_{\omega}
+        \norm{A (\omega)}_{\mathcal{Y},\mathcal{Y}}
+        d\probability_{\dual{\Haar}, \rho} \hiderel{<} \infty{}
+    \end{dmath*}
+    and
+    \begin{dmath*}
+        u \ge\esssup_{\omega\in\dual{\mathcal{X}}}
+        \norm{A (\omega)}_{\mathcal{Y}, \mathcal{Y}} +
+        \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+        \norm{K_e (\delta)}_{\mathcal{Y}, \mathcal{Y}} \hiderel{<} \infty{}
+    \end{dmath*}
+    and
+    \begin{dmath*}
+        v \ge\sup_{\delta\in\mathcal{D}_{\mathcal{C}}} D
+        \norm{V (\delta)}_{\mathcal{Y}, \mathcal{Y}} \hiderel{<} \infty.
+    \end{dmath*}
+    define $p_{int} \ge \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+    \intdim\left(V(\delta)\right)$ then for all $r\in\mathbb{R}_+^*$ and all
+    $\epsilon>\sqrt{\frac{v}{D}} +
+    \frac{1}{3D}u$,
+    \begin{dmath*}
+        \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D |
+        \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+        \norm{F (\delta)}_{\mathcal{Y}, \mathcal{Y}} \ge\epsilon} \le~4
+        \left(\frac{r m}{\epsilon} + p_{int}
+        \mathcal{N} (\mathcal{D}_{\mathcal{C}}, r)
+        \exp\left(-D\psi_{v,u} (\epsilon) \right)\right)
+    \end{dmath*}
+    where $\psi_{v,u}(\epsilon)=\frac{\epsilon^2}{2(v + u
+    \epsilon / 3)}$.
+\end{proposition}
+When the covering number $\mathcal{N}(\mathcal{D}_{\mathcal{C}}, r)$ of the
+metric space $\mathcal{D}_{\mathcal{C}}$ has an analytical form, it is
+possible to optimize the bound over the radius $r$ of the covering balls. As an
+example, we refine \cref{pr:bound_approx_unbounded} and
+\cref{pr:bound_approx_bounded} in the case where $\mathcal{C}$ is a finite
+dimensional Banach space.
+\begin{corollary}
+    Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ be a
+    shift-invariant $\mathcal{Y}$-Mercer kernel, where $\mathcal{Y}$ is a
+    finite dimensional Hilbert space of dimension $p$ and $\mathcal{X}$ a
+    finite dimensional Banach space of dimension $d$. Moreover, let
+    $\mathcal{C}$ be a closed ball of $\mathcal{X}$ centered at the origin of
+    diameter $\abs{\mathcal{C}}$,
+    $A:\dual{\mathcal{X}}\to\mathcal{L}(\mathcal{Y})$ and
+    $\probability_{\dual{\Haar},\rho}$ a pair such that
+    \begin{dmath*}
+        \tilde{K}_e = \sum_{j=1}^D \cos\pairing{\cdot,\omega_j}A(\omega_j)
+        \hiderel{\approx}
+        K_e\condition{$\omega_j\sim\probability_{\dual{\Haar}, \rho}$
+        \acs{iid}.}
+    \end{dmath*}
+    Let $\mathcal{D}_{\mathcal{C}}=\mathcal{C}\groupop\mathcal{C}^{-1}$ and
+    \begin{dmath*}
+        V(\delta) \succcurlyeq \variance_{\dual{\Haar},\rho}
+        \tilde{K}_e(\delta) \condition{for all
+        $\delta\in\mathcal{D}_{\mathcal{C}}$}
+    \end{dmath*}
+    Let $H_\omega$ be the Lipschitz constant of $h_{\omega}:x\mapsto
+    \pairing{x, \omega}$. If the three following constant exists
+    \begin{dmath*}
+        m \ge \int_{\dual{\mathcal{X}}} H_{\omega}
+        \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}} d\probability_{\dual{\Haar},
+        \rho} \hiderel{<} \infty
+    \end{dmath*}
+    and
+    \begin{dmath*}
+        u \ge 4\left(\norm{\norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}}_{\psi_1}
+        + \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+        \norm{K_e(\delta)}_{\mathcal{Y},\mathcal{Y}}\right) \hiderel{<} \infty
+    \end{dmath*}
+    and
+    \begin{dmath*}
+        v \ge \sup_{\delta\in\mathcal{D}_{\mathcal{C}}} D
+        \norm{V(\delta)}_{\mathcal{Y}, \mathcal{Y}} \hiderel{<} \infty.
+    \end{dmath*}
+    Define $p_{int}\ge \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+    \intdim(V(\delta))$, then for all $0 < \epsilon \le m \abs{C}$,
+    \begin{dmath*}
+        \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D |
+        \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}} \ge \epsilon} 
+        \le 8\sqrt{2} \left( \frac{m\abs{\mathcal{C}}}{\epsilon}
+        \right)
+        {\left(p_{int}r_{v/D}(\epsilon)\right)}^{\frac{1}{d + 1}}
+        \begin{cases}
+            \exp\left(-D\frac{\epsilon^2}{8
+            v(d+1)\left(1 + \frac{1}{p}\right)}
+            \right) \condition{$\epsilon \le
+            \frac{v}{u}\frac{1+1/p}{K(v,
+            p)}$} \\
+            \exp\left(-D\frac{\epsilon}{8u(d+1)K(v,
+            p)}\right)\condition{otherwise,}
+        \end{cases}
+    \end{dmath*}
+    where $K(v, p)=\log\left(16 \sqrt{2}
+    p\right)+\log\left(\frac{u^2}{v}\right) $ and $r_{v/D}(\epsilon)=1 +
+    \frac{3}{\epsilon^2\log^2(1 + D \epsilon / v)}$.
+\end{corollary}
+\begin{proof}
+    As we have seen in~\cref{subsec:epsilon-net}, suppose that $\mathcal{X}$ is
+    a finite dimensional Banach space. Let $\mathcal{C}\subset\mathcal{X}$ be
+    a closed ball centered at the origin of diameter $\abs{\mathcal{C}}=C$ then
+    the difference ball centered at the origin
+    \begin{dmath*}
+        \mathcal{D}_{\mathcal{C}} 
+        = \mathcal{C}\groupop\mathcal{C}^{-1}
+        = \Set{x \groupop~z^{-1} | \norm{x}_{\mathcal{X}} \hiderel{\le} C / 2,
+        \norm{z}_{\mathcal{X}} \hiderel{\le} C / 2, (x, z)\in\mathcal{X}^2} 
+        \hiderel{\subset} \mathcal{X}
+    \end{dmath*}
+    is closed and bounded, so compact and has diameter
+    $\abs{C}=2C$. It is possible to cover it with
+    \begin{dmath*}
+        \mathcal{N} (\mathcal{D}_{\mathcal{C}}, r) = \left(\frac{2\abs{C}}{r}
+        \right)^d
+    \end{dmath*}
+    closed balls of radius $r$. Pluging back into \cref{eq:bound1} yields
+    \begin{dmath*}
+        \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D | 
+        \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}} \ge \epsilon}
+        \le 4\left(\frac{r m}{\epsilon} + p_{int} \left(\frac{2\abs{C}}{r}
+        \right)^d r_{v/D}(\epsilon) \\
+        \begin{cases}
+            \exp\left(-D\frac{\epsilon^2}{8
+            v\left(1 + \frac{1}{p}\right)}
+            \right) \condition{$\epsilon \le
+            \frac{v}{u}\frac{1+1/p}{K(v,
+            p)}$} \\
+            \exp\left(-D\frac{\epsilon}{8uK(v,
+            p)}\right)\condition{otherwise.}
+        \end{cases}\right)
+    \end{dmath*}
+    The right hand side of the equation has the form $ar+br^{-d}$ with
+    \begin{dmath*}
+        a = \frac{m}{\epsilon}
+    \end{dmath*}
+    and
+    \begin{dmath*}
+        b =  p_{int} {\left(2 \abs{\mathcal{C}}\right)}^d r_{v/D}(\epsilon)
+        \begin{cases}
+            \exp\left(-D\frac{\epsilon^2}{8
+            v\left(1 + \frac{1}{p}\right)}
+            \right) \condition{$\epsilon \le
+            \frac{v}{u}\frac{1+1/p}{K(v,
+            p)}$} \\
+            \exp\left(-D\frac{\epsilon}{8uK(v,
+            p)}\right)\condition{otherwise.}
+        \end{cases}
+    \end{dmath*}
+    Following \cite{Rahimi2007, sutherland2015, minh2016operator}, we optimize
+    over $r$.  It is a convex continuous function on $\mathbb{R}_+$ and achieve
+    minimum at
+    \begin{dmath*}
+        r=\left(\frac{bd}{a}\right)^{\frac{1}{d+1}}
+    \end{dmath*}
+    and the minimum value is
+    \begin{dmath*}
+        r_*=a^{\frac{d}{d + 1}}b^{\frac{1}{d + 1}}\left( d^{\frac{1}{d + 1}} +
+        d^{-\frac{d}{d+1}} \right),
+    \end{dmath*}
+    hence
+    \begin{dmath*}
+        \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D |
+        \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}} \ge \epsilon} 
+        \le C_d {\left( \frac{2m\abs{\mathcal{C}}}{\epsilon}
+        \right)}^{\frac{d}{d + 1}}
+        {\left(p_{int}r_{v/D}(\epsilon)\right)}^{\frac{1}{d + 1}}
+        \begin{cases}
+            \exp\left(-D\frac{\epsilon^2}{8
+            v(d+1)\left(1 + \frac{1}{p}\right)}
+            \right) \condition{$\epsilon \le
+            \frac{v}{u}\frac{1+1/p}{K(v,
+            p)}$} \\
+            \exp\left(-D\frac{\epsilon}{8u(d+1)K(v,
+            p)}\right)\condition{otherwise,}
+        \end{cases}
+        \le 8\sqrt{2} \left( \frac{m\abs{\mathcal{C}}}{\epsilon}
+        \right)
+        {\left(p_{int}r_{v/D}(\epsilon)\right)}^{\frac{1}{d + 1}}
+        \begin{cases}
+            \exp\left(-D\frac{\epsilon^2}{8
+            v(d+1)\left(1 + \frac{1}{p}\right)}
+            \right) \condition{$\epsilon \le
+            \frac{v}{u}\frac{1+1/p}{K(v,
+            p)}$} \\
+            \exp\left(-D\frac{\epsilon}{8u(d+1)K(v,
+            p)}\right)\condition{otherwise,}
+        \end{cases}
+    \end{dmath*}
+    where $C_d = 4 \left( d^{\frac{1}{d + 1}} + d^{-\frac{d}{d+1}} \right)$.
+    Eventually when $\mathcal{X}$ is a Banach space, the Lipschitz constant of
+    $h_{\omega}$ is the supremum of the gradient
+    \begin{dmath*}
+        H_{\omega} = \sup_{\delta\in\mathcal{D}_{\mathcal{C}}} \norm{(\nabla
+        h_{\omega}) (\delta)}_{\dual{\mathcal{X}}}.
+    \end{dmath*}
+\end{proof}
+Following the same proof technique we obtain the second bound for bounded
+\ac{ORFF}.
+\begin{corollary}
+    Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ be a
+    shift-invariant $\mathcal{Y}$-Mercer kernel, where $\mathcal{Y}$ is a
+    Hilbert space and $\mathcal{X}$ a finite dimensional Banach space of 
+    dimension $D$. Moreover, let $\mathcal{C}$ be a closed ball of 
+    $\mathcal{X}$ centered at the origin of diameter $\abs{\mathcal{C}}$,
+    subset of $\mathcal{X}$, $A:\dual{\mathcal{X}}\to\mathcal{L}(\mathcal{Y})$
+    and $\probability_{\dual{\Haar},\rho}$ a pair such that
+    \begin{dmath*}
+        \tilde{K}_e = \sum_{j=1}^D \cos{\pairing{\cdot,\omega_j}}A (\omega_j)
+        \hiderel{\approx}
+        K_e\condition{$\omega_j\sim\probability_{\dual{\Haar}, \rho}$
+        \acs{iid}.}
+    \end{dmath*}
+    where $A(\omega_j)$ is a Hilbert-Schmidt operator for all $j \in
+    \mathbb{N}^*_D$. Let $\mathcal{D}_{\mathcal{C}}=\mathcal{C} \groupop
+    \mathcal{C}^{-1}$ and
+    \begin{dmath*}
+        V (\delta) \succcurlyeq\variance_{\dual{\Haar},\rho}
+        \tilde{K}_e (\delta) \condition{for all
+        $\delta\in\mathcal{D}_{\mathcal{C}}$}
+    \end{dmath*}
+    and $H_\omega$ be the Lipschitz constant of the function $h: x\mapsto
+    \pairing{x,\omega}$. If the three following constant exists
+    \begin{dmath*}
+        m \ge\int_{\dual{\mathcal{X}}} H_{\omega}
+        \norm{A (\omega)}_{\mathcal{Y},\mathcal{Y}}
+        d\probability_{\dual{\Haar}, \rho} \hiderel{<} \infty{}
+    \end{dmath*}
+    and
+    \begin{dmath*}
+        u \ge\esssup_{\omega\in\dual{\mathcal{X}}}
+        \norm{A (\omega)}_{\mathcal{Y}, \mathcal{Y}} +
+        \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+        \norm{K_e (\delta)}_{\mathcal{Y}, \mathcal{Y}} \hiderel{<} \infty{}
+    \end{dmath*}
+    and
+    \begin{dmath*}
+        v \ge\sup_{\delta\in\mathcal{D}_{\mathcal{C}}} D
+        \norm{V (\delta)}_{\mathcal{Y}, \mathcal{Y}} \hiderel{<} \infty.
+    \end{dmath*}
+    define $p_{int} \ge \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+    \intdim\left(V(\delta)\right)$ then for all $\sqrt{\frac{v}{D}} +
+    \frac{u}{3D} < \epsilon < m\abs{\mathcal{C}}$,
+    \begin{dmath*}
+        \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D |
+        \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+        \norm{F (\delta)}_{\mathcal{Y}, \mathcal{Y}} \ge\epsilon} \le~8\sqrt{2}
+        \left(\frac{m\abs{\mathcal{C}}}{\epsilon}\right) p_{int}^{\frac{1}{d +
+        1}} \exp\left(-D\psi_{v,d,u} (\epsilon) \right)
+    \end{dmath*}
+    where $\psi_{v,d,u}(\epsilon)=\frac{\epsilon^2}{2(d+1)(v + u
+    \epsilon / 3)}$.
+\end{corollary}
+
+\section{Proof of the ORFF estimator variance bound}
+We use the notations $\delta = x \groupop z^{-1}$ for all $x, z
+\in\mathcal{X}$, $\tilde{K}(x,z) = {\tildePhi{\omega}(x)}^\adjoint
+\tildePhi{\omega}(z)$, $\tilde{K}^j(x, z) = {\Phi_x(\omega_j)}^\adjoint
+\Phi_z(\omega_j)$ and $K_e(\delta)=K_e(x, z)$.
+\begin{proposition}[Bounding the \emph{variance} of $\tilde{K}$]
+    \label{pr:variance_bound} 
+    Let $K$ be a shift invariant $\mathcal{Y}$-Mercer kernel on a second
+    countable \ac{LCA} topological space $\mathcal{X}$. Let
+    $A:\dual{\mathcal{X}}\to\mathcal{L}(\mathcal{Y})$ and
+    $\probability_{\dual{\Haar},\rho}$ a pair such that
+    \begin{dmath*}
+        \tilde{K}_e = \sum_{j=1}^D \cos{\pairing{\cdot,\omega_j}}A (\omega_j)
+        \hiderel{\approx}
+        K_e\condition{$\omega_j\sim\probability_{\dual{\Haar}, \rho}$
+        \acs{iid}.}
+    \end{dmath*}
+    Then,
+    \begin{dmath*}
+        \variance_{\dual{\Haar}, \rho} \left[ \tilde{K}_e(\delta) \right]
+        \preccurlyeq \frac{1}{2D} \left( \left( K_e(2\delta) + K_e(e) \right)
+        \expectation_{\dual{\Haar}, \rho}\left[ A(\omega) \right] -
+        2 K_e(\delta)^2 + \variance_{\dual{\Haar}, \rho}\left[
+        A(\omega) \right]\right)
+    \end{dmath*}
+\end{proposition}
+\begin{proof}
+    Let $\delta\in\mathcal{D}_{\mathcal{C}}$ be a constant. From the definition
+    of the variance of a random variable and using the fact that the
+    $(\omega_j)_{j=1}^D$ are \ac{iid} random variables,
+    \begin{dmath*}
+        \variance_{\dual{\Haar}, \rho} \left[ \tilde{K}_e(\delta) \right]
+        = \expectation_{\dual{\Haar}, \rho}\left[ \frac{1}{D} \sum_{j=1}^D
+        \tilde{K}^j_e(\delta) - K_e(\delta) \right]^2
+        = \frac{1}{D^2} \expectation_{\dual{\Haar}, \rho}\left[ \sum_{j=1}^D
+        \tilde{K}^j_e(\delta) - K_e(\delta) \right]^2
+        = \frac{1}{D} \expectation_{\dual{\Haar}, \rho} \left[
+        \tilde{K}_e^j(\delta)^2 - \tilde{K}_e^j(\delta)K_e(\delta) - 
+        K_e(\delta)\tilde{K}_e^j(\delta) + K_e(\delta)^2 \right]
+    \end{dmath*}
+    From the definition of $\tilde{K}^j_e$, $\expectation_{\dual{\Haar}, \rho}
+    \tilde{K}^j_e(\delta) = K_e(\delta)$, which leads to
+    \begin{dmath*}
+        \variance_{\dual{\Haar}, \rho} \left[ \tilde{K}_e(\delta) \right]
+        = \frac{1}{D} \expectation_{\dual{\Haar}, \rho} \left[
+        \tilde{K}^j_e(\delta)^2 - K_e(\delta)^2 \right]
+    \end{dmath*}
+    A trigonometric identity gives us $(\cos\pairing{\delta,
+    \omega})^2=\frac{1}{2}\left( \cos\pairing{2\delta, \omega} +
+    \cos\pairing{e, \omega} \right)$. Thus
+    \begin{dmath*}
+        \variance_{\dual{\Haar}, \rho} \left[ \tilde{K}_e(\delta) \right]
+        = \frac{1}{2D} \expectation_{\dual{\Haar}, \rho} \left[ \left(
+        \cos\pairing{2\delta, \omega} + \cos\pairing{e, \omega} \right)
+        A(\omega)^2 - 2 K_e(\delta)^2 \right].
+    \end{dmath*}
+    Also,
+    \begin{dmath*}
+        \expectation_{\dual{\Haar}, \rho} \left[ \cos\pairing{2\delta, \omega}
+        A(\omega)^2 \right] 
+        = \expectation_{\dual{\Haar}, \rho}\left[ \cos\pairing{2\delta, \omega}
+        A(\omega) \right] \expectation_{\dual{\Haar}, \rho}\left[ A(\omega)
+        \right] + \covariances_{\dual{\Haar}, \rho}\left[ \cos\pairing{2\delta,
+        \omega} A(\omega), A(\omega) \right]
+        = K_e(2\delta) \expectation_{\dual{\Haar}, \rho}\left[ A(\omega)
+        \right] + \covariances_{\dual{\Haar}, \rho}\left[ \cos\pairing{2\delta,
+        \omega} A(\omega), A(\omega) \right]
+    \end{dmath*}
+    Similarly we obtain 
+    \begin{dmath*}
+        \expectation_{\dual{\Haar}, \rho}\left[ \cos\pairing{e, \omega}
+        A(\omega)^2 \right] = K_e(e)\expectation_{\dual{\Haar}, \rho}\left[
+        A(\omega) \right] + \covariances_{\dual{\Haar}, \rho}\left[
+        \cos\pairing{e, \omega} A(\omega), A(\omega) \right]
+    \end{dmath*}
+    Therefore
+    \begin{dmath*}
+        \variance_{\dual{\Haar}, \rho} \left[ \tilde{K}_e(\delta) \right]
+        = \frac{1}{2D} \left( \left( K_e(2\delta) + K_e(e) \right)
+        \expectation_{\dual{\Haar}, \rho}\left[ A(\omega) \right] -
+        2K_e(\delta)^2 + \covariances_{\dual{\Haar}, \rho}\left[
+        \left(\cos\pairing{2\delta, \omega} + \cos\pairing{e, \omega}\right)
+        A(\omega), A(\omega) \right]\right)
+        = \frac{1}{2D} \left( \left( K_e(2\delta) + K_e(e) \right)
+        \expectation_{\dual{\Haar}, \rho}\left[ A(\omega) \right] -
+        2K_e(\delta)^2 + \covariances_{\dual{\Haar}, \rho}\left[
+        \left(\cos\pairing{\delta, \omega}\right)^2
+        A(\omega), A(\omega) \right]\right) \\
+        \preccurlyeq \frac{1}{2D} \left( \left( K_e(2\delta) + K_e(e) \right)
+        \expectation_{\dual{\Haar}, \rho}\left[ A(\omega) \right] -
+        2 K_e(\delta)^2 + \variance_{\dual{\Haar}, \rho}\left[
+        A(\omega) \right]\right)
+    \end{dmath*}
+\end{proof}
+
+\chapterend

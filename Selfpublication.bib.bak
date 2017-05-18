@@ -1,0 +1,24 @@
+@inproceedings{brault2016random,
+    title={Random Fourier Features For Operator-Valued Kernels},
+    author={Brault, Romain and Heinonen, Markus and d'Alch{\'e} Buc, Florence},
+    booktitle={Proceedings of The 8th Asian Conference on Machine Learning},
+    pages={110--125},
+    year={2016}
+}
+
+@inproceedings{brault2016scaling,
+    title={Scaling up Vector Autoregressive Models With Operator-Valued Random Fourier Features.},
+    author={Brault, Romain and Lim, N{\'e}h{\'e}my and d'Alch{\'e}-Buc, Florence},
+    booktitle={Proceedings of AALTD 2016: Second ECML/PKDD International Workshop on Advanced Analytics and Learning on Temporal Data},
+    pages={3},
+    year={2016}
+}
+
+
+@article{goix2016one,
+    title={One Class Splitting Criteria for Random Forests},
+    author={Goix, Nicolas and Brault, Romain and Drougard, Nicolas and Chiapino, Ma{\"e}l},
+    journal={arXiv preprint arXiv:1611.01971},
+    year={2016}
+}
+

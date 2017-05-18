@@ -1,0 +1,11 @@
+=>PYTHONTEX:STDERR#0#code#
+Traceback (most recent call last):
+  File "pythontex-files-ThesisRomainBrault/py_efficient_linop_default.py", line 58, in <module>
+    from scipy.sparse.linalg import LinearOperator
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/scipy/sparse/linalg/__init__.py", line 112, in <module>
+    from .isolve import *
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/scipy/sparse/linalg/isolve/__init__.py", line 6, in <module>
+    from .iterative import *
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/scipy/sparse/linalg/isolve/iterative.py", line 7, in <module>
+    from . import _iterative
+KeyboardInterrupt

@@ -1,0 +1,39 @@
+=>PYTHONTEX:STDERR#0#code#
+Traceback (most recent call last):
+  File "pythontex-files-ThesisRomainBrault/py_representer_default.py", line 51, in <module>
+    import representer
+  File "../src/representer.py", line 4, in <module>
+    import matplotlib.pyplot as plt
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/matplotlib/__init__.py", line 129, in <module>
+    from six.moves.urllib.request import urlopen
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/six.py", line 92, in __get__
+    result = self._resolve()
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/six.py", line 160, in _resolve
+    module = _import_module(self.mod)
+  File "/Users/Romain/anaconda/lib/python3.5/site-packages/six.py", line 82, in _import_module
+    __import__(name)
+  File "/Users/Romain/anaconda/lib/python3.5/urllib/request.py", line 88, in <module>
+    import http.client
+  File "/Users/Romain/anaconda/lib/python3.5/http/client.py", line 71, in <module>
+    import email.parser
+  File "/Users/Romain/anaconda/lib/python3.5/email/parser.py", line 12, in <module>
+    from email.feedparser import FeedParser, BytesFeedParser
+  File "/Users/Romain/anaconda/lib/python3.5/email/feedparser.py", line 27, in <module>
+    from email import message
+  File "/Users/Romain/anaconda/lib/python3.5/email/message.py", line 16, in <module>
+    from email import utils
+  File "/Users/Romain/anaconda/lib/python3.5/email/utils.py", line 29, in <module>
+    import socket
+  File "/Users/Romain/anaconda/lib/python3.5/socket.py", line 76, in <module>
+    lambda C: C.isupper() and C.startswith('AF_'))
+  File "/Users/Romain/anaconda/lib/python3.5/enum.py", line 549, in _convert
+    cls = cls(name, members, module=module)
+  File "/Users/Romain/anaconda/lib/python3.5/enum.py", line 243, in __call__
+    return cls._create_(value, names, module=module, qualname=qualname, type=type, start=start)
+  File "/Users/Romain/anaconda/lib/python3.5/enum.py", line 343, in _create_
+    enum_class = metacls.__new__(metacls, class_name, bases, classdict)
+  File "/Users/Romain/anaconda/lib/python3.5/enum.py", line 179, in __new__
+    setattr(enum_class, member_name, enum_member)
+  File "/Users/Romain/anaconda/lib/python3.5/enum.py", line 309, in __setattr__
+    member_map = cls.__dict__.get('_member_map_', {})
+KeyboardInterrupt

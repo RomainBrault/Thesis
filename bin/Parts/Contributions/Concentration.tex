@@ -1,0 +1,730 @@
+%!TEX root = ../../ThesisRomainbrault.tex
+
+\section{Convegence with high probability of the \acpdfstring{ORFF} estimator}
+\label{sec:consistency_of_the_ORFF_estimator}
+We are now interested in a non-asymptotic analysis of the \ac{ORFF}
+approximation of shift-invariant $\mathcal{Y}$-Mercer kernels on \acs{LCA}
+group $\mathcal{X}$ endowed with the operation group $\groupop$ where
+$\mathcal{X}$ is a Banach space (The more general case where $\mathcal{X}$ is
+a Polish space is discussed in the appendix \cref{subsec:concentration_proof}).
+For a given $D$, we study how close is the
+approximation $\tilde{K}(x,z)=\tildePhi{1:D}(x)^*\tildePhi{1:D}(z)$ to the
+target kernel $K(x,z)$ for any $x,z$ in $\mathcal{X}$.
+\paragraph{}
+If $A\in\mathcal{L}_+(\mathcal{Y})$ we denote
+$\norm{A}_{\mathcal{Y},\mathcal{Y}}$ its operator norm, which amounts to the
+square root of the largest eigenvalue of $A$ when $\mathcal{Y}=\mathbb{R}^p$ is
+finite dimensional. For $x$ and $z$ in some non-empty compact $\mathcal{C}
+\subset \mathbb{R}^d$, we consider: $F(x \groupop \inv{z})
+=\tilde{K}(x,z)-K(x,z)$ and study how the uniform norm
+\begin{dmath}\label{eq:norm_inf}
+    \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}}
+    = \sup_{(x,z)\in\mathcal{C}\times\mathcal{C}}
+    \norm{\tilde{K}(x,z)-K(x,z)}_{\mathcal{Y},\mathcal{Y}}
+\end{dmath}
+behaves according to $D$. All along this document we denote $\delta=x\groupop
+z^{-1}$ for all $x$ and $z\in\mathcal{X}$. \Cref{fig:approximation_error}
+empirically shows convergence of three different \acs{OVK} approximations for
+$x,z$ sampled from the compact $[-1,1]^4$ and using an increasing number of
+sample points $D$. The log-log plot shows that all three kernels have the same
+convergence rate, up to a multiplicative factor.
+\begin{pycode}[approximation]
+sys.path.append('./src/')
+import approximation
+
+err = approximation.main()
+\end{pycode}
+
+\begin{figure}[!ht]
+    \centering
+    \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./approximation.pgf}}')}
+    \caption[\acs{ORFF} reconstruction error]{Error reconstructing the target
+    operator-valued kernel $K$ with \acs{ORFF}
+    approximation $\tilde{K}$ for the decomposable, curl-free and
+    divergence-free kernel.}
+    \label{fig:approximation_error}
+\end{figure}
+\paragraph{}
+In order to bound the error with high probability, we turn to concentration
+inequalities devoted to random matrices~\citep{Boucheron}. The concentration
+phenomenon can be summarized in the following sentence of
+\citet{ledoux2005concentration}. \say{A random variable that depends (in a
+smooth way) on the influence of many random variables (but not too much on any
+of them) is essentially constant}. 
+\paragraph{}
+A typical application is the study of the deviation of the empirical mean of
+\acl{iid} random variables to their expectation. This means that given an error
+$\epsilon$ between the kernel approximation $\tildeK{\omega}$ and the true
+kernel $K$, if we are given enough samples to construct $\tildeK{\omega}$, the
+probability of measuring an error greater than $\epsilon$ is essentially zero
+(it drops at an exponential rate with respect to the number of samples $D$). To
+measure the error between the kernel approximation and the true kernel at a
+given point many metrics are possible. \acs{eg} any matrix norm such as the
+Hilbert-Schmidt norm, trace norm, the operator norm or Schatten norms. In this
+work we focus on measuring the error in terms of operator norm. For all $x$,
+$z\in\mathcal{X}$ we look for a bound on
+\begin{dmath*}
+    \probability_{\rho} \Set{(\omega_j)_{j=1}^D | \norm{\tildeK{\omega}(x, z) -
+    K(x, z)}_{\mathcal{Y}, \mathcal{Y}} \ge \epsilon }
+    = 
+    \probability_{\rho} \Set{(\omega_j)_{j=1}^D | \sup_{0\neq y\in\mathcal{Y}}
+    \frac{\norm{(\tildeK{\omega}(x, z) - K(x,
+    z))y}_{\mathcal{Y}}}{\norm{y}_{\mathcal{Y}}} \ge \epsilon}
+\end{dmath*}
+In other words, given any vector $y\in\mathcal{Y}$ we study how the residual
+operator $\tildeK{\omega} - K$ is able to send $y$ to zero. We believe that
+this way of measuring the \say{error} to be more intuitive. Moreover, on
+contrary to an error measure with the Hilbert-Schmidt norm, the operator norm
+error does not grows linearly with the dimension of the output space as the
+Hilbert-Schmidt norm does. On the other hand the Hilbert-schmidt norm makes the
+studied random variables Hilbert space valued, for which it is much easier to
+derive concentration inequalities \citep{smale2007learning, pinelis1994optimum,
+naor2012banach}. Note that in the scalar case ($A(\omega)= 1$) the
+Hilbert-Schmidt norm error and the operator norm are the same and measure the
+deviation between $\tildeK{\omega}$ and $K$ as the absolute value of their
+difference.
+\paragraph{}
+A raw concentration inequality of the kernel estimator gives the error on one
+point. If one is interresting in bounding the maximum error over $N$ points,
+applying a union bound on all the point would yoeld a bound that grows linearly
+with $N$. This would suggest that when the number of points increase, even if
+all of them are concentrated in a small subset of $\mathcal{X}$, we should draw
+increasingly more features to have an error below $\epsilon$ with high
+probability. However if we restrict ourselves to study the error on a compact
+subset of $\mathcal{X}$ (and in practice data points lies often in a closed
+bounded subset of $\mathbb{R}^d$), we can cover this compact subset by a finite
+number of closed balls and apply the concentration inequality and the union
+bound only on the center of each ball. Then if the function
+$\norm{\tildeK{\omega}_e-K_e}$ is smooth enough on each ball (\acs{ie}
+Lipschitz) we can guarantee with high probability that the error between the
+centers of the balls will not be too high. Eventually we obtain a bound in the
+worst case scenarion on all the points in a subset $\mathcal{C}$ of
+$\mathcal{X}$. This bound depends on the covering number
+$\mathcal{N}(\mathcal{C}, r)$ of $\mathcal{X}$ with ball of radius $r$. When
+$\mathcal{X}$ is a Banach space, the covering number is proportional to the
+diameter of the diameter of $\mathcal{C}\subseteq\mathcal{X}$.
+\paragraph{}
+Prior to the presentation of general results, we briefly recall the uniform
+convergence of \acs{RFF} approximation for a scalar shift invariant kernel on
+the additive \acs{LCA} group $\mathbb{R}^d$ and introduce a direct corollary
+about decomposable shift-invariant \acs{OVK} on the \acs{LCA} group
+$(\mathbb{R}^d, +)$.
+\subsection{Random Fourier Features in the scalar case and decomposable OVK}
+\citet{Rahimi2007} proved the uniform convergence of \acf{RFF} approximation
+for a scalar shift-invariant kernel on the \acs{LCA} group $\mathbb{R}^d$
+endowed with the group operation $\groupop=+$. In the case of the
+shift-invariant decomposable \acs{OVK}, an upper bound on the error can be
+obtained as a direct consequence of the result in the scalar case obtained
+by~\citet{Rahimi2007} and other authors~\citep{sutherland2015, sriper2015}.
+
+\begin{theorem}[Uniform error bound for \ac{RFF},~\citet{Rahimi2007}]
+    \label{rff-scalar-bound}
+    Let $\mathcal{C}$ be a compact of subset of $\mathbb{R}^d$ of diameter
+    $\abs{\mathcal{C}}$. Let $k$ be a shift invariant kernel, differentiable
+    with a bounded second derivative and $\probability_{\rho}$ its normalized
+    \acl{IFT} such that it defines a probability measure. Let 
+    \begin{dmath*}
+        \widetilde{k}=\sum_{j=1}^D\cos{\inner{\cdot, \omega_j}}
+        \hiderel{\approx} k(x,z) \enskip\text{and}\enskip
+        \sigma^2\hiderel{=}\expectation_{\rho}
+        \norm{\omega}^2_2.
+    \end{dmath*}
+    Then we have
+    \begin{dmath*}
+        \probability_{\rho}\Set{(\omega_j)_{j=1}^D |
+        \norm{\tilde{k}-k}_{\mathcal {C}\times\mathcal{C}}\ge \epsilon } \le
+        2^8\left( \frac{\sigma \abs{\mathcal{C}}}{\epsilon} \right)^2\exp\left(
+        -\frac{\epsilon^2D}{4(d+2)} \right)
+    \end{dmath*}
+\end{theorem}
+From \cref{rff-scalar-bound}, we can deduce the following corollary about the
+uniform convergence of the \acs{ORFF} approximation of the decomposable kernel.
+We recall that for a given pair $x$, $z$ in $\mathcal{C}$, $\tilde{K}(x,z)=
+\tildePhi{\omega}(x)^* \tildePhi{\omega}(z)=\Gamma\tilde{k}(x,z)$ and
+$K_0(x-z)=\Gamma \expectation_{\dual{\Haar},\rho}[\tilde{k}(x,z)]$.
+\begin{corollary}[Uniform error bound for decomposable \acs{ORFF}]
+    \label{c:dec-bound}
+    Let $\mathcal{C}$ be a compact of subset of $\mathbb{R}^d$ of diameter
+    $\abs{\mathcal{C}}$. Let $K$ be a decomposable kernel built from a positive
+    operator self-adjoint $\Gamma$, and $k$ a shift invariant kernel with bounded
+    second derivative such that
+    \begin{dmath*}
+        \widetilde{K}=\sum_{j=1}^D\cos{\inner{\cdot, \omega_j}}\Gamma
+        \hiderel{\approx} K \enskip\text{and}\enskip
+        \sigma^2\hiderel{=}\expectation_{\rho}
+        \norm{\omega}^2_2.
+    \end{dmath*}
+    Then
+    \begin{dmath*}
+        \probability_{%
+        \rho}\Set{(\omega_j)_{j=1}^D|\norm{\widetilde{K}-K}_{\mathcal{C} \times
+        \mathcal{C}}\ge \epsilon } \le 2^8\left( \frac{\sigma
+        \norm{\Gamma}_{\mathcal{Y},\mathcal{Y}} \abs{\mathcal{C}}}{\epsilon}
+        \right)^2\exp\left( -\frac{\epsilon^2D}{4\norm{\Gamma}_2^2(d+2)} \right)
+    \end{dmath*}
+\end{corollary}
+\begin{proof}
+    The proof directly extends \cref{rff-scalar-bound} given
+    by~\cite{Rahimi2007}. Let $\tilde{k}$ the Random Fourier approximation for
+    the scalar-valued kernel $k$. Since
+    \begin{dmath*}
+        \sup_{(x,z)\in\mathcal{C}\times\mathcal{C}}\norm{\widetilde{K}(x,z) -
+        K(x,z)}_{\mathcal{Y},\mathcal{Y}} =
+        \sup_{(x,z)\in\mathcal{C}\times\mathcal{C}}
+        \norm{\Gamma}_{\mathcal{Y},\mathcal{Y}} \abs{\widetilde{K}(x,z) - k(x,z)},
+    \end{dmath*}
+    taking $\epsilon' = \norm{\Gamma}_{\mathcal{Y},\mathcal{Y}} \epsilon$ gives the
+    following result for all positive $\epsilon'$:
+    \begin{dmath*}
+        \probability_{%
+        \rho}\Set{(\omega_j)_{j=1}^D|\sup_{x,z\in\mathcal{C}}\norm{\Gamma
+        \left(\widetilde{k}(x,z)-k(x,z)\right)}_{\mathcal{Y},\mathcal{Y}}\ge
+        \epsilon' } \le 2^8\left( \frac{\sigma
+        \norm{\Gamma}_{\mathcal{Y},\mathcal{Y}} \abs{\mathcal{C}}}{\epsilon'}
+        \right)^2\exp\left( -\frac{\left(\epsilon'\right)^2D}{4
+        \norm{\Gamma}_{\mathcal{Y}, \mathcal{Y}}^2(d + 2)} \right)
+    \end{dmath*}
+    which concludes the proof.
+\end{proof}
+Please note that a similar corollary could have been obtained for the recent
+result of~\citet{sutherland2015} who refined the bound proposed by Rahimi and
+Recht by using a Bernstein concentration inequality instead of the Hoeffding
+inequality. More recently~\citet{sriper2015} showed an optimal bound for
+\acl{RFF}. The improvement of~\citet{sriper2015} is mainly in the constant
+factors where the bound does not depend linearly on the diameter
+$\abs{\mathcal{C}}$ of $\mathcal{C}$ but exhibit a logarithmic dependency
+$\log\left(\abs{\mathcal{C}}\right)$, hence requiring significantly less
+random features to reach a desired uniform error with high probability. Moreover,
+\citet{sutherland2015} also considered a bound on the expected max error
+$\expectation_{\dual{\Haar}, \rho} \norm{\widetilde{K}-K}_{\infty}$, which is
+obtained using Dudley's entropy integral~\citep{dudley1967sizes, Boucheron} as
+a bound on the supremum of an empirical process by the covering number of the
+indexing set. This useful theorem is also part of the proof of
+\citet{sriper2015}.
+
+\subsection{Uniform convergence of \acpdfstring{ORFF} approximation on
+\acpdfstring{LCA} groups}
+In this analysis, we assume that $\mathcal{Y}$ is finite dimensional, in
+\cref{remark:infinite_dimension}, we discuss how the proof could be extended to
+infinite dimensional output Hilbert spaces. We propose a bound for \acl{ORFF}
+approximation in the general case. It relies on two main ideas:
+\begin{enumerate}
+    \item a matrix-Bernstein concentration inequality for random matrices need
+    to be used instead of concentration inequality for scalar random variables,
+    \item a general theorem valid for random matrices with bounded norms such
+    as decomposable kernel \acs{ORFF} approximation as well as un\-bound\-ed
+    norms such as the \acs{ORFF} aproximation we proposed for curl and
+    divergence-free kernels that behave as subexponential random variables.
+\end{enumerate}
+Before introducing the new theorem, we give the definition of the Orlicz norm
+which gives a proxy-bound on the norm of subexponential random variables.
+\begin{definition}[Orlicz norm~\citep{van1996weak}]
+    Let $\psi:\mathbb{R}_+\to\mathbb{R}_+$ be a non-decreasing convex function
+    with $\psi(0)=0$. For a random variable $X$ on a measured space
+    $(\Omega,\mathcal{T} (\Omega),\mu)$, the quantity
+    \begin{dmath*}
+        \norm{X}_{\psi} \hiderel{=} \inf \Set{C > 0  |
+        \expectation_{\mu}[\psi\left( \abs{X}/C \right)]\le 1}.
+    \end{dmath*}
+    is called the Orlicz norm of $X$.
+\end{definition}
+Here, the function $\psi$ is chosen as $\psi(u)=\psi_{\alpha}(u)$ where
+$\psi_{\alpha}(u) \colonequals e^{u^{\alpha}}-1$. When $\alpha=1$, a random
+variable with finite Orlicz norm is called a \emph{subexponential variable}
+because its tails decrease at an exponential rate. Let $X$ be a self-adjoint 
+random operator. Given a scalar-valued measure $\mu$, we call \emph{variance}
+of an operator $X$ the quantity $\variance_{\mu}[X]=\expectation_
+{\mu}[X-\expectation_{\mu}[X]]^2$. With this convention if $X$ is a $p\times
+p$ Hermitian matrix,
+\begin{dmath*}
+    \variance_{\mu}[X]_{\ell m}=\sum_{r=1}^p\covariance{X_{\ell r}, X_{rm}}.
+\end{dmath*}
+Among the possible concentration inequalities adapted to random operators
+\citep{tropp2015introduction, minsker2011some, ledoux2013probability,
+pinelis1994optimum, koltchinskii2013remark}, we focus on the results of
+\citet{tropp2015introduction, minsker2011some}, for their robustness to high or
+potentially infinite dimension of the output space $\mathcal{Y}$. To guarantee
+a good scaling with the dimension of $\mathcal{Y}$ we introduce the notion of
+intrinsic dimension (or effective rank) of an operator.
+\begin{definition}
+    Let $A$ be a trace class operator acting on a Hilbert space
+    $\mathcal{Y}$. We call intrinsic dimension the quantity
+    \begin{dmath*}
+        \intdim(A) = \frac{\Tr\left[A\right]}{\norm{A}_{\mathcal{Y},
+        \mathcal{Y}}}.
+    \end{dmath*}
+\end{definition}
+Indeed the bound proposed in our first publication at \acs{ACML}
+\citep{brault2016random} based on \citet{koltchinskii2013remark} depends on $p$
+while the present bound depends on the intrinsic dimension of the variance of
+$A(\omega)$ which is always smaller than $p$ when the operator $A(\omega)$ is
+Hilbert-Schmidt ($p\le\infty$).
+\begin{corollary}
+    \label{corr:unbounded_consistency}
+    Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ be a
+    shift-invariant $\mathcal{Y}$-Mercer kernel, where $\mathcal{Y}$ is a
+    finite dimensional Hilbert space of dimension $p$ and $\mathcal{X}$ a
+    finite dimensional Banach space of dimension $d$. Moreover, let
+    $\mathcal{C}$ be a closed ball of $\mathcal{X}$ centered at the origin of
+    diameter $\abs{\mathcal{C}}$,
+    $A:\dual{\mathcal{X}}\to\mathcal{L}(\mathcal{Y})$ and
+    $\probability_{\dual{\Haar},\rho}$ a pair such that
+    \begin{dmath*}
+        \tilde{K}_e = \sum_{j=1}^D \cos{\pairing{\cdot,\omega_j}}A(\omega_j)
+        \hiderel{\approx}
+        K_e\condition{$\omega_j\sim\probability_{\dual{\Haar}, \rho}$
+        \acs{iid}.}.
+    \end{dmath*}
+    Let $\mathcal{D}_{\mathcal{C}}=\mathcal{C}\groupop\mathcal{C}^{-1}$ and
+    \begin{dmath*}
+        V(\delta) \succcurlyeq \variance_{\dual{\Haar},\rho}
+        \tilde{K}_e(\delta) \condition{for all
+        $\delta\in\mathcal{D}_{\mathcal{C}}$}
+    \end{dmath*}
+    and $H_\omega$ be the Lipschitz constant of the function $h: x\mapsto
+    \pairing{x,\omega}$. If the three following constants exist
+    \begin{dmath*}
+        m \ge \int_{\dual{\mathcal{X}}} H_\omega
+        \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}} d\probability_{\dual{\Haar},
+        \rho} \hiderel{<} \infty
+    \end{dmath*}
+    and
+    \begin{dmath*}
+        u \ge 4\left(\norm{\norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}}_{\psi_1}
+        + \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+        \norm{K_e(\delta)}_{\mathcal{Y},\mathcal{Y}}\right) \hiderel{<} \infty
+    \end{dmath*}
+    and
+    \begin{dmath*}
+        v \ge \sup_{\delta\in\mathcal{D}_{\mathcal{C}}} D
+        \norm{V(\delta)}_{\mathcal{Y}, \mathcal{Y}} \hiderel{<} \infty.
+    \end{dmath*}
+    Define $p_{int}\ge \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+    \intdim(V(\delta))$, then for all $0 < \epsilon \le m \abs{C}$,
+    \begin{dmath*}
+        \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D |
+        \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}} \ge \epsilon} 
+        \le 8\sqrt{2} \left( \frac{m\abs{\mathcal{C}}}{\epsilon}
+        \right)
+        {\left(p_{int}r_{v/D}(\epsilon)\right)}^{\frac{1}{d + 1}}
+        \begin{cases}
+            \exp\left(-D\frac{\epsilon^2}{8
+            v(d+1)\left(1 + \frac{1}{p}\right)}
+            \right) \condition{$\epsilon \le
+            \frac{v}{u}\frac{1+1/p}{K(v,
+            p)}$} \\
+            \exp\left(-D\frac{\epsilon}{8u(d+1)K(v,
+            p)}\right)\condition{otherwise,}
+        \end{cases}
+    \end{dmath*}
+    where $K(v, p)=\log\left(16 \sqrt{2}
+    p\right)+\log\left(\frac{u^2}{v}\right) $ and $r_{v/D}(\epsilon)=1 +
+    \frac{3}{\epsilon^2\log^2(1 + D \epsilon / v)}$.
+\end{corollary}
+\begin{sproof}
+    In the following, let $F(\delta)=F(x \groupop
+    \inv{z})=\tilde{K}(x,z)-K(x,z)$.  Let
+    $\mathcal{D}_{\mathcal{C}}=\mathcal{C}\groupop \mathcal{C}^{-1} =
+    \Set{x\groupop \inv{z} | x,z\in\mathcal{C}}$. Since $\mathcal{C}$ is
+    supposed compact, so is $\mathcal{D}_{\mathcal{C}}$. Its diameter is at
+    most $2\abs{\mathcal{C}}$ where $\abs{\mathcal{C}}$ is the diameter of
+    $\mathcal{C}$. Since $\mathcal{C}$ is supposed to be a closed ball of a
+    Bochner space tt is then possible to find an $\epsilon$-net covering
+    $\mathcal {C}_{\Delta}$ with at most $T=(4\abs{\mathcal{C}}/r)^d$ balls of
+    radius $r$ \citep{cucker2001mathematical}. We call $\delta_i$ for
+    $i\inrange{1}{T}$ the center of the $i$-th ball, called \emph{anchors} of
+    the $\epsilon$-net. Denote $L_{F}$ the Lipschitz constant of $F$. We
+    introduce the following lemma proved in~\cite{Rahimi2007}.
+    \begin{lemma}
+        \label{lm:error_decomposition_main}
+        For all $\delta \in \mathcal{D}_{\mathcal{C}}$, if
+        \begin{dmath}
+            L_{F}\le\frac{\epsilon}{2r}
+            \label{condition1_main}
+        \end{dmath}
+        and
+        \begin{dmath}
+            \norm{F(\delta_i)}_{\mathcal{Y},\mathcal{Y}}
+            \le\frac{\epsilon}{2}\condition{for all $i\in\mathbb{N}^*_T$}
+            \label{condition2_main}
+        \end{dmath}
+        then $\norm{F(\delta)}_{\mathcal{Y},\mathcal{Y}} \leq \epsilon$.
+    \end{lemma}
+    To apply the lemma, we must check assumptions \cref{condition1_main} and
+    \cref{condition2_main}.
+    \begin{sproof}[\cref{condition1_main}]
+        \begin{lemma}
+            \label{lm:LipschitzK_main}
+            Let $H_\omega \in \mathbb{R}_+$ be the Lipschitz constant of
+            $h_\omega(\cdot)$ and assume that
+            \begin{dmath*}
+                \int_{\dual{\mathcal{X}}} H_\omega
+                \norm{A(\omega)}_{\mathcal{Y}, \mathcal{Y}}d
+                \probability_{\dual{\Haar}, \rho}(\omega) < \infty.
+            \end{dmath*}
+            Then the operator-valued function
+            $K_e:\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ is Lipschitz with
+            \begin{dmath}
+                \norm{K_e(x) - K_e(z)}_{\mathcal{Y},\mathcal{Y}}\le
+                d_{\mathcal{X}}(x,z) \int_{\dual{\mathcal{X}}} H_\omega
+                \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}
+                d\probability_{\dual{\Haar}, \rho}(\omega).
+            \end{dmath}
+        \end{lemma}
+        In the same way, considering
+        $\tilde{K}_e(\delta)=\frac{1}{D}\sum_{j=1}^D\cos
+        h_{\omega_j}(\delta)A(\omega_j)$, where
+        $\omega_j\sim\probability_{\dual{\Haar},\rho}$, we can show that
+        $\tilde{K}_e$ is Lipschitz with
+        \begin{dmath*}
+            \norm{\tilde{K}_e(x) - \tilde{K}_e(z)}_{\mathcal{Y},\mathcal{Y}}
+            \le d_{\mathcal{X}}(x,z)\frac{1}{D}\sum_{j=1}^DH_{\omega_j}
+            \norm{A(\omega_j)}_{\mathcal{Y},\mathcal{Y}}.
+        \end{dmath*}
+        Taking the expectation yields
+        \begin{dmath*}
+            \expectation_{\dual{\Haar},\rho}\left[ L_F \right] = 2
+            \int_{\dual{\mathcal{X}}} H_\omega
+            \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}
+            d\probability_{\dual{\Haar}, \rho}
+        \end{dmath*}
+        Thus by Markov's inequality,
+        \begin{dmath}
+            \probability_{\dual{\Haar},\rho}\set{(\omega_j)_{j=1}^D | L_F \ge
+            \epsilon} \le \frac{\expectation_{\dual{\Haar},\rho}\left[ L_F
+            \right]}{\epsilon} \le \frac{2}{\epsilon} \int_{\dual{\mathcal{X}}}
+            H_\omega \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}
+            d\probability_{\dual{\Haar},\rho}.
+            \label{eq:Lipschitz_constant_main}
+        \end{dmath}
+    \end{sproof}
+    \begin{sproof}[\cref{condition2_main}]
+        To obtain a bound on the anchors we apply theorem 4
+        of~\citet{koltchinskii2013remark}.  We suppose the existence of the two
+        constants
+        \begin{dmath*}
+            v_i=D\variance_{\dual{\Haar},\rho}\left[ \tilde{K}(\delta_i)
+            \right]
+        \end{dmath*}
+        and
+        \begin{dmath*}
+            u_i=4\left(\norm{\norm{A(\omega)}_{\mathcal{Y},
+            \mathcal{Y}}}_{\psi_1} + \norm{K_e(\delta_i)}_{\mathcal{Y},
+            \mathcal{Y}}\right)
+        \end{dmath*}
+        Then $\forall i\in\Set{1, \hdots, T}$,
+        \begin{dmath*}
+            \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D |
+            \norm{F(\delta_i)}_{\mathcal{Y}, \mathcal{Y}} \ge \epsilon } \le 
+            \begin{cases}
+                4 \intdim(v_i)\exp\left(-D\frac{\epsilon^2}{2
+                \norm{v_i}_{\mathcal{Y},\mathcal{Y}}\left(1 +
+                \frac{1}{p}\right)} \right) r_{v_i/D}(\epsilon)
+                \condition{$\epsilon \le
+                \frac{\norm{v_i}_{\mathcal{Y},\mathcal{Y}}}{2u_i}\frac{1 + 1 /
+                p}{K(v_i, p)}$} \\
+                4 \intdim(v_i)\exp\left(-D\frac{\epsilon}{4u_iK(v_i,
+                p)}\right)r_{v_i/D}(\epsilon) \condition{otherwise.}
+            \end{cases}
+            \label{eq:anchor_bound_sproof}
+        \end{dmath*}
+        where
+        \begin{dmath*}
+            K(v_i,p)=\log\left(16 \sqrt{2}
+            p\right)+\log\left(\frac{u_i^2}{\norm{v_i}_{\mathcal{Y},
+            \mathcal{Y}}}\right)
+        \end{dmath*}
+        and 
+        \begin{dmath*}
+            r_{v_i/D}= 1 + \frac{3}{\epsilon^2\log^2(1 + D \epsilon /
+            \norm{v_i}_{\mathcal{Y},\mathcal{Y}})}.
+        \end{dmath*}
+    \end{sproof}
+    \emph{Combining \cref{condition1_main} and \cref{condition2_main}}.  Now
+    applying the lemma and taking the union bound over the centers of the
+    $\epsilon$-net yields
+    \begin{dmath*}
+        \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D | 
+        \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}} \ge \epsilon}
+        \le 4\left(\frac{r m}{\epsilon} + p_{int} \left(\frac{2\abs{C}}{r}
+        \right)^d r_{v/D}(\epsilon) \\
+        \begin{cases}
+            \exp\left(-D\frac{\epsilon^2}{8
+            v\left(1 + \frac{1}{p}\right)}
+            \right) \condition{$\epsilon \le
+            \frac{v}{u}\frac{1+1/p}{K(v,
+            p)}$} \\
+            \exp\left(-D\frac{\epsilon}{8uK(v,
+            p)}\right)\condition{otherwise.}
+        \end{cases}\right)
+    \end{dmath*}
+    The right hand side of the equation has the form $ar+br^{-d}$ with
+    \begin{dmath*}
+        a = \frac{m}{\epsilon}
+    \end{dmath*}
+    and
+    \begin{dmath*}
+        b =  p_{int} {\left(2 \abs{\mathcal{C}}\right)}^d r_{v/D}(\epsilon)
+        \begin{cases}
+            \exp\left(-D\frac{\epsilon^2}{8
+            v\left(1 + \frac{1}{p}\right)}
+            \right) \condition{$\epsilon \le
+            \frac{v}{u}\frac{1+1/p}{K(v,
+            p)}$} \\
+            \exp\left(-D\frac{\epsilon}{8uK(v,
+            p)}\right)\condition{otherwise.}
+        \end{cases}
+    \end{dmath*}
+    Following \cite{Rahimi2007, sutherland2015, minh2016operator}, we optimize
+    over $r$.  It is a convex continuous function on $\mathbb{R}_+$ and achieve
+    the minimum value
+    \begin{dmath*}
+        r_*=a^{\frac{d}{d + 1}}b^{\frac{1}{d + 1}}\left( d^{\frac{1}{d + 1}} +
+        d^{-\frac{d}{d+1}} \right),
+    \end{dmath*}
+    hence
+    \begin{dmath*}
+        \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D |
+        \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}} \ge \epsilon} 
+        \le 8\sqrt{2} \left( \frac{m\abs{\mathcal{C}}}{\epsilon}
+        \right)
+        {\left(p_{int}r_{v/D}(\epsilon)\right)}^{\frac{1}{d + 1}}
+        \begin{cases}
+            \exp\left(-D\frac{\epsilon^2}{8
+            v(d+1)\left(1 + \frac{1}{p}\right)}
+            \right) \condition{$\epsilon \le
+            \frac{v}{u}\frac{1+1/p}{K(v,
+            p)}$} \\
+            \exp\left(-D\frac{\epsilon}{8u(d+1)K(v,
+            p)}\right)\condition{otherwise,}
+        \end{cases}
+    \end{dmath*}
+\end{sproof}
+We give a comprehensive full proof of the theorem in
+\cref{subsec:concentration_proof}. It follows the usual scheme derived
+in~\citet{Rahimi2007} and~\citet{sutherland2015} and involves Bernstein
+concentration inequality for unbounded symmetric matrices
+(\cref{th:Bernstein3}).
+
+\subsection{Dealing with infinite dimensional operators}
+\label{remark:infinite_dimension}
+We studied the concentration of \acsp{ORFF} under the assumption that
+$\mathcal{Y}$ is finite dimensional. Indeed a $d$ term characterizing the
+dimension of the input space $\mathcal{X}$ appears in the bound proposed in 
+\cref{corr:unbounded_consistency}, and when $d$ tends to infinity, the
+exponential part goes to zero so that the probability is bounded by a
+constant greater than one. Unfornunately, considering unbounded random
+operators \citet{minsker2011some} doesn't give any tighter solution.
+\paragraph{}
+In our first bound presented at \acs{ACML}, we presented a bound based on a
+matrix concentration inequality for unbounded random variable. Compared to this
+previous bound, \cref{corr:unbounded_consistency} does not depend on the
+dimensionality $p$ of the output space $\mathcal{Y}$ but on the intrinsic
+dimension of the operator $A(\omega)$. However to remove the dependency in $p$
+in the exponential part, we must turn our attention to operator concentration
+inequalities for bounded random variable. To the best of our knowledge we are
+not aware of concentration inequalities working for \say{unbounded} operator-
+valued random variables. Following the same proof than
+\cref{corr:unbounded_consistency} we obtain
+\begin{corollary}
+    \label{corr:bounded_infinite_dim_consistency}
+    Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ be a
+    shift-invariant $\mathcal{Y}$-Mercer kernel, where $\mathcal{Y}$ is a
+    Hilbert space and $\mathcal{X}$ a finite dimensional Banach space of 
+    dimension $D$. Moreover, let $\mathcal{C}$ be a closed ball of 
+    $\mathcal{X}$ centered at the origin of diameter $\abs{\mathcal{C}}$,
+    subset of $\mathcal{X}$, $A:\dual{\mathcal{X}}\to\mathcal{L}(\mathcal{Y})$
+    and $\probability_{\dual{\Haar},\rho}$ a pair such that
+    \begin{dmath*}
+        \tilde{K}_e = \sum_{j=1}^D \cos{\pairing{\cdot,\omega_j}}A (\omega_j)
+        \hiderel{\approx}
+        K_e\condition{$\omega_j\sim\probability_{\dual{\Haar}, \rho}$
+        \acs{iid}.}
+    \end{dmath*}
+    where $A(\omega_j)$ is a Hilbert-Schmidt operator for all $j \in
+    \mathbb{N}^*_D$. Let $\mathcal{D}_{\mathcal{C}}=\mathcal{C} \groupop
+    \mathcal{C}^{-1}$ and
+    \begin{dmath*}
+        V (\delta) \succcurlyeq\variance_{\dual{\Haar},\rho}
+        \tilde{K}_e (\delta) \condition{for all
+        $\delta\in\mathcal{D}_{\mathcal{C}}$}
+    \end{dmath*}
+    and $H_\omega$ be the Lipschitz constant of the function $h: x\mapsto
+    \pairing{x,\omega}$. If the three following constant exists
+    \begin{dmath*}
+        m \ge\int_{\dual{\mathcal{X}}} H_{\omega}
+        \norm{A (\omega)}_{\mathcal{Y},\mathcal{Y}}
+        d\probability_{\dual{\Haar}, \rho} \hiderel{<} \infty{}
+    \end{dmath*}
+    and
+    \begin{dmath*}
+        u \ge\esssup_{\omega\in\dual{\mathcal{X}}}
+        \norm{A (\omega)}_{\mathcal{Y}, \mathcal{Y}} +
+        \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+        \norm{K_e (\delta)}_{\mathcal{Y}, \mathcal{Y}} \hiderel{<} \infty{}
+    \end{dmath*}
+    and
+    \begin{dmath*}
+        v \ge\sup_{\delta\in\mathcal{D}_{\mathcal{C}}} D
+        \norm{V (\delta)}_{\mathcal{Y}, \mathcal{Y}} \hiderel{<} \infty.
+    \end{dmath*}
+    define $p_{int} \ge \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+    \intdim\left(V(\delta)\right)$ then for all $\sqrt{\frac{v}{D}} +
+    \frac{u}{3D} < \epsilon < m\abs{\mathcal{C}}$,
+    \begin{dmath*}
+        \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D |
+        \sup_{\delta\in\mathcal{D}_{\mathcal{C}}}
+        \norm{F (\delta)}_{\mathcal{Y}, \mathcal{Y}} \ge\epsilon} \le~8\sqrt{2}
+        \left(\frac{m\abs{\mathcal{C}}}{\epsilon}\right) p_{int}^{\frac{1}{d +
+        1}} \exp\left(-D\psi_{v,d,u} (\epsilon) \right)
+    \end{dmath*}
+    where $\psi_{v,d,u}(\epsilon)=\frac{\epsilon^2}{2(d+1)(v + u
+    \epsilon / 3)}$.
+\end{corollary}
+Again a full comprehensive proof is given in \cref{subsec:concentration_proof}
+of the appendix. Notice that in this result, The dimension
+$p=\dim{\mathcal{Y}}$ does not appear. Only the intrinsic dimension of the
+variance of the estimator. Moreover when $d$ is large, the term
+$p_{int}^{\frac{1}{d + 1}}$ goes to one, so that the impact of the inrinsic
+dimension on the bound is limited.
+
+\subsection{Variance of the \acpdfstring{ORFF} approximation}
+We now provide a bound on the norm of the variance of $\tilde{K}$, required to
+apply \cref{corr:unbounded_consistency,corr:bounded_infinite_dim_consistency}.
+This is an extension of the proof of \citet{sutherland2015} to the
+operator-valued case, and we recover their results in the scalar case when
+$A(\omega)=1$. An illustration of the bound is provided in
+\cref{fig:approximation_error_var} for the decomposable and the curl-free
+\acs{OVK}.
+\begin{proposition}[Bounding the \emph{variance} of $\tilde{K}$]
+    \label{pr:variance_bound}
+    Let $K$ be a shift invariant $\mathcal{Y}$-Mercer
+    kernel on a second countable \ac{LCA} topological space $\mathcal{X}$. Let
+    $A:\dual{\mathcal{X}}\to\mathcal{L}(\mathcal{Y})$ and
+    $\probability_{\dual{\Haar},\rho}$ a pair such that
+    \begin{dmath*}
+        \tilde{K}_e = \sum_{j=1}^D \cos{\pairing{\cdot,\omega_j}}A (\omega_j)
+        \hiderel{\approx}
+        K_e\condition{$\omega_j\sim\probability_{\dual{\Haar}, \rho}$
+        \acs{iid}.}
+    \end{dmath*}
+    Then,
+    \begin{dmath*}
+        \variance_{\dual{\Haar}, \rho} \left[ \tilde{K}_e(\delta) \right]
+        \preccurlyeq \frac{1}{2D} \left( \left( K_e(2\delta) + K_e(e) \right)
+        \expectation_{\dual{\Haar}, \rho}\left[ A(\omega) \right] -
+        2 K_e(\delta)^2 + \variance_{\dual{\Haar}, \rho}\left[
+        A(\omega) \right]\right)
+    \end{dmath*}
+\end{proposition}
+\begin{proof}
+    It relies on the \ac{iid}~property of the random vectors $\omega_j$ and
+    trigonometric identities (see the proof in \cref{pr:variance_bound} of the
+    appendix).
+\end{proof}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{./gfx/variance_dec.tikz}
+    \caption[decomposable ORFF variance bound]{Comparison between an empirical
+    bound on the norm of the variance of the decomposable ORFF obtained and the
+    theoretical bound proposed in \cref{pr:variance_bound} versus $D$
+    \label{fig:approximation_error_var}}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{./gfx/variance_curl.tikz}
+    \caption[Curl-free ORFF variance bound]{Comparison between an empirical
+    bound on the norm of the variance of the curl-free ORFF obtained and the
+    theoretical bound proposed in \cref{pr:variance_bound} versus $D$
+    \label{fig:approximation_error_var}}
+\end{figure}
+\subsection{Application on decomposable, curl-free and divergence-free
+\acpdfstring{OVK}}
+First, the two following examples discuss the form of $H_\omega$ for the
+additive group and the skewed-multiplicative group. Here we view
+$\mathcal{X}=\mathbb{R}^d$ as a Banach space endowed with the Euclidean norm.
+Thus the Lipschitz constant $H_{\omega}$ is bounded by the supremum of the norm
+of the gradient of $h_{\omega}$.
+\begin{example}[Additive group]
+    On the additive group, $h_\omega(\delta)=\inner{\omega, \delta}$. Hence
+    $H_\omega=\norm{\omega}_2$.
+\end{example}
+\begin{example}[Skewed-multiplicative group]
+    On the skewed multiplicative group, $h_\omega(\delta)=\inner{\omega,
+    \log(\delta+c)}$. Therefore
+    \begin{dmath*}
+        \sup_{\delta\in\mathcal{C}}\norm{\nabla
+        h_\omega(\delta)}_2 = \sup_{\delta\in\mathcal{C}}\norm{\omega/(\delta +
+        c)}_2.
+    \end{dmath*}
+    Eventually $\mathcal{C}$ is compact subset of $\mathcal{X}$ and finite
+    dimensional thus $\mathcal{C}$ is closed and bounded. Thus
+    $H_\omega=\norm{\omega}_2/(\min_{\delta\in\mathcal{C}} \norm{\delta}_2+c)$.
+\end{example}
+Now we compute upper bounds on the norm of the variance and Orlicz norm of the
+three \acsp{ORFF} we took as examples.
+\subsubsection{Decomposable kernel}
+notice that in the case of the Gaussian decomposable kernel, \acs{ie}
+$A(\omega)=A$, $e=0$, $K_0(\delta)= Ak_0(\delta)$, $k_0(\delta) \geq 0$ and
+$k_0(\delta)=1$, then we have 
+\begin{equation*} 
+    D\norm{\variance_\mu \left[ \tilde{K}_0(\delta)
+    \right]}_{\mathcal{Y},\mathcal{Y}}\leq
+    (1+k_0(2\delta))\norm{A}_{\mathcal{Y},\mathcal{Y}}/2 + k_0(\delta)^2.
+\end{equation*}
+\subsubsection{Curl-free and divergence-free kernels:} 
+recall that in this case $p=d$. For the (Gaussian) curl-free kernel,
+$A(\omega)=\omega\omega^*$ where $\omega\in\mathbb{R}^d\sim\mathcal{N}(0,
+\sigma^{-2}I_d)$ thus $\expectation_\mu [A(\omega)] = I_d/\sigma^2$ and
+$\variance_{\mu}[A(\omega)]=(d+1)I_d/\sigma^4$. Hence,
+\begin{equation*}
+    D\norm{\variance_\mu \left[ \tilde{K}_0(\delta)
+    \right]}_{\mathcal{Y},\mathcal{Y}} \leq
+    \frac{1}{2}\norm{\frac{1}{\sigma^2}K_0(2\delta)-2
+    K_0(\delta)^2}_{\mathcal{Y},\mathcal{Y}} + \frac{(d+1)}{\sigma^4}.
+\end{equation*}
+This bound is illustrated by \cref{fig:approximation_error} B, for a given
+datapoint. Eventually for the Gaussian divergence-free kernel,
+$A(\omega)=I\norm{\omega}_2^2-\omega\omega^*$, thus $\expectation_\mu
+[A(\omega)] = I_d(d-1)/\sigma^2$ and $
+\variance_{\mu}[A(\omega)]=d(4d-3)I_d/\sigma^4$. Hence,
+\begin{equation*}
+    D\norm{\variance_\mu \left[ \tilde{K}_0(\delta)
+    \right]}_{\mathcal{Y},\mathcal{Y}} \leq
+    \frac{1}{2}\norm{\frac{(d-1)}{\sigma^2}K_0(2\delta)-2
+    K_0(\delta)^2}_{\mathcal{Y}, \mathcal{Y}}+ \frac{d(4d-3)}{\sigma^4}.
+\end{equation*}
+To conclude, we ensure that the random variable $\norm{A(\omega)}_{\mathcal{Y},
+\mathcal{Y}}$ has a finite Orlicz norm with $\psi=\psi_1$ in these three cases.
+\subsubsection{Computing the Orlicz norm}
+for a random variable with strictly monotonic moment generating function (MGF),
+one can characterize its inverse $\psi_1$ Orlicz norm by taking the functional
+inverse of the MGF evaluated at 2 (see \cref{lm:orlicz_mgf} of the
+appendix). In other words
+$\norm{X}_{\psi_1}^{-1}=\MGF(x)^{-1}_X(2)$. For the Gaussian curl-free and
+divergence-free kernel,
+\begin{dmath*}
+    \norm{A^{div}(\omega)}_{\mathcal{Y},\mathcal{Y}} =
+    \norm{A^{curl}(\omega)}_{\mathcal{Y},\mathcal{Y}} \hiderel{=}
+    \norm{\omega}_{2}^2,
+\end{dmath*}
+where$\omega\sim\mathcal{N}(0,I_d/\sigma^2)$, hence $\norm{A(\omega)}_2\sim
+\Gamma(p/2,2/\sigma^2)$. The MGF of this gamma distribution is
+$\MGF(x)(t)=(1-2t/\sigma^2)^{-(p/2)}$. Eventually
+\begin{equation*}
+    \norm{\norm{A^{div}(\omega)}_{\mathcal{Y},\mathcal{Y}}}_{\psi_1}^{-1} =
+    \norm{\norm{A^{curl}(\omega)}_{\mathcal{Y},\mathcal{Y}}}_{\psi_1}^{-1} =
+    \frac{\sigma^2}{2}\left(1-4^{-\frac{1}{p}}\right).
+\end{equation*}
+
+\section{Conclusions}
+In this chapter we have seen how to bound $\norm{\widetilde{K} - K}$ in the
+operator norm with high probability
+(\cref{sec:consistency_of_the_ORFF_estimator}). We studied the case of
+unbounded finite dimensional \acsp{OVK} and bounded potentially infinite
+dimensional \acsp{OVK}. The current lack of concentration inequalities working
+for both unbounded and infinite dimensional with the operator norm (Banach
+space) in the litterature provides us to unify these bounds.
+
+\chapterend
+% \clearpage

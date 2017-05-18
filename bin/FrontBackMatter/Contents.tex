@@ -1,0 +1,90 @@
+%!TEX root = ../../ThesisRomainbrault.tex
+% Table of Contents - List of Tables/Figures/Listings and Acronyms
+
+\refstepcounter{dummy}
+
+% Bookmark name visible in a PDF viewer
+\pdfbookmark[1]{\contentsname}{tableofcontents}
+% Depth of sections to include in the table of contents - currently up to
+% subsections
+\setcounter{tocdepth}{2}
+
+% Depth of sections to number in the text itself - currently up to
+% subsubsections
+\setcounter{secnumdepth}{3}
+
+\dominitoc
+\manualmark\markboth{\spacedlowsmallcaps{\contentsname}}{%
+\spacedlowsmallcaps{\contentsname}}
+\tableofcontents
+\automark[section]{chapter}
+\renewcommand{\chaptermark}[1]{\markboth{%
+\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
+\renewcommand{\sectionmark}[1]{\markright{%
+\thesection\enspace\spacedlowsmallcaps{#1}}}
+
+\clearpage
+
+\begingroup
+\let\clearpage\relax
+\let\cleardoublepage\relax
+\let\cleardoublepage\relax
+
+%------------------------------------------------------------------------------
+%	List of Figures
+%------------------------------------------------------------------------------
+
+\refstepcounter{dummy}
+% Uncomment if you would like the list of figures to appear in the table of
+% contents 
+% \addcontentsline{toc}{chapter}{\listfigurename}
+
+% Bookmark name visible in a PDF viewer
+\pdfbookmark[1]{\listfigurename}{lof}
+\listoffigures
+
+\vspace{8ex}
+\newpage
+
+%------------------------------------------------------------------------------
+%	List of Tables
+%------------------------------------------------------------------------------
+
+\refstepcounter{dummy}
+% Uncomment if you would like the list of tables to appear in the table of
+% contents
+% \addcontentsline{toc}{chapter}{\listtablename}
+
+% Bookmark name visible in a PDF viewer
+\pdfbookmark[1]{\listtablename}{lot}
+\listoftables
+
+\vspace{8ex}
+\newpage
+
+%------------------------------------------------------------------------------
+%	List of Listings
+%------------------------------------------------------------------------------
+
+%
+%------------------------------------------------------------------------------
+%	Acronyms
+%------------------------------------------------------------------------------
+
+\refstepcounter{dummy}
+% Uncomment if you would like the acronyms to appear in the table of contents
+% \addcontentsline{toc}{chapter}{Acronyms}
+
+% Bookmark name visible in a PDF viewer
+\pdfbookmark[1]{Acronyms}{acronyms}
+
+\markboth{\spacedlowsmallcaps{Acronyms}}{\spacedlowsmallcaps{Acronyms}}
+
+\chapter*{Acronyms}
+\acsetup{list-style = longtable, 
+         sort = true, extra-style=comma}
+\renewcommand{\descriptionlabel}[1]{\hspace*{\labelsep}{#1}}
+\printacronyms[heading = none]
+\endgroup
+
+\chapterend

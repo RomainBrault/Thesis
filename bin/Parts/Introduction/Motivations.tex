@@ -1,0 +1,326 @@
+%!TEX root = ../../ThesisRomainbrault.tex
+
+\section{About statistical learning}
+\label{sec:about_statistical_learning}
+We place ourself in the context of supervised learning. In this context we
+suppose we are given a sequence of experiments composed of events and their
+respective outcome. We note $x_i\in\mathcal{X}$ the $i$-th event and
+$y_i\in\mathcal{Y}$ its respective outcome and we suppose that an experiment
+$(x_i, y_i)$ occurs with probability $\probability(x_i, y_i)$. We call the
+sequence of all the experiments available \say{training data} and a realization
+of an experiment is refered to as data and is noted $\seq{s}=(x_i,
+y_i)_{i=1}^N$ where $N$ is the number of data. To simplify the problem further
+we suppose that all the events follow the same probability distribution and
+each experiment is idependent from all the others. We say that the experiments
+are \acf{iid}.
+\paragraph{}
+In machine learning we are often interested in finding the most simple function
+$f$ belonging to a class of function $\mathcal{F}$ that is able to find the
+best the relation between an event $x\in\mathcal{X}$ and an outcome
+$y\in\mathcal{Y}$ from the training data. To do so we suppose we are given a
+loss function $L:\mathcal{X}\times\mathcal{F}\times\mathcal{Y} \to
+\mathbb{R}_+$ that evaluates the capacity of a function $f$ to predict the
+outcome $y$ from an event $x$. 
+%A learning algorithm is a function $\seq{s}, L,
+%\mathcal{F} \mapsto f_{\seq{s}}$ is a function that takes as an imput some
+%training data $\seq{s}$, a loss function $L$ and a class of function
+%$\mathcal{F}$ and return a function $f_{\seq{s}}$ that minimize a criterion.
+In statistical learning the goal is often to find the model that minimize the
+average loss over all the training samples. This aforemention quantity is
+called empirical risk.
+\begin{dmath*}
+    \mathcal{R}_{emp}(f, \seq{s}) \frac{1}{N}\sum_{i=1}^N L(x_i, f, y_i)
+\end{dmath*}
+Since the training data are \acs{iid} the celebrated strong law of large
+numbers tells us that for any given function $f$ in $\mathcal{F}$ converges
+almost surely to a quantity called true risk (or simply risk).
+\begin{dmath*}
+    \mathcal{R}(f) = \int_{\mathcal{X}\times\mathcal{Y}} L(x, f, y)
+    d\probability(x, y)
+\end{dmath*}
+Intuitively the empirical risk measure the performances of a model on the
+training data, while the risk measure the performances of a model with respect
+to all the possible experiments (event the one not present in the training
+set). 
+\paragraph{}
+We call learning algorithm a function that takes a class of function
+$\mathcal{F}$, a loss $L$ and some training data $\seq{s}$ and return a
+function $f_{\seq{s}}$ in $\mathcal{F}$. Although the convergence of
+the empirical risk to the true risk is guaranteed by the strong law of large
+number, we usually require that a learning algorithm generalizes well. That is
+the empirical risk must converges to the true risk uniformly for all
+$f_{\seq{s}}$ returned by a learning algorithm. In other words we want 
+that given a class of function $\mathcal{F}$ and a loss $L$, the bound
+\begin{dmath*}
+    \riskemp{f_{\seq{s}}, \seq{s}} \le \risk{f_{\seq{s}}} + C(\delta, \seq{s},
+    L, \mathcal{F})
+\end{dmath*}
+holds with probability $1-\delta$, for all $\delta\in(0, 1)$ and $C(\delta,
+\seq{s}, \mathcal{F}) \to 0$ when the number of training data $N$ in $\seq{s}$
+goes to infinity.
+\paragraph{}
+There is a crutial difference between the strong law of large numbers and the
+generalization property of a learning algorithm. The strong law of large number
+holds \emph{after} a model $f$ has been selected and fixed in $\mathcal{F}$.
+Thus minimizing the empirical risk doesn't yield \emph{ipso facto} a model that
+minimize the true risk (which measure the adequation of the model on unseen
+data). This can be illustrated by an intuitive example adapted from
+\citet[page 64]{cornuejols2011apprentissage} and the infinite monkey theorem.
+\begin{figure}
+    \centering\includegraphics[width=\textwidth]{./gfx/infinite_monkey.jpg}
+    \caption{Borel's strong law of large numbers.}
+\end{figure}
+\begin{example}
+    Suppose we have a recruiter (a learning algorithm) whose task is to select 
+    the best students from a pool of candidates (the class of functions).
+    Given ten students the recruiter make them pass a test with $N$ questions.
+    If the exam is well constructed and there are enough questions the
+    recruiter should be able to retrieve the best student.
+    \paragraph{}
+    Now suppose that ten millions monkeys $\gg N$ take the test and answer
+    randomly to the questions. Then with high probability a monkey will score
+    better or as well as the best student (strong law of large number). Can we
+    say then that the recruiter has identified the best
+    student?
+    \paragraph{}
+    Intuitively we see that when the capacity of the class of function grows
+    (the number of students and random monkeys), the performance of the best
+    element \emph{a posteriori} (minimizing the empirical risk) is not linked
+    to the future performance (minimizing the true risk).
+    \paragraph{}
+    On the contrary the generalization property ensure that the difference
+    between the empirical risk and the true risk is controled because the bound
+    does not depend on a single fixed model, but on the whole class of
+    functions. In this case if there are too many random monkey, $C(\delta,
+    \seq{s}, L, \mathcal{F})$ will blow-up, giving a poor generalization
+    property.
+\end{example}
+\paragraph{}
+A slightly stronger requirement is the consistency of learning algorithm.
+Given a loss function $L$ and a class of function $\mathcal{F}$ there exists an
+optimal solution that minimizes the true risk.
+\begin{dmath*}
+    f_* = \argmin_{f\in\mathcal{F}} \risk{f}.
+\end{dmath*}
+The excess risk is defined as the difference between the empirical risk of a
+model returned by a learning algorithm and $f_*$. A learning is said to be
+consistent when it is possible to bound the excess risk uniformly over all
+the solutions returned by a learning algorithm. In other words we look for a
+bound such that given a class of function $\mathcal{F}$ and a loss $L$,
+\begin{dmath*}
+    \risk{f_{\seq{s}}} \le \inf_{f\in\mathcal{F}} \risk{f} + C(\delta, \seq{s},
+    L, \mathcal{F}),
+\end{dmath*}
+holds with probability $1 - \delta$, for all $\delta \in (0, 1)$  and
+$C(\delta, \seq{s}, \mathcal{F}) \to 0$ when the number of training data $N$ in
+$\seq{s}$ goes to infinity. 
+\paragraph{}
+To identify the best model in $\mathcal{F}$ an intuitive loss function would be
+the $0-1$ loss defined as
+\begin{dmath*}
+    L(x, f, y) =
+    \begin{cases}
+        1 & \text{if } yf(x) \le 0 \\
+        0 & \text{otherwise}.
+    \end{cases}
+\end{dmath*}
+This loss returns $0$ if the model $f(x)$ and $y$ have the same sign and $1$
+otherwise. In this simple setting \citet{hoffgen1995robust} showed that finding
+an approximate to the empirical risk minimization with the $0-1$ loss is
+NP-Hard. However by \say{relaxing} a loss such that it becomes a convex in
+$f(x)$ functions yields a convex optimization problem which can then be solved
+in polynomial time. For instance, a convex surrogate of the $0-1$ loss is the
+Hinge loss
+\begin{dmath*}
+    L(x, f, y) =
+    \begin{cases}
+        f(x) & \text{if } (2y-1)f(x) \le 0 \\
+        0 & \text{otherwise}.
+    \end{cases}
+\end{dmath*}
+or the logistic loss
+\begin{dmath*}
+    L(x, f, y) = \frac{1}{\ln(2)} \ln(1 + \exp(-yf(x)))
+\end{dmath*}.
+For regression, a common choice is the least square loss
+\begin{dmath*}
+    L(x, f, y) = \frac{1}{2}(f(x) - y)^2
+\end{dmath*}
+In the next section we discuss the choice of the class of functions
+$\mathcal{F}$.
+
+%------------------------------------------------------------------------------
+\subsection{Introduction to kernel methods}
+A fair simple choice for $\mathcal{F}$ is the set of all linear functions where
+we focus on defining learning algorithm picking up the \say{best} function in
+the class
+\begin{dmath*}
+    \mathcal{F}_{lin.} = \Set{f | f(x) = \inner{w, x} + b, \enskip \forall w \in
+    \mathbb{R}^d, \enskip \forall x \in \mathbb{R}^d, \enskip \forall b \in
+    \mathbb{R}}.
+\end{dmath*}
+Although this class of function has been well studied and has good
+generalization propertis (as long as the norm of $w$ is not too big), it has a
+rather low capacity.  For instance in $\mathbb{R}^2$ it is impossible to
+separate two nested circle with a line (see \cref{fig:nested_circle}). On the
+other hand if one consider the class of function of all functions $\Set{f |
+f:\mathcal{X}\to\mathbb{R}}$, this space contains too many functions for any
+algorithm to be able to find a solution to the minimization of the empirical
+risk.
+\begin{figure}
+    \centering
+    \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./gfx/nested_circle.pgf}}')}
+    \caption[Separation of nested circles with linear classifier]{It is
+    impossible to find a linear classifier that split perfectly two nested
+    circles.}
+    \label{fig:nested_circle}
+\end{figure}
+The idea of kernel methods \citep{Aronszajn1950} is to consider a clever
+subset of the set of all functions, namely the set of all function belonging to
+a Hilbert space such that the evaluation of the function at $x$ is bounded for
+all
+$x\in\mathcal{X}$.
+\begin{dmath*}
+    \mathcal{F}_{\text{b.~eval.}} = \Set{f | \abs{f(x)} \le
+    \norm{f}_{\mathcal{H}} C(x) \le \infty, \enskip \forall f\in\mathcal{H},
+    \forall x \in\mathcal{X} }.
+\end{dmath*}
+With this hypothesis it is legitimate to construct an evaluation operator for
+all $x\in\mathcal{X}$ which is bounded.
+\begin{dmath*}
+    \text{ev}_x : 
+    \begin{cases}
+        \mathcal{F}_{\text{b.~eval.}}  & \to \mathbb{R} \\
+        f & \mapsto f(x).
+    \end{cases}
+\end{dmath*}
+From this evaluation operator, since $\mathcal{F}_{\text{b.~eval.}}$ is a
+subspace of a Hilbert space by Riesz representation theorem, it is possible to
+find a function $k_x$ of $\mathcal{F}$ such that
+\begin{dmath*}
+    \text{ev}_x f = \inner{k_x, f}_{\mathcal{F}_{\text{b.~eval.}}}.
+\end{dmath*}
+Then we can define a function $k(x, z) \colonequals \inner{k_x,
+k_z}_{\mathcal{F}_{\text{b.~eval.}}}=\conj{k_x(z)}$ and we have $f(x) =
+\inner{k(\cdot, x), f}_{\mathcal{F}_{\text{b.~eval.}}}$. We call such functions
+$k$ reproducing kernel because they reproduces the value of any function of the
+space $\mathcal{F}_{\text{b.~eval.}}$ at any point $x\in\mathcal{X}$. We call
+the Hilbert space of function with locally bounded evaluation maps a \acf{RKHS}
+and we note $\mathcal{F}_{\text{b.~eval.}} =\mathcal{H}_k$. Moreover notice
+that the function $k$ is by construction symmetric and positive definite.
+\paragraph{}
+One of the most important result of the theory of the reproducing kernels is
+the fact that there exists a bijection between the set of positive
+semi-definite functions and and the set of \acl{RKHS}. In other words a
+symmetric positive definite function defines a unique \acs{RKHS} and
+\emph{vice-versa}.
+\begin{theorem}[\citet{Aronszajn1950}]
+    Suppose $k$ is a symmetric, positive definite kernel on a set
+    $\mathcal{X}$. Then there is a unique Hilbert space of functions on
+    $\mathcal{X}$ for which $k$ is a reproducing kernel.
+\end{theorem}
+
+
+\section{On large-scale learning}
+\label{sec:on_large-scale_learning}
+
+\section{History and state of the art of large scale learning with kernels}
+\label{sec:history}
+
+
+In this manuscript we are interested in finding function
+$f:\mathcal{X}\to\mathcal{Y}$, where $\mathcal{X}$ and $\mathcal{Y}$ are
+arbitrary spaces.
+
+\subsection{Quadratic programing, subsampling}
+
+\subsection{Gradient descents}
+
+\subsection{Mercer Theorem, Nystr\"om method and feature maps}
+\subsubsection{Nystr\"om approximations}
+To overcome the bottleneck of Gram matrix computations in kernel methods,
+Williams and Seeger \cite{Williams2000-nystrom} have proposed to generate a
+low-rank matrix approximation of the Gram matrix using a subset of its columns.
+\subsubsection{Random Fourier Feature maps}
+Random Fourier Feature methodology introduced  by Rahimi and Recht
+\cite{Rahimi2007} provides a way to scale up kernel methods when kernels are
+Mercer and \emph{translation-invariant}  for the group law considered on the
+input space $\mathcal{X}$. We describe here the original approach proposed in
+\cite{Rahimi2007}, focusing on the group $(\mathbb{R}^d, +)$. Extensions to
+other group laws such as \cite{li2010random} are described in
+\cref{subsubsec:skewedchi2} within the general framework of operator-valued
+kernels.
+\paragraph{}
+Denote $k: \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}$ a positive
+definite kernel on $\mathbb{R}^d$. A kernel $k$ is said to be
+\emph{shift-invariant} or \emph{translation-invariant} for the addition if for
+any $a \in \mathbb{R}^d$, and for all $(x,x') \in \mathbb{R}^d \times
+\mathbb{R}^d$ we have $k(x+a,z+a) = k(x,z)$.  Then, we define $k_0: \mathbb{R}^d
+\to \mathbb{R}$ the function such that $k(x,z)= k_0(x-z)$. $k_0$ is
+called the \emph{signature} of kernel $k$. Bochner's theorem
+\cite{folland1994course} is the theoretical result that leads to the Random
+Fourier Features.
+\begin{theorem}[Bochner's theorem]\label{th:bochner-scalar}
+    Any continuous positive definite complex function is the \acl{FT} of a
+    non-negative measure.
+\end{theorem}
+It implies that any positive definite, continuous and shift-invariant kernel
+$k$, have a continuous and positive definite signature $k_0$, which is the
+\acl{FT} of a non-negative measure $\mu$. We therefore have the following
+corollary.
+\begin{corollary}\label{c:bochner-app}
+    With the previous notations and assumptions on $k$,
+    \begin{dmath}\label{bochner-scalar}
+        k(x,z)=k_0(x-z) \hiderel{=} \int_{\mathbb{R}^d} e^{-\iu \inner{\omega,x
+        - z}} d\mu(\omega).
+    \end{dmath}
+\end{corollary}
+Without loss of generality, we assume that $\mu$ is a probability measure,
+\acs{ie} $\int_{\mathbb{R}^d} d\mu(\omega)=1$ by renormalising the kernel since
+\begin{dmath*}
+    \int_{\mathbb{R}^d}d\mu(\omega)= \int_{\mathbb{R}^d}e^{-\iu \inner{\omega,
+    0}d\mu(\omega)}\hiderel{=}k_0(0). 
+\end{dmath*}
+Then we can write \cref{bochner-scalar} as an
+expectation over $\mu$. For all $x$,
+$z\in\mathbb{R}^d$
+\begin{dmath*}
+    k_0(x-z) = \expectation_{\mu}\left[e^{-\iu \inner{\omega,x - z}}\right].
+\end{dmath*}
+Eventuallt, if $k$ is real valued we only write the real part, $k(x,z)$ =
+$\expectation_{\mu}[\cos \inner{\omega,x - z}]$ =$\expectation_{\mu}[ \cos
+\inner{\omega,z}$ $\cos \inner{\omega,x}$ + $\sin \inner{\omega,z}$ $\sin
+\inner{\omega,x}]$.  Let $\Vect_{j=1}^D x_j$ denote the $Dm$-length column
+vector obtained by stacking vectors $x_j \in \mathbb{R}^m$.  The feature map
+$\tilde{\phi}: \mathbb{R}^d \rightarrow \mathbb{R}^{2D}$ defined as
+\begin{dmath}
+\label{eq:rff}
+    \tilde{\phi}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D
+    \begin{pmatrix} 
+        \cos{\inner{x,\omega_j}} \\
+        \sin{\inner{x,\omega_j}}
+    \end{pmatrix}, \enskip \omega_j \hiderel{\sim} \mu
+\end{dmath}
+is called a \emph{Random Fourier Feature} (map). Each $\omega_{j}, j=1, \ldots,
+D$ is independently and identically sampled from the inverse Fourier transform
+$\mu$ of $k_0$.  This Random Fourier Feature map provides the following
+Monte-Carlo estimator of the kernel: $\tilde{k}(x, z) = \tilde{\phi}(x)^*
+\tilde{\phi}(z)$. 
+\paragraph{}
+The dimension $D$ governs the precision of this
+approximation, whose uniform convergence towards the target kernel (as defined
+in \cref{bochner-scalar}) can be found in \citet{Rahimi2007} and in more recent
+papers with some refinements proposed in \citet{sutherland2015} and
+\citet{sriper2015}.  Finally, it is important to notice that Random Fourier
+Feature approach \emph{only} requires two steps before the application of a
+learning algorithm: (1) define the inverse Fourier transform of the given
+shift-invariant kernel, (2) compute the randomized feature map using the
+spectral distribution $\mu$.  \citet{Rahimi2007} show that for the Gaussian
+kernel $k_0(x-z) = \exp(-\gamma \norm{x - z}_2^2)$, the spectral distribution
+$\mu$ is a Gaussian distribution. For the Laplacian kernel $k_0(x-z) =
+exp(-\gamma \norm{x - z}_1)$, the spectral distribution is a Cauchy
+distribution.
+\subsection{Recent extensions}
+
+
+\chapterend

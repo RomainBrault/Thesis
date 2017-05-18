@@ -1,0 +1,26 @@
+%!TEX root = ../../ThesisRomainbrault.tex
+% Publications - a page listing research articles written using content in the
+% thesis
+
+% Bookmark name visible in a PDF viewer
+\pdfbookmark[1]{Publications}{Publications}
+
+\chapter*{Publications} % Publications page text
+
+Some ideas and figures have appeared previously in the following
+publications: \\
+
+%\begin{refsection}[ownpubs]
+   %\small
+   %\nocite{*} % is local to to the enclosing refsection
+   %\printbibliography[heading=none]
+%\end{refsection}
+
+\printbibliography[keyword=ownpubs, heading=none]
+
+%\emph{Attention}: This requires a separate run of \texttt{bibtex} for your
+%\texttt{refsection}, \eg, \texttt{ClassicThesis1-blx} for this file. You might
+%also use \texttt{biber} as the backend for \texttt{biblatex}. See also
+%\url{http://tex.stackexchange.com/questions/128196/problem-with-refsection}.
+
+\chapterend

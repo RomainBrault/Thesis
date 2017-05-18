@@ -1,0 +1,166 @@
+\defcounter {refsection}{0}\relax 
+\contentsline {definition}{{Definition}{2.{1}}{}}{8}{definition.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {definition}{{Definition}{2.{2}}{The Haar measure}}{8}{definition.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {definition}{{Definition}{2.{3}}{Even and odd function on a LCA group}}{9}{definition.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{1}{}}{9}{proof.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {example}{{Example}{2.{1}}{}}{11}{example.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{2}{}}{11}{proof.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {definition}{{Definition}{2.{4}}{\acl {vv-RKHS} \citep {carmeli2006vector,Micchelli2005}}}{13}{definition.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {definition}{{Definition}{2.{5}}{\acl {OVK} of positive type acting on a complex space}}{13}{definition.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {definition}{{Definition}{2.{6}}{\acl {OVK} of positive type acting on a real Hilbert space}}{14}{definition.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{2.{1}}{}}{14}{proposition.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{3}{}}{14}{proof.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{2.{2}}{}}{15}{proposition.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{4}{}}{15}{proof.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{2.{3}}{Feature Operator \citep {Carmeli2010}}}{16}{proposition.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{5}{}}{17}{proof.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {definition}{{Definition}{2.{7}}{$\mathcal {Y}$-Mercer kernel}}{17}{definition.2.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{2.{4}}{Characterization of $\mathcal {Y}$-Mercer kernel \citep {Carmeli2010}}}{17}{proposition.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{6}{}}{18}{proof.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {lemma}{{Lemma}{2.{1}}{}}{18}{lemma.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{7}{}}{18}{proof.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{2.{5}}{Countable orthonormal basis for $\mathcal {Y}$-Mercer kernel \citep {carmeli2006vector}}}{18}{proposition.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{8}{}}{18}{proof.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {definition}{{Definition}{2.{8}}{Shift-invariant \acs {OVK}}}{19}{definition.2.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{2.{6}}{Kernel signature \citep {Carmeli2010}}}{19}{proposition.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{9}{}}{19}{proof.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {definition}{{Definition}{2.{9}}{Decomposable kernel}}{20}{definition.2.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{2.{7}}{Kernels and Regularizers \citep {Alvarez2012}}}{20}{proposition.2.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {definition}{{Definition}{2.{10}}{Curl-free and Div-free kernel}}{21}{definition.2.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{3.{1}}{Operator-valued Bochner's theorem \citep {Zhang2012,neeb1998operator}}}{26}{proposition.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{3.{2}}{\citet {Carmeli2010}}}{27}{proposition.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{3.{3}}{\citet {Carmeli2010}}}{28}{proposition.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {lemma}{{Lemma}{3.{1}}{}}{29}{lemma.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{10}{}}{29}{proof.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{3.{4}}{Shift-invariant $\mathcal {Y}$-Mercer kernel spectral decomposition}}{30}{proposition.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{11}{}}{30}{proof.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {remark}{{Remark}{3.{1}}{}}{31}{remark.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{3.{5}}{Bounded shift-invariant $\mathcal {Y}$-Mercer kernel spectral decomposition}}{31}{proposition.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{12}{}}{32}{proof.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{3.{6}}{Functional Fourier feature map}}{38}{proposition.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{13}{}}{38}{proof.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{3.{7}}{ORFF}}{39}{proposition.3.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{14}{}}{39}{proof.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {remark}{{Remark}{3.{2}}{}}{39}{remark.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{3.{8}}{}}{40}{proposition.3.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{15}{}}{40}{proof.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {definition}{{Definition}{3.{1}}{Random Fourier feature operator}}{41}{definition.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{3.{9}}{}}{41}{proposition.3.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{16}{of \cref {pr:cv_feature_map_1}}}{42}{proof.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{17}{of \cref {pr:cv_feature_map_2}}}{42}{proof.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {corollary}{{Corollary}{3.{1}}{}}{42}{corollary.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{18}{}}{42}{proof.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {remark}{{Remark}{3.{3}}{}}{43}{remark.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {example}{{Example}{3.{1}}{Matrix-valued kernel on the additive group}}{43}{example.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{19}{}}{43}{proof.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {example}{{Example}{3.{2}}{Matrix-valued kernel on the skewed multiplicative group}}{46}{example.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{20}{}}{46}{proof.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{3.{10}}{}}{47}{proposition.3.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{21}{}}{47}{proof.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{3.{11}}{Sum of kernels}}{49}{proposition.3.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {theorem}{{Theorem}{4.{1}}{Mazur-Schauder}}{52}{theorem.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {remark}{{Remark}{4.{1}}{}}{52}{remark.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {theorem}{{Theorem}{4.{2}}{Representer \citep {minh2016unifying}}}{53}{theorem.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{22}{}}{55}{proof.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {lemma}{{Lemma}{4.{1}}{}}{55}{lemma.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{23}{}}{56}{proof.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {corollary}{{Corollary}{4.{1}}{\acs {ORFF} representer}}{57}{corollary.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{24}{}}{58}{proof.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {example}{{Example}{4.{1}}{Naive close form for the squared error cost}}{62}{example.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {remark}{{Remark}{4.{2}}{}}{62}{remark.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {theorem}{{Theorem}{5.{1}}{Uniform error bound for \acs {RFF}, \citet {Rahimi2007}}}{78}{theorem.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {corollary}{{Corollary}{5.{1}}{Uniform error bound for decomposable \acs {ORFF}}}{79}{corollary.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{25}{}}{79}{proof.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {definition}{{Definition}{5.{1}}{Orlicz norm \citep {van1996weak}}}{80}{definition.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {theorem}{{Theorem}{5.{2}}{}}{80}{theorem.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {sproof}{{Sketch of proof}{1}{}}{81}{sproof.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {lemma}{{Lemma}{5.{1}}{}}{81}{lemma.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {sproof}{{Sketch of proof}{2}{H1}}{81}{sproof.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {sproof}{{Sketch of proof}{3}{H2}}{81}{sproof.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {remark}{{Remark}{5.{1}}{dealing with infinite dimensional operators}}{82}{remark.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{5.{1}}{Bounding the \emph {variance} of $\tilde {K}$}}{82}{proposition.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Proof}{26}{}}{83}{proof.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {example}{{Example}{5.{1}}{Additive group}}{83}{example.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {example}{{Example}{5.{2}}{Skewed-multiplicative group}}{83}{example.5.2}

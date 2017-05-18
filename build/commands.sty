@@ -1,0 +1,131 @@
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator{\Tr}{{\mathbf{Tr}}}
+\DeclareMathOperator*{\sign}{sign}
+\DeclareMathOperator{\lspan}{\overline{span}\;}
+\DeclareMathOperator{\vect}{\bigoplus}
+\DeclareMathOperator*{\Vect}{\bigoplus}
+\DeclareMathOperator{\jacobian}{\mathbf{J}}
+
+\newcommand{\ima}{\text{im}\;}
+\newcommand{\Ima}{\text{Im}\;}
+\newcommand{\Ker}{\text{Ker}\;}
+
+\newcommand{\ec}{\mathrm{e}\mkern1mu}
+\newcommand{\iu}{{\mathrm{i}\mkern1mu}}
+
+% Florence's notations.
+% \def\expectation{{\mathbb{E}}}
+% \def\variance{{\mathbb{V}}}
+% \def\probability{{\mathbb{P}}}
+%\def\covari{{\math{Cov}}
+
+% Romain's notations.
+\usepackage{mathtools}
+
+\newcommand{\expectation}{{\mathbf{{E}}}}
+\newcommand{\variance}{{\mathbf{{Var}}}}
+\newcommand{\probability}{{\mathbf{{Pr}}}}
+\newcommand{\Leb}{\mathbf{Leb}}
+\newcommand{\Haar}{\mathbf{Haar}}
+
+\newcommand{\param}{\theta}
+\newcommand{\minimiser}{\hat\theta}
+\newcommand{\parameter}{\theta}
+\newcommand{\idim}{d}
+\newcommand{\odim}{p}
+\newcommand{\myinv}[1]{#1^{-1}}
+\newcommand{\FT}[1]{\mathcal{F}\left[#1\right]}
+\newcommand{\IFT}[1]{\mathcal{F}^{-1}\left[#1\right]}
+\newcommand{\MGF}{\text{MGF}}
+
+\newcommand{\seq}[1]{\boldsymbol{\mathbf{#1}}}
+
+\newcommand{\derivative}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\lderivative}[2]{\frac{\partial}{\partial {#2}} {#1}}
+
+\newcommand{\derivativeat}[3]{\left. \frac{\partial {#1}}{\partial {#2}} \right|_{\scriptscriptstyle {#2}={#3}}}
+\newcommand{\lderivativeat}[3]{\left. \frac{\partial}{\partial {#2}} {#1} \right|_{\scriptscriptstyle {#2}={#3}}}
+
+\newcommand{\tildephi}[1]{\widetilde{\phi}}
+\newcommand{\tildePhi}[1]{\widetilde{\Phi}}
+\newcommand{\tildeW}[1]{\widetilde{W}}
+\newcommand{\tildeH}[1]{\widetilde{\mathcal{H}}}
+\newcommand{\tildef}[1]{\widetilde{f}}
+\newcommand{\tildeK}[1]{\widetilde{K}}
+
+% \newcommand{\tildePhi}[1]{\widetilde{\Phi}_{{\scriptstyle \boldsymbol{\mathbf{#1}}}}}
+% \newcommand{\tildephi}[1]{\widetilde{\phi}_{{\scriptstyle \boldsymbol{\mathbf{#1}}}}}
+% \newcommand{\tildeW}[1]{\widetilde{W}_{{\scriptstyle \boldsymbol{\mathbf{#1}}}}}
+% \newcommand{\tildef}[1]{\widetilde{f}_{{\scriptstyle \boldsymbol{\mathbf{#1}}}}}
+% \newcommand{\tildeH}[1]{\widetilde{\mathcal{H}}_{{\scriptstyle \boldsymbol{\mathbf{#1}}}}}
+
+\newcommand{\risk}[1]{\mathcal{R}(#1)}
+\newcommand{\riskemp}[1]{\mathcal{R_{\text{emp}}}(#1)}
+
+% \let\Phi\phi
+% \let\phi\varphi
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+\DeclarePairedDelimiter\inner{\langle}{\rangle}
+\DeclarePairedDelimiter\pairing{(}{)}
+\DeclarePairedDelimiter\covariance{\text{\textbf{Cov}}_\mu[}{]}
+\DeclarePairedDelimiter\covariancenomu{\text{\textbf{Cov}}[}{]}
+\newcommand\dual[1]{\widehat{#1}}
+% \newcommand\dual[1]{#1}
+\newcommand\conj[1]{\overline{#1}}
+\newcommand\inrange[2]{\in \Set{#1, \ldots, #2}}
+\newcommand\converges[2]{\xrightarrow[#2]{\text{#1}}}
+% \newcommand\inrange[2]{\llbracket#1, #2\rrbracket}
+
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+%% functions and operators
+\newcommand\density{p_{\mu}}
+\newcommand\measure{\mu}
+\newcommand\adjoint{*}
+\newcommand\sech{\text{sech}}
+\newcommand\groupop{\star}
+\newcommand\inv[1]{{#1}^{-1}}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                               PROOF, THEOREM, and FRIENDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewtheoremstyle{plain}%
+{\item[\hskip\labelsep \theorem@headerfont ##1\ ##2 \theorem@separator]}%
+{\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\ \theorem@separator] {\theorem@headerfont (##3).} \theorem@separator}
+\makeatother
+
+\theoremstyle{definition}
+\newtheorem{assumption}{Assumption}[chapter]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[chapter]
+\newtheorem{definition}{Definition}[chapter]
+
+\theoremstyle{plain}
+\newtheorem{example}{Example}[chapter]
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\newtheorem{axiom}{Axiom}[chapter]
+
+\theoremstyle{nonumberplain}
+\theoremsymbol{\ensuremath{\Box}}
+\newtheorem{sproof}{Sketch of proof}
+
+\theoremstyle{nonumberplain}
+\theoremsymbol{\ensuremath{\Box}}
+\newtheorem{proof}{Proof}
+
+\numberwithin{equation}{chapter}

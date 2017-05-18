@@ -1,0 +1,166 @@
+=>PYTHONTEX#py#not_mercer#default#0#code####Construction.tex#506#
+sys.path.append('../src/')
+import not_mercer
+
+not_mercer.main()
+=>PYTHONTEX#py#default#default#0#c####Construction.tex#514#
+print(r'\centering\resizebox{\textwidth}{!}{\input{./not_Mercer.pgf}}')
+=>PYTHONTEX#py#representer#default#0#code####Learning.tex#396#
+sys.path.append('../src/')
+import representer
+
+err = representer.main()
+=>PYTHONTEX#py#representer2#default#0#code####Learning.tex#412#
+sys.path.append('../src/')
+import representer2
+
+err = representer2.main()
+=>PYTHONTEX#py#default#default#1#c####Learning.tex#432#
+print(r'\centering \resizebox {\textheight }{!}{\input {./representer.pgf}}')
+=>PYTHONTEX#py#default#default#2#c####Learning.tex#432#
+print(r'\centering \resizebox {\textheight }{!}{\input {./representer2.pgf}}')
+=>PYTHONTEX#py#efficient_linop#default#0#code####Learning.tex#446#
+r"""Example of efficient implementation of the Gaussian ORFF decomposable kernel."""
+
+from time import time
+
+from numpy.linalg import svd
+from numpy.random import rand, seed
+from numpy import (dot, diag, sqrt, kron, zeros,
+                   logspace, log10, matrix, eye, int)
+from scipy.sparse.linalg import LinearOperator
+from sklearn.kernel_approximation import RBFSampler
+from matplotlib.pyplot import savefig, subplots
+=>PYTHONTEX#py#efficient_linop#default#1#block####Learning.tex#477#
+def NaiveDecomposableGaussianORFF(X, A, gamma=1.,
+                                  D=100, eps=1e-5, random_state=0):
+    r"""Return the Naive ORFF map associated with the data X.
+
+    Parameters
+    ----------
+    X : {array-like}, shape = [n_samples, n_features]
+        Samples.
+    A : {array-like}, shape = [n_targets, n_targets]
+        Operator of the Decomposable kernel (positive semi-definite)
+    gamma : {float},
+        Gamma parameter of the RBF kernel.
+    D : {integer}
+        Number of random features.
+    eps : {float}
+        Cutoff threshold for the singular values of A.
+    random_state : {integer}
+        Seed of the generator.
+
+    Returns
+    -------
+    \tilde{\Phi}(X) : array
+    """
+    # Decompose A=BB^T
+    u, s, v = svd(A, full_matrices=False, compute_uv=True)
+    B = dot(diag(sqrt(s[s > eps])), v[s > eps, :])
+
+    # Sample a RFF from the scalar Gaussian kernel
+    phi_s = RBFSampler(gamma=gamma, n_components=D, random_state=random_state)
+    phiX = phi_s.fit_transform(X)
+
+    # Create the ORFF linear operator
+    return matrix(kron(phiX, B))
+=>PYTHONTEX#py#efficient_linop#default#2#block####Learning.tex#526#
+def EfficientDecomposableGaussianORFF(X, A, gamma=1.,
+                                 D=100, eps=1e-5, random_state=0):
+    r"""Return the efficient ORFF map associated with the data X.
+
+    Parameters
+    ----------
+    X : {array-like}, shape = [n_samples, n_features]
+        Samples.
+    A : {array-like}, shape = [n_targets, n_targets]
+        Operator of the Decomposable kernel (positive semi-definite)
+    gamma : {float},
+        Gamma parameter of the RBF kernel.
+    D : {integer}
+        Number of random features.
+    eps : {float}
+        Cutoff threshold for the singular values of A.
+    random_state : {integer}
+        Seed of the generator.
+
+    Returns
+    -------
+    \tilde{\Phi}(X) : Linear Operator, callable
+    """
+    # Decompose A=BB^T
+    u, s, v = svd(A, full_matrices=False, compute_uv=True)
+    B = dot(diag(sqrt(s[s > eps])), v[s > eps, :])
+
+    # Sample a RFF from the scalar Gaussian kernel
+    phi_s = RBFSampler(gamma=gamma, n_components=D, random_state=random_state)
+    phiX = phi_s.fit_transform(X)
+
+    # Create the ORFF linear operator
+    cshape = (D, B.shape[0])
+    rshape = (X.shape[0], B.shape[1])
+    return LinearOperator((phiX.shape[0] * B.shape[1], D * B.shape[0]),
+                          matvec=lambda b: dot(phiX, dot(b.reshape(cshape),
+                                               B)),
+                          rmatvec=lambda r: dot(phiX.T, dot(r.reshape(rshape),
+                                                B.T)))
+=>PYTHONTEX#py#efficient_linop#default#3#code####Learning.tex#677#
+sys.path.append('../src/')
+import efficient_decomposable_gaussian
+
+efficient_decomposable_gaussian.main()
+=>PYTHONTEX#py#default#default#3#c####Learning.tex#684#
+print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_decomposable_gaussian.pgf}}')
+=>PYTHONTEX#py#efficient_linop#default#4#code####Learning.tex#692#
+sys.path.append('../src/')
+import efficient_curlfree_gaussian
+
+efficient_curlfree_gaussian.main()
+=>PYTHONTEX#py#default#default#4#c####Learning.tex#699#
+print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_curlfree_gaussian.pgf}}')
+=>PYTHONTEX#py#efficient_linop#default#5#code####Learning.tex#709#
+sys.path.append('../src/')
+import efficient_divfree_gaussian
+
+efficient_divfree_gaussian.main()
+=>PYTHONTEX#py#default#default#5#c####Learning.tex#716#
+print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_divfree_gaussian.pgf}}')
+=>PYTHONTEX#py#approximation#default#0#code####Concentration.tex#23#
+sys.path.append('../src/')
+import approximation
+
+err = approximation.main()
+=>PYTHONTEX#py#default#default#6#c####Concentration.tex#32#
+print(r'\centering\resizebox{\textwidth}{!}{\input{./approximation.pgf}}')
+=>PYTHONTEX#PYGpython#EXT:../src/not_mercer.py#defaultverb#0#verbatim####Appendix.tex#14#
+=>PYTHONTEX#PYGpython#EXT:../src/representer.py#defaultverb#0#verbatim####Appendix.tex#18#
+=>PYTHONTEX#PYGpython#EXT:../src/efficient_decomposable_gaussian.py#defaultverb#0#verbatim####Appendix.tex#23#
+=>PYTHONTEX#PYGpython#EXT:../src/efficient_curlfree_gaussian.py#defaultverb#0#verbatim####Appendix.tex#29#
+=>PYTHONTEX#PYGpython#EXT:../src/efficient_divfree_gaussian.py#defaultverb#0#verbatim####Appendix.tex#34#
+=>PYTHONTEX:SETTINGS#
+version=0.14
+outputdir=pythontex-files-ThesisRomainBrault
+workingdir=.
+workingdirset=false
+gobble=none
+rerun=default
+hashdependencies=default
+makestderr=false
+stderrfilename=full
+keeptemps=none
+pyfuture=default
+pyconfuture=none
+pygments=true
+pygglobal=:GLOBAL||
+fvextfile=-1
+pyconbanner=none
+pyconfilename=stdin
+depythontex=false
+pygfamily=py|python|
+pygfamily=pycon|pycon|
+pygfamily=sympy|python|
+pygfamily=sympycon|pycon|
+pygfamily=pylab|python|
+pygfamily=pylabcon|pycon|
+pygfamily=PYGpython|python|

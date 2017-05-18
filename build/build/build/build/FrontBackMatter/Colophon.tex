@@ -1,0 +1,27 @@
+% Colophon (a brief description of publication or production notes relevant to the edition)
+
+\pagestyle{empty}
+
+\pdfbookmark[0]{Colophon}{colophon}
+
+\begin{center}
+\textbf{\spacedlowsmallcaps{\mySubtitle}}
+\end{center}
+
+\footnotesize
+\paragraph{Abstact:} Many problems in Machine Learning can be cast into vector-valued functions approximation. Operator-Valued Kernels \emph{\acl{OVK}s} and vector-valued Reproducing Kernel Hilbert Spaces provide a theoretical and practical framework to address that issue, extending nicely the well-known framework of scalar-valued kernels. However large scale applications are usually not affordable with these tools that require an important computational power along with a large memory capacity. In this thesis, we propose and study scalable methods to perform regression with \emph{\acl{OVK}s}. To achieve this goal, we extend Random Fourier Features, an approximation technique originally introduced for scalar-valued kernels, to \emph{\acl{OVK}s}. The idea is to take advantage of an approximated operator-valued feature map in order to come up with a linear model in a finite-dimensional space.
+\paragraph{}
+This thesis is structured as follows. First we develop a general framework devoted to the approximation of shift-invariant Mercer kernels on Locally Compact Abelian groups and study their properties along with the complexity of the algorithms based on them. Second we show theoretical guarantees by bounding the error due to the approximation, with high probability. Third, we study various applications of Operator Random Fourier Features to different tasks of Machine learning such as multi-class classification, multi-task learning, time serie modeling, functional regression and anomaly detection. We also compare the proposed framework with other state of the art methods. Fourth, we conclude by drawing short-term and mid-term perspectives of this work.
+
+\paragraph{R\'esum\'e:} Dans cette th\`ese nous nous int\'eressons au passage \`a l'\'echelle des m\'ethodes de r\'egression \`a \emph{noyaux \`a valeurs op\'erateurs}. Dans le contexte des noyaux scalaires, un noyau peut \^etre vu comme un mesure de similarit\'e entre deux points. Une solution d'un probl\`eme d'apprentissage prend alors g\'en\'eralement la forme d\ une combinaison lin\'eaire de ces similarit\'es o\`u les pond\'erations sont les inconnus \`a d\'eterminer afin de trouver un mod\`ele rendant compte au \say{mieux} des donn\'ees. Dans le cadre des noyaux \`a noyaux \`a valeurs op\'erateurs l'\'evaluation d'un noyau entre deux points n'est plus une similarit\'e scalaire, mais une fonction agissant sur des vecteurs. Une solution s'exprime alors comme une combinaison lin\'eaire d'op\'erateurs vis-\`a-vis de poids vectoriels.
+
+Bien que les noyaux \`a valeurs op\'erateurs g\'en\'eralisent strictement leurs confr\`eres sca\-lai\-res, ceux-ci on le d\'esavantage d'\^etre des m\'ethodes couteuses en m\'emoire et en temps de calcul. Dans le contexte actuel, o\`u les donn\'ees sont nombreuses, il est int\'eressant de pouvoir traiter celles-ci dans leur totalit\'e afin d'obtenir de meilleurs r\'esultats. Pour ce faire nous rempla\c cons les noyaux \`a valeur op\'erateurs par une construction --stochastique-- \'equivalente appel\'e fonction de redescription.
+
+Dans un premier temps nous g\'en\'eralision le principe de constrution de ces fonctions de redescription --fond\'e sur une g\'en\'eralisation du th\'eor\`eme de Bochner pour les noyaux de Mercer invariants par translation-- et \'etudions leurs propri\'et\'es ainsi que la complexit\'e des algorithmes en d\'ecoulant. Nous nous int\'eressons ensuite \`a donner des garanties th\'eoriques en montrant que l\'erreur commise par l'approximation stochastique est contr\^lable avec forte probabilit\'e. Nous concluons par plusieurs exemples applications \`a l'apprentissage de donn\'ees fonctionelles, multit\^ache, semi-supervis\'e, et l'apprentissage de s\'eries temporelles tout en comparant notre approche \`a d'autres m\'ethodes de l'\'etat de l'art.
+
+\section*{Colophon}
+This document was typeset using the typographical look-and-feel \texttt{cla\-ssic\-the\-sis} developed by Andr\'e Miede. The style was inspired by Robert Bringhurst's seminal book on typography ``\emph{The Elements of Typographic Style}''. \texttt{cla\-ssic\-the\-sis} is \href{https://bitbucket.org/amiede/classicthesis/}{available} for both \LaTeX\ and \mLyX.
+
+\bigskip
+
+\noindent\finalVersionString

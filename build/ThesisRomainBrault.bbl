@@ -1,0 +1,1418 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{alfsen1964simplified}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Alfsen}{A.}%
+     {Erik~M}{E.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {JSTOR}%
+  }
+  \strng{namehash}{AEM1}
+  \strng{fullhash}{AEM1}
+  \field{sortinit}{A}
+  \field{number}{1}
+  \field{pages}{106\bibrangedash 116}
+  \field{title}{A simplified constructive proof of the existence and uniqueness
+  of Haar measure}
+  \field{volume}{12}
+  \field{journaltitle}{Mathematica Scandinavica}
+  \field{year}{1964}
+\endentry
+
+\entry{Alvarez2012}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {{\'A}lvarez}{{\'A}.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rosasco}{R.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lawrence}{L.}%
+     {N.~D.}{N.~D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{AMARLLND1}
+  \strng{fullhash}{AMARLLND1}
+  \field{sortinit}{A}
+  \field{number}{3}
+  \field{pages}{195\bibrangedash 266}
+  \field{title}{Kernels for vector-valued functions: a review}
+  \field{volume}{4}
+  \field{journaltitle}{Foundations and Trends in Machine Learning}
+  \field{year}{2012}
+\endentry
+
+\entry{Baldassare2010}{incollection}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Baldassarre}{B.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rosasco}{R.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Barla}{B.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Verri}{V.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{4}{}{%
+    {{}%
+     {Balcazar}{B.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bonchi}{B.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Gionis}{G.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sebag}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer Berlin / Heidelberg}%
+  }
+  \strng{namehash}{BL+1}
+  \strng{fullhash}{BLRLBAVA1}
+  \field{sortinit}{B}
+  \field{booktitle}{ECML/PKDD}
+  \field{pages}{56\bibrangedash 71}
+  \field{series}{LNCS}
+  \field{title}{Vector Field Learning via Spectral Filtering}
+  \field{volume}{6321}
+  \field{year}{2010}
+\endentry
+
+\entry{Baldassare2012}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Baldassarre}{B.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rosasco}{R.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Barla}{B.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Verri}{V.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BL+1}
+  \strng{fullhash}{BLRLBAVA1}
+  \field{sortinit}{B}
+  \field{number}{3}
+  \field{pages}{259\bibrangedash 301}
+  \field{title}{Multi-output learning via spectral filtering}
+  \field{volume}{87}
+  \field{journaltitle}{Machine Learning}
+  \field{year}{2012}
+\endentry
+
+\entry{belkin2006manifold}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Belkin}{B.}%
+     {Mikhail}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Niyogi}{N.}%
+     {Partha}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sindhwani}{S.}%
+     {Vikas}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BMNPSV1}
+  \strng{fullhash}{BMNPSV1}
+  \field{sortinit}{B}
+  \field{number}{Nov}
+  \field{pages}{2399\bibrangedash 2434}
+  \field{title}{Manifold regularization: A geometric framework for learning
+  from labeled and unlabeled examples}
+  \field{volume}{7}
+  \field{journaltitle}{Journal of machine learning research}
+  \field{year}{2006}
+\endentry
+
+\entry{Boucheron}{book}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Boucheron}{B.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lugosi}{L.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Massart}{M.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Oxford Press}%
+  }
+  \strng{namehash}{BSLGMP1}
+  \strng{fullhash}{BSLGMP1}
+  \field{sortinit}{B}
+  \field{title}{Concentration Inequalities}
+  \field{year}{2013}
+\endentry
+
+\entry{brault2016random}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Brault}{B.}%
+     {Romain}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Heinonen}{H.}%
+     {Markus}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Buc}{B.}%
+     {Florence}{F.}%
+     {d’Alch{\'e}}{d.}%
+     {}{}}%
+  }
+  \strng{namehash}{BRHMBFd1}
+  \strng{fullhash}{BRHMBFd1}
+  \field{sortinit}{B}
+  \field{booktitle}{Proceedings of The 8th Asian Conference on Machine
+  Learning}
+  \field{pages}{110\bibrangedash 125}
+  \field{title}{Random Fourier Features For Operator-Valued Kernels}
+  \field{year}{2016}
+\endentry
+
+\entry{brefeld2006efficient}{inproceedings}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Brefeld}{B.}%
+     {Ulf}{U.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {G{\"a}rtner}{G.}%
+     {Thomas}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Scheffer}{S.}%
+     {Tobias}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wrobel}{W.}%
+     {Stefan}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {ACM}%
+  }
+  \strng{namehash}{BU+1}
+  \strng{fullhash}{BUGTSTWS1}
+  \field{sortinit}{B}
+  \field{booktitle}{Proceedings of the 23rd international conference on Machine
+  learning}
+  \field{pages}{137\bibrangedash 144}
+  \field{title}{Efficient co-regularised least squares regression}
+  \field{year}{2006}
+\endentry
+
+\entry{Brouard2011}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Brouard}{B.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{d}'Alch\'e-Buc}{d.-B.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Szafranski}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BCdBFSM1}
+  \strng{fullhash}{BCdBFSM1}
+  \field{sortinit}{B}
+  \field{booktitle}{Proc. of the 28th Int. Conf. on Machine Learning}
+  \field{title}{Semi-supervised Penalized Output Kernel Regression for Link
+  Prediction}
+  \field{year}{2011}
+\endentry
+
+\entry{Brouard2016_jmlr}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Brouard}{B.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{d}'Alch\'e-Buc}{d.-B.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Szafranski}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BCdBFSM1}
+  \strng{fullhash}{BCdBFSM1}
+  \field{sortinit}{B}
+  \field{title}{Input Output Kernel Regression}
+  \field{journaltitle}{to appear in JMLR}
+  \field{year}{2016}
+\endentry
+
+\entry{caponnetto2008}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Caponnetto}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Micchelli}{M.}%
+     {C.~A.}{C.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {}{}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ying}{Y.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CA+1}
+  \strng{fullhash}{CAMCAMYY1}
+  \field{sortinit}{C}
+  \field{pages}{1615\bibrangedash 1646}
+  \field{title}{Universal MultiTask Kernels}
+  \field{volume}{9}
+  \field{journaltitle}{Journal of Machine Learning Research}
+  \field{year}{2008}
+\endentry
+
+\entry{carmeli2006vector}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Carmeli}{C.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {De~Vito}{D.~V.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Toigo}{T.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {World Scientific}%
+  }
+  \strng{namehash}{CCDVETA1}
+  \strng{fullhash}{CCDVETA1}
+  \field{sortinit}{C}
+  \field{number}{04}
+  \field{pages}{377\bibrangedash 408}
+  \field{title}{Vector valued reproducing kernel Hilbert spaces of integrable
+  functions and Mercer theorem}
+  \field{volume}{4}
+  \field{journaltitle}{Analysis and Applications}
+  \field{year}{2006}
+\endentry
+
+\entry{Carmeli2010}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Carmeli}{C.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {De~Vito}{D.~V.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Toigo}{T.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Umanità}{U.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CC+1}
+  \strng{fullhash}{CCDVETAUV1}
+  \field{sortinit}{C}
+  \field{pages}{19\bibrangedash 61}
+  \field{title}{Vector valued reproducing kernel Hilbert spaces and
+  universality}
+  \field{volume}{8}
+  \field{journaltitle}{Analysis and Applications}
+  \field{year}{2010}
+\endentry
+
+\entry{conway2013course}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Conway}{C.}%
+     {John~B}{J.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer Science \& Business Media}%
+  }
+  \strng{namehash}{CJB1}
+  \strng{fullhash}{CJB1}
+  \field{sortinit}{C}
+  \field{title}{A course in functional analysis}
+  \field{volume}{96}
+  \field{year}{2013}
+\endentry
+
+\entry{Dinuzzo2011}{inproceedings}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Dinuzzo}{D.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ong}{O.}%
+     {C.S.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Gehler}{G.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pillonetto}{P.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{DF+1}
+  \strng{fullhash}{DFOCGPPG1}
+  \field{sortinit}{D}
+  \field{booktitle}{Proc. of the 28th Int. Conf. on Machine Learning}
+  \field{title}{Learning Output Kernels with Block Coordinate Descent}
+  \field{year}{2011}
+\endentry
+
+\entry{Evgeniou2005}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Evgeniou}{E.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Micchelli}{M.}%
+     {C.~A.}{C.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pontil}{P.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ETMCAPM1}
+  \strng{fullhash}{ETMCAPM1}
+  \field{sortinit}{E}
+  \field{pages}{615\bibrangedash 637}
+  \field{title}{Learning Multiple Tasks with kernel methods}
+  \field{volume}{6}
+  \field{journaltitle}{JMLR}
+  \field{year}{2005}
+\endentry
+
+\entry{folland1994course}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Folland}{F.}%
+     {Gerald~B}{G.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {CRC press}%
+  }
+  \strng{namehash}{FGB1}
+  \strng{fullhash}{FGB1}
+  \field{sortinit}{F}
+  \field{title}{A course in abstract harmonic analysis}
+  \field{year}{1994}
+\endentry
+
+\entry{Fuselier2006}{thesis}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Fuselier}{F.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{FE1}
+  \strng{fullhash}{FE1}
+  \field{sortinit}{F}
+  \field{title}{Refined Error Estimates for Matrix-Valued Radial Basis
+  Functions}
+  \list{institution}{1}{%
+    {Texas A\&M University}%
+  }
+  \field{type}{phdthesis}
+  \field{year}{2006}
+\endentry
+
+\entry{gorniewicz1999topological}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {G{\'o}rniewicz}{G.}%
+     {Lech}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{GL1}
+  \strng{fullhash}{GL1}
+  \field{sortinit}{G}
+  \field{title}{Topological fixed point theory of multivalued mappings}
+  \field{volume}{495}
+  \field{year}{1999}
+\endentry
+
+\entry{kadri2015operator}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {Kadri}{K.}%
+     {Hachem}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Duflos}{D.}%
+     {Emmanuel}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Preux}{P.}%
+     {Philippe}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Canu}{C.}%
+     {St{\'e}phane}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rakotomamonjy}{R.}%
+     {Alain}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Audiffren}{A.}%
+     {Julien}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KH+1}
+  \strng{fullhash}{KHDEPPCSRAAJ1}
+  \field{sortinit}{K}
+  \field{pages}{1\bibrangedash 54}
+  \field{title}{Operator-valued kernels for learning from functional response
+  data}
+  \field{volume}{16}
+  \field{journaltitle}{Journal of Machine Learning Research}
+  \field{year}{2015}
+\endentry
+
+\entry{koltchinskii2013remark}{incollection}{}
+  \true{moreauthor}
+  \name{author}{1}{}{%
+    {{}%
+     {Koltchinskii}{K.}%
+     {Vladimir}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Institute of Mathematical Statistics}%
+  }
+  \strng{namehash}{KV+1}
+  \strng{fullhash}{KV+1}
+  \field{sortinit}{K}
+  \field{booktitle}{From Probability to Statistics and Back: High-Dimensional
+  Models and Processes}
+  \field{pages}{213\bibrangedash 226}
+  \field{title}{A remark on low rank matrix recovery and noncommutative
+  Bernstein type inequalities}
+  \field{year}{2013}
+\endentry
+
+\entry{kurdila2006convex}{misc}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Kurdila}{K.}%
+     {Andrew~J}{A.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zabarankin}{Z.}%
+     {Michael}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer Science \& Business Media}%
+  }
+  \strng{namehash}{KAJZM1}
+  \strng{fullhash}{KAJZM1}
+  \field{sortinit}{K}
+  \field{title}{Convex functional analysis}
+  \field{year}{2006}
+\endentry
+
+\entry{li2010random}{inbook}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Li}{L.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ionescu}{I.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sminchisescu}{S.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{5}{}{%
+    {{}%
+     {Goesele}{G.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Roth}{R.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kuijper}{K.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Schiele}{S.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Schindler}{S.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer Berlin Heidelberg}%
+  }
+  \strng{namehash}{LFICSC1}
+  \strng{fullhash}{LFICSC1}
+  \field{sortinit}{L}
+  \field{chapter}{Random Fourier Approximations for Skewed Multiplicative
+  Histogram Kernels}
+  \verb{doi}
+  \verb 10.1007/978-3-642-15986-2_27
+  \endverb
+  \field{isbn}{978-3-642-15986-2}
+  \field{pages}{262\bibrangedash 271}
+  \field{title}{Pattern Recognition: 32nd DAGM Symposium, Darmstadt, Germany,
+  September 22-24, 2010. Proc.}
+  \verb{url}
+  \verb http://dx.doi.org/10.1007/978-3-642-15986-2_27
+  \endverb
+  \list{location}{1}{%
+    {Berlin, Heidelberg}%
+  }
+  \field{year}{2010}
+\endentry
+
+\entry{Lim2015}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Lim}{L.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {d'Alch{\'{e}}{-}Buc}{d.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Auliac}{A.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Michailidis}{M.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LN+1}
+  \strng{fullhash}{LNdFACMG1}
+  \field{sortinit}{L}
+  \field{number}{3}
+  \field{pages}{489\bibrangedash 513}
+  \field{title}{Operator-valued kernel-based vector autoregressive models for
+  network inference}
+  \field{volume}{99}
+  \field{journaltitle}{Machine Learning}
+  \field{year}{2015}
+\endentry
+
+\entry{Macedo2008}{report}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Macedo}{M.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Castro}{C.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MYCR1}
+  \strng{fullhash}{MYCR1}
+  \field{sortinit}{M}
+  \field{title}{Learning Div-Free and Curl-Free Vector Fields by Matrix-Valued
+  Kernels}
+  \list{institution}{1}{%
+    {Preprint A 679/2010 IMPA}%
+  }
+  \field{type}{techreport}
+  \field{year}{2008}
+\endentry
+
+\entry{Micchelli2005}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Micchelli}{M.}%
+     {C.~A.}{C.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pontil}{P.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MCAPMA1}
+  \strng{fullhash}{MCAPMA1}
+  \field{sortinit}{M}
+  \field{pages}{177\bibrangedash 204}
+  \field{title}{On Learning Vector-Valued Functions}
+  \field{volume}{17}
+  \field{journaltitle}{Neural Computation}
+  \field{year}{2005}
+\endentry
+
+\entry{Micheli2013}{report}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Micheli}{M.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Glaunes}{G.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MMGJ1}
+  \strng{fullhash}{MMGJ1}
+  \field{sortinit}{M}
+  \field{title}{Matrix-valued kernels for shape deformation analysis}
+  \list{institution}{1}{%
+    {Arxiv report}%
+  }
+  \field{type}{techreport}
+  \field{year}{2013}
+\endentry
+
+\entry{Minh_icml13}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Minh}{M.}%
+     {H.~Q.}{H.~Q.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bazzani}{B.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Murino}{M.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MHQBLMV1}
+  \strng{fullhash}{MHQBLMV1}
+  \field{sortinit}{M}
+  \field{booktitle}{Proc. of the 30th International Conference on Machine
+  Learning}
+  \field{title}{A unifying framework for vector-valued manifold regularization
+  and multi-view learning}
+  \field{year}{2013}
+\endentry
+
+\entry{minh2016operator}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Minh}{M.}%
+     {Ha~Quang}{H.~Q.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MHQ1}
+  \strng{fullhash}{MHQ1}
+  \field{sortinit}{M}
+  \field{title}{Operator-Valued Bochner Theorem, Fourier Feature Maps for
+  Operator-Valued Kernels, and Vector-Valued Learning}
+  \field{journaltitle}{arXiv preprint arXiv:1608.05639}
+  \field{year}{2016}
+\endentry
+
+\entry{minh2013unifying}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Minh}{M.}%
+     {Ha~Quang}{H.~Q.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bazzani}{B.}%
+     {Loris}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Murino}{M.}%
+     {Vittorio}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MHQBLMV2}
+  \strng{fullhash}{MHQBLMV2}
+  \field{sortinit}{M}
+  \field{booktitle}{ICML (2)}
+  \field{pages}{100\bibrangedash 108}
+  \field{title}{A unifying framework for vector-valued manifold regularization
+  and multi-view learning.}
+  \field{year}{2013}
+\endentry
+
+\entry{minh2016unifying}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Minh}{M.}%
+     {Ha~Quang}{H.~Q.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bazzani}{B.}%
+     {Loris}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Murino}{M.}%
+     {Vittorio}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MHQBLMV2}
+  \strng{fullhash}{MHQBLMV2}
+  \field{sortinit}{M}
+  \field{number}{25}
+  \field{pages}{1\bibrangedash 72}
+  \field{title}{A unifying framework in vector-valued reproducing kernel
+  Hilbert spaces for manifold regularization and co-regularized multi-view
+  learning}
+  \field{volume}{17}
+  \field{journaltitle}{Journal of Machine Learning Research}
+  \field{year}{2016}
+\endentry
+
+\entry{neeb1998operator}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Neeb}{N.}%
+     {Karl-Hermann}{K.-H.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{NKH1}
+  \strng{fullhash}{NKH1}
+  \field{sortinit}{N}
+  \field{number}{2}
+  \field{pages}{125\bibrangedash 160}
+  \field{title}{Operator-valued positive definite kernels on tubes}
+  \field{volume}{126}
+  \field{journaltitle}{Monatshefte f{\"u}r Mathematik}
+  \field{year}{1998}
+\endentry
+
+\entry{Rahimi2007}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Rahimi}{R.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Recht}{R.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{RARB1}
+  \strng{fullhash}{RARB1}
+  \field{sortinit}{R}
+  \field{booktitle}{NIPS 2007}
+  \field{pages}{1177\bibrangedash 1184}
+  \field{title}{Random Features for Large-Scale Kernel Machines}
+  \field{year}{2007}
+\endentry
+
+\entry{rosenberg2009kernel}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Rosenberg}{R.}%
+     {D}{D}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sindhwani}{S.}%
+     {Vikas}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bartlett}{B.}%
+     {P}{P}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Niyogi}{N.}%
+     {Partha}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Citeseer}%
+  }
+  \strng{namehash}{RD+1}
+  \strng{fullhash}{RDSVBPNP1}
+  \field{sortinit}{R}
+  \field{number}{5}
+  \field{pages}{145\bibrangedash 150}
+  \field{title}{A kernel for semi-supervised learning with multi-view point
+  cloud regularization}
+  \field{volume}{26}
+  \field{journaltitle}{IEEE Signal Processing Magazine}
+  \field{year}{2009}
+\endentry
+
+\entry{sangnier2016joint}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Sangnier}{S.}%
+     {Maxime}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Fercoq}{F.}%
+     {Olivier}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {D'Alch{\'e}-Buc}{D.-B.}%
+     {Florence}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SMFODBF1}
+  \strng{fullhash}{SMFODBF1}
+  \field{sortinit}{S}
+  \field{booktitle}{Advances in NIPS}
+  \field{title}{Joint quantile regression in vector-valued RKHSs}
+  \field{year}{2016}
+\endentry
+
+\entry{Sindhwani2013}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Sindhwani}{S.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Minh}{M.}%
+     {H.~Q.}{H.~Q.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lozano}{L.}%
+     {A.C.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {{AUAI} Press, Corvallis, Oregon}%
+  }
+  \strng{namehash}{SVMHQLA1}
+  \strng{fullhash}{SVMHQLA1}
+  \field{sortinit}{S}
+  \field{booktitle}{Proc. of UAI'13, Bellevue, WA, USA, August 11-15, 2013}
+  \field{title}{Scalable Matrix-valued Kernel Learning for High-dimensional
+  Nonlinear Multivariate Regression and Granger Causality}
+  \field{year}{2013}
+\endentry
+
+\entry{sindhwani2008rkhs}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Sindhwani}{S.}%
+     {Vikas}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rosenberg}{R.}%
+     {David~S}{D.~S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {ACM}%
+  }
+  \strng{namehash}{SVRDS1}
+  \strng{fullhash}{SVRDS1}
+  \field{sortinit}{S}
+  \field{booktitle}{Proceedings of the 25th international conference on Machine
+  learning}
+  \field{pages}{976\bibrangedash 983}
+  \field{title}{An RKHS for multi-view learning and manifold co-regularization}
+  \field{year}{2008}
+\endentry
+
+\entry{smola1998connection}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Smola}{S.}%
+     {Alex~J}{A.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sch{\"o}lkopf}{S.}%
+     {Bernhard}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {M{\"u}ller}{M.}%
+     {Klaus-Robert}{K.-R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \strng{namehash}{SAJSBMKR1}
+  \strng{fullhash}{SAJSBMKR1}
+  \field{sortinit}{S}
+  \field{number}{4}
+  \field{pages}{637\bibrangedash 649}
+  \field{title}{The connection between regularization operators and support
+  vector kernels}
+  \field{volume}{11}
+  \field{journaltitle}{Neural networks}
+  \field{year}{1998}
+\endentry
+
+\entry{sriper2015}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Sriperumbudur}{S.}%
+     {Bharath}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Szabo}{S.}%
+     {Zoltan}{Z.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{5}{}{%
+    {{}%
+     {Cortes}{C.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lawrence}{L.}%
+     {N.D.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lee}{L.}%
+     {D.D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sugiyama}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Garnett}{G.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SBSZ1}
+  \strng{fullhash}{SBSZ1}
+  \field{sortinit}{S}
+  \field{booktitle}{Advances in NIPS 28}
+  \field{pages}{1144\bibrangedash 1152}
+  \field{title}{Optimal Rates for Random Fourier Features}
+  \field{year}{2015}
+\endentry
+
+\entry{sun2011multi}{inproceedings}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Sun}{S.}%
+     {Shiliang}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{SS1}
+  \strng{fullhash}{SS1}
+  \field{sortinit}{S}
+  \field{booktitle}{International Conference on Advanced Data Mining and
+  Applications}
+  \field{pages}{209\bibrangedash 222}
+  \field{title}{Multi-view Laplacian support vector machines}
+  \field{year}{2011}
+\endentry
+
+\entry{sutherland2015}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Sutherland}{S.}%
+     {Dougal~J.}{D.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Schneider}{S.}%
+     {Jeff~G.}{J.~G.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SDJSJG1}
+  \strng{fullhash}{SDJSJG1}
+  \field{sortinit}{S}
+  \field{booktitle}{Proc. of {UAI} 2015, July 12-16, 2015, Amsterdam, The
+  Netherlands}
+  \field{pages}{862\bibrangedash 871}
+  \field{title}{On the Error of Random Fourier Features}
+  \field{year}{2015}
+\endentry
+
+\entry{van1996weak}{incollection}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Van Der~Vaart}{V.~D.~V.}%
+     {A.~W}{A.~W}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wellner}{W.}%
+     {J.~A}{J.~A}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{VDVAWWJA1}
+  \strng{fullhash}{VDVAWWJA1}
+  \field{sortinit}{V}
+  \field{booktitle}{Weak Convergence and Empirical Processes}
+  \field{pages}{16\bibrangedash 28}
+  \field{title}{Weak Convergence}
+  \field{year}{1996}
+\endentry
+
+\entry{vertregularization}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Vert}{V.}%
+     {Jean-Philippe}{J.-P.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Citeseer}%
+  }
+  \strng{namehash}{VJP1}
+  \strng{fullhash}{VJP1}
+  \field{sortinit}{V}
+  \field{title}{Regularization of Kernel Methods by Decreasing the Bandwidth of
+  the Gaussian Kernel}
+\endentry
+
+\entry{Wahba90}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Wahba}{W.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{2}{%
+    {Philadelphia, Society for Industrial}%
+    {Applied Mathematics}%
+  }
+  \strng{namehash}{WG1}
+  \strng{fullhash}{WG1}
+  \field{sortinit}{W}
+  \field{title}{Spline model for observational data}
+  \field{year}{1990}
+\endentry
+
+\entry{Wahlstrom2013}{inproceedings}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Wahlstr\"{o}m}{W.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kok}{K.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sch\"{o}n}{S.}%
+     {T.B.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Gustafsson}{G.}%
+     {Fredrik}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{WN+1}
+  \strng{fullhash}{WNKMSTGF1}
+  \field{sortinit}{W}
+  \field{booktitle}{in Proc. of the 38th ICASSP}
+  \field{title}{Modeling magnetic fields using Gaussian processes}
+  \field{year}{2013}
+\endentry
+
+\entry{Yang2012}{inproceedings}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Yang}{Y.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Li}{L.}%
+     {Y.-F.}{Y.-F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Mahdavi}{M.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Jin}{J.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhou}{Z.}%
+     {Z.}{Z.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{4}{}{%
+    {{}%
+     {Pereira}{P.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Burges}{B.}%
+     {C.J.C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bottou}{B.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Weinberger}{W.}%
+     {K.Q.}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{YT+1}
+  \strng{fullhash}{YTLYFMMJRZZ1}
+  \field{sortinit}{Y}
+  \field{booktitle}{NIPS 25}
+  \field{pages}{476\bibrangedash 484}
+  \field{title}{Nystr\"{o}m Method vs Random Fourier Features: A Theoretical
+  and Empirical Comparison}
+  \field{year}{2012}
+\endentry
+
+\entry{Zhang2012}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Zhang}{Z.}%
+     {Haizhang}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Xu}{X.}%
+     {Yuesheng}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhang}{Z.}%
+     {Qinghui}{Q.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ZHXYZQ1}
+  \strng{fullhash}{ZHXYZQ1}
+  \field{sortinit}{Z}
+  \field{pages}{91\bibrangedash 136}
+  \field{title}{Refinement of Operator-valued Reproducing Kernels.}
+  \field{volume}{13}
+  \field{journaltitle}{Journal of Machine Learning Research}
+  \field{year}{2012}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

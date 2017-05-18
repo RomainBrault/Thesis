@@ -1,0 +1,25 @@
+% Abstract
+
+%\renewcommand{\abstractname}{Abstract} % Uncomment to change the name of the abstract
+
+\pdfbookmark[1]{Abstract}{Abstract} % Bookmark name visible in a PDF viewer
+
+\begingroup
+\let\clearpage\relax
+\let\cleardoublepage\relax
+\let\cleardoublepage\relax
+
+\chapter*{Abstract}
+In this thesis we study scalable methods to perform regression with \emph{\acl{OVK}s} in order to learn \emph{vector-valued functions}.
+\paragraph{}
+When data present structure, or relations between them or their different components, a common approach is to treat the data as a vector living in an appropriate vector space. Thus many problems in machine learning can be cast into learning vector-valued functions. Operator-Valued Kernels \emph{\acl{OVK}s} and \emph{vector-valued Reproducing Kernel Hilbert Spaces} provide a theoretical and practical framework to address that issue, naturally extending the well-known framework of scalar-valued kernels.
+\paragraph{}
+In the context of scalar-valued function learning, a scalar-valued kernel can be seen a a similarity measure between two data point. A solution of the learning problem has the form of a linear combination of theses similarities with respect to unknown weights to be found in order to have the best \say{fit} of the data. When dealing with \acl{OVK}s, the evalution of the kernel is no longer a scalar similarity, but a function acting on vectors. A solution is then a linear combination of operators with respect to vector weights.
+\paragraph{}
+Although \acl{OVK}s generalize strictly scalar-valued kernels, large scale applications are usually not affordable with these tools that require an important computational power along with a large memory capacity. In this thesis, we propose and study scalable methods to perform regression with \emph{\acl{OVK}s}. To achieve this goal, we extend Random Fourier Features, an approximation technique originally introduced for scalar-valued kernels, to \emph{\acl{OVK}s}. The idea is to take advantage of an approximated operator-valued feature map in order to come up with a linear model in a finite dimensional space.
+\paragraph{}
+This thesis is structured as follows. First we develop a general framework devoted to the approximation of shift-invariant Mercer kernels on Locally Compact Abelian groups and study their properties along with the complexity of the algorithms based on them. Second we show theoretical guarantees by bounding the error due to the approximation, with high probability. Third, we study various applications of Operator Random Fourier Features to different tasks of Machine learning such as multi-class classification, multi-task learning, time serie modeling, functional regression and anomaly detection. We also compare the proposed framework with other state of the art methods. Fourth, we conclude by drawing short-term and mid-term perspectives of this work.
+
+\endgroup
+
+\vfill

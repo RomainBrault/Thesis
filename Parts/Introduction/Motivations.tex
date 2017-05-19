@@ -41,9 +41,9 @@ almost surely to a quantity called true risk (or simply risk).
 Intuitively the empirical risk measure the performances of a model on the
 training data, while the risk measure the performances of a model with respect
 to all the possible experiments (event the one not present in the training
-set). 
+set).
 \paragraph{}
-We call learning algorithm a function that takes a class of function
+We call learning algorithm a function $S$ that takes a class of function
 $\mathcal{F}$, a loss $L$ and some training data $\seq{s}$ and return a
 function $f_{\seq{s}}$ in $\mathcal{F}$. Although the convergence of
 the empirical risk to the true risk is guaranteed by the strong law of large
@@ -52,12 +52,12 @@ the empirical risk must converges to the true risk uniformly for all
 $f_{\seq{s}}$ returned by a learning algorithm. In other words we want 
 that given a class of function $\mathcal{F}$ and a loss $L$, the bound
 \begin{dmath*}
-    \riskemp{f_{\seq{s}}, \seq{s}} \le \risk{f_{\seq{s}}} + C(\delta, \seq{s},
+    \risk{f_{\seq{s}}} \le \riskemp{f_{\seq{s}}, \seq{s}} + C(\delta, \seq{s},
     L, \mathcal{F})
 \end{dmath*}
 holds with probability $1-\delta$, for all $\delta\in(0, 1)$ and $C(\delta,
 \seq{s}, \mathcal{F}) \to 0$ when the number of training data $N$ in $\seq{s}$
-goes to infinity.
+goes to infinity. This type of bound
 \paragraph{}
 There is a crutial difference between the strong law of large numbers and the
 generalization property of a learning algorithm. The strong law of large number
@@ -182,8 +182,8 @@ all
 $x\in\mathcal{X}$.
 \begin{dmath*}
     \mathcal{F}_{\text{b.~eval.}} = \Set{f | \abs{f(x)} \le
-    \norm{f}_{\mathcal{H}} C(x) \le \infty, \enskip \forall f\in\mathcal{H},
-    \forall x \in\mathcal{X} }.
+    C(x)\norm{f}_{\mathcal{H}} \le \infty, \enskip \forall f\in\mathcal{H},
+    \forall x \in\mathcal{X}, \enskip C(x)\in\mathbb{R}_+ }.
 \end{dmath*}
 With this hypothesis it is legitimate to construct an evaluation operator for
 all $x\in\mathcal{X}$ which is bounded.
@@ -198,7 +198,8 @@ From this evaluation operator, since $\mathcal{F}_{\text{b.~eval.}}$ is a
 subspace of a Hilbert space by Riesz representation theorem, it is possible to
 find a function $k_x$ of $\mathcal{F}$ such that
 \begin{dmath*}
-    f(x) = \text{ev}_x f \hiderel{=} \inner{k_x, f}_{\mathcal{F}_{\text{b.~eval.}}}.
+    f(x) = \text{ev}_x f \hiderel{=} \inner{k_x,
+    f}_{\mathcal{F}_{\text{b.~eval.}}}.
 \end{dmath*}
 Then we can define a function $k(x, z) \colonequals \inner{k_x,
 k_z}_{\mathcal{F}_{\text{b.~eval.}}}=\conj{k_x(z)}$ and we have $f(x) =
@@ -213,14 +214,117 @@ One of the most important result of the theory of the reproducing kernels is
 the fact that there exists a bijection between the set of positive
 semi-definite functions and and the set of \acl{RKHS}. In other words a
 symmetric positive definite function defines a unique \acs{RKHS} and
-\emph{vice-versa}.
+\emph{vice-versa}. Thus we identify positive definite kernels with reproducing
+kernels and \acsp{RKHS}.
 \begin{theorem}[\citet{Aronszajn1950}]
     Suppose $k$ is a symmetric, positive definite kernel on a set
     $\mathcal{X}$. Then there is a unique Hilbert space of functions on
     $\mathcal{X}$ for which $k$ is a reproducing kernel.
 \end{theorem}
 Now, back to learning and minimizing the empirical risk, a fair question is
-how do I find a
+how do I find a function in an infinite dimensional set $\mathcal{H}_K$ in 
+polynomial time? The answer comes from the regularization and interpolation
+theory. To limit the size of the space in which we search of the function
+minimizing the empirical risk we add a regularization term to the empirical
+risk.
+\begin{dmath*}
+    \mathcal{J}_{\lambda}(f) = \frac{1}{N} \sum_{i=1}^N L\left(x_i, f,
+    y_i\right) + \frac{\lambda}{2}\norm{f}_{\mathcal{H}_K}^2
+\end{dmath*}
+and we minimize $J_{\lambda}$ instead of $\mathcal{R}_{emp}$. Then
+the representer theorem (also called minimal norm interpolation theorem) states
+the following.
+\begin{theorem}[Representer theorem, \citet{Wahba90}]
+    If $f_{\seq{s}}$ is a solution of
+    \begin{dmath*}
+        \argmin_{f\in\mathcal{H}_K} J_{\lambda}(f),
+    \end{dmath*}
+    where $\lambda > 0$ then $f_{\seq{s}}=\sum_{i=1}^N k(\cdot, x_i) \alpha_i$.
+\end{theorem}
+We note the vector $\alpha = (\alpha_i)_{i=1}^N$ and the matrix
+$\mathbf{K}=(k(x_i, x_k))_{i, k = 1}^N$. Then we can rewrite
+\begin{dmath*}
+    \mathcal{J}_{\lambda}(\alpha) = \frac{1}{N} \sum_{i=1}^N L(x_i, \alpha,
+    y_i) + \lambda \inner{\alpha, \mathbf{K}\alpha}_2 / 2
+\end{dmath*}
+where $f(x_i) = (K\alpha)_i$ for any $x_i \in \seq{s}$. If we suppose that $L$
+is convex in $f(x)$, then it is possible to derive a polynomial time (in $N$)
+algorithm minimizing $\mathcal{J}_{\lambda}$. For intance if we choose
+$L$ to be the least square loss, then
+\begin{dmath*}
+    \mathcal{J}_{\lambda}(\alpha) = \frac{1}{2N}\norm{\mathbf{K}\alpha -
+    (y_i)_{i=1}^N}_2^2 + \lambda \inner{\alpha, \mathbf{K}\alpha}_2 / 2
+\end{dmath*}
+and by strict convexity and coercivity of $\mathcal{J}_{\lambda}$, and because
+$K + \lambda I_N$ is invertible for any $\lambda > 0$ a solution is
+$\alpha_{\seq{s}} = \argmin_{\alpha\in\mathbb{R}^N} J_{\lambda}(\alpha) =
+(\mathbf{K}/N + \lambda I_N)^{-1}(y_i)_{i=1}^N$. This is an $O\left(N^3\right)$
+algorithm.
+\paragraph{}
+Another way of describing positive definite kernels and \acs{RKHS} consists in
+defining an approriate feature map.
+\begin{theorem}[\citet{Aronszajn1950}]
+    Given $\phi: \mathcal{X} \to \mathcal{H}$ a function that maps a space
+    $\mathcal{X}$ to a Hilbert space $\mathcal{H}$. Then
+    $k(x,z)=\inner{\phi(x), \phi(z)}_{\mathcal{H}}$ is a positive definite
+    kernel.
+    \paragraph{}
+    Given $k$ a positive definite kernel then there exist infinitely many
+    functions $\phi: \mathcal{X} \to \mathcal{H}$ that map a space
+    $\mathcal{X}$ to some Hilbert space $\mathcal{H}$ such that
+    $\inner{\phi(x), \phi(z)}_{\mathcal{H}}=k(x,z)$. We call the function
+    $\phi$ a feature map.
+\end{theorem}
+Then any functions in $\mathcal{H}_K$ can be written $f(x)=\inner{\phi(x),
+\theta}_{\mathcal{H}}$ In a nutshell the function $\phi$ is called feature map
+because it \say{extracts charateristic elements from a vector}. Usually a
+feature map takes a vector in an input space with low dimension and maps it to
+a higher dimensional space. Put it differently, any function in $\mathcal{H}_K$
+is the composition of linear functional $\theta^T$ with a non linear feature
+map $\phi$. Thus is the feature map $\phi$ is fixed (which is equivalent to
+fixing the kernel), it is possible to \say{learn} with a linear class of
+function $\theta\in\mathcal{H}$ (see \cref{fig:feature_map}). 
+\begin{figure}
+    %\centering\resizebox{\textwidth}{!}{%
+    %\begin{tikzpicture}
+        %\node[inner sep=0pt] (input) at (0,0)
+            %{\includegraphics[width=.35\textwidth]{./gfx/input.eps}};
+        %\node[inner sep=0pt] (feature) at (5,-6)
+            %{\includegraphics[width=.35\textwidth]{./gfx/feature.eps}};
+        %\draw[->,thick] (input.east) -- (feature.west)
+            %node[midway,fill=white] {$\phi:\mathcal{X} \to \mathcal{H}$};
+    %\end{tikzpicture}}
+    \centering
+    \begin{tabular}{c}
+        \includegraphics[valign=m, width=.5\textheight]{./gfx/input.eps} \\
+        $\xdownarrow{2cm} \phi: \enskip \mathcal{X} = \mathbb{R}^2 \to
+        \mathcal{H} = \mathbb{R}^3$ \\
+        \includegraphics[valign=m, width=.5\textheight]{./gfx/feature.eps}
+    \end{tabular}
+    \caption[A scalar-valued feature map]{We map the two circles in
+    $\mathbb{R}^2$ to $\mathbb{R}^3$. In $\mathbb{R}^3$ it is now possible to
+    separate the circles with a linear functional: a plane. We used the feature
+    map \\ $\phi(x) = 3.46 \begin{pmatrix} \cos(1.76 x_1 + 2.24 x_2 + 2.75) \\
+    \cos(0.40 x_1 + 1.87 x_2 + 5.6) \\ \cos(0.98 x_1 - 0.98 x_2 + 6.05)
+    \end{pmatrix}$. \label{fig:feature_map}}
+\end{figure}
+If we note
+\begin{dmath*}
+    \boldsymbol{\phi} =
+    \begin{pmatrix}
+        \phi(x_1) & \dots & \phi(x_N)
+    \end{pmatrix}
+\end{dmath*}
+the matrix where each column represents the feature map evaluated at the point
+$x_i$ with $1 \le i \le N$, the the regularized risk minimization with the
+least square loss reads
+\begin{dmath*}
+    \mathcal{J}_{\lambda} = \frac{1}{2N}\norm{\boldsymbol{\phi}^T \theta -
+    (y_i)_{i=1}^N }_2^2 + \frac{\lambda}{2}\norm{\theta}_2^2.
+\end{dmath*}
+and admits a solution $\theta_{\seq{s}} =
+\left(\boldsymbol{\phi}\boldsymbol{\phi}^T/N + \lambda
+I_{\mathcal{H}}\right)^{-1}\boldsymbol{\phi} (y_i)_{i=1}^N$.
 
 \section{On large-scale learning}
 \label{sec:on_large-scale_learning}
@@ -232,9 +336,6 @@ how do I find a
 In this manuscript we are interested in finding function
 $f:\mathcal{X}\to\mathcal{Y}$, where $\mathcal{X}$ and $\mathcal{Y}$ are
 arbitrary spaces.
-
-\subsection{Quadratic programing, subsampling}
-
 \subsection{Gradient descents}
 
 \subsection{Mercer Theorem, Nystr\"om method and feature maps}

@@ -1,25 +1,26 @@
 [0] Config.pm:343> INFO - This is Biber 2.5
 [0] Config.pm:346> INFO - Logfile is 'ThesisRomainBrault.blg'
-[59] biber-darwin:290> INFO - === Thu May 18, 2017, 17:20:58
-[87] Biber.pm:351> INFO - Reading 'ThesisRomainBrault.bcf'
-[244] Biber.pm:776> INFO - Found 157 citekeys in bib section 0
-[260] Biber.pm:3493> INFO - Processing section 0
-[281] Biber.pm:3657> INFO - Looking for bibtex format file 'Bibliography.bib' for section 0
-[291] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
-[302] bibtex.pm:1048> INFO - Found BibTeX data source 'Bibliography.bib'
-[462] Utils.pm:149> WARN - BibTeX subsystem: /var/folders/1z/rxxv8yys6c7gnmf28bdz5m8c0000gn/T/XEJt9VC8YE/Bibliography.bib_44580.utf8, line 88, warning: 39 characters of junk seen at toplevel
-[463] Utils.pm:149> WARN - BibTeX subsystem: /var/folders/1z/rxxv8yys6c7gnmf28bdz5m8c0000gn/T/XEJt9VC8YE/Bibliography.bib_44580.utf8, line 1603, warning: 18 characters of junk seen at toplevel
-[463] Biber.pm:3657> INFO - Looking for bibtex format file 'MVExtrem.bib' for section 0
-[469] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
-[475] bibtex.pm:1048> INFO - Found BibTeX data source 'MVExtrem.bib'
-[533] Utils.pm:149> WARN - BibTeX subsystem: /var/folders/1z/rxxv8yys6c7gnmf28bdz5m8c0000gn/T/XEJt9VC8YE/MVExtrem.bib_44580.utf8, line 10, warning: 235 characters of junk seen at toplevel
-[534] Biber.pm:3657> INFO - Looking for bibtex format file 'Selfpublication.bib' for section 0
-[535] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
-[536] bibtex.pm:1048> INFO - Found BibTeX data source 'Selfpublication.bib'
-[771] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[771] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[771] Biber.pm:3306> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-US'
-[772] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-US'
-[1115] bbl.pm:526> INFO - Writing 'ThesisRomainBrault.bbl' with encoding 'UTF-8'
-[1139] bbl.pm:619> INFO - Output to ThesisRomainBrault.bbl
-[1139] Biber.pm:108> INFO - WARNINGS: 3
+[59] biber-darwin:290> INFO - === Fri May 19, 2017, 15:40:13
+[86] Biber.pm:351> INFO - Reading 'ThesisRomainBrault.bcf'
+[240] Biber.pm:776> INFO - Found 158 citekeys in bib section 0
+[258] Biber.pm:3493> INFO - Processing section 0
+[278] Biber.pm:3657> INFO - Looking for bibtex format file 'Bibliography.bib' for section 0
+[289] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
+[303] bibtex.pm:1048> INFO - Found BibTeX data source 'Bibliography.bib'
+[504] Utils.pm:149> WARN - BibTeX subsystem: /var/folders/1z/rxxv8yys6c7gnmf28bdz5m8c0000gn/T/8a75fNml4R/Bibliography.bib_83658.utf8, line 88, warning: 39 characters of junk seen at toplevel
+[504] Utils.pm:149> WARN - BibTeX subsystem: /var/folders/1z/rxxv8yys6c7gnmf28bdz5m8c0000gn/T/8a75fNml4R/Bibliography.bib_83658.utf8, line 1603, warning: 18 characters of junk seen at toplevel
+[505] Biber.pm:3657> INFO - Looking for bibtex format file 'MVExtrem.bib' for section 0
+[511] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
+[517] bibtex.pm:1048> INFO - Found BibTeX data source 'MVExtrem.bib'
+[575] Utils.pm:149> WARN - BibTeX subsystem: /var/folders/1z/rxxv8yys6c7gnmf28bdz5m8c0000gn/T/8a75fNml4R/MVExtrem.bib_83658.utf8, line 10, warning: 235 characters of junk seen at toplevel
+[576] Biber.pm:3657> INFO - Looking for bibtex format file 'Selfpublication.bib' for section 0
+[578] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
+[578] bibtex.pm:1048> INFO - Found BibTeX data source 'Selfpublication.bib'
+[585] Utils.pm:149> WARN - I didn't find a database entry for 'Vapnik1998' (section 0)
+[837] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[837] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[837] Biber.pm:3306> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-US'
+[837] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-US'
+[1226] bbl.pm:526> INFO - Writing 'ThesisRomainBrault.bbl' with encoding 'UTF-8'
+[1249] bbl.pm:619> INFO - Output to ThesisRomainBrault.bbl
+[1250] Biber.pm:108> INFO - WARNINGS: 4

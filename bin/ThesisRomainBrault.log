@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.5.22)  18 MAY 2017 17:24
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.5.22)  19 MAY 2017 15:43
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1377,19 +1377,69 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/mparhack/mparhack.sty
 Package: mparhack 2005/04/17 v1.4 (T. Sgouros and S. Ulrich)
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2016/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks41
+\XKV@tempa@toks=\toks42
+)
+\XKV@depth=\count378
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2012/05/16 v1.0 Trim and clip general TeX material
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box81
+)
+\tc@llx=\dimen168
+\tc@lly=\dimen169
+\tc@urx=\dimen170
+\tc@ury=\dimen171
+Package trimclip Info: Using driver 'tc-xetex.def'.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/adjustbox/tc-xetex.def
+File: tc-xetex.def 2012/05/13 v1.0 Clipping driver for xetex
+))
+\adjbox@Width=\dimen172
+\adjbox@Height=\dimen173
+\adjbox@Depth=\dimen174
+\adjbox@Totalheight=\dimen175
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count379
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box82
+\sift@deathcycles=\count380
+\@vwid@loff=\dimen176
+\@vwid@roff=\dimen177
+))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
 x
-\pgfutil@everybye=\toks41
-\pgfutil@tempdima=\dimen168
-\pgfutil@tempdimb=\dimen169
+\pgfutil@everybye=\toks43
+\pgfutil@tempdima=\dimen178
+\pgfutil@tempdimb=\dimen179
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
 sts.tex))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box81
+\pgfutil@abb=\box83
 ) (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
 Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
 ))
@@ -1399,23 +1449,23 @@ Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
-\pgf@x=\dimen170
-\pgf@y=\dimen171
-\pgf@xa=\dimen172
-\pgf@ya=\dimen173
-\pgf@xb=\dimen174
-\pgf@yb=\dimen175
-\pgf@xc=\dimen176
-\pgf@yc=\dimen177
+\pgf@x=\dimen180
+\pgf@y=\dimen181
+\pgf@xa=\dimen182
+\pgf@ya=\dimen183
+\pgf@xb=\dimen184
+\pgf@yb=\dimen185
+\pgf@xc=\dimen186
+\pgf@yc=\dimen187
 \w@pgf@writea=\write9
 \r@pgf@reada=\read4
-\c@pgf@counta=\count378
-\c@pgf@countb=\count379
-\c@pgf@countc=\count380
-\c@pgf@countd=\count381
-\t@pgf@toka=\toks42
-\t@pgf@tokb=\toks43
-\t@pgf@tokc=\toks44
+\c@pgf@counta=\count381
+\c@pgf@countb=\count382
+\c@pgf@countc=\count383
+\c@pgf@countd=\count384
+\t@pgf@toka=\toks44
+\t@pgf@tokb=\toks45
+\t@pgf@tokc=\toks46
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
@@ -1433,13 +1483,13 @@ File: pgfsys-dvipdfmx.def 2014/07/09  (rcs-revision 1.14)
 df.def
 File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )
-\pgfsys@objnum=\count382
+\pgfsys@objnum=\count385
 )))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
 code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count383
-\pgfsyssoftpath@bigbuffer@items=\count384
+\pgfsyssoftpath@smallbuffer@items=\count386
+\pgfsyssoftpath@bigbuffer@items=\count387
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
 code.tex
@@ -1466,12 +1516,12 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen178
-\pgfmath@count=\count385
-\pgfmath@box=\box82
-\pgfmath@toks=\toks45
-\pgfmath@stack@operand=\toks46
-\pgfmath@stack@operation=\toks47
+\pgfmath@dimen=\dimen188
+\pgfmath@count=\count388
+\pgfmath@box=\box84
+\pgfmath@toks=\toks47
+\pgfmath@stack@operand=\toks48
+\pgfmath@stack@operation=\toks49
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
 tex
@@ -1492,58 +1542,58 @@ code.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
 erarithmetics.code.tex)))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count386
+\c@pgfmathroundto@lastzeros=\count389
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
 de.tex
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen179
-\pgf@picmaxx=\dimen180
-\pgf@picminy=\dimen181
-\pgf@picmaxy=\dimen182
-\pgf@pathminx=\dimen183
-\pgf@pathmaxx=\dimen184
-\pgf@pathminy=\dimen185
-\pgf@pathmaxy=\dimen186
-\pgf@xx=\dimen187
-\pgf@xy=\dimen188
-\pgf@yx=\dimen189
-\pgf@yy=\dimen190
-\pgf@zx=\dimen191
-\pgf@zy=\dimen192
+\pgf@picminx=\dimen189
+\pgf@picmaxx=\dimen190
+\pgf@picminy=\dimen191
+\pgf@picmaxy=\dimen192
+\pgf@pathminx=\dimen193
+\pgf@pathmaxx=\dimen194
+\pgf@pathminy=\dimen195
+\pgf@pathmaxy=\dimen196
+\pgf@xx=\dimen197
+\pgf@xy=\dimen198
+\pgf@yx=\dimen199
+Normal \dimen register pool exhausted, switching to extended pool.
+\pgf@yy=\dimen256
+\pgf@zx=\dimen257
+\pgf@zy=\dimen258
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
 ruct.code.tex
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen193
-\pgf@path@lasty=\dimen194
+\pgf@path@lastx=\dimen259
+\pgf@path@lasty=\dimen260
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
 .code.tex
 File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
-\pgf@shorten@end@additional=\dimen195
-\pgf@shorten@start@additional=\dimen196
+\pgf@shorten@end@additional=\dimen261
+\pgf@shorten@start@additional=\dimen262
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
 de.tex
 File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
-\pgfpic=\box83
-\pgf@hbox=\box84
-\pgf@layerbox@main=\box85
-\pgf@picture@serial@count=\count387
+\pgfpic=\box85
+\pgf@hbox=\box86
+\pgf@layerbox@main=\box87
+\pgf@picture@serial@count=\count390
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
 ate.code.tex
 File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
-\pgflinewidth=\dimen197
+\pgflinewidth=\dimen263
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
 ations.code.tex
 File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
-\pgf@pt@x=\dimen198
-\pgf@pt@y=\dimen199
-Normal \dimen register pool exhausted, switching to extended pool.
-\pgf@pt@temp=\dimen256
+\pgf@pt@x=\dimen264
+\pgf@pt@y=\dimen265
+\pgf@pt@temp=\dimen266
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
 e.tex
@@ -1560,13 +1610,13 @@ File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
 de.tex
 File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
-\pgfarrowsep=\dimen257
+\pgfarrowsep=\dimen267
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
 e.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen258
-\pgf@sys@shading@range@num=\count388
+\pgf@max=\dimen268
+\pgf@sys@shading@range@num=\count391
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
 e.tex
@@ -1575,7 +1625,7 @@ File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
 code.tex
 File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
-\pgfexternal@startupbox=\box86
+\pgfexternal@startupbox=\box88
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
 de.tex
@@ -1592,7 +1642,7 @@ File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
 e.tex
 File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
-\pgfnodeparttextbox=\box87
+\pgfnodeparttextbox=\box89
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
 tex
@@ -1601,8 +1651,8 @@ File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen259
-\pgf@nodesepend=\dimen260
+\pgf@nodesepstart=\dimen269
+\pgf@nodesepend=\dimen270
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -1-18.sty
@@ -1615,10 +1665,10 @@ Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen261
-\pgffor@skip=\dimen262
-\pgffor@stack=\toks48
-\pgffor@toks=\toks49
+\pgffor@iter=\dimen271
+\pgffor@skip=\dimen272
+\pgffor@stack=\toks50
+\pgffor@toks=\toks51
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
 e.tex
@@ -1627,32 +1677,32 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 dlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count389
-\pgfplotmarksize=\dimen263
+\pgf@plot@mark@count=\count392
+\pgfplotmarksize=\dimen273
 )
-\tikz@lastx=\dimen264
-\tikz@lasty=\dimen265
-\tikz@lastxsaved=\dimen266
-\tikz@lastysaved=\dimen267
-\tikzleveldistance=\dimen268
-\tikzsiblingdistance=\dimen269
-\tikz@figbox=\box88
-\tikz@figbox@bg=\box89
-\tikz@tempbox=\box90
-\tikz@tempbox@bg=\box91
-\tikztreelevel=\count390
-\tikznumberofchildren=\count391
-\tikznumberofcurrentchild=\count392
-\tikz@fig@count=\count393
+\tikz@lastx=\dimen274
+\tikz@lasty=\dimen275
+\tikz@lastxsaved=\dimen276
+\tikz@lastysaved=\dimen277
+\tikzleveldistance=\dimen278
+\tikzsiblingdistance=\dimen279
+\tikz@figbox=\box90
+\tikz@figbox@bg=\box91
+\tikz@tempbox=\box92
+\tikz@tempbox@bg=\box93
+\tikztreelevel=\count393
+\tikznumberofchildren=\count394
+\tikznumberofcurrentchild=\count395
+\tikz@fig@count=\count396
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
 e.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count394
-\pgfmatrixcurrentcolumn=\count395
-\pgf@matrix@numberofcolumns=\count396
+\pgfmatrixcurrentrow=\count397
+\pgfmatrixcurrentcolumn=\count398
+\pgf@matrix@numberofcolumns=\count399
 )
-\tikz@expandcount=\count397
+\tikz@expandcount=\count400
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
@@ -1670,10 +1720,10 @@ File: tikzlibraryquotes.code.tex 2014/03/21 v3.0.1a (rcs-revision 1.4)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
 meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1a (rcs-revision 1.13)
-\pgfarrowinset=\dimen270
-\pgfarrowlength=\dimen271
-\pgfarrowwidth=\dimen272
-\pgfarrowlinewidth=\dimen273
+\pgfarrowinset=\dimen280
+\pgfarrowlength=\dimen281
+\pgfarrowwidth=\dimen282
+\pgfarrowlinewidth=\dimen283
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ltablex/ltablex.sty
 Package: ltablex 2014/08/13 v1.1 Modified tabularx
@@ -1684,17 +1734,17 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTright=\skip104
 \LTpre=\skip105
 \LTpost=\skip106
-\LTchunksize=\count398
-\LTcapwidth=\dimen274
-\LT@head=\box92
-\LT@firsthead=\box93
-\LT@foot=\box94
-\LT@lastfoot=\box95
-\LT@cols=\count399
-\LT@rows=\count400
-\c@LT@tables=\count401
-\c@LT@chunks=\count402
-\LT@p@ftn=\toks50
+\LTchunksize=\count401
+\LTcapwidth=\dimen284
+\LT@head=\box94
+\LT@firsthead=\box95
+\LT@foot=\box96
+\LT@lastfoot=\box97
+\LT@cols=\count402
+\LT@rows=\count403
+\c@LT@tables=\count404
+\c@LT@chunks=\count405
+\LT@p@ftn=\toks52
 )
 Class scrreprt Info: longtable captions redefined on input line 143.
 
@@ -1703,19 +1753,19 @@ Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/array.sty
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen275
-\extrarowheight=\dimen276
-\NC@list=\toks51
+\col@sep=\dimen285
+\extrarowheight=\dimen286
+\NC@list=\toks53
 \extratabsurround=\skip107
 \backup@length=\skip108
 )
-\TX@col@width=\dimen277
-\TX@old@table=\dimen278
-\TX@old@col=\dimen279
-\TX@target=\dimen280
-\TX@delta=\dimen281
-\TX@cols=\count403
-\TX@ftn=\toks52
+\TX@col@width=\dimen287
+\TX@old@table=\dimen288
+\TX@old@col=\dimen289
+\TX@target=\dimen290
+\TX@delta=\dimen291
+\TX@cols=\count406
+\TX@ftn=\toks54
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/threeparttablex/threeparttablex.s
 ty
@@ -1723,7 +1773,7 @@ Package: threeparttablex 2013/07/23 v0.3 by daleif
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box96
+\@tempboxb=\box98
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
 
@@ -1738,16 +1788,16 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen282
-\captionmargin@=\dimen283
-\captionwidth=\dimen284
-\caption@tempdima=\dimen285
-\caption@indent=\dimen286
-\caption@parindent=\dimen287
-\caption@hangindent=\dimen288
+\captionmargin=\dimen292
+\captionmargin@=\dimen293
+\captionwidth=\dimen294
+\caption@tempdima=\dimen295
+\caption@indent=\dimen296
+\caption@parindent=\dimen297
+\caption@hangindent=\dimen298
 )
 Package caption Info: KOMA-Script document class.
-\c@ContinuedFloat=\count404
+\c@ContinuedFloat=\count407
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
 
@@ -1759,44 +1809,44 @@ Package caption Info: threeparttable package is loaded.
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
-\c@KVtest=\count405
+\c@KVtest=\count408
 \sf@farskip=\skip110
-\sf@captopadj=\dimen289
+\sf@captopadj=\dimen299
 \sf@capskip=\skip111
 \sf@nearskip=\skip112
-\c@subfigure=\count406
-\c@subfigure@save=\count407
-\c@lofdepth=\count408
-\c@subtable=\count409
-\c@subtable@save=\count410
-\c@lotdepth=\count411
+\c@subfigure=\count409
+\c@subfigure@save=\count410
+\c@lofdepth=\count411
+\c@subtable=\count412
+\c@subtable@save=\count413
+\c@lotdepth=\count414
 \sf@top=\skip113
 \sf@bottom=\skip114
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count412
-\lst@gtempboxa=\box97
-\lst@token=\toks53
-\lst@length=\count413
-\lst@currlwidth=\dimen290
-\lst@column=\count414
-\lst@pos=\count415
-\lst@lostspace=\dimen291
-\lst@width=\dimen292
-\lst@newlines=\count416
-\lst@lineno=\count417
-\lst@maxwidth=\dimen293
+\lst@mode=\count415
+\lst@gtempboxa=\box99
+\lst@token=\toks55
+\lst@length=\count416
+\lst@currlwidth=\dimen300
+\lst@column=\count417
+\lst@pos=\count418
+\lst@lostspace=\dimen301
+\lst@width=\dimen302
+\lst@newlines=\count419
+\lst@lineno=\count420
+\lst@maxwidth=\dimen303
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count418
-\lst@skipnumbers=\count419
-\lst@framebox=\box98
+\c@lstnumber=\count421
+\lst@skipnumbers=\count422
+\lst@framebox=\box100
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
-Package scrhack Info: loading listings hack on input line 167.
+Package scrhack Info: loading listings hack on input line 168.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/koma-script/listings.hak
 File: listings.hak 2016/05/10 v3.20 KOMA-Script package (hacking package listin
@@ -1838,58 +1888,58 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 212.
+(hyperref)                setting the option has no effect on input line 213.
 
 
 Package hyperref Warning: Option `xetex' has already been used,
-(hyperref)                setting the option has no effect on input line 212.
+(hyperref)                setting the option has no effect on input line 213.
 
 
 Package hyperref Warning: Option `hyperfootnotes' has already been used,
-(hyperref)                setting the option has no effect on input line 212.
+(hyperref)                setting the option has no effect on input line 213.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 212.
-Package hyperref Info: Option `linktocpage' set `true' on input line 212.
-Package hyperref Info: Option `breaklinks' set `true' on input line 212.
-Package hyperref Info: Option `pageanchor' set `true' on input line 212.
-Package hyperref Info: Option `plainpages' set `false' on input line 212.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 212.
+Package hyperref Info: Option `colorlinks' set `true' on input line 213.
+Package hyperref Info: Option `linktocpage' set `true' on input line 213.
+Package hyperref Info: Option `breaklinks' set `true' on input line 213.
+Package hyperref Info: Option `pageanchor' set `true' on input line 213.
+Package hyperref Info: Option `plainpages' set `false' on input line 213.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 213.
 
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 212.
-Package hyperref Info: Option `hypertexnames' set `true' on input line 212.
-Package hyperref Info: Option `nesting' set `true' on input line 212.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 213.
+Package hyperref Info: Option `hypertexnames' set `true' on input line 213.
+Package hyperref Info: Option `nesting' set `true' on input line 213.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip115
-\enit@outerparindent=\dimen294
-\enit@toks=\toks54
-\enit@inbox=\box99
-\enitdp@description=\count420
+\enit@outerparindent=\dimen304
+\enit@toks=\toks56
+\enit@inbox=\box101
+\enitdp@description=\count423
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/braket/braket.sty)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/dirtytalk/dirtytalk.sty
 Package: dirtytalk 2010/11/21 A package making "quoting" easier
-\c@dirtytalk@qdepth=\count421
+\c@dirtytalk@qdepth=\count424
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/numprint/numprint.sty
 Package: numprint 2012/08/20 v1.39 Print numbers (HH)
-\c@nprt@mantissa@digitsbefore=\count422
-\c@nprt@mantissa@digitsafter=\count423
-\c@nprt@exponent@digitsbefore=\count424
-\c@nprt@exponent@digitsafter=\count425
+\c@nprt@mantissa@digitsbefore=\count425
+\c@nprt@mantissa@digitsafter=\count426
+\c@nprt@exponent@digitsbefore=\count427
+\c@nprt@exponent@digitsafter=\count428
 \nprt@digitwidth=\skip116
 \nprt@sepwidth=\skip117
 \nprt@decimalwidth=\skip118
 \nprt@blockwidth=\skip119
-\nprt@digittoks=\toks55
-\nprt@pretoks=\toks56
-\nprt@posttoks=\toks57
-\nprt@thisdigit=\count426
-\nprt@curpos=\count427
-\nprt@rndpos=\count428
-\c@nprt@digitsfirstblock=\count429
-\c@nprt@blockcnt=\count430
-\c@nprt@cntprint=\count431
+\nprt@digittoks=\toks57
+\nprt@pretoks=\toks58
+\nprt@posttoks=\toks59
+\nprt@thisdigit=\count429
+\nprt@curpos=\count430
+\nprt@rndpos=\count431
+\c@nprt@digitsfirstblock=\count432
+\c@nprt@blockcnt=\count433
+\c@nprt@cntprint=\count434
 
 No configuration file `numprint.cfg' found.) (./classicthesis.sty
 Package: classicthesis 2015/09/06 v4.2 Typographic style for a classic-looking 
@@ -1907,12 +1957,12 @@ Package latexrelease Warning: Current format date selected, no patches applied.
 Package: pgfplots 2016/01/06 v1.13 Data Visualization (1.13)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks58
-\t@pgfplots@tokb=\toks59
-\t@pgfplots@tokc=\toks60
-\pgfplots@tmpa=\dimen295
-\c@pgfplots@coordindex=\count432
-\c@pgfplots@scanlineindex=\count433
+\t@pgfplots@toka=\toks60
+\t@pgfplots@tokb=\toks61
+\t@pgfplots@tokc=\toks62
+\pgfplots@tmpa=\dimen305
+\c@pgfplots@coordindex=\count435
+\c@pgfplots@scanlineindex=\count436
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric
 .code.tex))
@@ -1928,7 +1978,7 @@ Package pgfplots: loading complementary arithmetics for your pgf version...
 soldpgfsupp_pgflibraryfpu.code.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
 soldpgfsupp_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count434
+\c@pgfmathroundto@lastzeros=\count437
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code
 .tex
@@ -1938,14 +1988,14 @@ liststructure.code.tex)
 liststructureext.code.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 array.code.tex
-\c@pgfplotsarray@tmp=\count435
+\c@pgfplotsarray@tmp=\count438
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 matrix.code.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable
 shared.code.tex
-\c@pgfplotstable@counta=\count436
-\t@pgfplotstable@a=\toks61
+\c@pgfplotstable@counta=\count439
+\t@pgfplotstable@a=\toks63
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 deque.code.tex)
@@ -1957,13 +2007,13 @@ ta.code.tex))
 .code.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplot
 s.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count437
+\c@pgfplotslibrarysurf@no=\count440
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots
 .surfshading.pgfsys-xetex.def
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots
 .surfshading.pgfsys-dvipdfmx.def
-\c@pgfplotslibrarysurf@streamlen=\count438
+\c@pgfplotslibrarysurf@streamlen=\count441
 ))))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.
 code.tex
@@ -1993,16 +2043,16 @@ x)
 s/tikzlibrarydecorations.code.tex
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
 s.code.tex
-\pgfdecoratedcompleteddistance=\dimen296
-\pgfdecoratedremainingdistance=\dimen297
-\pgfdecoratedinputsegmentcompleteddistance=\dimen298
-\pgfdecoratedinputsegmentremainingdistance=\dimen299
-\pgf@decorate@distancetomove=\dimen300
-\pgf@decorate@repeatstate=\count439
-\pgfdecorationsegmentamplitude=\dimen301
-\pgfdecorationsegmentlength=\dimen302
+\pgfdecoratedcompleteddistance=\dimen306
+\pgfdecoratedremainingdistance=\dimen307
+\pgfdecoratedinputsegmentcompleteddistance=\dimen308
+\pgfdecoratedinputsegmentremainingdistance=\dimen309
+\pgf@decorate@distancetomove=\dimen310
+\pgf@decorate@repeatstate=\count442
+\pgfdecorationsegmentamplitude=\dimen311
+\pgfdecorationsegmentlength=\dimen312
 )
-\tikz@lib@dec@box=\box100
+\tikz@lib@dec@box=\box102
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarydecorations.pathmorphing.code.tex
@@ -2012,13 +2062,13 @@ brarydecorations.pathmorphing.code.tex))
 s/tikzlibrarydecorations.pathreplacing.code.tex
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count440
-\pgfplots@xmin@reg=\dimen303
-\pgfplots@xmax@reg=\dimen304
-\pgfplots@ymin@reg=\dimen305
-\pgfplots@ymax@reg=\dimen306
-\pgfplots@zmin@reg=\dimen307
-\pgfplots@zmax@reg=\dimen308
+\pgfplots@numplots=\count443
+\pgfplots@xmin@reg=\dimen313
+\pgfplots@xmax@reg=\dimen314
+\pgfplots@ymin@reg=\dimen315
+\pgfplots@ymax@reg=\dimen316
+\pgfplots@zmin@reg=\dimen317
+\pgfplots@zmax@reg=\dimen318
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibraryplotmarks.code.tex
@@ -2033,26 +2083,26 @@ Package: pgfpages 2011/01/05 ver 0.02
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count441
-\calc@Bcount=\count442
-\calc@Adimen=\dimen309
-\calc@Bdimen=\dimen310
+\calc@Acount=\count444
+\calc@Bcount=\count445
+\calc@Adimen=\dimen319
+\calc@Bdimen=\dimen320
 \calc@Askip=\skip120
 \calc@Bskip=\skip121
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count443
+\calc@Ccount=\count446
 \calc@Cskip=\skip122
 )
-\pgf@logicalpages=\count444
-\pgf@firstshipout=\count445
-\pgf@lastshipout=\count446
-\pgf@currentshipout=\count447
-\pgf@cpn=\count448
-\pgf@shipoutnextto=\count449
-\pgfphysicalheight=\dimen311
-\pgfphysicalwidth=\dimen312
-\pgfpages@shipoutbox=\box101
+\pgf@logicalpages=\count447
+\pgf@firstshipout=\count448
+\pgf@lastshipout=\count449
+\pgf@currentshipout=\count450
+\pgf@cpn=\count451
+\pgf@shipoutnextto=\count452
+\pgfphysicalheight=\dimen321
+\pgfphysicalwidth=\dimen322
+\pgfpages@shipoutbox=\box103
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarypositioning.code.tex
@@ -2164,7 +2214,7 @@ Package: tikzscale 2013/05/22 v0.2.6 tikzscale LaTeX package
 . Defining command \tikzscale@resizePlotWithAxesRatioTo with sig. 'mmmm' on
 . line 517.
 .................................................
-\tikzscale@measuredSize=\box102
+\tikzscale@measuredSize=\box104
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -2184,12 +2234,12 @@ Package: mathpazo 2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS)
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2016/05/14 v2.6a Micro-typographical refinements (RS)
-\MT@toks=\toks62
-\MT@count=\count450
+\MT@toks=\toks64
+\MT@count=\count453
 LaTeX Info: Redefining \textls on input line 774.
-\MT@outer@kern=\dimen313
+\MT@outer@kern=\dimen323
 LaTeX Info: Redefining \textmicrotypecontext on input line 1310.
-\MT@listname@count=\count451
+\MT@listname@count=\count454
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/microtype-xetex.def
 File: microtype-xetex.def 2016/05/14 v2.6a Definitions specific to xetex (RS)
@@ -2217,42 +2267,42 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \footskip       = 47.60002pt
 (typearea)              \baselineskip   = 13.6pt
 (typearea)              on input line 293.
-\c@mparcnt=\count452
+\c@mparcnt=\count455
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen314
-\lightrulewidth=\dimen315
-\cmidrulewidth=\dimen316
-\belowrulesep=\dimen317
-\belowbottomsep=\dimen318
-\aboverulesep=\dimen319
-\abovetopsep=\dimen320
-\cmidrulesep=\dimen321
-\cmidrulekern=\dimen322
-\defaultaddspace=\dimen323
-\@cmidla=\count453
-\@cmidlb=\count454
-\@aboverulesep=\dimen324
-\@belowrulesep=\dimen325
-\@thisruleclass=\count455
-\@lastruleclass=\count456
-\@thisrulewidth=\dimen326
+\heavyrulewidth=\dimen324
+\lightrulewidth=\dimen325
+\cmidrulewidth=\dimen326
+\belowrulesep=\dimen327
+\belowbottomsep=\dimen328
+\aboverulesep=\dimen329
+\abovetopsep=\dimen330
+\cmidrulesep=\dimen331
+\cmidrulekern=\dimen332
+\defaultaddspace=\dimen333
+\@cmidla=\count456
+\@cmidlb=\count457
+\@aboverulesep=\dimen334
+\@belowrulesep=\dimen335
+\@thisruleclass=\count458
+\@lastruleclass=\count459
+\@thisrulewidth=\dimen336
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/textcase/textcase.sty
 Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/soul/soul.sty
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
-\SOUL@word=\toks63
-\SOUL@lasttoken=\toks64
-\SOUL@cmds=\toks65
-\SOUL@buffer=\toks66
-\SOUL@token=\toks67
+\SOUL@word=\toks65
+\SOUL@lasttoken=\toks66
+\SOUL@cmds=\toks67
+\SOUL@buffer=\toks68
+\SOUL@token=\toks69
 \SOUL@spaceskip=\skip123
-\SOUL@ttwidth=\dimen327
-\SOUL@uldp=\dimen328
-\SOUL@ulht=\dimen329
+\SOUL@ttwidth=\dimen337
+\SOUL@uldp=\dimen338
+\SOUL@ulht=\dimen339
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
 Package: scrlayer-scrpage 2016/05/10 v3.20 KOMA-Script package (end user interf
@@ -2289,15 +2339,15 @@ Class scrreprt Warning: Usage of package `titlesec' together
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
-\ttl@box=\box103
+\ttl@box=\box105
 \beforetitleunit=\skip124
 \aftertitleunit=\skip125
-\ttl@plus=\dimen330
-\ttl@minus=\dimen331
-\ttl@toksa=\toks68
-\titlewidth=\dimen332
-\titlewidthlast=\dimen333
-\titlewidthfirst=\dimen334
+\ttl@plus=\dimen340
+\ttl@minus=\dimen341
+\ttl@toksa=\toks70
+\titlewidth=\dimen342
+\titlewidthlast=\dimen343
+\titlewidthfirst=\dimen344
 )
 
 Package scrreprt Warning: Activating an ugly workaround for a missing
@@ -2352,11 +2402,11 @@ Package tocloft Info: The document has chapter divisions on input line 44.
 \newchnumberwidth=\skip168
 \figurelabelwidth=\skip169
 \tablelabelwidth=\skip170
-\c@listings=\count457
+\c@listings=\count460
 \cftbeforelistingsskip=\skip171
 \cftlistingsindent=\skip172
 \cftlistingsnumwidth=\skip173
-\c@loldepth=\count458
+\c@loldepth=\count461
 \cftbeforeloltitleskip=\skip174
 \cftafterloltitleskip=\skip175
 \listingslabelwidth=\skip176
@@ -2407,65 +2457,65 @@ LaTeX Info: Redefining \scriptstyle on input line 97.
 LaTeX Info: Redefining \scriptscriptstyle on input line 99.
 LaTeX Info: Redefining \genfrac on input line 145.
 ))
-\inf@bad=\count459
-\maxint=\count460
-\listwidth=\dimen335
-\eqnumsep=\dimen336
-\eqmargin=\dimen337
+\inf@bad=\count462
+\maxint=\count463
+\listwidth=\dimen345
+\eqnumsep=\dimen346
+\eqmargin=\dimen347
 \eqlinespacing=\skip177
 \eqlineskip=\skip178
-\eqlineskiplimit=\dimen338
+\eqlineskiplimit=\dimen348
 \eqbinoffset=\muskip18
 \eqdelimoffset=\muskip19
-\eqindentstep=\dimen339
-\eqstyle=\toks69
-\eqbreakdepth=\count461
-\eqinterlinepenalty=\count462
-\intereqpenalty=\count463
+\eqindentstep=\dimen349
+\eqstyle=\toks71
+\eqbreakdepth=\count464
+\eqinterlinepenalty=\count465
+\intereqpenalty=\count466
 \intereqskip=\skip179
-\prerelpenalty=\count464
-\prebinoppenalty=\count465
+\prerelpenalty=\count467
+\prebinoppenalty=\count468
 \Dmedmuskip=\muskip20
 \Dthickmuskip=\muskip21
 \eqleftskip=\skip180
 \eqrightskip=\skip181
 \eq@vspan=\skip182
 \eq@binoffset=\muskip22
-\EQ@box=\box104
-\EQ@copy=\box105
-\EQ@numbox=\box106
-\eq@wdNum=\dimen340
-\GRP@numbox=\box107
-\grp@wdNum=\dimen341
-\eq@lines=\count466
-\eq@curline=\count467
-\eq@badness=\count468
-\EQ@vims=\count469
-\eq@dp=\dimen342
-\eq@wdL=\dimen343
-\eq@wdT=\dimen344
-\eq@wdMin=\dimen345
-\grp@wdL=\dimen346
-\grp@wdR=\dimen347
-\grp@wdT=\dimen348
-\eq@wdRmax=\dimen349
-\eq@firstht=\dimen350
-\eq@wdCond=\dimen351
-\eq@indentstep=\dimen352
-\eq@linewidth=\dimen353
-\grp@linewidth=\dimen354
-\eq@hshift=\dimen355
-\eq@given@sidespace=\dimen356
-\eq@final@linecount=\count470
-\eq@wdR=\dimen357
-\EQ@continue=\toks70
-\lr@level=\count471
-\GRP@queue=\toks71
-\GRP@box=\box108
-\GRP@wholebox=\box109
+\EQ@box=\box106
+\EQ@copy=\box107
+\EQ@numbox=\box108
+\eq@wdNum=\dimen350
+\GRP@numbox=\box109
+\grp@wdNum=\dimen351
+\eq@lines=\count469
+\eq@curline=\count470
+\eq@badness=\count471
+\EQ@vims=\count472
+\eq@dp=\dimen352
+\eq@wdL=\dimen353
+\eq@wdT=\dimen354
+\eq@wdMin=\dimen355
+\grp@wdL=\dimen356
+\grp@wdR=\dimen357
+\grp@wdT=\dimen358
+\eq@wdRmax=\dimen359
+\eq@firstht=\dimen360
+\eq@wdCond=\dimen361
+\eq@indentstep=\dimen362
+\eq@linewidth=\dimen363
+\grp@linewidth=\dimen364
+\eq@hshift=\dimen365
+\eq@given@sidespace=\dimen366
+\eq@final@linecount=\count473
+\eq@wdR=\dimen367
+\EQ@continue=\toks72
+\lr@level=\count474
+\GRP@queue=\toks73
+\GRP@box=\box110
+\GRP@wholebox=\box111
 \darraycolsep=\skip183
-\cur@row=\count472
-\cur@col=\count473
+\cur@row=\count475
+\cur@col=\count476
 \conditionsep=\skip184
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/colonequals.sty
@@ -2477,49 +2527,49 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count474
+\c@section@level=\count477
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ntheorem/ntheorem.sty
 Style `ntheorem', Version 1.33 <2011/08/15>
 Package: ntheorem 2011/08/15 1.33
-\theorem@style=\toks72
-\theorem@@style=\toks73
-\theorembodyfont=\toks74
-\theoremnumbering=\toks75
+\theorem@style=\toks74
+\theorem@@style=\toks75
+\theorembodyfont=\toks76
+\theoremnumbering=\toks77
 \theorempreskipamount=\skip185
 \theorempostskipamount=\skip186
 \theoremframepreskipamount=\skip187
 \theoremframepostskipamount=\skip188
 \theoreminframepreskipamount=\skip189
 \theoreminframepostskipamount=\skip190
-\theorem@preskip=\toks76
-\theorem@postskip=\toks77
-\theorem@framepreskip=\toks78
-\theorem@framepostskip=\toks79
-\theorem@inframepreskip=\toks80
-\theorem@inframepostskip=\toks81
-\theoremindent=\dimen358
-\theorem@indent=\dimen359
-\theoremrightindent=\dimen360
-\theorem@rightindent=\dimen361
-\theoremheaderfont=\toks82
-\theoremseparator=\toks83
-\theoremprework=\toks84
-\theorempostwork=\toks85
-\theoremsymbol=\toks86
-\qedsymbol=\toks87
-\theoremkeyword=\toks88
+\theorem@preskip=\toks78
+\theorem@postskip=\toks79
+\theorem@framepreskip=\toks80
+\theorem@framepostskip=\toks81
+\theorem@inframepreskip=\toks82
+\theorem@inframepostskip=\toks83
+\theoremindent=\dimen368
+\theorem@indent=\dimen369
+\theoremrightindent=\dimen370
+\theorem@rightindent=\dimen371
+\theoremheaderfont=\toks84
+\theoremseparator=\toks85
+\theoremprework=\toks86
+\theorempostwork=\toks87
+\theoremsymbol=\toks88
 \qedsymbol=\toks89
+\theoremkeyword=\toks90
+\qedsymbol=\toks91
 \thm@topsep=\skip191
 \thm@topsepadd=\skip192
 Package ntheorem Info: Option `thmmarks' loaded on input line 1175.
-\c@endNonectr=\count475
-\c@currNonectr=\count476
+\c@endNonectr=\count478
+\c@currNonectr=\count479
 \mysavskip=\skip193
 Package ntheorem Info: option `amsmath' handling for `thmmarks' loaded on input
  line 1175.
-\thm@amstmpdepth=\dimen362
-\tagwidth=\dimen363
+\thm@amstmpdepth=\dimen372
+\tagwidth=\dimen373
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2013/12/28 v0.19 Intelligent cross-referencing
 Package cleveref Info: `hyperref' support loaded on input line 2230.
@@ -2560,22 +2610,22 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count477
-\l_MT_multwidth_dim=\dimen364
+\g_MT_multlinerow_int=\count480
+\l_MT_multwidth_dim=\dimen374
 \origjot=\skip194
-\l_MT_shortvdotswithinadjustabove_dim=\dimen365
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen366
-\l_MT_above_intertext_sep=\dimen367
-\l_MT_below_intertext_sep=\dimen368
-\l_MT_above_shortintertext_sep=\dimen369
-\l_MT_below_shortintertext_sep=\dimen370
+\l_MT_shortvdotswithinadjustabove_dim=\dimen375
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen376
+\l_MT_above_intertext_sep=\dimen377
+\l_MT_below_intertext_sep=\dimen378
+\l_MT_above_shortintertext_sep=\dimen379
+\l_MT_below_shortintertext_sep=\dimen380
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Invalid UTF-8 byte or sequence at line 275 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 290 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 540 replaced by U+FFFD.
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
-\c@AlgoLine=\count478
+\c@AlgoLine=\count481
 Invalid UTF-8 byte or sequence at line 1311 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 1313 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 1315 replaced by U+FFFD.
@@ -2600,82 +2650,82 @@ Normal \skip register pool exhausted, switching to extended pool.
 \skiplength=\skip257
 \algomargin=\skip258
 \skipalgocfslide=\skip259
-\algowidth=\dimen371
-\inoutsize=\dimen372
-\inoutindent=\dimen373
-\interspacetitleruled=\dimen374
-\interspacealgoruled=\dimen375
-\interspacetitleboxruled=\dimen376
+\algowidth=\dimen381
+\inoutsize=\dimen382
+\inoutindent=\dimen383
+\interspacetitleruled=\dimen384
+\interspacealgoruled=\dimen385
+\interspacetitleboxruled=\dimen386
 \algocf@ruledwidth=\skip260
-\algocf@inoutbox=\box110
-\algocf@inputbox=\box111
+\algocf@inoutbox=\box112
+\algocf@inputbox=\box113
 \AlCapSkip=\skip261
 \AlCapHSkip=\skip262
 \algoskipindent=\skip263
-\algocf@nlbox=\box112
-\algocf@hangingbox=\box113
-\algocf@untilbox=\box114
+\algocf@nlbox=\box114
+\algocf@hangingbox=\box115
+\algocf@untilbox=\box116
 \algocf@skipuntil=\skip264
-\algocf@capbox=\box115
+\algocf@capbox=\box117
 \algoheightruledefault=\skip265
 \algoheightrule=\skip266
 \algotitleheightruledefault=\skip267
 \algotitleheightrule=\skip268
-\c@algocfline=\count479
-\c@algocfproc=\count480
-\c@algocf=\count481
-\algocf@algoframe=\box116
-\algocf@algobox=\box117
+\c@algocfline=\count482
+\c@algocfproc=\count483
+\c@algocf=\count484
+\algocf@algoframe=\box118
+\algocf@algobox=\box119
 ) (./commands.sty
-\c@currassumptionctr=\count482
-\c@endassumptionctr=\count483
-\c@assumption=\count484
-\c@currremarkctr=\count485
-\c@endremarkctr=\count486
-\c@remark=\count487
-\c@currdefinitionctr=\count488
-\c@enddefinitionctr=\count489
-\c@definition=\count490
-\c@currexamplectr=\count491
-\c@endexamplectr=\count492
-\c@example=\count493
-\c@currtheoremctr=\count494
-\c@endtheoremctr=\count495
-\c@theorem=\count496
-\c@currlemmactr=\count497
-\c@endlemmactr=\count498
-\c@lemma=\count499
-\c@currpropositionctr=\count500
-\c@endpropositionctr=\count501
-\c@proposition=\count502
-\c@currcorollaryctr=\count503
-\c@endcorollaryctr=\count504
-\c@corollary=\count505
-\c@currconjecturectr=\count506
-\c@endconjecturectr=\count507
-\c@conjecture=\count508
-\c@curraxiomctr=\count509
-\c@endaxiomctr=\count510
-\c@axiom=\count511
-\c@currsproofctr=\count512
-\c@endsproofctr=\count513
-\c@sproof=\count514
-\c@currproofctr=\count515
-\c@endproofctr=\count516
-\c@proof=\count517
+\c@currassumptionctr=\count485
+\c@endassumptionctr=\count486
+\c@assumption=\count487
+\c@currremarkctr=\count488
+\c@endremarkctr=\count489
+\c@remark=\count490
+\c@currdefinitionctr=\count491
+\c@enddefinitionctr=\count492
+\c@definition=\count493
+\c@currexamplectr=\count494
+\c@endexamplectr=\count495
+\c@example=\count496
+\c@currtheoremctr=\count497
+\c@endtheoremctr=\count498
+\c@theorem=\count499
+\c@currlemmactr=\count500
+\c@endlemmactr=\count501
+\c@lemma=\count502
+\c@currpropositionctr=\count503
+\c@endpropositionctr=\count504
+\c@proposition=\count505
+\c@currcorollaryctr=\count506
+\c@endcorollaryctr=\count507
+\c@corollary=\count508
+\c@currconjecturectr=\count509
+\c@endconjecturectr=\count510
+\c@conjecture=\count511
+\c@curraxiomctr=\count512
+\c@endaxiomctr=\count513
+\c@axiom=\count514
+\c@currsproofctr=\count515
+\c@endsproofctr=\count516
+\c@sproof=\count517
+\c@currproofctr=\count518
+\c@endproofctr=\count519
+\c@proof=\count520
 )
-\c@propenumi=\count518
-\enitdp@propenum=\count519
+\c@propenumi=\count521
+\enitdp@propenum=\count522
  (/usr/local/texlive/2016/texmf-dist/tex/latex/acro/acro.sty
 (/usr/local/texlive/2016/texmf-dist/tex/latex/l3experimental/l3sort/l3sort.sty
 Package: l3sort 2016/05/14 v6492 L3 Experimental sorting functions
-\l__sort_length_int=\count520
-\l__sort_block_int=\count521
-\l__sort_begin_int=\count522
-\l__sort_end_int=\count523
-\l__sort_A_int=\count524
-\l__sort_B_int=\count525
-\l__sort_C_int=\count526
+\l__sort_length_int=\count523
+\l__sort_block_int=\count524
+\l__sort_begin_int=\count525
+\l__sort_end_int=\count526
+\l__sort_A_int=\count527
+\l__sort_B_int=\count528
+\l__sort_C_int=\count529
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.st
 y
 Package: l3keys2e 2016/05/18 v6512 LaTeX2e option processing using LaTeX3 keys
@@ -2684,18 +2734,18 @@ Package: l3keys2e 2016/05/18 v6512 LaTeX2e option processing using LaTeX3 keys
 y
 Package: xtemplate 2016/05/18 v6512 L3 Experimental prototype document function
 s
-\l__xtemplate_tmp_dim=\dimen377
-\l__xtemplate_tmp_int=\count527
+\l__xtemplate_tmp_dim=\dimen387
+\l__xtemplate_tmp_int=\count530
 \l__xtemplate_tmp_muskip=\muskip23
 \l__xtemplate_tmp_skip=\skip269
 )
 Package: acro 2016/05/03 v2.4b Typeset Acronyms
-\l__acro_tmpa_int=\count528
-\l__acro_tmpb_int=\count529
-\l__acro_tmpc_int=\count530
-\l__acro_tmpd_int=\count531
-\l__acro_page_space_dim=\dimen378
-\l__acro_short_width_dim=\dimen379
+\l__acro_tmpa_int=\count531
+\l__acro_tmpb_int=\count532
+\l__acro_tmpc_int=\count533
+\l__acro_tmpd_int=\count534
+\l__acro_page_space_dim=\dimen388
+\l__acro_short_width_dim=\dimen389
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -2725,7 +2775,7 @@ Package zref Info: New property list: main on input line 759.
 Package zref Info: New property: default on input line 760.
 Package zref Info: New property: page on input line 761.
 )
-\c@abspage=\count532
+\c@abspage=\count535
 Package zref Info: New property: abspage on input line 62.
 )
 .................................................
@@ -2798,7 +2848,7 @@ Package zref Info: New property: abspage on input line 62.
 . 
 . Defining command \acuse with sig. '>{\SplitList {,}}m' on line 2828.
 .................................................
-\g__acro_barrier_int=\count533
+\g__acro_barrier_int=\count536
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -2987,9 +3037,9 @@ Package: translations 2016/04/19 v1.3 internationalization of LaTeX2e packages
 (/usr/local/texlive/2016/texmf-dist/tex/latex/cnltx/cnltx-base.sty
 Package: cnltx-base 2015/08/17 v0.13 LaTeX tools and documenting facilities (CN
 )
-\c@cnltx@tmpa=\count534
-\c@cnltx@tmpb=\count535
-\c@cnltx@tmpc=\count536
+\c@cnltx@tmpa=\count537
+\c@cnltx@tmpb=\count538
+\c@cnltx@tmpc=\count539
 \cnltx@tmpa@length=\skip270
 \cnltx@tmpb@length=\skip271
 \cnltx@tmpc@length=\skip272
@@ -3007,12 +3057,12 @@ Package: fontspec 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTeX
 (/usr/local/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTe
 X
-\l_fontspec_script_int=\count537
-\l_fontspec_language_int=\count538
-\l_fontspec_strnum_int=\count539
-\l__fontspec_tmpa_dim=\dimen380
-\l__fontspec_tmpb_dim=\dimen381
-\l__fontspec_tmpc_dim=\dimen382
+\l_fontspec_script_int=\count540
+\l_fontspec_language_int=\count541
+\l_fontspec_strnum_int=\count542
+\l__fontspec_tmpa_dim=\dimen390
+\l__fontspec_tmpb_dim=\dimen391
+\l__fontspec_tmpc_dim=\dimen392
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
@@ -3041,9 +3091,9 @@ LaTeX Font Info:    Try loading font information for EU1+lmss on input line 357
 (/usr/local/texlive/2016/texmf-dist/tex/latex/euenc/eu1lmss.fd
 File: eu1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ))
-\tipaTiiicode=\count540
-\tipasavetokens=\toks90
-\tipachecktokens=\toks91
+\tipaTiiicode=\count543
+\tipasavetokens=\toks92
+\tipachecktokens=\toks93
 )
 .................................................
 . LaTeX info: "xparse/define-command"
@@ -3150,15 +3200,15 @@ File: eu1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 . 
 . Defining command \DeclareFontsExtensions with sig. 'm' on line 599.
 .................................................
-\l__fontspec_tmp_int=\count541
+\l__fontspec_tmp_int=\count544
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec.cfg)
 LaTeX Info: Redefining \itshape on input line 2705.
 LaTeX Info: Redefining \slshape on input line 2710.
 LaTeX Info: Redefining \scshape on input line 2715.
 LaTeX Info: Redefining \upshape on input line 2720.
-\l__fontspec_em_int=\count542
-\l__fontspec_emdef_int=\count543
+\l__fontspec_em_int=\count545
+\l__fontspec_emdef_int=\count546
 LaTeX Info: Redefining \em on input line 2736.
 LaTeX Info: Redefining \emph on input line 2742.
 LaTeX Info: Redefining \- on input line 2746.
@@ -3173,20 +3223,9 @@ LaTeX Info: Redefining \- on input line 2746.
 . Defining command \liningnums with sig. 'm' on line 2845.
 .................................................
 ))
-(/usr/local/texlive/2016/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-(/usr/local/texlive/2016/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/local/texlive/2016/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks92
-\XKV@tempa@toks=\toks93
-)
-\XKV@depth=\count544
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-\c@eu@=\count545
-\c@eu@i=\count546
-\c@mkern=\count547
+\c@eu@=\count547
+\c@eu@i=\count548
+\c@mkern=\count549
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/xltxtra/xltxtra.sty
 Package: xltxtra 2016/01/21 v0.6 Improvements for the "XeLaTeX" format
@@ -3234,7 +3273,7 @@ ts
 . 
 . Defining command \textsupersubscript with sig. 'sO{l}mm' on line 143.
 .................................................
-\subsupersep=\dimen383
+\subsupersep=\dimen393
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/metalogo/metalogo.sty
 Package: metalogo 2010/05/29 v0.12 Extended TeX logo macros
@@ -3244,12 +3283,12 @@ LaTeX Info: Redefining \TeX on input line 193.
 LaTeX Info: Redefining \LaTeX on input line 202.
 LaTeX Info: Redefining \LaTeXe on input line 219.
 )
-\l__xetex_show_hyphens_wrapping_box=\box118
-\l__xetex_show_hyphens_temp_box=\box119
-\l__xetex_show_hyphens_final_box=\box120
-\g__xetex_show_hyphens_word_box=\box121
+\l__xetex_show_hyphens_wrapping_box=\box120
+\l__xetex_show_hyphens_temp_box=\box121
+\l__xetex_show_hyphens_final_box=\box122
+\g__xetex_show_hyphens_word_box=\box123
 )
-\g__fontspec_family_HoeflerText_int=\count548
+\g__fontspec_family_HoeflerText_int=\count550
 \symDigits:m:n=\mathgroup7
 \symLatin:m:n=\mathgroup8
 \symLatin:m:it=\mathgroup9
@@ -3353,7 +3392,7 @@ File: t3cmr.fd 2001/12/31 TIPA font definitions
 LaTeX Font Info:    ... okay on input line 131.
 
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box122
+\AtBeginShipoutBox=\box124
 Package hyperref Info: Link coloring ON on input line 131.
 LaTeX Info: Redefining \ref on input line 131.
 LaTeX Info: Redefining \pageref on input line 131.
@@ -3368,21 +3407,21 @@ LaTeX Info: Redefining \Ref on input line 131.
 (./pythontex-files-ThesisRomainBrault/ThesisRomainBrault.pytxmcr)
 Package newfloat Info: New float `listing' with options `fileext=lopytx' on inp
 ut line 131.
-\c@listing=\count549
-\newfloat@ftype=\count550
+\c@listing=\count551
+\newfloat@ftype=\count552
 Package newfloat Info: float type `listing'=8 on input line 131.
 Package newfloat Info: \listoflistings is already defined on input line 131.
-\c@lopytxdepth=\count551
+\c@lopytxdepth=\count553
 Package tocbasic Info: setting babel extension for `lopytx' on input line 131.
 
 ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 131.
-\c@minilofdepth=\count552
-\c@minilotdepth=\count553
-\c@partlofdepth=\count554
-\c@partlotdepth=\count555
-\c@sectlofdepth=\count556
-\c@sectlotdepth=\count557
+\c@minilofdepth=\count554
+\c@minilotdepth=\count555
+\c@partlofdepth=\count556
+\c@partlotdepth=\count557
+\c@sectlofdepth=\count558
+\c@sectlotdepth=\count559
 Package minitoc(hints) Info: I0049
 (minitoc(hints))             ==> You requested the hints option. 
 (minitoc(hints))             Some hints are eventually given below.
@@ -3429,14 +3468,22 @@ Package biblatex Info: Data encoding 'ascii' specified.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'ThesisRomainBrault.bbl' found.
-(./ThesisRomainBrault.bbl)
+(./ThesisRomainBrault.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                Vapnik1998
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 131.
 Package biblatex Info: Reference segment=0 on input line 131.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count558
+\c@lstlisting=\count560
 Package scrhack Info: undefining \float@addtolists on input line 131.
 
 Package pgfplots notification 'compat/show suggested version=true': document ha
@@ -3580,7 +3627,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 6.25204pt on input line 75.
 
-Overfull \hbox (14.89125pt too wide) in paragraph at lines 84--99
+Overfull \hbox (14.89125pt too wide) in paragraph at lines 84--105
  [][] []
  []
 
@@ -3590,7 +3637,7 @@ Package typearea Warning: \DefaultMargins used at group level 3.
 (typearea)                environments, math mode, boxes, etc. may result in
 (typearea)                many type setting problems.
 (typearea)                You should move the command \DefaultMargins
-(typearea)                outside all groups on input line 106.
+(typearea)                outside all groups on input line 112.
 
 
 Overfull \vbox (44.15373pt too high) has occurred while \output is active []
@@ -3770,19 +3817,19 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 19
 
 
 ]
-Overfull \hbox (21.88655pt too wide) in paragraph at lines 229--229
+Overfull \hbox (21.88655pt too wide) in paragraph at lines 231--231
  [][] []\EU1/HoeflerText(2)/m/n/10.95 Application on decomposable, curl-free an
 d divergence- 
  []
 
 
-Overfull \hbox (6.0702pt too wide) in paragraph at lines 317--317
+Overfull \hbox (6.0702pt too wide) in paragraph at lines 319--319
  [][] []\EU1/HoeflerText(2)/m/n/10.95 Generalization by bounding the function s
 pace com- 
  []
 
 [12]
-Overfull \hbox (2.07156pt too wide) in paragraph at lines 389--389
+Overfull \hbox (2.07156pt too wide) in paragraph at lines 391--391
  [][] []\EU1/HoeflerText(2)/m/n/10.95 Proof of the error bound with high probab
 ility of the ORFF 
  []
@@ -3800,25 +3847,25 @@ ility of the ORFF
 Package tocbasic Info: character protrusion at lof deactivated on input line 44
 .
  (./ThesisRomainBrault.lof
-Overfull \hbox (1.11612pt too wide) in paragraph at lines 31--31
+Overfull \hbox (1.11612pt too wide) in paragraph at lines 33--33
  [][] []\EU1/HoeflerText(2)/m/n/10.95 Different realizations of a Gaussian kern
 el approx- 
  []
 
 
-Overfull \hbox (3.0826pt too wide) in paragraph at lines 59--59
+Overfull \hbox (3.0826pt too wide) in paragraph at lines 61--61
  [][] []\EU1/HoeflerText(2)/m/n/10.95 Prediction Error in percent on the MNIST 
 dataset 
  []
 
 
-Overfull \hbox (8.2984pt too wide) in paragraph at lines 63--63
+Overfull \hbox (8.2984pt too wide) in paragraph at lines 65--65
  [][] []\EU1/HoeflerText(2)/m/n/10.95 Decomposable kernel on the third dataset:
  $[][]$ score 
  []
 
 
-Overfull \hbox (8.2984pt too wide) in paragraph at lines 65--65
+Overfull \hbox (8.2984pt too wide) in paragraph at lines 67--67
  [][] []\EU1/HoeflerText(2)/m/n/10.95 Decomposable kernel on the third dataset:
  $[][]$ score 
  []
@@ -3928,50 +3975,58 @@ nsistency of learning algorithm.
  []
 
 [5]
-\c@pytx@py@default@default=\count559
+\c@pytx@py@default@default=\count561
  (./pythontex-files-ThesisRomainBrault/py_default_default_0.stdout
 (./gfx/nested_circle.pgf)) [6] [7]
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
-t line 217.
+t line 219.
+ [8]
+File: ./gfx/input.eps Graphic file (type eps)
+ <./gfx/input.eps>
+File: ./gfx/feature.eps Graphic file (type eps)
+ <./gfx/feature.eps>
+Overfull \hbox (9.04233pt too wide) in paragraph at lines 298--309
+ [][] 
+ []
 
-Overfull \hbox (7.10596pt too wide) in paragraph at lines 227--227
+
+Overfull \hbox (7.10596pt too wide) in paragraph at lines 332--332
 |[]\EU1/HoeflerText(2)/m/sc/10.95 h i s -t o r y a n d s t a t e o f t h e a r 
 t o f l a r g e s c a l e l e a r n -i n g
  []
 
-
-Overfull \hbox (1.5609pt too wide) in paragraph at lines 263--266
+[9] [10]
+Overfull \hbox (2.44785pt too wide) in paragraph at lines 365--368
 []\EU1/HoeflerText(2)/bx/n/10.95 (Bochner’s theorem). [][][] \EU1/HoeflerText(2
 )/m/it/10.95 Any continuous positive definite com-
  []
 
-[8]
 Package hyperref Info: bookmark level for unknown corollary defaults to 0 on in
-put line 271.
+put line 373.
 
-Overfull \hbox (13.0481pt too wide) in paragraph at lines 290--296
+Overfull \hbox (13.0481pt too wide) in paragraph at lines 392--398
 \EU1/HoeflerText(2)/m/n/10.95 Eventuallt, if $[]$ is real valued we only write 
 the real part, $[]\OT1/pplx/m/n/10.95 ([]\OML/zplm/m/it/10.95 ; []\OT1/pplx/m/n
 /10.95 )$ \EU1/HoeflerText(2)/m/n/10.95 = $\OT1/zplm/b/n/10.95 E[]\OT1/pplx/m/n
 /10.95 [[][]\OML/zplm/m/it/10.95 !; [] \OMS/zplm/m/n/10.95 ^^@
  []
 
-)
+
 Overfull \hbox (48.34877pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[9] [10
-
-
-
-]
+[11]) [12]
 chapter 2.
 \openout7 = `ThesisRomainBrault.mtc'.
 
 \openout7 = `ThesisRomainBrault.mtc'.
 
-(./ThesisRomainBrault.mtc2) [11]
+(./ThesisRomainBrault.mtc2) [13
+
+
+
+]
 \openout2 = `Parts/Introduction/Background.aux'.
 
  (./Parts/Introduction/Background.tex
@@ -3979,7 +4034,7 @@ LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 11.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 11.
- [12
+ [14
 
 ]
 Overfull \hbox (3.85245pt too wide) in paragraph at lines 86--97
@@ -3987,12 +4042,12 @@ Overfull \hbox (3.85245pt too wide) in paragraph at lines 86--97
 ts and countable unions.
  []
 
-[13]
+[15]
 Package microtype Info: Loading generic settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [14]
+ [16]
 
 LaTeX Warning: Float too large for page by 25.43065pt on input line 317.
 
@@ -4019,10 +4074,10 @@ Text(2)/m/n/10.95 is a Hilbert space, []i.e. $\OML/zplm/m/it/10.95 ^^[\OT1/pplx
 
 LaTeX Warning: Float too large for page by 26.6442pt on input line 387.
 
-[15]
+[17]
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
 nput line 395.
- [16] [17] [18]
+ [18] [19] [20]
 Overfull \hbox (1.38771pt too wide) in paragraph at lines 492--498
 []\EU1/HoeflerText(2)/bx/n/10.95 (Even and odd operator-valued function on a []
 \EU1/HoeflerText(2)/bx/sc/10.95 LCA
@@ -4030,7 +4085,7 @@ Overfull \hbox (1.38771pt too wide) in paragraph at lines 492--498
 
 Package hyperref Info: bookmark level for unknown proof defaults to 0 on input 
 line 511.
-[19]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 530--530
 \OT1/pplx/m/n/10.95 = |  \OMS/zplm/m/n/10.95 ^^@[]\OT1/pplx/m/n/10.95 ([])\OML/
 zplm/m/it/10.95 :|$ 
@@ -4070,13 +4125,13 @@ zplm/m/it/10.95 :|$
 Underfull \vbox (badness 10000) detected at line 582
  []
 
-[20]
+[22]
 Missing character: There is no c in font fplmbb!
 Missing character: There is no c in font fplmbb!
- [21]
+ [23]
 Package hyperref Info: bookmark level for unknown proposition defaults to 0 on 
 input line 671.
- [22]
+ [24]
 Underfull \hbox (badness 5578) in paragraph at lines 776--776
 $[][]\OMS/zplm/m/n/10.95 F [][][]| \OT1/pplx/m/n/10.95 (\OML/zplm/m/it/10.95 !\
 OT1/pplx/m/n/10.95 ) = [][] [][]([])[][]([]) 
@@ -4136,14 +4191,14 @@ $[][]\OMS/zplm/m/n/10.95 F [][][][] \OT1/pplx/m/n/10.95 = [][] [][]([])[][]([])
  
  []
 
-[23]
+[25]
 Overfull \hbox (4.45432pt too wide) in paragraph at lines 811--815
 []\EU1/HoeflerText(2)/bx/n/10.95 ([]Fourier Transform injectivity). []\EU1/Hoef
 lerText(2)/m/it/10.95 Given $\OML/zplm/m/it/10.95 ^^V$ \EU1/HoeflerText(2)/m/it
 /10.95 and $\OML/zplm/m/it/10.95 ^^W$ \EU1/HoeflerText(2)/m/it/10.95 two mea-
  []
 
-[24] [25]
+[26] [27]
 Overfull \hbox (9.8914pt too wide) in paragraph at lines 929--935
 \EU1/HoeflerText(2)/m/n/10.95 Throughout this section we show that a []\EU1/Hoe
 flerText(2)/m/sc/10.95 VV-RKHS \EU1/HoeflerText(2)/m/n/10.95 defines a unique p
@@ -4156,7 +4211,7 @@ Overfull \hbox (0.12114pt too wide) in paragraph at lines 936--942
 ting
  []
 
-[26] [27]
+[28] [29]
 Overfull \hbox (3.27048pt too wide) in paragraph at lines 1035--1042
 \EU1/HoeflerText(2)/m/n/10.95 This comes from the fact that $[][][] \OT1/pplx/m
 /n/10.95 = [][][] = []$
@@ -4169,10 +4224,10 @@ Overfull \hbox (0.78012pt too wide) in paragraph at lines 1045--1050
  :
  []
 
-[28] [29] [30]
+[30] [31] [32]
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
 line 1293.
- [31]
+ [33]
 Overfull \hbox (6.21213pt too wide) in paragraph at lines 1317--1322
 []\EU1/HoeflerText(2)/bx/n/10.95 (Separable []\EU1/HoeflerText(2)/bx/sc/10.95 V
 V-RKHS \EU1/HoeflerText(2)/bx/n/10.95 for $\OMS/zplm/b/n/10.95 Y$\EU1/HoeflerTe
@@ -4188,7 +4243,7 @@ OMS/zplm/m/n/10.95 H[] ^^Z C\OT1/pplx/m/n/10.95 (\OMS/zplm/m/n/10.95 X\OT1/pplx
 t/10.95 .
  []
 
-[32] [33]
+[34] [35]
 Overfull \hbox (13.46559pt too wide) in paragraph at lines 1510--1515
 []\EU1/HoeflerText(2)/bx/n/10.95 (Kernels and Regularizers [[][][]4[][]]). [][]
 [] \EU1/HoeflerText(2)/m/it/10.95 Let $[]\OT1/pplx/m/n/10.95 ([]\OML/zplm/m/it/
@@ -4206,7 +4261,7 @@ Overfull \hbox (0.5109pt too wide) in paragraph at lines 1525--1548
 oeflerText(2)/m/n/10.95 learning, for which
  []
 
-[34] [35] [36]
+[36] [37] [38]
 Overfull \hbox (0.14949pt too wide) in paragraph at lines 1613--1619
 \EU1/HoeflerText(2)/m/n/10.95 In [][]Kadri et al. [[][]68[][]], the author stud
 ied the case where $\OMS/zplm/m/n/10.95 T \OT1/pplx/m/n/10.95 = \U/fplmbb/m/n/1
@@ -4214,20 +4269,20 @@ ied the case where $\OMS/zplm/m/n/10.95 T \OT1/pplx/m/n/10.95 = \U/fplmbb/m/n/1
 m/m/it/10.95 ; []\OT1/pplx/m/n/10.95 ) =
  []
 
-) [37]) [38
+) [39]) [40
 
 
 
-] [39
+] [41
 
 
-] [40] (./Parts/Contributions.tex
+] [42] (./Parts/Contributions.tex
 chapter 3.
 \openout7 = `ThesisRomainBrault.mtc'.
 
 \openout7 = `ThesisRomainBrault.mtc'.
 
-(./ThesisRomainBrault.mtc3) [41
+(./ThesisRomainBrault.mtc3) [43
 
 
 ]
@@ -4245,7 +4300,7 @@ Overfull \hbox (8.91043pt too wide) in paragraph at lines 16--28
  Operator Random Fourier
  []
 
-[42
+[44
 
 ]
 Overfull \hbox (2.80263pt too wide) in paragraph at lines 109--119
@@ -4255,7 +4310,7 @@ uch that $[][][]\OML/zplm/m/it/10.95 ; []\OT1/pplx/m/n/10.95 (\OML/zplm/m/it/10
 OMS/zplm/m/n/10.95 X\OML/zplm/m/it/10.95 ; []\OT1/pplx/m/n/10.95 )$
  []
 
-[43]
+[45]
 Overfull \hbox (6.50084pt too wide) in paragraph at lines 154--159
 []\EU1/HoeflerText(2)/bx/n/10.95 ([][]Carmeli et al. [[][]32[][]]). [][][] \EU1
 /HoeflerText(2)/m/it/10.95 Let $[]$ be a shift-invariant $\OMS/zplm/m/n/10.95 Y
@@ -4406,7 +4461,7 @@ $[] \OT1/pplx/m/n/10.95 = [][] [][][][]\OML/zplm/m/it/10.95 ; []\OT1/pplx/m/n/1
 5 !\OT1/pplx/m/n/10.95 ) 
  []
 
-[44]
+[46]
 Underfull \hbox (badness 5548) in paragraph at lines 257--257
 \OT1/pplx/m/n/10.95 = [][]\OML/zplm/m/it/10.95 ; [] []![]| [][][]:|$ 
  []
@@ -4436,7 +4491,7 @@ Underfull \hbox (badness 2875) detected at line 257
 \OT1/pplx/m/n/10.95 = [][]\OML/zplm/m/it/10.95 ; [] []![]| [][][]:|$ 
  []
 
-[45]
+[47]
 Overfull \hbox (8.61028pt too wide) in paragraph at lines 268--273
 \OMS/zplm/m/n/10.95 F[]R[]$\EU1/HoeflerText(2)/m/it/10.95 . By injectivity of t
 he []Fourier Transform, $[][]$ is even. Since $[][]\OT1/pplx/m/n/10.95 (\OML/zp
@@ -4449,7 +4504,7 @@ Overfull \hbox (10.5308pt too wide) in paragraph at lines 286--293
 oeflerText(2)/bx/n/10.95 -Mercer kernel spectral decom-
  []
 
-[46]
+[48]
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
  line 366.
 
@@ -4464,7 +4519,7 @@ Overfull \hbox (1.21236pt too wide) in paragraph at lines 391--396
 Y$\EU1/HoeflerText(2)/bx/n/10.95 -Mercer kernel spec-
  []
 
-[47]
+[49]
 Underfull \hbox (badness 1199) in paragraph at lines 438--438
 $[][][][][]\OML/zplm/m/it/10.95 ; []\OT1/pplx/m/n/10.95 (\OML/zplm/m/it/10.95 !
 \OT1/pplx/m/n/10.95 )[][][][][](\OML/zplm/m/it/10.95 !\OT1/pplx/m/n/10.95 ) = [
@@ -4530,7 +4585,7 @@ $[] \OT1/pplx/m/n/10.95 = [][] [][][][]\OML/zplm/m/it/10.95 ; []\OT1/pplx/m/n/1
 5 !\OT1/pplx/m/n/10.95 ) 
  []
 
-[48] [49]
+[50] [51]
 Underfull \hbox (badness 3965) in paragraph at lines 550--550
 $[][]| \OT1/pplx/m/n/10.95 = \OMS/zplm/m/n/10.95 F [][][]|[]| \OT1/pplx/m/n/10.
 95 (\OML/zplm/m/it/10.95 !\OT1/pplx/m/n/10.95 ) 
@@ -4599,7 +4654,7 @@ lerText(2)/m/sc/10.95 LCA \EU1/HoeflerText(2)/m/n/10.95 group $\OMS/zplm/m/n/10
 \OMS/zplm/m/n/10.95 1\OT1/pplx/m/n/10.95 )[]$\EU1/HoeflerText(2)/m/n/10.95 ,
  []
 
-[50]
+[52]
 Underfull \hbox (badness 1142) in paragraph at lines 666--666
 $[][]\OT1/pplx/m/n/10.95 (\OML/zplm/m/it/10.95 !\OT1/pplx/m/n/10.95 ) = \OMS/zp
 lm/m/n/10.95 F [][][][]| \OT1/pplx/m/n/10.95 (\OML/zplm/m/it/10.95 !\OT1/pplx/m
@@ -4640,14 +4695,14 @@ $[] \OT1/pplx/m/n/10.95 = \OMS/zplm/m/n/10.95 F [][][][]| \OT1/pplx/m/n/10.95 (
 \OML/zplm/m/it/10.95 !\OT1/pplx/m/n/10.95 )\OML/zplm/m/it/10.95 ^^@ 
  []
 
-[51] [52]
+[53] [54]
 Overfull \hbox (16.57234pt too wide) in paragraph at lines 747--754
 \EU1/HoeflerText(2)/m/n/10.95 Apply [][]proposition 3.5[][] to obtain the decom
 position $[][]\OT1/pplx/m/n/10.95 (\OML/zplm/m/it/10.95 !\OT1/pplx/m/n/10.95 ) 
 = \OML/zplm/m/it/10.95 !![][][][]$
  []
 
-[53] [54] [55]
+[55] [56] [57]
 Underfull \hbox (badness 10000) in paragraph at lines 969--969
 $[]\OT1/pplx/m/n/10.95 ([])[] = [] [][][]\OML/zplm/m/it/10.95 ; ![][][]\OT1/ppl
 x/m/n/10.95 (\OML/zplm/m/it/10.95 ![]\OT1/pplx/m/n/10.95 )[][][][] [] 
@@ -4722,26 +4777,26 @@ on $[]\OT1/pplx/m/n/10.95 ([])[] [] [][]\OML/zplm/m/it/10.95 ^^H[][] \OT1/pplx/
 m/n/10.95 =
  []
 
-[56]
-\c@pytx@py@not_mercer@default=\count560
+[58]
+\c@pytx@py@not_mercer@default=\count562
  (./pythontex-files-ThesisRomainBrault/py_default_default_1.stdout
 (./not_Mercer.pgf
 File: ./not_Mercer-img0.png Graphic file (type QTm)
- <use  "./not_Mercer-img0.png" >)) [57]
+ <use  "./not_Mercer-img0.png" >)) [59]
 Overfull \hbox (0.12964pt too wide) in paragraph at lines 1095--1107
 \EU1/HoeflerText(2)/m/n/10.95 We computed a reference function (black line) def
 ined as $\OT1/pplx/m/n/10.95 ([][]\OML/zplm/m/it/10.95 ; [][]\OT1/pplx/m/n/10.9
 5 )[] = []([][]) =
  []
 
-[58]
+[60]
 Overfull \hbox (11.41963pt too wide) in paragraph at lines 1116--1118
 []\EU1/HoeflerText(2)/bx/n/10.95 (Random Fourier feature operator). []\EU1/Hoef
 lerText(2)/m/it/10.95 Let $[] \OT1/pplx/m/n/10.95 = (\OML/zplm/m/it/10.95 ![]\O
 T1/pplx/m/n/10.95 )[] \OMS/zplm/m/n/10.95 2
  []
 
-[59] [60] [61] (./gfx/feature_relationship.tikz
+[61] [62] [63] (./gfx/feature_relationship.tikz
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 25.92514pt on input line 44.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
@@ -4754,7 +4809,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 21.61124pt on input line 44.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 15.0049pt on input line 44.
-) [62]
+) [64]
 Overfull \hbox (16.583pt too wide) in paragraph at lines 1415--1419
 \EU1/HoeflerText(2)/m/n/10.95 where $\OML/zplm/m/it/10.95 ![] [] [][]$ []\EU1/H
 oeflerText(2)/m/n/10.95 i.i.d. and $[]\OT1/pplx/m/n/10.95 (\OML/zplm/m/it/10.95
@@ -4769,7 +4824,7 @@ Overfull \hbox (2.39145pt too wide) in paragraph at lines 1435--1441
 tive
  []
 
-[63
+[65
 
 
 ]
@@ -4780,18 +4835,18 @@ x/m/n/10.95 (\OML/zplm/m/it/10.95 !\OT1/pplx/m/n/10.95 )[]| [] \OT1/zplm/b/n/10
 ] []([]\OML/zplm/m/it/10.95 ; []\OT1/pplx/m/n/10.95 )|$ 
  []
 
-[64] [65]
+[66] [67]
 Overfull \hbox (10.88788pt too wide) detected at line 1639
 [][] 
  []
 
-) [66]
+) [68]
 chapter 4.
 \openout7 = `ThesisRomainBrault.mtc'.
 
 \openout7 = `ThesisRomainBrault.mtc'.
 
-(./ThesisRomainBrault.mtc4) [67
+(./ThesisRomainBrault.mtc4) [69
 
 
 
@@ -4804,22 +4859,22 @@ Overfull \hbox (12.41655pt too wide) in paragraph at lines 3--3
 b -a -b i l -i t y o f t h e o r f f e s -t i -m a -
  []
 
-\c@pytx@py@approximation@default=\count561
+\c@pytx@py@approximation@default=\count563
 (./pythontex-files-ThesisRomainBrault/py_default_default_2.stdout
 (./approximation.pgf
 Package microtype Info: Loading generic settings for font family
 (microtype)             `lmss' (encoding: EU1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-)) [68
+)) [70
 
-] [69]
+] [71]
 Overfull \hbox (7.94682pt too wide) in paragraph at lines 113--119
 [][]\EU1/HoeflerText(2)/m/n/10.95 Rahimi and Recht [[][]110[][]] proved the uni
 form convergence of []Random Fourier
  []
 
-[70] [71]
+[72] [73]
 Overfull \hbox (8.09238pt too wide) in paragraph at lines 221--225
 []\EU1/HoeflerText(2)/bx/n/10.95 (Orlicz norm [[][][]145[][]]). []\EU1/HoeflerT
 ext(2)/m/it/10.95 Let $\OML/zplm/m/it/10.95   \OT1/pplx/m/n/10.95 : \U/fplmbb/m
@@ -4827,14 +4882,14 @@ ext(2)/m/it/10.95 Let $\OML/zplm/m/it/10.95   \OT1/pplx/m/n/10.95 : \U/fplmbb/m
 /m/it/10.95 be a non-decreasing
  []
 
-[72]
+[74]
 Overfull \hbox (14.6039pt too wide) in paragraph at lines 319--319
  \OMS/zplm/m/n/10.95 ^^T [][] [][][]| [][] []|$ 
  []
 
 Package hyperref Info: bookmark level for unknown sproof defaults to 0 on input
  line 325.
-[73]
+[75]
 Underfull \hbox (badness 10000) in paragraph at lines 399--399
 $[][] [] \OMS/zplm/m/n/10.95 ^^T [] 
  []
@@ -4884,12 +4939,12 @@ Underfull \hbox (badness 10000) detected at line 399
 $[] \OMS/zplm/m/n/10.95 ^^T [] 
  []
 
-[74]
+[76]
 Overfull \hbox (14.6039pt too wide) in paragraph at lines 501--501
  \OMS/zplm/m/n/10.95 ^^T [][] [][][]| [][] []|$ 
  []
 
-[75] [76] (./gfx/variance_dec.tikz
+[77] [78] (./gfx/variance_dec.tikz
 LaTeX Font Info:    Calculating math sizes for size <11.03967> on input line 14
 .
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
@@ -4922,7 +4977,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (./gfx/variance_dec.tikz) (./gfx/variance_dec.tikz) (./gfx/variance_curl.tikz)
 (./gfx/variance_curl.tikz) (./gfx/variance_curl.tikz) (./gfx/variance_curl.tikz
 ) (./gfx/variance_curl.tikz) (./gfx/variance_curl.tikz)
-(./gfx/variance_curl.tikz) [77]
+(./gfx/variance_curl.tikz) [79]
 Overfull \hbox (8.4184pt too wide) in paragraph at lines 652--655
 []\EU1/HoeflerText(2)/bx/n/10.95 (Skewed-multiplicative group). []\EU1/HoeflerT
 ext(2)/m/it/10.95 On the skewed multiplica-
@@ -4939,13 +4994,13 @@ EU1/HoeflerText(2)/m/n/10.95 thus $\OT1/zplm/b/n/10.95 E[]\OT1/pplx/m/n/10.95 [
 it/10.95 !\OT1/pplx/m/n/10.95 )] =
  []
 
-[78]
+[80]
 Overfull \hbox (4.89542pt too wide) in paragraph at lines 721--728
 \EU1/HoeflerText(2)/m/n/10.95 unbounded and infinite dimensional with the opera
 tor norm (Banach space)
  []
 
-) [79] [80
+) [81] [82
 
 
 
@@ -4955,7 +5010,7 @@ chapter 5.
 
 \openout7 = `ThesisRomainBrault.mtc'.
 
-(./ThesisRomainBrault.mtc5) [81]
+(./ThesisRomainBrault.mtc5) [83]
 \openout2 = `Parts/Contributions/Learning.aux'.
 
  (./Parts/Contributions/Learning.tex
@@ -4971,15 +5026,15 @@ in [][]equation \EU1/HoeflerText(2)/m/n/10.95 5.2[][] \EU1/HoeflerText(2)/m/it/
 10.95 where
  []
 
-[82
+[84
 
-] [83] [84] [85]
+] [85] [86] [87]
 Overfull \hbox (5.7678pt too wide) in paragraph at lines 284--290
 \EU1/HoeflerText(2)/m/n/10.95 The representer theorem show that minimizing a fu
 nctional in a []\EU1/HoeflerText(2)/m/sc/10.95 VV-RKHS
  []
 
-[86]
+[88]
 Underfull \hbox (badness 10000) in paragraph at lines 357--357
 $[] \OT1/pplx/m/n/10.95 = [] []( | \OMS/zplm/m/n/10.95 ^^A\OML/zplm/m/it/10.95 
 ; [][]\OT1/pplx/m/n/10.95 )[][][][] [] 
@@ -5045,7 +5100,7 @@ $[] \OT1/pplx/m/n/10.95 = [] []( | \OMS/zplm/m/n/10.95 ^^A\OML/zplm/m/it/10.95
 ; [][]\OT1/pplx/m/n/10.95 )[][][][] [] 
  []
 
-[87] [88]
+[89] [90]
 Underfull \hbox (badness 10000) in paragraph at lines 549--549
 $[]\OMS/zplm/m/n/10.95 r[]\OT1/pplx/m/n/10.95 ([] \OMS/zplm/m/n/10.95 ^^N []\OT
 1/pplx/m/n/10.95 )(\OML/zplm/m/it/10.95 ^^R\OT1/pplx/m/n/10.95 )\OML/zplm/m/it/
@@ -5121,7 +5176,7 @@ ML/zplm/m/it/10.95 ^^R\OT1/pplx/m/n/10.95 ))\OML/zplm/m/it/10.95 ; [][] []\OT1/
 pplx/m/n/10.95 (\OML/zplm/m/it/10.95 ^^R\OT1/pplx/m/n/10.95 )[][][] 
  []
 
-[89] [90] [91]
+[91] [92] [93]
 Overfull \hbox (10.88788pt too wide) detected at line 725
 [][] 
  []
@@ -5132,15 +5187,15 @@ Overfull \hbox (1.63339pt too wide) in paragraph at lines 726--736
 exity $[][] []$. Sup-
  []
 
-\c@pytx@py@representer@default=\count562
-\c@pytx@py@representer2@default=\count563
-[92] (./pythontex-files-ThesisRomainBrault/py_default_default_3.stdout
-(./representer.pgf)) [93]
+\c@pytx@py@representer@default=\count564
+\c@pytx@py@representer2@default=\count565
+[94] (./pythontex-files-ThesisRomainBrault/py_default_default_3.stdout
+(./representer.pgf)) [95]
 (./pythontex-files-ThesisRomainBrault/py_default_default_4.stdout
-(./representer2.pgf)) [94]
-\c@pytx@py@efficient_linop@default=\count564
-\c@pytx@py@efficient_linop@default@line=\count565
- [95
+(./representer2.pgf)) [96]
+\c@pytx@py@efficient_linop@default=\count566
+\c@pytx@py@efficient_linop@default@line=\count567
+ [97
 
 
 
@@ -5204,7 +5259,7 @@ Underfull \hbox (badness 10000) detected at line 909
 $[] \OT1/pplx/m/n/10.95 = [] [] [] [] []| 
  []
 
-[96] [97] [98]
+[98] [99] [100]
 Underfull \vbox (badness 10000) detected at line 1203
  []
 
@@ -5215,26 +5270,26 @@ Overfull \hbox (9.2808pt too wide) in paragraph at lines 1177--1205
  []
 
 (./pythontex-files-ThesisRomainBrault/py_default_default_5.stdout
-(./efficient_decomposable_gaussian.pgf)) [99]
+(./efficient_decomposable_gaussian.pgf)) [101]
 Underfull \vbox (badness 10000) detected at line 1238
  []
 
-[100] (./pythontex-files-ThesisRomainBrault/py_default_default_6.stdout
+[102] (./pythontex-files-ThesisRomainBrault/py_default_default_6.stdout
 (./efficient_curlfree_gaussian.pgf))
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 (./pythontex-files-ThesisRomainBrault/py_default_default_7.stdout
-(./efficient_divfree_gaussian.pgf)) [101
+(./efficient_divfree_gaussian.pgf)) [103
 
 
-] [102]
+] [104]
 Overfull \hbox (0.25723pt too wide) in paragraph at lines 1330--1336
 \EU1/HoeflerText(2)/m/n/10.95 To predict classes, we use the simplex coding met
 hod presented in [][]Mroueh
  []
 
-[103]
+[105]
 
 LaTeX Warning: Command \nobreakspace invalid in math mode on input line 1390.
 
@@ -5243,14 +5298,14 @@ LaTeX Warning: Command \nobreakspace invalid in math mode on input line 1390.
 LaTeX Warning: Reference `eq:grad_final' on page 1 undefined on input line 1422
 .
 
-(./gfx/Curl_ORFFvsOVK.pgf) [104] (./gfx/ORFFvsOVK.pgf)
-(./gfx/ORFFvsOVK_Dvariation.pgf) [105]
+(./gfx/Curl_ORFFvsOVK.pgf) [106] (./gfx/ORFFvsOVK.pgf)
+(./gfx/ORFFvsOVK_Dvariation.pgf) [107]
 Overfull \hbox (8.19229pt too wide) in paragraph at lines 1471--1486
 \EU1/HoeflerText(2)/m/n/10.95 task learning with operator-valued random Fourier
  features, and see whether
  []
 
-[106] [107]
+[108] [109]
 Overfull \hbox (1.63231pt too wide) in paragraph at lines 1548--1558
 \EU1/HoeflerText(2)/m/n/10.95 We introduced []\EU1/HoeflerText(2)/m/sc/10.95 OR
 FF\EU1/HoeflerText(2)/m/n/10.95 , a general and versatile framework for shift-i
@@ -5264,7 +5319,7 @@ cy for []\EU1/HoeflerText(2)/m/sc/10.95 ORFF\EU1/HoeflerText(2)/m/n/10.95 -regr
 ession.
  []
 
-) [108] [109] [110
+) [110] [111] [112
 
 
 
@@ -5284,12 +5339,18 @@ Overfull \hbox (7.92853pt too wide) in paragraph at lines 2--2
 e 
  []
 
-) [111]
+) [113]
 \openout2 = `Parts/Contributions/Generalization.aux'.
 
- (./Parts/Contributions/Generalization.tex [112
+ (./Parts/Contributions/Generalization.tex [114
 
-]
+] [115]
+Overfull \hbox (4.42613pt too wide) in paragraph at lines 127--134
+\EU1/HoeflerText(2)/m/it/10.95 tion by its capacity to be correlated to noise. 
+In generalization bounds, the Rademacher
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 146--146
 \OMS/zplm/m/n/10.95 ^^T [][]\OT1/zplm/b/n/10.95 E [][] [] \OML/zplm/m/it/10.95 
 ^^O[][][]\OT1/pplx/m/n/10.95 ([][]) [] [][]\OML/zplm/m/it/10.95 ; [] ; [][][]| 
@@ -5310,19 +5371,19 @@ Underfull \hbox (badness 10000) detected at line 146
 ;|$ 
  []
 
-[113] [114]
+[116]
 
 LaTeX Warning: Command \nobreakspace invalid in math mode on input line 208.
 
 Package hyperref Info: bookmark level for unknown assumption defaults to 0 on i
 nput line 212.
-[115]
+[117]
 Overfull \hbox (3.94495pt too wide) in paragraph at lines 286--289
 []\EU1/HoeflerText(2)/bx/n/10.95 (Uniform stability [][]Bousquet and Elisseeff 
 [[][]19[][], def-
  []
 
-[116] [117] [118] [119] [120]) [121] [122
+[118] [119] [120] [121] [122]) [123] [124
 
 
 
@@ -5332,11 +5393,11 @@ chapter 7.
 
 \openout7 = `ThesisRomainBrault.mtc'.
 
-(./ThesisRomainBrault.mtc7) [123]
+(./ThesisRomainBrault.mtc7) [125]
 \openout2 = `Parts/Contributions/Applications.aux'.
 
  (./Parts/Contributions/Applications.tex
-[124
+[126
 
 ]
 Overfull \hbox (9.97331pt too wide) in paragraph at lines 121--128
@@ -5344,7 +5405,7 @@ Overfull \hbox (9.97331pt too wide) in paragraph at lines 121--128
 oeflerText(2)/m/it/10.95 Let the func-
  []
 
-[125]
+[127]
 Overfull \hbox (6.38887pt too wide) in paragraph at lines 138--141
 [] [][] \EU1/HoeflerText(2)/m/n/10.95 While the model parameters $[][]$’s are e
 stimated under sparsity constraints
@@ -5357,26 +5418,26 @@ Overfull \hbox (23.16182pt too wide) in paragraph at lines 159--168
 nslation-
  []
 
-[126] [127] [128] [129] [130] [131]) [132]) [133
+[128] [129] [130] [131] [132] [133]) [134]) [135
 
 
 
 
 
-] [134]
+] [136]
 (./Parts/Final_words.tex
 chapter 8.
-[135
+[137
 
 
 ]
 \openout2 = `Parts/Final_words/Perspectives.aux'.
 
- (./Parts/Final_words/Perspectives.tex) [136
+ (./Parts/Final_words/Perspectives.tex) [138
 
 ]
 chapter 9.
-[137
+[139
 
 
 
@@ -5385,15 +5446,15 @@ chapter 9.
 
 
 No file Parts/Final_words/Conclusions.tex.
-) [138
+) [140
 
 
 
 
-] [139
+] [141
 
 
-] [140] (./Parts/Appendix.tex
+] [142] (./Parts/Appendix.tex
 chapter A.
 
 Overfull \hbox (2.84778pt too wide) in paragraph at lines 7--13
@@ -5405,7 +5466,7 @@ Overfull \hbox (2.84778pt too wide) in paragraph at lines 7--13
 
 \openout7 = `ThesisRomainBrault.mtc'.
 
-(./ThesisRomainBrault.mtc10) [141
+(./ThesisRomainBrault.mtc10) [143
 
 
 ]
@@ -5417,7 +5478,7 @@ Overfull \hbox (23.8814pt too wide) in paragraph at lines 4--4
 t h h i g h p r o b -a -b i l -i t y o f t h e
  []
 
-[142
+[144
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 77--77
@@ -5480,7 +5541,7 @@ Overfull \hbox (75.07863pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[143]
+[145]
 Underfull \hbox (badness 10000) in paragraph at lines 176--176
 $[][] [] \OMS/zplm/m/n/10.95 ^^T [] 
  []
@@ -5530,7 +5591,7 @@ Underfull \hbox (badness 10000) detected at line 176
 $[] \OMS/zplm/m/n/10.95 ^^T [] 
  []
 
-[144]
+[146]
 Overfull \hbox (4.83691pt too wide) in paragraph at lines 235--243
 []\EU1/HoeflerText(2)/bx/n/10.95 (Bounded non-commutative Bernstein with intrin
 -
@@ -5541,7 +5602,7 @@ Overfull \hbox (75.07863pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[145] [146]
+[147] [148]
 Overfull \hbox (17.17009pt too wide) in paragraph at lines 346--350
 \EU1/HoeflerText(2)/m/it/10.95 where $[]\OT1/pplx/m/n/10.95 ([]\OML/zplm/m/it/1
 0.95 ; []\OT1/pplx/m/n/10.95 ) = [] [] + [] []$ \EU1/HoeflerText(2)/m/it/10.95 
@@ -5554,12 +5615,12 @@ Overfull \hbox (75.07863pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[147] [148]
+[149] [150]
 Overfull \hbox (75.07863pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[149] [150]
+[151] [152]
 Overfull \hbox (14.6039pt too wide) in paragraph at lines 663--663
  \OMS/zplm/m/n/10.95 ^^T [][] [][][]| [][] []|$ 
  []
@@ -5623,7 +5684,7 @@ Overfull \hbox (75.07863pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[151]
+[153]
 Overfull \hbox (19.40776pt too wide) in paragraph at lines 758--758
  \OMS/zplm/m/n/10.95 ^^T [][][][][][] [] 
  []
@@ -5639,20 +5700,20 @@ Overfull \hbox (12.92542pt too wide) in paragraph at lines 767--769
 second bound for bounded
  []
 
-[152] [153]
+[154] [155]
 Overfull \hbox (5.40002pt too wide) in paragraph at lines 871--874
 \EU1/HoeflerText(2)/m/it/10.95 A trigonometric identity gives us $\OT1/pplx/m/n
 /10.95 ([][]\OML/zplm/m/it/10.95 ^^N; ![]\OT1/pplx/m/n/10.95 )[] = [] []$\EU1/H
 oeflerText(2)/m/it/10.95 . Thus 
  []
 
-) [154]
+) [156]
 chapter B.
 \openout7 = `ThesisRomainBrault.mtc'.
 
 \openout7 = `ThesisRomainBrault.mtc'.
 
-(./ThesisRomainBrault.mtc11) [155
+(./ThesisRomainBrault.mtc11) [157
 
 
 
@@ -5725,7 +5786,7 @@ $[] \OT1/pplx/m/n/10.95 = [] [] [] []([][]([][])\OML/zplm/m/it/10.95 ; [][]\OT1
 /pplx/m/n/10.95 ) |  + [][][][]| 
  []
 
-[156
+[158
 
 ]
 Underfull \hbox (badness 4967) in paragraph at lines 79--79
@@ -5831,7 +5892,7 @@ Underfull \hbox (badness 2277) detected at line 111
 $[] \OT1/pplx/m/n/10.95 = [] |  +[][][][]| 
  []
 
-[157]
+[159]
 Underfull \hbox (badness 10000) in paragraph at lines 197--197
 $[][][] \OT1/pplx/m/n/10.95 = [] [] [] [] [][][]([][])\OML/zplm/m/it/10.95 ; []
 [][]| |  \OT1/pplx/m/n/10.95 + [][][][]| 
@@ -5891,7 +5952,7 @@ $[] \OT1/pplx/m/n/10.95 = [] [] [] [] [][][]([][])\OML/zplm/m/it/10.95 ; [][][]
 | |  \OT1/pplx/m/n/10.95 + [][][][]| 
  []
 
-[158]
+[160]
 Underfull \hbox (badness 10000) in paragraph at lines 223--223
 $[] \OT1/pplx/m/n/10.95 = [] []( | \OMS/zplm/m/n/10.95 ^^A\OML/zplm/m/it/10.95 
 ; [][]\OT1/pplx/m/n/10.95 )[][][][] [] 
@@ -5957,7 +6018,7 @@ $[] \OT1/pplx/m/n/10.95 = [] []( | \OMS/zplm/m/n/10.95 ^^A\OML/zplm/m/it/10.95
 ; [][]\OT1/pplx/m/n/10.95 )[][][][] [] 
  []
 
-[159] [160]
+[161] [162]
 Underfull \hbox (badness 10000) in paragraph at lines 328--329
 [][]\EU1/HoeflerText(2)/m/n/9 Available at [][]$[][][][] [] [] [] [][][][][][][
 ][][][][][][] [] [][][] [] [][][][][][] [] [][][][][][][] [] [][][][][][][][][]
@@ -5965,27 +6026,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 328--329
  []
 
 File: ./gfx/representer_twomoons.eps Graphic file (type eps)
-<./gfx/representer_twomoons.eps> [161] [162]
+<./gfx/representer_twomoons.eps> [163] [164]
 File: ./gfx/nestedtwomoons.pdf Graphic file (type QTm)
 
-<use  "./gfx/nestedtwomoons.pdf" > [163]
+<use  "./gfx/nestedtwomoons.pdf" > [165]
 Overfull \hbox (10.88788pt too wide) detected at line 523
 [][] 
  []
 
-[164]
+[166]
 Overfull \hbox (1.62387pt too wide) in paragraph at lines 577--579
 \EU1/HoeflerText(2)/m/n/10.95 Then the equivalent kernelized solution $[][]$ of
  [][]theorem B.1[][] is given by [][]Minh,
  []
 
-) [165] [166]
+) [167] [168]
 chapter C.
 \openout7 = `ThesisRomainBrault.mtc'.
 
 \openout7 = `ThesisRomainBrault.mtc'.
 
-(./ThesisRomainBrault.mtc12) [167
+(./ThesisRomainBrault.mtc12) [169
 
 
 
@@ -5993,22 +6054,22 @@ chapter C.
 \openout2 = `Parts/Appendix/Code.aux'.
 
  (./Parts/Appendix/Code.tex
-\c@pytx@PYGpython@EXT:./src/not_mercer.py@defaultverb=\count566
- [168
+\c@pytx@PYGpython@EXT:./src/not_mercer.py@defaultverb=\count568
+ [170
 
 ]
-\c@pytx@PYGpython@EXT:./src/representer.py@defaultverb=\count567
- [169]
-[170]
+\c@pytx@PYGpython@EXT:./src/representer.py@defaultverb=\count569
+ [171]
+[172]
 \c@pytx@PYGpython@EXT:./src/efficient_decomposable_gaussian.py@defaultverb=\cou
-nt568
- [171] [172]
-\c@pytx@PYGpython@EXT:./src/efficient_curlfree_gaussian.py@defaultverb=\count56
-9
- [173] [174] [175]
-\c@pytx@PYGpython@EXT:./src/efficient_divfree_gaussian.py@defaultverb=\count570
+nt570
+ [173] [174]
+\c@pytx@PYGpython@EXT:./src/efficient_curlfree_gaussian.py@defaultverb=\count57
+1
+ [175] [176] [177]
+\c@pytx@PYGpython@EXT:./src/efficient_divfree_gaussian.py@defaultverb=\count572
 
- [176] [177] [178]) [179] [180
+ [178] [179] [180]) [181] [182
 
 
 
@@ -6018,11 +6079,11 @@ chapter D.
 
 \openout7 = `ThesisRomainBrault.mtc'.
 
-(./ThesisRomainBrault.mtc13) [181]
+(./ThesisRomainBrault.mtc13) [183]
 \openout2 = `Parts/Appendix/OneClassSplitting.aux'.
 
  (./Parts/Appendix/OneClassSplitting.tex
-[182
+[184
 
 ]
 Overfull \hbox (4.7106pt too wide) in paragraph at lines 144--185
@@ -6030,7 +6091,7 @@ Overfull \hbox (4.7106pt too wide) in paragraph at lines 144--185
 iously constructed, []e.g. us-
  []
 
-[183] [184] [185]
+[185] [186] [187]
 Overfull \hbox (2.42491pt too wide) in paragraph at lines 570--581
 \EU1/HoeflerText(2)/m/n/10.95 fined. In the naive approach below, it is defined
  as $[][] [] [][][]\OT1/pplx/m/n/10.95 (\OMS/zplm/m/n/10.95 X[]\OT1/pplx/m/n/10
@@ -6046,9 +6107,9 @@ e expectation $[][][]\OT1/pplx/m/n/10.95 (\OMS/zplm/m/n/10.95 X[]\OT1/pplx/m/n/
 plx/m/n/10.95 )$\EU1/HoeflerText(2)/m/n/10.95 ,
  []
 
-[186] [187] [188]
+[188] [189] [190]
 File: ./gfx/oneclassrf.png Graphic file (type QTm)
- <use  "./gfx/oneclassrf.png" > [189]
+ <use  "./gfx/oneclassrf.png" > [191]
 LaTeX Font Info:    Try loading font information for U+dsrom on input line 934.
 
 
@@ -6081,13 +6142,13 @@ LaTeX Warning: Command \textunderscore invalid in math mode on input line 1003.
 LaTeX Warning: Command \textunderscore invalid in math mode on input line 1005.
 
 
-[190] [191] [192] [193]
+[192] [193] [194] [195]
 Overfull \hbox (1.81113pt too wide) in paragraph at lines 1350--1358
 \EU1/HoeflerText(2)/m/n/10.95 (observed) inlier behavior and population quantit
 ies for the (non-observed)
  []
 
-[194
+[196
 
 
 ]
@@ -6134,7 +6195,7 @@ Underfull \hbox (badness 1502) detected at line 1479
 $[] \OT1/pplx/m/n/10.95 = [] 
  []
 
-[195]
+[197]
 Overfull \hbox (12.94456pt too wide) in paragraph at lines 1480--1494
 \EU1/HoeflerText(2)/m/n/10.95 In other words, instead of considering one genera
 l model One-Class-Model($[]$,
@@ -6162,13 +6223,13 @@ zplm/b/n/10.95 N\OT1/pplx/m/n/10.95 ([][])$ \EU1/HoeflerText(2)/m/it/10.95 conv
 erges in distribution to $\OMS/zplm/m/n/10.95 P []$
  []
 
-[196]
+[198]
 Overfull \hbox (15.15852pt too wide) in paragraph at lines 1728--1782
 \EU1/HoeflerText(2)/m/n/10.95 scoring function $[]\OT1/pplx/m/n/10.95 ([]) = []
  [][]$\EU1/HoeflerText(2)/m/n/10.95 , where
  []
 
-[197]
+[199]
 Overfull \hbox (2.89523pt too wide) in paragraph at lines 1949--1955
 \EU1/HoeflerText(2)/m/n/10.95 Overall we chose to train the different algorithm
 s with their (default) hyper-
@@ -6180,7 +6241,7 @@ Overfull \hbox (2.24461pt too wide) in paragraph at lines 1968--1973
 lerText(2)/m/n/10.95 , where bootstrap states whether samples are drawn
  []
 
-[198] [199] [200]
+[200] [201] [202]
 Overfull \hbox (16.32564pt too wide) in paragraph at lines 2066--2066
 |[]\EU1/HoeflerText(2)/m/sc/10.95 f u r -t h e r d e -t a i l s o n b e n c h -
 m a r k s a n d o u t -l i e r d e -t e c -t i o n
@@ -6301,7 +6362,7 @@ Overfull \hbox (26.44868pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[201]
+[203]
 Package pgfplots info on input line 2387: Overriding colorspace to rgb due to x
 color configuration.
 PGFPlots: reading {./resultsOCRF/results_unsupervised.txt}
@@ -6473,16 +6534,11 @@ File: ./gfx/bench_rf_roc_pr_supervised_factorized.png Graphic file (type QTm)
 File: ./gfx/bench_rf_roc_pr_unsupervised_factorized.png Graphic file (type QTm)
 
 
-<use  "./gfx/bench_rf_roc_pr_unsupervised_factorized.png" > [202]
+<use  "./gfx/bench_rf_roc_pr_unsupervised_factorized.png" > [204]
 
-LaTeX Warning: Text page 203 contains only floats.
+LaTeX Warning: Text page 205 contains only floats.
 
 
-Overfull \hbox (26.44868pt too wide) has occurred while \output is active
- []|[]|
- []
-
-[203] [204]
 Overfull \hbox (26.44868pt too wide) has occurred while \output is active
  []|[]|
  []
@@ -6492,15 +6548,20 @@ Overfull \hbox (26.44868pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[207] [208])
+[207] [208]
 Overfull \hbox (26.44868pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[209
+[209] [210])
+Overfull \hbox (26.44868pt too wide) has occurred while \output is active
+ []|[]|
+ []
+
+[211
 
 
-]) [210
+]) [212
 
 
 
@@ -6520,11 +6581,11 @@ Overfull \hbox (30.44437pt too wide) in paragraph at lines 21--21
 
 Package biblatex Warning: Setting 'defernumbers=true' recommended.
 
-[211
+[213
 
 
 
-] [212
+] [214
 
 
 ]
@@ -6534,7 +6595,7 @@ opean symposium on artificial neural networks (ESANN)\EU1/HoeflerText(2)/m/n/10
 .95 .
  []
 
-[213] [214] [215]
+[215] [216] [217]
 Overfull \hbox (16.26051pt too wide) in paragraph at lines 23--23
 []\EU1/HoeflerText(2)/m/n/10.95 N. Lim, Y. Senbabaoglu, G. Michailidis, and F. 
 d’Alché-Buc.  “  OKVAR-
@@ -6552,7 +6613,7 @@ Overfull \hbox (6.0451pt too wide) in paragraph at lines 23--23
  Machine Learning (ICML-
  []
 
-[216]
+[218]
 Overfull \hbox (2.33829pt too wide) in paragraph at lines 23--23
 \EU1/HoeflerText(2)/m/n/10.95 learning with simplex coding.”  In: \EU1/HoeflerT
 ext(2)/m/it/10.95 Advances in NIPS\EU1/HoeflerText(2)/m/n/10.95 .  2012,  pp. 2
@@ -6565,13 +6626,13 @@ Overfull \hbox (2.08118pt too wide) in paragraph at lines 23--23
 nequality and small-
  []
 
-[217]
+[219]
 Overfull \hbox (29.93703pt too wide) in paragraph at lines 23--23
 \EU1/HoeflerText(2)/m/n/10.95 ties of learning with random features.”  In: \EU1
 /HoeflerText(2)/m/it/10.95 arXiv preprint arXiv:1602.04474
  []
 
-[218]
+[220]
 Overfull \hbox (0.91135pt too wide) in paragraph at lines 23--23
 []\EU1/HoeflerText(2)/m/n/10.95 E. Senkene and A. Tempel’man.  “  Hilbert Space
 s of operator-valued
@@ -6583,7 +6644,7 @@ Overfull \hbox (7.43382pt too wide) in paragraph at lines 23--23
 Applications\EU1/HoeflerText(2)/m/n/10.95 .  Springer.
  []
 
-[219]
+[221]
 Overfull \hbox (1.84387pt too wide) in paragraph at lines 23--23
 \EU1/HoeflerText(2)/m/n/10.95 ces.”  In: \EU1/HoeflerText(2)/m/it/10.95 Foundat
 ions of computational mathematics \EU1/HoeflerText(2)/m/n/10.95 12.4 (2012), pp
@@ -6600,7 +6661,7 @@ p. 1820–
 
 Package biblatex Warning: Setting 'defernumbers=true' recommended.
 
-[220]
+[222]
 Overfull \hbox (2.66338pt too wide) in paragraph at lines 24--24
 []\EU1/HoeflerText(2)/m/n/10.95 G. Biau, L. Devroye, and G. Lugosi.  “  Consist
 ency of random forests
@@ -6612,10 +6673,10 @@ Overfull \hbox (4.61868pt too wide) in paragraph at lines 24--24
 HoeflerText(2)/m/n/10.95 .  Springer. 2004,  pp. 378–
  []
 
-[221
+[223
 
 
-] [222]
+] [224]
 Overfull \hbox (0.15959pt too wide) in paragraph at lines 24--24
 []\EU1/HoeflerText(2)/m/n/10.95 B. Schölkopf, J. Platt, J. Shawe-Taylor, A. Smo
 la, and R. Williamson.
@@ -6639,7 +6700,7 @@ Overfull \hbox (3.15596pt too wide) in paragraph at lines 24--24
 assifier\EU1/HoeflerText(2)/m/n/10.95 .  Tech. rep.  DTIC
  []
 
-[223]) [224]
+[225]) [226]
 \openout2 = `FrontBackMatter/Declaration.aux'.
 
  (./FrontBackMatter/Declaration.tex
@@ -6652,14 +6713,14 @@ Overfull \hbox (10.95pt too wide) in paragraph at lines 43--47
 [][] 
  []
 
-) [225
+) [227
 
 
 
 
 
 
-] [226
+] [228
 
 
 
@@ -6678,7 +6739,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--19
 
  []
 
-) [227
+) [229
 
 ]
 \openout2 = `FrontBackMatter/Blurb.aux'.
@@ -6721,7 +6782,7 @@ Overfull \hbox (189.33159pt too wide) in paragraph at lines 14--15
  []
 
 File: FrontBackMatter/../gfx/logoEgrey.png Graphic file (type QTm)
-<use  "FrontBackMatter/../gfx/logoEgrey.png" >) [228
+<use  "FrontBackMatter/../gfx/logoEgrey.png" >) [230
 
 
 
@@ -6981,6 +7042,16 @@ l3xdvipdfmx.def
   lscape.hak    2016/05/10 v3.20 KOMA-Script package (hacking package lscape)
   xspace.sty    2014/10/28 v1.13 Space after command names (DPC,MH)
 mparhack.sty    2005/04/17 v1.4 (T. Sgouros and S. Ulrich)
+adjustbox.sty    2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
+ xkeyval.sty    2014/12/03 v2.7a package option processing (HA)
+ xkeyval.tex    2014/12/03 v2.7a key=value parser (HA)
+ adjcalc.sty    2012/05/16 v1.1 Provides advanced setlength with multiple back-
+ends (calc, etex, pgfmath)
+trimclip.sty    2012/05/16 v1.0 Trim and clip general TeX material
+collectbox.sty    2012/05/17 v0.4b Collect macro arguments as boxes
+tc-xetex.def    2012/05/13 v1.0 Clipping driver for xetex
+ifoddpage.sty    2016/04/23 v1.1 Conditionals for odd/even page detection
+varwidth.sty    2009/03/30 ver 0.92;  Variable-width minipages
     tikz.sty    2015/08/07 v3.0.1a (rcs-revision 1.151)
      pgf.sty    2015/08/07 v3.0.1a (rcs-revision 1.15)
   pgfrcs.sty    2015/08/07 v3.0.1a (rcs-revision 1.31)
@@ -7087,8 +7158,6 @@ xunicode.sty    2011/09/09 v0.981 provides access to latin accents and many oth
 er characters in Unicode lower plane
  eu1lmss.fd    2009/10/30 v1.6 Font defs for Latin Modern
 fontspec.cfg
- xkeyval.sty    2014/12/03 v2.7a package option processing (HA)
- xkeyval.tex    2014/12/03 v2.7a key=value parser (HA)
  xltxtra.sty    2016/01/21 v0.6 Improvements for the "XeLaTeX" format
 realscripts.sty    2016/02/13 v0.3d Access OpenType subscripts and superscripts
 
@@ -7129,6 +7198,8 @@ Parts/Introduction/Motivations.tex
 ./gfx/infinite_monkey.jpg
 pythontex-files-ThesisRomainBrault/py_default_default_0.stdout
 ./gfx/nested_circle.pgf
+./gfx/input.eps
+./gfx/feature.eps
 Parts/Introduction/Background.tex
 ./gfx/curl_field.eps
 ./gfx/div_field.eps
@@ -7228,12 +7299,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 263.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 86602 strings out of 493591
- 1858424 string characters out of 6143546
- 3829555 words of memory out of 5000000
- 88116 multiletter control sequences out of 15000+600000
+ 87166 strings out of 493591
+ 1867855 string characters out of 6143546
+ 3846684 words of memory out of 5000000
+ 88652 multiletter control sequences out of 15000+600000
  72082 words of font info for 350 fonts, out of 8000000 for 9000
  1352 hyphenation exceptions out of 8191
- 86i,23n,112p,10493b,19861s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,23n,122p,10493b,19711s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ThesisRomainBrault.pdf (248 pages).
+Output written on ThesisRomainBrault.pdf (250 pages).

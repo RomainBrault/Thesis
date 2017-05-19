@@ -3,10 +3,10 @@
 %------------------------------------------------------------------------------
 \section{Generalization bound}
 \label{sec:generalization_bound}
-In this section are interested in finding a funcion
+In this section, we are interested in finding a function
 $f_*:\mathcal{X}\to\mathcal{Y}$, where $\mathcal{X}$ is a Polish space and
 $\mathcal{Y}$ a separable Hilbert space such that for all $x_i$ in
-$\mathcal{X}$ and all $y_i$ in $\mathcal{Y}$ that minimize a criterion. In
+$\mathcal{X}$ and all $y_i$ in $\mathcal{Y}$ that minimizes a criterion. In
 statistical supervised learning, we consider a training set sequence
 $\seq{s}=(x_i,y_i)_{i=1}^N\in(\mathcal{X}\times\mathcal{Y})^N$,
 $N\in\mathbb{N^*}$ drawn \acs{iid}~from an unknown probability law
@@ -19,15 +19,14 @@ from a latent probability law $\probability$,
     \risk{f}=\int_{\mathcal{X}\times\mathcal{Y}}L(x,f,y)d\probability(x,y)
     \hiderel{=}\int_{\mathcal{X}\times\mathcal{Y}}c(f(x), y)d\probability(x,y)
 \end{dmath*}
-Thus given a class of function $\mathcal{F}$, the goal of a learning algorithm
-is to find an optimal model $f_*$ that minimize the true risk. Namely
+Thus given a class of functions $\mathcal{F}$, the goal of a learning algorithm
+is to find an optimal model $f_*$ that minimizes the true risk. Namely
 \begin{dmath*}
     f_* = \argmin_{f\in\mathcal{F}} \risk{f}
     \hiderel{=}\argmin_{f\in\mathcal{F}}\int_{\mathcal{X} \times
     \mathcal{Y}}c(f(x), y)d\probability(x,y).
 \end{dmath*}
-Since in practice we do not have access to the probability $\probability$ of
-the points in the dataset, we define its empirical counterpart as the empirical
+Since in practice we do not have access to the joint probability law of (X,Y), we define its empirical counterpart as the empirical
 mean estimate, where the sequence $\seq{s}=(x_i,y_i)_{i=1}^N$ is made of
 $\mathcal{X}$-valued random vectors drawn \acs{iid}~from some law
 $\probability$.
@@ -38,21 +37,22 @@ The empirical risk then reads
     \riskemp{f, \seq{s}}=\frac{1}{N}\sum_{i=1}^Nc(f(x_i),y_i) \condition{$(x_i
     , y_i)\sim \probability$ \acs{iid}.}
 \end{dmath*}
-As a result in practice we seek a function $f_{\seq{s}}$ such that
+As a result, in practice we seek a function $f_{\seq{s}}$ such that
 \begin{dmath}
     \label{eq:argmin_empirical}
     f_{\seq{s}} = \argmin_{f\in\mathcal{F}} \riskemp{f,\seq{s}} \hiderel{=}
     \argmin_{f\in\mathcal{F}}\frac{1}{N}\sum_{i=1}^Nc\left(f(x_i), y_i\right).
 \end{dmath}
-The basic requirement for any learning algorithm is generalization: the empir-
+The basic requirement for any learning algorithm is the generalization property: the empir-
 ical error must be a good proxy of the expected error, that is the difference
-between the two must be \say{small}. \acs{ie} the goal of a generalization
-bound is to study, for any $f\in\mathcal{F}$ the difference between $\risk{f}$
-and $\risk{f,\seq{s}}$. That is quantifying the impact of having a limited
-number of observations and not knowing their latent distribution. Also,
-the space of function $\mathcal{F}$ is generally too large to obtain a
-generalization bound. To overcome this difficulty it is common to add a
-regularizer to maintain the solution $f_{\seq{s}}$ of
+between the two must be \say{small} when $N$ is large. A generalization
+bound allows to study, for any $f\in\mathcal{F}$ the difference between its true risk $\risk{f}$
+and its empirical risk, $\risk{f,\seq{s}}$. This quantifies the impact of having a limited
+number of observations. Generalization (upper) bounds \cite{Vapnik1998} involve two components: one being the empirical risk and the other depends on the dataset size as well as some capacity notion that reflects the richness of the family of functions $\mathcal{F}$ considered. First generalization bounds proved by Vapnik and Chervonenkis involve the dimension of Vapnik-Chervonenkis dimension of $\mathcal{F}$.
+In practise, generalization bounds are usually not enough tight to provide direct recommendations for choosing the appropriate family of functions to work with when $N$ is fixed.
+However as the bias-variance dilemna, it suggests that when learning a function from a finite dataset,  it is necessary to control the richness of the functions family $\mathcal{F}$. 
+In practise, 
+a regularizer is added to the data-fitting term in order to maintain the solution $f_{\seq{s}}$ of
 \cref{eq:argmin_empirical} in a ball of $\mathcal{F}$.  As a result if
 $\mathcal{F}$ is a Banach space, it is common to find $f_{\seq{s}}$ such that
 \begin{dmath*}
@@ -99,9 +99,9 @@ $\tildeK{\omega}$).
 \end{proposition}
 \begin{proof}
     This proof is due to \citet{maurer2016vector} generalizing the work of
-    \citet[section 4.3]{bartlett2002rademacher} and we do not claim any
+    \citet[section 4.3]{bartlett2002rademacher}: we do not claim any
     originality for this proof. First let us introduce the notion of Rademacher
-    complexity of a class of function $\mathcal{F}$. We recall that then
+    complexity of a class of function $\mathcal{F}$. We recall that the
     probability mass function of a uniformly distributed Rademacher random
     variable is given for any $k\in\Set{-1,1}$ by
     \begin{dmath*}
@@ -124,9 +124,9 @@ $\tildeK{\omega}$).
         \end{dmath*}
         is called Rademacher complexity of the class $\mathcal{F}$.
     \end{definition}
-    In a few words the Rademacher complexity measure the richness of a class a
+    In a few words the Rademacher complexity measures the richness of a class a
     function by its capacity to be correlated to noise. In generalization
-    bounds the Rademacher complexity of a class of function often involves a
+    bounds, the Rademacher complexity of a class of function often involves a
     composition between a target function to be learn and a cost function, part
     of the risk we want to minimize. The idea is to bound the Rademacher
     complexity with a term that does not depends on the cost function, but only
@@ -134,8 +134,8 @@ $\tildeK{\omega}$).
     \begin{proposition}[\citet{maurer2016vector}]
         \label{pr:radswap}
         Let $\mathcal{X}$ be any set, $x_1, \hdots, x_N$ in $\mathcal{X}$, let
-        $\mathcal{F}$ be a class of function $f:~\mathcal{X}\to\mathcal{Y}$ and
-        $h_i:~\mathcal{Y}\to\mathbb{R}$ be a $L$-Lipschitz function, where
+        $\mathcal{F}$ be a class of function $f:~\mathcal{X}\to\mathcal{Y}$ and for i=1, \ldots, N, 
+        each function $h_i:~\mathcal{Y}\to\mathbb{R}$ be a $L$-Lipschitz function, where
         $\mathcal{Y}$ is a separable Hilbert space endowed with
         euclidean inner product. Then
         \begin{dmath*}
@@ -147,14 +147,14 @@ $\tildeK{\omega}$).
         where $\epsilon_{ik}$ is a doubly indexed independent Rademacher
         sequence and $f_k(x_i)$ is the $k$-th component of $f(x_i)$.
     \end{proposition}
-    From now on we consider functions $f\in\mathcal{H}_K$ a \acl{vv-RKHS}. Then
+    From now on, we consider functions $f\in\mathcal{H}_K$ a \acl{vv-RKHS}. Then
     there exists an induced feature-map $\Phi:~\mathcal{X}\to
     \mathcal{L}(\mathcal{Y}, \mathcal{H})$ such that for all $y,
     y'\in\mathcal{Y}$ the kernel is given by
     \begin{dmath*}
         \inner{y, K(x,z)y'} = \inner{\Phi_xy, \Phi_zy'}.
     \end{dmath*}
-    We say that the feature space $\mathcal{H}$ is embed into the RKHS
+    We say that the feature space $\mathcal{H}$ is embedded into the RKHS
     $\mathcal{H}_K$ by means of the \emph{feature operator}
     $(W\theta)(x)\colonequals(\Phi_x^*\theta)$. Indeed $W$ defines a partial
     isometry between $\mathcal{H}$ and $\mathcal{H}_K$. Suppose that
@@ -202,7 +202,7 @@ $\tildeK{\omega}$).
             C\sqrt{\frac{8\ln(2/\delta)}{N}}
         \end{equation}
     \end{theorem}
-    Conclude by plugin \cref{eq:ker_bound} in \cref{th:gen_rad_bound}.
+    Conclude by pluging \cref{eq:ker_bound} in \cref{th:gen_rad_bound}.
 \end{proof}
 As an example, let us consider \cref{eq:learning_rkhs}, which is a solution of
 the regularized empirical risk, and $\cref{alg:close_form}$ when $D\to\infty$.
@@ -243,7 +243,7 @@ $\norm{f}_{\mathcal{H}_K}\le \sqrt{\frac{2}{\lambda}}\sigma_y$, where
     \frac{1}{N}\sum_{i=1}^N\norm{y_i}_{\mathcal{Y}}^2 \le \sigma_y^2
     \hiderel{\le} C^2.
 \end{dmath*}
-Thus we immediatly see that it is possible to choose
+Thus we straight away see that it is possible to choose
 $B=\sqrt{\frac{2}{\lambda}} C$. Let $\kappa = \norm{K_e(e)}_{\mathcal{Y},
 \mathcal{Y}}$ The Lipschitz constant of the least square loss
 $c(f_{\seq{s}}(x), y)=\frac{1}{2}\norm{f_{\seq{s}}(x) - y}_{\mathcal{Y}}^2$
@@ -251,15 +251,15 @@ with respect to $f_{\seq{s}}(x)$ is
 $L=\max\left(\sqrt{\frac{2\kappa}{\lambda}}C, C\right)$ and the loss takes
 values in $\left[0, \frac{1}{2}L^2\right]$. Hence under assumption that
 $\lambda < 2\kappa$ and \cref{ass:bounded_trace}, and
-\cref{ass:bounded_outputs}, \cref{pr:ovk_gen} reads that given
-$f_{\seq{s}}\in\mathcal{H}_K$ a solution of \cref{alg:close_form},
+\cref{ass:bounded_outputs}, \cref{pr:ovk_gen} applies especially that  for any
+$f_{\seq{s}}\in\mathcal{H}_K$, solution of \cref{alg:close_form},
 \begin{dmath}
     \risk{f_{\seq{s}}} \le \riskemp{f_{\seq{s}}, \seq{s}}  +
     8\frac{C^2}{\lambda}\sqrt{\frac{\kappa}{N}}\left( T^{1/2} +
     \sqrt{\frac{\kappa\ln(1/\delta)}{2}}\right).
 \end{dmath}
-This bound is to compare to the results of \citet{kadri2015operator} using
-$\beta$-stability arguments. 
+This bound is to be compared to the results of \citet{kadri2015operator} in the context of
+$\beta$-stability. 
 \subsection{Algorithm stability}
 \label{sec:algorithm_stability}
 The approach to generalization bounds presented in
@@ -308,7 +308,7 @@ with generalization. Indeed if an algorithm has $\beta$-stability, and a
         (4N\beta + \xi) \sqrt{\frac{\ln(1/\delta)}{2N}}.
     \end{dmath*}
 \end{theorem}
-In their original paper on learning functian valued output data,
+In their original paper on learning function-valued output data,
 \citet{kadri2015operator} showed that under \cref{ass:bounded_norm},
 \cref{ass:bounded_outputs}, and provided that $K$ is weakly measurable, the
 algorithm is $\beta$-stable with $\beta=$. Moreover \cref{ass:bounded_loss}
@@ -322,15 +322,16 @@ holds with $\xi$, where $\sigma=$.  Thus another generalization bound for
 \end{dmath}
 
 %------------------------------------------------------------------------------
-\section{Consitency of learning with ORFF}
-In this section we study a bound on the quantity
+\section{Consistency of learning with ORFF}
+In this section we are interested by measuring how  $\risk{\widetilde{f}_{\seq{s}}}$ is close to the smallest true risk achieved in the function class $\mathcal{F}$.
+The quantity of interest is:
 \begin{dmath*}
     \risk{\widetilde{f}_{\seq{s}}} - \min_{f\in\mathcal{F}} \risk{f}.
 \end{dmath*}
 In other words, we quantify the difference between risk of the optimal solution
 belonging to a given class of function $\mathcal{F}$, and the risk given a
-solution $f_{\seq{s}}$ returned by an algorithm.  Here to derive a consistency
-bound, we study an algorithm slightly different from \cref{alg:close_form}.
+solution $f_{\seq{s}}$ returned by some learning algorithm.  Here to derive a consistency
+result, we study an algorithm slightly different from \cref{alg:close_form}.
 Given a loss function
 $L:\mathcal{X}\times\mathcal{F}\times\mathcal{Y}\to\mathbb{R}_+$ and its
 canonical cost function $c(f(x),y)\colonequals L(x, f, y)$ such that $c$ is
@@ -389,7 +390,7 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
     vectors $(\omega_j)_{j=1}^D$.
 \end{proposition}
 \begin{proof}
-    We follow the proof idea of \citet{rahimi2009weighted}. It is an adaptation
+    We follow the proof idea of \citet{rahimi2009weighted} in the scalar case and adapt it to the vector-valued case
     in the light of the results of \citet{maurer2016vector}. We first define 
     the two following sets.
     \begin{dmath*}
@@ -559,14 +560,14 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
 \end{proof}
 
 \section{Discussion}
-In this chapter we presented two ways of obtaining generalization bounds (see
+In this chapter we reviewed two ways of obtaining generalization bounds (see
 \cref{sec:generalization_bound,sec:algorithm_stability}) for
 \acsp{OVK} by bounding the function class complexity (\citet{maurer2016vector})
 or using algorithm stability arguments (\citet{kadri2015operator}). Then we
 used the results of \citet{maurer2016vector} to prove the consistency of the
 algorithm obtained by minimizing \cref{eq:alg_generalization}, which is a
 variant of \cref{alg:close_form}, where we replace the Tychonov regularizer by
-a projection in a $\norm{\cdot}_{\infty}$ ball. This bound generalize the work
+a projection in a $\norm{\cdot}_{\infty}$ ball. This bound generalizes the work
 of \citet{rahimi2009weighted} to vector-valued learning.
 \paragraph{}
 Notice that we cannot directly derive a consistency bound from
@@ -577,7 +578,7 @@ vector $\theta$ such that $\norm{\theta_j}_{\mathcal{Y}} <
 \sqrt{\frac{2}{\lambda D}} \sigma_y$, where $\sigma_y^2=\frac{1}{N}\sum_{i=1}^N
 \norm{y_i}^2_{\mathcal{Y}}$. Thus if $\widetilde{f}_{\seq{s}}$ is a solution of
 \cref{alg:close_form}, we do not have
-$\widetilde{f}_{\seq{s}}\in\widetilde{\mathcal{F}}$. \acs{ie} the Tychonov
+$\widetilde{f}_{\seq{s}}\in\widetilde{\mathcal{F}}$. \acs{ie} the Tichonov
 regularization is not \say{powerfull} enough to guarantee that
 $\widetilde{f}_{\seq{s}}$ belongs to $\widetilde{\mathcal{F}}$. One could argue
 that we could choose $\lambda = O(\sqrt{D})$ to obtain consistency with
@@ -593,7 +594,7 @@ $O(D^{-1/2})$ (respectively $O(N^{-1/2})$) as in the reference bound for
 scalar-valued random features by \citet{rahimi2009weighted}. In the
 scalar-valued kernel litterature, recent work of \citet{bach2015equivalence}
 with much more involved analysis, gives simlar results to
-\citet{rahimi2009weighted} in the case of Tychonov regularization.  Moreover it
+\citet{rahimi2009weighted} in the case of Tichonov regularization.  Moreover it
 suggests that the number of features $D$ to guarantee an error below some
 constant is linked to the decrease rate of the eigenvalues of the Mercer
 decomposition of scalar-valued kernel $k$. If the eigenvalues decrease in

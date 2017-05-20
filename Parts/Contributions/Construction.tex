@@ -490,18 +490,18 @@ dimension of $\mathcal{Y}$.
 
 \subsection{Examples of spectral decomposition}
 \label{subsec:dec_examples}
-In this section we give exemple of spectral decomposition of various
-$\mathcal{Y}$-Mercer kernel, based on \cref{pr:spectral} and
+In this section we give examples of spectral decomposition for various
+$\mathcal{Y}$-Mercer kernels, based on \cref{pr:spectral} and
 \cref{pr:trace_measure}.
 
 \subsubsection{Gaussian decomposable kernel}
-\label{par:gaussian_dec} Recall that a decomposable $\mathbb{R}^p$-Mercer has
+\label{par:gaussian_dec} Recall that a decomposable $\mathbb{R}^p$-Mercer introduced in the Background section has
 the form $K(x,z)=k(x,z)\Gamma$, where $k(x,z)$ is a scalar Mercer kernel and
-$\Gamma\in\mathcal{L}(\mathbb{R}^p)$ is a non-negative operator. Let
-$K^{dec,gauss}_e(\cdot)=k_e^{gauss}(\cdot)\Gamma$ be the Gaussian decomposable
-kernel where $K_e$ and $k_e$ are respectively the signature of $K$ and $k$ on
+$\Gamma\in\mathcal{L}(\mathbb{R}^p)$ is a non-negative operator. Let us focus on
+$K^{dec,gauss}_e(\cdot)=k_e^{gauss}(\cdot)\Gamma$, the Gaussian decomposable
+kernel where $K_e^{dec, gauss}$ and $k_e^{gauss}$ are respectively the signature of $K$ and $k$ on
 the additive group $\mathcal{X}=(\mathbb{R}^d,+)$ -- $\acs{ie}~\delta=x-z$ and
-$e=0$. The scalar Gaussian kernel reads for all $\delta\in\mathbb{R}^d$
+$e=0$. The well known Gaussian kernel is defined for all $\delta\in\mathbb{R}^d$ as follows
 \begin{dmath*}
     k^{\text{gauss}}_0(\delta)\hiderel{=}\exp\left(
     -\frac{1}{2\sigma^2}\norm{\delta}^2_2\right)
@@ -592,7 +592,7 @@ $\Tr\left[K^{dec,gauss}_0(0)\right]=\Tr\left[\Gamma\right]$ and
 
 \subsubsection{Skewed-$\chi^2$ decomposable kernel}
 \label{subsubsec:skewedchi2}
-The skewed-$\chi^2$ scalar kernel \citep{li2010random} is defined on the
+The skewed-$\chi^2$ scalar kernel \citep{li2010random}, useful for image processing, is defined on the
 \acs{LCA} group $\mathcal{X}=(-c_k;+\infty)_{k=1}^d$, with
 $c_k\in\mathbb{R}_{+}$ and endowed with the group operation $\odot$. Let
 $(e_k)_{k=1}^d$ be the standard basis of $\mathcal{X}$ and ${}_k:x\mapsto

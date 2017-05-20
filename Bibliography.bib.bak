@@ -14,6 +14,13 @@
   url       = {http://papers.nips.cc/paper/5496-convex-deep-learning-via-normalized-kernels},
 }
 
+@article{avramidi2000notes,
+  title={Notes on Hilbert Spaces},
+  author={Avramidi, Ivan},
+  year={2000},
+  keywords={ovks},
+}
+
 @InProceedings{Bach2011,
   author    = {Francis R. Bach and Eric Moulines},
   title     = {Non-Asymptotic Analysis of Stochastic Approximation Algorithms for Machine Learning},
@@ -310,17 +317,6 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   keywords  = {ovks},
 }
 
-@article{box1979robustness,
-  title={Robustness in the strategy of scientific model building},
-  author={Box, George EP},
-  journal={Robustness in statistics},
-  volume={1},
-  pages={201--236},
-  year={1979},
-  keywords = {ovks},
-}
-
-
 @Misc{Berberian66,
   author   = {Berberian, S.K.},
   title    = {Notes on Spectral Theory},
@@ -490,15 +486,6 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   keywords  = {ovks},
 }
 
-@book{cornuejols2011apprentissage,
-  title={Apprentissage artificiel: concepts et algorithmes},
-  author={Cornu{\'e}jols, Antoine and Miclet, Laurent},
-  year={2011},
-  publisher={Editions Eyrolles},
-  keywords = {ovks},
-}
-
-
 @InProceedings{Cortes2005,
   author    = {Cortes, C. and Mohri, M. and Weston, J.},
   title     = {A general regression technique for learning transductions},
@@ -609,6 +596,16 @@ ci!TEX root = ../../ThesisRomainbrault.tex
 }
 
 %%% F
+
+@inproceedings{felix2016orthogonal,
+  title={Orthogonal random features},
+  author={Felix, X Yu and Suresh, Ananda Theertha and Choromanski, Krzysztof M and Holtmann-Rice, Daniel N and Kumar, Sanjiv},
+  booktitle={Advances in Neural Information Processing Systems},
+  pages={1975--1983},
+  year={2016},
+  keywords={ovks},
+}
+
 
 @Article{fercoq2013smooth,
   author   = {Fercoq, Olivier and Richt{\'a}rik, Peter},
@@ -760,6 +757,16 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   keywords = {ovks},
 }
 
+@inproceedings{hamid2014compact,
+  title={Compact Random Feature Maps.},
+  author={Hamid, Raffay and Xiao, Ying and Gittens, Alex and DeCoste, Dennis},
+  booktitle={ICML},
+  pages={19--27},
+  year={2014},
+  keywords={ovks},
+}
+
+
 @Article{Hoeffding1963,
   author              = {Hoeffding, Wassily},
   title               = {Probability Inequalities for Sums of Bounded Random Variables},
@@ -771,20 +778,6 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   jstor_formatteddate = {Mar.,},
   keywords            = {ovks},
 }
-
-
-@article{hoffgen1995robust,
-  title={Robust trainability of single neurons},
-  author={Hoffgen, Klaus-Uwe and Simon, Hans-Ulrich and Vanhorn, Kevin S},
-  journal={Journal of Computer and System Sciences},
-  volume={50},
-  number={1},
-  pages={114--125},
-  year={1995},
-  publisher={Elsevier},
-  keywords = {ovks},
-}
-
 
 @Article{Honeine2011,
   author   = {Honeine, P. and Richard, C.},
@@ -912,6 +905,16 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   keywords  = {ovks},
 }
 
+@inproceedings{kar2012random,
+  title={Random Feature Maps for Dot Product Kernels.},
+  author={Kar, Purushottam and Karnick, Harish},
+  booktitle={AISTATS},
+  volume={22},
+  pages={583--591},
+  year={2012}
+}
+
+
 @InProceedings{Kashima_icdm09,
   author    = {Kashima, H. and Kato, T. and Yamanishi, Y. and Sugiyama, M. and Tsuda, K.},
   title     = {Link Propagation: a fast semi-supervised learning algorithm for link prediction},
@@ -1024,6 +1027,17 @@ ci!TEX root = ../../ThesisRomainbrault.tex
 
 
 %%%%%%%%%%%% L
+
+@article{lecun1995convolutional,
+  title={Convolutional networks for images, speech, and time series},
+  author={LeCun, Yann and Bengio, Yoshua and others},
+  journal={The handbook of brain theory and neural networks},
+  volume={3361},
+  number={10},
+  pages={1995},
+  year={1995}
+}
+
 
 @Book{ledoux2005concentration,
   title     = {The concentration of measure phenomenon},
@@ -1232,6 +1246,17 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   keywords  = {ovks},
 }
 
+
+@inproceedings{mukuta2016kernel,
+  title={Kernel Approximation via Empirical Orthogonal Decomposition for Unsupervised Feature Learning},
+  author={Mukuta, Yusuke and Harada, Tatsuya},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={5222--5230},
+  year={2016},
+  keywords={ovks},
+}
+
+
 %%% N
 
 @Article{naor2012banach,
@@ -1315,6 +1340,17 @@ ci!TEX root = ../../ThesisRomainbrault.tex
 %Auteur :   George B Pedrick
 %Éditeur :  Lawrence, Kan. 1957
 %Collection :   Studies in eigenvalue problems; Technical report
+
+@inproceedings{pham2013fast,
+  title={Fast and scalable polynomial kernels via explicit feature maps},
+  author={Pham, Ninh and Pagh, Rasmus},
+  booktitle={Proceedings of the 19th ACM SIGKDD international conference on Knowledge discovery and data mining},
+  pages={239--247},
+  year={2013},
+  organization={ACM},
+  keywords={ovks}
+}
+
 
 @Article{pinelis1994optimum,
   author    = {Pinelis, Iosif},
@@ -1450,6 +1486,18 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   issue_date = {12/1/2004},
   keywords   = {ovks},
 }
+
+@article{rosasco2010learning,
+  title={On learning with integral operators},
+  author={Rosasco, Lorenzo and Belkin, Mikhail and Vito, Ernesto De},
+  journal={Journal of Machine Learning Research},
+  volume={11},
+  number={Feb},
+  pages={905--934},
+  year={2010},
+  keywords={ovks},
+}
+
 
 @Article{rosenberg2009kernel,
   author    = {Rosenberg, D and Sindhwani, Vikas and Bartlett, P and Niyogi, Partha},
@@ -1739,15 +1787,6 @@ ci!TEX root = ../../ThesisRomainbrault.tex
 
 %%% V
 
-@book{Vapnik1998,
-  title={Statistical learning theory},
-  author={Vapnik, Vladimir Naumovich and Vapnik, Vlamimir},
-  volume={1},
-  year={1998},
-  publisher={Wiley New York}
-}
-
-
 @InProceedings{vapnik1992principles,
   author    = {Vapnik, Vladimir},
   title     = {Principles of risk minimization for learning theory},
@@ -1863,7 +1902,45 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   keywords  = {ovks},
 }
 
+%%% X
+
+@inproceedings{xie2015scale,
+  title={Scale up nonlinear component analysis with doubly stochastic gradients},
+  author={Xie, Bo and Liang, Yingyu and Song, Le},
+  booktitle={Advances in Neural Information Processing Systems},
+  pages={2341--2349},
+  year={2015},
+  keywords={ovks},
+}
+
+
 %%% Y
+
+@inproceedings{yang2014quasi,
+  title={Quasi-Monte Carlo feature maps for shift-invariant kernels},
+  author={Yang, Jiyan and Sindhwani, Vikas and Avron, Haim and Mahoney, Michael},
+  booktitle={Proceedings of The 31st International Conference on Machine Learning (ICML-14)},
+  pages={485--493},
+  year={2014},
+  keywords={ovks},
+}
+
+@inproceedings{yang2014random,
+  title={Random laplace feature maps for semigroup kernels on histograms},
+  author={Yang, Jiyan and Sindhwani, Vikas and Fan, Quanfu and Avron, Haim and Mahoney, Michael W},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={971--978},
+  year={2014}
+}
+
+@inproceedings{yang2015deep,
+  title={Deep fried convnets},
+  author={Yang, Zichao and Moczulski, Marcin and Denil, Misha and de Freitas, Nando and Smola, Alex and Song, Le and Wang, Ziyu},
+  booktitle={Proceedings of the IEEE International Conference on Computer Vision},
+  pages={1476--1483},
+  year={2015},
+  keywords={ovks}
+}
 
 @InProceedings{Yang2015,
   author    = {Zichao Yang and Andrew Gordon Wilson and Alexander J. Smola and Le Song},
@@ -2004,18 +2081,6 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   keywords  = {ovks},
 }
 
-@article{drineas2005nystrom,
-  title={On the Nystr{\"o}m method for approximating a Gram matrix for improved kernel-based learning},
-  author={Drineas, Petros and Mahoney, Michael W},
-  journal={journal of machine learning research},
-  volume={6},
-  number={Dec},
-  pages={2153--2175},
-  year={2005}
-}
-
-
-
 @Article{sleijpen2010bi,
   author    = {Sleijpen, Gerard LG and Sonneveld, Peter and Van Gijzen, Martin B},
   title     = {Bi-CGSTAB as an induced dimension reduction method},
@@ -2100,6 +2165,58 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   pages     = {210--229},
   keywords  = {ovks},
   publisher = {IBM},
+}
+
+@Book{cornuejols2011apprentissage,
+  title     = {Apprentissage artificiel: concepts et algorithmes},
+  publisher = {Editions Eyrolles},
+  year      = {2011},
+  author    = {Cornu{\'e}jols, Antoine and Miclet, Laurent},
+  keywords  = {ovks},
+}
+
+@Article{drineas2005nystrom,
+  author   = {Drineas, Petros and Mahoney, Michael W},
+  title    = {On the Nystr{\"o}m method for approximating a Gram matrix for improved kernel-based learning},
+  journal  = {journal of machine learning research},
+  year     = {2005},
+  volume   = {6},
+  number   = {Dec},
+  pages    = {2153--2175},
+  keywords = {ovks},
+}
+
+%%% V
+
+@Book{Vapnik1998,
+  title     = {Statistical learning theory},
+  publisher = {Wiley New York},
+  year      = {1998},
+  author    = {Vapnik, Vladimir Naumovich and Vapnik, Vlamimir},
+  volume    = {1},
+  keywords  = {ovks},
+}
+
+@Article{hoffgen1995robust,
+  author    = {Hoffgen, Klaus-Uwe and Simon, Hans-Ulrich and Vanhorn, Kevin S},
+  title     = {Robust trainability of single neurons},
+  journal   = {Journal of Computer and System Sciences},
+  year      = {1995},
+  volume    = {50},
+  number    = {1},
+  pages     = {114--125},
+  keywords  = {ovks},
+  publisher = {Elsevier},
+}
+
+@Article{box1979robustness,
+  author   = {Box, George EP},
+  title    = {Robustness in the strategy of scientific model building},
+  journal  = {Robustness in statistics},
+  year     = {1979},
+  volume   = {1},
+  pages    = {201--236},
+  keywords = {ovks},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

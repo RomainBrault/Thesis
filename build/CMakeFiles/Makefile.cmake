@@ -7,10 +7,13 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "/Applications/CMake.app/Contents/share/cmake-3.3/Modules/CMakeDetermineSystem.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.3/Modules/CMakeGenericSystem.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.3/Modules/CMakeParseArguments.cmake"
+  "/Applications/CMake.app/Contents/share/cmake-3.3/Modules/CMakeSystem.cmake.in"
   "/Applications/CMake.app/Contents/share/cmake-3.3/Modules/CMakeSystemSpecificInformation.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.3/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/Applications/CMake.app/Contents/share/cmake-3.3/Modules/CMakeUnixFindMake.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.3/Modules/FindCygwin.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.3/Modules/FindLATEX.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.3/Modules/FindPackageHandleStandardArgs.cmake"
@@ -35,6 +38,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "CMakeFiles/3.3.2/CMakeSystem.cmake"
   "../bin/classicthesis-config.tex"
   "../bin/classicthesis.sty"
   "../bin/commands.sty"

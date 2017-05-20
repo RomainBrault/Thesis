@@ -1,0 +1,75 @@
+\section{Motivations}
+This thesis is dedicated to the definition of a general and flexible approach
+to learn vector-valued functions and implement efficiently the learning
+algorithms, while allowing couplings between the outputs or learning function
+valued functions. To achieve this goal, we turn to shallow architectures,
+namely the product of a (nonlinear) operator-valued feature $\tilde{\Phi}(x)$
+and a parameter vector $\theta$ such that $\tilde{f}(x) = \tilde{\Phi}(x)^*
+\theta$, and combine two appealing methodologies: Operator-Valued Kernel
+Regression and Random Fourier Features.
+\paragraph{}
+Operator-Valued Kernels \citep{Micchelli2005,Carmeli2010,Alvarez2012} extend
+the classic scalar-valued kernels to vector-valued functions. As in the scalar
+case, \acfp{OVK} are used to build Reproducing Kernel
+Hilbert Spaces (\acs{RKHS}) in which representer theorems apply as for ridge
+regression or other appropriate loss functional. In these cases, learning a
+model in the \acs{RKHS} boils down to learning a function of the form
+$f(x)=\sum_{i=1}^N K(x,x_i)\alpha_i$ where $x_1, \ldots, x_N$ are the training
+input data and each $\alpha_i, i=1, \ldots, N$ is a vector of the output space
+$\mathcal{Y}$ and each $K(x,x_i)$, an operator on vectors of $\mathcal{Y}$.
+\paragraph{}
+However, \acsp{OVK} suffer from the same drawbacks as classic (scalar-valued)
+kernel machines: they scale poorly to very large datasets because they are very
+demanding in terms of memory and computation. We propose to approximate OVKs by
+extending a methodology called \acfp{RFF} \citep{Rahimi2007, Le2013, Alacarte,
+sriper2015, Bach2015, sutherland2015, rudi2016generalization} so far developed
+to speed up scalar-valued kernel machines. The \acs{RFF} approach linearizes a
+shift-invariant kernel model by generating explicitly an approximated feature
+map $\tilde{\phi}$. \acsp{RFF} has been shown to be efficient on large datasets
+and has been further improved by efficient matrix computations such as
+\citep[``FastFood'']{Le2013} and \citep[``SORF'']{felix2016orthogonal}, which
+are considered as the best large scale implementations of kernel methods, along
+with Nystr\"om approaches proposed in \citet{drineas2005nystrom}. Moreover
+thanks to \acsp{RFF}, kernel methods have been prooved to be competitive with
+deep architectures \citep{lu2014scale, dai2014scalable, yang2015deep}.
+
+\section{Contributions}
+
+\section{Outline}
+
+\textbf{Chapter 2.}
+
+\textbf{Chapter 3.}
+
+\textbf{Chapter 4.}
+
+\textbf{Chapter 5.} 
+In this chapter we refine the bound on the \ac{OVK} approximation with
+\ac{ORFF} we first proposed in \cite{brault2016random} and presented in
+\cite{braultborne}. It generalizes the proof technique of \citet{Rahimi2007} to
+\ac{OVK} on \ac{LCA} groups thanks to the recent results of
+\citet{sutherland2015, tropp2015introduction, minsker2011some,
+koltchinskii2013remark}. As a Bernstein bound it depends on the variance of the
+estimator for which we derive an \say{upper bound}.
+
+\textbf{Chapter 6.}
+
+\textbf{Chapter 7.}
+This chapter deals with a generalization bound for the a regression problem
+with ORFF based on the results of \citet{rahimi2009weighted, maurer2016vector}.
+We also discuss the case of Ridge regression presented in \cref{ch:learnin
+operator-valued_random_fourier_features}.
+
+\textbf{Chapter 8.}
+This chapter shows how to use the \acs{ORFF} methodology to non-linear vector
+autoregression. It is an instanciation of the \acs{ORFF} framework to
+$\mathcal{X}=\mathcal{Y}=(\mathbb{R}^d, +)$. We also give a generalization of a
+stochastic gradient descent \citep{dai2014scalable} to \acs{ORFF}. This is a
+joint work with N\'eh\'emy Lim and Florence d'Alch\'e-Buc and has been
+published at a workshop of \acs{ECML}. It is based on the previous work
+\citet{Lim2015} for time series vector autoregression with operator-valued
+kernels \cite{brault2016scaling}.
+
+\textbf{Chapter 9.}
+
+

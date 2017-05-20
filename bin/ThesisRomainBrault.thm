@@ -1,306 +1,306 @@
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{2.{1}}{}}{7}{example.2.1}
+\contentsline {example}{{Example}{2.{1}}{}}{9}{example.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{2.1}{\citet {Aronszajn1950}}}{10}{theorem.2.1}
+\contentsline {theorem}{{Theorem}{2.1}{\citet {Aronszajn1950}}}{12}{theorem.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{2.2}{Representer theorem, \citet {Wahba90}}}{10}{theorem.2.2}
+\contentsline {theorem}{{Theorem}{2.2}{Representer theorem, \citet {Wahba90}}}{12}{theorem.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{2.3}{\citet {Aronszajn1950}}}{11}{theorem.2.3}
+\contentsline {theorem}{{Theorem}{2.3}{\citet {Aronszajn1950}}}{13}{theorem.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{2.4}{Bochner's theorem}}{13}{theorem.2.4}
+\contentsline {theorem}{{Theorem}{2.4}{Bochner's theorem}}{15}{theorem.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {corollary}{{Corollary}{2.{1}}{}}{13}{corollary.2.1}
+\contentsline {corollary}{{Corollary}{2.{1}}{}}{15}{corollary.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{3.{1}}{\acf {LCA} group.}}{22}{definition.3.1}
+\contentsline {definition}{{Definition}{3.{1}}{\acf {LCA} group.}}{26}{definition.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{3.{2}}{Radon measure}}{22}{definition.3.2}
+\contentsline {definition}{{Definition}{3.{2}}{Radon measure}}{26}{definition.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{3.{3}}{The Haar measure}}{25}{definition.3.3}
+\contentsline {definition}{{Definition}{3.{3}}{The Haar measure}}{29}{definition.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{3.{4}}{Even and odd operator-valued function on a \ac {LCA} group}}{26}{definition.3.4}
+\contentsline {definition}{{Definition}{3.{4}}{Even and odd operator-valued function on a \ac {LCA} group}}{30}{definition.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{1}{}}{26}{proof.1}
+\contentsline {proof}{{Proof}{1}{}}{30}{proof.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{3.{1}}{}}{27}{example.3.1}
+\contentsline {example}{{Example}{3.{1}}{}}{31}{example.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{2}{}}{27}{proof.2}
+\contentsline {proof}{{Proof}{2}{}}{31}{proof.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{3.{2}}{\citet {li2010random}}}{28}{example.3.2}
+\contentsline {example}{{Example}{3.{2}}{\citet {li2010random}}}{32}{example.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{3}{}}{28}{proof.3}
+\contentsline {proof}{{Proof}{3}{}}{32}{proof.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{3.{1}}{}}{28}{proposition.3.1}
+\contentsline {proposition}{{Proposition}{3.{1}}{}}{32}{proposition.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{4}{}}{28}{proof.4}
+\contentsline {proof}{{Proof}{4}{}}{32}{proof.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{3.1}{Fourier inversion}}{29}{theorem.3.1}
+\contentsline {theorem}{{Theorem}{3.1}{Fourier inversion}}{33}{theorem.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{5}{}}{29}{proof.5}
+\contentsline {proof}{{Proof}{5}{}}{33}{proof.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {corollary}{{Corollary}{3.{1}}{\acl {FT} injectivity}}{30}{corollary.3.1}
+\contentsline {corollary}{{Corollary}{3.{1}}{\acl {FT} injectivity}}{34}{corollary.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{6}{}}{30}{proof.6}
+\contentsline {proof}{{Proof}{6}{}}{34}{proof.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{3.{5}}{\acl {vv-RKHS}~\citep {carmeli2006vector,Micchelli2005}}}{32}{definition.3.5}
+\contentsline {definition}{{Definition}{3.{5}}{\acl {vv-RKHS}~\citep {carmeli2006vector,Micchelli2005}}}{36}{definition.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{3.{6}}{positive-definite \acl {OVK} acting on a complex Hilbert space}}{33}{definition.3.6}
+\contentsline {definition}{{Definition}{3.{6}}{positive-definite \acl {OVK} acting on a complex Hilbert space}}{37}{definition.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{3.{7}}{positive-definite \acl {OVK} acting on a real Hilbert space}}{33}{definition.3.7}
+\contentsline {definition}{{Definition}{3.{7}}{positive-definite \acl {OVK} acting on a real Hilbert space}}{37}{definition.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{3.{2}}{\citep {carmeli2006vector}}}{33}{proposition.3.2}
+\contentsline {proposition}{{Proposition}{3.{2}}{\citep {carmeli2006vector}}}{37}{proposition.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{7}{}}{33}{proof.7}
+\contentsline {proof}{{Proof}{7}{}}{37}{proof.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{3.{3}}{\citep {carmeli2006vector}}}{34}{proposition.3.3}
+\contentsline {proposition}{{Proposition}{3.{3}}{\citep {carmeli2006vector}}}{38}{proposition.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{8}{}}{34}{proof.8}
+\contentsline {proof}{{Proof}{8}{}}{38}{proof.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{3.{4}}{Feature Operator~\citep {Carmeli2010}}}{36}{proposition.3.4}
+\contentsline {proposition}{{Proposition}{3.{4}}{Feature Operator~\citep {Carmeli2010}}}{40}{proposition.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{9}{}}{36}{proof.9}
+\contentsline {proof}{{Proof}{9}{}}{40}{proof.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{3.{8}}{$\mathcal {Y}$-Mercer kernel \citep {Carmeli2010}}}{37}{definition.3.8}
+\contentsline {definition}{{Definition}{3.{8}}{$\mathcal {Y}$-Mercer kernel \citep {Carmeli2010}}}{41}{definition.3.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{3.{5}}{Characterization of $\mathcal {Y}$-Mercer kernel~\citep {Carmeli2010}}}{37}{proposition.3.5}
+\contentsline {proposition}{{Proposition}{3.{5}}{Characterization of $\mathcal {Y}$-Mercer kernel~\citep {Carmeli2010}}}{41}{proposition.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{10}{}}{37}{proof.10}
+\contentsline {proof}{{Proof}{10}{}}{41}{proof.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{3.{1}}{Separable \ac {vv-RKHS}~\citep {carmeli2006vector}}}{38}{lemma.3.1}
+\contentsline {lemma}{{Lemma}{3.{1}}{Separable \ac {vv-RKHS}~\citep {carmeli2006vector}}}{42}{lemma.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{11}{}}{38}{proof.11}
+\contentsline {proof}{{Proof}{11}{}}{42}{proof.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{3.{6}}{Separable \ac {vv-RKHS} for $\mathcal {Y}$-Mercer kernel~\citep {carmeli2006vector}}}{38}{proposition.3.6}
+\contentsline {proposition}{{Proposition}{3.{6}}{Separable \ac {vv-RKHS} for $\mathcal {Y}$-Mercer kernel~\citep {carmeli2006vector}}}{42}{proposition.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{12}{}}{38}{proof.12}
+\contentsline {proof}{{Proof}{12}{}}{42}{proof.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{3.{9}}{Shift-invariant \ac {OVK}}}{38}{definition.3.9}
+\contentsline {definition}{{Definition}{3.{9}}{Shift-invariant \ac {OVK}}}{42}{definition.3.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{3.{7}}{Kernel signature~\citep {Carmeli2010}}}{39}{proposition.3.7}
+\contentsline {proposition}{{Proposition}{3.{7}}{Kernel signature~\citep {Carmeli2010}}}{43}{proposition.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{13}{}}{39}{proof.13}
+\contentsline {proof}{{Proof}{13}{}}{43}{proof.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{3.{10}}{Decomposable kernel \citep {Micheli2013}}}{40}{definition.3.10}
+\contentsline {definition}{{Definition}{3.{10}}{Decomposable kernel \citep {Micheli2013}}}{44}{definition.3.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{3.{8}}{Kernels and Regularizers~\citep {Alvarez2012}}}{40}{proposition.3.8}
+\contentsline {proposition}{{Proposition}{3.{8}}{Kernels and Regularizers~\citep {Alvarez2012}}}{44}{proposition.3.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{3.{11}}{Curl-free and Div-free kernel \citep {Macedo2008}}}{41}{definition.3.11}
+\contentsline {definition}{{Definition}{3.{11}}{Curl-free and Div-free kernel \citep {Macedo2008}}}{45}{definition.3.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{3.{12}}{Transformable kernel\citep {caponnetto2008}}}{42}{definition.3.12}
+\contentsline {definition}{{Definition}{3.{12}}{Transformable kernel\citep {caponnetto2008}}}{46}{definition.3.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{3.{13}}{Hilbert Schmidt Integral kernel \citep {kadri2015operator}}}{42}{definition.3.13}
+\contentsline {definition}{{Definition}{3.{13}}{Hilbert Schmidt Integral kernel \citep {kadri2015operator}}}{46}{definition.3.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{4.{1}}{Operator-valued Bochner's theorem~\citep {Zhang2012, neeb1998operator}}}{48}{proposition.4.1}
+\contentsline {proposition}{{Proposition}{4.{1}}{Operator-valued Bochner's theorem~\citep {Zhang2012, neeb1998operator}}}{52}{proposition.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{4.{2}}{\citet {Carmeli2010}}}{49}{proposition.4.2}
+\contentsline {proposition}{{Proposition}{4.{2}}{\citet {Carmeli2010}}}{53}{proposition.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{4.{3}}{\citet {Carmeli2010}}}{50}{proposition.4.3}
+\contentsline {proposition}{{Proposition}{4.{3}}{\citet {Carmeli2010}}}{54}{proposition.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{4.{1}}{}}{51}{lemma.4.1}
+\contentsline {lemma}{{Lemma}{4.{1}}{}}{55}{lemma.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{14}{}}{51}{proof.14}
+\contentsline {proof}{{Proof}{14}{}}{55}{proof.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{4.{4}}{Shift-invariant $\mathcal {Y}$-Mercer kernel spectral decomposition}}{52}{proposition.4.4}
+\contentsline {proposition}{{Proposition}{4.{4}}{Shift-invariant $\mathcal {Y}$-Mercer kernel spectral decomposition}}{56}{proposition.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{15}{}}{53}{proof.15}
+\contentsline {proof}{{Proof}{15}{}}{57}{proof.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{4.{1}}{}}{53}{remark.4.1}
+\contentsline {remark}{{Remark}{4.{1}}{}}{57}{remark.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{4.{5}}{Bounded shift-invariant $\mathcal {Y}$-Mercer kernel spectral decomposition}}{54}{proposition.4.5}
+\contentsline {proposition}{{Proposition}{4.{5}}{Bounded shift-invariant $\mathcal {Y}$-Mercer kernel spectral decomposition}}{58}{proposition.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{16}{}}{54}{proof.16}
+\contentsline {proof}{{Proof}{16}{}}{58}{proof.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{4.{6}}{Functional Fourier feature map}}{60}{proposition.4.6}
+\contentsline {proposition}{{Proposition}{4.{6}}{Functional Fourier feature map}}{64}{proposition.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{17}{}}{60}{proof.17}
+\contentsline {proof}{{Proof}{17}{}}{64}{proof.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{4.{7}}{ORFF}}{61}{proposition.4.7}
+\contentsline {proposition}{{Proposition}{4.{7}}{ORFF}}{65}{proposition.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{18}{}}{61}{proof.18}
+\contentsline {proof}{{Proof}{18}{}}{65}{proof.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{4.{8}}{}}{63}{proposition.4.8}
+\contentsline {proposition}{{Proposition}{4.{8}}{}}{67}{proposition.4.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{19}{}}{63}{proof.19}
+\contentsline {proof}{{Proof}{19}{}}{67}{proof.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{4.{1}}{Random Fourier feature operator}}{65}{definition.4.1}
+\contentsline {definition}{{Definition}{4.{1}}{Random Fourier feature operator}}{69}{definition.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{4.{9}}{}}{65}{proposition.4.9}
+\contentsline {proposition}{{Proposition}{4.{9}}{}}{69}{proposition.4.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{20}{of \cref {pr:cv_feature_map_1}}}{65}{proof.20}
+\contentsline {proof}{{Proof}{20}{of \cref {pr:cv_feature_map_1}}}{69}{proof.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{21}{of \cref {pr:cv_feature_map_2}}}{66}{proof.21}
+\contentsline {proof}{{Proof}{21}{of \cref {pr:cv_feature_map_2}}}{70}{proof.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {corollary}{{Corollary}{4.{1}}{}}{66}{corollary.4.1}
+\contentsline {corollary}{{Corollary}{4.{1}}{}}{70}{corollary.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{22}{}}{66}{proof.22}
+\contentsline {proof}{{Proof}{22}{}}{70}{proof.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{4.{2}}{}}{66}{remark.4.2}
+\contentsline {remark}{{Remark}{4.{2}}{}}{70}{remark.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{4.{1}}{Matrix-valued kernel on the additive group}}{67}{example.4.1}
+\contentsline {example}{{Example}{4.{1}}{Matrix-valued kernel on the additive group}}{71}{example.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{23}{}}{67}{proof.23}
+\contentsline {proof}{{Proof}{23}{}}{71}{proof.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{4.{2}}{Matrix-valued kernel on the skewed multiplicative group}}{70}{example.4.2}
+\contentsline {example}{{Example}{4.{2}}{Matrix-valued kernel on the skewed multiplicative group}}{74}{example.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{24}{}}{70}{proof.24}
+\contentsline {proof}{{Proof}{24}{}}{74}{proof.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{4.{10}}{}}{71}{proposition.4.10}
+\contentsline {proposition}{{Proposition}{4.{10}}{}}{75}{proposition.4.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{25}{}}{71}{proof.25}
+\contentsline {proof}{{Proof}{25}{}}{75}{proof.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{5.1}{Uniform error bound for \ac {RFF},~\citet {Rahimi2007}}}{76}{theorem.5.1}
+\contentsline {theorem}{{Theorem}{5.1}{Uniform error bound for \ac {RFF},~\citet {Rahimi2007}}}{80}{theorem.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {corollary}{{Corollary}{5.{1}}{Uniform error bound for decomposable \acs {ORFF}}}{76}{corollary.5.1}
+\contentsline {corollary}{{Corollary}{5.{1}}{Uniform error bound for decomposable \acs {ORFF}}}{80}{corollary.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{26}{}}{77}{proof.26}
+\contentsline {proof}{{Proof}{26}{}}{81}{proof.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{5.{1}}{Orlicz norm~\citep {van1996weak}}}{78}{definition.5.1}
+\contentsline {definition}{{Definition}{5.{1}}{Orlicz norm~\citep {van1996weak}}}{82}{definition.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{5.{2}}{}}{78}{definition.5.2}
+\contentsline {definition}{{Definition}{5.{2}}{}}{82}{definition.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {corollary}{{Corollary}{5.{2}}{}}{78}{corollary.5.2}
+\contentsline {corollary}{{Corollary}{5.{2}}{}}{82}{corollary.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {sproof}{{Sketch of proof}{1}{}}{79}{sproof.1}
+\contentsline {sproof}{{Sketch of proof}{1}{}}{83}{sproof.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{5.{1}}{}}{79}{lemma.5.1}
+\contentsline {lemma}{{Lemma}{5.{1}}{}}{83}{lemma.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {sproof}{{Sketch of proof}{2}{\cref {condition1_main}}}{80}{sproof.2}
+\contentsline {sproof}{{Sketch of proof}{2}{\cref {condition1_main}}}{84}{sproof.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{5.{2}}{}}{80}{lemma.5.2}
+\contentsline {lemma}{{Lemma}{5.{2}}{}}{84}{lemma.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {sproof}{{Sketch of proof}{3}{\cref {condition2_main}}}{80}{sproof.3}
+\contentsline {sproof}{{Sketch of proof}{3}{\cref {condition2_main}}}{84}{sproof.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {corollary}{{Corollary}{5.{3}}{}}{82}{corollary.5.3}
+\contentsline {corollary}{{Corollary}{5.{3}}{}}{86}{corollary.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{5.{1}}{Bounding the \emph {variance} of $\tilde {K}$}}{83}{proposition.5.1}
+\contentsline {proposition}{{Proposition}{5.{1}}{Bounding the \emph {variance} of $\tilde {K}$}}{87}{proposition.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{27}{}}{83}{proof.27}
+\contentsline {proof}{{Proof}{27}{}}{87}{proof.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{5.{1}}{Additive group}}{84}{example.5.1}
+\contentsline {example}{{Example}{5.{1}}{Additive group}}{88}{example.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{5.{2}}{Skewed-multiplicative group}}{84}{example.5.2}
+\contentsline {example}{{Example}{5.{2}}{Skewed-multiplicative group}}{88}{example.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{6.1}{Mazur-Schauder}}{88}{theorem.6.1}
+\contentsline {theorem}{{Theorem}{6.1}{Mazur-Schauder}}{92}{theorem.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{6.{1}}{}}{88}{remark.6.1}
+\contentsline {remark}{{Remark}{6.{1}}{}}{92}{remark.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{6.2}{Representer theorem}}{89}{theorem.6.2}
+\contentsline {theorem}{{Theorem}{6.2}{Representer theorem}}{93}{theorem.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{28}{}}{90}{proof.28}
+\contentsline {proof}{{Proof}{28}{}}{94}{proof.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{6.{1}}{}}{91}{lemma.6.1}
+\contentsline {lemma}{{Lemma}{6.{1}}{}}{95}{lemma.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{29}{}}{91}{proof.29}
+\contentsline {proof}{{Proof}{29}{}}{95}{proof.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{6.3}{Feature equivalence}}{92}{theorem.6.3}
+\contentsline {theorem}{{Theorem}{6.3}{Feature equivalence}}{96}{theorem.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{30}{}}{93}{proof.30}
+\contentsline {proof}{{Proof}{30}{}}{97}{proof.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{6.{1}}{Naive closed form for the squared error cost}}{96}{example.6.1}
+\contentsline {example}{{Example}{6.{1}}{Naive closed form for the squared error cost}}{100}{example.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{6.{2}}{}}{97}{remark.6.2}
+\contentsline {remark}{{Remark}{6.{2}}{}}{101}{remark.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{7.{1}}{\citet {bartlett2002rademacher, maurer2016vector}}}{119}{proposition.7.1}
+\contentsline {proposition}{{Proposition}{7.{1}}{\citet {bartlett2002rademacher, maurer2016vector}}}{123}{proposition.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{31}{}}{119}{proof.31}
+\contentsline {proof}{{Proof}{31}{}}{123}{proof.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{7.{1}}{\citet {bartlett2002rademacher}}}{119}{definition.7.1}
+\contentsline {definition}{{Definition}{7.{1}}{\citet {bartlett2002rademacher}}}{123}{definition.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{7.{2}}{\citet {maurer2016vector}}}{120}{proposition.7.2}
+\contentsline {proposition}{{Proposition}{7.{2}}{\citet {maurer2016vector}}}{124}{proposition.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{7.1}{}}{121}{theorem.7.1}
+\contentsline {theorem}{{Theorem}{7.1}{}}{125}{theorem.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {assumption}{{Assumption}{7.{1}}{}}{121}{assumption.7.1}
+\contentsline {assumption}{{Assumption}{7.{1}}{}}{125}{assumption.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {assumption}{{Assumption}{7.{2}}{}}{121}{assumption.7.2}
+\contentsline {assumption}{{Assumption}{7.{2}}{}}{125}{assumption.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {assumption}{{Assumption}{7.{3}}{}}{121}{assumption.7.3}
+\contentsline {assumption}{{Assumption}{7.{3}}{}}{125}{assumption.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {assumption}{{Assumption}{7.{4}}{}}{121}{assumption.7.4}
+\contentsline {assumption}{{Assumption}{7.{4}}{}}{125}{assumption.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{7.{2}}{Uniform stability {\citet [definition 6]{bousquet2002stability}}}}{122}{definition.7.2}
+\contentsline {definition}{{Definition}{7.{2}}{Uniform stability {\citet [definition 6]{bousquet2002stability}}}}{126}{definition.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{7.2}{\citet [theorem 12]{bousquet2002stability}}}{122}{theorem.7.2}
+\contentsline {theorem}{{Theorem}{7.2}{\citet [theorem 12]{bousquet2002stability}}}{126}{theorem.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{7.{3}}{}}{123}{proposition.7.3}
+\contentsline {proposition}{{Proposition}{7.{3}}{}}{127}{proposition.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{32}{}}{124}{proof.32}
+\contentsline {proof}{{Proof}{32}{}}{128}{proof.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{7.{4}}{Existence of an approximate function}}{124}{proposition.7.4}
+\contentsline {proposition}{{Proposition}{7.{4}}{Existence of an approximate function}}{128}{proposition.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{33}{}}{124}{proof.33}
+\contentsline {proof}{{Proof}{33}{}}{128}{proof.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{7.{1}}{}}{125}{lemma.7.1}
+\contentsline {lemma}{{Lemma}{7.{1}}{}}{129}{lemma.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{7.{5}}{Bound on the approximation error}}{125}{proposition.7.5}
+\contentsline {proposition}{{Proposition}{7.{5}}{Bound on the approximation error}}{129}{proposition.7.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{34}{}}{125}{proof.34}
+\contentsline {proof}{{Proof}{34}{}}{129}{proof.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{7.{6}}{Bound on the estimation error}}{125}{proposition.7.6}
+\contentsline {proposition}{{Proposition}{7.{6}}{Bound on the estimation error}}{129}{proposition.7.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{35}{}}{125}{proof.35}
+\contentsline {proof}{{Proof}{35}{}}{129}{proof.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{8.{1}}{Matrix-valued kernels}}{131}{definition.8.1}
+\contentsline {definition}{{Definition}{8.{1}}{Matrix-valued kernels}}{135}{definition.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{8.{1}}{Decomposable matrix-valued kernels}}{132}{proposition.8.1}
+\contentsline {proposition}{{Proposition}{8.{1}}{Decomposable matrix-valued kernels}}{136}{proposition.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{A.{1}}{}}{148}{lemma.A.1}
+\contentsline {lemma}{{Lemma}{A.{1}}{}}{152}{lemma.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{36}{}}{149}{proof.36}
+\contentsline {proof}{{Proof}{36}{}}{153}{proof.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{A.{2}}{}}{149}{lemma.A.2}
+\contentsline {lemma}{{Lemma}{A.{2}}{}}{153}{lemma.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{37}{}}{149}{proof.37}
+\contentsline {proof}{{Proof}{37}{}}{153}{proof.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{A.1}{Bounded non-commutative Bernstein}}{150}{theorem.A.1}
+\contentsline {theorem}{{Theorem}{A.1}{Bounded non-commutative Bernstein}}{154}{theorem.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{A.{1}}{}}{151}{definition.A.1}
+\contentsline {definition}{{Definition}{A.{1}}{}}{155}{definition.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{A.2}{Bounded non-commutative Bernstein with intrinsic dimension \citep {minsker2011some, tropp2015introduction}}}{151}{theorem.A.2}
+\contentsline {theorem}{{Theorem}{A.2}{Bounded non-commutative Bernstein with intrinsic dimension \citep {minsker2011some, tropp2015introduction}}}{155}{theorem.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{A.{2}}{Orlicz norm}}{152}{definition.A.2}
+\contentsline {definition}{{Definition}{A.{2}}{Orlicz norm}}{156}{definition.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{A.{3}}{}}{152}{lemma.A.3}
+\contentsline {lemma}{{Lemma}{A.{3}}{}}{156}{lemma.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{38}{}}{152}{proof.38}
+\contentsline {proof}{{Proof}{38}{}}{156}{proof.38}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{A.{4}}{}}{152}{lemma.A.4}
+\contentsline {lemma}{{Lemma}{A.{4}}{}}{156}{lemma.A.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{39}{}}{152}{proof.39}
+\contentsline {proof}{{Proof}{39}{}}{156}{proof.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{A.3}{Unbounded non-commutative Bernstein with intrinsic dimension}}{152}{theorem.A.3}
+\contentsline {theorem}{{Theorem}{A.3}{Unbounded non-commutative Bernstein with intrinsic dimension}}{156}{theorem.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{A.{1}}{}}{154}{proposition.A.1}
+\contentsline {proposition}{{Proposition}{A.{1}}{}}{158}{proposition.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{40}{}}{155}{proof.40}
+\contentsline {proof}{{Proof}{40}{}}{159}{proof.40}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{A.{2}}{}}{156}{proposition.A.2}
+\contentsline {proposition}{{Proposition}{A.{2}}{}}{160}{proposition.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {corollary}{{Corollary}{A.{1}}{}}{156}{corollary.A.1}
+\contentsline {corollary}{{Corollary}{A.{1}}{}}{160}{corollary.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{41}{}}{157}{proof.41}
+\contentsline {proof}{{Proof}{41}{}}{161}{proof.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {corollary}{{Corollary}{A.{2}}{}}{159}{corollary.A.2}
+\contentsline {corollary}{{Corollary}{A.{2}}{}}{163}{corollary.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{A.{3}}{Bounding the \emph {variance} of $\tilde {K}$}}{159}{proposition.A.3}
+\contentsline {proposition}{{Proposition}{A.{3}}{Bounding the \emph {variance} of $\tilde {K}$}}{163}{proposition.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{42}{}}{160}{proof.42}
+\contentsline {proof}{{Proof}{42}{}}{164}{proof.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{B.1}{Representer theorem, \citet {minh2016unifying}}}{162}{theorem.B.1}
+\contentsline {theorem}{{Theorem}{B.1}{Representer theorem, \citet {minh2016unifying}}}{166}{theorem.B.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{43}{}}{163}{proof.43}
+\contentsline {proof}{{Proof}{43}{}}{167}{proof.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{B.2}{Feature equivalence}}{164}{theorem.B.2}
+\contentsline {theorem}{{Theorem}{B.2}{Feature equivalence}}{168}{theorem.B.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{44}{}}{165}{proof.44}
+\contentsline {proof}{{Proof}{44}{}}{169}{proof.44}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{B.{1}}{Naive closed form for the squared error cost}}{169}{example.B.1}
+\contentsline {example}{{Example}{B.{1}}{Naive closed form for the squared error cost}}{173}{example.B.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{D.{1}}{}}{193}{example.D.1}
+\contentsline {example}{{Example}{D.{1}}{}}{197}{example.D.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{D.{1}}{}}{194}{remark.D.1}
+\contentsline {remark}{{Remark}{D.{1}}{}}{198}{remark.D.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{D.{2}}{}}{195}{remark.D.2}
+\contentsline {remark}{{Remark}{D.{2}}{}}{199}{remark.D.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{D.{3}}{Direct link with the two-class framework}}{201}{remark.D.3}
+\contentsline {remark}{{Remark}{D.{3}}{Direct link with the two-class framework}}{205}{remark.D.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{D.{4}}{}}{202}{remark.D.4}
+\contentsline {remark}{{Remark}{D.{4}}{}}{206}{remark.D.4}

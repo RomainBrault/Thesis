@@ -26,9 +26,10 @@ is to find an optimal model $f_*$ that minimizes the true risk. Namely
     \hiderel{=}\argmin_{f\in\mathcal{F}}\int_{\mathcal{X} \times
     \mathcal{Y}}c(f(x), y)d\probability(x,y).
 \end{dmath*}
-Since in practice we do not have access to the joint probability law of (X,Y), we define its empirical counterpart as the empirical
-mean estimate, where the sequence $\seq{s}=(x_i,y_i)_{i=1}^N$ is made of
-$\mathcal{X}$-valued random vectors drawn \acs{iid}~from some law
+Since in practice we do not have access to the joint probability law of (X,Y),
+we define its empirical counterpart as the empirical mean estimate, where the
+sequence $\seq{s}=(x_i,y_i)_{i=1}^N$ is made of $\mathcal{X}$-valued random
+vectors drawn \acs{iid}~from some law
 $\probability$.
 % Moreover we often add a regularization term on the norm of the functions in
 % $\mathcal{F}$ to \say{reduce} the size of the class of function.
@@ -43,17 +44,25 @@ As a result, in practice we seek a function $f_{\seq{s}}$ such that
     f_{\seq{s}} = \argmin_{f\in\mathcal{F}} \riskemp{f,\seq{s}} \hiderel{=}
     \argmin_{f\in\mathcal{F}}\frac{1}{N}\sum_{i=1}^Nc\left(f(x_i), y_i\right).
 \end{dmath}
-The basic requirement for any learning algorithm is the generalization property: the empir-
-ical error must be a good proxy of the expected error, that is the difference
-between the two must be \say{small} when $N$ is large. A generalization
-bound allows to study, for any $f\in\mathcal{F}$ the difference between its true risk $\risk{f}$
-and its empirical risk, $\risk{f,\seq{s}}$. This quantifies the impact of having a limited
-number of observations. Generalization (upper) bounds \cite{Vapnik1998} involve two components: one being the empirical risk and the other depends on the dataset size as well as some capacity notion that reflects the richness of the family of functions $\mathcal{F}$ considered. First generalization bounds proved by Vapnik and Chervonenkis involve the dimension of Vapnik-Chervonenkis dimension of $\mathcal{F}$.
-In practise, generalization bounds are usually not enough tight to provide direct recommendations for choosing the appropriate family of functions to work with when $N$ is fixed.
-However as the bias-variance dilemna, it suggests that when learning a function from a finite dataset,  it is necessary to control the richness of the functions family $\mathcal{F}$. 
-In practise, 
-a regularizer is added to the data-fitting term in order to maintain the solution $f_{\seq{s}}$ of
-\cref{eq:argmin_empirical} in a ball of $\mathcal{F}$.  As a result if
+The basic requirement for any learning algorithm is the generalization
+property: the empir- ical error must be a good proxy of the expected error,
+that is the difference between the two must be \say{small} when $N$ is large. A
+generalization bound allows to study, for any $f\in\mathcal{F}$ the difference
+between its true risk $\risk{f}$ and its empirical risk, $\risk{f,\seq{s}}$.
+This quantifies the impact of having a limited number of observations.
+Generalization (upper) bounds \cite{Vapnik1998} involve two components: one
+being the empirical risk and the other depends on the dataset size as well as
+some capacity notion that reflects the richness of the family of functions
+$\mathcal{F}$ considered. First generalization bounds proved by Vapnik and
+Chervonenkis involve the dimension of Vapnik-Chervonenkis dimension of
+$\mathcal{F}$.  In practice, generalization bounds are usually not enough tight
+to provide direct recommendations for choosing the appropriate family of
+functions to work with when $N$ is fixed.  However as the bias-variance
+dilemna, it suggests that when learning a function from a finite dataset,  it
+is necessary to control the richness of the functions family $\mathcal{F}$.  In
+practise, a regularizer is added to the data-fitting term in order to maintain
+the solution $f_{\seq{s}}$ of \cref{eq:argmin_empirical} in a ball of
+$\mathcal{F}$.  As a result if
 $\mathcal{F}$ is a Banach space, it is common to find $f_{\seq{s}}$ such that
 \begin{dmath*}
     f_{\seq{s}} = \argmin_{f\in\mathcal{F}} \riskemp{f,\seq{s}} +

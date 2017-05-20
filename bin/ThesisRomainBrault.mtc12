@@ -1,5 +1,11 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {C.1}Python code for figure 3.1}{\reset@font\mtcSfont 170}{section.C.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {C.2}Python code for figure 5.1}{\reset@font\mtcSfont 171}{section.C.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {C.3}Python code for figure 5.3}{\reset@font\mtcSfont 173}{section.C.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {C.4}Python code for figure 5.4}{\reset@font\mtcSfont 175}{section.C.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {C.5}Python code for figure 5.5}{\reset@font\mtcSfont 178}{section.C.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.1}Operator-valued functions and integration}{\reset@font\mtcSfont 162}{section.B.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.2}About concentration inequalities}{\reset@font\mtcSfont 162}{section.B.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.3}ORFF Engineering}{\reset@font\mtcSfont 162}{section.B.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.4}Learning with semi-supervision}{\reset@font\mtcSfont 162}{section.B.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.4.1}Representer theorem and feature equivalence}{\reset@font\mtcSSfont 162}{subsection.B.4.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 162}{theorem.B.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 162}{theorem.B.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 164}{theorem.B.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 165}{theorem.B.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.4.2}Gradients}{\reset@font\mtcSSfont 167}{subsection.B.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.4.3}Complexity}{\reset@font\mtcSSfont 170}{subsection.B.4.3}}

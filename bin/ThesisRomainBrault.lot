@@ -8,76 +8,80 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Motivations}}{3}{chapter.1}
+\contentsline {xchapter}{\spacedlowsmallcaps {Outline and motivations}}{3}{chapter.1}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Background}}{13}{chapter.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2.1}{\ignorespaces Mathematical symbols used throughout the parper and their signification (part 1). \relax }}{19}{table.caption.12}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2.3}{\ignorespaces Mathematical symbols used throughout the parper and their signification (part 2). \relax }}{20}{table.caption.13}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2.5}{\ignorespaces Classification of \acl {FT}s in terms of their domain and transform domain.\relax }}{23}{table.caption.14}
+\contentsline {xchapter}{\spacedlowsmallcaps {On learning efficently scalar-valued functions}}{5}{chapter.2}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Operator-valued Random Fourier Features}}{43}{chapter.3}
+\contentsline {xchapter}{\spacedlowsmallcaps {Background}}{17}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.1}{\ignorespaces Mathematical symbols used throughout the parper and their signification (part 1). \relax }}{23}{table.caption.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.3}{\ignorespaces Mathematical symbols used throughout the parper and their signification (part 2). \relax }}{24}{table.caption.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.5}{\ignorespaces Classification of \acl {FT}s in terms of their domain and transform domain.\relax }}{27}{table.caption.14}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Bounding the error of the ORFF approximation}}{69}{chapter.4}
+\contentsline {xchapter}{\spacedlowsmallcaps {Operator-valued Random Fourier Features}}{47}{chapter.4}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Learning with Feature maps}}{83}{chapter.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.1}{\ignorespaces Complexity of efficient linear-operators for different \acs {ORFF}.}}{101}{table.caption.25}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.3}{\ignorespaces Efficient linear-operators for different \acs {ORFF}.}}{102}{table.caption.28}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.5}{\ignorespaces Error (\% of nMSE) on SARCOS dataset.\relax }}{110}{table.caption.35}
+\contentsline {xchapter}{\spacedlowsmallcaps {Bounding the error of the ORFF approximation}}{73}{chapter.5}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Consistency and Generalization bound for ORFF}}{113}{chapter.6}
+\contentsline {xchapter}{\spacedlowsmallcaps {Learning with Feature maps}}{87}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {6.1}{\ignorespaces Complexity of efficient linear-operators for different \acs {ORFF}.}}{105}{table.caption.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {6.3}{\ignorespaces Efficient linear-operators for different \acs {ORFF}.}}{106}{table.caption.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {6.5}{\ignorespaces Error (\% of nMSE) on SARCOS dataset.\relax }}{114}{table.caption.35}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Application to time series modelling}}{125}{chapter.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.1}{\ignorespaces Sequential \acs {SCV-MSE} and computation times for \acs {VAR}(1), \acs {ORFFVAR} and \acs {OKVAR} on synthetic data (Settings 1, 2 and 3). \relax }}{132}{table.caption.38}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.2}{\ignorespaces SVC-MSE with respect to $D$ the number of random features for ORFFVAR. \relax }}{132}{table.caption.39}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.3}{\ignorespaces SCV-MSE and computation times for ORFFVAR, VAR(1) and OKVAR on real datasets.\relax }}{133}{table.caption.40}
+\contentsline {xchapter}{\spacedlowsmallcaps {Consistency and Generalization bound for ORFF}}{117}{chapter.7}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Perspectives}}{137}{chapter.8}
+\contentsline {xchapter}{\spacedlowsmallcaps {Application to time series modelling}}{129}{chapter.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {8.1}{\ignorespaces Sequential \acs {SCV-MSE} and computation times for \acs {VAR}(1), \acs {ORFFVAR} and \acs {OKVAR} on synthetic data (Settings 1, 2 and 3). \relax }}{136}{table.caption.38}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {8.2}{\ignorespaces SVC-MSE with respect to $D$ the number of random features for ORFFVAR. \relax }}{136}{table.caption.39}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {8.3}{\ignorespaces SCV-MSE and computation times for ORFFVAR, VAR(1) and OKVAR on real datasets.\relax }}{137}{table.caption.40}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Conlusions}}{139}{chapter.9}
+\contentsline {xchapter}{\spacedlowsmallcaps {Perspectives}}{141}{chapter.9}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Proofs of theorems}}{143}{appendix.A}
+\contentsline {xchapter}{\spacedlowsmallcaps {Conlusions}}{143}{chapter.10}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Miscellaneous}}{157}{appendix.B}
+\contentsline {xchapter}{\spacedlowsmallcaps {Proofs of theorems}}{147}{appendix.A}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Relevant piece of code}}{169}{appendix.C}
+\contentsline {xchapter}{\spacedlowsmallcaps {Miscellaneous}}{161}{appendix.B}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {One Class Splitting Criteria for Random Forests}}{183}{appendix.D}
+\contentsline {xchapter}{\spacedlowsmallcaps {Relevant piece of code}}{173}{appendix.C}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {D.1}{\ignorespaces Original datasets characteristics\relax }}{193}{table.caption.46}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {D.3}{\ignorespaces Results for the novelty detection setting. \relax }}{195}{table.caption.47}
+\contentsline {xchapter}{\spacedlowsmallcaps {One Class Splitting Criteria for Random Forests}}{187}{appendix.D}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {D.4}{\ignorespaces Results for the outlier detection setting\relax }}{210}{table.caption.67}
+\contentsline {table}{\numberline {D.1}{\ignorespaces Original datasets characteristics\relax }}{197}{table.caption.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {D.3}{\ignorespaces Results for the novelty detection setting. \relax }}{199}{table.caption.47}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {D.4}{\ignorespaces Results for the outlier detection setting\relax }}{214}{table.caption.67}

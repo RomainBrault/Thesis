@@ -310,6 +310,17 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   keywords  = {ovks},
 }
 
+@article{box1979robustness,
+  title={Robustness in the strategy of scientific model building},
+  author={Box, George EP},
+  journal={Robustness in statistics},
+  volume={1},
+  pages={201--236},
+  year={1979},
+  keywords = {ovks},
+}
+
+
 @Misc{Berberian66,
   author   = {Berberian, S.K.},
   title    = {Notes on Spectral Theory},
@@ -478,6 +489,15 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   volume    = {96},
   keywords  = {ovks},
 }
+
+@book{cornuejols2011apprentissage,
+  title={Apprentissage artificiel: concepts et algorithmes},
+  author={Cornu{\'e}jols, Antoine and Miclet, Laurent},
+  year={2011},
+  publisher={Editions Eyrolles},
+  keywords = {ovks},
+}
+
 
 @InProceedings{Cortes2005,
   author    = {Cortes, C. and Mohri, M. and Weston, J.},
@@ -751,6 +771,20 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   jstor_formatteddate = {Mar.,},
   keywords            = {ovks},
 }
+
+
+@article{hoffgen1995robust,
+  title={Robust trainability of single neurons},
+  author={Hoffgen, Klaus-Uwe and Simon, Hans-Ulrich and Vanhorn, Kevin S},
+  journal={Journal of Computer and System Sciences},
+  volume={50},
+  number={1},
+  pages={114--125},
+  year={1995},
+  publisher={Elsevier},
+  keywords = {ovks},
+}
+
 
 @Article{Honeine2011,
   author   = {Honeine, P. and Richard, C.},
@@ -1705,6 +1739,15 @@ ci!TEX root = ../../ThesisRomainbrault.tex
 
 %%% V
 
+@book{Vapnik1998,
+  title={Statistical learning theory},
+  author={Vapnik, Vladimir Naumovich and Vapnik, Vlamimir},
+  volume={1},
+  year={1998},
+  publisher={Wiley New York}
+}
+
+
 @InProceedings{vapnik1992principles,
   author    = {Vapnik, Vladimir},
   title     = {Principles of risk minimization for learning theory},
@@ -1938,8 +1981,8 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   title     = {On the equivalence between quadrature rules and random features},
   journal   = {arXiv preprint arXiv:1502.06800},
   year      = {2015},
+  keywords  = {ovks},
   publisher = {arXiv},
-  keywords = {ovks},
 }
 
 @InProceedings{dai2014scalable,
@@ -1960,6 +2003,18 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   pages     = {181--196},
   keywords  = {ovks},
 }
+
+@article{drineas2005nystrom,
+  title={On the Nystr{\"o}m method for approximating a Gram matrix for improved kernel-based learning},
+  author={Drineas, Petros and Mahoney, Michael W},
+  journal={journal of machine learning research},
+  volume={6},
+  number={Dec},
+  pages={2153--2175},
+  year={2005}
+}
+
+
 
 @Article{sleijpen2010bi,
   author    = {Sleijpen, Gerard LG and Sonneveld, Peter and Van Gijzen, Martin B},

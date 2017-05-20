@@ -200,6 +200,28 @@
       \field{year}{2015}
       \keyw{ovks}
     \endentry
+    \entry{Bach2015}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=93da2819ab01d8a5e7bae39ce6f17c1f}{%
+           family={Bach},
+           family_i={B\bibinitperiod},
+           given={Francis},
+           given_i={F\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {INRIA - Ecole Normale SUperieure-France}%
+      }
+      \strng{namehash}{93da2819ab01d8a5e7bae39ce6f17c1f}
+      \strng{fullhash}{93da2819ab01d8a5e7bae39ce6f17c1f}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{HAl-report-/hal-01118276}
+      \field{title}{On the Equivalence between Quadrature Rules and Random Features}
+      \field{year}{2015}
+      \keyw{ovks}
+    \endentry
     \entry{bach2015equivalence}{article}{}
       \name{author}{1}{}{%
         {{hash=93da2819ab01d8a5e7bae39ce6f17c1f}{%
@@ -1361,6 +1383,34 @@
       \field{title}{Gene selection and classification of microarray data using random forest}
       \field{year}{2006}
       \keyw{extrems}
+    \endentry
+    \entry{drineas2005nystrom}{article}{}
+      \name{author}{2}{}{%
+        {{hash=a44e79f9fea417b90f4d7b9878b7a1fc}{%
+           family={Drineas},
+           family_i={D\bibinitperiod},
+           given={Petros},
+           given_i={P\bibinitperiod}}}%
+        {{hash=bd17186143779d2f0eae6b5198fdc8db}{%
+           family={Mahoney},
+           family_i={M\bibinitperiod},
+           given={Michael\bibnamedelima W},
+           given_i={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{56b09bd73cd8fddc357a0f735c3cbd9c}
+      \strng{fullhash}{56b09bd73cd8fddc357a0f735c3cbd9c}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{journal of machine learning research}
+      \field{number}{Dec}
+      \field{title}{On the Nyström method for approximating a Gram matrix for improved kernel-based learning}
+      \field{volume}{6}
+      \field{year}{2005}
+      \field{pages}{2153\bibrangedash 2175}
+      \range{pages}{23}
+      \keyw{ovks}
     \endentry
     \entry{dudley1967sizes}{article}{}
       \name{author}{1}{}{%
@@ -4380,6 +4430,33 @@
       \range{pages}{8}
       \keyw{ovks}
     \endentry
+    \entry{Vapnik1998}{book}{}
+      \name{author}{2}{}{%
+        {{hash=f3d8c0def5414379d42ce01dfeec9fd9}{%
+           family={Vapnik},
+           family_i={V\bibinitperiod},
+           given={Vladimir\bibnamedelima Naumovich},
+           given_i={V\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=a1942498f8367ff1e1ab1442e7f324c0}{%
+           family={Vapnik},
+           family_i={V\bibinitperiod},
+           given={Vlamimir},
+           given_i={V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley New York}%
+      }
+      \strng{namehash}{446f4de08cedf9a1857ae17ac00a68d6}
+      \strng{fullhash}{446f4de08cedf9a1857ae17ac00a68d6}
+      \field{sortinit}{V}
+      \field{sortinithash}{d18f5ce25ce0b5ca7f924e3f6c04870e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Statistical learning theory}
+      \field{volume}{1}
+      \field{year}{1998}
+      \keyw{ovks}
+    \endentry
     \entry{vazquez2003multi}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=1c19e5e0eb8c41cd9b10d99d34883008}{%
@@ -4746,7 +4823,6 @@
       \keyw{ovks}
     \endentry
   \endsortlist
-  \missing{Vapnik1998}
 \endrefsection
 \endinput
 

@@ -2047,4 +2047,56 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   publisher = {IBM},
 }
 
+@Book{cornuejols2011apprentissage,
+  title     = {Apprentissage artificiel: concepts et algorithmes},
+  publisher = {Editions Eyrolles},
+  year      = {2011},
+  author    = {Cornu{\'e}jols, Antoine and Miclet, Laurent},
+  keywords  = {ovks},
+}
+
+@Article{drineas2005nystrom,
+  author   = {Drineas, Petros and Mahoney, Michael W},
+  title    = {On the Nystr{\"o}m method for approximating a Gram matrix for improved kernel-based learning},
+  journal  = {journal of machine learning research},
+  year     = {2005},
+  volume   = {6},
+  number   = {Dec},
+  pages    = {2153--2175},
+  keywords = {ovks},
+}
+
+%%% V
+
+@Book{Vapnik1998,
+  title     = {Statistical learning theory},
+  publisher = {Wiley New York},
+  year      = {1998},
+  author    = {Vapnik, Vladimir Naumovich and Vapnik, Vlamimir},
+  volume    = {1},
+  keywords  = {ovks},
+}
+
+@Article{hoffgen1995robust,
+  author    = {Hoffgen, Klaus-Uwe and Simon, Hans-Ulrich and Vanhorn, Kevin S},
+  title     = {Robust trainability of single neurons},
+  journal   = {Journal of Computer and System Sciences},
+  year      = {1995},
+  volume    = {50},
+  number    = {1},
+  pages     = {114--125},
+  keywords  = {ovks},
+  publisher = {Elsevier},
+}
+
+@Article{box1979robustness,
+  author   = {Box, George EP},
+  title    = {Robustness in the strategy of scientific model building},
+  journal  = {Robustness in statistics},
+  year     = {1979},
+  volume   = {1},
+  pages    = {201--236},
+  keywords = {ovks},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

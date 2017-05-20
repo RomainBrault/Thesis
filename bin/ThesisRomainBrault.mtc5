@@ -1,16 +1,16 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.1}Convegence with high probability of the ORFF estimator}{\reset@font\mtcSfont 78}{section.5.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 78}{section.5.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 79}{figure.caption.20}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 79}{figure.caption.20}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 79}{figure.caption.20}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 80}{figure.caption.20}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.1}Random Fourier Features in the scalar case and decomposable OVK}{\reset@font\mtcSSfont 80}{subsection.5.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.2}Uniform convergence of ORFF approximation on LCA groups}{\reset@font\mtcSSfont 81}{subsection.5.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.3}Dealing with infinite dimensional operators}{\reset@font\mtcSSfont 85}{subsection.5.1.3}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 86}{subsection.5.1.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.4}Variance of the ORFF approximation}{\reset@font\mtcSSfont 87}{subsection.5.1.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.5}Application on decomposable, curl-free and divergence-free OVK}{\reset@font\mtcSSfont 87}{subsection.5.1.5}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {5.1.5.1}Decomposable kernel}{\reset@font\mtcSSSfont 88}{subsubsection.5.1.5.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {5.1.5.2}Curl-free and divergence-free kernels:}{\reset@font\mtcSSSfont 89}{subsubsection.5.1.5.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {5.1.5.3}Computing the Orlicz norm}{\reset@font\mtcSSSfont 89}{subsubsection.5.1.5.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}Conclusions}{\reset@font\mtcSfont 89}{section.5.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.1}Convegence with high probability of the ORFF estimator}{\reset@font\mtcSfont 80}{section.5.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 80}{section.5.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 81}{figure.caption.20}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 81}{figure.caption.20}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 81}{figure.caption.20}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 82}{figure.caption.20}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.1}Random Fourier Features in the scalar case and decomposable OVK}{\reset@font\mtcSSfont 82}{subsection.5.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.2}Uniform convergence of ORFF approximation on LCA groups}{\reset@font\mtcSSfont 83}{subsection.5.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.3}Dealing with infinite dimensional operators}{\reset@font\mtcSSfont 87}{subsection.5.1.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 88}{subsection.5.1.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.4}Variance of the ORFF approximation}{\reset@font\mtcSSfont 89}{subsection.5.1.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.5}Application on decomposable, curl-free and divergence-free OVK}{\reset@font\mtcSSfont 89}{subsection.5.1.5}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {5.1.5.1}Decomposable kernel}{\reset@font\mtcSSSfont 90}{subsubsection.5.1.5.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {5.1.5.2}Curl-free and divergence-free kernels:}{\reset@font\mtcSSSfont 91}{subsubsection.5.1.5.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {5.1.5.3}Computing the Orlicz norm}{\reset@font\mtcSSSfont 91}{subsubsection.5.1.5.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}Conclusions}{\reset@font\mtcSfont 91}{section.5.2}}

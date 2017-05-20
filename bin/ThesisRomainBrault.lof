@@ -26,7 +26,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Riesz map, dual spaces and adjoints.\relax }}{25}{figure.caption.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Synthetic $2D$ curl-free field .\relax }}{45}{figure.caption.15}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Synthetic $2D$ curl-free field .\relax }}{46}{figure.caption.15}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Synthetic $2D$ divergence-free field .\relax }}{46}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
@@ -40,35 +40,35 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Bounding the error of the ORFF approximation}}{77}{chapter.5}
+\contentsline {xchapter}{\spacedlowsmallcaps {Bounding the error of the ORFF approximation}}{79}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces \acs {ORFF} reconstruction error}}{78}{figure.caption.20}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \acs {ORFF} reconstruction error}}{80}{figure.caption.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces decomposable ORFF variance bound}}{87}{figure.caption.21}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces decomposable ORFF variance bound}}{89}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Curl-free ORFF variance bound}}{88}{figure.caption.22}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Curl-free ORFF variance bound}}{90}{figure.caption.22}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Learning with Feature maps}}{91}{chapter.6}
+\contentsline {xchapter}{\spacedlowsmallcaps {Learning with Feature maps}}{93}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces \acs {ORFF} equivalence theorem}}{103}{figure.caption.23}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \acs {ORFF} equivalence theorem}}{105}{figure.caption.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces \acs {ORFF} equivalence theorem}}{104}{figure.caption.24}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \acs {ORFF} equivalence theorem}}{106}{figure.caption.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Efficient decomposable gaussian \acs {ORFF}}}{111}{figure.caption.26}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Efficient decomposable gaussian \acs {ORFF}}}{113}{figure.caption.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Efficient curl-free gaussian \acs {ORFF}}}{112}{figure.caption.29}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Efficient curl-free gaussian \acs {ORFF}}}{114}{figure.caption.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Efficient divergence-free gaussian \acs {ORFF}}}{112}{figure.caption.30}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Efficient divergence-free gaussian \acs {ORFF}}}{114}{figure.caption.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Prediction Error in percent on the MNIST dataset versus $D$, the number of Fourier features}}{115}{figure.caption.31}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Prediction Error in percent on the MNIST dataset versus $D$, the number of Fourier features}}{117}{figure.caption.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Empirical comparison between curl-free ORFF, curl-free OVK, independent ORFF, independent OVK on a synthetic vector field regression task. \relax }}{116}{figure.caption.32}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Empirical comparison between curl-free ORFF, curl-free OVK, independent ORFF, independent OVK on a synthetic vector field regression task. \relax }}{118}{figure.caption.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Decomposable kernel on the third dataset: $R2$ score vs number of data in the train set ($N$) \relax }}{117}{figure.caption.33}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Decomposable kernel on the third dataset: $R2$ score vs number of data in the train set ($N$) \relax }}{119}{figure.caption.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Decomposable kernel on the third dataset: $R2$ score vs number of data in the train set ($N$) for different number for different number of random samples ($D$). \relax }}{117}{figure.caption.34}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Decomposable kernel on the third dataset: $R2$ score vs number of data in the train set ($N$) for different number for different number of random samples ($D$). \relax }}{119}{figure.caption.34}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
@@ -80,7 +80,7 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Perspectives}}{145}{chapter.9}
+\contentsline {xchapter}{\spacedlowsmallcaps {Work in progress}}{145}{chapter.9}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
@@ -96,7 +96,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {B.1}{\ignorespaces \acs {ORFF} equivalence theorem (semi-supervised)}}{172}{figure.caption.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.2}{\ignorespaces \acs {ORFF} multiclass semi-supervised}}{173}{figure.caption.42}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces \acs {ORFF} multiclass semi-supervised}}{174}{figure.caption.42}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

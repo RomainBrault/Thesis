@@ -1,11 +1,11 @@
 =>PYTHONTEX#py#default#default#0#c####Motivations.tex#172#
 print(r'\centering\resizebox{\textwidth}{!}{\input{./gfx/nested_circle.pgf}}')
-=>PYTHONTEX#py#not_mercer#default#0#code####Construction.tex#1085#
+=>PYTHONTEX#py#not_mercer#default#0#code####Construction.tex#1209#
 sys.path.append('./src/')
 import not_mercer
 
 not_mercer.main()
-=>PYTHONTEX#py#default#default#1#c####Construction.tex#1092#
+=>PYTHONTEX#py#default#default#1#c####Construction.tex#1216#
 print(r'\centering\resizebox{\textwidth}{!}{\input{./not_Mercer.pgf}}')
 =>PYTHONTEX#py#approximation#default#0#code####Concentration.tex#31#
 sys.path.append('./src/')

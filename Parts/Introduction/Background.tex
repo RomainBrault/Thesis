@@ -260,8 +260,8 @@ $m=\dim(\mathcal{H}_2)$. All these notations are summarized in
 \cref{table:notations1,table:notations2}.
 \begin{table}
     \centering
-    \caption{Mathematical symbols used throughout the parper and their
-    signification (part 1). \label{table:notations1}}
+    \caption{Mathematical symbols and their signification (part 1).
+    \label{table:notations1}}
     \begin{tabularx}{\textwidth}{cX}
         \toprule
             Symbol & \multicolumn{1}{c}{Meaning} \\
@@ -321,16 +321,16 @@ $m=\dim(\mathcal{H}_2)$. All these notations are summarized in
 \end{table}
 \begin{table}
     \centering
-    \caption{Mathematical symbols used throughout the parper and their
-    signification (part 2). \label{table:notations2}}
+    \caption{Mathematical symbols and their signification (part 2).
+    \label{table:notations2}}
     \begin{tabularx}{\textwidth}{cX}
         \toprule
             Symbol & \multicolumn{1}{c}{Meaning} \\
         \cmidrule{1-2}
         \endhead
             $\probability_{\mu, \rho}(\mathcal{X})$ & A probability measure of
-            $\mathcal{X}$ whose Radon-Nikodym derivative with respect to the
-            measure $\mu$ is $\rho$. \\
+            $\mathcal{X}$ whose Radon-Nikodym derivative (density) with respect
+            to the measure $\mu$ is $\rho$. \\
             $\FT{\cdot}$ & The \acl{FT} operator. \\
             $\IFT{\cdot}$ & The \acl{IFT} operator. \\
             $\esssup$ & The essential supremum. \\
@@ -344,12 +344,14 @@ $m=\dim(\mathcal{H}_2)$. All these notations are summarized in
             $p\in\mathbb{R}_+$. $L^p(\mathcal{X},\mu,\mathbb{R}) \colonequals
             L^p(\mathcal{X},\mu)$. \\
             $\Vect_{j=1}^D x_i$ & The direct sum of $D\in\mathbb{N}$ vectors
-            $x_i$'s in the Hilbert spaces $\mathcal{H}_i$. \\
+            $x_i$'s in the Hilbert spaces $\mathcal{H}_i$. By definition
+            $\inner{\Vect_{j=1}^D x_j, \Vect_{j=1}^D z_j} = \sum_{j=1}^D
+            \inner{x_j, z_j}_{\mathcal{H}_i}$~\citep{avramidi2000notes}. \\
             $\norm{\cdot}_p$ & The $L^p(\mathcal{X}, \mu, \mathcal{Y})$ norm.
             $\norm{f}_p^p\colonequals \int_{\mathcal{X}}
             \norm{f(x)}_{\mathcal{Y}}^p d\mu(x)$.  When
             $\mathcal{X}=\mathbb{N}^*$, $\mathcal{Y}\subseteq \mathbb{R}$ and
-            $\mu$ is the counting measure and $p=2$ it co\"incide with the
+            $\mu$ is the counting measure and $p=2$ it coincide with the
             Euclidean norm $\norm{\cdot}_2$ for finite dimensional vectors. \\
             $\norm{\cdot}_{\infty}$ & The uniform norm $\norm{f}_{\infty}=
             \esssup \set{\norm{f(x)}_{\mathcal{Y}} |

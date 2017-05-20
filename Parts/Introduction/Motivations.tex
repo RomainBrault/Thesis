@@ -492,7 +492,7 @@ Then it is easy to verify that $\boldsymbol{\phi}^\transpose \boldsymbol{\phi} =
 where $\mathbf{K}_M^\dagger$ is the pseudo-inverse of $\mathbf{K}_M$ and the
 quantity $\mathbf{K}_b \mathbf{K}_M^\dagger \mathbf{K}_b^\transpose$ is a low
 rank approximation of the Gram matrix $\mathbf{K}$.
-\paragraph{}
+\subsubsection{Random features vs Nystr\"om method}
 The main conceptual difference between the Nystr\"om features and the \acl{RFF}
 is that the Nystr\"om construction is data dependent, while the \acs{RFF} is
 not. The advantage of random fourier feature lies in their fast construction.
@@ -534,13 +534,69 @@ required for good generalization with \acsp{RFF}. We refer the interrested
 reader to \citet{Yang2012} for an empirical comparison between the Nystr\"om
 method and the \acs{RFF} method.
 
+\subsubsection{Extensions of the RFF method}
+\paragraph{}
+The seminal idea of \citet{Rahimi2007} has open a large litterature on random
+features. Nowaday, many classes of kernels other than translation invariant are
+now proved to have an efficient random feature representation.
+\citet{kar2012random} proposed random feature maps for dot product kernels
+(rotation invariant) and \citet{hamid2014compact} improved the rate of
+convergence of the approximation error for such kernels by noticing that
+feature maps for dot product kernels are usually low ranki and may not utilize
+the capacity of the projected feature  space  effectively. \Citet{pham2013fast}
+proposed fast random feature maps for polynomial kernels.
+\paragraph{}
+To speed-up the convergence rate of the random features approximation,
+\citet{yang2014quasi} proposed to sample the random variable from a quasi
+Monte-Carlo sequence instead of \acs{iid}~random variables. \Citet{Le2013}
+proposed the \say{Fastfood} algorithm to reduce the complexity of computing a
+\acs{RFF}, using structured matrices and a fast Walsh-Hadarmard transform, from
+$O(Dd)$ to $O(D\log(d))$. More recently \citet{felix2016orthogonal} proposed
+also an algorithm \say{SORF} to compute Gaussian \acs{RFF} in $O(D\log(d))$ but
+with better convergence rates than \say{Fastfood} \citep{Le2013}.
+\Citet{mukuta2016kernel} proposed data dependent features (comparable to the
+Nystro\"m method) by estimating the distribution of the input data, and then
+finding the eigenfunction decomposition of Mercer's integral operator
+associated to the kernel.
+\paragraph{}
+\Citet{li2010random} generalized the original \acs{RFF} of \citet{Rahimi2007}.
+Instead of computing feature maps for shift-invariant kenrels on the additive
+group $(\mathbb{R}^d, +)$, they used the generalized Fourier transform on any
+locally compact abelian group to derive random features on the multiplicative
+group $(\mathbb{R}^d, *)$. In the same spirit \citet{yang2014random} noticed
+that an theorem equivalent to Bochner's theorem exists on the semi-group
+$(\mathbb{R}_+^d, +)$. From this they derived \say{Random Laplace} features and
+used them to approximate kernels adapted to learn on histograms.
+\paragraph{}
+In the context of large scale learning and deep learning, \citet{lu2014scale}
+showed that \acsp{RFF} can achieve performances comparable to deep-learning
+methods by combining multiple kernel learning and composition of kernels along
+with a scalable parallel implementation. \Citet{dai2014scalable} and
+\citet{xie2015scale} combined \acsp{RFF} and stochastic gradient descent to
+defined an online learning algorithm called \say{Doubly stochastic gradient
+descent} adapted to large scale learning. \Citet{yang2015deep} proposed an
+studied the idea of replacing the last fully interconnected layer of a deep
+convolutional neural network \citep{lecun1995convolutional} by the
+\say{Fastfood} implementation of \acsp{RFF}.
+\paragraph{}
+Eventually \citet{Yang2015} introduced the algorithm \say{\`A la Carte}, based
+on \say{Fastfood} which is able to learn the spectral distribution
+corresponding to a kernel rather than defining it from the kernel.
+% A la carte
+%reported
+%performance comparable with deep learn- ing by combining multiple kernel
+%learning and the compo- sition of kernels.
 
-\subsubsection{Recent extensions}
+%A important subject of research is on how to compute random features
+%as fast as possible. \Citet{hamid2014compacti, } proposed feature maps for
+%polynomial kernels rank deficient, and there-
+%fore may not utilize the capacity of the projected
+%feature  space  effectively.
 
-\section{On large-scale learning}
-\label{sec:on_large-scale_learning}
+%\section{On large-scale learning}
+%\label{sec:on_large-scale_learning}
 
-\section{History and state of the art of large scale learning with kernels}
-\label{sec:history}
+%\section{History and state of the art of large scale learning with kernels}
+%\label{sec:history}
 
 \chapterend

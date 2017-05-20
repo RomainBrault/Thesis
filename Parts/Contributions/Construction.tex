@@ -146,7 +146,7 @@ $\mathcal{Z}\subset\mathcal{B}(\dual{\mathcal{X}})$,
     \rho(\omega)d\dual{\mu}(\omega).
 \end{dmath*}
 When the reference measure $\dual{\mu}$ is the Lebesgue measure, we note
-$\probability_{\dual{\mu},\rho}=\probability_\rho$.
+$\probability_{\dual{\mu},\rho}=\probability_{\rho}$.
 
 \subsection{Sufficient conditions of existence}
 \label{subsec:sufficient_conditions}
@@ -514,13 +514,15 @@ $\mathcal{Y}$-Mercer kernels, based on \cref{pr:spectral} and
 \cref{pr:trace_measure}.
 
 \subsubsection{Gaussian decomposable kernel}
-\label{par:gaussian_dec} Recall that a decomposable $\mathbb{R}^p$-Mercer introduced in the Background section has
-the form $K(x,z)=k(x,z)\Gamma$, where $k(x,z)$ is a scalar Mercer kernel and
-$\Gamma\in\mathcal{L}(\mathbb{R}^p)$ is a non-negative operator. Let us focus on
+\label{par:gaussian_dec} Recall that a decomposable $\mathbb{R}^p$-Mercer
+introduced in the Background section has the form $K(x,z)=k(x,z)\Gamma$, where
+$k(x,z)$ is a scalar Mercer kernel and $\Gamma\in\mathcal{L}(\mathbb{R}^p)$ is
+a non-negative operator. Let us focus on
 $K^{dec,gauss}_e(\cdot)=k_e^{gauss}(\cdot)\Gamma$, the Gaussian decomposable
-kernel where $K_e^{dec, gauss}$ and $k_e^{gauss}$ are respectively the signature of $K$ and $k$ on
-the additive group $\mathcal{X}=(\mathbb{R}^d,+)$ -- $\acs{ie}~\delta=x-z$ and
-$e=0$. The well known Gaussian kernel is defined for all $\delta\in\mathbb{R}^d$ as follows
+kernel where $K_e^{dec, gauss}$ and $k_e^{gauss}$ are respectively the
+signature of $K$ and $k$ on the additive group $\mathcal{X}=(\mathbb{R}^d,+)$
+-- $\acs{ie}~\delta=x-z$ and $e=0$. The well known Gaussian kernel is defined
+for all $\delta\in\mathbb{R}^d$ as follows
 \begin{dmath*}
     k^{\text{gauss}}_0(\delta)\hiderel{=}\exp\left(
     -\frac{1}{2\sigma^2}\norm{\delta}^2_2\right)
@@ -611,11 +613,11 @@ $\Tr\left[K^{dec,gauss}_0(0)\right]=\Tr\left[\Gamma\right]$ and
 
 \subsubsection{Skewed-$\chi^2$ decomposable kernel}
 \label{subsubsec:skewedchi2}
-The skewed-$\chi^2$ scalar kernel \citep{li2010random}, useful for image processing, is defined on the
-\acs{LCA} group $\mathcal{X}=(-c_k;+\infty)_{k=1}^d$, with
-$c_k\in\mathbb{R}_{+}$ and endowed with the group operation $\odot$. Let
-$(e_k)_{k=1}^d$ be the standard basis of $\mathcal{X}$ and ${}_k:x\mapsto
-\inner{x,e_k}$. The operator $\odot:
+The skewed-$\chi^2$ scalar kernel \citep{li2010random}, useful for image
+processing, is defined on the \acs{LCA} group
+$\mathcal{X}=(-c_k;+\infty)_{k=1}^d$, with $c_k\in\mathbb{R}_{+}$ and endowed
+with the group operation $\odot$. Let $(e_k)_{k=1}^d$ be the standard basis of
+$\mathcal{X}$ and ${}_k:x\mapsto \inner{x,e_k}$. The operator $\odot:
 \mathcal{X}\times\mathcal{X}\to\mathcal{X}$ is defined by
 \begin{dmath*}
     x\odot z = \left((x_k + c_k)(z_k + c_k) - c_k\right)_{k=1}^d.
@@ -696,7 +698,8 @@ $\mathcal{X}=(\mathbb{R}^d, +)$ so the setting is the same than
 \begin{dmath*}
     C^{curl,gauss}(\omega)_{ij}=
     \FT{K^{curl,gauss}_{1-c}(\cdot)_{ij}}(\omega)
-    =\FT{-\frac{d^2}{d\delta_id\delta_j}k^{gauss}_0}(\omega)
+    =\FT{-\frac{\partial^2}{\partial\delta_i\partial\delta_j}
+    k^{gauss}_0}(\omega)
     =-(\iu\omega_i)(\iu\omega_j)\FT{k_0^{gauss}}(\omega)
     =\omega_i\omega_j\FT{k_0^{gauss}}(\omega)
     =\sqrt{2\pi\frac{1}{\sigma^2}}^d\exp\left(
@@ -785,8 +788,9 @@ $\mathcal{X}=(\mathbb{R}^d, +)$. The setting is the same than
 \begin{dmath*}
     C^{div,gauss}(\omega)_{ij}
     = \FT{K^{div,gauss}_0(\cdot)_{ij}}(\omega)
-    = \FT{\frac{\partial^2}{\partial \delta_i \partial \delta_j}k^{gauss}_0 -  \delta_{i=j}
-    \sum_{k=1}^d \frac{\partial^2}{\partial \delta_k \partial\delta_k} k^{gauss}_0}(\omega)
+    = \FT{\frac{\partial^2}{\partial \delta_i \partial \delta_j}k^{gauss}_0 -
+    \delta_{i=j} \sum_{k=1}^d \frac{\partial^2}{\partial \delta_k
+    \partial\delta_k} k^{gauss}_0}(\omega)
     = \left(-(\iu \omega_i)(\iu \omega_j) - \delta_{i=j}\sum_{k=1}^d(\iu
     \omega_k)^2\right) \FT{k_0^{gauss}}
     =\left(\delta_{i=j}\sum_{k=1}^d \omega_k^2 - \omega_i \omega_j\right)
@@ -819,7 +823,8 @@ The canonical decomposition with respect to the usual Lebesgue measure is
 To obtain the bounded decomposition, again, apply \cref{pr:trace_measure}. For
 all $\delta\in\mathbb{R}^d$,
 \begin{dmath*}
-    \sum_{k=1}^d\frac{d^2}{d\delta_k d\delta_k}k^{gauss}_0(\delta)
+    \sum_{k=1}^d\frac{\partial^2}{\partial\delta_k
+    \partial\delta_k}k^{gauss}_0(\delta)
     = \left(d - \frac{\norm{\delta}_2^2}{\sigma^2}\right)
     \frac{\exp\left(-\frac{1}{2\sigma^2} \norm{\delta}^2_2\right)}{\sigma^2}.
 \end{dmath*}
@@ -903,86 +908,105 @@ where $\Phi_x\colonequals\Phi(x)$.
 As shown in \cref{pr:spectral,pr:trace_measure} it is
 always possible to find a pair $(A, \probability_{\dual{\Haar},\rho})$ from a
 shift invariant $\mathcal{Y}$-Mercer \acl{OVK} $K_e$ such that
-$\probability_{\dual{\Haar},\rho}$ is a probability measure, i.e. $\int_{\dual{\mathcal{X}}} \rho d\dual{\Haar}=1$ where $\rho$ is the
-density of $\probability_{\dual{\Haar},\rho}$ and
-$K_e(\delta)=\expectation_\rho{\conj{\pairing{\delta,\omega}}A(\omega)}$. In
+$\probability_{\dual{\Haar},\rho}$ is a probability measure, \acs{ie}
+$\int_{\dual{\mathcal{X}}} \rho d\dual{\Haar}=1$ where $\rho$ is the density of
+$\probability_{\dual{\Haar},\rho}$ and
+$K_e(\delta)=\expectation_{\rho}{\conj{\pairing{\delta,\omega}}A(\omega)}$. In
 order to obtain an approximation of $K$ from a decomposition $(A,
 \probability_{\dual{\Haar},\rho})$ we turn our attention to a Monte-Carlo
 estimation of the expectations in \cref{eq:expectation_tr} and
 \cref{eq:expectation_spec} characterizing a $\mathcal{Y}$-Mercer
-shift-invariant \acl{OVK}. In the following, for sake of simplicity, we will assume that $\mathcal{Y}$ and $\mathcal{Y}$ are finite dimensional Hilbert spaces.
-\paragraph{}
+shift-invariant \acl{OVK}. In the following, for sake of simplicity, we will
+assume that $\mathcal{Y}$ and $\mathcal{Y}$ are finite dimensional Hilbert
+spaces.
+% \paragraph{}
 %  \probability_{\dual{\Haar},\rho}
 \begin{proposition}
-    \label{cr:ORFF-kernel} If $K(x,z)$ is a shift-invariant
-    $\mathcal{Y}$-Mercer kernel of signature $K_e$ such that for all $y$, $y'\in\mathcal{Y}$,
-    $\inner{y', K_e(\cdot)y}\in L^1(\mathcal{X},\Haar)$. Assume one can find a pair $(A, \probability_{\dual{\Haar},\rho})$ that satisfies \cref{pr:spectral}:   for $\probability_{\dual{\Haar},\rho}$-almost all $\omega$, $y, y'\in\mathcal{Y}, \inner{y, A(\omega)y'}\rho(\omega)=\FT{\inner{y',
-    K_e(\cdot)y}}(\omega)$. If $(\omega_j)_{j=1}^D$ be a sequence of $D\in\mathbb{N}^*$
-    \ac{iid}~realizations drawn from $\probability_{\dual{\Haar},\rho}$ then the operator-valued function $\tilde{K}$ defined as follows, for $(x,z) \in \mathcal{X}\time \mathcal{X}$ :
-       \begin{dmath*}
-       \tilde{K}(x,z)= \frac{1}{D} \sum_{j=1}^D
+    \label{cr:ORFF-kernel} Let $K(x,z)$ be a shift-invariant
+    $\mathcal{Y}$-Mercer kernel with signature $K_e$ such that for all $y$,
+    $y'\in\mathcal{Y}$, $\inner{y', K_e(\cdot)y}\in L^1(\mathcal{X},\Haar)$.
+    Assume one can find a pair $(A, \probability_{\dual{\Haar},\rho})$ that
+    satisfies \cref{pr:spectral}:   for
+    $\probability_{\dual{\Haar},\rho}$-almost all $\omega$, $y,
+    y'\in\mathcal{Y}, \inner{y, A(\omega)y'}\rho(\omega)=\FT{\inner{y',
+    K_e(\cdot)y}}(\omega)$. If $(\omega_j)_{j=1}^D$ be a sequence of
+    $D\in\mathbb{N}^*$ \acs{iid}~realizations drawn from
+    $\probability_{\dual{\Haar},\rho}$ then the operator-valued function
+    $\tilde{K}$ defined as follows, for $(x,z) \in \mathcal{X}\times
+    \mathcal{X}$ :
+    \begin{dmath*}
+        \tilde{K}(x,z)= \frac{1}{D} \sum_{j=1}^D
         \conj{\pairing{x\groupop\inv{z},\omega_j}} A(\omega_j)
-        \end{dmaths*}
-        is an approximation of $K$.
+    \end{dmath*}
+    is an approximation of $K$.
 \end{proposition}
-
 \begin{proof}
-Let us first notice that for a given $D$, $\tilde{K}$ satisfies the properties of a shift-invariant $\mathcal{Y}$-Mercer kernel.
-Second, from the strong law of large numbers and
-    \cref{pr:mercer_kernel_bochner} with
+    Let us first notice that for a given $D$, $\tilde{K}$ satisfies the
+    properties of a shift-invariant $\mathcal{Y}$-Mercer kernel.  Second, from
+    the strong law of large numbers and \cref{pr:mercer_kernel_bochner} with
     $\dual{\mu}=\probability_{\dual{\Haar},\rho}$,
     \begin{dmath*}
-        \frac{1}{D} \sum_{j=1}^D
-        \conj{\pairing{x\groupop\inv{z},\omega_j}} A(\omega_j)
-        \converges{\acs{asurely}}{D \to \infty}
-        \expectation_{\rho}[\conj{\pairing{x \groupop
-        z^{-1}, \omega_j} }A(\omega)]
-     =K_e(x\groupop\inv{z})
+        \frac{1}{D} \sum_{j=1}^D \conj{\pairing{x\groupop\inv{z},\omega_j}}
+        A(\omega_j) \converges{\acs{asurely}}{D \to \infty}
+        \expectation_{\rho}[\conj{\pairing{x \groupop z^{-1}, \omega_j}
+        }A(\omega)] 
+        =K_e(x\groupop\inv{z})
     \end{dmath*}
-  where the integral converges in the weak operator topology.
-
+    where the integral converges in the weak operator topology.
 \end{proof}
-
 Now, for efficient computations as motivated in the introduction, we are
 interested in finding an approximated \emph{feature map} instead of a kernel
 approximation. Indeed, an approximated feature map will allow to build linear
-models in regression tasks. The following proposition deals with the feature map construction.
-
+models in regression tasks. The following proposition deals with the feature
+map construction.
 \begin{proposition}
-    \label{cr:ORFF-map-kernel} Assume the same conditions as \cref{cr:ORFF-kernel}. Moreover, if one can define $B: \dual{\mathcal{X}} \to
-    \mathcal{L}(\mathcal{Y}',\mathcal{Y})$,
-    such that for all $y\in\mathcal{Y}$ and all $y' \in\mathcal{Y}'$, $\inner{y,
-    B(\cdot)y'} \in L^2(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho})$,  and for $\probability_{\dual{\Haar},\rho}$-almost all $\omega$, $u, v\in\mathcal{Y},\inner{u, B(\omega)B(\omega)^\adjoint v}\rho(\omega)= \inner{u, A(\omega)v}\rho(\omega)= \FT{\inner{v,
-    K_e(\cdot)u}}(\omega)$, then the function $\tildePhi:\hat{X} \to \mathcal{L}(\mathcal(Y}, \Vect_{j=1}^D \mathcal{Y'})$ defined for all $y \in \mathcal{Y}$ as follows:
+    \label{cr:ORFF-map-kernel} Assume the same conditions as
+    \cref{cr:ORFF-kernel}. Moreover, if one can define $B: \dual{\mathcal{X}}
+    \to \mathcal{L}(\mathcal{Y}',\mathcal{Y})$, such that for all
+    $y\in\mathcal{Y}$ and all $y' \in\mathcal{Y}'$, $\inner{y, B(\cdot)y'} \in
+    L^2(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho})$,  and for
+    $\probability_{\dual{\Haar},\rho}$-almost all $\omega$, and all $u,
+    v\in\mathcal{Y}$,
     \begin{dmath*}
+        \inner{u, B(\omega)B(\omega)^\adjoint v}\rho(\omega)= \inner{u,
+        A(\omega)v}\rho(\omega)= \FT{\inner{v, K_e(\cdot)u}}(\omega),
+    \end{dmath*}
+    then the function $\tildePhi{\omega}:\dual{\mathcal{X}} \to
+    \mathcal{L}(\mathcal{Y}, \Vect_{j=1}^D \mathcal{Y'})$ defined for all $y
+    \in \mathcal{Y}$ as
+    follows: \begin{dmath*}
         \tildePhi{\omega}(x)y
         = \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x,
         \omega_j}B(\omega_j)^\adjoint y \condition{$\omega_j \sim
         \probability_{\dual{\Haar},\rho}$ \ac{iid},}
     \end{dmath*}
-is a feature map of $\tilde{K}$ defined in \cref{cr:ORFF-kernel} and an approximated feature map for kernel $K$.
+is a feature map of $\tilde{K}$ defined in \cref{cr:ORFF-kernel} and an
+approximated feature map for kernel $K$.
 \end{proposition}
 \begin{proof}
-  Let $(\omega_j)_{j=1}^D$ be a sequence of $D\in\mathbb{N}^*$
-    \ac{iid}~realizations drawn from $\probability_{\dual{\Haar},\rho}$. For all $x$, $z \in \mathcal{X}$ and
-    all $u$, $v \in \mathcal{Y}$,
+    Let $(\omega_j)_{j=1}^D$ be a sequence of $D\in\mathbb{N}^*$
+    \ac{iid}~realizations drawn from $\probability_{\dual{\Haar},\rho}$. For
+    all $x$, $z \in \mathcal{X}$ and all $u$, $v \in \mathcal{Y}$,
     \begin{dmath*}
-        \inner*{\tildePhi{\omega}(x)u,\tildePhi{\omega}(z)v}_{\Vect_{j=1}^D \mathcal{Y}'}
+        \inner*{\tildePhi{\omega}(x)u,\tildePhi{\omega}(z)v}_{\Vect_{j=1}^D
+        \mathcal{Y}'}
         =\frac{1}{D}\inner*{\Vect_{j=1}^D \left(\pairing{x,
         \omega_j}B(\omega_j)^\adjoint u\right), \Vect_{j=1}^D\left(\pairing{z,
         \omega_j}B(\omega_j)^\adjoint v\right)}
-            \end{dmath*}
-      By definition of the inner product in direct sum of Hilbert spaces, 
-          \begin{dmath*}
-           \frac{1}{D}\inner*{\Vect_{j=1}^D \left(\pairing{x,
+    \end{dmath*}
+    By definition of the inner product in direct sum of Hilbert spaces, 
+    \begin{dmath*}
+        \frac{1}{D}\inner*{\Vect_{j=1}^D \left(\pairing{x,
         \omega_j}B(\omega_j)^\adjoint u\right), \Vect_{j=1}^D\left(\pairing{z,
-        \omega_j}B(\omega_j)^\adjoint v\right)} = \frac{1}{D} \sum_{j=1}^D \inner*{u, \conj{\pairing{x,
+        \omega_j}B(\omega_j)^\adjoint v\right)} 
+        = \frac{1}{D} \sum_{j=1}^D \inner*{u, \conj{\pairing{x,
         \omega_j}}B(\omega_j)\pairing{z, \omega_j}B(\omega_j)^\adjoint
         v}_{\mathcal{Y}}
         = \inner*{u, \left(\frac{1}{D} \sum_{j=1}^D \conj{\pairing{x\groupop
         \inv{z}, \omega_j}}A(\omega_j)\right)v}_{\mathcal{Y}},
     \end{dmath*}
-With similar reasoning about plug-in Monte-Carlo estimator, we get the proof.
+    With similar reasoning about plug-in Monte-Carlo estimator, we get the
+    proof.
 \end{proof}
 \begin{remark}
     We find a decomposition such that
@@ -1011,7 +1035,7 @@ constructing \acs{ORFF} from an operator valued kernel.
         \begin{dmath*}
             B(\omega)B(\omega)^\adjoint \rho(\omega)=\IFT{K_e}(\omega)\text{\;}
         \end{dmath*}
-        \nl Draw $D$ i.i.d. realizations $(\omega_j)_{j=1}^D$ from the
+        \nl Draw $D$ \acs{iid} realizations $(\omega_j)_{j=1}^D$ from the
         probability distribution $\probability_{\dual{\Haar},\rho}$\;
         \nl \Return
         $\begin{cases}
@@ -1026,39 +1050,46 @@ constructing \acs{ORFF} from an operator valued kernel.
     \end{algorithm2e}
 \end{center}
 \subsection{From Operator Random Fourier Feature maps to OVK}
-It is also interesting to notice that we can go the other way and define from the general form of an \acl{ORFF}, an operator-valeued kernel.
-\begin{proposition}[Operator Random Fourier Feature Map]
+It is also interesting to notice that we can go the other way and define from
+the general form of an \acl{ORFF}, an operator-valeued kernel.
+\begin{proposition}[Operator Random Fourier Feature map]
     \label{pr:ORFF-map} Let $\mathcal{Y}$ and $\mathcal{Y}'$ be two Hilbert
-    spaces. If one defines an operator-valued function on the dual of a LCA group $\mathcal{X}$, $B: \dual{\mathcal{X}} \to
+    spaces. If one defines an operator-valued function on the dual of a LCA
+    group $\mathcal{X}$, $B: \dual{\mathcal{X}} \to
     \mathcal{L}(\mathcal{Y},\mathcal{Y}')$, and a probability measure
     $\probability_{\dual{\Haar},\rho}$ on $\mathcal{B}(\dual{\mathcal{X}})$,
     such that for all $y\in\mathcal{Y}$ and all $y'\in\mathcal{Y}'$, $\inner{y,
-    B(\cdot)y'} \in L^2(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho})$, assuming $\omega = (\omega_1, \ldots, \omega_D)$ is a i.i.d D-sample drawn from $\probability_{\dual{\Haar},\rho}$,
-    then the operator-valued function $\tildePhi: \mathcal{X} \to   \mathcal{L}(\mathcal{Y},\mathcal{Y}')$ defined for all $x \in \mathcal{x}$ and for all $y\in\mathcal{Y}$ by
+    B(\cdot)y'} \in L^2(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho})$,
+    assuming $\omega = (\omega_1, \ldots, \omega_D)$ is a \acs{iid} D-sample
+    drawn from $\probability_{\dual{\Haar},\rho}$, then the operator-valued
+    function $\tildePhi{\omega}: \mathcal{X} \to   \mathcal{L}(\mathcal{Y},
+    \vect_{j=1}^D\mathcal{Y}')$ defined for all $x \in \mathcal{X}$ and for all
+    $y\in\mathcal{Y}$ by
     \begin{dmath}
         \label{eq:phitilde}
         \tildePhi{\omega}(x)y
         = \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x,
-        \omega_j}B(\omega_j)^\adjoint y,}
+        \omega_j}B(\omega_j)^\adjoint y,
     \end{dmath}
     is an approximated feature map\mpar{\acs{ie}~it satisfies
     $\tildePhi{\omega}(x)^\adjoint
     \tildePhi{\omega}(z)\converges{\acs{asurely}}{D\to\infty}K(x,z)$ where $K$
     is a $\mathcal{Y}$-Mercer \acs{OVK}}.
-    \end{proposition}
+\end{proposition}
 \begin{proof}
-Similarly to the proof of \cref{cr:ORFF-map-kernel}, we get
+    Similarly to the proof of \cref{cr:ORFF-map-kernel}, we get
     \begin{dmath*}
         \frac{1}{D} \sum_{j=1}^D
         \conj{\pairing{x\groupop\inv{z},\omega_j}} A(\omega_j)
         \converges{\acs{asurely}}{D \to \infty}
         \expectation_{\rho}[\conj{\pairing{x \groupop
         z^{-1}, \omega} }A(\omega)]
-      
     \end{dmath*}
-    where the integral converges in the weak operator topology.
-     Now  from \cref{pr:mercer_kernel_bochner}, $\expectation_{\rho}[\conj{\pairing{x \groupop
-        z^{-1}, \omega} }A(\omega)]$ is the image by $K_e$ of $(x\groupop\inv{z})$, $K_e$ being the kernel signature of some shift-invariant $\mathcal{Y}-Mercer.
+    where the integral converges in the weak operator topology.  Now  from
+    \cref{pr:mercer_kernel_bochner}, $\expectation_{\rho}[\conj{\pairing{x
+    \groupop z^{-1}, \omega} }A(\omega)]$ is the image by $K_e$ of
+    $(x\groupop\inv{z})$, $K_e$ being the kernel signature of some
+    shift-invariant $\mathcal{Y}-Mercer$.
 \end{proof}
 %\begin{remark}
 %    The approximate feature map proposed in \cref{pr:ORFF-map} has direct link
@@ -1318,7 +1349,7 @@ $WS_D^\adjoint$ since $(\tildeW{\omega}\theta)(x)=\tildePhi{\omega}(x)^\adjoint
 % $f\in\mathcal{H}_{(A,\probability_{\dual{\Haar},\rho})}{\scriptstyle\implies}
 % \mathcal{H}_K$.
 % \paragraph{}
-{\bf ATTENTION}We write $\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(x)\approx K(x,z)$
+We write $\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(x)\approx K(x,z)$
 when $\tildePhi{\omega}(x)^\adjoint
 \tildePhi{\omega}(x)\converges{\acs{asurely}}{} K(x,z)$ in the weak operator
 topology when $D$ tends to infinity. With mild abuse of notation we say that
@@ -1443,15 +1474,16 @@ $(\mathbb{R}^d,+)$.
         \end{pmatrix}\begin{pmatrix}\cos{\inner{z,\omega_j}_2} \\
         \sin{\inner{z,\omega_j}_2} \end{pmatrix} A(\omega_j)
         = \frac{1}{D} \sum_{j=1}^D \cos{\inner{x-z,\omega_j}_2}A(\omega_j) \\
-        \converges{\acs{asurely}}{D \to \infty} \expectation_\rho
+        \converges{\acs{asurely}}{D \to \infty} \expectation_{\rho}
         \left[\cos{\inner{x - z,\omega}_2} A(\omega)\right]
     \end{dmath*}
     in the weak operator topology. Since for all $x\in\mathcal{X}$,
     $\sin\inner{x, \cdot}_2$ is an odd function and $A(\cdot)\rho(\cdot)$ is
     even,
     \begin{dmath*}
-        \expectation_\rho\left[\cos{\inner{x-z,\omega}_2}A(\omega)\right]
-        = \expectation_\rho \left[\exp(-i\inner{x-z,\omega}_2)A(\omega)\right]
+        \expectation_{\rho}\left[\cos{\inner{x-z,\omega}_2}A(\omega)\right]
+        = \expectation_{\rho}
+        \left[\exp(-i\inner{x-z,\omega}_2)A(\omega)\right]
         \hiderel{=}K(x,z).
     \end{dmath*}
     Hence $\tilde{K}(x,z)\converges{\acs{asurely}}{D\to\infty}K(x,z)$.

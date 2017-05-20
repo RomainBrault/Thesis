@@ -1,11 +1,12 @@
 %!TEX root = ../../ThesisRomainbrault.tex
 
 %------------------------------------------------------------------------------
-\section{Learning with {ORFF}}
-\label{sec:learning_with_operator-valued_random-fourier_features} We now turn
-our attention to learning function with an ORFF model that approximate an OVK
+\section{Learning with {OVK}}
+\label{sec:learning_with_operator-valued_random-fourier_features} Before focusing
+on learning function with an ORFF model, we briefly review the context of supervised lerning in \acs{vv-RKHS}.
 model.
-\subsection{Supervised regression} 
+\subsection{Supervised learning within \acs{vv-RKHS}} 
+\subsubsection{General results}
 Let $\seq{s} = (x_i,y_i)_{i=1}^N\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$
 be a sequence of training samples. Given a local loss function $L:
 \mathcal{X}\times\mathcal{F}\times\mathcal{Y}\to \overline{\mathbb{R}}$ such
@@ -24,12 +25,12 @@ that
 where $\lambda\in\mathbb{R}_+$ is a regularization\mpar{Tychonov
 regularization.} parameter. We call the quantity
 \begin{dmath*}
-    \mathcal{R}(f)=\frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f, y_i)
+    \mathcal{R}_{\seq{s}}(f)=\frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f, y_i)
     \condition{$\forall f\in\mathcal{H}_K$, $\forall
-    \seq{s}\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$.}
+    \seq{s}\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$.-,}
 \end{dmath*}
-is called the empirical risk of the model $f\in\mathcal{H}_K$ according the
-local loss $L$. A common choice of data fitting term for regression is $L:(x,
+the empirical risk of the model $f\in\mathcal{H}_K$ according the
+local loss $L$. A common choice for $L$ is the quadratic loss $L:(x,
 f, y) \mapsto \norm{f(x)-y}_{\mathcal{Y}}^2$.  We introduce a corollary from
 Mazur and Schauder proposed in 1936 (see~\citet{kurdila2006convex,
 gorniewicz1999topological}) showing that \cref{eq:learning_rkhs} --and
@@ -85,7 +86,7 @@ Hence for all positive $\lambda$, $f_{\seq{s}} =
     $\norm{y_i}_{\mathcal{Y}} \le C$ in the train set.
 \end{remark}
 
-\subsection{Representer theorem and Feature equivalence}
+\subsubsection{Representer theorem and Feature equivalence}
 Regression in \acl{vv-RKHS} has been well studied~\citep{Alvarez2012,
 Minh_icml13,minh2016unifying,sangnier2016joint,kadri2015operator,Micchelli2005,
 Brouard2016_jmlr}, and a cornerstone of learning in \acs{vv-RKHS} is the
@@ -287,11 +288,12 @@ that for all $x_i$, $x\in\mathcal{X}$ and for all $u_i\in\mathcal{Y}$ it takes
 time $O(P)$, to compute $K(x_i, x)u_i$, making a prediction using the
 representer theorem take $O(2P)$. Obviously If $\mathcal{Y}=\mathbb{R}^p$, Then
 $P=O(p^2)$ thus making a prediction cost $O(2p^2)$ operations.
-\paragraph{}
+%% on commence la partie approchée
+\subsection{Learning with Operator Random Fourier Feature maps}
 Instead learning a model $f$ that depends on all the points of the training
 set, we would like to learn a parametric model of the form
 $\tildef{\omega}(x) = \tildePhi{\omega}(x)^\adjoint \theta$, where $\theta$
-lives in some redescription space $\tildeH{\omega}$. We are interested in
+lives in some space $\tildeH{\omega}$. We are interested in
 finding a parameter vector $\theta_{\seq{s}}$ such that
 \begin{dmath}
     \label{eq:argmin_applied} \theta_{\seq{s}}=\argmin_{\theta\in
@@ -467,19 +469,19 @@ of notation we write $r_{\seq{s}}=\theta^\perp$. This remark is illustrated in
 \cref{fig:representer}.
 
 %----------------------------------------------------------------------------------------
-\section{Solution of the empirical risk minimization}
+\section{Solving ORFF-based regression}\label{subsec:gradient_methods}
 % We illustrate the ORFF representer theorem (\cref{cr:orff_representer}) on
 % two experiment involving scalar valued kernels.
-In order to find a solution to \cref{eq:argmin_theta}, we turn our attention to
+In order to find a solution to \cref{eq:argmin_theta}, we first turn our attention to
 gradient descent methods. In the following we let
 \begin{dmath}
     \label{eq:cost_functional} J_{\lambda}(\theta) =
     \frac{1}{N}\sum_{i=1}^Nc\left(\tildePhi{\omega}(x_i)^\adjoint \theta,
     y_i\right) + \frac{\lambda}{2}\norm{\theta}^2_{\tildeH{\omega}}
 \end{dmath}
-
-\subsection{Gradient methods}
-\label{subsec:gradient_methods} Since the solution of \cref{eq:argmin_theta} is
+Then, we study the complexity in time of the proposed algorithm. 
+\subsection{Gradient descent methods}\label{subsec:gradient_methods}
+Since the solution of \cref{eq:argmin_theta} is
 unique when $\lambda>0$, a sufficient and necessary condition is that the
 gradient of $J_{\lambda}$ at the minimizer $\theta_{\seq{s}}$ is zero. We use
 the Frechet derivative, the strongest notion of derivative in Banach
@@ -773,7 +775,7 @@ err = representer2.main()
     \end{figure}
 \end{landscape}}
 
-\subsection{Efficient matrix-free operators}
+\section{Efficient learning with ORFF}
 When developping \cref{alg:close_form} we considered that the feature map
 $\tildePhi{\omega}(x)$ was a matrix from $\mathbb{R}^p$ to $\mathbb{R}^{r}$ for
 all $x\in\mathcal{X}$, and therefore that computing
@@ -1295,7 +1297,7 @@ bytes  to store $\tildePhi{\omega}(x)$ for all $x_i$'s. We averaged the results
 over ten runs. Full code is given in \cref{code:efficient_divfree_gaussian}. We
 draw the same conclusions as the curl-free kernel.
 
-\subsection{Iterative (matrix-free) solvers}
+\subsection{Iterative solvers using linear operators}
 We have shown in this section that viewing the \acl{ORFF} maps as linear
 operator rather than staking matrices leads to more efficient computations.
 

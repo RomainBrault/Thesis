@@ -1,20 +1,13 @@
 %!TEX root = ../../ThesisRomainbrault.tex
 
 %------------------------------------------------------------------------------
-\section{Motivations}
+\section{Motivation}
 \label{sec:motivations}
 Random Fourier Features have been proved useful to implement efficiently kernel
-methods in the scalar case, allowing to learn a linear model based on an
-approximated feature map. In this work, we are interested in constructing an
-approximated operator-valued feature map to learn vector-valued functions.
-With an explicit (approximated) feature map, one converts the problem of
-learning a function $f$ in the vector-valued Reproducing Kernel Hilbert Space
-$\mathcal{H}_K$ into the learning of a linear model $\tilde{f}$ defined by:
-\begin{dmath*}
-    \tilde{f}(x) = \tildePhi{\omega}(x)^\adjoint \theta,
-\end{dmath*}
-where $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{H},\mathcal{Y})$ and $\theta
-\in \mathcal{H}$. The methodology we propose works for operator-valued kernels
+methods in the scalar case. In this work, we propose to extend Random Fourier Feature methodology in order to approximate Operator-Valued Kernels. As in the scalar case, we are mainly interested on explicit approximated feature maps because they open the door to learning linear models. Our final goal is to come up with the definition of $\tildePhi: \mathcal{X} \to \mathcal{L}(\mathcal{Y},\mathcal{Z})$ for some Hilbert space $\mathcal{Z}$\footnote{In the finite dimension case, $\mathcal{Z}= \mathbb{R}^p$.}, a feature map of some approximation $\tilde{K}$ of a given OBK $\mathcal{K}$.
+This chapter is devoted to the construction of these approximations based on Random Fourier Feature principles. It is followed by a non asymptotical study of the error of approximation (chapter 4) and the development of learning tools based on Operator Random Fourier Feature maps with practical and theoretical insights. 
+
+We present in this chapter a construction methodology devoted to shift-invariant \mathcal{Y}-Mercer operator-valued kernels
 defined on any \acf{LCA} group, noted ($\mathcal{X}, \groupop)$, for some
 operation noted $\groupop$. This allows us to use the general context of
 Pontryagin duality for \acl{FT} of functions on \acs{LCA} groups. Building upon
@@ -96,7 +89,7 @@ is finite dimensional or $\mathcal{X}$.
         (Wg)(x)=\int_{\mathcal{\dual{X}}} \conj{\pairing{x,\omega}} B(\omega)
         g(\omega) d\dual{\mu}(\omega),
     \end{dmath}
-    Where $B(\omega)B(\omega)^\adjoint=A(\omega)$ and both integral converges
+    Where $B(\omega)B(\omega)^\adjoint=A(\omega)$ and both integrals converge
     in the weak sense. If $\mathcal{Y}$ is finite dimensional or $\mathcal{X}$
     is compact, any shift-invariant kernel is of the above form for some pair
     $(A, \dual{\mu})$.
@@ -118,16 +111,16 @@ $\mathcal{Y}$-Mercer shift invariant \acl{OVK}, there exist infinitely many
 pairs $(A,\dual{\mu})$ that characterize an \acs{OVK}.
 \paragraph{}
 The main difference between \cref{eq:bochner-gen} and
-\cref{eq:AK0} is that the first one characterize an \acs{OVK}
+\cref{eq:AK0} is that the first one characterizes an \acs{OVK}
 by a unique \acf{POVM}, while the second one shows that the \acs{POVM} that
 uniquely characterize a $\mathcal{Y}$-Mercer \acs{OVK} has an operator-valued
 density with respect to a \emph{scalar} measure $\dual{\mu}$; and that this
 operator-valued density is not unique.
 \paragraph{}
 Finally \cref{pr:mercer_kernel_bochner} does not provide any
-\emph{constructive} way to obtain the pair $(A,\dual{\mu})$ that characterize
+\emph{constructive} way to obtain the pair $(A,\dual{\mu})$ that characterizes
 an \acs{OVK}. The following \cref{subsec:sufficient_conditions} is based on
-another proposition of~\citeauthor{carmeli2006vector} and showis that if the
+another proposition of~\citeauthor{carmeli2006vector} and shows that if the
 kernel signature $K_e(\delta)$ of an $\acs{OVK}$ is in $L^1$ then it is
 possible to construct \emph{explicitly} a pair $(C,\dual{\Haar})$ from it.
 Additionally, we show that we can always extract a scalar-valued
@@ -153,14 +146,14 @@ solution, and also provides a sufficient condition for
 \cref{pr:mercer_kernel_bochner} to apply.
 \begin{proposition}[\citet{Carmeli2010}]
     \label{pr:inverse_ovk_Fourier_decomposition}
-    Let $K$ be a shift-invariant $\mathcal{Y}$-Mercer kernel. %
+    Let $K$ be a shift-invariant $\mathcal{Y}$-Mercer kernel of signature $K_e$. %
     Suppose that for all $z \in \mathcal{X}$ and for all $y$, $y'
-    \in\mathcal{Y}$,
+    \in\mathcal{Y}$, the function
     \begin{dmath*}
         \inner{K_e(.)y,y'}_{\mathcal{Y}}\in L^1(\mathcal{X},\Haar)
     \end{dmath*}
-    where $\mathcal{X}$ is endowed with the group law $\groupop$. For all
-    $\omega \in \dual{\mathcal{X}}$ and for all $y$, $y'$ in $\mathcal{Y}$, let
+    where $\mathcal{X}$ is endowed with the group law $\groupop$. Denote $C: \hat{X} \to \mathcal{L}(Y)$, the function defined for all
+    $\omega \in \dual{\mathcal{X}}$ that satisfies for all $y$, $y'$ in $\mathcal{Y}$:
     \begin{dmath}\label{eq:CK0}
         \inner{y',C(\omega)y}_{\mathcal{Y}}= \int_{\mathcal{X}}
         \pairing{\delta, \omega}\inner{y',
@@ -184,7 +177,7 @@ solution, and also provides a sufficient condition for
         \end{dmath*}
     \end{propenum}
 \end{proposition}
-There have been a lot of confusion in the literature whether a kernel is the
+There has been a lot of confusion in the literature whether a kernel is the
 \acl{FT} or \acl{IFT} of a measure. However \cref{lm:C_characterization}
 clarifies the relation between the \acl{FT} and \acl{IFT} for a translation
 invariant \acl{OVK}. Notice that in the real scalar case the \acl{FT} and
@@ -192,7 +185,7 @@ invariant \acl{OVK}. Notice that in the real scalar case the \acl{FT} and
 significant for \acs{OVK}.
 \paragraph{}
 The following lemma is a direct consequence of the definition of $C(\omega)$ as
-the \acl{FT} of the adjoint of $K_e$ and also helps simplifying the definition
+the \acl{FT} of the adjoint of $K_e$ and also helps to simplify the definition
 of \acs{ORFF}.
 \begin{lemma}
     \label{lm:C_characterization}
@@ -245,8 +238,8 @@ of \acs{ORFF}.
     $\omega\in\mathcal{\dual{X}}$, $C(\omega)$ is bounded and non-negative so
     $C(\omega)$ is self-adjoint. Besides we have
     $C(\omega)=C\left(\inv{\omega}\right)^\adjoint $ so $C$ must be even.
-    Suppose that $\mathcal{Y}$ is a real Hilbert space. The \acl{FT} or a real
-    valued function obey
+    Suppose that $\mathcal{Y}$ is a real Hilbert space. The \acl{FT} of a real
+    valued function obeys
     $\FT{f}(\omega)=\conj{\FT{f}\left(\inv{\omega}\right)}$. Therefore since
     $C(\omega)$ is non-negative for all $\omega\in\dual{\mathcal{X}}$,
     \begin{dmath*}
@@ -366,14 +359,15 @@ It follows that for all $i$ and $j$ in $\mathbb{N}^*_{p}$,
     Note that although the \acl{FT} of $K_e$ yields a unique operator-valued
     function $C(\cdot)$, the decomposition of $C(\cdot)$ into
     $A(\cdot)\rho(\cdot)$ is again not unique. The choice of the decomposition
-    may be justified by the computational cost or by the nature of the
-    constants involved in the uniform convergence of the estimator.
+    may be justified by the computational cost.
+    %Later, when we will focus on Monte-Carlo approximation of these integrals, 
 \end{remark}
+
 Another difficulty arises from the fact that the quantity
 $\sup_{\omega\in\dual{\mathcal{X}}} \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}$
-obtained in \cref{pr:spectral} might not be bounded. The unboundedness of
-$\norm{A(\cdot)}_{\mathcal{Y},\mathcal{Y}}$ forbids the use of the most simple
-concentrations inequalities --which require the boundedness of the random
+obtained in \cref{pr:spectral} might not be bounded. Later, when we will focus on Monte-Carlo approximation of these integrals, we will have to take care of the unboundedness of
+$\norm{A(\cdot)}_{\mathcal{Y},\mathcal{Y}}$ that forbids the use of the most simple
+concentrations inequalities that require the boundedness of the random
 variable to be controlled. Therefore in the context of \acl{OVK} concentration
 inequalities for unbounded random operators should be used. However, as pointed
 out by~\citet{minh2016operator}, under some condition on the trace of
@@ -383,7 +377,7 @@ $\rho=\sum_{j\in\mathbb{N}^*}\rho_{e_j}$, which gives rise to a bounded
 operator $A(\omega)$ and is idependant of the $\Set{e_j}_{j\in\mathbb{N}^*}$
 base, instead of constructing a measure from the operator norm as in
 \cref{pr:spectral}. Additionally with such construction the measure associated
-to $A(\cdot)$ is \emph{independant} from the basis of $\mathcal{Y}$. In this
+to $A(\cdot)$ is \emph{independent} from the basis of $\mathcal{Y}$. In this
 proof we relax the assumptions of~\citet{minh2016operator} which requires
 $\int_{\mathcal{X}}\abs{\Tr{K_e(\delta)}}d\Haar(\delta)$ to be well defined. We
 only require $\Tr{K_e(e)}$ to be well defined.
@@ -496,18 +490,18 @@ dimension of $\mathcal{Y}$.
 
 \subsection{Examples of spectral decomposition}
 \label{subsec:dec_examples}
-In this section we give exemple of spectral decomposition of various
-$\mathcal{Y}$-Mercer kernel, based on \cref{pr:spectral} and
+In this section we give examples of spectral decomposition for various
+$\mathcal{Y}$-Mercer kernels, based on \cref{pr:spectral} and
 \cref{pr:trace_measure}.
 
 \subsubsection{Gaussian decomposable kernel}
-\label{par:gaussian_dec} Recall that a decomposable $\mathbb{R}^p$-Mercer has
+\label{par:gaussian_dec} Recall that a decomposable $\mathbb{R}^p$-Mercer introduced in the Background section has
 the form $K(x,z)=k(x,z)\Gamma$, where $k(x,z)$ is a scalar Mercer kernel and
-$\Gamma\in\mathcal{L}(\mathbb{R}^p)$ is a non-negative operator. Let
-$K^{dec,gauss}_e(\cdot)=k_e^{gauss}(\cdot)\Gamma$ be the Gaussian decomposable
-kernel where $K_e$ and $k_e$ are respectively the signature of $K$ and $k$ on
+$\Gamma\in\mathcal{L}(\mathbb{R}^p)$ is a non-negative operator. Let us focus on
+$K^{dec,gauss}_e(\cdot)=k_e^{gauss}(\cdot)\Gamma$, the Gaussian decomposable
+kernel where $K_e^{dec, gauss}$ and $k_e^{gauss}$ are respectively the signature of $K$ and $k$ on
 the additive group $\mathcal{X}=(\mathbb{R}^d,+)$ -- $\acs{ie}~\delta=x-z$ and
-$e=0$. The scalar Gaussian kernel reads for all $\delta\in\mathbb{R}^d$
+$e=0$. The well known Gaussian kernel is defined for all $\delta\in\mathbb{R}^d$ as follows
 \begin{dmath*}
     k^{\text{gauss}}_0(\delta)\hiderel{=}\exp\left(
     -\frac{1}{2\sigma^2}\norm{\delta}^2_2\right)
@@ -598,7 +592,7 @@ $\Tr\left[K^{dec,gauss}_0(0)\right]=\Tr\left[\Gamma\right]$ and
 
 \subsubsection{Skewed-$\chi^2$ decomposable kernel}
 \label{subsubsec:skewedchi2}
-The skewed-$\chi^2$ scalar kernel \citep{li2010random} is defined on the
+The skewed-$\chi^2$ scalar kernel \citep{li2010random}, useful for image processing, is defined on the
 \acs{LCA} group $\mathcal{X}=(-c_k;+\infty)_{k=1}^d$, with
 $c_k\in\mathbb{R}_{+}$ and endowed with the group operation $\odot$. Let
 $(e_k)_{k=1}^d$ be the standard basis of $\mathcal{X}$ and ${}_k:x\mapsto

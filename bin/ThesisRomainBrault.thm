@@ -81,13 +81,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {definition}{{Definition}{3.{10}}{Decomposable kernel \citep {Micheli2013}}}{44}{definition.3.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{3.{8}}{Kernels and Regularizers~\citep {Alvarez2012}}}{45}{proposition.3.8}
+\contentsline {proposition}{{Proposition}{3.{8}}{Kernels and Regularizers~\citep {Alvarez2012}}}{44}{proposition.3.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {definition}{{Definition}{3.{11}}{Curl-free and Div-free kernel \citep {Macedo2008}}}{45}{definition.3.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{3.{12}}{Transformable kernel\citep {caponnetto2008}}}{47}{definition.3.12}
+\contentsline {definition}{{Definition}{3.{12}}{Transformable kernel\citep {caponnetto2008}}}{46}{definition.3.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{3.{13}}{Hilbert Schmidt Integral kernel \citep {kadri2015operator}}}{47}{definition.3.13}
+\contentsline {definition}{{Definition}{3.{13}}{Hilbert Schmidt Integral kernel \citep {kadri2015operator}}}{46}{definition.3.13}
 \defcounter {refsection}{0}\relax 
 \contentsline {proposition}{{Proposition}{4.{1}}{Operator-valued Bochner's theorem~\citep {Zhang2012, neeb1998operator}}}{52}{proposition.4.1}
 \defcounter {refsection}{0}\relax 
@@ -209,108 +209,108 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {remark}{{Remark}{6.{2}}{}}{103}{remark.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{7.{1}}{\citet {bartlett2002rademacher, maurer2016vector}}}{123}{proposition.7.1}
+\contentsline {proposition}{{Proposition}{7.{1}}{\citet {bartlett2002rademacher, maurer2016vector}}}{125}{proposition.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{33}{}}{123}{proof.33}
+\contentsline {proof}{{Proof}{33}{}}{125}{proof.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{7.{1}}{\citet {bartlett2002rademacher}}}{124}{definition.7.1}
+\contentsline {definition}{{Definition}{7.{1}}{\citet {bartlett2002rademacher}}}{125}{definition.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{7.{2}}{\citet {maurer2016vector}}}{124}{proposition.7.2}
+\contentsline {proposition}{{Proposition}{7.{2}}{\citet {maurer2016vector}}}{126}{proposition.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{7.1}{}}{125}{theorem.7.1}
+\contentsline {theorem}{{Theorem}{7.1}{}}{127}{theorem.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {assumption}{{Assumption}{7.{1}}{}}{125}{assumption.7.1}
+\contentsline {assumption}{{Assumption}{7.{1}}{}}{127}{assumption.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {assumption}{{Assumption}{7.{2}}{}}{125}{assumption.7.2}
+\contentsline {assumption}{{Assumption}{7.{2}}{}}{127}{assumption.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {assumption}{{Assumption}{7.{3}}{}}{125}{assumption.7.3}
+\contentsline {assumption}{{Assumption}{7.{3}}{}}{127}{assumption.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {assumption}{{Assumption}{7.{4}}{}}{125}{assumption.7.4}
+\contentsline {assumption}{{Assumption}{7.{4}}{}}{127}{assumption.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{7.{2}}{Uniform stability {\citet [definition 6]{bousquet2002stability}}}}{126}{definition.7.2}
+\contentsline {definition}{{Definition}{7.{2}}{Uniform stability {\citet [definition 6]{bousquet2002stability}}}}{128}{definition.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{7.2}{\citet [theorem 12]{bousquet2002stability}}}{126}{theorem.7.2}
+\contentsline {theorem}{{Theorem}{7.2}{\citet [theorem 12]{bousquet2002stability}}}{128}{theorem.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{7.{3}}{}}{127}{proposition.7.3}
+\contentsline {proposition}{{Proposition}{7.{3}}{}}{129}{proposition.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{34}{}}{128}{proof.34}
+\contentsline {proof}{{Proof}{34}{}}{130}{proof.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{7.{4}}{Existence of an approximate function}}{128}{proposition.7.4}
+\contentsline {proposition}{{Proposition}{7.{4}}{Existence of an approximate function}}{130}{proposition.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{35}{}}{128}{proof.35}
+\contentsline {proof}{{Proof}{35}{}}{130}{proof.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{7.{1}}{}}{129}{lemma.7.1}
+\contentsline {lemma}{{Lemma}{7.{1}}{}}{131}{lemma.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{7.{5}}{Bound on the approximation error}}{129}{proposition.7.5}
+\contentsline {proposition}{{Proposition}{7.{5}}{Bound on the approximation error}}{131}{proposition.7.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{36}{}}{129}{proof.36}
+\contentsline {proof}{{Proof}{36}{}}{131}{proof.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{7.{6}}{Bound on the estimation error}}{129}{proposition.7.6}
+\contentsline {proposition}{{Proposition}{7.{6}}{Bound on the estimation error}}{131}{proposition.7.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{37}{}}{129}{proof.37}
+\contentsline {proof}{{Proof}{37}{}}{131}{proof.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{8.{1}}{Matrix-valued kernels}}{135}{definition.8.1}
+\contentsline {definition}{{Definition}{8.{1}}{Matrix-valued kernels}}{137}{definition.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{8.{1}}{Decomposable matrix-valued kernels}}{136}{proposition.8.1}
+\contentsline {proposition}{{Proposition}{8.{1}}{Decomposable matrix-valued kernels}}{138}{proposition.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{A.{1}}{}}{152}{lemma.A.1}
+\contentsline {lemma}{{Lemma}{A.{1}}{}}{154}{lemma.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{38}{}}{153}{proof.38}
+\contentsline {proof}{{Proof}{38}{}}{155}{proof.38}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{A.{2}}{}}{153}{lemma.A.2}
+\contentsline {lemma}{{Lemma}{A.{2}}{}}{155}{lemma.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{39}{}}{153}{proof.39}
+\contentsline {proof}{{Proof}{39}{}}{155}{proof.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{A.1}{Bounded non-commutative Bernstein}}{154}{theorem.A.1}
+\contentsline {theorem}{{Theorem}{A.1}{Bounded non-commutative Bernstein}}{156}{theorem.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{A.{1}}{}}{155}{definition.A.1}
+\contentsline {definition}{{Definition}{A.{1}}{}}{157}{definition.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{A.2}{Bounded non-commutative Bernstein with intrinsic dimension \citep {minsker2011some, tropp2015introduction}}}{155}{theorem.A.2}
+\contentsline {theorem}{{Theorem}{A.2}{Bounded non-commutative Bernstein with intrinsic dimension \citep {minsker2011some, tropp2015introduction}}}{157}{theorem.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{A.{2}}{Orlicz norm}}{156}{definition.A.2}
+\contentsline {definition}{{Definition}{A.{2}}{Orlicz norm}}{158}{definition.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{A.{3}}{}}{156}{lemma.A.3}
+\contentsline {lemma}{{Lemma}{A.{3}}{}}{158}{lemma.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{40}{}}{156}{proof.40}
+\contentsline {proof}{{Proof}{40}{}}{158}{proof.40}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{A.{4}}{}}{156}{lemma.A.4}
+\contentsline {lemma}{{Lemma}{A.{4}}{}}{158}{lemma.A.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{41}{}}{156}{proof.41}
+\contentsline {proof}{{Proof}{41}{}}{158}{proof.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{A.3}{Unbounded non-commutative Bernstein with intrinsic dimension}}{156}{theorem.A.3}
+\contentsline {theorem}{{Theorem}{A.3}{Unbounded non-commutative Bernstein with intrinsic dimension}}{158}{theorem.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{A.{1}}{}}{158}{proposition.A.1}
+\contentsline {proposition}{{Proposition}{A.{1}}{}}{160}{proposition.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{42}{}}{159}{proof.42}
+\contentsline {proof}{{Proof}{42}{}}{161}{proof.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{A.{2}}{}}{160}{proposition.A.2}
+\contentsline {proposition}{{Proposition}{A.{2}}{}}{162}{proposition.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {corollary}{{Corollary}{A.{1}}{}}{160}{corollary.A.1}
+\contentsline {corollary}{{Corollary}{A.{1}}{}}{162}{corollary.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{43}{}}{161}{proof.43}
+\contentsline {proof}{{Proof}{43}{}}{163}{proof.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {corollary}{{Corollary}{A.{2}}{}}{163}{corollary.A.2}
+\contentsline {corollary}{{Corollary}{A.{2}}{}}{165}{corollary.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{A.{3}}{Bounding the \emph {variance} of $\tilde {K}$}}{163}{proposition.A.3}
+\contentsline {proposition}{{Proposition}{A.{3}}{Bounding the \emph {variance} of $\tilde {K}$}}{165}{proposition.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{44}{}}{164}{proof.44}
+\contentsline {proof}{{Proof}{44}{}}{166}{proof.44}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{B.1}{Representer theorem, \citet {minh2016unifying}}}{166}{theorem.B.1}
+\contentsline {theorem}{{Theorem}{B.1}{Representer theorem, \citet {minh2016unifying}}}{168}{theorem.B.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{45}{}}{167}{proof.45}
+\contentsline {proof}{{Proof}{45}{}}{169}{proof.45}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{B.2}{Feature equivalence}}{168}{theorem.B.2}
+\contentsline {theorem}{{Theorem}{B.2}{Feature equivalence}}{170}{theorem.B.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{46}{}}{169}{proof.46}
+\contentsline {proof}{{Proof}{46}{}}{171}{proof.46}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{B.{1}}{Naive closed form for the squared error cost}}{173}{example.B.1}
+\contentsline {example}{{Example}{B.{1}}{Naive closed form for the squared error cost}}{175}{example.B.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{D.{1}}{}}{197}{example.D.1}
+\contentsline {example}{{Example}{D.{1}}{}}{199}{example.D.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{D.{1}}{}}{198}{remark.D.1}
+\contentsline {remark}{{Remark}{D.{1}}{}}{200}{remark.D.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{D.{2}}{}}{199}{remark.D.2}
+\contentsline {remark}{{Remark}{D.{2}}{}}{201}{remark.D.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{D.{3}}{Direct link with the two-class framework}}{205}{remark.D.3}
+\contentsline {remark}{{Remark}{D.{3}}{Direct link with the two-class framework}}{207}{remark.D.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{D.{4}}{}}{206}{remark.D.4}
+\contentsline {remark}{{Remark}{D.{4}}{}}{208}{remark.D.4}

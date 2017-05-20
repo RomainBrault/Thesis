@@ -146,7 +146,7 @@ $\mathcal{Z}\subset\mathcal{B}(\dual{\mathcal{X}})$,
     \rho(\omega)d\dual{\mu}(\omega).
 \end{dmath*}
 When the reference measure $\dual{\mu}$ is the Lebesgue measure, we note
-$\probability_{\dual{\mu},\rho}=\probability_\rho$.
+$\probability_{\dual{\mu},\rho}=\probability_{\rho}$.
 
 \subsection{Sufficient conditions of existence}
 \label{subsec:sufficient_conditions}
@@ -823,7 +823,8 @@ The canonical decomposition with respect to the usual Lebesgue measure is
 To obtain the bounded decomposition, again, apply \cref{pr:trace_measure}. For
 all $\delta\in\mathbb{R}^d$,
 \begin{dmath*}
-    \sum_{k=1}^d\frac{d^2}{d\delta_k d\delta_k}k^{gauss}_0(\delta)
+    \sum_{k=1}^d\frac{\partial^2}{\partial\delta_k
+    \partial\delta_k}k^{gauss}_0(\delta)
     = \left(d - \frac{\norm{\delta}_2^2}{\sigma^2}\right)
     \frac{\exp\left(-\frac{1}{2\sigma^2} \norm{\delta}^2_2\right)}{\sigma^2}.
 \end{dmath*}
@@ -910,7 +911,7 @@ shift invariant $\mathcal{Y}$-Mercer \acl{OVK} $K_e$ such that
 $\probability_{\dual{\Haar},\rho}$ is a probability measure, \acs{ie}
 $\int_{\dual{\mathcal{X}}} \rho d\dual{\Haar}=1$ where $\rho$ is the density of
 $\probability_{\dual{\Haar},\rho}$ and
-$K_e(\delta)=\expectation_\rho{\conj{\pairing{\delta,\omega}}A(\omega)}$. In
+$K_e(\delta)=\expectation_{\rho}{\conj{\pairing{\delta,\omega}}A(\omega)}$. In
 order to obtain an approximation of $K$ from a decomposition $(A,
 \probability_{\dual{\Haar},\rho})$ we turn our attention to a Monte-Carlo
 estimation of the expectations in \cref{eq:expectation_tr} and
@@ -1473,15 +1474,16 @@ $(\mathbb{R}^d,+)$.
         \end{pmatrix}\begin{pmatrix}\cos{\inner{z,\omega_j}_2} \\
         \sin{\inner{z,\omega_j}_2} \end{pmatrix} A(\omega_j)
         = \frac{1}{D} \sum_{j=1}^D \cos{\inner{x-z,\omega_j}_2}A(\omega_j) \\
-        \converges{\acs{asurely}}{D \to \infty} \expectation_\rho
+        \converges{\acs{asurely}}{D \to \infty} \expectation_{\rho}
         \left[\cos{\inner{x - z,\omega}_2} A(\omega)\right]
     \end{dmath*}
     in the weak operator topology. Since for all $x\in\mathcal{X}$,
     $\sin\inner{x, \cdot}_2$ is an odd function and $A(\cdot)\rho(\cdot)$ is
     even,
     \begin{dmath*}
-        \expectation_\rho\left[\cos{\inner{x-z,\omega}_2}A(\omega)\right]
-        = \expectation_\rho \left[\exp(-i\inner{x-z,\omega}_2)A(\omega)\right]
+        \expectation_{\rho}\left[\cos{\inner{x-z,\omega}_2}A(\omega)\right]
+        = \expectation_{\rho}
+        \left[\exp(-i\inner{x-z,\omega}_2)A(\omega)\right]
         \hiderel{=}K(x,z).
     \end{dmath*}
     Hence $\tilde{K}(x,z)\converges{\acs{asurely}}{D\to\infty}K(x,z)$.

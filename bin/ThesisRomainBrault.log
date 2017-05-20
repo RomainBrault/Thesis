@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.5.22)  20 MAY 2017 19:44
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.5.22)  20 MAY 2017 20:03
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -3487,7 +3487,15 @@ Package biblatex Info: Data encoding 'ascii' specified.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'ThesisRomainBrault.bbl' found.
-(./ThesisRomainBrault.bbl)
+(./ThesisRomainBrault.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                Alacarte
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 131.
 Package biblatex Info: Reference segment=0 on input line 131.
 Package caption Info: Begin \AtBeginDocument code.
@@ -3713,10 +3721,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--12
  []
 
 
-Package biblatex Warning: Keyword 'ownpubs' not found on input line 19.
+Package biblatex Warning: Setting 'defernumbers=true' recommended.
 
 
-LaTeX Warning: Empty bibliography on input line 19.
+Overfull \hbox (30.44437pt too wide) in paragraph at lines 19--19
+\EU1/HoeflerText(2)/m/n/10.95 Splitting Criteria for Random Forests.”  In: \EU1
+/HoeflerText(2)/m/it/10.95 arXiv preprint arXiv:1611.01971
+ []
 
 ) [7
 
@@ -3737,13 +3748,6 @@ LaTeX Font Info:    Font shape `EU1/HoeflerText(2)/m/sl' in size <10.95> not av
 ailable
 (Font)              Font shape `EU1/HoeflerText(2)/m/it' tried instead on input
  line 7.
-
-
-LaTeX Warning: Citation 'samuel1959some' on page 9 undefined on input line 17.
-
-
-LaTeX Warning: Citation 'samuel1959some' on page 9 undefined on input line 18.
-
 ) [9
 
 ] [10
@@ -3753,7 +3757,8 @@ LaTeX Warning: Citation 'samuel1959some' on page 9 undefined on input line 18.
 ]
 \openout2 = `FrontBackMatter/Contents.aux'.
 
- (./FrontBackMatter/Contents.tex
+
+(./FrontBackMatter/Contents.tex
 Package minitoc Info: I0024
 (minitoc)             PREPARING MINITOCS FROM ThesisRomainBrault.toc on input l
 ine 17.
@@ -3969,124 +3974,15 @@ chapter 1.
 \openout2 = `Parts/Introduction/Outline.aux'.
 
  (./Parts/Introduction/Outline.tex
-
-LaTeX Warning: Citation 'Micchelli2005' on page 4 undefined on input line 11.
-
-
-LaTeX Warning: Citation 'Carmeli2010' on page 4 undefined on input line 11.
-
-
-LaTeX Warning: Citation 'Alvarez2012' on page 4 undefined on input line 11.
-
-
-Overfull \hbox (16.0236pt too wide) in paragraph at lines 11--20
-[] [][] \EU1/HoeflerText(2)/m/n/10.95 Operator-Valued Kernels [[], [], []]
- []
-
-
-LaTeX Warning: Citation 'Rahimi2007' on page 4 undefined on input line 25.
-
-
-LaTeX Warning: Citation 'Le2013' on page 4 undefined on input line 25.
-
-
-LaTeX Warning: Citation 'Alacarte' on page 4 undefined on input line 25.
-
-
-LaTeX Warning: Citation 'sriper2015' on page 4 undefined on input line 25.
-
-
-LaTeX Warning: Citation 'Bach2015' on page 4 undefined on input line 25.
-
-
-LaTeX Warning: Citation 'sutherland2015' on page 4 undefined on input line 25.
-
-
-LaTeX Warning: Citation 'rudi2016generalization' on page 4 undefined on input l
-ine 25.
-
-
-LaTeX Warning: Citation 'Le2013' on page 4 undefined on input line 30.
-
-
-LaTeX Warning: Citation 'felix2016orthogonal' on page 4 undefined on input line
- 30.
-
-
-LaTeX Warning: Citation 'drineas2005nystrom' on page 4 undefined on input line 
-32.
-
-
-LaTeX Warning: Citation 'lu2014scale' on page 4 undefined on input line 34.
-
-
-LaTeX Warning: Citation 'dai2014scalable' on page 4 undefined on input line 34.
-
-
-
-LaTeX Warning: Citation 'yang2015deep' on page 4 undefined on input line 34.
-
-
 Overfull \hbox (6.93425pt too wide) in paragraph at lines 21--35
 [] [][] \EU1/HoeflerText(2)/m/n/10.95 However, []\EU1/HoeflerText(2)/m/sc/10.95
  OVK\EU1/HoeflerText(2)/m/n/10.95 s suffer from the same drawbacks as classic (
 scalar-valued)
  []
 
-
-Overfull \hbox (24.80983pt too wide) in paragraph at lines 21--35
-\EU1/HoeflerText(2)/m/n/10.95 ods have been prooved to be competitive with deep
- architectures [[],
- []
-
-
-LaTeX Warning: Citation 'brault2016random' on page 4 undefined on input line 48
-.
-
-
-LaTeX Warning: Citation 'braultborne' on page 4 undefined on input line 49.
-
-
-LaTeX Warning: Citation 'Rahimi2007' on page 4 undefined on input line 49.
-
-
-LaTeX Warning: Citation 'sutherland2015' on page 4 undefined on input line 52.
-
-
-LaTeX Warning: Citation 'tropp2015introduction' on page 4 undefined on input li
-ne 52.
-
-
-LaTeX Warning: Citation 'minsker2011some' on page 4 undefined on input line 52.
-
-
-
-LaTeX Warning: Citation 'koltchinskii2013remark' on page 4 undefined on input l
-ine 52.
-
-
-Overfull \hbox (13.13164pt too wide) in paragraph at lines 46--54
-[]\EU1/HoeflerText(2)/m/sc/10.95 OVK \EU1/HoeflerText(2)/m/n/10.95 approximatio
-n with []\EU1/HoeflerText(2)/m/sc/10.95 ORFF \EU1/HoeflerText(2)/m/n/10.95 we f
-irst proposed in [[]]
- []
-
-
-Overfull \hbox (100.15758pt too wide) in paragraph at lines 46--54
-[]\EU1/HoeflerText(2)/m/n/10.95 , [], [], [].
- []
-
 [4
 
 ]
-
-LaTeX Warning: Citation 'rahimi2009weighted' on page 5 undefined on input line 
-60.
-
-
-LaTeX Warning: Citation 'maurer2016vector' on page 5 undefined on input line 60
-.
-
 
 LaTeX Warning: Reference `ch:learnin operator-valued_random_fourier_features' o
 n page 1 undefined on input line 61.
@@ -4097,42 +3993,16 @@ Overfull \hbox (1.60489pt too wide) in paragraph at lines 57--62
 contribution chapter deals with a generalization bound
  []
 
-
-Overfull \hbox (60.9147pt too wide) in paragraph at lines 57--62
-\EU1/HoeflerText(2)/m/n/10.95 for the a regression problem with ORFF based on t
-he results of [],
- []
-
 LaTeX Font Info:    Try loading font information for U+fplmbb on input line 66.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-)
-
-LaTeX Warning: Citation 'dai2014scalable' on page 5 undefined on input line 67.
-
-
-
-LaTeX Warning: Citation 'Lim2015' on page 5 undefined on input line 70.
-
-
-LaTeX Warning: Citation 'brault2016scaling' on page 5 undefined on input line 7
-1.
-
-) [5] [6
+)) [5] [6
 
 
 
 ]
 chapter 2.
-
-LaTeX Warning: Citation 'box1979robustness' on page 7 undefined on input line 1
-7.
-
-
-LaTeX Warning: Citation 'box1979robustness' on page 7 undefined on input line 1
-8.
-
 \openout7 = `ThesisRomainBrault.mtc'.
 
 \openout7 = `ThesisRomainBrault.mtc'.
@@ -4145,11 +4015,8 @@ LaTeX Warning: Citation 'box1979robustness' on page 7 undefined on input line 1
 File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
 )
-
-LaTeX Warning: Citation 'cornuejols2011apprentissage' on page 8 undefined on in
-put line 68.
-
 File: ./gfx/infinite_monkey.jpg Graphic file (type QTm)
+
 <use  "./gfx/infinite_monkey.jpg" > [8
 
 ]
@@ -4162,32 +4029,12 @@ nsistency of learning algorithm.
  []
 
 [9]
-
-LaTeX Warning: Citation 'hoffgen1995robust' on page 10 undefined on input line 
-128.
-
 \c@pytx@py@default@default=\count561
-(./pythontex-files-ThesisRomainBrault/py_default_default_0.stdout
-(./gfx/nested_circle.pgf))
-
-LaTeX Warning: Citation 'Aronszajn1950' on page 10 undefined on input line 178.
-
-
-[10] [11]
-
-LaTeX Warning: Citation 'Aronszajn1950' on page 12 undefined on input line 219.
-
-
+ (./pythontex-files-ThesisRomainBrault/py_default_default_0.stdout
+(./gfx/nested_circle.pgf)) [10] [11]
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
 t line 219.
-
-LaTeX Warning: Citation 'Wahba90' on page 12 undefined on input line 237.
-
-
-LaTeX Warning: Citation 'Aronszajn1950' on page 12 undefined on input line 267.
-
-
-[12]
+ [12]
 Package microtype Info: Loading generic settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -4195,7 +4042,8 @@ Package microtype Info: Loading generic settings for font family
 File: ./gfx/input.eps Graphic file (type eps)
  <./gfx/input.eps>
 File: ./gfx/feature.eps Graphic file (type eps)
- <./gfx/feature.eps>
+
+<./gfx/feature.eps>
 Overfull \hbox (9.04233pt too wide) in paragraph at lines 299--310
  [][] 
  []
@@ -4204,33 +4052,7 @@ LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 340.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 340.
-
-LaTeX Warning: Citation 'Rahimi2007' on page 13 undefined on input line 348.
-
 [13] [14]
-
-LaTeX Warning: Citation 'Rahimi2007' on page 15 undefined on input line 354.
-
-
-LaTeX Warning: Citation 'li2010random' on page 15 undefined on input line 357.
-
-
-Overfull \hbox (45.81372pt too wide) in paragraph at lines 353--359
-\EU1/HoeflerText(2)/m/n/10.95 endowed with the addition. Extensions to other gr
-oup laws such as [[]]
- []
-
-
-Overfull \hbox (7.15843pt too wide) in paragraph at lines 353--359
-\EU1/HoeflerText(2)/m/n/10.95 are described in [][]subsection 4.2.2.2[][] withi
-n the general framework of operator-
- []
-
-
-LaTeX Warning: Citation 'folland1994course' on page 15 undefined on input line 
-366.
-
-
 Overfull \hbox (2.89679pt too wide) in paragraph at lines 368--371
 []\EU1/HoeflerText(2)/bx/n/10.95 (Bochner’s theorem). [][][] \EU1/HoeflerText(2
 )/m/it/10.95 Any continuous positive definite com-
@@ -4324,170 +4146,30 @@ $[] \OT1/pplx/m/n/10.95 = \OT1/zplm/b/n/10.95 E[]\OT1/pplx/m/n/10.95 [[][]\OML/
 zplm/m/it/10.95 !; [] |  \OMS/zplm/m/n/10.95 ^^@ [][]\OT1/pplx/m/n/10.95 ] 
  []
 
-
-LaTeX Warning: Citation 'Rahimi2007' on page 15 undefined on input line 418.
-
-[15]
-
-LaTeX Warning: Citation 'sutherland2015' on page 16 undefined on input line 429
-.
-
-
-LaTeX Warning: Citation 'Rahimi2007' on page 16 undefined on input line 438.
-
-
-LaTeX Warning: Citation 'sutherland2015' on page 16 undefined on input line 439
-.
-
-
-LaTeX Warning: Citation 'sriper2015' on page 16 undefined on input line 440.
-
-
-LaTeX Warning: Citation 'Rahimi2007' on page 16 undefined on input line 444.
-
-
-LaTeX Warning: Citation 'Williams2000-nystrom' on page 16 undefined on input li
-ne 455.
-
-[16]
-
-LaTeX Warning: Citation 'Yang2012' on page 17 undefined on input line 510.
-
-
-LaTeX Warning: Citation 'drineas2005nystrom' on page 17 undefined on input line
- 510.
-
-
-LaTeX Warning: Citation 'rosasco2010learning' on page 17 undefined on input lin
-e 510.
-
-
-LaTeX Warning: Citation 'Rahimi2007' on page 17 undefined on input line 515.
-
-
-LaTeX Warning: Citation 'sutherland2015' on page 17 undefined on input line 515
-.
-
-
-LaTeX Warning: Citation 'Bach2015' on page 17 undefined on input line 515.
-
-
-LaTeX Warning: Citation 'rudi2016generalization' on page 17 undefined on input 
-line 515.
-
-
-LaTeX Warning: Citation 'bartlett2002rademacher' on page 17 undefined on input 
-line 515.
-
-
-LaTeX Warning: Citation 'Yang2012' on page 17 undefined on input line 521.
-
-
-LaTeX Warning: Citation 'rahimi2009weighted' on page 17 undefined on input line
- 525.
-
-
-LaTeX Warning: Citation 'rahimi2009weighted' on page 17 undefined on input line
- 529.
-
-
-LaTeX Warning: Citation 'rudi2016generalization' on page 17 undefined on input 
-line 530.
-
-
-LaTeX Warning: Citation 'Yang2012' on page 17 undefined on input line 534.
-
-
-Overfull \hbox (24.6707pt too wide) in paragraph at lines 507--536
-[][]$ \EU1/HoeflerText(2)/m/n/10.95 (see [[], [], []])
- []
-
-
-Overfull \hbox (68.34131pt too wide) in paragraph at lines 507--536
-\EU1/HoeflerText(2)/m/n/10.95 true kernel over a compact subset $\OMS/zplm/m/n/
-10.95 X$ \EU1/HoeflerText(2)/m/n/10.95 of the support if $[]$: $[][][][]$
- []
-
-
-Overfull \hbox (26.00052pt too wide) in paragraph at lines 507--536
-\EU1/HoeflerText(2)/m/n/10.95 (see [[], [], [], []]).
- []
-
-[17]
-
-LaTeX Warning: Citation 'Rahimi2007' on page 18 undefined on input line 539.
-
-
-LaTeX Warning: Citation 'kar2012random' on page 18 undefined on input line 542.
-
-
-
-LaTeX Warning: Citation 'hamid2014compact' on page 18 undefined on input line 5
-43.
-
-
-LaTeX Warning: Citation 'pham2013fast' on page 18 undefined on input line 546.
-
-
-LaTeX Warning: Citation 'yang2014quasi' on page 18 undefined on input line 550.
-
-
-
-LaTeX Warning: Citation 'Le2013' on page 18 undefined on input line 551.
-
-
-LaTeX Warning: Citation 'felix2016orthogonal' on page 18 undefined on input lin
-e 554.
-
-
-LaTeX Warning: Citation 'Le2013' on page 18 undefined on input line 556.
-
-
-LaTeX Warning: Citation 'mukuta2016kernel' on page 18 undefined on input line 5
-57.
-
-
-Overfull \hbox (39.82402pt too wide) in paragraph at lines 549--561
+[15] [16] [17]
+Overfull \hbox (4.47015pt too wide) in paragraph at lines 549--561
 \EU1/HoeflerText(2)/m/n/10.95 but with better convergence rates than “Fastfood”
- [[]]. []
+ [[][][]79[][]]. [][]Mukuta and Harada
  []
 
 
-LaTeX Warning: Citation 'li2010random' on page 18 undefined on input line 562.
-
-
-LaTeX Warning: Citation 'Rahimi2007' on page 18 undefined on input line 562.
-
-
-LaTeX Warning: Citation 'yang2014random' on page 18 undefined on input line 566
-.
-
-
-Overfull \hbox (1.07024pt too wide) in paragraph at lines 562--570
-\EU1/HoeflerText(2)/m/n/10.95 of computing feature maps for shift-invariant ken
-rels on the additive group
+Overfull \hbox (14.93655pt too wide) in paragraph at lines 549--561
+\EU1/HoeflerText(2)/m/n/10.95 [[][]106[][]] proposed data dependent features (c
+omparable to the Nystrom̈ method)
  []
 
 
-LaTeX Warning: Citation 'lu2014scale' on page 18 undefined on input line 571.
-
-
-LaTeX Warning: Citation 'dai2014scalable' on page 18 undefined on input line 57
-4.
-
-
-LaTeX Warning: Citation 'xie2015scale' on page 18 undefined on input line 575.
-
-
-LaTeX Warning: Citation 'yang2015deep' on page 18 undefined on input line 577.
-
-
-LaTeX Warning: Citation 'lecun1995convolutional' on page 18 undefined on input 
-line 579.
+Overfull \hbox (11.08434pt too wide) in paragraph at lines 562--570
+[] [][] [][]\EU1/HoeflerText(2)/m/n/10.95 Li, Ionescu, and Sminchisescu [[][]83
+[][]] generalized the original []\EU1/HoeflerText(2)/m/sc/10.95 RFF \EU1/Hoefle
+rText(2)/m/n/10.95 of [][]Rahimi
+ []
 
 [18]
-
-LaTeX Warning: Citation 'Yang2015' on page 19 undefined on input line 582.
+Overfull \hbox (0.60977pt too wide) in paragraph at lines 582--589
+[] [][] \EU1/HoeflerText(2)/m/n/10.95 Eventually [][]Yang et al. [[][]172[][]] 
+introduced the algorithm “À la Carte”, based
+ []
 
 ) [19] [20
 
@@ -4502,22 +4184,7 @@ chapter 3.
 (./ThesisRomainBrault.mtc3) [21]
 \openout2 = `Parts/Introduction/Background.aux'.
 
- (./Parts/Introduction/Background.tex
-
-LaTeX Warning: Citation 'kurdila2006convex' on page 22 undefined on input line 
-7.
-
-
-LaTeX Warning: Citation 'cotaescu2016elements' on page 22 undefined on input li
-ne 7.
-
-
-Overfull \hbox (51.64642pt too wide) in paragraph at lines 5--8
-\EU1/HoeflerText(2)/m/n/10.95 this document. It is mainly based on books and le
-cture notes of [],
- []
-
-[22
+ (./Parts/Introduction/Background.tex [22
 
 ]
 Overfull \hbox (3.85245pt too wide) in paragraph at lines 86--97
@@ -4542,10 +4209,6 @@ on from
  []
 
 
-LaTeX Warning: Citation 'avramidi2000notes' on page 26 undefined on input line 
-392.
-
-
 Underfull \hbox (badness 3623) in paragraph at lines 392--392
 \EU1/HoeflerText(2)/m/n/10.95 bert spaces $\OMS/zplm/m/n/10.95 H[]$\EU1/Hoefler
 Text(2)/m/n/10.95 . By definition $[][][] [][]\OML/zplm/m/it/10.95 ; [][] [][][
@@ -4565,35 +4228,7 @@ LaTeX Warning: Float too large for page by 31.06706pt on input line 393.
 
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
 nput line 401.
-
-LaTeX Warning: Citation 'falb1969theorem' on page 26 undefined on input line 42
-3.
-
 [26] [27] [28]
-
-LaTeX Warning: Citation 'alfsen1964simplified' on page 29 undefined on input li
-ne 458.
-
-
-LaTeX Warning: Citation 'folland1994course' on page 29 undefined on input line 
-458.
-
-
-LaTeX Warning: Citation 'conway2013course' on page 29 undefined on input line 4
-58.
-
-
-Overfull \hbox (63.3447pt too wide) in paragraph at lines 454--459
-\EU1/HoeflerText(2)/m/n/10.95 on \EU1/HoeflerText(2)/m/it/10.95 any $[][]$ \EU1
-/HoeflerText(2)/m/n/10.95 group. For more details and constructive proofs see [
-],
- []
-
-
-LaTeX Warning: Citation 'tornier2014haar' on page 29 undefined on input line 49
-0.
-
-
 Overfull \hbox (1.19061pt too wide) in paragraph at lines 498--504
 []\EU1/HoeflerText(2)/bx/n/10.95 (Even and odd operator-valued function on a []
 \EU1/HoeflerText(2)/bx/sc/10.95 LCA
@@ -4638,62 +4273,16 @@ Underfull \hbox (badness 10000) detected at line 536
 zplm/m/it/10.95 :|$ 
  []
 
-
-LaTeX Warning: Citation 'folland1994course' on page 30 undefined on input line 
-540.
-
 [30]
 Underfull \vbox (badness 10000) detected at line 588
  []
 
-
-LaTeX Warning: Citation 'li2010random' on page 31 undefined on input line 631.
-
-
-Overfull \hbox (20.95102pt too wide) in paragraph at lines 629--636
-\EU1/HoeflerText(2)/m/n/10.95 tures especially useful in image recognition appl
-ications. Let $\OMS/zplm/m/n/10.95 X \OT1/pplx/m/n/10.95 = (\OMS/zplm/m/n/10.95
- ^^@[][]\OT1/pplx/m/n/10.95 ; +\OMS/zplm/m/n/10.95 1\OT1/pplx/m/n/10.95 )[]$\EU
-1/HoeflerText(2)/m/n/10.95 ,
- []
-
 [31]
-
-LaTeX Warning: Citation 'li2010random' on page 32 undefined on input line 639.
-
 Missing character: There is no c in font fplmbb!
 Missing character: There is no c in font fplmbb!
-
-Overfull \hbox (9.74065pt too wide) in paragraph at lines 639--646
-\OT1/pplx/m/n/10.95 ((\OMS/zplm/m/n/10.95 ^^@[]\OML/zplm/m/it/10.95 ; \OT1/pplx
-/m/n/10.95 +\OMS/zplm/m/n/10.95 1\OT1/pplx/m/n/10.95 )\OML/zplm/m/it/10.95 ; \O
-MS/zplm/m/n/10.95 ^^L\OT1/pplx/m/n/10.95 )$ \EU1/HoeflerText(2)/m/it/10.95 we h
-ave $[] [] \U/fplmbb/m/n/10.95 R$\EU1/HoeflerText(2)/m/it/10.95 , with duality 
-pairing $[][]\OML/zplm/m/it/10.95 ; ![] \OT1/pplx/m/n/10.95 = []([] []([] +
- []
-
-
-LaTeX Warning: Citation 'folland1994course' on page 32 undefined on input line 
-675.
-
-
-Overfull \hbox (84.20993pt too wide) in paragraph at lines 673--676
-\EU1/HoeflerText(2)/m/n/10.95 defining the pairing on the dual group using the 
-following proposition [[]]
- []
-
 Package hyperref Info: bookmark level for unknown proposition defaults to 0 on 
 input line 677.
-[32]
-
-LaTeX Warning: Citation 'folland1994course' on page 33 undefined on input line 
-718.
-
-
-LaTeX Warning: Citation 'folland1994course' on page 33 undefined on input line 
-757.
-
-[33]
+ [32] [33]
 Underfull \hbox (badness 5578) in paragraph at lines 782--782
 $[][]\OMS/zplm/m/n/10.95 F [][][]| \OT1/pplx/m/n/10.95 (\OML/zplm/m/it/10.95 !\
 OT1/pplx/m/n/10.95 ) = [][] [][]([])[][]([]) 
@@ -4760,274 +4349,53 @@ lerText(2)/m/it/10.95 Given $\OML/zplm/m/it/10.95 ^^V$ \EU1/HoeflerText(2)/m/it
 /10.95 and $\OML/zplm/m/it/10.95 ^^W$ \EU1/HoeflerText(2)/m/it/10.95 two mea-
  []
 
-
-LaTeX Warning: Citation 'folland1994course' on page 34 undefined on input line 
-824.
-
-[34]
-
-LaTeX Warning: Citation 'Aronszajn1950' on page 35 undefined on input line 884.
-
-
-
-LaTeX Warning: Citation 'Pedrick57' on page 35 undefined on input line 888.
-
-
-LaTeX Warning: Citation 'Micchelli2005' on page 35 undefined on input line 891.
-
-
-
-LaTeX Warning: Citation 'carmeli2006vector' on page 35 undefined on input line 
-891.
-
-
-LaTeX Warning: Citation 'Carmeli2010' on page 35 undefined on input line 891.
-
-[35]
-
-LaTeX Warning: Citation 'carmeli2006vector' on page 36 undefined on input line 
-919.
-
-
-LaTeX Warning: Citation 'Micchelli2005' on page 36 undefined on input line 919.
-
-
-
-LaTeX Warning: Citation 'Senkene73' on page 36 undefined on input line 938.
-
-
-LaTeX Warning: Citation 'Carmeli2010' on page 36 undefined on input line 940.
-
-
+[34] [35]
 Overfull \hbox (9.8914pt too wide) in paragraph at lines 935--941
 \EU1/HoeflerText(2)/m/n/10.95 Throughout this section we show that a []\EU1/Hoe
 flerText(2)/m/sc/10.95 VV-RKHS \EU1/HoeflerText(2)/m/n/10.95 defines a unique p
 ositive-
  []
 
-[36]
-
-LaTeX Warning: Citation 'carmeli2006vector' on page 37 undefined on input line 
-978.
-
-[37]
+[36] [37]
 Overfull \hbox (3.27048pt too wide) in paragraph at lines 1041--1048
 \EU1/HoeflerText(2)/m/n/10.95 This comes from the fact that $[][][] \OT1/pplx/m
 /n/10.95 = [][][] = []$
  []
 
 
-LaTeX Warning: Citation 'carmeli2006vector' on page 38 undefined on input line 
-1051.
-
-[38] [39]
-
-LaTeX Warning: Citation 'Carmeli2010' on page 40 undefined on input line 1165.
-
-[40]
-
-LaTeX Warning: Citation 'Carmeli2010' on page 41 undefined on input line 1248.
-
-
-Overfull \hbox (3.60039pt too wide) in paragraph at lines 1248--1254
-[]\EU1/HoeflerText(2)/bx/n/10.95 ($\OMS/zplm/b/n/10.95 Y$\EU1/HoeflerText(2)/bx
-/n/10.95 -Mercer kernel [[]]). [][][] \EU1/HoeflerText(2)/m/it/10.95 A reproduc
-ing ker-
+Overfull \hbox (0.83487pt too wide) in paragraph at lines 1051--1056
+[]\EU1/HoeflerText(2)/bx/n/10.95 ([[][][]33[][]]). []\EU1/HoeflerText(2)/m/it/1
+0.95 Given a positive-definite []Operator-Valued Kernel $[] \OT1/pplx/m/n/10.95
+ :
  []
 
-
-LaTeX Warning: Citation 'Carmeli2010' on page 41 undefined on input line 1259.
-
-
-Overfull \hbox (34.32515pt too wide) in paragraph at lines 1259--1264
-[]\EU1/HoeflerText(2)/bx/n/10.95 (Characterization of $\OMS/zplm/b/n/10.95 Y$\E
-U1/HoeflerText(2)/bx/n/10.95 -Mercer kernel [[]]).
- []
-
-
-LaTeX Warning: Citation 'carmeli2006vector' on page 41 undefined on input line 
-1299.
-
+[38] [39] [40]
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
 line 1299.
-
-Overfull \hbox (0.28108pt too wide) in paragraph at lines 1299--1303
-[]\EU1/HoeflerText(2)/bx/n/10.95 (Separable []\EU1/HoeflerText(2)/bx/sc/10.95 V
-V-RKHS \EU1/HoeflerText(2)/bx/n/10.95 [[]]). [][][] \EU1/HoeflerText(2)/m/it/10
-.95 Let $\OMS/zplm/m/n/10.95 H[]$
- []
-
-[41]
-
-LaTeX Warning: Citation 'carmeli2006vector' on page 42 undefined on input line 
-1323.
-
-
-Overfull \hbox (95.55315pt too wide) in paragraph at lines 1323--1328
+ [41]
+Overfull \hbox (6.26688pt too wide) in paragraph at lines 1323--1328
 []\EU1/HoeflerText(2)/bx/n/10.95 (Separable []\EU1/HoeflerText(2)/bx/sc/10.95 V
 V-RKHS \EU1/HoeflerText(2)/bx/n/10.95 for $\OMS/zplm/b/n/10.95 Y$\EU1/HoeflerTe
-xt(2)/bx/n/10.95 -Mercer kernel [[]]).
+xt(2)/bx/n/10.95 -Mercer kernel [[][][]33[][]]).
  []
 
-
-LaTeX Warning: Citation 'carmeli2006vector' on page 42 undefined on input line 
-1333.
-
-[42]
-
-LaTeX Warning: Citation 'Carmeli2010' on page 43 undefined on input line 1376.
-
-[43]
-
-LaTeX Warning: Citation 'Micheli2013' on page 44 undefined on input line 1466.
-
-
-LaTeX Warning: Citation 'Evgeniou2005' on page 44 undefined on input line 1498.
-
-
-
-LaTeX Warning: Citation 'Baldassare2010' on page 44 undefined on input line 149
-8.
-
-
-LaTeX Warning: Citation 'Alvarez2012' on page 44 undefined on input line 1498.
-
-
-LaTeX Warning: Citation 'Dinuzzo2011' on page 44 undefined on input line 1504.
-
-
-LaTeX Warning: Citation 'Sindhwani2013' on page 44 undefined on input line 1504
-.
-
-
-LaTeX Warning: Citation 'Lim2015' on page 44 undefined on input line 1504.
-
-
-LaTeX Warning: Citation 'caponnetto2008' on page 44 undefined on input line 151
-0.
-
-
-LaTeX Warning: Citation 'Carmeli2010' on page 44 undefined on input line 1510.
-
-
-Overfull \hbox (10.32664pt too wide) in paragraph at lines 1477--1516
-\EU1/HoeflerText(2)/m/n/10.95 tween tasks is known, then it is shown in [], [],
-
+[42] [43]
+Overfull \hbox (13.2685pt too wide) in paragraph at lines 1516--1521
+[]\EU1/HoeflerText(2)/bx/n/10.95 (Kernels and Regularizers [[][][]4[][]]). [][]
+[] \EU1/HoeflerText(2)/m/it/10.95 Let $[]\OT1/pplx/m/n/10.95 ([]\OML/zplm/m/it/
+10.95 ; []\OT1/pplx/m/n/10.95 ) [] []([]\OML/zplm/m/it/10.95 ; []\OT1/pplx/m/n/
+10.95 )\OML/zplm/m/it/10.95 ^^@$
  []
-
-
-Overfull \hbox (17.71329pt too wide) in paragraph at lines 1477--1516
-\EU1/HoeflerText(2)/m/n/10.95 of the algorithms proposed in the literature [[],
- [],
- []
-
-[44]
-
-LaTeX Warning: Citation 'Alvarez2012' on page 45 undefined on input line 1516.
-
-
-Overfull \hbox (32.76582pt too wide) in paragraph at lines 1516--1521
-[]\EU1/HoeflerText(2)/bx/n/10.95 (Kernels and Regularizers [[]]). [][][] \EU1/H
-oeflerText(2)/m/it/10.95 Let $[]\OT1/pplx/m/n/10.95 ([]\OML/zplm/m/it/10.95 ; [
-]\OT1/pplx/m/n/10.95 ) []
- []
-
-
-LaTeX Warning: Citation 'Macedo2008' on page 45 undefined on input line 1532.
-
-
-LaTeX Warning: Citation 'Baldassare2012' on page 45 undefined on input line 153
-2.
-
-
-LaTeX Warning: Citation 'Micheli2013' on page 45 undefined on input line 1532.
-
-
-LaTeX Warning: Citation 'Micheli2013' on page 45 undefined on input line 1535.
-
-
-LaTeX Warning: Citation 'Wahlstrom2013' on page 45 undefined on input line 1536
-.
-
-
-LaTeX Warning: Citation 'Fuselier2006' on page 45 undefined on input line 1537.
-
 
 File: ./gfx/curl_field.eps Graphic file (type eps)
 <./gfx/curl_field.eps>
 File: ./gfx/div_field.eps Graphic file (type eps)
- <./gfx/div_field.eps>
-Overfull \hbox (33.11897pt too wide) in paragraph at lines 1531--1554
-\EU1/HoeflerText(2)/m/n/10.95 tion of operator-valued kernels [[], [], []]
- []
-
-
-Overfull \hbox (26.69363pt too wide) in paragraph at lines 1531--1554
-\EU1/HoeflerText(2)/m/n/10.95 mensions ($[] \OT1/pplx/m/n/10.95 = []$\EU1/Hoefl
-erText(2)/m/n/10.95 ). Applications cover shape deformation analysis [[]]
- []
-
-
-LaTeX Warning: Citation 'Macedo2008' on page 45 undefined on input line 1554.
-
-
-LaTeX Warning: Citation 'Macedo2008' on page 45 undefined on input line 1575.
-
-
-LaTeX Warning: Citation 'Baldassare2012' on page 45 undefined on input line 157
-5.
-
-
-Overfull \hbox (13.48384pt too wide) in paragraph at lines 1572--1578
-\EU1/HoeflerText(2)/m/n/10.95 tor field that satisfies the Helmholtz decomposit
-ion theorem [[],
- []
-
-
-LaTeX Warning: Citation 'caponnetto2008' on page 45 undefined on input line 157
-8.
-
-[45] [46]
-
-LaTeX Warning: Citation 'lim2013okvar' on page 47 undefined on input line 1591.
+ <./gfx/div_field.eps> [44] [45] [46]) [47]) [48
 
 
 
-LaTeX Warning: Citation 'lim2015operator' on page 47 undefined on input line 15
-91.
-
-
-LaTeX Warning: Citation 'vazquez2003multi' on page 47 undefined on input line 1
-591.
-
-
-Overfull \hbox (42.97491pt too wide) in paragraph at lines 1589--1594
-\EU1/HoeflerText(2)/m/n/10.95 time series by means of autoregressive models ([]
-, []),
- []
-
-
-LaTeX Warning: Citation 'kadri2015operator' on page 47 undefined on input line 
-1596.
-
-
-LaTeX Warning: Citation 'kadri2015operator' on page 47 undefined on input line 
-1597.
-
-
-Overfull \hbox (35.68306pt too wide) in paragraph at lines 1597--1604
-[]\EU1/HoeflerText(2)/bx/n/10.95 (Hilbert Schmidt Integral kernel [[]]).
- []
-
-
-LaTeX Warning: Citation 'kadri2015operator' on page 47 undefined on input line 
-1619.
-
-) [47]) [48
-
-
-
-] [49
+]
+[49
 
 
 ] [50] (./Parts/Contributions.tex
@@ -5060,50 +4428,14 @@ o implement efficiently
  []
 
 
-LaTeX Warning: Citation 'brault2016random' on page 52 undefined on input line 3
-2.
-
-
-LaTeX Warning: Citation 'Zhang2012' on page 52 undefined on input line 49.
-
-
-LaTeX Warning: Citation 'Carmeli2010' on page 52 undefined on input line 49.
-
-
-Overfull \hbox (10.41328pt too wide) in paragraph at lines 49--51
-\EU1/HoeflerText(2)/m/n/10.95 The following proposition of [], [] extends Bochn
-er’s
- []
-
-
-LaTeX Warning: Citation 'Zhang2012' on page 52 undefined on input line 52.
-
-
-LaTeX Warning: Citation 'neeb1998operator' on page 52 undefined on input line 5
-2.
-
-
-Overfull \hbox (12.77933pt too wide) in paragraph at lines 52--59
-[]\EU1/HoeflerText(2)/bx/n/10.95 (Operator-valued Bochner’s theorem [[],
+Overfull \hbox (4.34642pt too wide) in paragraph at lines 52--59
+[]\EU1/HoeflerText(2)/bx/n/10.95 (Operator-valued Bochner’s theorem [[][][]108[
+][][], [][]173[][]]).
  []
 
 [52
 
 ]
-
-LaTeX Warning: Citation 'Carmeli2010' on page 53 undefined on input line 71.
-
-
-Overfull \hbox (4.10881pt too wide) in paragraph at lines 69--80
-\EU1/HoeflerText(2)/m/n/10.95 tice. It first gives the necessary conditions to 
-build shift-invariant $\OMS/zplm/m/n/10.95 Y$\EU1/HoeflerText(2)/m/n/10.95 -Mer
-cer
- []
-
-
-LaTeX Warning: Citation 'Carmeli2010' on page 53 undefined on input line 81.
-
-
 Overfull \hbox (2.80263pt too wide) in paragraph at lines 114--124
 \EU1/HoeflerText(2)/m/n/10.95 Namely a given measure $[]$ and a function $[]$ s
 uch that $[][][]\OML/zplm/m/it/10.95 ; []\OT1/pplx/m/n/10.95 (\OML/zplm/m/it/10
@@ -5112,15 +4444,11 @@ OMS/zplm/m/n/10.95 X\OML/zplm/m/it/10.95 ; []\OT1/pplx/m/n/10.95 )$
  []
 
 [53]
-
-LaTeX Warning: Citation 'carmeli2006vector' on page 54 undefined on input line 
-135.
-
-
-LaTeX Warning: Citation 'Carmeli2010' on page 54 undefined on input line 156.
-
-
-LaTeX Warning: Citation 'Carmeli2010' on page 54 undefined on input line 159.
+Overfull \hbox (8.47183pt too wide) in paragraph at lines 159--164
+[]\EU1/HoeflerText(2)/bx/n/10.95 ([][]Carmeli et al. [[][]34[][]]). [][][] \EU1
+/HoeflerText(2)/m/it/10.95 Let $[]$ be a shift-invariant $\OMS/zplm/m/n/10.95 Y
+$\EU1/HoeflerText(2)/m/it/10.95 -Mercer
+ []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 175--175
@@ -5311,29 +4639,10 @@ Overfull \hbox (15.51456pt too wide) in paragraph at lines 381--390
 e quantity $[][][][][]$
  []
 
-
-LaTeX Warning: Citation 'minh2016operator' on page 57 undefined on input line 3
-91.
-
-
-LaTeX Warning: Citation 'minh2016operator' on page 57 undefined on input line 4
-00.
-
 [57]
-
-LaTeX Warning: Citation 'minh2016operator' on page 58 undefined on input line 4
-04.
-
-
 Overfull \hbox (2.2964pt too wide) in paragraph at lines 404--409
 []\EU1/HoeflerText(2)/bx/n/10.95 (Bounded shift-invariant $\OMS/zplm/b/n/10.95 
 Y$\EU1/HoeflerText(2)/bx/n/10.95 -Mercer kernel spec-
- []
-
-
-Overfull \hbox (12.78664pt too wide) in paragraph at lines 404--409
-\EU1/HoeflerText(2)/bx/n/10.95 tral decomposition (adaptation of a result from 
-[]).
  []
 
 
@@ -5462,9 +4771,6 @@ $[][][] \OT1/pplx/m/n/10.95 = \OMS/zplm/m/n/10.95 F [][][]|[]| \OT1/pplx/m/n/10
 .95 (\OML/zplm/m/it/10.95 !\OT1/pplx/m/n/10.95 ) 
  []
 
-
-LaTeX Warning: Citation 'li2010random' on page 60 undefined on input line 616.
-
 [60]
 Underfull \hbox (badness 1142) in paragraph at lines 681--681
 $[][]\OT1/pplx/m/n/10.95 (\OML/zplm/m/it/10.95 !\OT1/pplx/m/n/10.95 ) = \OMS/zp
@@ -5513,33 +4819,29 @@ position $[][]\OT1/pplx/m/n/10.95 (\OML/zplm/m/it/10.95 !\OT1/pplx/m/n/10.95 )
 = \OML/zplm/m/it/10.95 !![][][][]$
  []
 
-[63]
-
-LaTeX Warning: Citation 'Carmeli2010' on page 64 undefined on input line 896.
-
-[64]
-Overfull \hbox (0.59723pt too wide) in paragraph at lines 943--947
+[63] [64]
+Overfull \hbox (0.59723pt too wide) in paragraph at lines 944--948
 \EU1/HoeflerText(2)/m/it/10.95 invariant $\OMS/zplm/m/n/10.95 Y$\EU1/HoeflerTex
 t(2)/m/it/10.95 -Mercer kernel. Second, from the strong law of large numbers an
 d [][]propo-
  []
 
 [65]
-Underfull \hbox (badness 2894) in paragraph at lines 972--972
+Underfull \hbox (badness 2894) in paragraph at lines 973--973
 \OT1/pplx/m/n/10.95 = \OMS/zplm/m/n/10.95 F [][][]\OML/zplm/m/it/10.95 ; [][]\O
 T1/pplx/m/n/10.95 (\OMS/zplm/m/n/10.95 ^^A\OT1/pplx/m/n/10.95 )[][][]| (\OML/zp
 lm/m/it/10.95 !\OT1/pplx/m/n/10.95 )\OML/zplm/m/it/10.95 ;|$ 
  []
 
 
-Underfull \hbox (badness 2894) detected at line 972
+Underfull \hbox (badness 2894) detected at line 973
 \OT1/pplx/m/n/10.95 = \OMS/zplm/m/n/10.95 F [][][]\OML/zplm/m/it/10.95 ; [][]\O
 T1/pplx/m/n/10.95 (\OMS/zplm/m/n/10.95 ^^A\OT1/pplx/m/n/10.95 )[][][]| (\OML/zp
 lm/m/it/10.95 !\OT1/pplx/m/n/10.95 )\OML/zplm/m/it/10.95 ;|$ 
  []
 
 
-Underfull \hbox (badness 2894) detected at line 972
+Underfull \hbox (badness 2894) detected at line 973
 \OT1/pplx/m/n/10.95 = \OMS/zplm/m/n/10.95 F [][][]\OML/zplm/m/it/10.95 ; [][]\O
 T1/pplx/m/n/10.95 (\OMS/zplm/m/n/10.95 ^^A\OT1/pplx/m/n/10.95 )[][][]| (\OML/zp
 lm/m/it/10.95 !\OT1/pplx/m/n/10.95 )\OML/zplm/m/it/10.95 ;|$ 
@@ -5551,14 +4853,14 @@ lm/m/it/10.95 !\OT1/pplx/m/n/10.95 )\OML/zplm/m/it/10.95 ;|$
 (./not_Mercer.pgf
 File: ./not_Mercer-img0.png Graphic file (type QTm)
  <use  "./not_Mercer-img0.png" >))
-Overfull \hbox (0.12964pt too wide) in paragraph at lines 1229--1241
+Overfull \hbox (0.12964pt too wide) in paragraph at lines 1230--1242
 \EU1/HoeflerText(2)/m/n/10.95 We computed a reference function (black line) def
 ined as $\OT1/pplx/m/n/10.95 ([][]\OML/zplm/m/it/10.95 ; [][]\OT1/pplx/m/n/10.9
 5 )[] = []([][]) =
  []
 
 [68]
-Overfull \hbox (12.50368pt too wide) in paragraph at lines 1250--1252
+Overfull \hbox (12.50368pt too wide) in paragraph at lines 1251--1253
 []\EU1/HoeflerText(2)/bx/n/10.95 (Random Fourier feature operator). []\EU1/Hoef
 lerText(2)/m/it/10.95 Let $[] \OT1/pplx/m/n/10.95 = (\OML/zplm/m/it/10.95 ![]\O
 T1/pplx/m/n/10.95 )[] \OMS/zplm/m/n/10.95 2
@@ -5577,15 +4879,11 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 21.61124pt on input line 44.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 15.0049pt on input line 44.
-) [72]
-
-LaTeX Warning: Citation 'Rahimi2007' on page 73 undefined on input line 1512.
-
-[73
+) [72] [73
 
 
 ]
-Overfull \hbox (16.583pt too wide) in paragraph at lines 1550--1554
+Overfull \hbox (16.583pt too wide) in paragraph at lines 1552--1556
 \EU1/HoeflerText(2)/m/n/10.95 where $\OML/zplm/m/it/10.95 ![] [] [][]$ []\EU1/H
 oeflerText(2)/m/n/10.95 i.i.d. and $[]\OT1/pplx/m/n/10.95 (\OML/zplm/m/it/10.95
  !\OT1/pplx/m/n/10.95 ) = []$ \EU1/HoeflerText(2)/m/n/10.95 and $\OML/zplm/m/it
@@ -5594,45 +4892,21 @@ ML/zplm/m/it/10.95 ; ^^[[][][]\OT1/pplx/m/n/10.95 )$
  []
 
 
-Overfull \hbox (3.4755pt too wide) in paragraph at lines 1570--1576
+Overfull \hbox (3.4755pt too wide) in paragraph at lines 1572--1578
 []\EU1/HoeflerText(2)/bx/n/10.95 (Matrix-valued kernel on the skewed multiplica
 tive
  []
 
 
-Overfull \hbox (2.04666pt too wide) in paragraph at lines 1603--1603
+Overfull \hbox (2.04666pt too wide) in paragraph at lines 1605--1605
  $\OT1/zplm/b/n/10.95 E[] [][] []\OMS/zplm/m/n/10.95 ^^@[][][][]|[]| []\OT1/ppl
 x/m/n/10.95 (\OML/zplm/m/it/10.95 !\OT1/pplx/m/n/10.95 )[]| [] \OT1/zplm/b/n/10
 .95 E[]\OT1/pplx/m/n/10.95 [[][](\OML/zplm/m/it/10.95 !\OT1/pplx/m/n/10.95 )] [
 ] []([]\OML/zplm/m/it/10.95 ; []\OT1/pplx/m/n/10.95 )|$ 
  []
 
-[74]
-
-LaTeX Warning: Citation 'li2010random' on page 75 undefined on input line 1626.
-
-
-[75]
-
-LaTeX Warning: Citation 'Yang2012' on page 76 undefined on input line 1722.
-
-
-LaTeX Warning: Citation 'vertregularization' on page 76 undefined on input line
- 1722.
-
-
-LaTeX Warning: Citation 'smola1998connection' on page 76 undefined on input lin
-e 1722.
-
-
-Overfull \hbox (11.03757pt too wide) in paragraph at lines 1717--1725
-\EU1/HoeflerText(2)/m/n/10.95 equation we also recover [][]proposition 3.8[][] 
-for decomposable kernels. If $[]\OT1/pplx/m/n/10.95 (\OML/zplm/m/it/10.95 !\OT1
-/pplx/m/n/10.95 ) =
- []
-
-
-Overfull \hbox (10.88788pt too wide) detected at line 1774
+[74] [75]
+Overfull \hbox (10.88788pt too wide) detected at line 1776
 [][] 
  []
 
@@ -5642,50 +4916,6 @@ Overfull \hbox (10.88788pt too wide) detected at line 1774
 
 ]
 chapter 5.
-
-LaTeX Warning: Citation 'brault2016random' on page 79 undefined on input line 1
-6.
-
-
-LaTeX Warning: Citation 'braultborne' on page 79 undefined on input line 17.
-
-
-LaTeX Warning: Citation 'Rahimi2007' on page 79 undefined on input line 18.
-
-
-LaTeX Warning: Citation 'sutherland2015' on page 79 undefined on input line 20.
-
-
-
-LaTeX Warning: Citation 'tropp2015introduction' on page 79 undefined on input l
-ine 20.
-
-
-LaTeX Warning: Citation 'minsker2011some' on page 79 undefined on input line 20
-.
-
-
-LaTeX Warning: Citation 'koltchinskii2013remark' on page 79 undefined on input 
-line 20.
-
-
-Overfull \hbox (43.9203pt too wide) in paragraph at lines 15--22
-[]\EU1/HoeflerText(2)/m/sc/10.95 ORFF \EU1/HoeflerText(2)/m/n/10.95 we first pr
-oposed in [[]] and presented in [[]].
- []
-
-
-Overfull \hbox (4.19647pt too wide) in paragraph at lines 15--22
-\EU1/HoeflerText(2)/m/n/10.95 It generalizes the proof technique of [] to []\EU
-1/HoeflerText(2)/m/sc/10.95 OVK \EU1/HoeflerText(2)/m/n/10.95 on []\EU1/Hoefler
-Text(2)/m/sc/10.95 LCA \EU1/HoeflerText(2)/m/n/10.95 groups
- []
-
-
-Overfull \hbox (7.44582pt too wide) in paragraph at lines 15--22
-\EU1/HoeflerText(2)/m/n/10.95 thanks to the recent results of [], [],
- []
-
 \openout7 = `ThesisRomainBrault.mtc'.
 
 \openout7 = `ThesisRomainBrault.mtc'.
@@ -5706,140 +4936,20 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `lmss' (encoding: EU1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-))
+)) [80
 
-LaTeX Warning: Citation 'Boucheron' on page 80 undefined on input line 49.
-
-
-LaTeX Warning: Citation 'ledoux2005concentration' on page 80 undefined on input
- line 51.
-
-[80
-
-]
-
-LaTeX Warning: Citation 'smale2007learning' on page 81 undefined on input line 
-82.
-
-
-LaTeX Warning: Citation 'pinelis1994optimum' on page 81 undefined on input line
- 82.
-
-
-LaTeX Warning: Citation 'naor2012banach' on page 81 undefined on input line 82.
-
-
-
-Overfull \hbox (35.13832pt too wide) in paragraph at lines 74--86
-\EU1/HoeflerText(2)/m/n/10.95 derive concentration inequalities [[], [],
+] [81]
+Overfull \hbox (6.31528pt too wide) in paragraph at lines 113--119
+[][]\EU1/HoeflerText(2)/m/n/10.95 Rahimi and Recht [[][]121[][]] proved the uni
+form convergence of []Random Fourier
  []
 
-[81]
-
-LaTeX Warning: Citation 'Rahimi2007' on page 82 undefined on input line 113.
-
-
-LaTeX Warning: Citation 'Rahimi2007' on page 82 undefined on input line 118.
-
-
-LaTeX Warning: Citation 'sutherland2015' on page 82 undefined on input line 118
-.
-
-
-LaTeX Warning: Citation 'sriper2015' on page 82 undefined on input line 118.
-
-
-LaTeX Warning: Citation 'Rahimi2007' on page 82 undefined on input line 120.
-
-[82]
-
-LaTeX Warning: Citation 'Rahimi2007' on page 83 undefined on input line 168.
-
-
-LaTeX Warning: Citation 'sutherland2015' on page 83 undefined on input line 190
-.
-
-
-LaTeX Warning: Citation 'sriper2015' on page 83 undefined on input line 192.
-
-
-LaTeX Warning: Citation 'sriper2015' on page 83 undefined on input line 193.
-
-
-LaTeX Warning: Citation 'sutherland2015' on page 83 undefined on input line 198
-.
-
-
-LaTeX Warning: Citation 'dudley1967sizes' on page 83 undefined on input line 20
-0.
-
-
-LaTeX Warning: Citation 'Boucheron' on page 83 undefined on input line 200.
-
-
-LaTeX Warning: Citation 'sriper2015' on page 83 undefined on input line 203.
-
-
-Overfull \hbox (1.60583pt too wide) in paragraph at lines 189--204
-\EU1/HoeflerText(2)/m/n/10.95 ing Dudley’s entropy integral [[], []] as a bound
-
- []
-
-[83]
-
-LaTeX Warning: Citation 'van1996weak' on page 84 undefined on input line 221.
-
-
-LaTeX Warning: Citation 'tropp2015introduction' on page 84 undefined on input l
-ine 244.
-
-
-LaTeX Warning: Citation 'minsker2011some' on page 84 undefined on input line 24
-4.
-
-
-LaTeX Warning: Citation 'ledoux2013probability' on page 84 undefined on input l
-ine 244.
-
-
-LaTeX Warning: Citation 'pinelis1994optimum' on page 84 undefined on input line
- 244.
-
-
-LaTeX Warning: Citation 'koltchinskii2013remark' on page 84 undefined on input 
-line 244.
-
-
-LaTeX Warning: Citation 'tropp2015introduction' on page 84 undefined on input l
-ine 245.
-
-
-LaTeX Warning: Citation 'minsker2011some' on page 84 undefined on input line 24
-5.
-
-
-Overfull \hbox (31.1808pt too wide) in paragraph at lines 242--249
-\EU1/HoeflerText(2)/m/n/10.95 tors [[], [], [],
- []
-
-
-LaTeX Warning: Citation 'brault2016random' on page 84 undefined on input line 2
-58.
-
-
-LaTeX Warning: Citation 'koltchinskii2013remark' on page 84 undefined on input 
-line 258.
-
-
-Overfull \hbox (46.7308pt too wide) in paragraph at lines 257--262
-\EU1/HoeflerText(2)/m/n/10.95 Indeed the bound proposed in our first publicatio
-n at []\EU1/HoeflerText(2)/m/sc/10.95 ACML \EU1/HoeflerText(2)/m/n/10.95 [[]]
- []
-
-
-Overfull \hbox (3.36241pt too wide) in paragraph at lines 257--262
-\EU1/HoeflerText(2)/m/n/10.95 based on [] depends on $[]$ while the present bou
-nd
+[82] [83]
+Overfull \hbox (7.07402pt too wide) in paragraph at lines 221--225
+[]\EU1/HoeflerText(2)/bx/n/10.95 (Orlicz norm [[][][]156[][]]). []\EU1/HoeflerT
+ext(2)/m/it/10.95 Let $\OML/zplm/m/it/10.95   \OT1/pplx/m/n/10.95 : \U/fplmbb/m
+/n/10.95 R[] \OMS/zplm/m/n/10.95 ! \U/fplmbb/m/n/10.95 R[]$ \EU1/HoeflerText(2)
+/m/it/10.95 be a non-decreasing
  []
 
 [84]
@@ -5849,13 +4959,6 @@ Overfull \hbox (14.6039pt too wide) in paragraph at lines 319--319
 
 Package hyperref Info: bookmark level for unknown sproof defaults to 0 on input
  line 325.
-
-LaTeX Warning: Citation 'cucker2001mathematical' on page 85 undefined on input 
-line 334.
-
-
-LaTeX Warning: Citation 'Rahimi2007' on page 85 undefined on input line 337.
-
 [85]
 Underfull \hbox (badness 10000) in paragraph at lines 399--399
 $[][] [] \OMS/zplm/m/n/10.95 ^^T [] 
@@ -5906,50 +5009,12 @@ Underfull \hbox (badness 10000) detected at line 399
 $[] \OMS/zplm/m/n/10.95 ^^T [] 
  []
 
-
-LaTeX Warning: Citation 'koltchinskii2013remark' on page 86 undefined on input 
-line 403.
-
 [86]
-
-LaTeX Warning: Citation 'Rahimi2007' on page 87 undefined on input line 478.
-
-
-LaTeX Warning: Citation 'sutherland2015' on page 87 undefined on input line 478
-.
-
-
-LaTeX Warning: Citation 'minh2016operator' on page 87 undefined on input line 4
-78.
-
-
 Overfull \hbox (14.6039pt too wide) in paragraph at lines 501--501
  \OMS/zplm/m/n/10.95 ^^T [][] [][][]| [][] []|$ 
  []
 
-
-LaTeX Warning: Citation 'Rahimi2007' on page 87 undefined on input line 505.
-
-
-LaTeX Warning: Citation 'sutherland2015' on page 87 undefined on input line 505
-.
-
-
-LaTeX Warning: Citation 'minsker2011some' on page 87 undefined on input line 51
-7.
-
-[87]
-
-LaTeX Warning: Citation 'sutherland2015' on page 88 undefined on input line 594
-.
-
-
-Overfull \hbox (16.55899pt too wide) in paragraph at lines 592--599
-\EU1/HoeflerText(2)/m/n/10.95 ply [][]corollaries 5.2[][] and [][]5.3[][]. This
- is an extension of the proof of []
- []
-
-[88] (./gfx/variance_dec.tikz
+[87] [88] (./gfx/variance_dec.tikz
 LaTeX Font Info:    Calculating math sizes for size <11.03967> on input line 14
 .
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
@@ -6019,15 +5084,6 @@ chapter 6.
 \openout2 = `Parts/Contributions/Learning.aux'.
 
  (./Parts/Contributions/Learning.tex
-
-LaTeX Warning: Citation 'kurdila2006convex' on page 94 undefined on input line 
-35.
-
-
-LaTeX Warning: Citation 'gorniewicz1999topological' on page 94 undefined on inp
-ut line 35.
-
-
 Overfull \hbox (7.2191pt too wide) in paragraph at lines 37--43
 []$ \EU1/HoeflerText(2)/m/it/10.95 be a proper, convex, lower semi-continuous a
 nd coercive function. Then $[]$ is bounded
@@ -6035,72 +5091,7 @@ nd coercive function. Then $[]$ is bounded
 
 [94
 
-]
-
-LaTeX Warning: Citation 'Alvarez2012' on page 95 undefined on input line 91.
-
-
-LaTeX Warning: Citation 'Minh_icml13' on page 95 undefined on input line 91.
-
-
-LaTeX Warning: Citation 'minh2016unifying' on page 95 undefined on input line 9
-1.
-
-
-LaTeX Warning: Citation 'sangnier2016joint' on page 95 undefined on input line 
-91.
-
-
-LaTeX Warning: Citation 'kadri2015operator' on page 95 undefined on input line 
-91.
-
-
-LaTeX Warning: Citation 'Micchelli2005' on page 95 undefined on input line 91.
-
-
-LaTeX Warning: Citation 'Brouard2016_jmlr' on page 95 undefined on input line 9
-1.
-
-
-Overfull \hbox (61.7596pt too wide) in paragraph at lines 89--96
-\EU1/HoeflerText(2)/m/n/10.95 well studied [[], [], [], [],
- []
-
-[95]
-
-LaTeX Warning: Citation 'Wahba90' on page 96 undefined on input line 135.
-
-
-LaTeX Warning: Citation 'Brouard2011' on page 96 undefined on input line 138.
-
-
-LaTeX Warning: Citation 'kadri2015operator' on page 96 undefined on input line 
-138.
-
-
-LaTeX Warning: Citation 'Micchelli2005' on page 96 undefined on input line 138.
-
-
-
-Overfull \hbox (30.99564pt too wide) in paragraph at lines 135--142
-\EU1/HoeflerText(2)/m/n/10.95 proved by many authors in different forms [[], []
-,
- []
-
-
-LaTeX Warning: Citation 'minh2016unifying' on page 96 undefined on input line 1
-68.
-
-
-LaTeX Warning: Citation 'rosasco2010learning' on page 96 undefined on input lin
-e 169.
-
-[96]
-
-LaTeX Warning: Citation 'kurdila2006convex' on page 97 undefined on input line 
-202.
-
-[97]
+] [95] [96] [97]
 Overfull \hbox (5.7678pt too wide) in paragraph at lines 284--290
 \EU1/HoeflerText(2)/m/n/10.95 The representer theorem show that minimizing a fu
 nctional in a []\EU1/HoeflerText(2)/m/sc/10.95 VV-RKHS
@@ -6173,19 +5164,6 @@ $[] \OT1/pplx/m/n/10.95 = [] []( | \OMS/zplm/m/n/10.95 ^^A\OML/zplm/m/it/10.95
  []
 
 [99] [100]
-
-LaTeX Warning: Citation 'conway2013course' on page 101 undefined on input line 
-487.
-
-
-LaTeX Warning: Citation 'kurdila2006convex' on page 101 undefined on input line
- 487.
-
-
-LaTeX Warning: Citation 'kurdila2006convex' on page 101 undefined on input line
- 509.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 549--549
 $[]\OMS/zplm/m/n/10.95 r[]\OT1/pplx/m/n/10.95 ([] \OMS/zplm/m/n/10.95 ^^N []\OT
 1/pplx/m/n/10.95 )(\OML/zplm/m/it/10.95 ^^R\OT1/pplx/m/n/10.95 )\OML/zplm/m/it/
@@ -6278,21 +5256,9 @@ exity $[][] []$. Sup-
 (./representer.pgf)) [105]
 (./pythontex-files-ThesisRomainBrault/py_default_default_4.stdout
 (./representer2.pgf)) [106]
-
-LaTeX Warning: Citation 'oliphant2006guide' on page 107 undefined on input line
- 823.
-
-
-LaTeX Warning: Citation 'jones2014scipy' on page 107 undefined on input line 82
-3.
-
-
-LaTeX Warning: Citation 'pedregosa2011scikit' on page 107 undefined on input li
-ne 824.
-
 \c@pytx@py@efficient_linop@default=\count566
 \c@pytx@py@efficient_linop@default@line=\count567
-[107
+ [107
 
 
 
@@ -6356,66 +5322,14 @@ Underfull \hbox (badness 10000) detected at line 909
 $[] \OT1/pplx/m/n/10.95 = [] [] [] [] []| 
  []
 
-
-LaTeX Warning: Citation 'walt2011numpy' on page 108 undefined on input line 920
-.
-
-
-Overfull \hbox (4.79987pt too wide) in paragraph at lines 920--920
- \EU1/HoeflerText(2)/m/it/9 See [].
- []
-
-
-LaTeX Warning: Citation 'walt2011numpy' on page 108 undefined on input line 920
-.
-
-
-Overfull \hbox (4.79987pt too wide) in paragraph at lines 920--920
-\EU1/HoeflerText(2)/m/it/9 See [].  
- []
-
-[108]
-
-LaTeX Warning: Citation 'Sindhwani2013' on page 109 undefined on input line 933
-.
-
-
-LaTeX Warning: Citation 'brault2016scaling' on page 109 undefined on input line
- 933.
-
-
-LaTeX Warning: Citation 'rosasco2010learning' on page 109 undefined on input li
-ne 933.
-
-
-LaTeX Warning: Citation 'penzl1998numerical' on page 109 undefined on input lin
-e 935.
-
-
-Overfull \hbox (94.19534pt too wide) in paragraph at lines 932--937
-\EU1/HoeflerText(2)/m/n/10.95 with this trick, many authors [[], [], []]
- []
-
-
-Overfull \hbox (82.85574pt too wide) in paragraph at lines 932--937
-\EU1/HoeflerText(2)/m/n/10.95 notice that the decomposable kernel usually yield
-s a Stein equation [[]].
- []
-
-
-LaTeX Warning: Citation 'sleijpen2010bi' on page 109 undefined on input line 94
-5.
-
-
-LaTeX Warning: Citation 'sleijpen2010bi' on page 109 undefined on input line 94
-5.
-
-[109] [110]
-
-LaTeX Warning: Citation 'eigenweb' on page 111 undefined on input line 1178.
-
-
+[108] [109] [110]
 Underfull \vbox (badness 10000) detected at line 1203
+ []
+
+
+Overfull \hbox (9.2808pt too wide) in paragraph at lines 1177--1205
+[][][] [] [][][] [] [][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][
+][] [] [][][][]$[][]\EU1/HoeflerText(2)/m/n/10.95 . With this implemen-
  []
 
 (./pythontex-files-ThesisRomainBrault/py_default_default_5.stdout
@@ -6433,51 +5347,22 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 ] [114]
-
-LaTeX Warning: Citation 'mroueh2012multiclass' on page 115 undefined on input l
-ine 1331.
-
-
-Overfull \hbox (82.74356pt too wide) in paragraph at lines 1330--1336
+Overfull \hbox (0.25723pt too wide) in paragraph at lines 1330--1336
 \EU1/HoeflerText(2)/m/n/10.95 To predict classes, we use the simplex coding met
-hod presented in [].
+hod presented in [][]Mroueh
  []
 
 [115]
 
-LaTeX Warning: Citation 'audiffren2013online' on page 116 undefined on input li
-ne 1364.
-
-
 LaTeX Warning: Command \nobreakspace invalid in math mode on input line 1390.
 
-
-LaTeX Warning: Citation 'brault2016scaling' on page 116 undefined on input line
- 1392.
-
 (./gfx/learning_accuracy_MNIST.tikz) (./gfx/learning_time_MNIST.tikz)
-Overfull \hbox (10.7302pt too wide) in paragraph at lines 1390--1414
-\EU1/HoeflerText(2)/m/n/10.95 kernel with $\OML/zplm/m/it/10.95 ^^U[] \OT1/pplx
-/m/n/10.95 = []$\EU1/HoeflerText(2)/m/n/10.95 , it boilds down to a Stein equat
-ion [[]],
- []
-
-
-LaTeX Warning: Citation 'byrd1995limited' on page 116 undefined on input line 1
-420.
-
 
 LaTeX Warning: Reference `eq:grad_final' on page 1 undefined on input line 1422
 .
 
-(./gfx/Curl_ORFFvsOVK.pgf)
-Overfull \hbox (14.129pt too wide) in paragraph at lines 1415--1438
-\EU1/HoeflerText(2)/m/n/10.95 Here we optimize [][]equation 6.10[][] using Scip
-y’s []\EU1/HoeflerText(2)/m/sc/10.95 L-BFGS-B \EU1/HoeflerText(2)/m/n/10.95 [[]
-]
- []
-
-[116] (./gfx/ORFFvsOVK.pgf) (./gfx/ORFFvsOVK_Dvariation.pgf) [117]
+(./gfx/Curl_ORFFvsOVK.pgf) [116] (./gfx/ORFFvsOVK.pgf)
+(./gfx/ORFFvsOVK_Dvariation.pgf) [117]
 Overfull \hbox (8.19229pt too wide) in paragraph at lines 1471--1486
 \EU1/HoeflerText(2)/m/n/10.95 task learning with operator-valued random Fourier
  features, and see whether
@@ -6497,16 +5382,12 @@ cy for []\EU1/HoeflerText(2)/m/sc/10.95 ORFF\EU1/HoeflerText(2)/m/n/10.95 -regr
 ession.
  []
 
-) [120]
+) [120] [121] [122
+
+
+
+]
 chapter 7.
-
-LaTeX Warning: Citation 'rahimi2009weighted' on page 121 undefined on input lin
-e 40.
-
-
-LaTeX Warning: Citation 'maurer2016vector' on page 121 undefined on input line 
-40.
-
 
 LaTeX Warning: Reference `ch:learnin operator-valued_random_fourier_features' o
 n page 1 undefined on input line 41.
@@ -6521,64 +5402,18 @@ Overfull \hbox (7.92853pt too wide) in paragraph at lines 2--2
 e 
  []
 
-) [121
-
-
-
-]
+) [123]
 \openout2 = `Parts/Contributions/Generalization.aux'.
 
- (./Parts/Contributions/Generalization.tex
-
-LaTeX Warning: Citation 'Vapnik1998' on page 122 undefined on input line 53.
-
-[122
+ (./Parts/Contributions/Generalization.tex [124
 
 ]
-
-LaTeX Warning: Citation 'bartlett2002rademacher' on page 123 undefined on input
- line 91.
-
-
-LaTeX Warning: Citation 'maurer2016vector' on page 123 undefined on input line 
-91.
-
-
-LaTeX Warning: Citation 'maurer2016vector' on page 123 undefined on input line 
-110.
-
-
-LaTeX Warning: Citation 'bartlett2002rademacher' on page 123 undefined on input
- line 111.
-
-
-Overfull \hbox (104.94182pt too wide) in paragraph at lines 110--116
-[]\EU1/HoeflerText(2)/m/it/10.95 This proof is due to [] generalizing the work 
-of []:
- []
-
-
-LaTeX Warning: Citation 'bartlett2002rademacher' on page 123 undefined on input
- line 123.
-
-
-Overfull \hbox (16.82501pt too wide) in paragraph at lines 123--129
-[]\EU1/HoeflerText(2)/bx/n/10.95 ([]). []\EU1/HoeflerText(2)/m/it/10.95 Let $\O
-MS/zplm/m/n/10.95 X$ \EU1/HoeflerText(2)/m/it/10.95 be any set. Let $\OML/zplm/
-m/it/10.95 ^^O[]; [] ; ^^O[]$
- []
-
-[123]
 Overfull \hbox (4.42613pt too wide) in paragraph at lines 136--143
 \EU1/HoeflerText(2)/m/it/10.95 tion by its capacity to be correlated to noise. 
 In generalization bounds, the Rademacher
  []
 
-
-LaTeX Warning: Citation 'maurer2016vector' on page 124 undefined on input line 
-143.
-
-
+[125]
 Underfull \hbox (badness 10000) in paragraph at lines 155--155
 \OMS/zplm/m/n/10.95 ^^T [][]\OT1/zplm/b/n/10.95 E [][] [] \OML/zplm/m/it/10.95 
 ^^O[][][]\OT1/pplx/m/n/10.95 ([][]) [] [][]\OML/zplm/m/it/10.95 ; [] ; [][][]| 
@@ -6599,332 +5434,51 @@ Underfull \hbox (badness 10000) detected at line 155
 ;|$ 
  []
 
-[124]
-
-LaTeX Warning: Citation 'maurer2016vector' on page 125 undefined on input line 
-200.
-
-
-LaTeX Warning: Citation 'bartlett2002rademacher' on page 125 undefined on input
- line 200.
-
+[126]
 
 LaTeX Warning: Command \nobreakspace invalid in math mode on input line 217.
 
 Package hyperref Info: bookmark level for unknown assumption defaults to 0 on i
 nput line 221.
-[125]
-
-LaTeX Warning: Citation 'kadri2015operator' on page 126 undefined on input line
- 270.
-
-
-LaTeX Warning: Citation 'zhou2002covering' on page 126 undefined on input line 
-279.
-
-
-LaTeX Warning: Citation 'tewari1learning' on page 126 undefined on input line 2
-79.
-
-
-LaTeX Warning: Citation 'vapnik1992principles' on page 126 undefined on input l
-ine 279.
-
-
-Overfull \hbox (7.33185pt too wide) in paragraph at lines 279--279
- \EU1/HoeflerText(2)/m/it/9 [[],
+[127]
+Overfull \hbox (1.1308pt too wide) in paragraph at lines 295--298
+[]\EU1/HoeflerText(2)/bx/n/10.95 (Uniform stability [][]Bousquet and Elisseeff 
+[[][]21[][], def-
  []
 
-
-Overfull \hbox (24.17085pt too wide) in paragraph at lines 279--279
- \EU1/HoeflerText(2)/m/it/9 [[]]
+[128] [129] [130] [131]
+Overfull \hbox (5.60718pt too wide) in paragraph at lines 572--581
+\EU1/HoeflerText(2)/m/n/10.95 class complexity ([][]Maurer [[][]97[][]]) or usi
+ng algorithm stability arguments ([][]Kadri
  []
 
-
-LaTeX Warning: Citation 'zhou2002covering' on page 126 undefined on input line 
-279.
-
-
-LaTeX Warning: Citation 'tewari1learning' on page 126 undefined on input line 2
-79.
-
-
-LaTeX Warning: Citation 'vapnik1992principles' on page 126 undefined on input l
-ine 279.
-
-
-Overfull \hbox (7.33185pt too wide) in paragraph at lines 279--279
-\EU1/HoeflerText(2)/m/it/9 [[], 
- []
-
-
-Overfull \hbox (24.17085pt too wide) in paragraph at lines 279--279
-\EU1/HoeflerText(2)/m/it/9 [[]] 
- []
-
-
-LaTeX Warning: Citation 'bousquet2002stability' on page 126 undefined on input 
-line 295.
-
-
-Overfull \hbox (0.14313pt too wide) in paragraph at lines 295--298
-[]\EU1/HoeflerText(2)/bx/n/10.95 (Uniform stability []). []\EU1/HoeflerText(2)/
-m/it/10.95 A learn-
- []
-
-
-LaTeX Warning: Citation 'bousquet2002stability' on page 126 undefined on input 
-line 305.
-
-
-LaTeX Warning: Citation 'bousquet2002stability' on page 126 undefined on input 
-line 309.
-
-
-LaTeX Warning: Citation 'kadri2015operator' on page 126 undefined on input line
- 321.
-
-
-Overfull \hbox (47.59035pt too wide) in paragraph at lines 320--326
-\EU1/HoeflerText(2)/m/n/10.95 In their original paper on learning function-valu
-ed output data, []
- []
-
-[126] [127]
-
-LaTeX Warning: Citation 'rahimi2009weighted' on page 128 undefined on input lin
-e 402.
-
-
-LaTeX Warning: Citation 'maurer2016vector' on page 128 undefined on input line 
-403.
-
-
-Overfull \hbox (18.47702pt too wide) in paragraph at lines 402--405
-\EU1/HoeflerText(2)/m/it/10.95 and adapt it to the vector-valued case in the li
-ght of the results of [].
- []
-
-
-LaTeX Warning: Citation 'rahimi2009weighted' on page 128 undefined on input lin
-e 455.
-
-
-LaTeX Warning: Citation 'pinelis1994optimum' on page 128 undefined on input lin
-e 456.
-
-
-Overfull \hbox (12.49466pt too wide) in paragraph at lines 454--457
-\EU1/HoeflerText(2)/m/it/10.95 centration of random variable in Hilbert spaces 
-(similar to []).
- []
-
-[128] [129]
-
-LaTeX Warning: Citation 'maurer2016vector' on page 130 undefined on input line 
-574.
-
-
-LaTeX Warning: Citation 'kadri2015operator' on page 130 undefined on input line
- 575.
-
-
-LaTeX Warning: Citation 'maurer2016vector' on page 130 undefined on input line 
-576.
-
-
-LaTeX Warning: Citation 'rahimi2009weighted' on page 130 undefined on input lin
-e 580.
-
-
-Overfull \hbox (25.52333pt too wide) in paragraph at lines 572--581
-\EU1/HoeflerText(2)/m/n/10.95 ments ([]). Then we used the results of []
- []
-
-
-LaTeX Warning: Citation 'rahimi2009weighted' on page 130 undefined on input lin
-e 603.
-
-
-LaTeX Warning: Citation 'bach2015equivalence' on page 130 undefined on input li
-ne 604.
-
-
-LaTeX Warning: Citation 'rahimi2009weighted' on page 130 undefined on input lin
-e 606.
-
-
-LaTeX Warning: Citation 'rudi2016generalization' on page 130 undefined on input
- line 611.
-
-[130]) [131] [132
+[132]) [133] [134
 
 
 
 ]
 chapter 8.
-
-LaTeX Warning: Citation 'dai2014scalable' on page 133 undefined on input line 5
-4.
-
-
-LaTeX Warning: Citation 'Lim2015' on page 133 undefined on input line 57.
-
-
-LaTeX Warning: Citation 'brault2016scaling' on page 133 undefined on input line
- 58.
-
 \openout7 = `ThesisRomainBrault.mtc'.
 
 \openout7 = `ThesisRomainBrault.mtc'.
 
-(./ThesisRomainBrault.mtc8) [133]
+(./ThesisRomainBrault.mtc8) [135]
 \openout2 = `Parts/Contributions/Applications.aux'.
 
  (./Parts/Contributions/Applications.tex
-
-LaTeX Warning: Citation 'Lim2013' on page 134 undefined on input line 10.
-
-
-LaTeX Warning: Citation 'Lim2015' on page 134 undefined on input line 10.
-
-
-LaTeX Warning: Citation 'Rahimi2007' on page 134 undefined on input line 36.
-
-
-LaTeX Warning: Citation 'sutherland2015' on page 134 undefined on input line 36
-.
-
-[134
+[136
 
 ]
-
-LaTeX Warning: Citation 'Lim2015' on page 135 undefined on input line 64.
-
-
-LaTeX Warning: Citation 'Pedrick57' on page 135 undefined on input line 67.
-
-
-LaTeX Warning: Citation 'Senkene73' on page 135 undefined on input line 67.
-
-
-LaTeX Warning: Citation 'Micchelli2005' on page 135 undefined on input line 68.
-
-
-
-LaTeX Warning: Citation 'Carmeli2010' on page 135 undefined on input line 68.
-
-
-LaTeX Warning: Citation 'Alvarez2012' on page 135 undefined on input line 68.
-
-
-LaTeX Warning: Citation 'Lim2015' on page 135 undefined on input line 107.
-
-
-LaTeX Warning: Citation 'parikh2014proximal' on page 135 undefined on input lin
-e 113.
-
-
-LaTeX Warning: Citation 'richtarik2016parallel' on page 135 undefined on input 
-line 113.
-
-
-LaTeX Warning: Citation 'fercoq2013smooth' on page 135 undefined on input line 
-113.
-
-
-LaTeX Warning: Citation 'fercoq2015accelerated' on page 135 undefined on input 
-line 113.
-
-
-Overfull \hbox (12.12885pt too wide) in paragraph at lines 113--113
- []
- []
-
-
-Overfull \hbox (17.23186pt too wide) in paragraph at lines 113--113
- []\EU1/HoeflerText(2)/m/it/9 ,
- []
-
-
-Overfull \hbox (4.68585pt too wide) in paragraph at lines 113--113
- []\EU1/HoeflerText(2)/m/it/9 ,
- []
-
-
-Overfull \hbox (20.61584pt too wide) in paragraph at lines 113--113
- []
- []
-
-
-LaTeX Warning: Citation 'parikh2014proximal' on page 135 undefined on input lin
-e 113.
-
-
-LaTeX Warning: Citation 'richtarik2016parallel' on page 135 undefined on input 
-line 113.
-
-
-LaTeX Warning: Citation 'fercoq2013smooth' on page 135 undefined on input line 
-113.
-
-
-LaTeX Warning: Citation 'fercoq2015accelerated' on page 135 undefined on input 
-line 113.
-
-
-Overfull \hbox (12.12885pt too wide) in paragraph at lines 113--113
-[] 
- []
-
-
-Overfull \hbox (17.23186pt too wide) in paragraph at lines 113--113
-[]\EU1/HoeflerText(2)/m/it/9 , 
- []
-
-
-Overfull \hbox (4.68585pt too wide) in paragraph at lines 113--113
-[]\EU1/HoeflerText(2)/m/it/9 , 
- []
-
-
-Overfull \hbox (20.61584pt too wide) in paragraph at lines 113--113
-[] 
- []
-
-
-LaTeX Warning: Citation 'Micchelli2005' on page 135 undefined on input line 117
-.
-
-
-LaTeX Warning: Citation 'caponnetto2008' on page 135 undefined on input line 11
-7.
-
-
-LaTeX Warning: Citation 'Evgeniou2005' on page 135 undefined on input line 119.
-
-
-[135]
 Overfull \hbox (11.35301pt too wide) in paragraph at lines 121--128
 []\EU1/HoeflerText(2)/bx/n/10.95 (Decomposable matrix-valued kernels). []\EU1/H
 oeflerText(2)/m/it/10.95 Let the func-
  []
 
-
-LaTeX Warning: Citation 'Lim2015' on page 136 undefined on input line 139.
-
-
+[137]
 Overfull \hbox (6.38887pt too wide) in paragraph at lines 138--141
 [] [][] \EU1/HoeflerText(2)/m/n/10.95 While the model parameters $[][]$’s are e
 stimated under sparsity constraints
  []
-
-
-LaTeX Warning: Citation 'byrd1995limited' on page 136 undefined on input line 1
-49.
-
-
-LaTeX Warning: Citation 'Carmeli2010' on page 136 undefined on input line 166.
 
 
 Overfull \hbox (23.16182pt too wide) in paragraph at lines 159--168
@@ -6933,104 +5487,26 @@ Overfull \hbox (23.16182pt too wide) in paragraph at lines 159--168
 nslation-
  []
 
-
-LaTeX Warning: Citation 'brault2016scaling' on page 136 undefined on input line
- 176.
-
-[136]
-
-LaTeX Warning: Citation 'Rahimi2007' on page 137 undefined on input line 198.
-
-
-LaTeX Warning: Citation 'brault2016scaling' on page 137 undefined on input line
- 213.
-
-
-LaTeX Warning: Citation 'sonneveld2008idr' on page 137 undefined on input line 
-216.
-
-
-LaTeX Warning: Citation 'dai2014scalable' on page 137 undefined on input line 2
-17.
-
-
-LaTeX Warning: Citation 'dai2014scalable' on page 137 undefined on input line 2
-20.
-
-
-LaTeX Warning: Citation 'kivinen2004online' on page 137 undefined on input line
- 224.
-
-
-LaTeX Warning: Citation 'audiffren2013online' on page 137 undefined on input li
-ne 225.
-
-
-LaTeX Warning: Citation 'dai2014scalable' on page 137 undefined on input line 2
-26.
-
-
-LaTeX Warning: Citation 'dai2014scalable' on page 137 undefined on input line 2
-31.
-
-
-LaTeX Warning: Citation 'dai2014scalable' on page 137 undefined on input line 2
-35.
-
-
-Overfull \hbox (58.81345pt too wide) in paragraph at lines 212--236
-\EU1/HoeflerText(2)/m/n/10.95 with $\OML/zplm/m/it/10.95 ^^U > []$ \EU1/Hoefler
-Text(2)/m/n/10.95 instead of [][]equation 8.1[][] (see [][]theorem 6.3[][]). In
- their paper []
- []
-
-
-Overfull \hbox (51.69385pt too wide) in paragraph at lines 212--236
-\EU1/HoeflerText(2)/m/n/10.95 [[]] and its []\EU1/HoeflerText(2)/m/sc/10.95 OVK
- \EU1/HoeflerText(2)/m/n/10.95 adaptation []\EU1/HoeflerText(2)/m/sc/10.95 ONOR
-MA \EU1/HoeflerText(2)/m/n/10.95 [[]].
- []
-
-[137] [138]
-
-LaTeX Warning: Citation 'Alvarez2012' on page 139 undefined on input line 333.
-
-[139] [140]
-
-LaTeX Warning: Citation 'liu2010learning' on page 141 undefined on input line 4
-36.
-
-
-Overfull \hbox (6.75075pt too wide) in paragraph at lines 436--445
-\EU1/HoeflerText(2)/m/n/10.95 logical measurements of $[][]$ variables (tempera
-ture, CO2 concentration,$[] $)
- []
-
-
-LaTeX Warning: Citation 'Lim2013' on page 141 undefined on input line 491.
-
-
-LaTeX Warning: Citation 'Lim2015' on page 141 undefined on input line 491.
-
-[141]) [142]) [143
+[138] [139] [140] [141] [142] [143]) [144]) [145
 
 
 
 
 
-] [144] (./Parts/Final_words.tex
+] [146]
+(./Parts/Final_words.tex
 chapter 9.
-[145
+[147
 
 
 ]
 \openout2 = `Parts/Final_words/Perspectives.aux'.
 
- (./Parts/Final_words/Perspectives.tex) [146
+ (./Parts/Final_words/Perspectives.tex) [148
 
 ]
 chapter 10.
-[147
+[149
 
 
 
@@ -7039,15 +5515,15 @@ chapter 10.
 
 
 No file Parts/Final_words/Conclusions.tex.
-) [148
+) [150
 
 
 
 
-] [149
+] [151
 
 
-] [150] (./Parts/Appendix.tex
+] [152] (./Parts/Appendix.tex
 chapter A.
 
 Overfull \hbox (2.84778pt too wide) in paragraph at lines 7--13
@@ -7059,7 +5535,7 @@ Overfull \hbox (2.84778pt too wide) in paragraph at lines 7--13
 
 \openout7 = `ThesisRomainBrault.mtc'.
 
-(./ThesisRomainBrault.mtc11) [151
+(./ThesisRomainBrault.mtc11) [153
 
 
 ]
@@ -7071,28 +5547,7 @@ Overfull \hbox (23.8814pt too wide) in paragraph at lines 4--4
 t h h i g h p r o b -a -b i l -i t y o f t h e
  []
 
-
-LaTeX Warning: Citation 'Rahimi2007' on page 152 undefined on input line 25.
-
-
-LaTeX Warning: Citation 'sutherland2015' on page 152 undefined on input line 25
-.
-
-
-LaTeX Warning: Citation 'Mackey2014' on page 152 undefined on input line 30.
-
-
-LaTeX Warning: Citation 'Tropp' on page 152 undefined on input line 31.
-
-
-LaTeX Warning: Citation 'koltchinskii2013remark' on page 152 undefined on input
- line 31.
-
-
-LaTeX Warning: Citation 'cucker2001mathematical' on page 152 undefined on input
- line 51.
-
-[152
+[154
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 77--77
@@ -7151,23 +5606,11 @@ onstant of the operator-
  []
 
 
-LaTeX Warning: Citation 'minh2016operator' on page 153 undefined on input line 
-95.
-
-
-LaTeX Warning: Citation 'brault2016random' on page 153 undefined on input line 
-96.
-
-
-LaTeX Warning: Citation 'sutherland2015' on page 153 undefined on input line 97
-.
-
-
 Overfull \hbox (75.07863pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[153]
+[155]
 Underfull \hbox (badness 10000) in paragraph at lines 176--176
 $[][] [] \OMS/zplm/m/n/10.95 ^^T [] 
  []
@@ -7217,94 +5660,18 @@ Underfull \hbox (badness 10000) detected at line 176
 $[] \OMS/zplm/m/n/10.95 ^^T [] 
  []
 
-
-LaTeX Warning: Citation 'Mackey2014' on page 154 undefined on input line 182.
-
-
-LaTeX Warning: Citation 'sutherland2015' on page 154 undefined on input line 18
-4.
-
-
-LaTeX Warning: Citation 'Ahls2002' on page 154 undefined on input line 186.
-
-
-LaTeX Warning: Citation 'Tropp' on page 154 undefined on input line 188.
-
-
-LaTeX Warning: Citation 'oliveira2009concentration' on page 154 undefined on in
-put line 188.
-
-
-LaTeX Warning: Citation 'koltchinskii2013remark' on page 154 undefined on input
- line 188.
-
-
-LaTeX Warning: Citation 'koltchinskii2013remark' on page 154 undefined on input
- line 191.
-
-
-Overfull \hbox (25.45222pt too wide) in paragraph at lines 181--192
-\EU1/HoeflerText(2)/m/n/10.95 refined inequalities such as Matrix Bernstein ine
-qualities ([] also
- []
-
-
-Overfull \hbox (21.19077pt too wide) in paragraph at lines 181--192
-\EU1/HoeflerText(2)/m/n/10.95 tions [], [], [] rang-
- []
-
-
-LaTeX Warning: Citation 'koltchinskii2013remark' on page 154 undefined on input
- line 193.
-
-
-LaTeX Warning: Citation 'brault2016random' on page 154 undefined on input line 
-210.
-
-
-LaTeX Warning: Citation 'minsker2011some' on page 154 undefined on input line 2
-18.
-
-[154]
-
-LaTeX Warning: Citation 'minsker2011some' on page 155 undefined on input line 2
-35.
-
-
-LaTeX Warning: Citation 'tropp2015introduction' on page 155 undefined on input 
-line 235.
-
-
+[156]
 Overfull \hbox (4.83691pt too wide) in paragraph at lines 235--243
 []\EU1/HoeflerText(2)/bx/n/10.95 (Bounded non-commutative Bernstein with intrin
 -
  []
 
 
-LaTeX Warning: Citation 'koltchinskii2013remark' on page 155 undefined on input
- line 265.
-
-
 Overfull \hbox (75.07863pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[155]
-
-LaTeX Warning: Citation 'koltchinskii2013remark' on page 156 undefined on input
- line 270.
-
-
-Overfull \hbox (83.99533pt too wide) in paragraph at lines 269--274
-[]\EU1/HoeflerText(2)/bx/n/10.95 (Orlicz norm). []\EU1/HoeflerText(2)/m/it/10.9
-5 We follow the definition given by [].
- []
-
-
-LaTeX Warning: Citation 'minsker2011some' on page 156 undefined on input line 3
-18.
-
-[156]
+[157] [158]
 Overfull \hbox (17.17009pt too wide) in paragraph at lines 346--350
 \EU1/HoeflerText(2)/m/it/10.95 where $[]\OT1/pplx/m/n/10.95 ([]\OML/zplm/m/it/1
 0.95 ; []\OT1/pplx/m/n/10.95 ) = [] [] + [] []$ \EU1/HoeflerText(2)/m/it/10.95 
@@ -7317,12 +5684,12 @@ Overfull \hbox (75.07863pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[157] [158]
+[159] [160]
 Overfull \hbox (75.07863pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[159] [160]
+[161] [162]
 Overfull \hbox (14.6039pt too wide) in paragraph at lines 663--663
  \OMS/zplm/m/n/10.95 ^^T [][] [][][]| [][] []|$ 
  []
@@ -7386,19 +5753,7 @@ Overfull \hbox (75.07863pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[161]
-
-LaTeX Warning: Citation 'Rahimi2007' on page 162 undefined on input line 719.
-
-
-LaTeX Warning: Citation 'sutherland2015' on page 162 undefined on input line 71
-9.
-
-
-LaTeX Warning: Citation 'minh2016operator' on page 162 undefined on input line 
-719.
-
-
+[163]
 Overfull \hbox (19.40776pt too wide) in paragraph at lines 758--758
  \OMS/zplm/m/n/10.95 ^^T [][][][][][] [] 
  []
@@ -7414,20 +5769,20 @@ Overfull \hbox (12.92542pt too wide) in paragraph at lines 767--769
 second bound for bounded
  []
 
-[162] [163]
+[164] [165]
 Overfull \hbox (5.40002pt too wide) in paragraph at lines 871--874
 \EU1/HoeflerText(2)/m/it/10.95 A trigonometric identity gives us $\OT1/pplx/m/n
 /10.95 ([][]\OML/zplm/m/it/10.95 ^^N; ![]\OT1/pplx/m/n/10.95 )[] = [] []$\EU1/H
 oeflerText(2)/m/it/10.95 . Thus 
  []
 
-) [164]
+) [166]
 chapter B.
 \openout7 = `ThesisRomainBrault.mtc'.
 
 \openout7 = `ThesisRomainBrault.mtc'.
 
-(./ThesisRomainBrault.mtc12) [165
+(./ThesisRomainBrault.mtc12) [167
 
 
 
@@ -7435,49 +5790,10 @@ chapter B.
 \openout2 = `Parts/Appendix/Misc.aux'.
 
  (./Parts/Appendix/Misc.tex
-
-LaTeX Warning: Citation 'minh2016unifying' on page 166 undefined on input line 
-11.
-
-
-LaTeX Warning: Citation 'belkin2006manifold' on page 166 undefined on input lin
-e 13.
-
-
-LaTeX Warning: Citation 'Brouard2011' on page 166 undefined on input line 13.
-
-
-LaTeX Warning: Citation 'minh2013unifying' on page 166 undefined on input line 
-13.
-
-
-LaTeX Warning: Citation 'brefeld2006efficient' on page 166 undefined on input l
-ine 16.
-
-
-LaTeX Warning: Citation 'sindhwani2008rkhs' on page 166 undefined on input line
- 16.
-
-
-LaTeX Warning: Citation 'rosenberg2009kernel' on page 166 undefined on input li
-ne 16.
-
-
-LaTeX Warning: Citation 'sun2011multi' on page 166 undefined on input line 16.
-
-
-Overfull \hbox (6.3581pt too wide) in paragraph at lines 9--17
-[]\EU1/HoeflerText(2)/m/n/10.95 , []] and Co-regularized Multi-view Learn-
+Overfull \hbox (4.03918pt too wide) in paragraph at lines 24--28
+[]\EU1/HoeflerText(2)/bx/n/10.95 (Representer theorem, [][]Minh, Bazzani, and M
+urino
  []
-
-
-Overfull \hbox (18.91681pt too wide) in paragraph at lines 9--17
-\EU1/HoeflerText(2)/m/n/10.95 ing [[], [], [],
- []
-
-
-LaTeX Warning: Citation 'minh2016unifying' on page 166 undefined on input line 
-24.
 
 
 Underfull \hbox (badness 6204) in paragraph at lines 50--50
@@ -7539,20 +5855,9 @@ $[] \OT1/pplx/m/n/10.95 = [] [] [] []([][]([][])\OML/zplm/m/it/10.95 ; [][]\OT1
 /pplx/m/n/10.95 ) |  + [][][][]| 
  []
 
-[166
+[168
 
 ]
-
-LaTeX Warning: Citation 'minh2016unifying' on page 167 undefined on input line 
-64.
-
-
-Overfull \hbox (24.05428pt too wide) in paragraph at lines 63--70
-\EU1/HoeflerText(2)/m/n/10.95 We present here the proof of the formulation prop
-osed by [].
- []
-
-
 Underfull \hbox (badness 4967) in paragraph at lines 79--79
 $[][] \OT1/pplx/m/n/10.95 = [] [] [] []([][][][]\OML/zplm/m/it/10.95 ; [][]\OT1
 /pplx/m/n/10.95 ) |  + [][][][]| 
@@ -7656,7 +5961,7 @@ Underfull \hbox (badness 2277) detected at line 111
 $[] \OT1/pplx/m/n/10.95 = [] |  +[][][][]| 
  []
 
-[167]
+[169]
 Underfull \hbox (badness 10000) in paragraph at lines 197--197
 $[][][] \OT1/pplx/m/n/10.95 = [] [] [] [] [][][]([][])\OML/zplm/m/it/10.95 ; []
 [][]| |  \OT1/pplx/m/n/10.95 + [][][][]| 
@@ -7716,7 +6021,7 @@ $[] \OT1/pplx/m/n/10.95 = [] [] [] [] [][][]([][])\OML/zplm/m/it/10.95 ; [][][]
 | |  \OT1/pplx/m/n/10.95 + [][][][]| 
  []
 
-[168]
+[170]
 Underfull \hbox (badness 10000) in paragraph at lines 223--223
 $[] \OT1/pplx/m/n/10.95 = [] []( | \OMS/zplm/m/n/10.95 ^^A\OML/zplm/m/it/10.95 
 ; [][]\OT1/pplx/m/n/10.95 )[][][][] [] 
@@ -7782,88 +6087,35 @@ $[] \OT1/pplx/m/n/10.95 = [] []( | \OMS/zplm/m/n/10.95 ^^A\OML/zplm/m/it/10.95
 ; [][]\OT1/pplx/m/n/10.95 )[][][][] [] 
  []
 
-[169] [170]
+[171] [172]
 Underfull \hbox (badness 10000) in paragraph at lines 328--329
 [][]\EU1/HoeflerText(2)/m/n/9 Available at [][]$[][][][] [] [] [] [][][][][][][
 ][][][][][][] [] [][][] [] [][][][][][] [] [][][][][][][] [] [][][][][][][][][]
  [] [][][][][][][] []
  []
 
-
-LaTeX Warning: Citation 'von2007tutorial' on page 171 undefined on input line 3
-31.
-
 File: ./gfx/representer_twomoons.eps Graphic file (type eps)
-<./gfx/representer_twomoons.eps>
-Overfull \hbox (56.41574pt too wide) in paragraph at lines 327--353
-\EU1/HoeflerText(2)/m/n/10.95 dataset[][][][][]. We first perform an unsupervis
-ed spectral clustering step [[]]
- []
-
-[171] [172]
+<./gfx/representer_twomoons.eps> [173] [174]
 File: ./gfx/nestedtwomoons.pdf Graphic file (type QTm)
- <use  "./gfx/nestedtwomoons.pdf" >
 
-LaTeX Warning: Citation 'von2007tutorial' on page 173 undefined on input line 5
-08.
-
-
-LaTeX Warning: Citation 'mroueh2012multiclass' on page 173 undefined on input l
-ine 508.
-
-
-LaTeX Warning: Citation 'von2007tutorial' on page 173 undefined on input line 5
-08.
-
-
-LaTeX Warning: Citation 'mroueh2012multiclass' on page 173 undefined on input l
-ine 508.
-
-
-Underfull \hbox (badness 1803) in paragraph at lines 508--508
-[][]|\EU1/HoeflerText(2)/m/n/10 Semi-supervised learning on a multiclass nested
- circle and two
- []
-
-
-Underfull \hbox (badness 1874) in paragraph at lines 508--508
-\EU1/HoeflerText(2)/m/n/10 moons dataset. We performed an unsupervised spectral
- cluster-
- []
-
-
-Underfull \hbox (badness 3078) in paragraph at lines 508--508
-\EU1/HoeflerText(2)/m/n/10 choose the matrix $[]$ of the []\EU1/HoeflerText(2)/
-m/sc/10 ORFF \EU1/HoeflerText(2)/m/n/10 using the simplex coding
- []
-
-
-LaTeX Warning: Citation 'minh2016unifying' on page 173 undefined on input line 
-528.
-
-[173]
-Overfull \hbox (10.88788pt too wide) detected at line 543
+<use  "./gfx/nestedtwomoons.pdf" > [175]
+Overfull \hbox (10.88788pt too wide) detected at line 523
 [][] 
  []
 
-[174] [175]
-
-LaTeX Warning: Citation 'minh2016unifying' on page 176 undefined on input line 
-578.
-
-
-Overfull \hbox (70.87166pt too wide) in paragraph at lines 577--579
+[176]
+Overfull \hbox (1.62387pt too wide) in paragraph at lines 577--579
 \EU1/HoeflerText(2)/m/n/10.95 Then the equivalent kernelized solution $[][]$ of
- [][]theorem B.1[][] is given by [] 
+ [][]theorem B.1[][] is given by [][]Minh,
  []
 
-) [176]
+) [177] [178]
 chapter C.
 \openout7 = `ThesisRomainBrault.mtc'.
 
 \openout7 = `ThesisRomainBrault.mtc'.
 
-(./ThesisRomainBrault.mtc13) [177
+(./ThesisRomainBrault.mtc13) [179
 
 
 
@@ -7872,254 +6124,49 @@ chapter C.
 
  (./Parts/Appendix/Code.tex
 \c@pytx@PYGpython@EXT:./src/not_mercer.py@defaultverb=\count568
- [178
+ [180
 
 ]
 \c@pytx@PYGpython@EXT:./src/representer.py@defaultverb=\count569
- [179]
-[180]
+ [181]
+[182]
 \c@pytx@PYGpython@EXT:./src/efficient_decomposable_gaussian.py@defaultverb=\cou
 nt570
- [181] [182]
+ [183] [184]
 \c@pytx@PYGpython@EXT:./src/efficient_curlfree_gaussian.py@defaultverb=\count57
 1
- [183] [184] [185]
+ [185] [186] [187]
 \c@pytx@PYGpython@EXT:./src/efficient_divfree_gaussian.py@defaultverb=\count572
 
- [186] [187] [188]) [189] [190
+ [188] [189] [190]) [191] [192
 
 
 
 ]
 chapter D.
-
-LaTeX Warning: Citation 'goix2016one' on page 191 undefined on input line 43.
-
 \openout7 = `ThesisRomainBrault.mtc'.
 
 \openout7 = `ThesisRomainBrault.mtc'.
 
-(./ThesisRomainBrault.mtc14) [191]
+(./ThesisRomainBrault.mtc14) [193]
 \openout2 = `Parts/Appendix/OneClassSplitting.aux'.
 
  (./Parts/Appendix/OneClassSplitting.tex
-
-LaTeX Warning: Citation 'Barnett94' on page 192 undefined on input line 31.
-
-
-LaTeX Warning: Citation 'Eskin2000' on page 192 undefined on input line 31.
-
-
-LaTeX Warning: Citation 'Scholkopf2001' on page 192 undefined on input line 42.
-
-
-
-LaTeX Warning: Citation 'Scott2006' on page 192 undefined on input line 42.
-
-
-LaTeX Warning: Citation 'Breunig2000LOF' on page 192 undefined on input line 42
-.
-
-
-LaTeX Warning: Citation 'Quinn2014' on page 192 undefined on input line 42.
-
-
-LaTeX Warning: Citation 'Shyu2003' on page 192 undefined on input line 43.
-
-
-LaTeX Warning: Citation 'Aggarwal2001' on page 192 undefined on input line 43.
-
-
-LaTeX Warning: Citation 'Liu2008' on page 192 undefined on input line 44.
-
-
-LaTeX Warning: Citation 'Shi2012' on page 192 undefined on input line 44.
-
-
-LaTeX Warning: Citation 'Hodge2004survey' on page 192 undefined on input line 4
-8.
-
-
-LaTeX Warning: Citation 'Chandola2009survey' on page 192 undefined on input lin
-e 48.
-
-
-LaTeX Warning: Citation 'Patcha2007survey' on page 192 undefined on input line 
-48.
-
-
-LaTeX Warning: Citation 'Markou2003survey' on page 192 undefined on input line 
-48.
-
-
-Overfull \hbox (6.23674pt too wide) in paragraph at lines 14--49
-\EU1/HoeflerText(2)/m/n/10.95 statistical anomaly detection methods. Parametric
- techniques [[],
- []
-
-
-Overfull \hbox (12.97467pt too wide) in paragraph at lines 14--49
-\EU1/HoeflerText(2)/m/n/10.95 tion [[], []] or on decision trees [[], []].
- []
-
-
-Overfull \hbox (97.09889pt too wide) in paragraph at lines 14--49
-\EU1/HoeflerText(2)/m/n/10.95 in [], [], [], []. 
- []
-
-
-LaTeX Warning: Citation 'Scholkopf2001' on page 192 undefined on input line 62.
-
-
-
-LaTeX Warning: Citation 'Cortes1995' on page 192 undefined on input line 63.
-
-
-LaTeX Warning: Citation 'Shawe2004' on page 192 undefined on input line 63.
-
-
-LaTeX Warning: Citation 'Quinn2014' on page 192 undefined on input line 64.
-
-
-LaTeX Warning: Citation 'Sugiyama2010' on page 192 undefined on input line 66.
-
-
-LaTeX Warning: Citation 'Breiman2001' on page 192 undefined on input line 79.
-
-
-LaTeX Warning: Citation 'Freund1996' on page 192 undefined on input line 81.
-
-
-LaTeX Warning: Citation 'Svetnik2003' on page 192 undefined on input line 82.
-
-
-LaTeX Warning: Citation 'Diaz2006' on page 192 undefined on input line 82.
-
-
-LaTeX Warning: Citation 'Genuer2010' on page 192 undefined on input line 82.
-
-
-LaTeX Warning: Citation 'Genuer2008' on page 192 undefined on input line 89.
-
-
-LaTeX Warning: Citation 'Biau2008' on page 192 undefined on input line 89.
-
-
-LaTeX Warning: Citation 'Louppe2014' on page 192 undefined on input line 89.
-
-
-LaTeX Warning: Citation 'Biau2016' on page 192 undefined on input line 89.
-
-
-Overfull \hbox (13.26608pt too wide) in paragraph at lines 79--90
-[] [][] []\EU1/HoeflerText(2)/m/n/10.95 Random Forests (\EU1/HoeflerText(2)/m/s
-c/10.95 RF\EU1/HoeflerText(2)/m/n/10.95 s) are strong machine learning tools [[
-]],
- []
-
-
-Overfull \hbox (16.32628pt too wide) in paragraph at lines 79--90
-\EU1/HoeflerText(2)/m/n/10.95 gorithms [[]], and used in a wide range of domain
-s [[],
- []
-
-
-LaTeX Warning: Citation 'Desir13' on page 192 undefined on input line 92.
-
-
-LaTeX Warning: Citation 'Liu2008' on page 192 undefined on input line 92.
-
-
-LaTeX Warning: Citation 'Shi2012' on page 192 undefined on input line 92.
-
-
-LaTeX Warning: Citation 'Liu2008' on page 192 undefined on input line 98.
-
-
-LaTeX Warning: Citation 'Geurts2006' on page 192 undefined on input line 102.
-
-
-LaTeX Warning: Citation 'Desir13' on page 192 undefined on input line 119.
-
-
-LaTeX Warning: Citation 'Shi2012' on page 192 undefined on input line 119.
-
-
-LaTeX Warning: Citation 'Desir13' on page 192 undefined on input line 122.
-
-
-LaTeX Warning: Citation 'Shi2012' on page 192 undefined on input line 128.
-
-
-LaTeX Warning: Citation 'Tax2002' on page 192 undefined on input line 135.
-
-[192
+[194
 
 ]
-
-LaTeX Warning: Citation 'Scott2006' on page 193 undefined on input line 144.
-
-
-LaTeX Warning: Citation 'Polonik97' on page 193 undefined on input line 146.
-
-
-LaTeX Warning: Citation 'Einmahl1992' on page 193 undefined on input line 146.
-
-
-LaTeX Warning: Citation 'Blanchard2004' on page 193 undefined on input line 148
-.
-
-
-LaTeX Warning: Citation 'CLEM14' on page 193 undefined on input line 167.
-
-
-LaTeX Warning: Citation 'Clemencon2009Tree' on page 193 undefined on input line
- 168.
-
-
-LaTeX Warning: Citation 'Scott2006' on page 193 undefined on input line 180.
-
-
-LaTeX Warning: Citation 'CLEM14' on page 193 undefined on input line 180.
-
-
-Overfull \hbox (40.86621pt too wide) in paragraph at lines 144--185
-\EU1/HoeflerText(2)/m/n/10.95 tural risk minimization problem to be able to use
- the algorithm in [].
+Overfull \hbox (4.7106pt too wide) in paragraph at lines 144--185
+\EU1/HoeflerText(2)/m/n/10.95 trees pruning (assuming such a tree has been prev
+iously constructed, []e.g. us-
  []
 
-
-LaTeX Warning: Citation 'Scornet2015' on page 193 undefined on input line 189.
-
-
-LaTeX Warning: Citation 'CLEM14' on page 193 undefined on input line 193.
-
-[193] [194]
-
-LaTeX Warning: Citation 'Gini1912' on page 195 undefined on input line 278.
-
-
-LaTeX Warning: Citation 'Shannon2001' on page 195 undefined on input line 278.
-
-
-LaTeX Warning: Citation 'Geurts2006' on page 195 undefined on input line 281.
-
-[195]
+[195] [196] [197]
 Overfull \hbox (2.42491pt too wide) in paragraph at lines 570--581
 \EU1/HoeflerText(2)/m/n/10.95 fined. In the naive approach below, it is defined
  as $[][] [] [][][]\OT1/pplx/m/n/10.95 (\OMS/zplm/m/n/10.95 X[]\OT1/pplx/m/n/10
 .95 )\OML/zplm/m/it/10.95 =[]\OT1/pplx/m/n/10.95 (\OMS/zplm/m/n/10.95 X\OT1/ppl
 x/m/n/10.95 )$\EU1/HoeflerText(2)/m/n/10.95 ,
  []
-
-
-LaTeX Warning: Citation 'Desir13' on page 196 undefined on input line 595.
-
-
-LaTeX Warning: Citation 'Shi2012' on page 196 undefined on input line 595.
-
-
-LaTeX Warning: Citation 'Flach2003' on page 196 undefined on input line 608.
 
 
 Overfull \hbox (0.66791pt too wide) in paragraph at lines 583--613
@@ -8129,29 +6176,15 @@ e expectation $[][][]\OT1/pplx/m/n/10.95 (\OMS/zplm/m/n/10.95 X[]\OT1/pplx/m/n/
 plx/m/n/10.95 )$\EU1/HoeflerText(2)/m/n/10.95 ,
  []
 
-[196]
-
-LaTeX Warning: Citation 'Scott2009' on page 197 undefined on input line 840.
-
-[197] [198]
+[198] [199] [200]
 File: ./gfx/oneclassrf.png Graphic file (type QTm)
- <use  "./gfx/oneclassrf.png" >
-
-LaTeX Warning: Citation 'Liu2008' on page 199 undefined on input line 923.
-
-
-LaTeX Warning: Citation 'Geurts2006' on page 199 undefined on input line 929.
-
-[199]
+ <use  "./gfx/oneclassrf.png" > [201]
 LaTeX Font Info:    Try loading font information for U+dsrom on input line 934.
 
- (/usr/local/texlive/2016/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
-
-LaTeX Warning: Citation 'Breiman2001' on page 200 undefined on input line 945.
-
-
 Underfull \hbox (badness 3872) in paragraph at lines 987--987
 []|\EU1/HoeflerText(2)/m/n/9 classes $[]$ 1 (class 4 re-
  []
@@ -8167,22 +6200,6 @@ rithm, based on generic
  []
 
 
-Overfull \hbox (60.29143pt too wide) in paragraph at lines 944--989
-[]\EU1/HoeflerText(2)/m/sc/10.95 RF\EU1/HoeflerText(2)/m/n/10.95 s [[]]. It has
- $[]$ parameters, namely \EU1/lmtt/m/n/10.95 max_samples\EU1/HoeflerText(2)/m/n
-/10.95 , \EU1/lmtt/m/n/10.95 max_features_tree\EU1/HoeflerText(2)/m/n/10.95 ,
- []
-
-
-LaTeX Warning: Citation 'Ho1998' on page 200 undefined on input line 991.
-
-
-LaTeX Warning: Citation 'Panov2007' on page 200 undefined on input line 991.
-
-
-LaTeX Warning: Citation 'Amit1997' on page 200 undefined on input line 1001.
-
-
 LaTeX Warning: Command \textunderscore invalid in math mode on input line 1003.
 
 
@@ -8194,57 +6211,19 @@ LaTeX Warning: Command \textunderscore invalid in math mode on input line 1003.
 LaTeX Warning: Command \textunderscore invalid in math mode on input line 1005.
 
 
-[200]
 
-LaTeX Warning: Citation 'Liu2008' on page 201 undefined on input line 1080.
-
-
-LaTeX Warning: Citation 'Desir13' on page 201 undefined on input line 1081.
-
-
-LaTeX Warning: Citation 'Scholkopf2001' on page 201 undefined on input line 108
-2.
-
-
-LaTeX Warning: Citation 'Breunig2000LOF' on page 201 undefined on input line 10
-82.
-
-
-LaTeX Warning: Citation 'Bay2003' on page 201 undefined on input line 1082.
-
-
-LaTeX Warning: Citation 'Quinn2014' on page 201 undefined on input line 1083.
-
-
-LaTeX Warning: Citation 'Shi2012' on page 201 undefined on input line 1083.
-
-
-Overfull \hbox (9.02809pt too wide) in paragraph at lines 1078--1087
-\EU1/HoeflerText(2)/m/n/10.95 [[]], []Local Outlier Factor (\EU1/HoeflerText(2)
-/m/sc/10.95 LOF\EU1/HoeflerText(2)/m/n/10.95 ) [[]], Orca
+Overfull \hbox (4.50842pt too wide) in paragraph at lines 990--1016
+\EU1/HoeflerText(2)/m/n/10.95 best split over a random selection of features wi
+th fixed size $[][][][][][][][][][][][][][][][][]$.
  []
 
-
-Overfull \hbox (5.92558pt too wide) in paragraph at lines 1078--1087
-\EU1/HoeflerText(2)/m/n/10.95 [[]], []Least Squares Anomaly Detection (\EU1/Hoe
-flerText(2)/m/sc/10.95 LSAD\EU1/HoeflerText(2)/m/n/10.95 ) [[]], []Ran-
- []
-
-
-LaTeX Warning: Citation 'Liu2008' on page 201 undefined on input line 1100.
-
-[201]
-
-LaTeX Warning: Citation 'Lichman2013' on page 202 undefined on input line 1112.
-
-
-[202] [203]
+[202] [203] [204] [205]
 Overfull \hbox (1.81113pt too wide) in paragraph at lines 1350--1358
 \EU1/HoeflerText(2)/m/n/10.95 (observed) inlier behavior and population quantit
 ies for the (non-observed)
  []
 
-[204
+[206
 
 
 ]
@@ -8291,7 +6270,7 @@ Underfull \hbox (badness 1502) detected at line 1479
 $[] \OT1/pplx/m/n/10.95 = [] 
  []
 
-[205]
+[207]
 Overfull \hbox (12.94456pt too wide) in paragraph at lines 1480--1494
 \EU1/HoeflerText(2)/m/n/10.95 In other words, instead of considering one genera
 l model One-Class-Model($[]$,
@@ -8319,25 +6298,13 @@ zplm/b/n/10.95 N\OT1/pplx/m/n/10.95 ([][])$ \EU1/HoeflerText(2)/m/it/10.95 conv
 erges in distribution to $\OMS/zplm/m/n/10.95 P []$
  []
 
-[206]
-
-LaTeX Warning: Citation 'Liu2008' on page 207 undefined on input line 1721.
-
-
-LaTeX Warning: Citation 'Liu2008' on page 207 undefined on input line 1729.
-
-
+[208]
 Overfull \hbox (15.15852pt too wide) in paragraph at lines 1728--1782
 \EU1/HoeflerText(2)/m/n/10.95 scoring function $[]\OT1/pplx/m/n/10.95 ([]) = []
  [][]$\EU1/HoeflerText(2)/m/n/10.95 , where
  []
 
-[207]
-
-LaTeX Warning: Citation 'Breiman2001' on page 208 undefined on input line 1793.
-
-
-
+[209]
 Overfull \hbox (2.89523pt too wide) in paragraph at lines 1949--1955
 \EU1/HoeflerText(2)/m/n/10.95 Overall we chose to train the different algorithm
 s with their (default) hyper-
@@ -8349,63 +6316,7 @@ Overfull \hbox (2.24461pt too wide) in paragraph at lines 1968--1973
 lerText(2)/m/n/10.95 , where bootstrap states whether samples are drawn
  []
 
-[208]
-
-LaTeX Warning: Citation 'Liu2012' on page 209 undefined on input line 1988.
-
-[209]
-
-LaTeX Warning: Citation 'jaakkola1999using' on page 210 undefined on input line
- 2001.
-
-
-Overfull \hbox (69.46391pt too wide) in paragraph at lines 1997--2003
-\EU1/HoeflerText(2)/m/n/10.95 kernel scale parameter (using the pairwise median
- trick by default [[]])
- []
-
-
-LaTeX Warning: Citation 'Lichman2013' on page 210 undefined on input line 2009.
-
-
-
-Overfull \hbox (6.26234pt too wide) in paragraph at lines 2007--2019
-\EU1/HoeflerText(2)/m/n/10.95 [[]] and the preprocessing is done in a classical
- way. In anomaly
- []
-
-
-LaTeX Warning: Citation 'KDD99' on page 210 undefined on input line 2028.
-
-
-LaTeX Warning: Citation 'Tavallaee2009' on page 210 undefined on input line 202
-8.
-
-
-LaTeX Warning: Citation 'Yamanishi2000' on page 210 undefined on input line 203
-1.
-
-
-LaTeX Warning: Citation 'pedregosa2011scikit' on page 210 undefined on input li
-ne 2032.
-
-
-LaTeX Warning: Citation 'Liu2008' on page 210 undefined on input line 2034.
-
-
-LaTeX Warning: Citation 'Liu2008' on page 210 undefined on input line 2038.
-
-
-LaTeX Warning: Citation 'Schubert2012' on page 210 undefined on input line 2054
-.
-
-
-Overfull \hbox (28.62407pt too wide) in paragraph at lines 2020--2065
-\EU1/HoeflerText(2)/m/n/10.95 This two datasets are available on the \EU1/Hoefl
-erText(2)/m/it/10.95 scikit-learn \EU1/HoeflerText(2)/m/n/10.95 library [[]].
- []
-
-[210]
+[210] [211] [212]
 Overfull \hbox (16.32564pt too wide) in paragraph at lines 2066--2066
 |[]\EU1/HoeflerText(2)/m/sc/10.95 f u r -t h e r d e -t a i l s o n b e n c h -
 m a r k s a n d o u t -l i e r d e -t e c -t i o n
@@ -8526,7 +6437,7 @@ Overfull \hbox (26.44868pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[211]
+[213]
 Package pgfplots info on input line 2387: Overriding colorspace to rgb due to x
 color configuration.
 PGFPlots: reading {./resultsOCRF/results_unsupervised.txt}
@@ -8698,16 +6609,11 @@ File: ./gfx/bench_rf_roc_pr_supervised_factorized.png Graphic file (type QTm)
 File: ./gfx/bench_rf_roc_pr_unsupervised_factorized.png Graphic file (type QTm)
 
 
-<use  "./gfx/bench_rf_roc_pr_unsupervised_factorized.png" > [212]
+<use  "./gfx/bench_rf_roc_pr_unsupervised_factorized.png" > [214]
 
-LaTeX Warning: Text page 213 contains only floats.
+LaTeX Warning: Text page 215 contains only floats.
 
 
-Overfull \hbox (26.44868pt too wide) has occurred while \output is active
- []|[]|
- []
-
-[213] [214]
 Overfull \hbox (26.44868pt too wide) has occurred while \output is active
  []|[]|
  []
@@ -8717,15 +6623,20 @@ Overfull \hbox (26.44868pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[217] [218])
+[217] [218]
 Overfull \hbox (26.44868pt too wide) has occurred while \output is active
  []|[]|
  []
 
-[219
+[219] [220])
+Overfull \hbox (26.44868pt too wide) has occurred while \output is active
+ []|[]|
+ []
+
+[221
 
 
-]) [220
+]) [222
 
 
 
@@ -8734,30 +6645,157 @@ Overfull \hbox (26.44868pt too wide) has occurred while \output is active
 
  (./FrontBackMatter/Bibliography.tex
 
-Package biblatex Warning: Keyword 'ownpubs' not found on input line 21.
+Package biblatex Warning: Setting 'defernumbers=true' recommended.
 
 
-LaTeX Warning: Empty bibliography on input line 21.
+Overfull \hbox (30.44437pt too wide) in paragraph at lines 21--21
+\EU1/HoeflerText(2)/m/n/10.95 Splitting Criteria for Random Forests.”  In: \EU1
+/HoeflerText(2)/m/it/10.95 arXiv preprint arXiv:1611.01971
+ []
 
 
-Package biblatex Warning: Keyword 'ovks' not found on input line 22.
+Package biblatex Warning: Setting 'defernumbers=true' recommended.
+
+[223
 
 
-LaTeX Warning: Empty bibliography on input line 22.
 
-
-Package biblatex Warning: Keyword 'extrems' not found on input line 24.
-
-
-LaTeX Warning: Empty bibliography on input line 24.
-
-) [221
-
-] [222
-
+] [224
 
 
 ]
+Overfull \hbox (8.33629pt too wide) in paragraph at lines 23--23
+\EU1/HoeflerText(2)/m/n/10.95 kernels.”  In: \EU1/HoeflerText(2)/m/it/10.95 Eur
+opean symposium on artificial neural networks (ESANN)\EU1/HoeflerText(2)/m/n/10
+.95 .
+ []
+
+[225] [226] [227]
+Overfull \hbox (16.26051pt too wide) in paragraph at lines 23--23
+[]\EU1/HoeflerText(2)/m/n/10.95 N. Lim, Y. Senbabaoglu, G. Michailidis, and F. 
+d’Alché-Buc.  “  OKVAR-
+ []
+
+[228]
+Overfull \hbox (16.26051pt too wide) in paragraph at lines 23--23
+[]\EU1/HoeflerText(2)/m/n/10.95 N. Lim, Y. Şenbabaoğlu, G. Michailidis, and F. 
+d’Alché-Buc.  “  OKVAR-
+ []
+
+
+Overfull \hbox (6.0451pt too wide) in paragraph at lines 23--23
+\EU1/HoeflerText(2)/m/it/10.95 ceedings of the 27th International Conference on
+ Machine Learning (ICML-
+ []
+
+[229]
+Overfull \hbox (2.33829pt too wide) in paragraph at lines 23--23
+\EU1/HoeflerText(2)/m/n/10.95 learning with simplex coding.”  In: \EU1/HoeflerT
+ext(2)/m/it/10.95 Advances in NIPS\EU1/HoeflerText(2)/m/n/10.95 .  2012,  pp. 2
+789–
+ []
+
+
+Overfull \hbox (2.08118pt too wide) in paragraph at lines 23--23
+[]\EU1/HoeflerText(2)/m/n/10.95 A. Naor.  “  On the Banach-space-valued Azuma i
+nequality and small-
+ []
+
+[230]
+Overfull \hbox (29.93703pt too wide) in paragraph at lines 23--23
+\EU1/HoeflerText(2)/m/n/10.95 ties of learning with random features.”  In: \EU1
+/HoeflerText(2)/m/it/10.95 arXiv preprint arXiv:1602.04474
+ []
+
+
+Overfull \hbox (0.91135pt too wide) in paragraph at lines 23--23
+[]\EU1/HoeflerText(2)/m/n/10.95 E. Senkene and A. Tempel’man.  “  Hilbert Space
+s of operator-valued
+ []
+
+[231]
+Overfull \hbox (7.43382pt too wide) in paragraph at lines 23--23
+\EU1/HoeflerText(2)/m/it/10.95 national Conference on Advanced Data Mining and 
+Applications\EU1/HoeflerText(2)/m/n/10.95 .  Springer.
+ []
+
+
+Overfull \hbox (1.84387pt too wide) in paragraph at lines 23--23
+\EU1/HoeflerText(2)/m/n/10.95 ces.”  In: \EU1/HoeflerText(2)/m/it/10.95 Foundat
+ions of computational mathematics \EU1/HoeflerText(2)/m/n/10.95 12.4 (2012), pp
+. 389–
+ []
+
+[232]
+Overfull \hbox (8.88638pt too wide) in paragraph at lines 23--23
+\EU1/HoeflerText(2)/m/n/10.95 sion.”  In: \EU1/HoeflerText(2)/m/it/10.95 13th I
+FAC Symposium on System Identification\EU1/HoeflerText(2)/m/n/10.95 .  2003,  p
+p. 1820–
+ []
+
+
+Overfull \hbox (5.53949pt too wide) in paragraph at lines 23--23
+\EU1/HoeflerText(2)/m/it/10.95 The 31st International Conference on Machine Lea
+rning (ICML-14)\EU1/HoeflerText(2)/m/n/10.95 .  2014,
+ []
+
+
+Overfull \hbox (9.07083pt too wide) in paragraph at lines 23--23
+\EU1/HoeflerText(2)/m/n/10.95 “  Random laplace feature maps for semigroup kern
+els on histograms.”
+ []
+
+[233]
+
+Package biblatex Warning: Setting 'defernumbers=true' recommended.
+
+[234]
+Overfull \hbox (2.66338pt too wide) in paragraph at lines 24--24
+[]\EU1/HoeflerText(2)/m/n/10.95 G. Biau, L. Devroye, and G. Lugosi.  “  Consist
+ency of random forests
+ []
+
+
+Overfull \hbox (4.61868pt too wide) in paragraph at lines 24--24
+\EU1/HoeflerText(2)/m/it/10.95 Conference on Computational Learning Theory\EU1/
+HoeflerText(2)/m/n/10.95 .  Springer. 2004,  pp. 378–
+ []
+
+[235
+
+
+]
+Overfull \hbox (0.17122pt too wide) in paragraph at lines 24--24
+\EU1/HoeflerText(2)/m/n/10.95 methodological insights.”  In: \EU1/HoeflerText(2
+)/m/it/10.95 arXiv:0811.3619 \EU1/HoeflerText(2)/m/n/10.95 (2008)  (cit. on p. 
+[][]194[][]). 
+ []
+
+[236]
+Overfull \hbox (0.15959pt too wide) in paragraph at lines 24--24
+[]\EU1/HoeflerText(2)/m/n/10.95 B. Schölkopf, J. Platt, J. Shawe-Taylor, A. Smo
+la, and R. Williamson.
+ []
+
+
+Overfull \hbox (6.4291pt too wide) in paragraph at lines 24--24
+[]\EU1/HoeflerText(2)/m/n/10.95 E. Scornet, G. Biau, J.[]P. Vert, et al.  “  Co
+nsistency of random forests.”
+ []
+
+
+Overfull \hbox (0.28815pt too wide) in paragraph at lines 24--24
+[]\EU1/HoeflerText(2)/m/n/10.95 M. Shyu, S. Chen, K. Sarinnapakorn, and L. Chan
+g.  \EU1/HoeflerText(2)/m/it/10.95 A novel anomaly
+ []
+
+
+Overfull \hbox (3.15596pt too wide) in paragraph at lines 24--24
+\EU1/HoeflerText(2)/m/it/10.95 detection scheme based on principal component cl
+assifier\EU1/HoeflerText(2)/m/n/10.95 .  Tech. rep.  DTIC
+ []
+
+[237]) [238]
 \openout2 = `FrontBackMatter/Declaration.aux'.
 
  (./FrontBackMatter/Declaration.tex
@@ -8770,11 +6808,14 @@ Overfull \hbox (10.95pt too wide) in paragraph at lines 43--47
 [][] 
  []
 
-) [223
+) [239
 
 
 
-] [224
+
+
+
+] [240
 
 
 
@@ -8793,7 +6834,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--19
 
  []
 
-) [225
+) [241
 
 ]
 \openout2 = `FrontBackMatter/Blurb.aux'.
@@ -8836,7 +6877,7 @@ Overfull \hbox (189.33159pt too wide) in paragraph at lines 14--15
  []
 
 File: FrontBackMatter/../gfx/logoEgrey.png Graphic file (type QTm)
-<use  "FrontBackMatter/../gfx/logoEgrey.png" >) [226
+<use  "FrontBackMatter/../gfx/logoEgrey.png" >) [242
 
 
 
@@ -9345,11 +7386,6 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                ThesisRomainBrault
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'ThesisRomainBrault.run.xml'.
 \openout1 = `ThesisRomainBrault.run.xml'.
 
@@ -9360,12 +7396,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 263.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 86733 strings out of 493591
- 1852581 string characters out of 6143546
- 3741767 words of memory out of 5000000
- 88202 multiletter control sequences out of 15000+600000
- 76338 words of font info for 369 fonts, out of 8000000 for 9000
+ 87295 strings out of 493591
+ 1871086 string characters out of 6143546
+ 3866821 words of memory out of 5000000
+ 88765 multiletter control sequences out of 15000+600000
+ 76330 words of font info for 368 fonts, out of 8000000 for 9000
  1352 hyphenation exceptions out of 8191
- 88i,23n,122p,10493b,18284s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 88i,23n,122p,10493b,19782s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ThesisRomainBrault.pdf (246 pages).
+Output written on ThesisRomainBrault.pdf (262 pages).

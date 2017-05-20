@@ -451,10 +451,16 @@ valued kernel called the Nystr\"om method.
 To overcome the bottleneck of Gram matrix computations in kernel methods,
 Williams and Seeger \cite{Williams2000-nystrom} have proposed to generate a
 low-rank matrix approximation of the Gram matrix using a subset of its columns.
-
-In this manuscript we are interested in finding function
-$f:\mathcal{X}\to\mathcal{Y}$, where $\mathcal{X}$ and $\mathcal{Y}$ are
-arbitrary spaces.
+Since this feature map is based on a decomposition of the Gram matrix, the
+feature map resulting from the Nystr\"om method is data dependent. Let
+\begin{dmath*}
+    \seq{s} = (x_i)_{i=1}^N
+\end{dmath*}
+be the training data. We note a subsample fo the training data
+\begin{dmath*}
+    \seq{s}_M = (x_i)_{i=1}^M
+\end{dmath*}
+where $M \le N$ and $\seq{s}_M$ is a subsequence of $\seq{s}$
 
 
 \subsubsection{Recent extensions}

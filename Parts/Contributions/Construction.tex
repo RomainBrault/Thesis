@@ -4,20 +4,32 @@
 \section{Motivation}
 \label{sec:motivations}
 Random Fourier Features have been proved useful to implement efficiently kernel
-methods in the scalar case. In this work, we propose to extend Random Fourier Feature methodology in order to approximate Operator-Valued Kernels. As in the scalar case, we are mainly interested on explicit approximated feature maps because they open the door to learning linear models. Our final goal is to come up with the definition of $\tildePhi: \mathcal{X} \to \mathcal{L}(\mathcal{Y},\mathcal{Z})$ for some Hilbert space $\mathcal{Z}$\footnote{In the finite dimension case, $\mathcal{Z}= \mathbb{R}^p$.}, a feature map of some approximation $\tilde{K}$ of a given OBK $\mathcal{K}$.
-This chapter is devoted to the construction of these approximations based on Random Fourier Feature principles. It is followed by a non asymptotical study of the error of approximation (chapter 4) and the development of learning tools based on Operator Random Fourier Feature maps with practical and theoretical insights. 
+methods in the scalar case. In this work, we propose to extend Random Fourier
+Feature methodology in order to approximate Operator-Valued Kernels. As in the
+scalar case, we are mainly interested on explicit approximated feature maps
+because they open the door to learning linear models. Our final goal is to come
+up with the definition of $\tildePhi{\omega}: \mathcal{X} \to
+\mathcal{L}(\mathcal{Y},\mathcal{H})$ for some Hilbert spaces $\mathcal{Y}$ and
+$\mathcal{H}$\footnote{In the finite dimension case, $\mathcal{H}=
+\mathbb{R}^p$.}, a feature map of some approximation $\tilde{K}$ of a given
+\acs{OVK} $\mathcal{K}$.  This chapter is devoted to the construction of these
+approximations based on Random Fourier Feature principles. It is followed by a
+non asymptotical study of the error of approximation (chapter 4) and the
+development of learning tools based on Operator Random Fourier Feature maps
+with practical and theoretical insights. 
 
-We present in this chapter a construction methodology devoted to shift-invariant \mathcal{Y}-Mercer operator-valued kernels
-defined on any \acf{LCA} group, noted ($\mathcal{X}, \groupop)$, for some
-operation noted $\groupop$. This allows us to use the general context of
-Pontryagin duality for \acl{FT} of functions on \acs{LCA} groups. Building upon
-a generalization of Bochner's theorem for operator-valued measures, an
+We present in this chapter a construction methodology devoted to
+shift-invariant $\mathcal{Y}$-Mercer operator-valued kernels defined on any
+\acf{LCA} group, noted ($\mathcal{X}, \groupop)$, for some operation noted
+$\groupop$. This allows us to use the general context of Pontryagin duality for
+\acl{FT} of functions on \acs{LCA} groups. Building upon a generalization of
+the celebrated Bochner's theorem for operator-valued measures, an
 operator-valued kernel is seen as the \emph{\acl{FT}} of an operator-valued
-positive measure. From that result, we extend the principle of Random Fourier
-Feature for scalar-valued kernels and derive a general methodology to build
-Operator Random Fourier Feature when operator-valued kernels are
-shift-invariant according to the chosen group operation. Elements of this
-chapter have been developped in~\citet{brault2016random}.
+positive measure. From that result, we extend the principle of \acs{RFF} for
+scalar-valued kernels and derive a general methodology to build \acf{ORFF} when
+operator-valued kernels are shift-invariant according to the chosen group
+operation. Elements of this chapter have been developped
+in~\citet{brault2016random}.
 \paragraph{}
 We present a construction of feature maps called \acf{ORFF}, such that $f:
 x\mapsto \tildePhi{\omega}(x)^\adjoint \theta$ is a continuous function that
@@ -152,8 +164,9 @@ solution, and also provides a sufficient condition for
     \begin{dmath*}
         \inner{K_e(.)y,y'}_{\mathcal{Y}}\in L^1(\mathcal{X},\Haar)
     \end{dmath*}
-    where $\mathcal{X}$ is endowed with the group law $\groupop$. Denote $C: \hat{X} \to \mathcal{L}(Y)$, the function defined for all
-    $\omega \in \dual{\mathcal{X}}$ that satisfies for all $y$, $y'$ in $\mathcal{Y}$:
+    where $\mathcal{X}$ is endowed with the group law $\groupop$. Denote $C:
+    \dual{X} \to \mathcal{L}(Y)$, the function defined for all $\omega \in
+    \dual{\mathcal{X}}$ that satisfies for all $y$, $y'$ in $\mathcal{Y}$:
     \begin{dmath}\label{eq:CK0}
         \inner{y',C(\omega)y}_{\mathcal{Y}}= \int_{\mathcal{X}}
         \pairing{\delta, \omega}\inner{y',
@@ -229,6 +242,8 @@ of \acs{ORFF}.
         K_e(\cdot)y}_{\mathcal{Y}}}(\omega)
         =\IFT{\inner{y', (\mathcal{R}K_e(\cdot))^\adjoint
         y}_{\mathcal{Y}}}(\omega)
+        =\IFT{\inner{\mathcal{R}K_e(\cdot)y', y}_{\mathcal{Y}}}(\omega)
+        =\IFT{\mathcal{R}\inner{K_e(\cdot)y', y}_{\mathcal{Y}}}(\omega)
         =\mathcal{R}\IFT{\inner{K_e(\cdot)y', y}_{\mathcal{Y}}}(\omega)
         =\mathcal{R}\inner{C(\cdot)y',y}_{\mathcal{Y}}(\omega)
         =\inner*{y',C\left(\inv{\omega}\right)^\adjoint y}_{\mathcal{Y}}.
@@ -365,20 +380,22 @@ It follows that for all $i$ and $j$ in $\mathbb{N}^*_{p}$,
 
 Another difficulty arises from the fact that the quantity
 $\sup_{\omega\in\dual{\mathcal{X}}} \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}$
-obtained in \cref{pr:spectral} might not be bounded. Later, when we will focus on Monte-Carlo approximation of these integrals, we will have to take care of the unboundedness of
-$\norm{A(\cdot)}_{\mathcal{Y},\mathcal{Y}}$ that forbids the use of the most simple
-concentrations inequalities that require the boundedness of the random
-variable to be controlled. Therefore in the context of \acl{OVK} concentration
-inequalities for unbounded random operators should be used. However, as pointed
-out by~\citet{minh2016operator}, under some condition on the trace of
-$K_e(\delta)$, it is possible to turn $A(\cdot)$ into a bounded random operator
-for all $\omega$ in $\dual{\mathcal{X}}$. The idea is to define a sum measure
-$\rho=\sum_{j\in\mathbb{N}^*}\rho_{e_j}$, which gives rise to a bounded
-operator $A(\omega)$ and is idependant of the $\Set{e_j}_{j\in\mathbb{N}^*}$
-base, instead of constructing a measure from the operator norm as in
-\cref{pr:spectral}. Additionally with such construction the measure associated
-to $A(\cdot)$ is \emph{independent} from the basis of $\mathcal{Y}$. In this
-proof we relax the assumptions of~\citet{minh2016operator} which requires
+obtained in \cref{pr:spectral} might not be bounded. Later, when we will focus
+on Monte-Carlo approximation of these integrals, we will have to take care of
+the unboundedness of $\norm{A(\cdot)}_{\mathcal{Y},\mathcal{Y}}$ that forbids
+the use of the most simple concentrations inequalities that require the
+boundedness of the random variable to be controlled. Therefore in the context
+of \acl{OVK} concentration inequalities for unbounded random operators should
+be used. However, as pointed out by~\citet{minh2016operator}, under some
+condition on the trace of $K_e(\delta)$, it is possible to turn $A(\cdot)$ into
+a bounded random operator for all $\omega$ in $\dual{\mathcal{X}}$. The idea is
+to define a sum measure $\rho=\sum_{j\in\mathbb{N}^*}\rho_{e_j}$, which gives
+rise to a bounded operator $A(\omega)$ and is idependant of the
+$\Set{e_j}_{j\in\mathbb{N}^*}$ base, instead of constructing a measure from the
+operator norm as in \cref{pr:spectral}. Additionally with such construction the
+measure associated to $A(\cdot)$ is \emph{independent} from the basis of
+$\mathcal{Y}$. In this proof we relax the assumptions
+of~\citet{minh2016operator} which requires
 $\int_{\mathcal{X}}\abs{\Tr{K_e(\delta)}}d\Haar(\delta)$ to be well defined. We
 only require $\Tr{K_e(e)}$ to be well defined.
 \begin{proposition}[Bounded shift-invariant $\mathcal{Y}$-Mercer kernel

@@ -158,7 +158,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {Operator-valued Random Fourier Features}}{43}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Motivations}{44}{section.3.1}
+\contentsline {section}{\numberline {3.1}Motivation}{44}{section.3.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{44}{section.3.1}
 \defcounter {refsection}{0}\relax 
@@ -168,7 +168,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{45}{proposition.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{45}{proposition.3.2}
+\contentsline {paragraph}{}{46}{proposition.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{46}{proposition.3.2}
 \defcounter {refsection}{0}\relax 

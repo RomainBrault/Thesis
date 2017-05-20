@@ -1,0 +1,37 @@
+We give a numerical illustration of different $\tilde{K}$ built from different samples $(\omega_1, \ldots, \omega_D)$
+
+In \cref{fig:not_Mercer}, we represent the approximation of  a reference function (black line) defined as $(y_1, y_2)^\transpose
+= f(x_i)=\sum_{j=1}^{250}K(x_i,x_j)u_j$ where $u_j\sim\mathcal{N}(0,1)$ and $K$ is a Gaussian decomposable kernel defined as:
+\begin{dmath*}
+    K(x,z)_{ij}=\exp\left(-\frac{1}{2(0.1)^2(x_i - x_j)^2}\right)\Gamma
+    \condition{for $i$, $j\in\mathbb{N}^*_{250}$.}
+\end{dmath*}
+We took $\Gamma=.5 I_2 +.5 1_2$ such that the outputs $y_1$ and
+$y_2$ share some similarities.
+We
+generated $250$ points equally separated on the segment $(-1;1)$.
+\begin{pycode}[not_mercer]
+sys.path.append('./src/')
+import not_mercer
+
+not_mercer.main()
+\end{pycode}
+\begin{figure}[htb]
+    \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./not_Mercer.pgf}}')}
+    \caption[Approximation of a function in a vv-RKHS using different realizations of Operator Random Fourier Feature]{Approximation of a function in a vv-RKHS using different realizations of Operator Random Fourier Feature.
+    Top row and bottom row correspond to two different realizations of
+    $\tildeK{\omega}$, which are \emph{different} \acl{OVK}. However when $D$
+    tends to infinity, the different realizations of $\tildeK{\omega}$ yield
+    the same \acs{OVK}.}
+    \label{fig:not_Mercer}
+\end{figure}
+
+ Then we computed an approximate kernel matrix
+$\tildeK{\omega}\approx K$ for $25$ increasing values of $D$ ranging from $1$
+to $10^4$. The two graphs in \cref{fig:not_Mercer} on the top row shows that the more the number of
+features increases the closer the model
+$\widetilde{f}(x_i)=\sum_{j=1}^{250}\tildeK{\omega}(x_i,x_j)u_j$ is to $f$. The
+bottom row shows the same experiment but for a different realization of
+$\tildeK{\omega}$. When $D$ is small the curves of the bottom and top rows are
+very dissimilar --and sine wave like-- while they both converge to $f$ when $D$
+increase.

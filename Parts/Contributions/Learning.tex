@@ -447,7 +447,7 @@ $u_{\seq{s}}\in(\Ker W)^\bot$. However looking at the proof of
 belong to $(\Ker W)^\bot$. We can compute a residual vector 
 \begin{dmath*}
     r_{\seq{s}} = \sum_{i=1}^{N} \tildePhi{\omega}(x_i)
-    (u_{\seq{s}})_i \hiderel{\in}\tildeH{\omega} - \theta_{\seq{s}}.
+    (u_{\seq{s}})_i - \theta_{\seq{s}}.
 \end{dmath*}
 Since $\sum_{j=1}^N \tildePhi{\omega}(x_j)\in(\Ker W)^\bot$ by
 construction, if $r_{\seq{s}}=0$, it means that $\lambda_K$ is large
@@ -465,14 +465,63 @@ equivalence theorem fails to apply. Since $r_{\seq{s}} = \sum_{i=1}^N
 \theta_{\seq{s}}^\parallel$ and $\sum_{i=1}^N
 \tildePhi{\omega}(x_i)(u_{\seq{s}})_i$ is in $(\Ker W)^\perp$, with mild abuse
 of notation we write $r_{\seq{s}}=\theta^\perp$. This remark is illustrated in
-\cref{fig:representer}.
+\cref{fig:representer,fig:representer2}.
+\paragraph{}
+In \cref{fig:representer}, we generated the data from a since wave to which we
+add some gaussian noise. We learned a gaussian kernel based \ac{RFF} model
+(blue curve) and a kernel model (yellow curve) where the kernel is obtained
+from the \acs{RFF} map. The left column represents the fit of the model to the
+points for four different valued of $\lambda$ (top to bottom: $10^{-2}$,
+$10^{-5}$, $10e^{10}$, $0$). The middle column shows if the \acs{RFF} solution
+$\theta_{\seq{s}}$ is in $(\Ker \tilde{W})^\perp$.  This is true for all values
+of $\lambda$. The right column shows that eventhough $\theta_{\seq{s}}$ is in
+$(\Ker \tilde{W})^\perp$, when $\lambda\to0$ learning with \acs{RFF} is
+different from learning with the kernel constructed from the \acs{RFF} maps
+since the coefficients of $\theta^{\parallel}$ are all different from $0$.
+\paragraph{}
+\cref{fig:representer2} is the same setting than \cref{fig:representer} except
+that we decreased the scale parameter $\sigma$ of the gaussian kernel to make
+it overfit, and emphasize that when $\lambda=0$, $\theta_{\seq{s}}$ might not
+belong to $(\Ker \tilde{W})^\perp$, as represented on the middle column.
+
+\begin{pycode}[representer]
+sys.path.append('./src/')
+import representer
+
+err = representer.main()
+\end{pycode}
+
+\begin{pycode}[representer2]
+sys.path.append('./src/')
+import representer2
+
+err = representer2.main()
+\end{pycode}
+
+\afterpage{%
+\begin{landscape}
+    \begin{figure}[tb]
+        \pyc{print(r'\centering\resizebox{\textheight}{!}{\input{./representer.pgf}}')}
+        \caption[\acs{ORFF} equivalence theorem.]{\acs{ORFF} equivalence
+        theorem.}
+        \label{fig:representer}
+    \end{figure}
+    \clearpage
+    \begin{figure}[tb]
+        \pyc{print(r'\centering\resizebox{\textheight}{!}{\input{./representer2.pgf}}')}
+        \caption[\acs{ORFF} equivalence theorem with overfitting.]{\acs{ORFF}
+        equivalence theorem with overfitting.}
+        \label{fig:representer2}
+    \end{figure}
+\end{landscape}}
+
 
 %----------------------------------------------------------------------------------------
 \section{Solving ORFF-based regression}\label{subsec:gradient_methods}
 % We illustrate the ORFF representer theorem (\cref{cr:orff_representer}) on
 % two experiment involving scalar valued kernels.
-In order to find a solution to \cref{eq:argmin_theta}, we first turn our attention to
-gradient descent methods. In the following we let
+In order to find a solution to \cref{eq:argmin_theta}, we first turn our
+attention to gradient descent methods. In the following we let
 \begin{dmath}
     \label{eq:cost_functional} J_{\lambda}(\theta) =
     \frac{1}{N}\sum_{i=1}^Nc\left(\tildePhi{\omega}(x_i)^\adjoint \theta,
@@ -743,36 +792,6 @@ $r=2Dp$. This Means that learning vector-valued function has increased the
 (expected) complexity from $p$ to $p^3$. However in some cases we can
 drastically reduce the complexity by viewing the feature-maps as linear
 operators rather than matrices.
-
-\begin{pycode}[representer]
-sys.path.append('./src/')
-import representer
-
-err = representer.main()
-\end{pycode}
-
-\begin{pycode}[representer2]
-sys.path.append('./src/')
-import representer2
-
-err = representer2.main()
-\end{pycode}
-
-\afterpage{%
-\begin{landscape}
-    \begin{figure}[tb]
-        \pyc{print(r'\centering\resizebox{\textheight}{!}{\input{./representer.pgf}}')}
-        \caption[\acs{ORFF} equivalence theorem.]{ORFF equivalence theorem.}
-        \label{fig:representer}
-    \end{figure}
-    \clearpage
-    \begin{figure}[tb]
-        \pyc{print(r'\centering\resizebox{\textheight}{!}{\input{./representer2.pgf}}')}
-        \caption[\acs{ORFF} equivalence theorem with overfitting.]{ORFF
-        equivalence theorem with overfitting.}
-        \label{fig:representer}
-    \end{figure}
-\end{landscape}}
 
 \section{Efficient learning with ORFF}
 When developping \cref{alg:close_form} we considered that the feature map

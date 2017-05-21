@@ -84,6 +84,8 @@ file(REMOVE_RECURSE
   "../bin/Parts/Introduction/Background.tex.aux"
   "../bin/Parts/Introduction/Motivations.aux"
   "../bin/Parts/Introduction/Motivations.tex.aux"
+  "../bin/Parts/Introduction/old-stuff-motivation.aux"
+  "../bin/Parts/Introduction/old-stuff-motivation.tex.aux"
   "../bin/Parts/Introduction/Outline.aux"
   "../bin/Parts/Introduction/Outline.tex.aux"
   "../bin/Parts/Introduction/rff.aux"

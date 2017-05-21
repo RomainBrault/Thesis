@@ -38,33 +38,36 @@ deep architectures \citep{lu2014scale, dai2014scalable, yang2015deep}.
 In this introductory chapter we recall some elements of the statistical
 learning theory started by \citet{Vapnik1998}. Then we recall kernel methods
 \citep{Aronszajn1950} which are used to construct spaces of
-\emph{scalar-valued"} function (called RKHS) that are used model and learn non
-linear dependencies from the data. We finish by a litterature review on
-large-scale implementation of kernel methods based on random Fourier features
-\citep{Rahimi2007} and the Nystr\"om method \citep{Williams2000-nystrom}.
-
+\emph{scalar-valued} functions (called \acs{RKHS}) that are used model and
+learn non linear dependencies from the data. We finish by a litterature review
+on large-scale implementation of kernel methods based on random Fourier
+features \citep{Rahimi2007} and the Nystr\"om method
+\citep{Williams2000-nystrom}.
+\paragraph{}
 \textbf{Chapter 3.}
 In this chapter, to conclude the introduction, we introduce briefly the
 mathematical tools used throughout this manuscript. We give a full table of
 notations, and present elements of functional analysis
 \citep{kurdila2006convex} and abstract hamonic analysis
-\citep{folland1994course}. Then we turn our attention to the case when the
+\citep{folland1994course}. Then we turn our attention to the case where the
 functions we want to learn are not real-valued, but vector-valued.  To learn
 vector-valued functions we define \aclp{OVK} \citep{Micchelli2005, Carmeli2010}
 that generalize the scalar-valued kernel presented in \cref{ch:motivations}. We
 conclude by giving a non-exhaustive list of \aclp{OVK} and in which context
 they have been used.
 
+\paragraph{}
 \textbf{Chapter 4.}
 In this first contribution chapter we present a generalization of the \acs{RFF}
 framework introduced in \cref{ch:motivations} \citep{brault2016random}. This is
 based on an operator-valued Bochner theorem proposed by \citet{Carmeli2010}. We
-use this theorem to contruct an \acf{ORFF} from an \acs{OVK}. Conversely we
-also show that it is possible to construct an \acs{ORFF} from the
+use this theorem to show how to contruct an \acf{ORFF} from an \acs{OVK}.
+Conversely we also show that it is possible to construct an \acs{ORFF} from the
 regularization properties it induces rather than from an \acs{OVK}. We give
 various examples of \acs{ORFF} maps such as an \acs{ORFF} map for the
 decomposable kernel, the curl-free kernel and the divergence-free kernel.
 
+\paragraph{}
 \textbf{Chapter 5.} 
 In this contribution chapter we refine the bound on the \ac{OVK} approximation
 with \ac{ORFF} we first proposed in \cite{brault2016random} and presented in
@@ -74,6 +77,7 @@ with \ac{ORFF} we first proposed in \cite{brault2016random} and presented in
 koltchinskii2013remark}. As a Bernstein bound it depends on the variance of the
 estimator for which we derive an \say{upper bound}.
 
+\paragraph{}
 \textbf{Chapter 6.}
 This contribution chapter focus on explaining how to define an efficient
 implemenation and algorithm to train an \acs{ORFF} model. First we recall
@@ -86,14 +90,16 @@ We conclude by showing how viewing \acsp{ORFF} as linear operators rather than
 matrices yields a more efficient implementation and finish with some numerical
 applications on toy and real-world datasets.
 
+\paragraph{}
 \textbf{Chapter 7.}
 This contribution chapter deals with a generalization bound for the a
 regression problem with ORFF based on the results of \citet{rahimi2009weighted,
 maurer2016vector}.  We also discuss the case of Ridge regression presented in
 \cref{ch:learning operator-valued_random_fourier_features}.
 
+\paragraph{}
 \textbf{Chapter 8.}
-This contribution chapter shows how to use the \acs{ORFF} methodology to
+This contribution chapter shows how to use the \acs{ORFF} methodology for
 non-linear vector autoregression. It is an instanciation of the \acs{ORFF}
 framework to $\mathcal{X}=\mathcal{Y}=(\mathbb{R}^d, +)$. We also give a
 generalization of a stochastic gradient descent \citep{dai2014scalable} to
@@ -102,15 +108,16 @@ and has been published at a workshop of \acs{ECML}. It is based on the previous
 work \citet{Lim2015} for time series vector autoregression with operator-valued
 kernels \cite{brault2016scaling}.
 
+\paragraph{}
 \textbf{Chapter 9.}
 To conlude our work we present some work in progress. We show practical
 applications of operator-valued kernels acting on an infinite dimensional space
-$\mathcal{Y}$. We give two examples. First how to generalize many quantile
-regression to learn a continuous function of the quantiles on the data. Second
-we apply the same methodology to the one-class SVM algorithm in order to learn
-a continuous function of all the level sets. We conclude by presenting
-Operalib, a python library developped during this thesis which aims at
-implementing \acs{OVK}-based algorithms in the spirit of Scikit-learn
+$\mathcal{Y}$. We give two examples. Firsti we show how to generalize many
+quantile regression to learn a continuous function of the quantiles on the
+data. Second we apply the same methodology to the one-class SVM algorithm in
+order to learn a continuous function of all the level sets. We conclude by
+presenting Operalib, a python library developped during this thesis which aims
+at implementing \acs{OVK}-based algorithms in the spirit of Scikit-learn
 \citep{pedregosa2011scikit}.
 
 

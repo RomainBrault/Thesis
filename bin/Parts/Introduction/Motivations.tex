@@ -6,11 +6,11 @@ We focus on the context of supervised learning. Supervised learning aims at
 building a function that predicts an output from a given input, by exploiting a
 \say{training set} composed of pairs of observed inputs/outputs. Denote
 $\mathcal{X}$, an \emph{input space} and $\mathcal{Y}$, the \emph{output
-space}.  In this chapter, $\mathcal{Y} \subset \mathbb{R}$. When
-$\mathcal{Y}=\{1, \ldots, C:\}$, we talk about \emph{supervised
+space}.  In this chapter, $\mathcal{Y} \subseteq \mathbb{R}$. When
+$\mathcal{Y}=\Set{1, \ldots, C}$, we talk about \emph{supervised
 classification}.  When $\mathcal{Y}=\mathbb{R}$, supervised learning
 corresponds to  usual \emph{regression}. We are given an \acs{iid} sample of
-size $N$, $\seq{s}=\{(x_i, y_i)_{i=1}^N\}$, drawn from a unknown but fixed
+size $N$, $\seq{s}=(x_i, y_i)_{i=1}^N$, drawn from a unknown but fixed
 joint probability law $\probability(X,Y)$. We call {\emph learning algorithm},
 a function $\mathcal{A}$ that takes a class of functions $\mathcal{F}$, a
 training sample $\seq{s}$ and returns a function in $\mathcal{F}$. The learning
@@ -32,7 +32,7 @@ input $x$.
 The goal of supervised learning is to find a function $f \in \mathcal{F}$ that
 minimizes the following criteria, called the true risk associated to $L$:
 \begin{equation}\label{eq:true-risk}
-    \mathcal{R}(f)=\expectation_{\probability}[L(X,f,Y)],
+    \risk{f}=\expectation_{\probability}[L(X,f,Y)],
 \end{equation}
 using the training dataset. However, this definition comes with an important
 issue: we do not know $\probability(X,Y)$ and thus we cannot compute this risk
@@ -57,7 +57,7 @@ overfitting, \acs{ie} being too much adapted to the training data and having a
 poor behavior on new unseen data.
 \paragraph{}
 Generalization error bounds, first introduced by the seminal work of
-\citet{Vapnik1992principles} in the contexte os supervised binary
+\citet{vapnik1992principles} in the contexte os supervised binary
 classification and then largely studied in wider contexts (see for instance,
 \citet{Mohri2012}) , provide a tool to understand how the difference between the
 true risk and the empirical risk behave given $N$ the size of the sample used
@@ -117,8 +117,7 @@ data). This can be illustrated by an intuitive example adapted from
     between the empirical risk and the true risk is controlled because the bound
     does not depend on a single fixed model, but on the whole class of
     functions. In this case if there are too many random monkey, $C(\delta,
-    \seq{s}, L, \mathcal{F})$ will blow-up, giving a poor generalization
-    property.
+    N, d)$ will blow-up, resulting in a poor generalization property.
 \end{example}
 \paragraph{}
 A slightly stronger requirement is the {\emph consistency} of learning algorithm.
@@ -241,10 +240,11 @@ risk.
     circles.}
     \label{fig:nested_circle}
 \end{figure}
-The idea of kernel methods \citep{KIMELDORF1971,boser1992training} is to
-consider a subset of the set of all functions, namely a Reproducing Kernel
-Hilbert Space (\acl{RKHS}), associated to a well chosen positive definite and
-symmetric function (\emph{a kernel}).
+The idea of kernel methods
+\citep{Aronszajn1950,KIMELDORF1971,boser1992training,
+Berlinet2003,Shawe-TaylorBook} is to work in a subset of the set of all
+functions, namely a Reproducing Kernel Hilbert Space (\acl{RKHS}), associated
+to a well chosen positive definite and symmetric function (\emph{a kernel}).
 
 \paragraph{}
 \begin{definition}[Symmetric Positive Definite kernels]
@@ -264,9 +264,9 @@ The following proposition gives sufficient conditions to get a SPSD matrix:
 \begin{proposition}[\acs{SPSD} matrix]
     $K$ is SPSD if it is symmetric and one of the following conditions holds:
     \begin{itemize}
-        \item The eigenvalues of $K$ are non-negative
-        \item for any colunn vector $c= (c_1, \ldots, c_N)^\transpose \in
-        \mathcal{M}_{1, N}(\mathbb{R})$, 
+        \item The eigenvalues of $\mathbf{K}$ are non-negative
+        \item for any column vector $c= (c_1, \ldots, c_N)^\transpose \in
+        \mathcal{M}_{N, 1}(\mathbb{R})$, 
         \begin{dmath*}
             c^\transpose\mathbf{K}c=\sum_{i,j=1}^N c_ic_jK(x_i,x_i)
             \hiderel{\geq} 0.
@@ -315,7 +315,6 @@ the PDS kernels.
     and $\mathcal{H}= \mathcal{H}_k$.  However there might exist several pairs
     of feature maps and features spaces for a given kernel $k$.
 \end{remark}
-
 \subsubsection{Learning in Reproducing Kernel Hilbert Spaces}
 Now, back to learning and minimizing the empirical risk, a fair question is
 how do I find a function in an infinite dimensional set $\mathcal{H}_k$ in 
@@ -423,14 +422,17 @@ have a sufficiently good approximation with $\dim(\mathcal{H}) \ll
 N$\footnote{When $\dim(\mathcal{H}) \ge N$ then is it is better to use the
 kernel algorithm than the feature algorithm. This is called the kernel trick.}?
 
-\subsection{Random Fourier Features, Nystr\"om method and others}
-In this subsection we answer the question whether it is possible to construct
-feature maps from a given kernel, that approximate a given kernel $k$, such the
-the dimension of the space $\mathcal{H} < \infty$. We start with the seminal
-work of \citet{Rahimi2007} who show that given a continuous shift-invariant
-kernel ($\forall x, z, t \in \mathcal{X}$, $k(x + t, z + t) = k(x, z)$), it is
-possible to obtain a feature map called \acs{RFF} that approximate the given
-kernel.
+\subsection{Towards large scale learning with kernels}
+Motivated by large scale applications, different methodologies have been
+proposed to approximate kernels and feature maps. This subsection briefly
+reminds the main approaches based on  Random Fourier Features and Nystr\"om
+techniques. Notice that another line of research concerns online learning
+method such as \acs{NORMA} developed in \cite{kivinen2004online}, later
+extended to the operator-valued kernel case by \cite{audiffren2013online}.  We
+start with the seminal work of \citet{Rahimi2007} who show that given a
+continuous shift-invariant kernel ($\forall x, z, t \in \mathcal{X}$, $k(x + t,
+z + t) = k(x, z)$), it is possible to obtain a feature map called \acs{RFF}
+that approximate the given kernel.
 \subsubsection{Random Fourier Feature maps}
 Random Fourier Feature methodology introduced  by \citet{Rahimi2007} provides a
 way to scale up kernel methods when kernels are Mercer and
@@ -577,7 +579,7 @@ rank approximation of the Gram matrix $\mathbf{K}$.
 \subsubsection{Random features vs Nystr\"om method}
 The main conceptual difference between the Nystr\"om features and the \acl{RFF}
 is that the Nystr\"om construction is data dependent, while the \acs{RFF} is
-not. The advantage of random fourier feature lies in their fast construction.
+not. The advantage of random Fourier feature lies in their fast construction.
 For $N$ data in $\mathbb{R}^d$, it costs $O(NDd)$ to featurize all the data.
 For the Nystr\"om features it costs $O(M^2(M + d)$. Moreover if one desire to
 add a new feature, the \acs{RFF} methodology is as simple as drawing a new
@@ -608,7 +610,7 @@ generalization. On the other hand \citet{rahimi2009weighted} reported that the
 generalization performance of \acs{RFF} learning is $O(N^{-1/2} + D^{-1/2})$,
 which indicates that $D=O(N)$ features should be sampled to generalize well.
 As a result the complexity of learning with the \acs{RFF} seems not to
-deacrease. However the bounds of \citet{rahimi2009weighted} are suboptimal and
+decrease. However the bounds of \citet{rahimi2009weighted} are suboptimal and
 very recently (end of 2016) \citet{rudi2016generalization} proved that in the
 case of ridge regression (\cref{eq:ridge_regression}), the generalization error
 is $O(N^{-1/2} + D^{-1})$ meaning that $D=O(\sqrt{N})$ random features are
@@ -645,10 +647,19 @@ proposed the \say{Fastfood} algorithm to reduce the complexity of computing a
 $O(Dd)$ to $O(D\log(d))$. More recently \citet{felix2016orthogonal} proposed
 also an algorithm \say{SORF} to compute Gaussian \acs{RFF} in $O(D\log(d))$ but
 with better convergence rates than \say{Fastfood} \citep{Le2013}.
-\Citet{mukuta2016kernel} proposed data dependent features (comparable to the
-Nystro\"m method) by estimating the distribution of the input data, and then
-finding the eigenfunction decomposition of Mercer's integral operator
+\Citet{mukuta2016kernel} proposed a data dependent features map (comparable to
+the Nystro\"m method) by estimating the distribution of the input data, and
+then finding the eigenfunction decomposition of Mercer's integral operator
 associated to the kernel.
+\paragraph{}
+\Citet{li2010random} generalized the original \acs{RFF} of \citet{Rahimi2007}.
+Instead of computing feature maps for shift-invariant kernels on the additive
+group $(\mathbb{R}^d, +)$, they used the generalized Fourier transform on any
+locally compact abelian group to derive random features on the multiplicative
+group $(\mathbb{R}^d, *)$. In the same spirit \citet{yang2014random} noticed
+that an theorem equivalent to Bochner's theorem exists on the semi-group
+$(\mathbb{R}_+^d, +)$. From this they derived \say{Random Laplace} features and
+used them to approximate kernels adapted to learn on histograms.
 \paragraph{}
 In the context of large scale learning and deep learning, \citet{lu2014scale}
 showed that \acsp{RFF} can achieve performances comparable to deep-learning
@@ -663,12 +674,16 @@ convolutional neural network \citep{lecun1995convolutional} by the
 \paragraph{}
 Eventually \citet{Yang2015} introduced the algorithm \say{\`A la Carte}, based
 on \say{Fastfood} which is able to learn the spectral distribution
-corresponding to a kernel rather than defining it from the kernel. Among the
-large-scale learning methods with kernel, but not using random features we
-mention the algorithm \say{NORMA} by \citet{kivinen2004online} (to be compared
-to the \say{Doubly stochastic gradient descent}) and \say{Pegasos} by
-\citet{shalev2007pegasos} and \say{SMO} by \citet{platt199912} for kernel
-\acs{SVM} learning.
+%<<<<<<< HEAD
+%corresponding to a kernel rather than defining it from the kernel. Among the
+%large-scale learning methods with kernel, but not using random features we
+%mention the algorithm \say{NORMA} by \citet{kivinen2004online} (to be compared
+%to the \say{Doubly stochastic gradient descent}) and \say{Pegasos} by
+%\citet{shalev2007pegasos} and \say{SMO} by \citet{platt199912} for kernel
+%\acs{SVM} learning.
+%=======
+corresponding to a kernel rather than defining it from the kernel.
+%>>>>>>> 9b5b5ea96fbb45de714e68edd2b96f14a62f3e01
 % A la carte
 %reported
 %performance comparable with deep learn- ing by combining multiple kernel

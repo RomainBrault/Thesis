@@ -474,6 +474,32 @@
       \range{pages}{36}
       \keyw{ovks}
     \endentry
+    \entry{Berlinet2003}{book}{}
+      \name{author}{2}{}{%
+        {{hash=dd7c02acafacd7b1825d92d3c520b4c6}{%
+           family={Berlinet},
+           family_i={B\bibinitperiod},
+           given={A.},
+           given_i={A\bibinitperiod}}}%
+        {{hash=4513eaa70ba7094b6d2c13477da4bb71}{%
+           family={Thomas-Agnan},
+           family_i={T\bibinithyphendelim A\bibinitperiod},
+           given={C.},
+           given_i={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{7721dbac3a08b5c374ecfa5c2ce7de3f}
+      \strng{fullhash}{7721dbac3a08b5c374ecfa5c2ce7de3f}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Reproducing Kernel Hilbert Spaces in Probability and Statistics}
+      \field{year}{2003}
+      \keyw{ovks}
+    \endentry
     \entry{Biau2008}{article}{}
       \name{author}{3}{}{%
         {{hash=0e474f42f31ad06e86a3e165f5ed5c87}{%
@@ -712,7 +738,7 @@
       \field{booktitle}{Société Francaise des Statistiques}
       \field{title}{Borne sur l'approximation de noyaux à valeurs opérateurs à l'aide de transformées de Fourier}
       \field{year}{2016}
-      \keyw{ownpubs}
+      \keyw{ownpubs-talk}
     \endentry
     \entry{brault2016random}{inproceedings}{}
       \name{author}{3}{}{%
@@ -774,7 +800,7 @@
       \field{year}{2016}
       \field{pages}{3}
       \range{pages}{1}
-      \keyw{ownpubs}
+      \keyw{ownpubs-workshop}
     \endentry
     \entry{brefeld2006efficient}{inproceedings}{}
       \name{author}{4}{}{%
@@ -1923,7 +1949,7 @@
       \field{journaltitle}{arXiv preprint arXiv:1611.01971}
       \field{title}{One Class Splitting Criteria for Random Forests}
       \field{year}{2016}
-      \keyw{ownpubs}
+      \keyw{ownpubs-review}
     \endentry
     \entry{gorniewicz1999topological}{book}{}
       \name{author}{1}{}{%
@@ -3671,27 +3697,6 @@
       \range{pages}{28}
       \keyw{ovks}
     \endentry
-    \entry{platt199912}{article}{}
-      \name{author}{1}{}{%
-        {{hash=f8bbfb70aa80f7cabfa2fb7d91cb7dbb}{%
-           family={Platt},
-           family_i={P\bibinitperiod},
-           given={John\bibnamedelima C},
-           given_i={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-      }
-      \strng{namehash}{f8bbfb70aa80f7cabfa2fb7d91cb7dbb}
-      \strng{fullhash}{f8bbfb70aa80f7cabfa2fb7d91cb7dbb}
-      \field{sortinit}{P}
-      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Advances in kernel methods}
-      \field{title}{12 fast training of support vector machines using sequential minimal optimization}
-      \field{year}{1999}
-      \field{pages}{185\bibrangedash 208}
-      \range{pages}{24}
-      \keyw{ovks}
-    \endentry
     \entry{Polonik97}{article}{}
       \name{author}{1}{}{%
         {{hash=1b9432026a7bc0679a217b1976bcf451}{%
@@ -4172,40 +4177,6 @@
       \range{pages}{6}
       \keyw{ovks}
     \endentry
-    \entry{shalev2007pegasos}{inproceedings}{}
-      \name{author}{3}{}{%
-        {{hash=a6c5827676b0a2058e5b904c3dd7f878}{%
-           family={Shalev-Shwartz},
-           family_i={S\bibinithyphendelim S\bibinitperiod},
-           given={Shai},
-           given_i={S\bibinitperiod}}}%
-        {{hash=300d4990e626d975e0c28630444f63c3}{%
-           family={Singer},
-           family_i={S\bibinitperiod},
-           given={Yoram},
-           given_i={Y\bibinitperiod}}}%
-        {{hash=4a4fc057d8331655775a21a8994f3339}{%
-           family={Srebro},
-           family_i={S\bibinitperiod},
-           given={Nathan},
-           given_i={N\bibinitperiod}}}%
-      }
-      \list{organization}{1}{%
-        {ACM}%
-      }
-      \strng{namehash}{f3684e161060802da922f674fb84a6b7}
-      \strng{fullhash}{f3684e161060802da922f674fb84a6b7}
-      \field{sortinit}{S}
-      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the 24th international conference on Machine learning}
-      \field{title}{Pegasos: Primal estimated sub-gradient solver for svm}
-      \field{year}{2007}
-      \field{pages}{807\bibrangedash 814}
-      \range{pages}{8}
-      \keyw{ovks}
-    \endentry
     \entry{Shannon2001}{article}{}
       \name{author}{1}{}{%
         {{hash=cea611271dfb4b16522bf8178e289090}{%
@@ -4224,6 +4195,32 @@
       \field{title}{A mathematical theory of communication}
       \field{year}{2001}
       \keyw{extrems}
+    \endentry
+    \entry{Shawe-TaylorBook}{book}{}
+      \name{author}{2}{}{%
+        {{hash=41c35739cccb06bf15bdcfa8fee0065c}{%
+           family={Shawe-Taylor},
+           family_i={S\bibinithyphendelim T\bibinitperiod},
+           given={J.},
+           given_i={J\bibinitperiod}}}%
+        {{hash=61ac58cbc14af7ece22cdd59b51886f0}{%
+           family={Cristianini},
+           family_i={C\bibinitperiod},
+           given={N.},
+           given_i={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge press}%
+      }
+      \strng{namehash}{d72709ef95ecfab441a2f719a4fb8ce1}
+      \strng{fullhash}{d72709ef95ecfab441a2f719a4fb8ce1}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Kernel Methods for Pattern Analysis}
+      \field{year}{2004}
+      \keyw{ovks}
     \endentry
     \entry{Shawe2004}{book}{}
       \name{author}{2}{}{%
@@ -5469,7 +5466,6 @@
       \keyw{ovks}
     \endentry
   \endsortlist
-  \missing{Vapnik1992principles}
 \endrefsection
 \endinput
 

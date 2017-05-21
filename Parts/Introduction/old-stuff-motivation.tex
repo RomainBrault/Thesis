@@ -1,0 +1,48 @@
+
+ the set of all function belonging to
+a Hilbert space such that the evaluation of the function at $x$ is bounded for
+all
+$x\in\mathcal{X}$.
+\begin{dmath*}
+    \mathcal{F}_{\text{b.~eval.}} = \Set{f | \abs{f(x)} \le
+    C(x)\norm{f}_{\mathcal{H}} \le \infty, \enskip \forall f\in\mathcal{H},
+    \forall x \in\mathcal{X}, \enskip C(x)\in\mathbb{R}_+ }.
+\end{dmath*}
+With this hypothesis it is legitimate to construct an evaluation operator for
+all $x\in\mathcal{X}$ which is bounded.
+\begin{dmath*}
+    \text{ev}_x : 
+    \begin{cases}
+        \mathcal{F}_{\text{b.~eval.}}  & \to \mathbb{R} \\
+        f & \mapsto f(x).
+    \end{cases}
+\end{dmath*}
+From this evaluation operator, since $\mathcal{F}_{\text{b.~eval.}}$ is a
+subspace of a Hilbert space by Riesz representation theorem, it is possible to
+find a function $k_x$ of $\mathcal{F}$ such that
+\begin{dmath*}
+    f(x) = \text{ev}_x f \hiderel{=} \inner{k_x,
+    f}_{\mathcal{F}_{\text{b.~eval.}}}.
+\end{dmath*}
+Then we can define a function $k(x, z) \colonequals \inner{k_x,
+k_z}_{\mathcal{F}_{\text{b.~eval.}}}=\conj{k_x(z)}$ and we have $f(x) =
+\inner{k(\cdot, x), f}_{\mathcal{F}_{\text{b.~eval.}}}$. We call such functions
+$k$ reproducing kernel because they reproduces the value of any function of the
+space $\mathcal{F}_{\text{b.~eval.}}$ at any point $x\in\mathcal{X}$. We call
+the Hilbert space of function with locally bounded evaluation maps a \acf{RKHS}
+and we note $\mathcal{F}_{\text{b.~eval.}} =\mathcal{H}_k$. Moreover notice
+that the function $k$ is by construction symmetric and positive definite.
+%%
+defining an appropriate feature map.
+\begin{theorem}[\citet{Aronszajn1950}]
+    Given $\phi: \mathcal{X} \to \mathcal{H}$ a function that maps a space
+    $\mathcal{X}$ to a Hilbert space $\mathcal{H}$. Then
+    $k(x,z)=\inner{\phi(x), \phi(z)}_{\mathcal{H}}$ is a positive definite
+    kernel.
+    \paragraph{}
+    Given $k$ a positive definite kernel then there exist infinitely many
+    functions $\phi: \mathcal{X} \to \mathcal{H}$ that map a space
+    $\mathcal{X}$ to some Hilbert space $\mathcal{H}$ such that
+    $\inner{\phi(x), \phi(z)}_{\mathcal{H}}=k(x,z)$. We call the function
+    $\phi$ a feature map.
+\end{theorem}

@@ -2,67 +2,66 @@
 
 \section{About statistical learning}
 \label{sec:about_statistical_learning}
-We place ourself in the context of supervised learning. In this context we
-suppose we are given a sequence of experiments composed of events and their
-respective outcome. We note $x_i\in\mathcal{X}$ the $i$-th event and
-$y_i\in\mathcal{Y}$ its respective outcome and we suppose that an experiment
-$(x_i, y_i)$ occurs with probability $\probability(x_i, y_i)$. We call the
-sequence of all the experiments available \say{training data} and a realization
-of an experiment is refered to as data and is noted $\seq{s}=(x_i,
-y_i)_{i=1}^N$ where $N$ is the number of data. To simplify the problem further
-we suppose that all the events follow the same probability distribution and
-each experiment is idependent from all the others. We say that the experiments
-are \acf{iid}.
+We focus on the context of supervised learning. Supervised learning aims at building a function that predicts an output from a given input, by exploiting a training set composed of pairs of observed inputs/outputs. Denote $\mathcal{X}$, an {\it input space} and $\mathcal{Y}$, the {\it output space}. In this chapter, $\mathcal{Y} \subset \mathbb{R}$. When $\mathcal{Y}=\{1, \ldots, C:\}$, we talk about {\it supervised classification}. When $\mathcal{Y}=\mathbb{R}$, supervised learning  corresponds to  usual {\it regression}. We are given an i.i.d. sample of size $N$, $\seq{s}=\{(x_i,
+y_i)_{i=1}^N\}$, drawn from a unknown but fixed joint probability law $\probability(X,Y)$. We call {\emph learning algorithm}, a function $\mathcal{A}$ that takes a class of functions
+$\mathcal{F}$, a training sample $\seq{s}$ and returns a function in $\mathcal{F}$. The learning algorithm can be studied through many angles, from a computational pint of view to a statistical point of view.
+%function $f_{\seq{s}}$ in $\mathcal{F}$. 
 \paragraph{}
-In machine learning we are often interested in finding the most simple function
-$f$ belonging to a class of function $\mathcal{F}$ that is able to find the
-best the relation between an event $x\in\mathcal{X}$ and an outcome
-$y\in\mathcal{Y}$ from the training data. To do so we suppose we are given a
+Although we have only a limited number of observations, we wish to build a function that captures the relationship between the two random variables $X$ and $Y$. More specifically, we search for a function $f$ in some class of functions, denoted $\mathcal{F}$ and called the {\it hypotheses class} such that $f$ make good predictions for the pair $(X,Y)$ distributed according $\probability(X,Y)$. To convert this abstract goal into a mathematical definition, we define a local
 loss function $L:\mathcal{X}\times\mathcal{F}\times\mathcal{Y} \to
 \mathbb{R}_+$ that evaluates the capacity of a function $f$ to predict the
-outcome $y$ from an event $x$. 
-%A learning algorithm is a function $\seq{s}, L,
-%\mathcal{F} \mapsto f_{\seq{s}}$ is a function that takes as an imput some
-%training data $\seq{s}$, a loss function $L$ and a class of function
-%$\mathcal{F}$ and return a function $f_{\seq{s}}$ that minimize a criterion.
-In statistical learning the goal is often to find the model that minimize the
-average loss over all the training samples. This aforemention quantity is
-called empirical risk.
+outcome $y$ from an input $x$.
+
+The goal of supervised learning is to find a function $f \in \mathcal{F}$ that minimizes the following criteria, called the true risk associated to $L$:
+\begin{equation}\label{eq:true-risk}
+\mathcal{R}(f)=\expectation_{\probability}[L(X,f,Y)],
+\end{equation}
+using the training dataset.
+
+However, this definition comes with an important issue: we do not know $\probability(X,Y)$ and thus we cannot compute this risk nor minimize it.
+A first proposition is to replace this true risk by its empirical counterpart, the {\it empirical risk}, i.e. the empirical mean of the loss computed on the training set:
 \begin{dmath*}
     \riskemp{f, \seq{s}} \frac{1}{N}\sum_{i=1}^N L(x_i, f, y_i)
 \end{dmath*}
-Since the training data are \acs{iid} the celebrated strong law of large
-numbers tells us that for any given function $f$ in $\mathcal{F}$ converges
-almost surely to a quantity called true risk (or simply risk).
-\begin{dmath*}
-    \risk{f} = \int_{\mathcal{X}\times\mathcal{Y}} L(x, f, y)
-    d\probability(x, y)
-\end{dmath*}
-Intuitively the empirical risk measure the performances of a model on the
+Since the training data are \acs{iid}, the celebrated strong law of large
+numbers tells us that for any given function $f$ in $\mathcal{F}$, the {\it empirical risk} converges
+almost surely to the true risk .\\
+Intuitively the empirical risk measure the performance of a model on the
 training data, while the risk measure the performances of a model with respect
 to all the possible experiments (event the one not present in the training
-set).
-\paragraph{}
-We call learning algorithm a function $S$ that takes a class of function
-$\mathcal{F}$, a loss $L$ and some training data $\seq{s}$ and return a
-function $f_{\seq{s}}$ in $\mathcal{F}$. Although the convergence of
+set). Although the convergence of
 the empirical risk to the true risk is guaranteed by the strong law of large
-number, we usually require that a learning algorithm generalizes well. That is
-the empirical risk must converges to the true risk uniformly for all
-$f_{\seq{s}}$ returned by a learning algorithm. In other words we want 
-that given a class of function $\mathcal{F}$ and a loss $L$, the bound
+number, for a given value of $N$, the function produced by minimization of the empirical risk may suffer from overfitting, .e. being too much adapted to the training set and having a poor behavior on new data.
+
+
+
+
+\paragraph{}
+
+Generalization error bounds, first introduced by the seminal work of Vapnik \cite{Vapnik1992principles} in the contexte os supervised binary classification and then largely studied in wider contexts (see for instance, \cite{Mohri2012}) , provide a tool to understand how the difference between the true risk and the empirical risk behave given $N$ the size of the sample used to compute the empirical risk and $d$, a measure of the capacity the hypothesis class. These bounds usually take the following form:\\
+For any $\delta > 0$, with probability $1 - \delta$, the following holds for any function $f$ \in \mathcal{F}$ of capacity $d$:
 \begin{dmath*}
+    \risk{f} \le \riskemp{f,\seq{s}} + C(\delta, N,d)
+\end{dmath*}
+Especially for the function of interest $f_{\seq{s}}$, we have 
+\begin{dmath*}
+<<<<<<< HEAD
     \risk{f_{\seq{s}}} \le \riskemp{f_{\seq{s}}, \seq{s}} + C(\delta, \seq{s},
     L, \set{f_{\seq{s}}}\hiderel{\subseteq}\mathcal{F})
+=======
+    \risk{f} \le \riskemp{f_{\seq{s},\seq{s}} + C(\delta, N,d), 
+>>>>>>> 68a8c8187614fe541360c89c36b8192178611905
 \end{dmath*}
-holds with probability $1-\delta$, for all $\delta\in(0, 1)$ and $C(\delta,
-\seq{s}, \mathcal{F}) \to 0$ when the number of training data $N$ in $\seq{s}$
-goes to infinity. This type of bound
+which suggest to control the complexity of the hypothesis class while minimizing the empirical risk.\\
+
+Most of the approches in machine learning, and specifically in supervised learning, are based on regularizing approaches: in this case, learning algorithms minimize the empirical loss while controlling a penality term on the model $f$. In \cr{subsec:kernels}, we will chose an hypothesis class as an Hilbert space where the penalty can be expresses as the $\ell_2$ norm in this Hilbert space.
+
+
 \paragraph{}
-There is a crutial difference between the strong law of large numbers and the
+There is a crucial difference between the strong law of large numbers and the
 generalization property of a learning algorithm. The strong law of large number
 holds \emph{after} a model $f$ has been selected and fixed in $\mathcal{F}$.
-Thus minimizing the empirical risk doesn't yield \emph{ipso facto} a model that
+Thus minimizing the empirical risk does not yield \emph{ipso facto} a model that
 minimize the true risk (which measure the adequation of the model on unseen
 data). This can be illustrated by an intuitive example adapted from
 \citet[page 64]{cornuejols2011apprentissage} and the infinite monkey theorem.
@@ -89,22 +88,23 @@ data). This can be illustrated by an intuitive example adapted from
     to the future performance (minimizing the true risk).
     \paragraph{}
     On the contrary the generalization property ensure that the difference
-    between the empirical risk and the true risk is controled because the bound
+    between the empirical risk and the true risk is controlled because the bound
     does not depend on a single fixed model, but on the whole class of
     functions. In this case if there are too many random monkey, $C(\delta,
     \seq{s}, L, \mathcal{F})$ will blow-up, giving a poor generalization
     property.
 \end{example}
 \paragraph{}
-A slightly stronger requirement is the consistency of learning algorithm.
+A slightly stronger requirement is the {\emph consistency} of learning algorithm.
 Given a loss function $L$ and a class of function $\mathcal{F}$ there exists an
 optimal solution that minimizes the true risk.
 \begin{dmath*}
     f_* = \argmin_{f\in\mathcal{F}} \risk{f}.
 \end{dmath*}
 The excess risk is defined as the difference between the empirical risk of a
-model returned by a learning algorithm and $f_*$. A learning is said to be
+model returned by a learning algorithm and $f_*$. A learning algorithm is said to be
 consistent when it is possible to bound the excess risk uniformly over all
+<<<<<<< HEAD
 the solutions returned by a learning algorithm. In other words we look for a
 bound such that given a class of function $\mathcal{F}$ and a loss $L$,
 \begin{dmath*}
@@ -148,9 +148,48 @@ For regression, a common choice is the least square loss
 \end{dmath*}
 In the next section we discuss the choice of the class of functions
 $\mathcal{F}$.
+=======
+the solutions returned by a learning algorithm. 
+
+%\paragraph{}
+%To identify the best model in $\mathcal{F}$ an intuitive loss function would be
+%the $0-1$ loss defined as
+%\begin{dmath*}
+  %  L(x, f, y) =
+%    \begin{cases}
+ %       1 & \text{if } yf(x) \le 0 \\
+  %      0 & \text{otherwise}.
+%    \end{cases}
+%\end{dmath*}
+%This loss returns $0$ if the model $f(x)$ and $y$ have the same sign and $1$
+%otherwise. In this simple setting \citet{hoffgen1995robust} showed that finding
+%an approximate to the empirical risk minimization with the $0-1$ loss is
+%NP-Hard. However by \say{relaxing} a loss such that it becomes a convex in
+%$f(x)$ functions yields a convex optimization problem which can then be solved
+%in polynomial time. For instance, a convex surrogate of the $0-1$ loss is the
+%Hinge loss
+%\begin{dmath*}
+ %   L(x, f, y) =
+%    \begin{cases}
+%        f(x) & \text{if } (2y-1)f(x) \le 0 \\
+ %       0 & \text{otherwise}.
+ %   \end{cases}
+%\end{dmath*}
+%or the logistic loss
+%\begin{dmath*}
+ %   L(x, f, y) = \frac{1}{\ln(2)} \ln(1 + \exp(-yf(x)))
+%\end{dmath*}.
+%For regression, a common choice is the least square loss
+%\begin{dmath*}
+%    L(x, f, y) = \frac{1}{2}(f(x) - y)^2
+%\end{dmath*}
+%In the next section we discuss the choice of the class of functions
+%$\mathcal{F}$.
+>>>>>>> 68a8c8187614fe541360c89c36b8192178611905
 
 %------------------------------------------------------------------------------
-\subsection{Introduction to kernel methods}
+\subsection{Introduction to kernel methods}\label{subsec:kernels}
+\subsubsection{Kernels and Reproducing Kernel Hilbert Spaces}
 A fair simple choice for $\mathcal{F}$ is the set of all linear functions where
 we focus on defining learning algorithm picking up the \say{best} function in
 the class
@@ -160,7 +199,7 @@ the class
     \mathbb{R}}.
 \end{dmath*}
 Although this class of function has been well studied and has good
-generalization propertis (as long as the norm of $w$ is not too big), it has a
+generalization properties (as long as the norm of $w$ is not too big), it has a
 rather low capacity.  For instance in $\mathbb{R}^2$ it is impossible to
 separate two nested circle with a line (see \cref{fig:nested_circle}). On the
 other hand if one consider the class of function of all functions $\Set{f |
@@ -175,61 +214,61 @@ risk.
     circles.}
     \label{fig:nested_circle}
 \end{figure}
-The idea of kernel methods \citep{Aronszajn1950} is to consider a clever
-subset of the set of all functions, namely the set of all function belonging to
-a Hilbert space such that the evaluation of the function at $x$ is bounded for
-all
-$x\in\mathcal{X}$.
-\begin{dmath*}
-    \mathcal{F}_{\text{b.~eval.}} = \Set{f | \abs{f(x)} \le
-    C(x)\norm{f}_{\mathcal{H}} \le \infty, \enskip \forall f\in\mathcal{H},
-    \forall x \in\mathcal{X}, \enskip C(x)\in\mathbb{R}_+ }.
-\end{dmath*}
-With this hypothesis it is legitimate to construct an evaluation operator for
-all $x\in\mathcal{X}$ which is bounded.
-\begin{dmath*}
-    \text{ev}_x : 
-    \begin{cases}
-        \mathcal{F}_{\text{b.~eval.}}  & \to \mathbb{R} \\
-        f & \mapsto f(x).
-    \end{cases}
-\end{dmath*}
-From this evaluation operator, since $\mathcal{F}_{\text{b.~eval.}}$ is a
-subspace of a Hilbert space by Riesz representation theorem, it is possible to
-find a function $k_x$ of $\mathcal{F}$ such that
-\begin{dmath*}
-    f(x) = \text{ev}_x f \hiderel{=} \inner{k_x,
-    f}_{\mathcal{F}_{\text{b.~eval.}}}.
-\end{dmath*}
-Then we can define a function $k(x, z) \colonequals \inner{k_x,
-k_z}_{\mathcal{F}_{\text{b.~eval.}}}=\conj{k_x(z)}$ and we have $f(x) =
-\inner{k(\cdot, x), f}_{\mathcal{F}_{\text{b.~eval.}}}$. We call such functions
-$k$ reproducing kernel because they reproduces the value of any function of the
-space $\mathcal{F}_{\text{b.~eval.}}$ at any point $x\in\mathcal{X}$. We call
-the Hilbert space of function with locally bounded evaluation maps a \acf{RKHS}
-and we note $\mathcal{F}_{\text{b.~eval.}} =\mathcal{H}_k$. Moreover notice
-that the function $k$ is by construction symmetric and positive definite.
+The idea of kernel methods \citep{KIMELDORF1971,Boser1992} is to consider a 
+subset of the set of all functions, namely a Reproducing Kernel Hilbert Space (\acl{RKHS}), associated to a well chosen positive definite and symmetric function ({\it a kernel}).
+
 \paragraph{}
-One of the most important result of the theory of the reproducing kernels is
-the fact that there exists a bijection between the set of positive
-semi-definite functions and and the set of \acl{RKHS}. In other words a
-symmetric positive definite function defines a unique \acs{RKHS} and
-\emph{vice-versa}. Thus we identify positive definite kernels with reproducing
-kernels and \acsp{RKHS}.
+\begin{definition}[Positive Definite Symmetric kernels}
+Let $\bmX$ be a Polish space. A kernel $k:\bmX \times \bmX \to \mathbb{R}$ is said to be  positive definite symmetric (PDS) if for any $\{x_1, \ldots, x_m\} \subseteq \bmX $, the matrix $K=[K(x_i,x_j)]_{ij} \in \mathbb{R}^{m \times m} is symmetric positive semi-definite (SPDS).
+\end{definition}
+The following proposition gives sufficient conditions to get a SPSD matrix:
+\begin{Proposition}[SPSD matrix}
+$K$ is SPSD if it is symmetric and one of the following conditions holds:
+\begin{itemize}
+\item The eigenvalues of $K$ are non-negative
+\item for any colunn vector $c= (c_1, \ldots, c_m)^T \in \mathbb{R}^{m \times 1}$, $c^TKc=\sum_{i,j=1}^m c_ic_jK(x_i,x_i) \geq 0.
+\end{itemize}
+\end{proposition}
+One of the most important property of PDS kernels \cite{Mohri2012} is that a PDS kernel defines a unique \acs{RKHS}. Note that the converse is also true. 
 \begin{theorem}[\citet{Aronszajn1950}]
     Suppose $k$ is a symmetric, positive definite kernel on a set
-    $\mathcal{X}$. Then there is a unique Hilbert space of functions on
-    $\mathcal{X}$ for which $k$ is a reproducing kernel.
+    $\mathcal{X}$. Then there is a unique Hilbert space of functions $\mathcal{H}$ on
+    $\mathcal{X}$ for which $k$ is a reproducing kernel, i.e.
+    \begin{eqnarray}\label{eq:reproducing-prop}
+    \forall x \in \mathcal{X}, k(\cdot, x) \in \mathcal{H} \\
+    \forall h \in \mathcal{H}, \forall x\in \mathcal{X}, h(x)=\inner{h,k(\cdot,x)}_{\mathcal{H}}.
+    \end{eqnarray}
+    $\mathcal{H}$ is called a reproducing kernel Hilbert space (\acl{RKHS}) associated to $k$, and will be denoted, $\mathcal{H}_k$.
 \end{theorem}
+Another way to use Aronszajn's results is to state the feature map property for the PDS kernels.
+\begin{proposition}[Feature map]
+ Suppose $k$ is a symmetric, positive definite kernel on a set
+    $\mathcal{X}$. Then, there exists a Hilbert space $\mathcal{F} and a mapping $\phi$ from \mathcal{X} to $\mathcal{F}$ such that:
+    \begin{equation}
+    \forall x, x' \in \mathcal{X}, k(x,x')=\inner{\phi(x),\phi(x')}.
+    \end{equation}
+    The mapping $\phi$ is called a {\it feature map} and $\mathcal{F}$, a feature space.
+    \end{proposition}
+    \begin{remark}
+    Aronszajn's theorem tells us that there always exists at least one feature map, the so-called {\it canonical feature map} and the feature space associate, the \acl{RKHS} $\mathcal{H}_k$:: 
+    \begin{eqnarray*}
+    \phi_{canonical}(x)= k(\cdot, x)\\
+    \mathcal{F}= \mathcal{H}_k
+    \end{eqnarray*}
+    However there might exist several pairs of feature maps and features spaces for a given kernel $k$.
+    \end{remark}
+    
+ \subsubsection{Learning in Reproducing Kernel Hilbert Spaces}
+
 Now, back to learning and minimizing the empirical risk, a fair question is
-how do I find a function in an infinite dimensional set $\mathcal{H}_K$ in 
+how do I find a function in an infinite dimensional set $\mathcal{H}_k$ in 
 polynomial time? The answer comes from the regularization and interpolation
 theory. To limit the size of the space in which we search of the function
 minimizing the empirical risk we add a regularization term to the empirical
 risk.
 \begin{dmath*}
     \mathcal{J}_{\lambda}(f) = \frac{1}{N} \sum_{i=1}^N L\left(x_i, f,
-    y_i\right) + \frac{\lambda}{2}\norm{f}_{\mathcal{H}_K}^2
+    y_i\right) + \frac{\lambda}{2}\norm{f}_{\mathcal{H}_k}^2
 \end{dmath*}
 and we minimize $J_{\lambda}$ instead of $\mathfrak{R}_{\text{emp}}$. Then
 the representer theorem (also called minimal norm interpolation theorem) states
@@ -237,7 +276,7 @@ the following.
 \begin{theorem}[Representer theorem, \citet{Wahba90}]
     If $f_{\seq{s}}$ is a solution of
     \begin{dmath*}
-        \argmin_{f\in\mathcal{H}_K} J_{\lambda}(f),
+        \argmin_{f\in\mathcal{H}_k} J_{\lambda}(f),
     \end{dmath*}
     where $\lambda > 0$ then $f_{\seq{s}}=\sum_{i=1}^N k(\cdot, x_i) \alpha_i$.
 \end{theorem}
@@ -247,9 +286,9 @@ $\mathbf{K}=(k(x_i, x_k))_{i, k = 1}^N$. Then we can rewrite
     \mathcal{J}_{\lambda}(\alpha) = \frac{1}{N} \sum_{i=1}^N L(x_i, \alpha,
     y_i) + \lambda \inner{\alpha, \mathbf{K}\alpha}_2 / 2
 \end{dmath*}
-where $f(x_i) = (K\alpha)_i$ for any $x_i \in \seq{s}$. If we suppose that $L$
+where $f(x_i) = (\mathbf{K}\alpha)_i$ for any $x_i \in \seq{s}$. If we suppose that $L$
 is convex in $f(x)$, then it is possible to derive a polynomial time (in $N$)
-algorithm minimizing $\mathcal{J}_{\lambda}$. For intance if we choose
+algorithm minimizing $\mathcal{J}_{\lambda}$. For instance if we choose
 $L$ to be the least square loss, then
 \begin{dmath}
     \label{eq:ridge_regression}
@@ -263,24 +302,11 @@ invertible for any $\lambda > 0$ the unique solution is $\alpha_{\seq{s}} =
 I_N)^{-1}(y_i)_{i=1}^N$. This is an $O\left(N^3\right)$ algorithm.
 \paragraph{}
 Another way of describing positive definite kernels and \acs{RKHS} consists in
-defining an approriate feature map.
-\begin{theorem}[\citet{Aronszajn1950}]
-    Given $\phi: \mathcal{X} \to \mathcal{H}$ a function that maps a space
-    $\mathcal{X}$ to a Hilbert space $\mathcal{H}$. Then
-    $k(x,z)=\inner{\phi(x), \phi(z)}_{\mathcal{H}}$ is a positive definite
-    kernel.
-    \paragraph{}
-    Given $k$ a positive definite kernel then there exist infinitely many
-    functions $\phi: \mathcal{X} \to \mathcal{H}$ that map a space
-    $\mathcal{X}$ to some Hilbert space $\mathcal{H}$ such that
-    $\inner{\phi(x), \phi(z)}_{\mathcal{H}}=k(x,z)$. We call the function
-    $\phi$ a feature map.
-\end{theorem}
-Then any functions in $\mathcal{H}_K$ can be written $f(x)=\inner{\phi(x),
+Then any functions in $\mathcal{H}_k$ can be written $f(x)=\inner{\phi(x),
 \theta}_{\mathcal{H}}$ In a nutshell the function $\phi$ is called feature map
 because it \say{extracts charateristic elements from a vector}. Usually a
 feature map takes a vector in an input space with low dimension and maps it to
-a higher dimensional space. Put it differently, any function in $\mathcal{H}_K$
+a higher dimensional space. Put it differently, any function in $\mathcal{H}_k$
 is the composition of linear functional $\theta^\transpose$ with a non linear
 feature map $\phi$. Thus is the feature map $\phi$ is fixed (which is
 equivalent to fixing the kernel), it is possible to \say{learn} with a linear

@@ -2,7 +2,7 @@
 
 \section{About statistical learning}
 \label{sec:about_statistical_learning}
-We focus on the context of supervised learning. Supervised learning aims at building a function that predicts an output from a given input, by exploiting a training set composed of pairs of observed inputs/outputs. Denote $\mathcal{X}$, an {\it input space} and $\mathcal{Y}$, the {\it output space}. In this chapter, $\mathcal{Y} \subset \mathbb{R}$. We are given an i.i.d. sample of size $N$, $\seq{s}=\{(x_i,
+We focus on the context of supervised learning. Supervised learning aims at building a function that predicts an output from a given input, by exploiting a training set composed of pairs of observed inputs/outputs. Denote $\mathcal{X}$, an {\it input space} and $\mathcal{Y}$, the {\it output space}. In this chapter, $\mathcal{Y} \subset \mathbb{R}$. When $\mathcal{Y}=\{1, \ldots, C:\}$, we talk about {\it supervised classification}. When $\mathcal{Y}=\mathbb{R}$, supervised learning  corresponds to  usual {\it regression}. We are given an i.i.d. sample of size $N$, $\seq{s}=\{(x_i,
 y_i)_{i=1}^N\}$, drawn from a unknown but fixed joint probability law $\probability(X,Y)$. We call {\emph learning algorithm}, a function $\mathcal{A}$ that takes a class of functions
 $\mathcal{F}$, a training sample $\seq{s}$ and returns a function in $\mathcal{F}$. The learning algorithm can be studied through many angles, from a computational pint of view to a statistical point of view.
 %function $f_{\seq{s}}$ in $\mathcal{F}$. 
@@ -47,7 +47,11 @@ Especially for the function of interest $f_{\seq{s}}$, we have
 \begin{dmath*}
     \risk{f} \le \riskemp{f_{\seq{s},\seq{s}} + C(\delta, N,d), 
 \end{dmath*}
-which suggest to control the complexity of the hypothesis class while minimizing the empirical risk.
+which suggest to control the complexity of the hypothesis class while minimizing the empirical risk.\\
+
+Most of the approches in machine learning, and specifically in supervised learning, are based on regularizing approaches: in this case, learning algorithms minimize the empirical loss while controlling a penality term on the model $f$. In \cr{subsec:kernels}, we will chose an hypothesis class as an Hilbert space where the penalty can be expresses as the $\ell_2$ norm in this Hilbert space.
+
+
 \paragraph{}
 There is a crucial difference between the strong law of large numbers and the
 generalization property of a learning algorithm. The strong law of large number
@@ -133,7 +137,8 @@ the solutions returned by a learning algorithm.
 %$\mathcal{F}$.
 
 %------------------------------------------------------------------------------
-\subsection{Introduction to kernel methods}
+\subsection{Introduction to kernel methods}\label{subsec:kernels}
+\subsubsection{Kernels and Reproducing Kernel Hilbert Spaces}
 A fair simple choice for $\mathcal{F}$ is the set of all linear functions where
 we focus on defining learning algorithm picking up the \say{best} function in
 the class
@@ -143,7 +148,7 @@ the class
     \mathbb{R}}.
 \end{dmath*}
 Although this class of function has been well studied and has good
-generalization propertis (as long as the norm of $w$ is not too big), it has a
+generalization properties (as long as the norm of $w$ is not too big), it has a
 rather low capacity.  For instance in $\mathbb{R}^2$ it is impossible to
 separate two nested circle with a line (see \cref{fig:nested_circle}). On the
 other hand if one consider the class of function of all functions $\Set{f |
@@ -158,61 +163,61 @@ risk.
     circles.}
     \label{fig:nested_circle}
 \end{figure}
-The idea of kernel methods \citep{Aronszajn1950} is to consider a clever
-subset of the set of all functions, namely the set of all function belonging to
-a Hilbert space such that the evaluation of the function at $x$ is bounded for
-all
-$x\in\mathcal{X}$.
-\begin{dmath*}
-    \mathcal{F}_{\text{b.~eval.}} = \Set{f | \abs{f(x)} \le
-    C(x)\norm{f}_{\mathcal{H}} \le \infty, \enskip \forall f\in\mathcal{H},
-    \forall x \in\mathcal{X}, \enskip C(x)\in\mathbb{R}_+ }.
-\end{dmath*}
-With this hypothesis it is legitimate to construct an evaluation operator for
-all $x\in\mathcal{X}$ which is bounded.
-\begin{dmath*}
-    \text{ev}_x : 
-    \begin{cases}
-        \mathcal{F}_{\text{b.~eval.}}  & \to \mathbb{R} \\
-        f & \mapsto f(x).
-    \end{cases}
-\end{dmath*}
-From this evaluation operator, since $\mathcal{F}_{\text{b.~eval.}}$ is a
-subspace of a Hilbert space by Riesz representation theorem, it is possible to
-find a function $k_x$ of $\mathcal{F}$ such that
-\begin{dmath*}
-    f(x) = \text{ev}_x f \hiderel{=} \inner{k_x,
-    f}_{\mathcal{F}_{\text{b.~eval.}}}.
-\end{dmath*}
-Then we can define a function $k(x, z) \colonequals \inner{k_x,
-k_z}_{\mathcal{F}_{\text{b.~eval.}}}=\conj{k_x(z)}$ and we have $f(x) =
-\inner{k(\cdot, x), f}_{\mathcal{F}_{\text{b.~eval.}}}$. We call such functions
-$k$ reproducing kernel because they reproduces the value of any function of the
-space $\mathcal{F}_{\text{b.~eval.}}$ at any point $x\in\mathcal{X}$. We call
-the Hilbert space of function with locally bounded evaluation maps a \acf{RKHS}
-and we note $\mathcal{F}_{\text{b.~eval.}} =\mathcal{H}_k$. Moreover notice
-that the function $k$ is by construction symmetric and positive definite.
+The idea of kernel methods \citep{KIMELDORF1971,Boser1992} is to consider a 
+subset of the set of all functions, namely a Reproducing Kernel Hilbert Space (\acl{RKHS}), associated to a well chosen positive definite and symmetric function ({\it a kernel}).
+
 \paragraph{}
-One of the most important result of the theory of the reproducing kernels is
-the fact that there exists a bijection between the set of positive
-semi-definite functions and and the set of \acl{RKHS}. In other words a
-symmetric positive definite function defines a unique \acs{RKHS} and
-\emph{vice-versa}. Thus we identify positive definite kernels with reproducing
-kernels and \acsp{RKHS}.
+\begin{definition}[Positive Definite Symmetric kernels}
+Let $\bmX$ be a Polish space. A kernel $k:\bmX \times \bmX \to \mathbb{R}$ is said to be  positive definite symmetric (PDS) if for any $\{x_1, \ldots, x_m\} \subseteq \bmX $, the matrix $K=[K(x_i,x_j)]_{ij} \in \mathbb{R}^{m \times m} is symmetric positive semi-definite (SPDS).
+\end{definition}
+The following proposition gives sufficient conditions to get a SPSD matrix:
+\begin{Proposition}[SPSD matrix}
+$K$ is SPSD if it is symmetric and one of the following conditions holds:
+\begin{itemize}
+\item The eigenvalues of $K$ are non-negative
+\item for any colunn vector $c= (c_1, \ldots, c_m)^T \in \mathbb{R}^{m \times 1}$, $c^TKc=\sum_{i,j=1}^m c_ic_jK(x_i,x_i) \geq 0.
+\end{itemize}
+\end{proposition}
+One of the most important property of PDS kernels \cite{Mohri2012} is that a PDS kernel defines a unique \acs{RKHS}. Note that the converse is also true. 
 \begin{theorem}[\citet{Aronszajn1950}]
     Suppose $k$ is a symmetric, positive definite kernel on a set
-    $\mathcal{X}$. Then there is a unique Hilbert space of functions on
-    $\mathcal{X}$ for which $k$ is a reproducing kernel.
+    $\mathcal{X}$. Then there is a unique Hilbert space of functions $\mathcal{H}$ on
+    $\mathcal{X}$ for which $k$ is a reproducing kernel, i.e.
+    \begin{eqnarray}\label{eq:reproducing-prop}
+    \forall x \in \mathcal{X}, k(\cdot, x) \in \mathcal{H} \\
+    \forall h \in \mathcal{H}, \forall x\in \mathcal{X}, h(x)=\inner{h,k(\cdot,x)}_{\mathcal{H}}.
+    \end{eqnarray}
+    $\mathcal{H}$ is called a reproducing kernel Hilbert space (\acl{RKHS}) associated to $k$, and will be denoted, $\mathcal{H}_k$.
 \end{theorem}
+Another way to use Aronszajn's results is to state the feature map property for the PDS kernels.
+\begin{proposition}[Feature map]
+ Suppose $k$ is a symmetric, positive definite kernel on a set
+    $\mathcal{X}$. Then, there exists a Hilbert space $\mathcal{F} and a mapping $\phi$ from \mathcal{X} to $\mathcal{F}$ such that:
+    \begin{equation}
+    \forall x, x' \in \mathcal{X}, k(x,x')=\inner{\phi(x),\phi(x')}.
+    \end{equation}
+    The mapping $\phi$ is called a {\it feature map} and $\mathcal{F}$, a feature space.
+    \end{proposition}
+    \begin{remark}
+    Aronszajn's theorem tells us that there always exists at least one feature map, the so-called {\it canonical feature map} and the feature space associate, the \acl{RKHS} $\mathcal{H}_k$:: 
+    \begin{eqnarray*}
+    \phi_{canonical}(x)= k(\cdot, x)\\
+    \mathcal{F}= \mathcal{H}_k
+    \end{eqnarray*}
+    However there might exist several pairs of feature maps and features spaces for a given kernel $k$.
+    \end{remark}
+    
+ \subsubsection{Learning in Reproducing Kernel Hilbert Spaces}
+
 Now, back to learning and minimizing the empirical risk, a fair question is
-how do I find a function in an infinite dimensional set $\mathcal{H}_K$ in 
+how do I find a function in an infinite dimensional set $\mathcal{H}_k$ in 
 polynomial time? The answer comes from the regularization and interpolation
 theory. To limit the size of the space in which we search of the function
 minimizing the empirical risk we add a regularization term to the empirical
 risk.
 \begin{dmath*}
     \mathcal{J}_{\lambda}(f) = \frac{1}{N} \sum_{i=1}^N L\left(x_i, f,
-    y_i\right) + \frac{\lambda}{2}\norm{f}_{\mathcal{H}_K}^2
+    y_i\right) + \frac{\lambda}{2}\norm{f}_{\mathcal{H}_k}^2
 \end{dmath*}
 and we minimize $J_{\lambda}$ instead of $\mathfrak{R}_{\text{emp}}$. Then
 the representer theorem (also called minimal norm interpolation theorem) states
@@ -220,7 +225,7 @@ the following.
 \begin{theorem}[Representer theorem, \citet{Wahba90}]
     If $f_{\seq{s}}$ is a solution of
     \begin{dmath*}
-        \argmin_{f\in\mathcal{H}_K} J_{\lambda}(f),
+        \argmin_{f\in\mathcal{H}_k} J_{\lambda}(f),
     \end{dmath*}
     where $\lambda > 0$ then $f_{\seq{s}}=\sum_{i=1}^N k(\cdot, x_i) \alpha_i$.
 \end{theorem}
@@ -230,9 +235,9 @@ $\mathbf{K}=(k(x_i, x_k))_{i, k = 1}^N$. Then we can rewrite
     \mathcal{J}_{\lambda}(\alpha) = \frac{1}{N} \sum_{i=1}^N L(x_i, \alpha,
     y_i) + \lambda \inner{\alpha, \mathbf{K}\alpha}_2 / 2
 \end{dmath*}
-where $f(x_i) = (K\alpha)_i$ for any $x_i \in \seq{s}$. If we suppose that $L$
+where $f(x_i) = (\mathbf{K}\alpha)_i$ for any $x_i \in \seq{s}$. If we suppose that $L$
 is convex in $f(x)$, then it is possible to derive a polynomial time (in $N$)
-algorithm minimizing $\mathcal{J}_{\lambda}$. For intance if we choose
+algorithm minimizing $\mathcal{J}_{\lambda}$. For instance if we choose
 $L$ to be the least square loss, then
 \begin{dmath}
     \label{eq:ridge_regression}
@@ -246,24 +251,11 @@ invertible for any $\lambda > 0$ the unique solution is $\alpha_{\seq{s}} =
 I_N)^{-1}(y_i)_{i=1}^N$. This is an $O\left(N^3\right)$ algorithm.
 \paragraph{}
 Another way of describing positive definite kernels and \acs{RKHS} consists in
-defining an approriate feature map.
-\begin{theorem}[\citet{Aronszajn1950}]
-    Given $\phi: \mathcal{X} \to \mathcal{H}$ a function that maps a space
-    $\mathcal{X}$ to a Hilbert space $\mathcal{H}$. Then
-    $k(x,z)=\inner{\phi(x), \phi(z)}_{\mathcal{H}}$ is a positive definite
-    kernel.
-    \paragraph{}
-    Given $k$ a positive definite kernel then there exist infinitely many
-    functions $\phi: \mathcal{X} \to \mathcal{H}$ that map a space
-    $\mathcal{X}$ to some Hilbert space $\mathcal{H}$ such that
-    $\inner{\phi(x), \phi(z)}_{\mathcal{H}}=k(x,z)$. We call the function
-    $\phi$ a feature map.
-\end{theorem}
-Then any functions in $\mathcal{H}_K$ can be written $f(x)=\inner{\phi(x),
+Then any functions in $\mathcal{H}_k$ can be written $f(x)=\inner{\phi(x),
 \theta}_{\mathcal{H}}$ In a nutshell the function $\phi$ is called feature map
 because it \say{extracts charateristic elements from a vector}. Usually a
 feature map takes a vector in an input space with low dimension and maps it to
-a higher dimensional space. Put it differently, any function in $\mathcal{H}_K$
+a higher dimensional space. Put it differently, any function in $\mathcal{H}_k$
 is the composition of linear functional $\theta^\transpose$ with a non linear
 feature map $\phi$. Thus is the feature map $\phi$ is fixed (which is
 equivalent to fixing the kernel), it is possible to \say{learn} with a linear

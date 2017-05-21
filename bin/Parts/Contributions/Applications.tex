@@ -157,14 +157,13 @@ in the following we develop a method to scale up \acs{OKVAR} to successfully
 tackle medium/large scale autoregression problems.
 \section{Operator-Valued Random Fourier Features}
 We now introduce our methodology to approximate \acsp{OVK}.  Given a
-translation-invariant kernel $K(x,z)=K_0(x-z)$, we approximate $K$ by finding
-an explicit feature map such that
-$\tilde{\Phi}(x)^\adjoint\tilde{\Phi}(z)\approx K_0(x-z)$. The idea is to use a
-generalization of Bochner's theorem for the \acs{OVK} family that states that
-any translation-invariant OVK can be written as the Fourier transform of a
-positive operator-valued measure. More precisely, we build on the following
-proposition first proved in \cite{Carmeli2010}. More details can be found in
-\cref{sec:theoretical_study}. 
+shift-invariant kernel $K(x,z)=K_0(x-z)$, we approximate $K$ by finding an
+explicit feature map such that $\tilde{\Phi}(x)^\adjoint\tilde{\Phi}(z)\approx
+K_0(x-z)$. The idea is to use a generalization of Bochner's theorem for the
+\acs{OVK} family that states that any translation-invariant OVK can be written
+as the Fourier transform of a positive operator-valued measure. More precisely,
+we build on the following proposition first proved in \cite{Carmeli2010}. More
+details can be found in \cref{sec:theoretical_study}. 
 \paragraph{}
 In the following, suppose that $K_0=k_0(\cdot) A$ is a decomposable kernel.
 Decomposable kernels belong to the family of translation-invariant \acsp{OVK}.

@@ -1,11 +1,11 @@
 =>PYTHONTEX#py#default#default#0#c####Motivations.tex#172#
 print(r'\centering\resizebox{\textwidth}{!}{\input{./gfx/nested_circle.pgf}}')
-=>PYTHONTEX#py#not_mercer#default#0#code####Construction.tex#1209#
+=>PYTHONTEX#py#not_mercer#default#0#code####Construction.tex#1255#
 sys.path.append('./src/')
 import not_mercer
 
 not_mercer.main()
-=>PYTHONTEX#py#default#default#1#c####Construction.tex#1216#
+=>PYTHONTEX#py#default#default#1#c####Construction.tex#1262#
 print(r'\centering\resizebox{\textwidth}{!}{\input{./not_Mercer.pgf}}')
 =>PYTHONTEX#py#approximation#default#0#code####Concentration.tex#31#
 sys.path.append('./src/')
@@ -14,21 +14,21 @@ import approximation
 err = approximation.main()
 =>PYTHONTEX#py#default#default#2#c####Concentration.tex#40#
 print(r'\centering\resizebox{\textwidth}{!}{\input{./approximation.pgf}}')
-=>PYTHONTEX#py#representer#default#0#code####Learning.tex#745#
+=>PYTHONTEX#py#representer#default#0#code####Learning.tex#747#
 sys.path.append('./src/')
 import representer
 
 err = representer.main()
-=>PYTHONTEX#py#representer2#default#0#code####Learning.tex#752#
+=>PYTHONTEX#py#representer2#default#0#code####Learning.tex#754#
 sys.path.append('./src/')
 import representer2
 
 err = representer2.main()
-=>PYTHONTEX#py#default#default#3#c####Learning.tex#790#
+=>PYTHONTEX#py#default#default#3#c####Learning.tex#791#
 print(r'\centering \resizebox {\textheight }{!}{\input {./representer.pgf}}')
-=>PYTHONTEX#py#default#default#4#c####Learning.tex#790#
+=>PYTHONTEX#py#default#default#4#c####Learning.tex#791#
 print(r'\centering \resizebox {\textheight }{!}{\input {./representer2.pgf}}')
-=>PYTHONTEX#py#efficient_linop#default#0#code####Learning.tex#826#
+=>PYTHONTEX#py#efficient_linop#default#0#code####Learning.tex#827#
 r"""Example of efficient implementation of Gaussian decomposable ORFF."""
 
 from time import time
@@ -40,7 +40,7 @@ from numpy import (dot, diag, sqrt, kron, zeros,
 from scipy.sparse.linalg import LinearOperator
 from sklearn.kernel_approximation import RBFSampler
 from matplotlib.pyplot import savefig, subplots
-=>PYTHONTEX#py#efficient_linop#default#1#block####Learning.tex#861#
+=>PYTHONTEX#py#efficient_linop#default#1#block####Learning.tex#862#
 def NaiveDecomposableGaussianORFF(X, A, gamma=1.,
                                   D=100, eps=1e-5, random_state=0):
     r"""Return the Naive ORFF map associated with the data X.
@@ -74,7 +74,7 @@ def NaiveDecomposableGaussianORFF(X, A, gamma=1.,
 
     # Create the ORFF linear operator
     return matrix(kron(phiX, B))
-=>PYTHONTEX#py#efficient_linop#default#2#block####Learning.tex#954#
+=>PYTHONTEX#py#efficient_linop#default#2#block####Learning.tex#955#
 def EfficientDecomposableGaussianORFF(X, A, gamma=1.,
                                       D=100, eps=1e-5, random_state=0):
     r"""Return the efficient ORFF map associated with the data X.
@@ -114,26 +114,26 @@ def EfficientDecomposableGaussianORFF(X, A, gamma=1.,
                                                B)),
                           rmatvec=lambda r: dot(phiX.T, dot(r.reshape(rshape),
                                                 B.T)))
-=>PYTHONTEX#py#efficient_linop#default#3#code####Learning.tex#1220#
+=>PYTHONTEX#py#efficient_linop#default#3#code####Learning.tex#1221#
 sys.path.append('./src/')
 import efficient_decomposable_gaussian
 
 efficient_decomposable_gaussian.main()
-=>PYTHONTEX#py#default#default#5#c####Learning.tex#1227#
+=>PYTHONTEX#py#default#default#5#c####Learning.tex#1228#
 print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_decomposable_gaussian.pgf}}')
-=>PYTHONTEX#py#efficient_linop#default#4#code####Learning.tex#1249#
+=>PYTHONTEX#py#efficient_linop#default#4#code####Learning.tex#1250#
 sys.path.append('./src/')
 import efficient_curlfree_gaussian
 
 efficient_curlfree_gaussian.main()
-=>PYTHONTEX#py#default#default#6#c####Learning.tex#1256#
+=>PYTHONTEX#py#default#default#6#c####Learning.tex#1257#
 print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_curlfree_gaussian.pgf}}')
-=>PYTHONTEX#py#efficient_linop#default#5#code####Learning.tex#1279#
+=>PYTHONTEX#py#efficient_linop#default#5#code####Learning.tex#1280#
 sys.path.append('./src/')
 import efficient_divfree_gaussian
 
 efficient_divfree_gaussian.main()
-=>PYTHONTEX#py#default#default#7#c####Learning.tex#1286#
+=>PYTHONTEX#py#default#default#7#c####Learning.tex#1287#
 print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_divfree_gaussian.pgf}}')
 =>PYTHONTEX#PYGpython#EXT:./src/not_mercer.py#defaultverb#0#verbatim####Code.tex#5#
 =>PYTHONTEX#PYGpython#EXT:./src/representer.py#defaultverb#0#verbatim####Code.tex#9#

@@ -34,7 +34,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {xchapter}{\spacedlowsmallcaps {Operator-valued Random Fourier Features}}{51}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Different realizations of a Gaussian kernel approximation}}{68}{figure.caption.17}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Approximation of a function in a vv-RKHS using different realizations of Operator Random Fourier Feature}}{68}{figure.caption.17}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Relationships between feature-maps.}}{72}{figure.caption.18}
 \defcounter {refsection}{0}\relax 
@@ -54,7 +54,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6.1}{\ignorespaces \acs {ORFF} equivalence theorem}}{105}{figure.caption.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces \acs {ORFF} equivalence theorem}}{106}{figure.caption.24}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \acs {ORFF} equivalence theorem with overfitting}}{106}{figure.caption.24}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Efficient decomposable gaussian \acs {ORFF}}}{113}{figure.caption.26}
 \defcounter {refsection}{0}\relax 
@@ -72,80 +72,80 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Consistency and Generalization bound for ORFF}}{123}{chapter.7}
+\contentsline {xchapter}{\spacedlowsmallcaps {Consistency and Generalization bound for ORFF}}{121}{chapter.7}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Application to time series modelling}}{135}{chapter.8}
+\contentsline {xchapter}{\spacedlowsmallcaps {Application to time series modelling}}{133}{chapter.8}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Work in progress}}{147}{chapter.9}
+\contentsline {xchapter}{\spacedlowsmallcaps {Work in progress}}{145}{chapter.9}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Conlusions}}{149}{chapter.10}
+\contentsline {xchapter}{\spacedlowsmallcaps {Conlusions}}{147}{chapter.10}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Proofs of theorems}}{153}{appendix.A}
+\contentsline {xchapter}{\spacedlowsmallcaps {Proofs of theorems}}{151}{appendix.A}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Miscellaneous}}{167}{appendix.B}
+\contentsline {xchapter}{\spacedlowsmallcaps {Miscellaneous}}{165}{appendix.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.1}{\ignorespaces \acs {ORFF} equivalence theorem (semi-supervised)}}{174}{figure.caption.41}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces \acs {ORFF} equivalence theorem (semi-supervised)}}{172}{figure.caption.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.2}{\ignorespaces \acs {ORFF} multiclass semi-supervised}}{175}{figure.caption.42}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Relevant piece of code}}{179}{appendix.C}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces \acs {ORFF} multiclass semi-supervised}}{173}{figure.caption.42}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {One Class Splitting Criteria for Random Forests}}{193}{appendix.D}
+\contentsline {xchapter}{\spacedlowsmallcaps {Relevant piece of code}}{177}{appendix.C}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.1}{\ignorespaces Outliers distribution $G$ in the naive and adaptive approach. }}{198}{figure.caption.43}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.2}{\ignorespaces Adaptative splitting criteria}}{200}{figure.caption.44}
+\contentsline {xchapter}{\spacedlowsmallcaps {One Class Splitting Criteria for Random Forests}}{191}{appendix.D}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.3}{\ignorespaces One Class Random Forest level-sets}}{201}{figure.caption.45}
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Outliers distribution $G$ in the naive and adaptive approach. }}{196}{figure.caption.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.4}{\ignorespaces Illustration of the standard splitting criterion on two modes when the proportion $\gamma $ varies. \relax }}{211}{figure.caption.48}
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Adaptative splitting criteria}}{198}{figure.caption.44}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.5}{\ignorespaces Performances of the novelety detection algorithms}}{213}{figure.caption.49}
+\contentsline {figure}{\numberline {D.3}{\ignorespaces One Class Random Forest level-sets}}{199}{figure.caption.45}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.6}{\ignorespaces Performances of the outlier detection algorithms}}{214}{figure.caption.50}
+\contentsline {figure}{\numberline {D.4}{\ignorespaces Illustration of the standard splitting criterion on two modes when the proportion $\gamma $ varies. \relax }}{209}{figure.caption.48}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.7}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OneClassRF} (novelty detection framework)\relax }}{214}{figure.caption.51}
+\contentsline {figure}{\numberline {D.5}{\ignorespaces Performances of the novelety detection algorithms}}{211}{figure.caption.49}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.8}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OneClassRF} (outlier detection framework)\relax }}{215}{figure.caption.52}
+\contentsline {figure}{\numberline {D.6}{\ignorespaces Performances of the outlier detection algorithms}}{212}{figure.caption.50}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.9}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {iForest} (novelty detection framework)\relax }}{215}{figure.caption.53}
+\contentsline {figure}{\numberline {D.7}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OneClassRF} (novelty detection framework)\relax }}{212}{figure.caption.51}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.10}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {iForest} (outlier detection framework)\relax }}{215}{figure.caption.54}
+\contentsline {figure}{\numberline {D.8}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OneClassRF} (outlier detection framework)\relax }}{213}{figure.caption.52}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.11}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OCRFsampling} (novelty detection framework)\relax }}{216}{figure.caption.55}
+\contentsline {figure}{\numberline {D.9}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {iForest} (novelty detection framework)\relax }}{213}{figure.caption.53}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.12}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OCRFsampling} (outlier detection framework)\relax }}{216}{figure.caption.56}
+\contentsline {figure}{\numberline {D.10}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {iForest} (outlier detection framework)\relax }}{213}{figure.caption.54}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.13}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OCSVM} (novelty detection framework)\relax }}{216}{figure.caption.57}
+\contentsline {figure}{\numberline {D.11}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OCRFsampling} (novelty detection framework)\relax }}{214}{figure.caption.55}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.14}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OCSVM} (outlier detection framework)\relax }}{217}{figure.caption.58}
+\contentsline {figure}{\numberline {D.12}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OCRFsampling} (outlier detection framework)\relax }}{214}{figure.caption.56}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.15}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {LOF} (novelty detection framework)\relax }}{217}{figure.caption.59}
+\contentsline {figure}{\numberline {D.13}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OCSVM} (novelty detection framework)\relax }}{214}{figure.caption.57}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.16}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {LOF} (outlier detection framework)\relax }}{217}{figure.caption.60}
+\contentsline {figure}{\numberline {D.14}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OCSVM} (outlier detection framework)\relax }}{215}{figure.caption.58}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.17}{\ignorespaces \acs {ROC} and \acs {PR} curves for Orca (novelty detection framework)\relax }}{218}{figure.caption.61}
+\contentsline {figure}{\numberline {D.15}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {LOF} (novelty detection framework)\relax }}{215}{figure.caption.59}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.18}{\ignorespaces \acs {ROC} and \acs {PR} curves for Orca (outlier detection framework)\relax }}{218}{figure.caption.62}
+\contentsline {figure}{\numberline {D.16}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {LOF} (outlier detection framework)\relax }}{215}{figure.caption.60}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.19}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {LSAD} (novelty detection framework)\relax }}{218}{figure.caption.63}
+\contentsline {figure}{\numberline {D.17}{\ignorespaces \acs {ROC} and \acs {PR} curves for Orca (novelty detection framework)\relax }}{216}{figure.caption.61}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.20}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {LSAD} (outlier detection framework)\relax }}{219}{figure.caption.64}
+\contentsline {figure}{\numberline {D.18}{\ignorespaces \acs {ROC} and \acs {PR} curves for Orca (outlier detection framework)\relax }}{216}{figure.caption.62}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.21}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {RFC} (novelty detection framework)\relax }}{219}{figure.caption.65}
+\contentsline {figure}{\numberline {D.19}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {LSAD} (novelty detection framework)\relax }}{216}{figure.caption.63}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {D.22}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {RFC} (outlier detection framework)\relax }}{219}{figure.caption.66}
+\contentsline {figure}{\numberline {D.20}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {LSAD} (outlier detection framework)\relax }}{217}{figure.caption.64}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.21}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {RFC} (novelty detection framework)\relax }}{217}{figure.caption.65}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.22}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {RFC} (outlier detection framework)\relax }}{217}{figure.caption.66}

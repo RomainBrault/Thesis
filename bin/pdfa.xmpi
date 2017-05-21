@@ -105,9 +105,9 @@
       </rdf:Description> 
       <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
          <xmp:CreatorTool>XeTeX + classicthesis.sty</xmp:CreatorTool> 
-         <xmp:ModifyDate>2017-05-20T20:36:33+02:00</xmp:ModifyDate> 
-         <xmp:CreateDate>2017-05-20T20:36:33+02:00</xmp:CreateDate> 
-         <xmp:MetadataDate>2017-05-20T20:36:33+02:00</xmp:MetadataDate> 
+         <xmp:ModifyDate>2017-05-20T23:51:34+02:00</xmp:ModifyDate> 
+         <xmp:CreateDate>2017-05-20T23:51:34+02:00</xmp:CreateDate> 
+         <xmp:MetadataDate>2017-05-20T23:51:34+02:00</xmp:MetadataDate> 
       </rdf:Description> 
       <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
          <xmpRights:Marked>True</xmpRights:Marked>
@@ -117,7 +117,7 @@
       </rdf:Description> 
       <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
          <xmpMM:DocumentID>uuid:86B0A80E-4F14-E782-157C-46D0B1E42FC7</xmpMM:DocumentID> 
-         <xmpMM:InstanceID>uuid:2E6543D9-BCC4-8219-344C-1EB7554FC97C</xmpMM:InstanceID> 
+         <xmpMM:InstanceID>uuid:45F046D0-DF33-EF42-521E-06BCB2D34563</xmpMM:InstanceID> 
       </rdf:Description> 
    </rdf:RDF> 
 </x:xmpmeta> 

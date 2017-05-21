@@ -3574,6 +3574,27 @@
       \range{pages}{28}
       \keyw{ovks}
     \endentry
+    \entry{platt199912}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f8bbfb70aa80f7cabfa2fb7d91cb7dbb}{%
+           family={Platt},
+           family_i={P\bibinitperiod},
+           given={John\bibnamedelima C},
+           given_i={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{f8bbfb70aa80f7cabfa2fb7d91cb7dbb}
+      \strng{fullhash}{f8bbfb70aa80f7cabfa2fb7d91cb7dbb}
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in kernel methods}
+      \field{title}{12 fast training of support vector machines using sequential minimal optimization}
+      \field{year}{1999}
+      \field{pages}{185\bibrangedash 208}
+      \range{pages}{24}
+      \keyw{ovks}
+    \endentry
     \entry{Polonik97}{article}{}
       \name{author}{1}{}{%
         {{hash=1b9432026a7bc0679a217b1976bcf451}{%
@@ -4052,6 +4073,40 @@
       \field{year}{1973}
       \field{pages}{665\bibrangedash 670}
       \range{pages}{6}
+      \keyw{ovks}
+    \endentry
+    \entry{shalev2007pegasos}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=a6c5827676b0a2058e5b904c3dd7f878}{%
+           family={Shalev-Shwartz},
+           family_i={S\bibinithyphendelim S\bibinitperiod},
+           given={Shai},
+           given_i={S\bibinitperiod}}}%
+        {{hash=300d4990e626d975e0c28630444f63c3}{%
+           family={Singer},
+           family_i={S\bibinitperiod},
+           given={Yoram},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=4a4fc057d8331655775a21a8994f3339}{%
+           family={Srebro},
+           family_i={S\bibinitperiod},
+           given={Nathan},
+           given_i={N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{f3684e161060802da922f674fb84a6b7}
+      \strng{fullhash}{f3684e161060802da922f674fb84a6b7}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 24th international conference on Machine learning}
+      \field{title}{Pegasos: Primal estimated sub-gradient solver for svm}
+      \field{year}{2007}
+      \field{pages}{807\bibrangedash 814}
+      \range{pages}{8}
       \keyw{ovks}
     \endentry
     \entry{Shannon2001}{article}{}
@@ -4735,23 +4790,18 @@
       \keyw{ovks}
     \endentry
     \entry{Vapnik1998}{book}{}
-      \name{author}{2}{}{%
+      \name{author}{1}{}{%
         {{hash=f3d8c0def5414379d42ce01dfeec9fd9}{%
            family={Vapnik},
            family_i={V\bibinitperiod},
            given={Vladimir\bibnamedelima Naumovich},
            given_i={V\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
-        {{hash=a1942498f8367ff1e1ab1442e7f324c0}{%
-           family={Vapnik},
-           family_i={V\bibinitperiod},
-           given={Vlamimir},
-           given_i={V\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Wiley New York}%
       }
-      \strng{namehash}{446f4de08cedf9a1857ae17ac00a68d6}
-      \strng{fullhash}{446f4de08cedf9a1857ae17ac00a68d6}
+      \strng{namehash}{f3d8c0def5414379d42ce01dfeec9fd9}
+      \strng{fullhash}{f3d8c0def5414379d42ce01dfeec9fd9}
       \field{sortinit}{V}
       \field{sortinithash}{d18f5ce25ce0b5ca7f924e3f6c04870e}
       \field{labelnamesource}{author}
@@ -5322,7 +5372,6 @@
       \keyw{ovks}
     \endentry
   \endsortlist
-  \missing{Alacarte}
 \endrefsection
 \endinput
 

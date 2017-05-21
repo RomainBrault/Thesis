@@ -44,44 +44,44 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Consistency and Generalization bound for ORFF}}{123}{chapter.7}
+\contentsline {xchapter}{\spacedlowsmallcaps {Consistency and Generalization bound for ORFF}}{121}{chapter.7}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Application to time series modelling}}{135}{chapter.8}
+\contentsline {xchapter}{\spacedlowsmallcaps {Application to time series modelling}}{133}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {8.1}{\ignorespaces Sequential \acs {SCV-MSE} and computation times for \acs {VAR}(1), \acs {ORFFVAR} and \acs {OKVAR} on synthetic data (Settings 1, 2 and 3). \relax }}{142}{table.caption.38}
+\contentsline {table}{\numberline {8.1}{\ignorespaces Sequential \acs {SCV-MSE} and computation times for \acs {VAR}(1), \acs {ORFFVAR} and \acs {OKVAR} on synthetic data (Settings 1, 2 and 3). \relax }}{140}{table.caption.38}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {8.2}{\ignorespaces SVC-MSE with respect to $D$ the number of random features for ORFFVAR. \relax }}{142}{table.caption.39}
+\contentsline {table}{\numberline {8.2}{\ignorespaces SVC-MSE with respect to $D$ the number of random features for ORFFVAR. \relax }}{140}{table.caption.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {8.3}{\ignorespaces SCV-MSE and computation times for ORFFVAR, VAR(1) and OKVAR on real datasets.\relax }}{143}{table.caption.40}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Work in progress}}{147}{chapter.9}
+\contentsline {table}{\numberline {8.3}{\ignorespaces SCV-MSE and computation times for ORFFVAR, VAR(1) and OKVAR on real datasets.\relax }}{141}{table.caption.40}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Conlusions}}{149}{chapter.10}
+\contentsline {xchapter}{\spacedlowsmallcaps {Work in progress}}{145}{chapter.9}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Proofs of theorems}}{153}{appendix.A}
+\contentsline {xchapter}{\spacedlowsmallcaps {Conlusions}}{147}{chapter.10}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Miscellaneous}}{167}{appendix.B}
+\contentsline {xchapter}{\spacedlowsmallcaps {Proofs of theorems}}{151}{appendix.A}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {Relevant piece of code}}{179}{appendix.C}
+\contentsline {xchapter}{\spacedlowsmallcaps {Miscellaneous}}{165}{appendix.B}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {xchapter}{\spacedlowsmallcaps {One Class Splitting Criteria for Random Forests}}{193}{appendix.D}
+\contentsline {xchapter}{\spacedlowsmallcaps {Relevant piece of code}}{177}{appendix.C}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {D.1}{\ignorespaces Original datasets characteristics\relax }}{203}{table.caption.46}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {D.3}{\ignorespaces Results for the novelty detection setting. \relax }}{205}{table.caption.47}
+\contentsline {xchapter}{\spacedlowsmallcaps {One Class Splitting Criteria for Random Forests}}{191}{appendix.D}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {D.4}{\ignorespaces Results for the outlier detection setting\relax }}{220}{table.caption.67}
+\contentsline {table}{\numberline {D.1}{\ignorespaces Original datasets characteristics\relax }}{201}{table.caption.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {D.3}{\ignorespaces Results for the novelty detection setting. \relax }}{203}{table.caption.47}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {D.4}{\ignorespaces Results for the outlier detection setting\relax }}{218}{table.caption.67}

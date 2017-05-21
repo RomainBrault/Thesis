@@ -19,6 +19,14 @@
 \end{flushright}
 \bigskip
 \begin{justify}
+    In this chapter we recall some elements of the statistical learning theory
+    started by \citet{Vapnik1998}.  Then we recall kernel methods
+    \citep{Aronszajn1950} which are used to construct spaces of real-valued
+    function (called RKHS) that are used model and learn non linear
+    dependencies from the data. We finish by a litterature review on
+    large-scale implementation of kernel methods based on random Fourier
+    features \citep{Rahimi2007} and the Nystr\"om method
+    \citep{Williams2000-nystrom}.
 \end{justify}
 \minitoc
 \include{Parts/Introduction/Motivations}
@@ -27,6 +35,15 @@
 \label{ch:background}
 \bigskip
 \begin{justify}
+    In this chapter we introduce briefly the mathematical tools used throughout
+    this manuscript. We give a full table of notations, and present elements of
+    functional analysis \citep{kurdila2006convex} and abstract hamonic analysis
+    \citep{folland1994course}. Then we turn our attention to the case when the
+    functions we want to learn are not real-valued, but vector-valued.  To
+    learn vector-valued functions we define \aclp{OVK} that generalize the
+    scalar-valued kernel presented in \cref{ch:motivations}. We conclude by
+    giving a non-exhaustive list of \aclp{OVK} and in which context they have
+    been used.
 \end{justify}
 \minitoc
 \include{Parts/Introduction/Background}

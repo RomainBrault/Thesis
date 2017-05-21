@@ -1,11 +1,12 @@
 %!TEX root = ../../ThesisRomainbrault.tex
 
 %------------------------------------------------------------------------------
-\section{Learning with {ORFF}}
-\label{sec:learning_with_operator-valued_random-fourier_features} We now turn
-our attention to learning function with an ORFF model that approximate an OVK
-model.
-\subsection{Supervised regression} 
+\section{Learning with {OVK}}
+\label{sec:learning_with_operator-valued_random-fourier_features} Before
+focusing on learning function with an ORFF model, we briefly review the context
+of supervised lerning in \acs{vv-RKHS}.  model.
+\subsection{Supervised learning within \acs{vv-RKHS}} 
+\subsubsection{General results}
 Let $\seq{s} = (x_i,y_i)_{i=1}^N\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$
 be a sequence of training samples. Given a local loss function $L:
 \mathcal{X}\times\mathcal{F}\times\mathcal{Y}\to \overline{\mathbb{R}}$ such
@@ -24,12 +25,12 @@ that
 where $\lambda\in\mathbb{R}_+$ is a regularization\mpar{Tychonov
 regularization.} parameter. We call the quantity
 \begin{dmath*}
-    \mathcal{R}(f)=\frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f, y_i)
+    \mathcal{R}_{\seq{s}}(f)=\frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f, y_i)
     \condition{$\forall f\in\mathcal{H}_K$, $\forall
-    \seq{s}\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$.}
+    \seq{s}\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$.-,}
 \end{dmath*}
-is called the empirical risk of the model $f\in\mathcal{H}_K$ according the
-local loss $L$. A common choice of data fitting term for regression is $L:(x,
+the empirical risk of the model $f\in\mathcal{H}_K$ according the
+local loss $L$. A common choice for $L$ is the quadratic loss $L:(x,
 f, y) \mapsto \norm{f(x)-y}_{\mathcal{Y}}^2$.  We introduce a corollary from
 Mazur and Schauder proposed in 1936 (see~\citet{kurdila2006convex,
 gorniewicz1999topological}) showing that \cref{eq:learning_rkhs} --and
@@ -45,12 +46,11 @@ This is easily verified for Ridge regression. Define
 \begin{dmath}
     \label{eq:ridge}
     J_\lambda(f)=\frac{1}{N}\sum_{i=1}^N\norm{f(x_i)-y_i}_{\mathcal{Y}}^2+
-    \frac{\lambda}{2}\norm{f}_K^2,
-\end{dmath}
-where $f\in\mathcal{H}_K$ and $\lambda\in\mathbb{R}_{>0}$. $J_\lambda$ is
-continuous\mpar{Reminder, if $f\in\mathcal{H}_k, \text{ev}_x : f\mapsto f(x)$
-is continuous, see \cref{pr:unique_rkhs}.} and strictly convex. Additionally
-$J_\lambda$ is coercive since $\norm{f}_K$ is coercive,
+    \frac{\lambda}{2}\norm{f}_K^2, \end{dmath} where $f\in\mathcal{H}_K$ and
+    $\lambda\in\mathbb{R}_{>0}$. $J_\lambda$ is continuous\mpar{Reminder, if
+    $f\in\mathcal{H}_k, \text{ev}_x : f\mapsto f(x)$ is continuous, see
+    \cref{pr:unique_rkhs}.} and strictly convex. Additionally $J_\lambda$ is
+    coercive since $\norm{f}_K$ is coercive,
 $\lambda\in\mathbb{R}_{>0}$, and all the summands of $J_\lambda$ are positive.
 Hence for all positive $\lambda$, $f_{\seq{s}} =
 \argmin_{f\in\mathcal{H}_K}J_\lambda(f)$ exists, is unique and attained.
@@ -85,7 +85,7 @@ Hence for all positive $\lambda$, $f_{\seq{s}} =
     $\norm{y_i}_{\mathcal{Y}} \le C$ in the train set.
 \end{remark}
 
-\subsection{Representer theorem and Feature equivalence}
+\subsubsection{Representer theorem and Feature equivalence}
 Regression in \acl{vv-RKHS} has been well studied~\citep{Alvarez2012,
 Minh_icml13,minh2016unifying,sangnier2016joint,kadri2015operator,Micchelli2005,
 Brouard2016_jmlr}, and a cornerstone of learning in \acs{vv-RKHS} is the
@@ -287,11 +287,12 @@ that for all $x_i$, $x\in\mathcal{X}$ and for all $u_i\in\mathcal{Y}$ it takes
 time $O(P)$, to compute $K(x_i, x)u_i$, making a prediction using the
 representer theorem take $O(2P)$. Obviously If $\mathcal{Y}=\mathbb{R}^p$, Then
 $P=O(p^2)$ thus making a prediction cost $O(2p^2)$ operations.
-\paragraph{}
+%% on commence la partie approchée
+\subsection{Learning with Operator Random Fourier Feature maps}
 Instead learning a model $f$ that depends on all the points of the training
 set, we would like to learn a parametric model of the form
 $\tildef{\omega}(x) = \tildePhi{\omega}(x)^\adjoint \theta$, where $\theta$
-lives in some redescription space $\tildeH{\omega}$. We are interested in
+lives in some space $\tildeH{\omega}$. We are interested in
 finding a parameter vector $\theta_{\seq{s}}$ such that
 \begin{dmath}
     \label{eq:argmin_applied} \theta_{\seq{s}}=\argmin_{\theta\in
@@ -467,19 +468,19 @@ of notation we write $r_{\seq{s}}=\theta^\perp$. This remark is illustrated in
 \cref{fig:representer}.
 
 %----------------------------------------------------------------------------------------
-\section{Solution of the empirical risk minimization}
+\section{Solving ORFF-based regression}\label{subsec:gradient_methods}
 % We illustrate the ORFF representer theorem (\cref{cr:orff_representer}) on
 % two experiment involving scalar valued kernels.
-In order to find a solution to \cref{eq:argmin_theta}, we turn our attention to
+In order to find a solution to \cref{eq:argmin_theta}, we first turn our attention to
 gradient descent methods. In the following we let
 \begin{dmath}
     \label{eq:cost_functional} J_{\lambda}(\theta) =
     \frac{1}{N}\sum_{i=1}^Nc\left(\tildePhi{\omega}(x_i)^\adjoint \theta,
     y_i\right) + \frac{\lambda}{2}\norm{\theta}^2_{\tildeH{\omega}}
 \end{dmath}
-
-\subsection{Gradient methods}
-\label{subsec:gradient_methods} Since the solution of \cref{eq:argmin_theta} is
+Then, we study the complexity in time of the proposed algorithm. 
+\subsection{Gradient descent methods}\label{subsec:gradient_methods}
+Since the solution of \cref{eq:argmin_theta} is
 unique when $\lambda>0$, a sufficient and necessary condition is that the
 gradient of $J_{\lambda}$ at the minimizer $\theta_{\seq{s}}$ is zero. We use
 the Frechet derivative, the strongest notion of derivative in Banach
@@ -570,12 +571,13 @@ have
 Provided that $c(y,y_i)$ is Frechet differentiable \acs{wrt}~$y$, for all $y$
 and $y_i\in\mathcal{Y}$ we have $\nabla_{\theta} J_{\lambda}(\theta) \in
 \tildeH{\omega}$ and
-\begin{dmath*}
+\begin{dmath}
+    \label{eq:grad_final}
     \nabla_{\theta} J_{\lambda}(\theta) = \frac{1}{N}\sum_{i=1}^N
     \tildePhi{\omega}(x_i) \left(\lderivativeat{c\left(y,
     y_i\right)}{y}{\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint +
     \lambda\theta
-\end{dmath*}
+\end{dmath}
 \begin{example}[Naive closed form for the squared error cost]
     Consider the cost function defined for all $y$, $y'\in\mathcal{Y}$ by
     $c(y,y')=\frac{1}{2}\norm{y-y}_{\mathcal{Y}}^2$. Then
@@ -760,20 +762,19 @@ err = representer2.main()
 \begin{landscape}
     \begin{figure}[tb]
         \pyc{print(r'\centering\resizebox{\textheight}{!}{\input{./representer.pgf}}')}
-        \caption[\acs{ORFF} equivalence theorem]{ORFF equivalence theorem. We
-        trained a first model named $\tildeK{\omega}$ following}
+        \caption[\acs{ORFF} equivalence theorem]{ORFF equivalence theorem}
         \label{fig:representer}
     \end{figure}
     \clearpage
     \begin{figure}[tb]
         \pyc{print(r'\centering\resizebox{\textheight}{!}{\input{./representer2.pgf}}')}
-        \caption[\acs{ORFF} equivalence theorem]{ORFF equivalence theorem. We
-        trained a first model named $\tildeK{\omega}$ following}
+        \caption[\acs{ORFF} equivalence theorem with overfitting]{ORFF
+        equivalence theorem with overfitting}
         \label{fig:representer}
     \end{figure}
 \end{landscape}}
 
-\section{Efficient ORFF implementation}
+\section{Efficient learning with ORFF}
 When developping \cref{alg:close_form} we considered that the feature map
 $\tildePhi{\omega}(x)$ was a matrix from $\mathbb{R}^p$ to $\mathbb{R}^{r}$ for
 all $x\in\mathcal{X}$, and therefore that computing
@@ -1295,7 +1296,7 @@ bytes  to store $\tildePhi{\omega}(x)$ for all $x_i$'s. We averaged the results
 over ten runs. Full code is given in \cref{code:efficient_divfree_gaussian}. We
 draw the same conclusions as the curl-free kernel.
 
-\subsection{Iterative (matrix-free) solvers}
+\subsection{Iterative solvers using linear operators}
 We have shown in this section that viewing the \acl{ORFF} maps as linear
 operator rather than staking matrices leads to more efficient computations.
 

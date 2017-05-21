@@ -210,7 +210,7 @@ of \acs{ORFF}.
         K_e(\cdot)y}_{\mathcal{Y}}}.
     \end{dmath*}
     Then
-    \begin{propenum}
+    \begin{lemmaenum}
         \item \label{lm:C_characterization_1} $C(\omega)$ is self-adjoint and
         $C$ is even.
         \item \label{lm:C_characterization_2} $\IFT{\inner{y',
@@ -218,7 +218,7 @@ of \acs{ORFF}.
         K_e(\cdot)y}_{\mathcal{Y}}}$.
         \item \label{lm:C_characterization_3} $K_e(\delta)$ is self-adjoint and
         $K_e$ is even.
-    \end{propenum}
+    \end{lemmaenum}
 \end{lemma}
 \begin{proof}
     For any function $f$ on $(\mathcal{X},\groupop)$ define the flip operator
@@ -236,7 +236,7 @@ of \acs{ORFF}.
         \hiderel{=}K\left(\delta,e\right)^\adjoint
         \hiderel{=}K_e\left(\delta\right)^\adjoint.
     \end{dmath*}
-    \Cref{lm:C_characterization_1}: taking the \acl{FT} yields, 
+    Item 1: taking the \acl{FT} yields, 
     \begin{dmath*}
         \inner{y',C(\omega)y}_{\mathcal{Y}}=\IFT{\inner{y',
         K_e(\cdot)y}_{\mathcal{Y}}}(\omega)
@@ -264,7 +264,7 @@ of \acs{ORFF}.
         =\inner{y, C\left(\omega\right) y'}.
     \end{dmath*}
     Hence $C(\omega)$ is self-adjoint and thus $C$ is even.
-    \Cref{lm:C_characterization_2}: simply, for all $y$, $y'\in\mathcal{Y}$,
+    Item 2: simply, for all $y$, $y'\in\mathcal{Y}$,
     $\inner{y, C(\inv{\omega})y'}$ $=$ $\inner{y', C(\omega)y}$ thus
     \begin{dmath*}
         \IFT{\inner{y', K_e(\cdot)y}_{\mathcal{Y}}}(\omega)=\inner{y',
@@ -273,7 +273,7 @@ of \acs{ORFF}.
         K_e(\cdot)y}_{\mathcal{Y}}}(\omega)=\FT{\inner{y',
         K_e(\cdot)y}_{\mathcal{Y}}}(\omega).
     \end{dmath*}
-    \Cref{lm:C_characterization_3}: from \cref{lm:C_characterization_2} we have
+    Item 3: from Item 2 we have
     $\IFT{\inner{y', K_e(\cdot)y}}$ $=$ $\mathcal{F}^{-1}\mathcal{R}{\inner{y',
     K_e(\cdot)y}}$. By injectivity of the \acl{FT}, $K_e$ is even. Since
     $K_e(\delta)=K_e(\inv{\delta})^\adjoint $, we must have
@@ -1192,20 +1192,66 @@ the general form of an \acl{ORFF}, an operator-valeued kernel.
     shift-invariant since
     $\tildeK{\omega}(x,z)=\tildeK{\omega}_e\left(x\groupop z^{-1}\right)$.
 \end{proof}
-We stress out that if $\seq{\omega}=(\omega_j)_{j=1}^D\sim
-\probability_{\dual{\Haar},\rho}$ \ac{iid}~is a \emph{random sequence} then
+%We stress out that if $\seq{\omega}=(\omega_j)_{j=1}^D\sim
+%\probability_{\dual{\Haar},\rho}$ \ac{iid}~is a \emph{random sequence} then
+%\begin{dmath*}
+    %\tildeK{\omega}_e\left(x\groupop z^{-1}\right)
+    %=\tildePhi{\omega}(x)^{\adjoint}\tildePhi{\omega}(z)
+%\end{dmath*}
+%is not \emph{sensus} stricto an \acl{OVK} since it is a random variable (and
+%$\tildeH{\omega}$ is no longer a Hilbert space, since its inner product is a
+%then random variable and not a scalar). However this is not a problem since any
+%realization of the random sequence $\seq{\omega}$ gives birth to a (different)
+%\acl{OVK}, and $\expectation_{\dual{\Haar},\rho}\tildeK{\omega}$ is an
+%\acs{OVK}. This illustrated by \cref{fig:not_Mercer} where we represented the
+%same function for different realization of $\tildeK{\omega}\approx K$. We
+%generated $250$ points equally separated on the segment $(-1;1)$.
+%\begin{pycode}[not_mercer]
+%sys.path.append('./src/')
+%import not_mercer
+
+%not_mercer.main()
+%\end{pycode}
+%\begin{figure}[htb]
+    %\pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./not_Mercer.pgf}}')}
+    %\caption[Different realizations of a Gaussian kernel
+    %approximation]{Different realizations of a Gaussian kernel approximation.
+    %Top row and bottom row correspond to two different realizations of
+    %$\tildeK{\omega}$, which are \emph{different} \acl{OVK}. However when $D$
+    %tends to infinity, the different realizations of $\tildeK{\omega}$ yield
+    %the samel \acs{OVK}.}
+    %\label{fig:not_Mercer}
+%\end{figure}
+%We computed the Gram Matrix of the Gaussian decomposable kernel
+%\begin{dmath*}
+    %K(x,z)_{ij}=\exp\left(-\frac{1}{2(0.1)^2(x_i - x_j)^2}\right)\Gamma
+    %\condition{for $i$, $j\in\mathbb{N}^*_{250}$.}
+%\end{dmath*}
+%We computed a reference function (black line) defined as $(y_1, y_2)^\transpose
+%= f(x_i)=\sum_{j=1}^{250}K(x_i,x_j)u_j$ where $u_j\sim\mathcal{N}(0,1)$
+%\ac{iid}. We took $\Gamma=.5 I_2 +.5 1_2$ such that the outputs $y_1$ and
+%$y_2$ share some similarities. Then we computed an approximate kernel matrix
+%$\tildeK{\omega}\approx K$ for $25$ increasing values of $D$ ranging from $1$
+%to $10^4$. The two graphs on the top row shows that the more the number of
+%features increase the closer the model
+%$\widetilde{f}(x_i)=\sum_{j=1}^{250}\tildeK{\omega}(x_i,x_j)u_j$ is to $f$. The
+%bottom row shows the same experiment but for a different realization of
+%$\tildeK{\omega}$. When $D$ is small the curves of the bottom and top rows are
+%very dissimilar --and sine wave like-- while they both converge to $f$ when $D$
+%increase.
+\paragraph{}
+We give a numerical illustration of different $\tilde{K}$ built from different
+samples $(\omega_1, \ldots, \omega_D)$ In \cref{fig:not_Mercer}, we represent
+the approximation of  a reference function (black line) defined as $(y_1,
+y_2)^\transpose = f(x_i)=\sum_{j=1}^{250}K(x_i,x_j)u_j$ where
+$u_j\sim\mathcal{N}(0,1)$ and $K$ is a Gaussian decomposable kernel defined as:
 \begin{dmath*}
-    \tildeK{\omega}_e\left(x\groupop z^{-1}\right)
-    =\tildePhi{\omega}(x)^{\adjoint}\tildePhi{\omega}(z)
+    K(x,z)_{ij}=\exp\left(-\frac{1}{2(0.1)^2(x_i - x_j)^2}\right)\Gamma
+    \condition{for $i$, $j\in\mathbb{N}^*_{250}$.}
 \end{dmath*}
-is not \emph{sensus} stricto an \acl{OVK} since it is a random variable (and
-$\tildeH{\omega}$ is no longer a Hilbert space, since its inner product is a
-then random variable and not a scalar). However this is not a problem since any
-realization of the random sequence $\seq{\omega}$ gives birth to a (different)
-\acl{OVK}, and $\expectation_{\dual{\Haar},\rho}\tildeK{\omega}$ is an
-\acs{OVK}. This illustrated by \cref{fig:not_Mercer} where we represented the
-same function for different realization of $\tildeK{\omega}\approx K$. We
-generated $250$ points equally separated on the segment $(-1;1)$.
+We took $\Gamma=.5 I_2 +.5 1_2$ such that the outputs $y_1$ and $y_2$ share
+some similarities.  We generated $250$ points equally separated on the segment
+$(-1;1)$.
 \begin{pycode}[not_mercer]
 sys.path.append('./src/')
 import not_mercer
@@ -1214,31 +1260,25 @@ not_mercer.main()
 \end{pycode}
 \begin{figure}[htb]
     \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./not_Mercer.pgf}}')}
-    \caption[Different realizations of a Gaussian kernel
-    approximation]{Different realizations of a Gaussian kernel approximation.
+    \caption[Approximation of a function in a vv-RKHS using different
+    realizations of Operator Random Fourier Feature]{Approximation of a
+    function in a VV-RKHS using different realizations of Operator Random
+    Fourier Feature.
     Top row and bottom row correspond to two different realizations of
     $\tildeK{\omega}$, which are \emph{different} \acl{OVK}. However when $D$
     tends to infinity, the different realizations of $\tildeK{\omega}$ yield
-    the samel \acs{OVK}.}
+    the same \acs{OVK}.}
     \label{fig:not_Mercer}
 \end{figure}
-We computed the Gram Matrix of the Gaussian decomposable kernel
-\begin{dmath*}
-    K(x,z)_{ij}=\exp\left(-\frac{1}{2(0.1)^2(x_i - x_j)^2}\right)\Gamma
-    \condition{for $i$, $j\in\mathbb{N}^*_{250}$.}
-\end{dmath*}
-We computed a reference function (black line) defined as $(y_1, y_2)^\transpose
-= f(x_i)=\sum_{j=1}^{250}K(x_i,x_j)u_j$ where $u_j\sim\mathcal{N}(0,1)$
-\ac{iid}. We took $\Gamma=.5 I_2 +.5 1_2$ such that the outputs $y_1$ and
-$y_2$ share some similarities. Then we computed an approximate kernel matrix
-$\tildeK{\omega}\approx K$ for $25$ increasing values of $D$ ranging from $1$
-to $10^4$. The two graphs on the top row shows that the more the number of
-features increase the closer the model
-$\widetilde{f}(x_i)=\sum_{j=1}^{250}\tildeK{\omega}(x_i,x_j)u_j$ is to $f$. The
-bottom row shows the same experiment but for a different realization of
-$\tildeK{\omega}$. When $D$ is small the curves of the bottom and top rows are
-very dissimilar --and sine wave like-- while they both converge to $f$ when $D$
-increase.
+ Then we computed an approximate kernel matrix $\tildeK{\omega}\approx K$ for
+ $25$ increasing values of $D$ ranging from $1$ to $10^4$. The two graphs in
+ \cref{fig:not_Mercer} on the top row shows that the more the number of
+ features increases the closer the model
+ $\widetilde{f}(x_i)=\sum_{j=1}^{250}\tildeK{\omega}(x_i,x_j)u_j$ is to $f$.
+ The bottom row shows the same experiment but for a different realization of
+ $\tildeK{\omega}$. When $D$ is small the curves of the bottom and top rows are
+ very dissimilar --and sine wave like-- while they both converge to $f$ when
+ $D$ increase.
 \paragraph{}
 In the same way we defined an \acs{ORFF}, we can define an approximate feature
 operator $\tildeW{\omega}$ which maps $\tildeH{\omega}$ onto
@@ -1358,8 +1398,8 @@ $\tildePhi{\omega}(x)$ is an approximate feature map of $\Phi_x$
 $y\in\mathcal{Y}$,
 \begin{dmath*}
     \inner{y, K(x,z)y'}_{\mathcal{Y}}=\inner{\Phi_x y, \Phi_z
-    y'}_{\mathcal{L^2(\dual{\mathcal{X}}, \probability_{\dual{\Haar}, \rho};
-    \mathcal{Y'})}} \approx \inner{\tildePhi{\omega}(x)y,
+    y'}_{L^2(\dual{\mathcal{X}}, \probability_{\dual{\Haar}, \rho};
+    \mathcal{Y'})} \approx \inner{\tildePhi{\omega}(x)y,
     \tildePhi{\omega}(x)y'}_{\tildeH{\omega}}\colonequals \inner{y,
     \tilde{K}(x,z)y'}_{\mathcal{Y}}
 \end{dmath*}
@@ -1806,6 +1846,12 @@ in \cref{alg:ORFF2_construction}.
 
 %----------------------------------------------------------------------------------------
 \section{Conclusions}
-\label{sec:conclusions_construction}
+\label{sec:conclusions_construction} We have presented a generic framework that
+generalize scalar-valued \acsp{RFF} presented in \cref{ch:motivations}.  We
+first showed how to construct an \acs{ORFF} from an \acs{OVK} in the very
+general case when $\mathcal{X}$ is an \acs{LCA} group and $\mathcal{Y}$ is an
+inginite dimensional space. Then, conversly, how to use the regularization
+properties (\cref{pr:fourier_reg_ovk}) to construct an \acs{ORFF}
+without defining an \acs{OVK}. 
 
 \chapterend

@@ -68,6 +68,8 @@ file(REMOVE_RECURSE
   "../bin/Parts/Contributions/Construction.tex.aux"
   "../bin/Parts/Contributions/Generalization.aux"
   "../bin/Parts/Contributions/Generalization.tex.aux"
+  "../bin/Parts/Contributions/illustration.aux"
+  "../bin/Parts/Contributions/illustration.tex.aux"
   "../bin/Parts/Contributions/Learning.aux"
   "../bin/Parts/Contributions/Learning.tex.aux"
   "../bin/Parts/Contributions.aux"

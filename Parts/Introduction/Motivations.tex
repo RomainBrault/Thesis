@@ -53,7 +53,7 @@ $f_{\seq{s}}$ returned by a learning algorithm. In other words we want
 that given a class of function $\mathcal{F}$ and a loss $L$, the bound
 \begin{dmath*}
     \risk{f_{\seq{s}}} \le \riskemp{f_{\seq{s}}, \seq{s}} + C(\delta, \seq{s},
-    L, \set{f_{\seq{s}}}\subseteq\mathcal{F})
+    L, \set{f_{\seq{s}}}\hiderel{\subseteq}\mathcal{F})
 \end{dmath*}
 holds with probability $1-\delta$, for all $\delta\in(0, 1)$ and $C(\delta,
 \seq{s}, \mathcal{F}) \to 0$ when the number of training data $N$ in $\seq{s}$
@@ -109,7 +109,7 @@ the solutions returned by a learning algorithm. In other words we look for a
 bound such that given a class of function $\mathcal{F}$ and a loss $L$,
 \begin{dmath*}
     \risk{f_{\seq{s}}} \le \inf_{f\in\mathcal{F}} \risk{f} + C(\delta, \seq{s},
-    L, \Set{f_{\seq{s}}}\subseteq\mathcal{F}),
+    L, \Set{f_{\seq{s}}}\hiderel{\subseteq}\mathcal{F}),
 \end{dmath*}
 holds with probability $1 - \delta$, for all $\delta \in (0, 1)$  and
 $C(\delta, \seq{s}, \mathcal{F}) \to 0$ when the number of training data $N$ in
@@ -328,7 +328,7 @@ and the unique solution is $\theta_{\seq{s}} =
 I_{\mathcal{H}}\right)^{-1}\boldsymbol{\phi} (y_i)_{i=1}^N$. This is an
 $O\left( \dim(\mathcal{H})^2(N + \dim{\mathcal{H}}) \right)$. This algorithm
 seems more appealing than its kernel counterpart when many data are given since
-one the space $\mathcal{H}$ has been fixed, the algorithm is linear in the
+once the space $\mathcal{H}$ has been fixed, the algorithm is linear in the
 number of training points. However many questions remains. First although it is
 possible to design a feature map \emph{ex nihilo}, can we design systematically
 a feature map from a kernel? For some kernels (\acs{eg} the gaussian kernel) it
@@ -340,8 +340,7 @@ possible to have a sufficiently good approximation with $\dim(\mathcal{H}) \ll
 N$\footnote{When $\dim(\mathcal{H}) \ge N$ then is it is better to use the
 kernel algorithm than the feature algorithm. This is called the kernel trick.}?
 
-\subsection{Random Fourier Features, Mercer Theorem, Nystr\"om method and
-others}
+\subsection{Random Fourier Features, Nystr\"om method and others}
 In this subsection we answer the question whether it is possible to construct
 feature maps from a given kernel, that approximate a given kernel $k$, such the
 the dimension of the space $\mathcal{H} < \infty$. We start with the seminal
@@ -546,6 +545,15 @@ feature maps for dot product kernels are usually low ranki and may not utilize
 the capacity of the projected feature  space  effectively. \Citet{pham2013fast}
 proposed fast random feature maps for polynomial kernels.
 \paragraph{}
+\Citet{li2010random} generalized the original \acs{RFF} of \citet{Rahimi2007}.
+Instead of computing feature maps for shift-invariant kenrels on the additive
+group $(\mathbb{R}^d, +)$, they used the generalized Fourier transform on any
+locally compact abelian group to derive random features on the multiplicative
+group $(\mathbb{R}^d, *)$. In the same spirit \citet{yang2014random} noticed
+that an theorem equivalent to Bochner's theorem exists on the semi-group
+$(\mathbb{R}_+^d, +)$. From this they derived \say{Random Laplace} features and
+used them to approximate kernels adapted to learn on histograms.
+\paragraph{}
 To speed-up the convergence rate of the random features approximation,
 \citet{yang2014quasi} proposed to sample the random variable from a quasi
 Monte-Carlo sequence instead of \acs{iid}~random variables. \Citet{Le2013}
@@ -558,15 +566,6 @@ with better convergence rates than \say{Fastfood} \citep{Le2013}.
 Nystro\"m method) by estimating the distribution of the input data, and then
 finding the eigenfunction decomposition of Mercer's integral operator
 associated to the kernel.
-\paragraph{}
-\Citet{li2010random} generalized the original \acs{RFF} of \citet{Rahimi2007}.
-Instead of computing feature maps for shift-invariant kenrels on the additive
-group $(\mathbb{R}^d, +)$, they used the generalized Fourier transform on any
-locally compact abelian group to derive random features on the multiplicative
-group $(\mathbb{R}^d, *)$. In the same spirit \citet{yang2014random} noticed
-that an theorem equivalent to Bochner's theorem exists on the semi-group
-$(\mathbb{R}_+^d, +)$. From this they derived \say{Random Laplace} features and
-used them to approximate kernels adapted to learn on histograms.
 \paragraph{}
 In the context of large scale learning and deep learning, \citet{lu2014scale}
 showed that \acsp{RFF} can achieve performances comparable to deep-learning
@@ -581,7 +580,12 @@ convolutional neural network \citep{lecun1995convolutional} by the
 \paragraph{}
 Eventually \citet{Yang2015} introduced the algorithm \say{\`A la Carte}, based
 on \say{Fastfood} which is able to learn the spectral distribution
-corresponding to a kernel rather than defining it from the kernel.
+corresponding to a kernel rather than defining it from the kernel. Among the
+large-scale learning methods with kernel, but not using random features we
+mention the algorithm \say{NORMA} by \citet{kivinen2004online} (to be compared
+to the \say{Doubly stochastic gradient descent}) and \say{Pegasos} by
+\citet{shalev2007pegasos} and \say{SMO} by \citet{platt199912} for kernel
+\acs{SVM} learning.
 % A la carte
 %reported
 %performance comparable with deep learn- ing by combining multiple kernel

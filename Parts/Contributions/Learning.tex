@@ -2,9 +2,9 @@
 
 %------------------------------------------------------------------------------
 \section{Learning with {OVK}}
-\label{sec:learning_with_operator-valued_random-fourier_features} Before focusing
-on learning function with an ORFF model, we briefly review the context of supervised lerning in \acs{vv-RKHS}.
-model.
+\label{sec:learning_with_operator-valued_random-fourier_features} Before
+focusing on learning function with an ORFF model, we briefly review the context
+of supervised lerning in \acs{vv-RKHS}.  model.
 \subsection{Supervised learning within \acs{vv-RKHS}} 
 \subsubsection{General results}
 Let $\seq{s} = (x_i,y_i)_{i=1}^N\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$
@@ -46,12 +46,11 @@ This is easily verified for Ridge regression. Define
 \begin{dmath}
     \label{eq:ridge}
     J_\lambda(f)=\frac{1}{N}\sum_{i=1}^N\norm{f(x_i)-y_i}_{\mathcal{Y}}^2+
-    \frac{\lambda}{2}\norm{f}_K^2,
-\end{dmath}
-where $f\in\mathcal{H}_K$ and $\lambda\in\mathbb{R}_{>0}$. $J_\lambda$ is
-continuous\mpar{Reminder, if $f\in\mathcal{H}_k, \text{ev}_x : f\mapsto f(x)$
-is continuous, see \cref{pr:unique_rkhs}.} and strictly convex. Additionally
-$J_\lambda$ is coercive since $\norm{f}_K$ is coercive,
+    \frac{\lambda}{2}\norm{f}_K^2, \end{dmath} where $f\in\mathcal{H}_K$ and
+    $\lambda\in\mathbb{R}_{>0}$. $J_\lambda$ is continuous\mpar{Reminder, if
+    $f\in\mathcal{H}_k, \text{ev}_x : f\mapsto f(x)$ is continuous, see
+    \cref{pr:unique_rkhs}.} and strictly convex. Additionally $J_\lambda$ is
+    coercive since $\norm{f}_K$ is coercive,
 $\lambda\in\mathbb{R}_{>0}$, and all the summands of $J_\lambda$ are positive.
 Hence for all positive $\lambda$, $f_{\seq{s}} =
 \argmin_{f\in\mathcal{H}_K}J_\lambda(f)$ exists, is unique and attained.
@@ -572,12 +571,13 @@ have
 Provided that $c(y,y_i)$ is Frechet differentiable \acs{wrt}~$y$, for all $y$
 and $y_i\in\mathcal{Y}$ we have $\nabla_{\theta} J_{\lambda}(\theta) \in
 \tildeH{\omega}$ and
-\begin{dmath*}
+\begin{dmath}
+    \label{eq:grad_final}
     \nabla_{\theta} J_{\lambda}(\theta) = \frac{1}{N}\sum_{i=1}^N
     \tildePhi{\omega}(x_i) \left(\lderivativeat{c\left(y,
     y_i\right)}{y}{\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint +
     \lambda\theta
-\end{dmath*}
+\end{dmath}
 \begin{example}[Naive closed form for the squared error cost]
     Consider the cost function defined for all $y$, $y'\in\mathcal{Y}$ by
     $c(y,y')=\frac{1}{2}\norm{y-y}_{\mathcal{Y}}^2$. Then
@@ -762,15 +762,14 @@ err = representer2.main()
 \begin{landscape}
     \begin{figure}[tb]
         \pyc{print(r'\centering\resizebox{\textheight}{!}{\input{./representer.pgf}}')}
-        \caption[\acs{ORFF} equivalence theorem]{ORFF equivalence theorem. We
-        trained a first model named $\tildeK{\omega}$ following}
+        \caption[\acs{ORFF} equivalence theorem.]{ORFF equivalence theorem.}
         \label{fig:representer}
     \end{figure}
     \clearpage
     \begin{figure}[tb]
         \pyc{print(r'\centering\resizebox{\textheight}{!}{\input{./representer2.pgf}}')}
-        \caption[\acs{ORFF} equivalence theorem]{ORFF equivalence theorem. We
-        trained a first model named $\tildeK{\omega}$ following}
+        \caption[\acs{ORFF} equivalence theorem with overfitting.]{ORFF
+        equivalence theorem with overfitting.}
         \label{fig:representer}
     \end{figure}
 \end{landscape}}

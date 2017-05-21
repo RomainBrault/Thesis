@@ -28,8 +28,9 @@ is to find an optimal model $f_*$ that minimizes the true risk. Namely
 \end{dmath*}
 Since in practice we do not have access to the joint probability law of (X,Y),
 we define its empirical counterpart as the empirical mean estimate, where the
-sequence $\seq{s}=(x_i,y_i)_{i=1}^N$ is made of $\mathcal{X}$-valued random
-vectors drawn \acs{iid}~from some law
+sequence $\seq{s}=(x_i,y_i)_{i=1}^N$ is made of
+($\mathcal{X}\times\mathcal{Y})$-valued random vectors drawn \acs{iid}~from
+some law
 $\probability$.
 % Moreover we often add a regularization term on the norm of the functions in
 % $\mathcal{F}$ to \say{reduce} the size of the class of function.
@@ -214,22 +215,22 @@ $\tildeK{\omega}$).
     Conclude by pluging \cref{eq:ker_bound} in \cref{th:gen_rad_bound}.
 \end{proof}
 As an example, let us consider \cref{eq:learning_rkhs}, which is a solution of
-the regularized empirical risk, and $\cref{alg:close_form}$ when $D\to\infty$.
-We first list the following assumptions useful in the rest of the section. Let
-$\seq{s}=(x_i, y_i)_{i=1}^N\in \mathcal{X}^N\times \mathcal{Y}^N$ be the
-training samples.
+the regularized empirical risk, and $\cref{alg:close_form}$.  We first list the
+following assumptions useful in the rest of the section. Let $\seq{s}=(x_i,
+y_i)_{i=1}^N\in \mathcal{X}^N\times \mathcal{Y}^N$ be the training samples.
 \begin{assumption}\label{ass:bounded_norm}
     There exists a positive constant $\kappa\in\mathbb{R}_{\ge 0}$ such that
     \begin{dmath*}
-        \max_{i\in\mathbb{N}^*_N} \norm{K(x_i,x_i)}_{\mathcal{Y}, \mathcal{Y}}
-        < \kappa.
+        \max_{i\in\mathbb{N}^*_N} \norm{\tildeK{\omega}(x_i,x_i)}_{\mathcal{Y},
+        \mathcal{Y}} < \kappa.
     \end{dmath*}
 \end{assumption}
 
 \begin{assumption}\label{ass:bounded_trace}
     There exists a positive constant $T\in\mathbb{R}_{\ge 0}$ such that
     \begin{dmath*}
-        \max_{i\in\mathbb{N}^*_N} \Tr\left[ K(x_i,x_i)\right] < T.
+        \max_{i\in\mathbb{N}^*_N} \Tr\left[ \tildeK{\omega}(x_i,x_i)\right] <
+        T.
     \end{dmath*}
 \end{assumption}
 \begin{assumption}\label{ass:bounded_outputs}
@@ -253,10 +254,10 @@ $\norm{f}_{\mathcal{H}_K}\le \sqrt{\frac{2}{\lambda}}\sigma_y$, where
     \hiderel{\le} C^2.
 \end{dmath*}
 Thus we straight away see that it is possible to choose
-$B=\sqrt{\frac{2}{\lambda}} C$. Let $\kappa = \norm{K_e(e)}_{\mathcal{Y},
-\mathcal{Y}}$ The Lipschitz constant of the least square loss
-$c(f_{\seq{s}}(x), y)=\frac{1}{2}\norm{f_{\seq{s}}(x) - y}_{\mathcal{Y}}^2$
-with respect to $f_{\seq{s}}(x)$ is
+$B=\sqrt{\frac{2}{\lambda}} C$. Let $\kappa =
+\norm{\tildeK{\omega}_e(e)}_{\mathcal{Y}, \mathcal{Y}}$ The Lipschitz constant
+of the least square loss $c(f_{\seq{s}}(x), y)=\frac{1}{2}\norm{f_{\seq{s}}(x)
+- y}_{\mathcal{Y}}^2$ with respect to $f_{\seq{s}}(x)$ is
 $L=\max\left(\sqrt{\frac{2\kappa}{\lambda}}C, C\right)$ and the loss takes
 values in $\left[0, \frac{1}{2}L^2\right]$. Hence under assumption that
 $\lambda < 2\kappa$ and \cref{ass:bounded_trace}, and
@@ -267,8 +268,8 @@ $f_{\seq{s}}\in\mathcal{H}_K$, solution of \cref{alg:close_form},
     8\frac{C^2}{\lambda}\sqrt{\frac{\kappa}{N}}\left( T^{1/2} +
     \sqrt{\frac{\kappa\ln(1/\delta)}{2}}\right).
 \end{dmath}
-This bound is to be compared to the results of \citet{kadri2015operator} in the context of
-$\beta$-stability. 
+This bound is to be compared to the results of \citet{kadri2015operator} in the
+context of $\beta$-stability. 
 \subsection{Algorithm stability}
 \label{sec:algorithm_stability}
 The approach to generalization bounds presented in
@@ -320,9 +321,10 @@ with generalization. Indeed if an algorithm has $\beta$-stability, and a
 In their original paper on learning function-valued output data,
 \citet{kadri2015operator} showed that under \cref{ass:bounded_norm},
 \cref{ass:bounded_outputs}, and provided that $K$ is weakly measurable, the
-algorithm is $\beta$-stable with $\beta=$. Moreover \cref{ass:bounded_loss}
-holds with $\xi$, where $\sigma=$.  Thus another generalization bound for
-\cref{alg:close_form} is
+algorithm is $\beta$-stable with $\beta=\frac{\sigma^2\kappa^2}{2\lambda N}$.
+Moreover \cref{ass:bounded_loss} holds with $\xi=\sigma^2 / 2$, where
+$\sigma=\sigma_y(1 + \kappa/\sqrt{\lambda})$.  Thus another generalization bound
+for \cref{alg:close_form} is
 \begin{dmath}
     \risk{f_{\seq{s}}} \le \riskemp{f_{\seq{s}}, \seq{s}}  + \frac{\kappa^2 C^2
     \left(1 + \frac{\kappa}{\sqrt{\lambda}} \right)^2 }{\lambda N} + C^2\left(
@@ -332,16 +334,17 @@ holds with $\xi$, where $\sigma=$.  Thus another generalization bound for
 
 %------------------------------------------------------------------------------
 \section{Consistency of learning with ORFF}
-In this section we are interested by measuring how  $\risk{\widetilde{f}_{\seq{s}}}$ is close to the smallest true risk achieved in the function class $\mathcal{F}$.
-The quantity of interest is:
+In this section we are interested by measuring how
+$\risk{\widetilde{f}_{\seq{s}}}$ is close to the smallest true risk achieved in
+the function class $\mathcal{F}$.  The quantity of interest is:
 \begin{dmath*}
     \risk{\widetilde{f}_{\seq{s}}} - \min_{f\in\mathcal{F}} \risk{f}.
 \end{dmath*}
 In other words, we quantify the difference between risk of the optimal solution
 belonging to a given class of function $\mathcal{F}$, and the risk given a
-solution $f_{\seq{s}}$ returned by some learning algorithm.  Here to derive a consistency
-result, we study an algorithm slightly different from \cref{alg:close_form}.
-Given a loss function
+solution $f_{\seq{s}}$ returned by some learning algorithm.  Here to derive a
+consistency result, we study an algorithm slightly different from
+\cref{alg:close_form}.  Given a loss function
 $L:\mathcal{X}\times\mathcal{F}\times\mathcal{Y}\to\mathbb{R}_+$ and its
 canonical cost function $c(f(x),y)\colonequals L(x, f, y)$ such that $c$ is
 Lipschitz in its first argument. We consider learning with an \acs{ORFF}

@@ -163,7 +163,7 @@ risk.
     circles.}
     \label{fig:nested_circle}
 \end{figure}
-The idea of kernel methods \citep{KIMELDORF1971,Boser1992} is to consider a 
+The idea of kernel methods \citep{Aronszajn1950,KIMELDORF1971,Boser1992, Berlinet2003,Shawe-TaylorBook} is to work in a 
 subset of the set of all functions, namely a Reproducing Kernel Hilbert Space (\acl{RKHS}), associated to a well chosen positive definite and symmetric function ({\it a kernel}).
 
 \paragraph{}
@@ -199,7 +199,7 @@ Another way to use Aronszajn's results is to state the feature map property for 
     The mapping $\phi$ is called a {\it feature map} and $\mathcal{F}$, a feature space.
     \end{proposition}
     \begin{remark}
-    Aronszajn's theorem tells us that there always exists at least one feature map, the so-called {\it canonical feature map} and the feature space associate, the \acl{RKHS} $\mathcal{H}_k$:: 
+    Aronszajn's theorem tells us that there always exists at least one feature map, the so-called {\it canonical feature map} and the feature space associate, the \acl{RKHS} $\mathcal{H}_k$:
     \begin{eqnarray*}
     \phi_{canonical}(x)= k(\cdot, x)\\
     \mathcal{F}= \mathcal{H}_k
@@ -315,11 +315,11 @@ possible to have a sufficiently good approximation with $\dim(\mathcal{H}) \ll
 N$\footnote{When $\dim(\mathcal{H}) \ge N$ then is it is better to use the
 kernel algorithm than the feature algorithm. This is called the kernel trick.}?
 
-\subsection{Random Fourier Features, Mercer Theorem, Nystr\"om method and
+\subsection{Towards large scale learning with kernels}
+%Random Fourier Features, Mercer Theorem, Nystr\"om method and
 others}
-In this subsection we answer the question whether it is possible to construct
-feature maps from a given kernel, that approximate a given kernel $k$, such the
-the dimension of the space $\mathcal{H} < \infty$. We start with the seminal
+Motivated by large scale applications, different methodologies have been proposed to approximate kernels and feature maps. This subsection briefly reminds the main approaches based on  Random Fourier Features and Nystr\"om techniques. Notice that another line of research concerns online learning method such as NORMA developed in \cite{kivinen2004online}, later extended to the operator-valued kernel case by \cite{audiffren2013online}.
+We start with the seminal
 work of \citet{Rahimi2007} who show that given a continuous shift-invariant
 kernel ($\forall x, z, t \in \mathcal{X}$, $k(x + t, z + t) = k(x, z)$), it is
 possible to obtain a feature map called \acs{RFF} that approximate the given
@@ -470,7 +470,7 @@ rank approximation of the Gram matrix $\mathbf{K}$.
 \subsubsection{Random features vs Nystr\"om method}
 The main conceptual difference between the Nystr\"om features and the \acl{RFF}
 is that the Nystr\"om construction is data dependent, while the \acs{RFF} is
-not. The advantage of random fourier feature lies in their fast construction.
+not. The advantage of random Fourier feature lies in their fast construction.
 For $N$ data in $\mathbb{R}^d$, it costs $O(NDd)$ to featurize all the data.
 For the Nystr\"om features it costs $O(M^2(M + d)$. Moreover if one desire to
 add a new feature, the \acs{RFF} methodology is as simple as drawing a new
@@ -501,7 +501,7 @@ generalization. On the other hand \citet{rahimi2009weighted} reported that the
 generalization performance of \acs{RFF} learning is $O(N^{-1/2} + D^{-1/2})$,
 which indicates that $D=O(N)$ features should be sampled to generalize well.
 As a result the complexity of learning with the \acs{RFF} seems not to
-deacrease. However the bounds of \citet{rahimi2009weighted} are suboptimal and
+decrease. However the bounds of \citet{rahimi2009weighted} are suboptimal and
 very recently (end of 2016) \citet{rudi2016generalization} proved that in the
 case of ridge regression (\cref{eq:ridge_regression}), the generalization error
 is $O(N^{-1/2} + D^{-1})$ meaning that $D=O(\sqrt{N})$ random features are
@@ -535,7 +535,7 @@ finding the eigenfunction decomposition of Mercer's integral operator
 associated to the kernel.
 \paragraph{}
 \Citet{li2010random} generalized the original \acs{RFF} of \citet{Rahimi2007}.
-Instead of computing feature maps for shift-invariant kenrels on the additive
+Instead of computing feature maps for shift-invariant kernels on the additive
 group $(\mathbb{R}^d, +)$, they used the generalized Fourier transform on any
 locally compact abelian group to derive random features on the multiplicative
 group $(\mathbb{R}^d, *)$. In the same spirit \citet{yang2014random} noticed
@@ -557,6 +557,8 @@ convolutional neural network \citep{lecun1995convolutional} by the
 Eventually \citet{Yang2015} introduced the algorithm \say{\`A la Carte}, based
 on \say{Fastfood} which is able to learn the spectral distribution
 corresponding to a kernel rather than defining it from the kernel.
+
+
 % A la carte
 %reported
 %performance comparable with deep learn- ing by combining multiple kernel

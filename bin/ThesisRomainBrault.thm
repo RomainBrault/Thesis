@@ -1,13 +1,19 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {example}{{Example}{2.{1}}{}}{9}{example.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{2.1}{\citet {Aronszajn1950}}}{12}{theorem.2.1}
+\contentsline {definition}{{Definition}{2.{1}}{Symmetric Positive Definite kernels}}{11}{definition.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{2.{1}}{\acs {SPSD} matrix}}{11}{proposition.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {theorem}{{Theorem}{2.1}{\citet {Aronszajn1950}}}{11}{theorem.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{2.{2}}{Feature map}}{12}{proposition.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {remark}{{Remark}{2.{1}}{}}{12}{remark.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {theorem}{{Theorem}{2.2}{Representer theorem, \citet {Wahba90}}}{12}{theorem.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{2.3}{\citet {Aronszajn1950}}}{12}{theorem.2.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{2.4}{Bochner's theorem}}{15}{theorem.2.4}
+\contentsline {theorem}{{Theorem}{2.3}{Bochner's theorem}}{15}{theorem.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {corollary}{{Corollary}{2.{1}}{}}{15}{corollary.2.1}
 \defcounter {refsection}{0}\relax 

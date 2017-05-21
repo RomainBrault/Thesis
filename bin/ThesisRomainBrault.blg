@@ -1,25 +1,29 @@
 [0] Config.pm:343> INFO - This is Biber 2.5
-[0] Config.pm:346> INFO - Logfile is 'ThesisRomainBrault.blg'
-[62] biber-darwin:290> INFO - === Sat May 20, 2017, 23:48:12
-[104] Biber.pm:351> INFO - Reading 'ThesisRomainBrault.bcf'
-[324] Biber.pm:776> INFO - Found 176 citekeys in bib section 0
-[342] Biber.pm:3493> INFO - Processing section 0
-[367] Biber.pm:3657> INFO - Looking for bibtex format file 'Bibliography.bib' for section 0
-[380] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
-[391] bibtex.pm:1048> INFO - Found BibTeX data source 'Bibliography.bib'
-[584] Utils.pm:149> WARN - BibTeX subsystem: /var/folders/1z/rxxv8yys6c7gnmf28bdz5m8c0000gn/T/si64Aw1B0T/Bibliography.bib_30555.utf8, line 88, warning: 39 characters of junk seen at toplevel
-[584] Utils.pm:149> WARN - BibTeX subsystem: /var/folders/1z/rxxv8yys6c7gnmf28bdz5m8c0000gn/T/si64Aw1B0T/Bibliography.bib_30555.utf8, line 1599, warning: 18 characters of junk seen at toplevel
-[585] Biber.pm:3657> INFO - Looking for bibtex format file 'MVExtrem.bib' for section 0
-[592] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
-[598] bibtex.pm:1048> INFO - Found BibTeX data source 'MVExtrem.bib'
-[659] Utils.pm:149> WARN - BibTeX subsystem: /var/folders/1z/rxxv8yys6c7gnmf28bdz5m8c0000gn/T/si64Aw1B0T/MVExtrem.bib_30555.utf8, line 10, warning: 235 characters of junk seen at toplevel
-[660] Biber.pm:3657> INFO - Looking for bibtex format file 'Selfpublication.bib' for section 0
-[661] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
-[662] bibtex.pm:1048> INFO - Found BibTeX data source 'Selfpublication.bib'
-[921] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[922] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[922] Biber.pm:3306> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-US'
-[922] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-US'
-[1305] bbl.pm:526> INFO - Writing 'ThesisRomainBrault.bbl' with encoding 'UTF-8'
-[1334] bbl.pm:619> INFO - Output to ThesisRomainBrault.bbl
-[1334] Biber.pm:108> INFO - WARNINGS: 3
+[1] Config.pm:346> INFO - Logfile is 'ThesisRomainBrault.blg'
+[100] biber-darwin:290> INFO - === Sun May 21, 2017, 12:11:34
+[136] Biber.pm:351> INFO - Reading 'ThesisRomainBrault.bcf'
+[362] Biber.pm:776> INFO - Found 180 citekeys in bib section 0
+[380] Biber.pm:3493> INFO - Processing section 0
+[399] Biber.pm:3657> INFO - Looking for bibtex format file 'Bibliography.bib' for section 0
+[411] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
+[424] bibtex.pm:1048> INFO - Found BibTeX data source 'Bibliography.bib'
+[481] Utils.pm:149> WARN - Possible typo (case mismatch) between citation and datasource keys: 'Vapnik1992principles' and 'vapnik1992principles' in file 'Bibliography.bib'
+[612] Utils.pm:149> WARN - BibTeX subsystem: /var/folders/1z/rxxv8yys6c7gnmf28bdz5m8c0000gn/T/CG5WLwn16p/Bibliography.bib_32874.utf8, line 88, warning: 39 characters of junk seen at toplevel
+[612] Utils.pm:149> WARN - BibTeX subsystem: /var/folders/1z/rxxv8yys6c7gnmf28bdz5m8c0000gn/T/CG5WLwn16p/Bibliography.bib_32874.utf8, line 1616, warning: 18 characters of junk seen at toplevel
+[613] Biber.pm:3657> INFO - Looking for bibtex format file 'MVExtrem.bib' for section 0
+[619] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
+[625] bibtex.pm:1048> INFO - Found BibTeX data source 'MVExtrem.bib'
+[634] Utils.pm:149> WARN - Possible typo (case mismatch) between citation and datasource keys: 'Vapnik1992principles' and 'vapnik1992principles' in file 'MVExtrem.bib'
+[681] Utils.pm:149> WARN - BibTeX subsystem: /var/folders/1z/rxxv8yys6c7gnmf28bdz5m8c0000gn/T/CG5WLwn16p/MVExtrem.bib_32874.utf8, line 10, warning: 235 characters of junk seen at toplevel
+[681] Biber.pm:3657> INFO - Looking for bibtex format file 'Selfpublication.bib' for section 0
+[683] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
+[684] bibtex.pm:1048> INFO - Found BibTeX data source 'Selfpublication.bib'
+[689] Utils.pm:149> WARN - Possible typo (case mismatch) between citation and datasource keys: 'Vapnik1992principles' and 'vapnik1992principles' in file 'Selfpublication.bib'
+[691] Utils.pm:149> WARN - I didn't find a database entry for 'Vapnik1992principles' (section 0)
+[973] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[973] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[973] Biber.pm:3306> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-US'
+[973] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-US'
+[1400] bbl.pm:526> INFO - Writing 'ThesisRomainBrault.bbl' with encoding 'UTF-8'
+[1431] bbl.pm:619> INFO - Output to ThesisRomainBrault.bbl
+[1431] Biber.pm:108> INFO - WARNINGS: 7

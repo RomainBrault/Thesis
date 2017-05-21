@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.5.22)  20 MAY 2017 23:51
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.5.22)  21 MAY 2017 12:14
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -3495,7 +3495,15 @@ Package biblatex Info: Data encoding 'ascii' specified.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'ThesisRomainBrault.bbl' found.
-(./ThesisRomainBrault.bbl)
+(./ThesisRomainBrault.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                Vapnik1992principles
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 131.
 Package biblatex Info: Reference segment=0 on input line 131.
 Package caption Info: Begin \AtBeginDocument code.
@@ -3836,7 +3844,7 @@ Package minitoc Info: I0033
 Package tocbasic Info: character protrusion at toc deactivated on input line 19
 .
 (./ThesisRomainBrault.toc
-Overfull \hbox (8.14069pt too wide) in paragraph at lines 63--63
+Overfull \hbox (8.14069pt too wide) in paragraph at lines 69--69
  [][] []\EU1/HoeflerText(2)/m/n/10.95 Random Fourier Features, Nyström method a
 nd oth- 
  []
@@ -3846,19 +3854,19 @@ nd oth-
 
 
 ]
-Overfull \hbox (21.88655pt too wide) in paragraph at lines 255--255
+Overfull \hbox (21.88655pt too wide) in paragraph at lines 261--261
  [][] []\EU1/HoeflerText(2)/m/n/10.95 Application on decomposable, curl-free an
 d divergence- 
  []
 
 
-Overfull \hbox (6.0702pt too wide) in paragraph at lines 345--345
+Overfull \hbox (6.0702pt too wide) in paragraph at lines 351--351
  [][] []\EU1/HoeflerText(2)/m/n/10.95 Generalization by bounding the function s
 pace com- 
  []
 
 [12]
-Overfull \hbox (2.07156pt too wide) in paragraph at lines 417--417
+Overfull \hbox (2.07156pt too wide) in paragraph at lines 423--423
  [][] []\EU1/HoeflerText(2)/m/n/10.95 Proof of the error bound with high probab
 ility of the ORFF 
  []
@@ -4015,160 +4023,163 @@ chapter 2.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/mt-euf.cfg
 File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
-)
-File: ./gfx/infinite_monkey.jpg Graphic file (type QTm)
-
-<use  "./gfx/infinite_monkey.jpg" > [8
+) [8
 
 ]
+File: ./gfx/infinite_monkey.jpg Graphic file (type QTm)
+
+<use  "./gfx/infinite_monkey.jpg" >
 Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
-t line 74.
-
-Overfull \hbox (0.43912pt too wide) in paragraph at lines 99--102
-[] [][] \EU1/HoeflerText(2)/m/n/10.95 A slightly stronger requirement is the co
-nsistency of learning algorithm.
- []
-
-[9]
+t line 99.
+ [9]
 \c@pytx@py@default@default=\count563
- (./pythontex-files-ThesisRomainBrault/py_default_default_0.stdout
-(./gfx/nested_circle.pgf)) [10] [11]
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
-t line 219.
- [12]
+
+(./pythontex-files-ThesisRomainBrault/py_default_default_0.stdout
+(./gfx/nested_circle.pgf))
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
+nput line 250.
+ [10]
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on 
+input line 264.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
+t line 278.
+ [11]
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
+ line 309.
+ [12]
 File: ./gfx/input.eps Graphic file (type eps)
  <./gfx/input.eps>
 File: ./gfx/feature.eps Graphic file (type eps)
 
 <./gfx/feature.eps>
-Overfull \hbox (9.04233pt too wide) in paragraph at lines 299--310
+Overfull \hbox (9.04233pt too wide) in paragraph at lines 382--393
  [][] 
  []
 
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 340.
+(Font)              scaled to size 5.21004pt on input line 423.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 340.
+(Font)              scaled to size 5.21004pt on input line 423.
 [13] [14]
-Overfull \hbox (2.89679pt too wide) in paragraph at lines 367--370
+Overfull \hbox (1.81274pt too wide) in paragraph at lines 450--453
 []\EU1/HoeflerText(2)/bx/n/10.95 (Bochner’s theorem). [][][] \EU1/HoeflerText(2
 )/m/it/10.95 Any continuous positive definite com-
  []
 
 Package hyperref Info: bookmark level for unknown corollary defaults to 0 on in
-put line 375.
+put line 458.
 
-Underfull \hbox (badness 1360) in paragraph at lines 381--381
+Underfull \hbox (badness 1360) in paragraph at lines 464--464
 \OT1/pplx/m/n/10.95 = \OMS/zplm/m/n/10.95 F [][][][]| \OT1/pplx/m/n/10.95 (\OML
 /zplm/m/it/10.95 !\OT1/pplx/m/n/10.95 )\OML/zplm/m/it/10.95 :|$ 
  []
 
 
-Underfull \hbox (badness 1360) detected at line 381
+Underfull \hbox (badness 1360) detected at line 464
 \OT1/pplx/m/n/10.95 = \OMS/zplm/m/n/10.95 F [][][][]| \OT1/pplx/m/n/10.95 (\OML
 /zplm/m/it/10.95 !\OT1/pplx/m/n/10.95 )\OML/zplm/m/it/10.95 :|$ 
  []
 
 
-Underfull \hbox (badness 1360) detected at line 381
+Underfull \hbox (badness 1360) detected at line 464
 \OT1/pplx/m/n/10.95 = \OMS/zplm/m/n/10.95 F [][][][]| \OT1/pplx/m/n/10.95 (\OML
 /zplm/m/it/10.95 !\OT1/pplx/m/n/10.95 )\OML/zplm/m/it/10.95 :|$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--401
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
 $[]\OT1/pplx/m/n/10.95 ([]\OML/zplm/m/it/10.95 ; []\OT1/pplx/m/n/10.95 ) = \OT1
 /zplm/b/n/10.95 E[]\OT1/pplx/m/n/10.95 [[][]\OML/zplm/m/it/10.95 !; [] |  \OMS/
 zplm/m/n/10.95 ^^@ [][]\OT1/pplx/m/n/10.95 ] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--401
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
 \OT1/pplx/m/n/10.95 = \OT1/zplm/b/n/10.95 E[]\OT1/pplx/m/n/10.95 [[][]\OML/zplm
 /m/it/10.95 !; [][] [][]!; [][] |  \OT1/pplx/m/n/10.95 + [][]\OML/zplm/m/it/10.
 95 !; [][] [][]!; [][]\OT1/pplx/m/n/10.95 ]\OML/zplm/m/it/10.95 :|$ 
  []
 
 
-Underfull \hbox (badness 10000) detected at line 401
+Underfull \hbox (badness 10000) detected at line 484
 \OT1/pplx/m/n/10.95 = \OT1/zplm/b/n/10.95 E[]\OT1/pplx/m/n/10.95 [[][]\OML/zplm
 /m/it/10.95 !; [][] [][]!; [][] |  \OT1/pplx/m/n/10.95 + [][]\OML/zplm/m/it/10.
 95 !; [][] [][]!; [][]\OT1/pplx/m/n/10.95 ]\OML/zplm/m/it/10.95 :|$ 
  []
 
 
-Underfull \hbox (badness 10000) detected at line 401
+Underfull \hbox (badness 10000) detected at line 484
 \OT1/pplx/m/n/10.95 = \OT1/zplm/b/n/10.95 E[]\OT1/pplx/m/n/10.95 [[][]\OML/zplm
 /m/it/10.95 !; [][] [][]!; [][] |  \OT1/pplx/m/n/10.95 + [][]\OML/zplm/m/it/10.
 95 !; [][] [][]!; [][]\OT1/pplx/m/n/10.95 ]\OML/zplm/m/it/10.95 :|$ 
  []
 
 
-Underfull \hbox (badness 10000) detected at line 401
+Underfull \hbox (badness 10000) detected at line 484
 $[]\OT1/pplx/m/n/10.95 ([]\OML/zplm/m/it/10.95 ; []\OT1/pplx/m/n/10.95 ) = \OT1
 /zplm/b/n/10.95 E[]\OT1/pplx/m/n/10.95 [[][]\OML/zplm/m/it/10.95 !; [] |  \OMS/
 zplm/m/n/10.95 ^^@ [][]\OT1/pplx/m/n/10.95 ] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--401
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
 $[] \OT1/pplx/m/n/10.95 = \OT1/zplm/b/n/10.95 E[]\OT1/pplx/m/n/10.95 [[][]\OML/
 zplm/m/it/10.95 !; [] |  \OMS/zplm/m/n/10.95 ^^@ [][]\OT1/pplx/m/n/10.95 ] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--401
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
 \OT1/pplx/m/n/10.95 = \OT1/zplm/b/n/10.95 E[]\OT1/pplx/m/n/10.95 [[][]\OML/zplm
 /m/it/10.95 !; [][] [][]!; [][] |  \OT1/pplx/m/n/10.95 + [][]\OML/zplm/m/it/10.
 95 !; [][] [][]!; [][]\OT1/pplx/m/n/10.95 ]\OML/zplm/m/it/10.95 :|$ 
  []
 
 
-Underfull \hbox (badness 10000) detected at line 401
+Underfull \hbox (badness 10000) detected at line 484
 \OT1/pplx/m/n/10.95 = \OT1/zplm/b/n/10.95 E[]\OT1/pplx/m/n/10.95 [[][]\OML/zplm
 /m/it/10.95 !; [][] [][]!; [][] |  \OT1/pplx/m/n/10.95 + [][]\OML/zplm/m/it/10.
 95 !; [][] [][]!; [][]\OT1/pplx/m/n/10.95 ]\OML/zplm/m/it/10.95 :|$ 
  []
 
 
-Underfull \hbox (badness 10000) detected at line 401
+Underfull \hbox (badness 10000) detected at line 484
 \OT1/pplx/m/n/10.95 = \OT1/zplm/b/n/10.95 E[]\OT1/pplx/m/n/10.95 [[][]\OML/zplm
 /m/it/10.95 !; [][] [][]!; [][] |  \OT1/pplx/m/n/10.95 + [][]\OML/zplm/m/it/10.
 95 !; [][] [][]!; [][]\OT1/pplx/m/n/10.95 ]\OML/zplm/m/it/10.95 :|$ 
  []
 
 
-Underfull \hbox (badness 10000) detected at line 401
+Underfull \hbox (badness 10000) detected at line 484
 $[] \OT1/pplx/m/n/10.95 = \OT1/zplm/b/n/10.95 E[]\OT1/pplx/m/n/10.95 [[][]\OML/
 zplm/m/it/10.95 !; [] |  \OMS/zplm/m/n/10.95 ^^@ [][]\OT1/pplx/m/n/10.95 ] 
  []
 
 [15] [16] [17]
-Overfull \hbox (11.08434pt too wide) in paragraph at lines 548--556
-[] [][] [][]\EU1/HoeflerText(2)/m/n/10.95 Li, Ionescu, and Sminchisescu [[][]83
+Overfull \hbox (11.15004pt too wide) in paragraph at lines 631--639
+[] [][] [][]\EU1/HoeflerText(2)/m/n/10.95 Li, Ionescu, and Sminchisescu [[][]85
 [][]] generalized the original []\EU1/HoeflerText(2)/m/sc/10.95 RFF \EU1/Hoefle
 rText(2)/m/n/10.95 of [][]Rahimi
  []
 
 
-Overfull \hbox (4.47015pt too wide) in paragraph at lines 557--569
+Overfull \hbox (3.2547pt too wide) in paragraph at lines 640--652
 \EU1/HoeflerText(2)/m/n/10.95 but with better convergence rates than “Fastfood”
- [[][][]79[][]]. [][]Mukuta and Harada
+ [[][][]81[][]]. [][]Mukuta and Harada
  []
 
 
-Overfull \hbox (14.93655pt too wide) in paragraph at lines 557--569
-\EU1/HoeflerText(2)/m/n/10.95 [[][]106[][]] proposed data dependent features (c
+Overfull \hbox (14.93655pt too wide) in paragraph at lines 640--652
+\EU1/HoeflerText(2)/m/n/10.95 [[][]109[][]] proposed data dependent features (c
 omparable to the Nystrom̈ method)
  []
 
 [18]
-Overfull \hbox (1.13536pt too wide) in paragraph at lines 581--593
-[] [][] \EU1/HoeflerText(2)/m/n/10.95 Eventually [][]Yang et al. [[][]174[][]] 
+Overfull \hbox (0.58788pt too wide) in paragraph at lines 664--676
+[] [][] \EU1/HoeflerText(2)/m/n/10.95 Eventually [][]Yang et al. [[][]177[][]] 
 introduced the algorithm “À la Carte”, based
  []
 
@@ -4227,8 +4238,6 @@ Text(2)/m/n/10.95 is a Hilbert space, []i.e. $\OML/zplm/m/it/10.95 ^^[\OT1/pplx
 
 LaTeX Warning: Float too large for page by 31.06706pt on input line 393.
 
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 401.
 [26] [27] [28]
 Overfull \hbox (1.19061pt too wide) in paragraph at lines 498--504
 []\EU1/HoeflerText(2)/bx/n/10.95 (Even and odd operator-valued function on a []
@@ -4281,8 +4290,6 @@ Underfull \vbox (badness 10000) detected at line 588
 [31]
 Missing character: There is no c in font fplmbb!
 Missing character: There is no c in font fplmbb!
-Package hyperref Info: bookmark level for unknown proposition defaults to 0 on 
-input line 677.
  [32] [33]
 Underfull \hbox (badness 5578) in paragraph at lines 782--782
 $[][]\OMS/zplm/m/n/10.95 F [][][]| \OT1/pplx/m/n/10.95 (\OML/zplm/m/it/10.95 !\
@@ -4363,21 +4370,14 @@ Overfull \hbox (3.27048pt too wide) in paragraph at lines 1041--1048
 /n/10.95 = [][][] = []$
  []
 
-
-Overfull \hbox (0.83487pt too wide) in paragraph at lines 1051--1056
-[]\EU1/HoeflerText(2)/bx/n/10.95 ([[][][]33[][]]). []\EU1/HoeflerText(2)/m/it/1
-0.95 Given a positive-definite []Operator-Valued Kernel $[] \OT1/pplx/m/n/10.95
- :
- []
-
 [38] [39] [40]
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
 line 1299.
  [41]
-Overfull \hbox (6.26688pt too wide) in paragraph at lines 1323--1328
+Overfull \hbox (7.35092pt too wide) in paragraph at lines 1323--1328
 []\EU1/HoeflerText(2)/bx/n/10.95 (Separable []\EU1/HoeflerText(2)/bx/sc/10.95 V
 V-RKHS \EU1/HoeflerText(2)/bx/n/10.95 for $\OMS/zplm/b/n/10.95 Y$\EU1/HoeflerTe
-xt(2)/bx/n/10.95 -Mercer kernel [[][][]33[][]]).
+xt(2)/bx/n/10.95 -Mercer kernel [[][][]34[][]]).
  []
 
 
@@ -4390,6 +4390,13 @@ t/10.95 .
  []
 
 [42] [43]
+Overfull \hbox (3.39673pt too wide) in paragraph at lines 1466--1472
+[]\EU1/HoeflerText(2)/bx/n/10.95 (Decomposable kernel [[][][]101[][]]). [][][] 
+\EU1/HoeflerText(2)/m/it/10.95 Let $\OML/zplm/m/it/10.95 ^^@$ \EU1/HoeflerText(
+2)/m/it/10.95 be a non-negative
+ []
+
+
 Overfull \hbox (13.2685pt too wide) in paragraph at lines 1516--1521
 []\EU1/HoeflerText(2)/bx/n/10.95 (Kernels and Regularizers [[][][]4[][]]). [][]
 [] \EU1/HoeflerText(2)/m/it/10.95 Let $[]\OT1/pplx/m/n/10.95 ([]\OML/zplm/m/it/
@@ -4438,9 +4445,9 @@ o implement efficiently
  []
 
 
-Overfull \hbox (4.45592pt too wide) in paragraph at lines 52--59
-[]\EU1/HoeflerText(2)/bx/n/10.95 (Operator-valued Bochner’s theorem [[][][]108[
-][][], [][]175[][]]).
+Overfull \hbox (2.57253pt too wide) in paragraph at lines 52--59
+[]\EU1/HoeflerText(2)/bx/n/10.95 (Operator-valued Bochner’s theorem [[][][]111[
+][][], [][]178[][]]).
  []
 
 [52
@@ -4454,8 +4461,8 @@ OMS/zplm/m/n/10.95 X\OML/zplm/m/it/10.95 ; []\OT1/pplx/m/n/10.95 )$
  []
 
 [53]
-Overfull \hbox (8.47183pt too wide) in paragraph at lines 159--164
-[]\EU1/HoeflerText(2)/bx/n/10.95 ([][]Carmeli et al. [[][]34[][]]). [][][] \EU1
+Overfull \hbox (7.49728pt too wide) in paragraph at lines 159--164
+[]\EU1/HoeflerText(2)/bx/n/10.95 ([][]Carmeli et al. [[][]35[][]]). [][][] \EU1
 /HoeflerText(2)/m/it/10.95 Let $[]$ be a shift-invariant $\OMS/zplm/m/n/10.95 Y
 $\EU1/HoeflerText(2)/m/it/10.95 -Mercer
  []
@@ -4641,9 +4648,6 @@ oeflerText(2)/bx/n/10.95 -Mercer kernel spectral decom-
  []
 
 [56]
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
- line 374.
-
 Overfull \hbox (15.51456pt too wide) in paragraph at lines 381--390
 []\EU1/HoeflerText(2)/m/n/10.95 Another difficulty arises from the fact that th
 e quantity $[][][][][]$
@@ -4956,14 +4960,14 @@ Package microtype Info: Loading generic settings for font family
 )) [80
 
 ] [81]
-Overfull \hbox (7.05988pt too wide) in paragraph at lines 113--119
-[][]\EU1/HoeflerText(2)/m/n/10.95 Rahimi and Recht [[][]122[][]] proved the uni
+Overfull \hbox (6.66568pt too wide) in paragraph at lines 113--119
+[][]\EU1/HoeflerText(2)/m/n/10.95 Rahimi and Recht [[][]125[][]] proved the uni
 form convergence of []Random Fourier
  []
 
 [82] [83]
-Overfull \hbox (6.53748pt too wide) in paragraph at lines 221--225
-[]\EU1/HoeflerText(2)/bx/n/10.95 (Orlicz norm [[][][]158[][]]). []\EU1/HoeflerT
+Overfull \hbox (6.71268pt too wide) in paragraph at lines 221--225
+[]\EU1/HoeflerText(2)/bx/n/10.95 (Orlicz norm [[][][]161[][]]). []\EU1/HoeflerT
 ext(2)/m/it/10.95 Let $\OML/zplm/m/it/10.95   \OT1/pplx/m/n/10.95 : \U/fplmbb/m
 /n/10.95 R[] \OMS/zplm/m/n/10.95 ! \U/fplmbb/m/n/10.95 R[]$ \EU1/HoeflerText(2)
 /m/it/10.95 be a non-decreasing
@@ -5461,9 +5465,9 @@ LaTeX Warning: Command \nobreakspace invalid in math mode on input line 218.
 Package hyperref Info: bookmark level for unknown assumption defaults to 0 on i
 nput line 221.
 [125]
-Overfull \hbox (1.1308pt too wide) in paragraph at lines 296--299
+Overfull \hbox (1.57974pt too wide) in paragraph at lines 296--299
 []\EU1/HoeflerText(2)/bx/n/10.95 (Uniform stability [][]Bousquet and Elisseeff 
-[[][]21[][], def-
+[[][]22[][], def-
  []
 
 [126] [127] [128] [129] [130]) [131] [132
@@ -5501,14 +5505,19 @@ Overfull \hbox (6.38887pt too wide) in paragraph at lines 138--141
 stimated under sparsity constraints
  []
 
-[136] [137] [138] [139] [140] [141]) [142]) [143
+[136]
+Overfull \hbox (0.95522pt too wide) in paragraph at lines 211--235
+[][]\EU1/HoeflerText(2)/m/n/10.95 Brault, Lim, and d’Alché-Buc [[][]26[][]] pro
+posed to formulate the learning prob-
+ []
+
+[137] [138] [139] [140] [141]) [142]) [143
 
 
 
 
 
-] [144]
-(./Parts/Final_words.tex
+] [144] (./Parts/Final_words.tex
 chapter 9.
 [145
 
@@ -6225,12 +6234,6 @@ LaTeX Warning: Command \textunderscore invalid in math mode on input line 1003.
 LaTeX Warning: Command \textunderscore invalid in math mode on input line 1005.
 
 
-
-Overfull \hbox (4.50842pt too wide) in paragraph at lines 990--1016
-\EU1/HoeflerText(2)/m/n/10.95 best split over a random selection of features wi
-th fixed size $[][][][][][][][][][][][][][][][][]$.
- []
-
 [200] [201] [202] [203]
 Overfull \hbox (1.81113pt too wide) in paragraph at lines 1350--1358
 \EU1/HoeflerText(2)/m/n/10.95 (observed) inlier behavior and population quantit
@@ -6677,13 +6680,13 @@ opean symposium on artificial neural networks (ESANN)\EU1/HoeflerText(2)/m/n/10
 .95 .
  []
 
-[223] [224] [225]
+[223] [224] [225] [226]
 Overfull \hbox (16.26051pt too wide) in paragraph at lines 23--23
 []\EU1/HoeflerText(2)/m/n/10.95 N. Lim, Y. Senbabaoglu, G. Michailidis, and F. 
 d’Alché-Buc.  “  OKVAR-
  []
 
-[226]
+
 Overfull \hbox (16.26051pt too wide) in paragraph at lines 23--23
 []\EU1/HoeflerText(2)/m/n/10.95 N. Lim, Y. Şenbabaoğlu, G. Michailidis, and F. 
 d’Alché-Buc.  “  OKVAR-
@@ -6714,33 +6717,33 @@ Overfull \hbox (29.93703pt too wide) in paragraph at lines 23--23
 /HoeflerText(2)/m/it/10.95 arXiv preprint arXiv:1602.04474
  []
 
-
+[229]
 Overfull \hbox (0.91135pt too wide) in paragraph at lines 23--23
 []\EU1/HoeflerText(2)/m/n/10.95 E. Senkene and A. Tempel’man.  “  Hilbert Space
 s of operator-valued
  []
 
-[229]
+
 Overfull \hbox (7.43382pt too wide) in paragraph at lines 23--23
 \EU1/HoeflerText(2)/m/it/10.95 national Conference on Advanced Data Mining and 
 Applications\EU1/HoeflerText(2)/m/n/10.95 .  Springer.
  []
 
-
+[230]
 Overfull \hbox (1.84387pt too wide) in paragraph at lines 23--23
 \EU1/HoeflerText(2)/m/n/10.95 ces.”  In: \EU1/HoeflerText(2)/m/it/10.95 Foundat
 ions of computational mathematics \EU1/HoeflerText(2)/m/n/10.95 12.4 (2012), pp
 . 389–
  []
 
-[230]
+
 Overfull \hbox (8.88638pt too wide) in paragraph at lines 23--23
 \EU1/HoeflerText(2)/m/n/10.95 sion.”  In: \EU1/HoeflerText(2)/m/it/10.95 13th I
 FAC Symposium on System Identification\EU1/HoeflerText(2)/m/n/10.95 .  2003,  p
 p. 1820–
  []
 
-
+[231]
 Overfull \hbox (5.53949pt too wide) in paragraph at lines 23--23
 \EU1/HoeflerText(2)/m/it/10.95 The 31st International Conference on Machine Lea
 rning (ICML-14)\EU1/HoeflerText(2)/m/n/10.95 .  2014,
@@ -6752,7 +6755,6 @@ Overfull \hbox (9.07083pt too wide) in paragraph at lines 23--23
 els on histograms.”
  []
 
-[231]
 
 Package biblatex Warning: Setting 'defernumbers=true' recommended.
 
@@ -7393,12 +7395,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 263.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 87321 strings out of 493591
- 1871547 string characters out of 6143546
- 3870572 words of memory out of 5000000
- 88791 multiletter control sequences out of 15000+600000
+ 87365 strings out of 493591
+ 1872655 string characters out of 6143546
+ 3873890 words of memory out of 5000000
+ 88835 multiletter control sequences out of 15000+600000
  76330 words of font info for 368 fonts, out of 8000000 for 9000
  1352 hyphenation exceptions out of 8191
- 87i,23n,122p,10493b,19807s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,23n,122p,10493b,19865s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on ThesisRomainBrault.pdf (260 pages).

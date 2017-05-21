@@ -24,7 +24,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}\spacedlowsmallcaps {Outline and motivations}}{3}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Motivations}{4}{section.1.1}
+\contentsline {section}{\numberline {1.1}Motivation}{4}{section.1.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{4}{section.1.1}
 \defcounter {refsection}{0}\relax 
@@ -40,25 +40,31 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{8}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{9}{section.2.1}
+\contentsline {paragraph}{}{8}{equation.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{9}{example.2.1}
+\contentsline {paragraph}{}{9}{equation.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{9}{example.2.1}
+\contentsline {paragraph}{}{9}{equation.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{9}{example.2.1}
+\contentsline {paragraph}{}{9}{equation.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{9}{example.2.1}
+\contentsline {paragraph}{}{10}{example.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{10}{example.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{10}{example.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{10}{example.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.1}Introduction to kernel methods}{10}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{12}{figure.caption.9}
+\contentsline {subsubsection}{\numberline {2.1.1.1}Kernels and Reproducing Kernel Hilbert Spaces}{10}{subsubsection.2.1.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{12}{theorem.2.2}
+\contentsline {paragraph}{}{11}{figure.caption.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{13}{theorem.2.3}
+\contentsline {subsubsection}{\numberline {2.1.1.2}Learning in Reproducing Kernel Hilbert Spaces}{12}{subsubsection.2.1.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{13}{theorem.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.2}Random Fourier Features, Nystr\"om method and others}{13}{subsection.2.1.2}
 \defcounter {refsection}{0}\relax 

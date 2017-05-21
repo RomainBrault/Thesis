@@ -1,22 +1,22 @@
-\section{Motivations}
+\section{Motivation}
 This thesis is dedicated to the definition of a general and flexible approach
-to learn vector-valued functions and implement efficiently the learning
-algorithms, while allowing couplings between the outputs or learning function
-valued functions. To achieve this goal, we turn our attention to shallow
-architectures, namely the product of a (nonlinear) operator-valued feature
-$\tilde{\Phi}(x)$ and a parameter vector $\theta$ such that $\tilde{f}(x) =
-\tilde{\Phi}(x)^* \theta$, and combine two appealing methodologies:
-Operator-Valued Kernel Regression and Random Fourier Features.
+to learn vector-valued functions together with an efficient implementation of
+the learning algorithms. To achieve this goal, we study shallow architectures,
+namely the product of a (nonlinear) operator-valued feature $\tilde{\Phi}(x)$
+and a parameter vector $\theta$ such that $\tilde{f}(x) = \tilde{\Phi}(x)^*
+\theta$, and combine two appealing methodologies: Operator-Valued Kernel
+Regression and Random Fourier Features.
 \paragraph{}
-Operator-Valued Kernels \citep{Micchelli2005,Carmeli2010,Alvarez2012} extend
-the classic scalar-valued kernels to vector-valued functions. As in the scalar
-case, \acfp{OVK} are used to build Reproducing Kernel
-Hilbert Spaces (\acs{RKHS}) in which representer theorems apply as for ridge
-regression or other appropriate loss functional. In these cases, learning a
-model in the \acs{RKHS} boils down to learning a function of the form
-$f(x)=\sum_{i=1}^N K(x,x_i)\alpha_i$ where $x_1, \ldots, x_N$ are the training
-input data and each $\alpha_i, i=1, \ldots, N$ is a vector of the output space
-$\mathcal{Y}$ and each $K(x,x_i)$, an operator on vectors of $\mathcal{Y}$.
+Operator-Valued Kernels \citep{Micchelli2005,Carmeli2010,Kadri_aistat10,
+Brouard2011,Alvarez2012} extend the classic scalar-valued kernels to functions
+with values in some output Hilbert space. As in the scalar case, \acfp{OVK} are
+used to build Reproducing Kernel Hilbert Spaces (\acs{RKHS}) in which
+representer theorems apply as for ridge regression or other appropriate loss
+functional. In these cases, learning a model in the \acs{RKHS} boils down to
+learning a function of the form $f(x)=\sum_{i=1}^N K(x,x_i)\alpha_i$ where
+$x_1, \ldots, x_N$ are the training input data and each $\alpha_i, i=1, \ldots,
+N$ is a vector of the output space $\mathcal{Y}$ and each $K(x,x_i)$, an
+operator on vectors of $\mathcal{Y}$.
 \paragraph{}
 However, \acsp{OVK} suffer from the same drawbacks as classic (scalar-valued)
 kernel machines: they scale poorly to very large datasets because they are very
@@ -30,7 +30,7 @@ and has been further improved by efficient matrix computations such as
 \citep[``FastFood'']{Le2013} and \citep[``SORF'']{felix2016orthogonal}, which
 are considered as the best large scale implementations of kernel methods, along
 with Nystr\"om approaches proposed in \citet{drineas2005nystrom}. Moreover
-thanks to \acsp{RFF}, kernel methods have been prooved to be competitive with
+thanks to \acsp{RFF}, kernel methods have been proved to be competitive with
 deep architectures \citep{lu2014scale, dai2014scalable, yang2015deep}.
 
 \section{Outline}

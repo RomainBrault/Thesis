@@ -572,6 +572,40 @@
       \range{pages}{15}
       \keyw{extrems}
     \endentry
+    \entry{boser1992training}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=a196e43cf6775c3a36bbbb62e2d3cd70}{%
+           family={Boser},
+           family_i={B\bibinitperiod},
+           given={Bernhard\bibnamedelima E},
+           given_i={B\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=66a49f34048b44af9181a0da136c0d6f}{%
+           family={Guyon},
+           family_i={G\bibinitperiod},
+           given={Isabelle\bibnamedelima M},
+           given_i={I\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=86fa5872d1ad557263e35deb91ca2621}{%
+           family={Vapnik},
+           family_i={V\bibinitperiod},
+           given={Vladimir\bibnamedelima N},
+           given_i={V\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{806a603b6d69924114150347e57e7757}
+      \strng{fullhash}{806a603b6d69924114150347e57e7757}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the fifth annual workshop on Computational learning theory}
+      \field{title}{A training algorithm for optimal margin classifiers}
+      \field{year}{1992}
+      \field{pages}{144\bibrangedash 152}
+      \range{pages}{9}
+      \keyw{ovks}
+    \endentry
     \entry{Boucheron}{book}{}
       \name{author}{3}{}{%
         {{hash=6733342de6d0f13b320e7addd02bdb6f}{%
@@ -2026,42 +2060,6 @@
       \field{year}{2004}
       \keyw{extrems}
     \endentry
-    \entry{hoffgen1995robust}{article}{}
-      \name{author}{3}{}{%
-        {{hash=378e3c092b3e2d422814fd27b2541389}{%
-           family={Hoffgen},
-           family_i={H\bibinitperiod},
-           given={Klaus-Uwe},
-           given_i={K\bibinithyphendelim U\bibinitperiod}}}%
-        {{hash=8b60380be5d2426022d9274c65debec3}{%
-           family={Simon},
-           family_i={S\bibinitperiod},
-           given={Hans-Ulrich},
-           given_i={H\bibinithyphendelim U\bibinitperiod}}}%
-        {{hash=0756f0692b97aa45686b951cd8a8a4af}{%
-           family={Vanhorn},
-           family_i={V\bibinitperiod},
-           given={Kevin\bibnamedelima S},
-           given_i={K\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{2c0e77f8b3bb68831451a7f4dab440c7}
-      \strng{fullhash}{2c0e77f8b3bb68831451a7f4dab440c7}
-      \field{sortinit}{H}
-      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Computer and System Sciences}
-      \field{number}{1}
-      \field{title}{Robust trainability of single neurons}
-      \field{volume}{50}
-      \field{year}{1995}
-      \field{pages}{114\bibrangedash 125}
-      \range{pages}{12}
-      \keyw{ovks}
-    \endentry
     \entry{jaakkola1999using}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=521085652a07e67bdff5323e2febc138}{%
@@ -2120,6 +2118,46 @@
       \field{labeltitlesource}{title}
       \field{title}{$\{$SciPy$\}$: open source scientific tools for $\{$Python$\}$}
       \field{year}{2014}
+      \keyw{ovks}
+    \endentry
+    \entry{Kadri_aistat10}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=a6b3a96ed161dd268b1174c8733ba8a9}{%
+           family={Kadri},
+           family_i={K\bibinitperiod},
+           given={H.},
+           given_i={H\bibinitperiod}}}%
+        {{hash=cbbc5292becad934ef97c04b0b9b59a7}{%
+           family={Duflos},
+           family_i={D\bibinitperiod},
+           given={E.},
+           given_i={E\bibinitperiod}}}%
+        {{hash=79b18dbdb7736e5a19150c719cf2f291}{%
+           family={Preux},
+           family_i={P\bibinitperiod},
+           given={P.},
+           given_i={P\bibinitperiod}}}%
+        {{hash=5991a5c9ca5b8b42fd11a5aed7b5ee68}{%
+           family={Canu},
+           family_i={C\bibinitperiod},
+           given={S.},
+           given_i={S\bibinitperiod}}}%
+        {{hash=3ccdd46f04c3ce94dde76540293ec901}{%
+           family={Davy},
+           family_i={D\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{e26c9b0e947c5471d014c8d1320c8dd4}
+      \strng{fullhash}{6392586081d26ea1a39f4e6c581aa48a}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{JMLR Proc. of International Conference on Artificial Intelligence and Statistics}
+      \field{title}{Nonlinear functional regression: a functional RKHS approach}
+      \field{volume}{9}
+      \field{year}{2010}
       \keyw{ovks}
     \endentry
     \entry{kadri2015operator}{article}{}
@@ -2211,6 +2249,34 @@
       \field{title}{The third international knowledge discovery and data mining tools competition dataset}
       \field{year}{1999}
       \keyw{extrems}
+    \endentry
+    \entry{KIMELDORF1971}{article}{}
+      \name{author}{2}{}{%
+        {{hash=071eccdb947eb27d5f09dff82bd1cd12}{%
+           family={Kimeldorf},
+           family_i={K\bibinitperiod},
+           given={George},
+           given_i={G\bibinitperiod}}}%
+        {{hash=8854589115ff3f8518458b3abd5243a4}{%
+           family={Wahba},
+           family_i={W\bibinitperiod},
+           given={Grace},
+           given_i={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{7c3cc10fffa038b76e6ab6aa3cf20564}
+      \strng{fullhash}{7c3cc10fffa038b76e6ab6aa3cf20564}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Mathematical Analysis and Applications}
+      \field{number}{1}
+      \field{title}{Some results on Tchebycheffian spline functions}
+      \field{volume}{33}
+      \field{year}{1971}
+      \field{pages}{82\bibrangedash 95}
+      \range{pages}{14}
+      \keyw{ovks}
     \endentry
     \entry{kivinen2004online}{article}{}
       \name{author}{3}{}{%
@@ -3160,6 +3226,37 @@
       \field{journaltitle}{arXiv preprint arXiv:1112.5448}
       \field{title}{On some extensions of Bernstein's inequality for self-adjoint operators}
       \field{year}{2011}
+      \keyw{ovks}
+    \endentry
+    \entry{Mohri2012}{book}{}
+      \name{author}{3}{}{%
+        {{hash=5fca5a0ccb330ee37f79586957b15728}{%
+           family={Mohri},
+           family_i={M\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+        {{hash=8b15bafe02be903aa20bd239206fd013}{%
+           family={Rostamizadeh},
+           family_i={R\bibinitperiod},
+           given={A.},
+           given_i={A\bibinitperiod}}}%
+        {{hash=74bfbc3df243c4907eaad4083ff340e8}{%
+           family={Talwalkar},
+           family_i={T\bibinitperiod},
+           given={A.},
+           given_i={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The MIT press}%
+      }
+      \strng{namehash}{186166d86432b938493241fee083da90}
+      \strng{fullhash}{186166d86432b938493241fee083da90}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Foundations of Machine Learning}
+      \field{year}{2012}
       \keyw{ovks}
     \endentry
     \entry{mroueh2012multiclass}{inproceedings}{}
@@ -5372,6 +5469,7 @@
       \keyw{ovks}
     \endentry
   \endsortlist
+  \missing{Vapnik1992principles}
 \endrefsection
 \endinput
 

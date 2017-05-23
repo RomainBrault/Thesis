@@ -19,6 +19,72 @@
 
 \refsection{0}
   \sortlist[entry]{nyt/global/}
+    \entry{abadi2016tensorflow}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=5c20273d62bb6bd83f187e4131d7aef5}{%
+           family={Abadi},
+           family_i={A\bibinitperiod},
+           given={Martı́n},
+           given_i={M\bibinitperiod}}}%
+        {{hash=37e1df772f97a2e492755e2006294387}{%
+           family={Agarwal},
+           family_i={A\bibinitperiod},
+           given={Ashish},
+           given_i={A\bibinitperiod}}}%
+        {{hash=08cf514c08137f94d73b590060797f5b}{%
+           family={Barham},
+           family_i={B\bibinitperiod},
+           given={Paul},
+           given_i={P\bibinitperiod}}}%
+        {{hash=a79c0c4b084471b2c8e0e9a38b4cb2b7}{%
+           family={Brevdo},
+           family_i={B\bibinitperiod},
+           given={Eugene},
+           given_i={E\bibinitperiod}}}%
+        {{hash=c0d10aaf985cebf8d0497e1828f9313f}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Zhifeng},
+           given_i={Z\bibinitperiod}}}%
+        {{hash=6f712ddfd730736ee54fdc87a4abf7a2}{%
+           family={Citro},
+           family_i={C\bibinitperiod},
+           given={Craig},
+           given_i={C\bibinitperiod}}}%
+        {{hash=d07609f7580c5f06cf743ebef86d1663}{%
+           family={Corrado},
+           family_i={C\bibinitperiod},
+           given={Greg\bibnamedelima S},
+           given_i={G\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=a4c859221cc41e2db6d63b486f955ba2}{%
+           family={Davis},
+           family_i={D\bibinitperiod},
+           given={Andy},
+           given_i={A\bibinitperiod}}}%
+        {{hash=4aecfb0cc2e1e3b7899129fa2a94e2b8}{%
+           family={Dean},
+           family_i={D\bibinitperiod},
+           given={Jeffrey},
+           given_i={J\bibinitperiod}}}%
+        {{hash=bd7f88635b51bc5abb3d5a2cab967724}{%
+           family={Devin},
+           family_i={D\bibinitperiod},
+           given={Matthieu},
+           given_i={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{36b659781857df50dcc8e308aa8de7fc}
+      \strng{fullhash}{d3d6e818cd8ba1bf9b530c660bbafeac}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1603.04467}
+      \field{title}{Tensorflow: Large-scale machine learning on heterogeneous distributed systems}
+      \field{year}{2016}
+      \keyw{ovks}
+    \endentry
     \entry{Aggarwal2001}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=c19aaab5453d97a29c571bf84cade2b4}{%
@@ -2338,6 +2404,35 @@
       \field{year}{2004}
       \field{pages}{2165\bibrangedash 2176}
       \range{pages}{12}
+      \keyw{ovks}
+    \endentry
+    \entry{koenker1978regression}{article}{}
+      \name{author}{2}{}{%
+        {{hash=713ca648cccb03223d755f3f2ff51a5c}{%
+           family={Koenker},
+           family_i={K\bibinitperiod},
+           given={Roger},
+           given_i={R\bibinitperiod}}}%
+        {{hash=9f88db232143ba58627e18b6cfea2e71}{%
+           family={Bassett\bibnamedelima Jr},
+           family_i={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Gilbert},
+           given_i={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {JSTOR}%
+      }
+      \strng{namehash}{6e5ba5764cb2e82422d9d15ea77a35e0}
+      \strng{fullhash}{6e5ba5764cb2e82422d9d15ea77a35e0}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica: journal of the Econometric Society}
+      \field{title}{Regression quantiles}
+      \field{year}{1978}
+      \field{pages}{33\bibrangedash 50}
+      \range{pages}{18}
       \keyw{ovks}
     \endentry
     \entry{koltchinskii2013remark}{incollection}{}
@@ -4758,6 +4853,30 @@
       \field{volume}{1}
       \field{pages}{775\bibrangedash 816}
       \range{pages}{42}
+      \keyw{ovks}
+    \endentry
+    \entry{tieleman2012lecture}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4b0706fb6d9bde8b2af7eb6c09d43846}{%
+           family={Tieleman},
+           family_i={T\bibinitperiod},
+           given={Tijmen},
+           given_i={T\bibinitperiod}}}%
+        {{hash=b4906aab25c4a1182b5e4145c415d68a}{%
+           family={Hinton},
+           family_i={H\bibinitperiod},
+           given={G},
+           given_i={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{792322db185eebb11b95c02c4e9f29f6}
+      \strng{fullhash}{792322db185eebb11b95c02c4e9f29f6}
+      \field{sortinit}{T}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{University of Toronto, Tech. Rep}
+      \field{title}{Lecture 6.5-RMSProp, COURSERA: Neural networks for machine learning}
+      \field{year}{2012}
       \keyw{ovks}
     \endentry
     \entry{tornier2014haar}{misc}{}

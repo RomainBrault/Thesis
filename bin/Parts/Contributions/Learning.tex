@@ -503,15 +503,13 @@ err = representer2.main()
     \begin{figure}[tb]
         \pyc{print(r'\centering\resizebox{\textheight}{!}{\input{./representer.pgf}}')}
         \caption[\acs{ORFF} equivalence theorem.]{\acs{ORFF} equivalence
-        theorem.}
-        \label{fig:representer}
+        theorem. \label{fig:representer}}
     \end{figure}
     \clearpage
     \begin{figure}[tb]
         \pyc{print(r'\centering\resizebox{\textheight}{!}{\input{./representer2.pgf}}')}
         \caption[\acs{ORFF} equivalence theorem with overfitting.]{\acs{ORFF}
-        equivalence theorem with overfitting.}
-        \label{fig:representer2}
+        equivalence theorem with overfitting. \label{fig:representer2}}
     \end{figure}
 \end{landscape}}
 
@@ -794,6 +792,7 @@ drastically reduce the complexity by viewing the feature-maps as linear
 operators rather than matrices.
 
 \section{Efficient learning with ORFF}
+\label{subsec:efficient_learning}
 When developping \cref{alg:close_form} we considered that the feature map
 $\tildePhi{\omega}(x)$ was a matrix from $\mathbb{R}^p$ to $\mathbb{R}^{r}$ for
 all $x\in\mathcal{X}$, and therefore that computing

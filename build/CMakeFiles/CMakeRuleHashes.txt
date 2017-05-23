@@ -89,6 +89,13 @@ a02ec2e7bad845b269fee78b1ca245f8 ../bin/gfx/logoEgrey.png
 b23638e334a87eb687a7e2e87c97cf23 ../bin/gfx/nested_circle.pgf
 467e017a445f5bafd516c843f0704c1f ../bin/gfx/nestedtwomoons.pdf
 87829e133a167f26eb3f7c83d83d7018 ../bin/gfx/oneclassrf.png
+33cdbba12d2eec99f21e8eae287ee20c ../bin/gfx/quantile_continuous.pgf
+9554d67e950af5e47bd29007d11daf7e ../bin/gfx/quantile_joint.eps
+94ba5357bb31a0e9d04de89186232df6 ../bin/gfx/quantile_joint.pdf
+1eb69eb737a105240df3c08f225d64c5 ../bin/gfx/quantile_joint.pgf
+96fa454d10ed1009dbfdaa0fe12436fa ../bin/gfx/quantile_orff.eps
+ed11c555bc8aa9ec5d941fda263a6569 ../bin/gfx/quantile_orff.pdf
+6330be9efdb46f648cd182ccc6d67600 ../bin/gfx/quantile_orff.pgf
 a4b24329033f224c43feef367a2d8480 ../bin/gfx/representer_twomoons.eps
 b2fa34f0fd63805cea282e872edb8d94 ../bin/gfx/representer_twomoons.pdf
 9dbea9baabd30aac15967c83819d7714 ../bin/gfx/representer_twomoons.pgf

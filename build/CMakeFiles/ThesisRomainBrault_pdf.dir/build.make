@@ -62,6 +62,8 @@ CMakeFiles/ThesisRomainBrault_pdf: ../bin/ThesisRomainBrault.pdf
 ../bin/ThesisRomainBrault.pdf: ../bin/gfx/input.pdf
 ../bin/ThesisRomainBrault.pdf: ../bin/gfx/representer_twomoons.pdf
 ../bin/ThesisRomainBrault.pdf: ../bin/gfx/nestedtwomoons.pdf
+../bin/ThesisRomainBrault.pdf: ../bin/gfx/quantile_joint.pdf
+../bin/ThesisRomainBrault.pdf: ../bin/gfx/quantile_orff.pdf
 ../bin/ThesisRomainBrault.pdf: ../bin/gfx/infinite_monkey.jpg
 ../bin/ThesisRomainBrault.pdf: ../bin/gfx/bench_iforest_roc_pr_supervised_factorized.png
 ../bin/ThesisRomainBrault.pdf: ../bin/gfx/bench_iforest_roc_pr_unsupervised_factorized.png
@@ -156,6 +158,9 @@ CMakeFiles/ThesisRomainBrault_pdf: ../bin/ThesisRomainBrault.pdf
 ../bin/ThesisRomainBrault.pdf: ../bin/gfx/nested_circle.pgf
 ../bin/ThesisRomainBrault.pdf: ../bin/gfx/ORFFvsOVK.pgf
 ../bin/ThesisRomainBrault.pdf: ../bin/gfx/ORFFvsOVK_Dvariation.pgf
+../bin/ThesisRomainBrault.pdf: ../bin/gfx/quantile_continuous.pgf
+../bin/ThesisRomainBrault.pdf: ../bin/gfx/quantile_joint.pgf
+../bin/ThesisRomainBrault.pdf: ../bin/gfx/quantile_orff.pgf
 ../bin/ThesisRomainBrault.pdf: ../bin/gfx/representer_twomoons.pgf
 ../bin/ThesisRomainBrault.pdf: ../bin/gfx/representer_twomoons_2.pgf
 ../bin/ThesisRomainBrault.pdf: ../bin/CMakeLists.txt
@@ -177,6 +182,8 @@ CMakeFiles/ThesisRomainBrault_pdf: ../bin/ThesisRomainBrault.pdf
 ../bin/ThesisRomainBrault.pdf: ../bin/gfx/div_field.eps
 ../bin/ThesisRomainBrault.pdf: ../bin/gfx/feature.eps
 ../bin/ThesisRomainBrault.pdf: ../bin/gfx/input.eps
+../bin/ThesisRomainBrault.pdf: ../bin/gfx/quantile_joint.eps
+../bin/ThesisRomainBrault.pdf: ../bin/gfx/quantile_orff.eps
 ../bin/ThesisRomainBrault.pdf: ../bin/gfx/representer_twomoons.eps
 ../bin/ThesisRomainBrault.pdf: ../bin/acro.cfg
 ../bin/ThesisRomainBrault.pdf: ../bin/Bibliography.bib
@@ -215,480 +222,508 @@ CMakeFiles/ThesisRomainBrault_pdf: ../bin/ThesisRomainBrault.pdf
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating ../bin/gfx/nestedtwomoons.pdf"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/nestedtwomoons.pdf /Users/Romain/Dropbox/Thesis/bin/gfx/nestedtwomoons.pdf
 
+../bin/gfx/quantile_joint.pdf: ../gfx/quantile_joint.pdf
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating ../bin/gfx/quantile_joint.pdf"
+	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/quantile_joint.pdf /Users/Romain/Dropbox/Thesis/bin/gfx/quantile_joint.pdf
+
+../bin/gfx/quantile_orff.pdf: ../gfx/quantile_orff.pdf
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating ../bin/gfx/quantile_orff.pdf"
+	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/quantile_orff.pdf /Users/Romain/Dropbox/Thesis/bin/gfx/quantile_orff.pdf
+
 ../bin/gfx/infinite_monkey.jpg: ../gfx/infinite_monkey.jpg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating ../bin/gfx/infinite_monkey.jpg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating ../bin/gfx/infinite_monkey.jpg"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/infinite_monkey.jpg /Users/Romain/Dropbox/Thesis/bin/gfx/infinite_monkey.jpg
 
 ../bin/gfx/bench_iforest_roc_pr_supervised_factorized.png: ../gfx/bench_iforest_roc_pr_supervised_factorized.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating ../bin/gfx/bench_iforest_roc_pr_supervised_factorized.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating ../bin/gfx/bench_iforest_roc_pr_supervised_factorized.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bench_iforest_roc_pr_supervised_factorized.png /Users/Romain/Dropbox/Thesis/bin/gfx/bench_iforest_roc_pr_supervised_factorized.png
 
 ../bin/gfx/bench_iforest_roc_pr_unsupervised_factorized.png: ../gfx/bench_iforest_roc_pr_unsupervised_factorized.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating ../bin/gfx/bench_iforest_roc_pr_unsupervised_factorized.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating ../bin/gfx/bench_iforest_roc_pr_unsupervised_factorized.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bench_iforest_roc_pr_unsupervised_factorized.png /Users/Romain/Dropbox/Thesis/bin/gfx/bench_iforest_roc_pr_unsupervised_factorized.png
 
 ../bin/gfx/bench_lof_roc_pr_supervised_factorized.png: ../gfx/bench_lof_roc_pr_supervised_factorized.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating ../bin/gfx/bench_lof_roc_pr_supervised_factorized.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating ../bin/gfx/bench_lof_roc_pr_supervised_factorized.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bench_lof_roc_pr_supervised_factorized.png /Users/Romain/Dropbox/Thesis/bin/gfx/bench_lof_roc_pr_supervised_factorized.png
 
 ../bin/gfx/bench_lof_roc_pr_unsupervised_factorized.png: ../gfx/bench_lof_roc_pr_unsupervised_factorized.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating ../bin/gfx/bench_lof_roc_pr_unsupervised_factorized.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating ../bin/gfx/bench_lof_roc_pr_unsupervised_factorized.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bench_lof_roc_pr_unsupervised_factorized.png /Users/Romain/Dropbox/Thesis/bin/gfx/bench_lof_roc_pr_unsupervised_factorized.png
 
 ../bin/gfx/bench_LSAnomaly_roc_pr_supervised_factorized.png: ../gfx/bench_LSAnomaly_roc_pr_supervised_factorized.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating ../bin/gfx/bench_LSAnomaly_roc_pr_supervised_factorized.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating ../bin/gfx/bench_LSAnomaly_roc_pr_supervised_factorized.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bench_LSAnomaly_roc_pr_supervised_factorized.png /Users/Romain/Dropbox/Thesis/bin/gfx/bench_LSAnomaly_roc_pr_supervised_factorized.png
 
 ../bin/gfx/bench_LSAnomaly_roc_pr_unsupervised_factorized.png: ../gfx/bench_LSAnomaly_roc_pr_unsupervised_factorized.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating ../bin/gfx/bench_LSAnomaly_roc_pr_unsupervised_factorized.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating ../bin/gfx/bench_LSAnomaly_roc_pr_unsupervised_factorized.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bench_LSAnomaly_roc_pr_unsupervised_factorized.png /Users/Romain/Dropbox/Thesis/bin/gfx/bench_LSAnomaly_roc_pr_unsupervised_factorized.png
 
 ../bin/gfx/bench_ocrf_roc_pr_supervised_factorized.png: ../gfx/bench_ocrf_roc_pr_supervised_factorized.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating ../bin/gfx/bench_ocrf_roc_pr_supervised_factorized.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating ../bin/gfx/bench_ocrf_roc_pr_supervised_factorized.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bench_ocrf_roc_pr_supervised_factorized.png /Users/Romain/Dropbox/Thesis/bin/gfx/bench_ocrf_roc_pr_supervised_factorized.png
 
 ../bin/gfx/bench_ocrf_roc_pr_unsupervised_factorized.png: ../gfx/bench_ocrf_roc_pr_unsupervised_factorized.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating ../bin/gfx/bench_ocrf_roc_pr_unsupervised_factorized.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating ../bin/gfx/bench_ocrf_roc_pr_unsupervised_factorized.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bench_ocrf_roc_pr_unsupervised_factorized.png /Users/Romain/Dropbox/Thesis/bin/gfx/bench_ocrf_roc_pr_unsupervised_factorized.png
 
 ../bin/gfx/bench_ocsvm_roc_pr_supervised_factorized.png: ../gfx/bench_ocsvm_roc_pr_supervised_factorized.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating ../bin/gfx/bench_ocsvm_roc_pr_supervised_factorized.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating ../bin/gfx/bench_ocsvm_roc_pr_supervised_factorized.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bench_ocsvm_roc_pr_supervised_factorized.png /Users/Romain/Dropbox/Thesis/bin/gfx/bench_ocsvm_roc_pr_supervised_factorized.png
 
 ../bin/gfx/bench_ocsvm_roc_pr_unsupervised_factorized.png: ../gfx/bench_ocsvm_roc_pr_unsupervised_factorized.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating ../bin/gfx/bench_ocsvm_roc_pr_unsupervised_factorized.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating ../bin/gfx/bench_ocsvm_roc_pr_unsupervised_factorized.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bench_ocsvm_roc_pr_unsupervised_factorized.png /Users/Romain/Dropbox/Thesis/bin/gfx/bench_ocsvm_roc_pr_unsupervised_factorized.png
 
 ../bin/gfx/bench_oneclassrf_roc_pr_supervised_factorized.png: ../gfx/bench_oneclassrf_roc_pr_supervised_factorized.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating ../bin/gfx/bench_oneclassrf_roc_pr_supervised_factorized.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating ../bin/gfx/bench_oneclassrf_roc_pr_supervised_factorized.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bench_oneclassrf_roc_pr_supervised_factorized.png /Users/Romain/Dropbox/Thesis/bin/gfx/bench_oneclassrf_roc_pr_supervised_factorized.png
 
 ../bin/gfx/bench_oneclassrf_roc_pr_unsupervised_factorized.png: ../gfx/bench_oneclassrf_roc_pr_unsupervised_factorized.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating ../bin/gfx/bench_oneclassrf_roc_pr_unsupervised_factorized.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating ../bin/gfx/bench_oneclassrf_roc_pr_unsupervised_factorized.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bench_oneclassrf_roc_pr_unsupervised_factorized.png /Users/Romain/Dropbox/Thesis/bin/gfx/bench_oneclassrf_roc_pr_unsupervised_factorized.png
 
 ../bin/gfx/bench_orca_roc_pr_supervised_factorized.png: ../gfx/bench_orca_roc_pr_supervised_factorized.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating ../bin/gfx/bench_orca_roc_pr_supervised_factorized.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating ../bin/gfx/bench_orca_roc_pr_supervised_factorized.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bench_orca_roc_pr_supervised_factorized.png /Users/Romain/Dropbox/Thesis/bin/gfx/bench_orca_roc_pr_supervised_factorized.png
 
 ../bin/gfx/bench_orca_roc_pr_unsupervised_factorized.png: ../gfx/bench_orca_roc_pr_unsupervised_factorized.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating ../bin/gfx/bench_orca_roc_pr_unsupervised_factorized.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating ../bin/gfx/bench_orca_roc_pr_unsupervised_factorized.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bench_orca_roc_pr_unsupervised_factorized.png /Users/Romain/Dropbox/Thesis/bin/gfx/bench_orca_roc_pr_unsupervised_factorized.png
 
 ../bin/gfx/bench_rf_roc_pr_supervised_factorized.png: ../gfx/bench_rf_roc_pr_supervised_factorized.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating ../bin/gfx/bench_rf_roc_pr_supervised_factorized.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating ../bin/gfx/bench_rf_roc_pr_supervised_factorized.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bench_rf_roc_pr_supervised_factorized.png /Users/Romain/Dropbox/Thesis/bin/gfx/bench_rf_roc_pr_supervised_factorized.png
 
 ../bin/gfx/bench_rf_roc_pr_unsupervised_factorized.png: ../gfx/bench_rf_roc_pr_unsupervised_factorized.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating ../bin/gfx/bench_rf_roc_pr_unsupervised_factorized.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating ../bin/gfx/bench_rf_roc_pr_unsupervised_factorized.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bench_rf_roc_pr_unsupervised_factorized.png /Users/Romain/Dropbox/Thesis/bin/gfx/bench_rf_roc_pr_unsupervised_factorized.png
 
 ../bin/gfx/logoEgrey.png: ../gfx/logoEgrey.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating ../bin/gfx/logoEgrey.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating ../bin/gfx/logoEgrey.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/logoEgrey.png /Users/Romain/Dropbox/Thesis/bin/gfx/logoEgrey.png
 
 ../bin/gfx/oneclassrf.png: ../gfx/oneclassrf.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating ../bin/gfx/oneclassrf.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating ../bin/gfx/oneclassrf.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/oneclassrf.png /Users/Romain/Dropbox/Thesis/bin/gfx/oneclassrf.png
 
 ../bin/gfx/STIC.png: ../gfx/STIC.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating ../bin/gfx/STIC.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating ../bin/gfx/STIC.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/STIC.png /Users/Romain/Dropbox/Thesis/bin/gfx/STIC.png
 
 ../bin/gfx/TelecomParisTech.png: ../gfx/TelecomParisTech.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating ../bin/gfx/TelecomParisTech.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating ../bin/gfx/TelecomParisTech.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/TelecomParisTech.png /Users/Romain/Dropbox/Thesis/bin/gfx/TelecomParisTech.png
 
 ../bin/gfx/University_of_Evry_Val_d_Essonne_logo.png: ../gfx/University_of_Evry_Val_d_Essonne_logo.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating ../bin/gfx/University_of_Evry_Val_d_Essonne_logo.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating ../bin/gfx/University_of_Evry_Val_d_Essonne_logo.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/University_of_Evry_Val_d_Essonne_logo.png /Users/Romain/Dropbox/Thesis/bin/gfx/University_of_Evry_Val_d_Essonne_logo.png
 
 ../bin/gfx/UPsac.png: ../gfx/UPsac.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating ../bin/gfx/UPsac.png"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Generating ../bin/gfx/UPsac.png"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/UPsac.png /Users/Romain/Dropbox/Thesis/bin/gfx/UPsac.png
 
 ../bin/ThesisRomainBrault.tex: ../ThesisRomainBrault.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating ../bin/ThesisRomainBrault.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Generating ../bin/ThesisRomainBrault.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/ThesisRomainBrault.tex /Users/Romain/Dropbox/Thesis/bin/ThesisRomainBrault.tex
 
 ../bin/classicthesis-config.tex: ../classicthesis-config.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Generating ../bin/classicthesis-config.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating ../bin/classicthesis-config.tex"
 	/Applications/CMake.app/Contents/bin/cmake /Users/Romain/Dropbox/Thesis/build
 
 ../bin/FrontBackMatter/Abstract.tex: ../FrontBackMatter/Abstract.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Generating ../bin/FrontBackMatter/Abstract.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating ../bin/FrontBackMatter/Abstract.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/FrontBackMatter/Abstract.tex /Users/Romain/Dropbox/Thesis/bin/FrontBackMatter/Abstract.tex
 
 ../bin/FrontBackMatter/Acknowledgments.tex: ../FrontBackMatter/Acknowledgments.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating ../bin/FrontBackMatter/Acknowledgments.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating ../bin/FrontBackMatter/Acknowledgments.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/FrontBackMatter/Acknowledgments.tex /Users/Romain/Dropbox/Thesis/bin/FrontBackMatter/Acknowledgments.tex
 
 ../bin/FrontBackMatter/Bibliography.tex: ../FrontBackMatter/Bibliography.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating ../bin/FrontBackMatter/Bibliography.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Generating ../bin/FrontBackMatter/Bibliography.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/FrontBackMatter/Bibliography.tex /Users/Romain/Dropbox/Thesis/bin/FrontBackMatter/Bibliography.tex
 
 ../bin/FrontBackMatter/Blurb.tex: ../FrontBackMatter/Blurb.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating ../bin/FrontBackMatter/Blurb.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Generating ../bin/FrontBackMatter/Blurb.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/FrontBackMatter/Blurb.tex /Users/Romain/Dropbox/Thesis/bin/FrontBackMatter/Blurb.tex
 
 ../bin/FrontBackMatter/Colophon.tex: ../FrontBackMatter/Colophon.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Generating ../bin/FrontBackMatter/Colophon.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Generating ../bin/FrontBackMatter/Colophon.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/FrontBackMatter/Colophon.tex /Users/Romain/Dropbox/Thesis/bin/FrontBackMatter/Colophon.tex
 
 ../bin/FrontBackMatter/Contents.tex: ../FrontBackMatter/Contents.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Generating ../bin/FrontBackMatter/Contents.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Generating ../bin/FrontBackMatter/Contents.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/FrontBackMatter/Contents.tex /Users/Romain/Dropbox/Thesis/bin/FrontBackMatter/Contents.tex
 
 ../bin/FrontBackMatter/Declaration.tex: ../FrontBackMatter/Declaration.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Generating ../bin/FrontBackMatter/Declaration.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Generating ../bin/FrontBackMatter/Declaration.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/FrontBackMatter/Declaration.tex /Users/Romain/Dropbox/Thesis/bin/FrontBackMatter/Declaration.tex
 
 ../bin/FrontBackMatter/Dedication.tex: ../FrontBackMatter/Dedication.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Generating ../bin/FrontBackMatter/Dedication.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Generating ../bin/FrontBackMatter/Dedication.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/FrontBackMatter/Dedication.tex /Users/Romain/Dropbox/Thesis/bin/FrontBackMatter/Dedication.tex
 
 ../bin/FrontBackMatter/Publications.tex: ../FrontBackMatter/Publications.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Generating ../bin/FrontBackMatter/Publications.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Generating ../bin/FrontBackMatter/Publications.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/FrontBackMatter/Publications.tex /Users/Romain/Dropbox/Thesis/bin/FrontBackMatter/Publications.tex
 
 ../bin/FrontBackMatter/Titleback.tex: ../FrontBackMatter/Titleback.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Generating ../bin/FrontBackMatter/Titleback.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Generating ../bin/FrontBackMatter/Titleback.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/FrontBackMatter/Titleback.tex /Users/Romain/Dropbox/Thesis/bin/FrontBackMatter/Titleback.tex
 
 ../bin/FrontBackMatter/Titlepage.tex: ../FrontBackMatter/Titlepage.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Generating ../bin/FrontBackMatter/Titlepage.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Generating ../bin/FrontBackMatter/Titlepage.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/FrontBackMatter/Titlepage.tex /Users/Romain/Dropbox/Thesis/bin/FrontBackMatter/Titlepage.tex
 
 ../bin/Parts/Appendix/Code.tex: ../Parts/Appendix/Code.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Generating ../bin/Parts/Appendix/Code.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Generating ../bin/Parts/Appendix/Code.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Appendix/Code.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Appendix/Code.tex
 
 ../bin/Parts/Appendix/Misc.tex: ../Parts/Appendix/Misc.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Generating ../bin/Parts/Appendix/Misc.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Generating ../bin/Parts/Appendix/Misc.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Appendix/Misc.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Appendix/Misc.tex
 
 ../bin/Parts/Appendix/OneClassSplitting.tex: ../Parts/Appendix/OneClassSplitting.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Generating ../bin/Parts/Appendix/OneClassSplitting.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Generating ../bin/Parts/Appendix/OneClassSplitting.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Appendix/OneClassSplitting.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Appendix/OneClassSplitting.tex
 
 ../bin/Parts/Appendix/Proofs.tex: ../Parts/Appendix/Proofs.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Generating ../bin/Parts/Appendix/Proofs.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Generating ../bin/Parts/Appendix/Proofs.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Appendix/Proofs.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Appendix/Proofs.tex
 
 ../bin/Parts/Appendix.tex: ../Parts/Appendix.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Generating ../bin/Parts/Appendix.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Generating ../bin/Parts/Appendix.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Appendix.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Appendix.tex
 
 ../bin/Parts/Contributions/Applications.tex: ../Parts/Contributions/Applications.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Generating ../bin/Parts/Contributions/Applications.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Generating ../bin/Parts/Contributions/Applications.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Contributions/Applications.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Contributions/Applications.tex
 
 ../bin/Parts/Contributions/Concentration.tex: ../Parts/Contributions/Concentration.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Generating ../bin/Parts/Contributions/Concentration.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Generating ../bin/Parts/Contributions/Concentration.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Contributions/Concentration.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Contributions/Concentration.tex
 
 ../bin/Parts/Contributions/Constrcution.tex: ../Parts/Contributions/Constrcution.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Generating ../bin/Parts/Contributions/Constrcution.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Generating ../bin/Parts/Contributions/Constrcution.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Contributions/Constrcution.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Contributions/Constrcution.tex
 
 ../bin/Parts/Contributions/Construction---copie.tex: ../Parts/Contributions/Construction---copie.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Generating ../bin/Parts/Contributions/Construction---copie.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Generating ../bin/Parts/Contributions/Construction---copie.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Contributions/Construction---copie.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Contributions/Construction---copie.tex
 
 ../bin/Parts/Contributions/Construction.tex: ../Parts/Contributions/Construction.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Generating ../bin/Parts/Contributions/Construction.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Generating ../bin/Parts/Contributions/Construction.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Contributions/Construction.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Contributions/Construction.tex
 
 ../bin/Parts/Contributions/Generalization.tex: ../Parts/Contributions/Generalization.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Generating ../bin/Parts/Contributions/Generalization.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Generating ../bin/Parts/Contributions/Generalization.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Contributions/Generalization.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Contributions/Generalization.tex
 
 ../bin/Parts/Contributions/illustration.tex: ../Parts/Contributions/illustration.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Generating ../bin/Parts/Contributions/illustration.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Generating ../bin/Parts/Contributions/illustration.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Contributions/illustration.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Contributions/illustration.tex
 
 ../bin/Parts/Contributions/Learning.tex: ../Parts/Contributions/Learning.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Generating ../bin/Parts/Contributions/Learning.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Generating ../bin/Parts/Contributions/Learning.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Contributions/Learning.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Contributions/Learning.tex
 
 ../bin/Parts/Contributions.tex: ../Parts/Contributions.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Generating ../bin/Parts/Contributions.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Generating ../bin/Parts/Contributions.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Contributions.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Contributions.tex
 
 ../bin/Parts/Final_words/conclusion.tex: ../Parts/Final_words/conclusion.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Generating ../bin/Parts/Final_words/conclusion.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Generating ../bin/Parts/Final_words/conclusion.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Final_words/conclusion.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Final_words/conclusion.tex
 
 ../bin/Parts/Final_words/Perspectives.tex: ../Parts/Final_words/Perspectives.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Generating ../bin/Parts/Final_words/Perspectives.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Generating ../bin/Parts/Final_words/Perspectives.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Final_words/Perspectives.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Final_words/Perspectives.tex
 
 ../bin/Parts/Final_words.tex: ../Parts/Final_words.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Generating ../bin/Parts/Final_words.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Generating ../bin/Parts/Final_words.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Final_words.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Final_words.tex
 
 ../bin/Parts/Introduction/Background.tex: ../Parts/Introduction/Background.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Generating ../bin/Parts/Introduction/Background.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Generating ../bin/Parts/Introduction/Background.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Introduction/Background.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Introduction/Background.tex
 
 ../bin/Parts/Introduction/Motivations.tex: ../Parts/Introduction/Motivations.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Generating ../bin/Parts/Introduction/Motivations.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Generating ../bin/Parts/Introduction/Motivations.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Introduction/Motivations.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Introduction/Motivations.tex
 
 ../bin/Parts/Introduction/old-stuff-motivation.tex: ../Parts/Introduction/old-stuff-motivation.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Generating ../bin/Parts/Introduction/old-stuff-motivation.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Generating ../bin/Parts/Introduction/old-stuff-motivation.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Introduction/old-stuff-motivation.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Introduction/old-stuff-motivation.tex
 
 ../bin/Parts/Introduction/Outline.tex: ../Parts/Introduction/Outline.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Generating ../bin/Parts/Introduction/Outline.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Generating ../bin/Parts/Introduction/Outline.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Introduction/Outline.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Introduction/Outline.tex
 
 ../bin/Parts/Introduction/rff.tex: ../Parts/Introduction/rff.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Generating ../bin/Parts/Introduction/rff.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Generating ../bin/Parts/Introduction/rff.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Introduction/rff.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Introduction/rff.tex
 
 ../bin/Parts/Introduction.tex: ../Parts/Introduction.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Generating ../bin/Parts/Introduction.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Generating ../bin/Parts/Introduction.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Parts/Introduction.tex /Users/Romain/Dropbox/Thesis/bin/Parts/Introduction.tex
 
 ../bin/profile/AdobeColorProfiles.tex: ../profile/AdobeColorProfiles.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Generating ../bin/profile/AdobeColorProfiles.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Generating ../bin/profile/AdobeColorProfiles.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/AdobeColorProfiles.tex /Users/Romain/Dropbox/Thesis/bin/profile/AdobeColorProfiles.tex
 
 ../bin/profile/AdobeExternalProfiles.tex: ../profile/AdobeExternalProfiles.tex
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Generating ../bin/profile/AdobeExternalProfiles.tex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Generating ../bin/profile/AdobeExternalProfiles.tex"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/AdobeExternalProfiles.tex /Users/Romain/Dropbox/Thesis/bin/profile/AdobeExternalProfiles.tex
 
 ../bin/profile/Adobe/CMYK/CoatedFOGRA27.icc: ../profile/Adobe/CMYK/CoatedFOGRA27.icc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Generating ../bin/profile/Adobe/CMYK/CoatedFOGRA27.icc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Generating ../bin/profile/Adobe/CMYK/CoatedFOGRA27.icc"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/Adobe/CMYK/CoatedFOGRA27.icc /Users/Romain/Dropbox/Thesis/bin/profile/Adobe/CMYK/CoatedFOGRA27.icc
 
 ../bin/profile/Adobe/CMYK/CoatedFOGRA39.icc: ../profile/Adobe/CMYK/CoatedFOGRA39.icc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Generating ../bin/profile/Adobe/CMYK/CoatedFOGRA39.icc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Generating ../bin/profile/Adobe/CMYK/CoatedFOGRA39.icc"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/Adobe/CMYK/CoatedFOGRA39.icc /Users/Romain/Dropbox/Thesis/bin/profile/Adobe/CMYK/CoatedFOGRA39.icc
 
 ../bin/profile/Adobe/CMYK/JapanColor2001Coated.icc: ../profile/Adobe/CMYK/JapanColor2001Coated.icc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Generating ../bin/profile/Adobe/CMYK/JapanColor2001Coated.icc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Generating ../bin/profile/Adobe/CMYK/JapanColor2001Coated.icc"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/Adobe/CMYK/JapanColor2001Coated.icc /Users/Romain/Dropbox/Thesis/bin/profile/Adobe/CMYK/JapanColor2001Coated.icc
 
 ../bin/profile/Adobe/CMYK/JapanColor2001Uncoated.icc: ../profile/Adobe/CMYK/JapanColor2001Uncoated.icc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Generating ../bin/profile/Adobe/CMYK/JapanColor2001Uncoated.icc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Generating ../bin/profile/Adobe/CMYK/JapanColor2001Uncoated.icc"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/Adobe/CMYK/JapanColor2001Uncoated.icc /Users/Romain/Dropbox/Thesis/bin/profile/Adobe/CMYK/JapanColor2001Uncoated.icc
 
 ../bin/profile/Adobe/CMYK/JapanColor2002Newspaper.icc: ../profile/Adobe/CMYK/JapanColor2002Newspaper.icc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Generating ../bin/profile/Adobe/CMYK/JapanColor2002Newspaper.icc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Generating ../bin/profile/Adobe/CMYK/JapanColor2002Newspaper.icc"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/Adobe/CMYK/JapanColor2002Newspaper.icc /Users/Romain/Dropbox/Thesis/bin/profile/Adobe/CMYK/JapanColor2002Newspaper.icc
 
 ../bin/profile/Adobe/CMYK/JapanWebCoated.icc: ../profile/Adobe/CMYK/JapanWebCoated.icc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Generating ../bin/profile/Adobe/CMYK/JapanWebCoated.icc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Generating ../bin/profile/Adobe/CMYK/JapanWebCoated.icc"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/Adobe/CMYK/JapanWebCoated.icc /Users/Romain/Dropbox/Thesis/bin/profile/Adobe/CMYK/JapanWebCoated.icc
 
 ../bin/profile/Adobe/CMYK/UncoatedFOGRA29.icc: ../profile/Adobe/CMYK/UncoatedFOGRA29.icc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Generating ../bin/profile/Adobe/CMYK/UncoatedFOGRA29.icc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Generating ../bin/profile/Adobe/CMYK/UncoatedFOGRA29.icc"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/Adobe/CMYK/UncoatedFOGRA29.icc /Users/Romain/Dropbox/Thesis/bin/profile/Adobe/CMYK/UncoatedFOGRA29.icc
 
 ../bin/profile/Adobe/CMYK/USSheetfedCoated.icc: ../profile/Adobe/CMYK/USSheetfedCoated.icc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Generating ../bin/profile/Adobe/CMYK/USSheetfedCoated.icc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Generating ../bin/profile/Adobe/CMYK/USSheetfedCoated.icc"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/Adobe/CMYK/USSheetfedCoated.icc /Users/Romain/Dropbox/Thesis/bin/profile/Adobe/CMYK/USSheetfedCoated.icc
 
 ../bin/profile/Adobe/CMYK/USSheetfedUncoated.icc: ../profile/Adobe/CMYK/USSheetfedUncoated.icc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Generating ../bin/profile/Adobe/CMYK/USSheetfedUncoated.icc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Generating ../bin/profile/Adobe/CMYK/USSheetfedUncoated.icc"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/Adobe/CMYK/USSheetfedUncoated.icc /Users/Romain/Dropbox/Thesis/bin/profile/Adobe/CMYK/USSheetfedUncoated.icc
 
 ../bin/profile/Adobe/CMYK/USWebCoatedSWOP.icc: ../profile/Adobe/CMYK/USWebCoatedSWOP.icc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Generating ../bin/profile/Adobe/CMYK/USWebCoatedSWOP.icc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Generating ../bin/profile/Adobe/CMYK/USWebCoatedSWOP.icc"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/Adobe/CMYK/USWebCoatedSWOP.icc /Users/Romain/Dropbox/Thesis/bin/profile/Adobe/CMYK/USWebCoatedSWOP.icc
 
 ../bin/profile/Adobe/CMYK/USWebUncoated.icc: ../profile/Adobe/CMYK/USWebUncoated.icc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Generating ../bin/profile/Adobe/CMYK/USWebUncoated.icc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Generating ../bin/profile/Adobe/CMYK/USWebUncoated.icc"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/Adobe/CMYK/USWebUncoated.icc /Users/Romain/Dropbox/Thesis/bin/profile/Adobe/CMYK/USWebUncoated.icc
 
 ../bin/profile/Adobe/CMYK/WebCoatedFOGRA28.icc: ../profile/Adobe/CMYK/WebCoatedFOGRA28.icc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Generating ../bin/profile/Adobe/CMYK/WebCoatedFOGRA28.icc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Generating ../bin/profile/Adobe/CMYK/WebCoatedFOGRA28.icc"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/Adobe/CMYK/WebCoatedFOGRA28.icc /Users/Romain/Dropbox/Thesis/bin/profile/Adobe/CMYK/WebCoatedFOGRA28.icc
 
 ../bin/profile/Adobe/RGB/AdobeRGB1998.icc: ../profile/Adobe/RGB/AdobeRGB1998.icc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Generating ../bin/profile/Adobe/RGB/AdobeRGB1998.icc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Generating ../bin/profile/Adobe/RGB/AdobeRGB1998.icc"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/Adobe/RGB/AdobeRGB1998.icc /Users/Romain/Dropbox/Thesis/bin/profile/Adobe/RGB/AdobeRGB1998.icc
 
 ../bin/profile/Adobe/RGB/AppleRGB.icc: ../profile/Adobe/RGB/AppleRGB.icc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Generating ../bin/profile/Adobe/RGB/AppleRGB.icc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Generating ../bin/profile/Adobe/RGB/AppleRGB.icc"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/Adobe/RGB/AppleRGB.icc /Users/Romain/Dropbox/Thesis/bin/profile/Adobe/RGB/AppleRGB.icc
 
 ../bin/profile/Adobe/RGB/ColorMatchRGB.icc: ../profile/Adobe/RGB/ColorMatchRGB.icc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Generating ../bin/profile/Adobe/RGB/ColorMatchRGB.icc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Generating ../bin/profile/Adobe/RGB/ColorMatchRGB.icc"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/profile/Adobe/RGB/ColorMatchRGB.icc /Users/Romain/Dropbox/Thesis/bin/profile/Adobe/RGB/ColorMatchRGB.icc
 
 ../bin/gfx/feature_relationship.tikz: ../gfx/feature_relationship.tikz
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Generating ../bin/gfx/feature_relationship.tikz"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Generating ../bin/gfx/feature_relationship.tikz"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/feature_relationship.tikz /Users/Romain/Dropbox/Thesis/bin/gfx/feature_relationship.tikz
 
 ../bin/gfx/learning_accuracy_MNIST.tikz: ../gfx/learning_accuracy_MNIST.tikz
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Generating ../bin/gfx/learning_accuracy_MNIST.tikz"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Generating ../bin/gfx/learning_accuracy_MNIST.tikz"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/learning_accuracy_MNIST.tikz /Users/Romain/Dropbox/Thesis/bin/gfx/learning_accuracy_MNIST.tikz
 
 ../bin/gfx/learning_time_MNIST.tikz: ../gfx/learning_time_MNIST.tikz
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Generating ../bin/gfx/learning_time_MNIST.tikz"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Generating ../bin/gfx/learning_time_MNIST.tikz"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/learning_time_MNIST.tikz /Users/Romain/Dropbox/Thesis/bin/gfx/learning_time_MNIST.tikz
 
 ../bin/gfx/variance_curl.tikz: ../gfx/variance_curl.tikz
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Generating ../bin/gfx/variance_curl.tikz"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Generating ../bin/gfx/variance_curl.tikz"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/variance_curl.tikz /Users/Romain/Dropbox/Thesis/bin/gfx/variance_curl.tikz
 
 ../bin/gfx/variance_dec.tikz: ../gfx/variance_dec.tikz
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Generating ../bin/gfx/variance_dec.tikz"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Generating ../bin/gfx/variance_dec.tikz"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/variance_dec.tikz /Users/Romain/Dropbox/Thesis/bin/gfx/variance_dec.tikz
 
 ../bin/gfx/bck/approximation.pgf: ../gfx/bck/approximation.pgf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Generating ../bin/gfx/bck/approximation.pgf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Generating ../bin/gfx/bck/approximation.pgf"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bck/approximation.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/bck/approximation.pgf
 
 ../bin/gfx/bck/efficient_curlfree_gaussian.pgf: ../gfx/bck/efficient_curlfree_gaussian.pgf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Generating ../bin/gfx/bck/efficient_curlfree_gaussian.pgf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Generating ../bin/gfx/bck/efficient_curlfree_gaussian.pgf"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bck/efficient_curlfree_gaussian.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/bck/efficient_curlfree_gaussian.pgf
 
 ../bin/gfx/bck/efficient_decomposable_gaussian.pgf: ../gfx/bck/efficient_decomposable_gaussian.pgf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Generating ../bin/gfx/bck/efficient_decomposable_gaussian.pgf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Generating ../bin/gfx/bck/efficient_decomposable_gaussian.pgf"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bck/efficient_decomposable_gaussian.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/bck/efficient_decomposable_gaussian.pgf
 
 ../bin/gfx/bck/efficient_divfree_gaussian.pgf: ../gfx/bck/efficient_divfree_gaussian.pgf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Generating ../bin/gfx/bck/efficient_divfree_gaussian.pgf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Generating ../bin/gfx/bck/efficient_divfree_gaussian.pgf"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bck/efficient_divfree_gaussian.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/bck/efficient_divfree_gaussian.pgf
 
 ../bin/gfx/bck/not_Mercer.pgf: ../gfx/bck/not_Mercer.pgf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Generating ../bin/gfx/bck/not_Mercer.pgf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Generating ../bin/gfx/bck/not_Mercer.pgf"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bck/not_Mercer.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/bck/not_Mercer.pgf
 
 ../bin/gfx/bck/representer.pgf: ../gfx/bck/representer.pgf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Generating ../bin/gfx/bck/representer.pgf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Generating ../bin/gfx/bck/representer.pgf"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bck/representer.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/bck/representer.pgf
 
 ../bin/gfx/bck/representer2.pgf: ../gfx/bck/representer2.pgf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Generating ../bin/gfx/bck/representer2.pgf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Generating ../bin/gfx/bck/representer2.pgf"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/bck/representer2.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/bck/representer2.pgf
 
 ../bin/gfx/Curl_ORFFvsOVK.pgf: ../gfx/Curl_ORFFvsOVK.pgf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Generating ../bin/gfx/Curl_ORFFvsOVK.pgf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Generating ../bin/gfx/Curl_ORFFvsOVK.pgf"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/Curl_ORFFvsOVK.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/Curl_ORFFvsOVK.pgf
 
 ../bin/gfx/kernel_reconstruction.pgf: ../gfx/kernel_reconstruction.pgf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Generating ../bin/gfx/kernel_reconstruction.pgf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Generating ../bin/gfx/kernel_reconstruction.pgf"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/kernel_reconstruction.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/kernel_reconstruction.pgf
 
 ../bin/gfx/nested_circle.pgf: ../gfx/nested_circle.pgf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Generating ../bin/gfx/nested_circle.pgf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Generating ../bin/gfx/nested_circle.pgf"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/nested_circle.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/nested_circle.pgf
 
 ../bin/gfx/ORFFvsOVK.pgf: ../gfx/ORFFvsOVK.pgf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Generating ../bin/gfx/ORFFvsOVK.pgf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Generating ../bin/gfx/ORFFvsOVK.pgf"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/ORFFvsOVK.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/ORFFvsOVK.pgf
 
 ../bin/gfx/ORFFvsOVK_Dvariation.pgf: ../gfx/ORFFvsOVK_Dvariation.pgf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Generating ../bin/gfx/ORFFvsOVK_Dvariation.pgf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Generating ../bin/gfx/ORFFvsOVK_Dvariation.pgf"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/ORFFvsOVK_Dvariation.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/ORFFvsOVK_Dvariation.pgf
 
+../bin/gfx/quantile_continuous.pgf: ../gfx/quantile_continuous.pgf
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Generating ../bin/gfx/quantile_continuous.pgf"
+	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/quantile_continuous.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/quantile_continuous.pgf
+
+../bin/gfx/quantile_joint.pgf: ../gfx/quantile_joint.pgf
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Generating ../bin/gfx/quantile_joint.pgf"
+	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/quantile_joint.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/quantile_joint.pgf
+
+../bin/gfx/quantile_orff.pgf: ../gfx/quantile_orff.pgf
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Generating ../bin/gfx/quantile_orff.pgf"
+	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/quantile_orff.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/quantile_orff.pgf
+
 ../bin/gfx/representer_twomoons.pgf: ../gfx/representer_twomoons.pgf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Generating ../bin/gfx/representer_twomoons.pgf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Generating ../bin/gfx/representer_twomoons.pgf"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/representer_twomoons.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/representer_twomoons.pgf
 
 ../bin/gfx/representer_twomoons_2.pgf: ../gfx/representer_twomoons_2.pgf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Generating ../bin/gfx/representer_twomoons_2.pgf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Generating ../bin/gfx/representer_twomoons_2.pgf"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/representer_twomoons_2.pgf /Users/Romain/Dropbox/Thesis/bin/gfx/representer_twomoons_2.pgf
 
 ../bin/CMakeLists.txt: ../CMakeLists.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Generating ../bin/CMakeLists.txt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Generating ../bin/CMakeLists.txt"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/CMakeLists.txt /Users/Romain/Dropbox/Thesis/bin/CMakeLists.txt
 
 ../bin/LICENSE.txt: ../LICENSE.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Generating ../bin/LICENSE.txt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Generating ../bin/LICENSE.txt"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/LICENSE.txt /Users/Romain/Dropbox/Thesis/bin/LICENSE.txt
 
 ../bin/log.txt: ../log.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Generating ../bin/log.txt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Generating ../bin/log.txt"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/log.txt /Users/Romain/Dropbox/Thesis/bin/log.txt
 
 ../bin/requirements.txt: ../requirements.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Generating ../bin/requirements.txt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Generating ../bin/requirements.txt"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/requirements.txt /Users/Romain/Dropbox/Thesis/bin/requirements.txt
 
 ../bin/resultsOCRF/computationTime_semisupervised.txt: ../resultsOCRF/computationTime_semisupervised.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Generating ../bin/resultsOCRF/computationTime_semisupervised.txt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Generating ../bin/resultsOCRF/computationTime_semisupervised.txt"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/resultsOCRF/computationTime_semisupervised.txt /Users/Romain/Dropbox/Thesis/bin/resultsOCRF/computationTime_semisupervised.txt
 
 ../bin/resultsOCRF/computationTime_unsupervised.txt: ../resultsOCRF/computationTime_unsupervised.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Generating ../bin/resultsOCRF/computationTime_unsupervised.txt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Generating ../bin/resultsOCRF/computationTime_unsupervised.txt"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/resultsOCRF/computationTime_unsupervised.txt /Users/Romain/Dropbox/Thesis/bin/resultsOCRF/computationTime_unsupervised.txt
 
 ../bin/resultsOCRF/results_semisupervised.txt: ../resultsOCRF/results_semisupervised.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Generating ../bin/resultsOCRF/results_semisupervised.txt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Generating ../bin/resultsOCRF/results_semisupervised.txt"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/resultsOCRF/results_semisupervised.txt /Users/Romain/Dropbox/Thesis/bin/resultsOCRF/results_semisupervised.txt
 
 ../bin/resultsOCRF/results_unsupervised.txt: ../resultsOCRF/results_unsupervised.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Generating ../bin/resultsOCRF/results_unsupervised.txt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Generating ../bin/resultsOCRF/results_unsupervised.txt"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/resultsOCRF/results_unsupervised.txt /Users/Romain/Dropbox/Thesis/bin/resultsOCRF/results_unsupervised.txt
 
 ../bin/src/approximation.py: ../src/approximation.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Generating ../bin/src/approximation.py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Generating ../bin/src/approximation.py"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/src/approximation.py /Users/Romain/Dropbox/Thesis/bin/src/approximation.py
 
 ../bin/src/efficient_curlfree_gaussian.py: ../src/efficient_curlfree_gaussian.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Generating ../bin/src/efficient_curlfree_gaussian.py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Generating ../bin/src/efficient_curlfree_gaussian.py"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/src/efficient_curlfree_gaussian.py /Users/Romain/Dropbox/Thesis/bin/src/efficient_curlfree_gaussian.py
 
 ../bin/src/efficient_decomposable_gaussian.py: ../src/efficient_decomposable_gaussian.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Generating ../bin/src/efficient_decomposable_gaussian.py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Generating ../bin/src/efficient_decomposable_gaussian.py"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/src/efficient_decomposable_gaussian.py /Users/Romain/Dropbox/Thesis/bin/src/efficient_decomposable_gaussian.py
 
 ../bin/src/efficient_divfree_gaussian.py: ../src/efficient_divfree_gaussian.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Generating ../bin/src/efficient_divfree_gaussian.py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Generating ../bin/src/efficient_divfree_gaussian.py"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/src/efficient_divfree_gaussian.py /Users/Romain/Dropbox/Thesis/bin/src/efficient_divfree_gaussian.py
 
 ../bin/src/not_mercer.py: ../src/not_mercer.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Generating ../bin/src/not_mercer.py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Generating ../bin/src/not_mercer.py"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/src/not_mercer.py /Users/Romain/Dropbox/Thesis/bin/src/not_mercer.py
 
 ../bin/src/representer.py: ../src/representer.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Generating ../bin/src/representer.py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Generating ../bin/src/representer.py"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/src/representer.py /Users/Romain/Dropbox/Thesis/bin/src/representer.py
 
 ../bin/src/representer2.py: ../src/representer2.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Generating ../bin/src/representer2.py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Generating ../bin/src/representer2.py"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/src/representer2.py /Users/Romain/Dropbox/Thesis/bin/src/representer2.py
 
 ../bin/gfx/curl_field.eps: ../gfx/curl_field.eps
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Generating ../bin/gfx/curl_field.eps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Generating ../bin/gfx/curl_field.eps"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/curl_field.eps /Users/Romain/Dropbox/Thesis/bin/gfx/curl_field.eps
 
 ../bin/gfx/div_field.eps: ../gfx/div_field.eps
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Generating ../bin/gfx/div_field.eps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Generating ../bin/gfx/div_field.eps"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/div_field.eps /Users/Romain/Dropbox/Thesis/bin/gfx/div_field.eps
 
 ../bin/gfx/feature.eps: ../gfx/feature.eps
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Generating ../bin/gfx/feature.eps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Generating ../bin/gfx/feature.eps"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/feature.eps /Users/Romain/Dropbox/Thesis/bin/gfx/feature.eps
 
 ../bin/gfx/input.eps: ../gfx/input.eps
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Generating ../bin/gfx/input.eps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Generating ../bin/gfx/input.eps"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/input.eps /Users/Romain/Dropbox/Thesis/bin/gfx/input.eps
 
+../bin/gfx/quantile_joint.eps: ../gfx/quantile_joint.eps
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Generating ../bin/gfx/quantile_joint.eps"
+	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/quantile_joint.eps /Users/Romain/Dropbox/Thesis/bin/gfx/quantile_joint.eps
+
+../bin/gfx/quantile_orff.eps: ../gfx/quantile_orff.eps
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Generating ../bin/gfx/quantile_orff.eps"
+	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/quantile_orff.eps /Users/Romain/Dropbox/Thesis/bin/gfx/quantile_orff.eps
+
 ../bin/gfx/representer_twomoons.eps: ../gfx/representer_twomoons.eps
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Generating ../bin/gfx/representer_twomoons.eps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Generating ../bin/gfx/representer_twomoons.eps"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/gfx/representer_twomoons.eps /Users/Romain/Dropbox/Thesis/bin/gfx/representer_twomoons.eps
 
 ../bin/acro.cfg: ../acro.cfg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Generating ../bin/acro.cfg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Generating ../bin/acro.cfg"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/acro.cfg /Users/Romain/Dropbox/Thesis/bin/acro.cfg
 
 ../bin/Bibliography.bib: ../Bibliography.bib
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Generating ../bin/Bibliography.bib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Generating ../bin/Bibliography.bib"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Bibliography.bib /Users/Romain/Dropbox/Thesis/bin/Bibliography.bib
 
 ../bin/MVExtrem.bib: ../MVExtrem.bib
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Generating ../bin/MVExtrem.bib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Generating ../bin/MVExtrem.bib"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/MVExtrem.bib /Users/Romain/Dropbox/Thesis/bin/MVExtrem.bib
 
 ../bin/Selfpublication.bib: ../Selfpublication.bib
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Generating ../bin/Selfpublication.bib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/Romain/Dropbox/Thesis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Generating ../bin/Selfpublication.bib"
 	/Applications/CMake.app/Contents/bin/cmake -E copy /Users/Romain/Dropbox/Thesis/Selfpublication.bib /Users/Romain/Dropbox/Thesis/bin/Selfpublication.bib
 
 ThesisRomainBrault_pdf: CMakeFiles/ThesisRomainBrault_pdf
@@ -699,6 +734,8 @@ ThesisRomainBrault_pdf: ../bin/gfx/feature.pdf
 ThesisRomainBrault_pdf: ../bin/gfx/input.pdf
 ThesisRomainBrault_pdf: ../bin/gfx/representer_twomoons.pdf
 ThesisRomainBrault_pdf: ../bin/gfx/nestedtwomoons.pdf
+ThesisRomainBrault_pdf: ../bin/gfx/quantile_joint.pdf
+ThesisRomainBrault_pdf: ../bin/gfx/quantile_orff.pdf
 ThesisRomainBrault_pdf: ../bin/gfx/infinite_monkey.jpg
 ThesisRomainBrault_pdf: ../bin/gfx/bench_iforest_roc_pr_supervised_factorized.png
 ThesisRomainBrault_pdf: ../bin/gfx/bench_iforest_roc_pr_unsupervised_factorized.png
@@ -792,6 +829,9 @@ ThesisRomainBrault_pdf: ../bin/gfx/kernel_reconstruction.pgf
 ThesisRomainBrault_pdf: ../bin/gfx/nested_circle.pgf
 ThesisRomainBrault_pdf: ../bin/gfx/ORFFvsOVK.pgf
 ThesisRomainBrault_pdf: ../bin/gfx/ORFFvsOVK_Dvariation.pgf
+ThesisRomainBrault_pdf: ../bin/gfx/quantile_continuous.pgf
+ThesisRomainBrault_pdf: ../bin/gfx/quantile_joint.pgf
+ThesisRomainBrault_pdf: ../bin/gfx/quantile_orff.pgf
 ThesisRomainBrault_pdf: ../bin/gfx/representer_twomoons.pgf
 ThesisRomainBrault_pdf: ../bin/gfx/representer_twomoons_2.pgf
 ThesisRomainBrault_pdf: ../bin/CMakeLists.txt
@@ -813,6 +853,8 @@ ThesisRomainBrault_pdf: ../bin/gfx/curl_field.eps
 ThesisRomainBrault_pdf: ../bin/gfx/div_field.eps
 ThesisRomainBrault_pdf: ../bin/gfx/feature.eps
 ThesisRomainBrault_pdf: ../bin/gfx/input.eps
+ThesisRomainBrault_pdf: ../bin/gfx/quantile_joint.eps
+ThesisRomainBrault_pdf: ../bin/gfx/quantile_orff.eps
 ThesisRomainBrault_pdf: ../bin/gfx/representer_twomoons.eps
 ThesisRomainBrault_pdf: ../bin/acro.cfg
 ThesisRomainBrault_pdf: ../bin/Bibliography.bib

@@ -899,7 +899,27 @@ Feature map}, defined by the following proposition as a direct consequence of
 With this notation we have $\Phi: \mathcal{X} \to \mathcal{L}(\mathcal{Y};
 L^2(\dual{\mathcal{X}}, \dual{\mu}; \mathcal{Y}'))$ such that $\Phi_x\in
 \mathcal{L}(\mathcal{Y}; L^2(\dual{\mathcal{X}}, \dual{\mu}; \mathcal{Y}'))$
-where $\Phi_x\colonequals\Phi(x)$.
+where $\Phi_x\colonequals\Phi(x)$. Moreover notice that for a functional
+Fourier feature map $\Phi_x: \mathcal{Y} \to L^2(\dual{\mathcal{X}},
+\probability_{\dual{\Haar}, \rho}; \mathcal{Y}' )$, the corresponding
+\acs{ORFF} map is a Monte-Carlo sampling of the functional Fourier feature map.
+For all $y\in\mathcal{Y}$ and all $x\in\mathcal{X}$,
+\begin{dmath*}
+    \tildePhi{\omega}(x)y = \Vect_{j=1}^D (\Phi_x y)(\omega_j)
+    \condition{$\omega_j \sim \probability_{\dual{\Haar}, \rho}$ \acs{iid}.}
+\end{dmath*}
+\afterpage{%
+\begin{landscape}
+    \begin{figure}[htb]
+        \centering
+        \input{./gfx/feature_relationship.tikz}
+        \caption[Relationships between feature-maps.]{Relationships between
+        feature-maps. For any realization of
+        $\omega_j\sim\probability_{\dual{\Haar},\rho}$ \ac{iid},
+        $\tildeH{\omega} = \Vect_{j=1}^D \mathcal{Y}'$.}
+        \label{fig:rel_features}
+    \end{figure}
+\end{landscape}}
 
 \section{Operator-valued Random Fourier Features}
 \label{sec:building_ORFF} 
@@ -916,43 +936,52 @@ order to obtain an approximation of $K$ from a decomposition $(A,
 \probability_{\dual{\Haar},\rho})$ we turn our attention to a Monte-Carlo
 estimation of the expectations in \cref{eq:expectation_tr} and
 \cref{eq:expectation_spec} characterizing a $\mathcal{Y}$-Mercer
-shift-invariant \acl{OVK}. In the following, for sake of simplicity, we will
-assume that $\mathcal{Y}$ and $\mathcal{Y}$ are finite dimensional Hilbert
-spaces.
-% \paragraph{}
+shift-invariant \acl{OVK}. % \paragraph{}
 %  \probability_{\dual{\Haar},\rho}
 \begin{proposition}
     \label{cr:ORFF-kernel} Let $K(x,z)$ be a shift-invariant
     $\mathcal{Y}$-Mercer kernel with signature $K_e$ such that for all $y$,
     $y'\in\mathcal{Y}$, $\inner{y', K_e(\cdot)y}\in L^1(\mathcal{X},\Haar)$.
-    Assume one can find a pair $(A, \probability_{\dual{\Haar},\rho})$ that
-    satisfies \cref{pr:spectral}:   for
-    $\probability_{\dual{\Haar},\rho}$-almost all $\omega$, $y,
-    y'\in\mathcal{Y}, \inner{y, A(\omega)y'}\rho(\omega)=\FT{\inner{y',
-    K_e(\cdot)y}}(\omega)$. If $(\omega_j)_{j=1}^D$ be a sequence of
-    $D\in\mathbb{N}^*$ \acs{iid}~realizations drawn from
+    Then one can find a pair $(A, \probability_{\dual{\Haar},\rho})$ that
+    satisfies \cref{pr:spectral}. \acs{ie} for
+    $\probability_{\dual{\Haar},\rho}$-almost all $\omega$, and all $y,
+    y'\in\mathcal{Y}$, 
+    \begin{dmath*}
+        \inner{y, A(\omega)y'}\rho(\omega)=\FT{\inner{y',
+        K_e(\cdot)y}}(\omega). 
+    \end{dmath*}
+    \paragraph{}
+    If $(\omega_j)_{j=1}^D$ be a sequence of
+    $D\in\mathbb{N}^*$ \acs{iid}~random variables following the law
     $\probability_{\dual{\Haar},\rho}$ then the operator-valued function
-    $\tilde{K}$ defined as follows, for $(x,z) \in \mathcal{X}\times
-    \mathcal{X}$ :
+    $\tilde{K}$ defined for $(x,z) \in \mathcal{X}\times
+    \mathcal{X}$ as
     \begin{dmath*}
         \tilde{K}(x,z)= \frac{1}{D} \sum_{j=1}^D
         \conj{\pairing{x\groupop\inv{z},\omega_j}} A(\omega_j)
     \end{dmath*}
-    is an approximation of $K$.
+    is an approximation\mpar{\acs{ie} it satisfies for all $x$,
+    $z\in\mathcal{X}$, $\tilde{K}(x, z) \converges{\acs{asurely}}{D\to\infty}
+    K(x, z)$ in the weak operator topology, where $K$ is a $\mathcal{Y}$-Mercer
+    \acs{OVK}.} of $K$.
 \end{proposition}
 \begin{proof}
-    Let us first notice that for a given $D$, $\tilde{K}$ satisfies the
-    properties of a shift-invariant $\mathcal{Y}$-Mercer kernel.  Second, from
-    the strong law of large numbers and \cref{pr:mercer_kernel_bochner} with
+    %Let us first notice that for a given $D$, $\tilde{K}$ satisfies the
+    %properties of a shift-invariant $\mathcal{Y}$-Mercer kernel.  Second, F
+    From the strong law of large numbers
     $\dual{\mu}=\probability_{\dual{\Haar},\rho}$,
     \begin{dmath*}
         \frac{1}{D} \sum_{j=1}^D \conj{\pairing{x\groupop\inv{z},\omega_j}}
         A(\omega_j) \converges{\acs{asurely}}{D \to \infty}
         \expectation_{\rho}[\conj{\pairing{x \groupop z^{-1}, \omega_j}
         }A(\omega)] 
-        =K_e(x\groupop\inv{z})
     \end{dmath*}
-    where the integral converges in the weak operator topology.
+    where the integral converges in the weak operator topology. Then by 
+    \cref{pr:spectral}, 
+    \begin{dmath*}
+        \expectation_{\rho}[\conj{\pairing{x \groupop z^{-1},
+        \omega_j}}A(\omega)] =K_e(x\groupop\inv{z}).
+    \end{dmath*}
 \end{proof}
 Now, for efficient computations as motivated in the introduction, we are
 interested in finding an approximated \emph{feature map} instead of a kernel
@@ -962,14 +991,16 @@ map construction.
 \begin{proposition}
     \label{cr:ORFF-map-kernel} Assume the same conditions as
     \cref{cr:ORFF-kernel}. Moreover, if one can define $B: \dual{\mathcal{X}}
-    \to \mathcal{L}(\mathcal{Y}',\mathcal{Y})$, such that for all
-    $y\in\mathcal{Y}$ and all $y' \in\mathcal{Y}'$, $\inner{y, B(\cdot)y'} \in
-    L^2(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho})$,  and for
+    \to \mathcal{L}(\mathcal{Y}',\mathcal{Y})$ such that for
+    %such that for all
+    %$y\in\mathcal{Y}$ and all $y' \in\mathcal{Y}'$, 
+    %%$\inner{y, B(\cdot)y'} \in
+    %L^2(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho})$,  and for
     $\probability_{\dual{\Haar},\rho}$-almost all $\omega$, and all $u,
     v\in\mathcal{Y}$,
     \begin{dmath*}
         \inner{u, B(\omega)B(\omega)^\adjoint v}\rho(\omega)= \inner{u,
-        A(\omega)v}\rho(\omega)= \FT{\inner{v, K_e(\cdot)u}}(\omega),
+        A(\omega)v}\rho(\omega) \hiderel{=} \FT{\inner{u, K_e(\cdot)v}}(\omega),
     \end{dmath*}
     then the function $\tildePhi{\omega}:\dual{\mathcal{X}} \to
     \mathcal{L}(\mathcal{Y}, \Vect_{j=1}^D \mathcal{Y'})$ defined for all $y
@@ -980,13 +1011,17 @@ map construction.
         \omega_j}B(\omega_j)^\adjoint y \condition{$\omega_j \sim
         \probability_{\dual{\Haar},\rho}$ \ac{iid},}
     \end{dmath*}
-is a feature map of $\tilde{K}$ defined in \cref{cr:ORFF-kernel} and an
-approximated feature map for kernel $K$.
+    is an approximated feature map\mpar{\acs{ie}~it satisfies
+    $\tildePhi{\omega}(x)^\adjoint
+    \tildePhi{\omega}(z)\converges{\acs{asurely}}{D\to\infty}K(x,z)$ in the
+    weak operator topology, where $K$ is a $\mathcal{Y}$-Mercer \acs{OVK}} for
+    the kernel $K$.
 \end{proposition}
 \begin{proof}
     Let $(\omega_j)_{j=1}^D$ be a sequence of $D\in\mathbb{N}^*$
-    \ac{iid}~realizations drawn from $\probability_{\dual{\Haar},\rho}$. For
-    all $x$, $z \in \mathcal{X}$ and all $u$, $v \in \mathcal{Y}$,
+    \ac{iid}~random variables following the law
+    $\probability_{\dual{\Haar},\rho}$. For all $x$, $z \in \mathcal{X}$ and
+    all $u$, $v \in \mathcal{Y}$,
     \begin{dmath*}
         \inner*{\tildePhi{\omega}(x)u,\tildePhi{\omega}(z)v}_{\Vect_{j=1}^D
         \mathcal{Y}'}
@@ -1005,8 +1040,10 @@ approximated feature map for kernel $K$.
         = \inner*{u, \left(\frac{1}{D} \sum_{j=1}^D \conj{\pairing{x\groupop
         \inv{z}, \omega_j}}A(\omega_j)\right)v}_{\mathcal{Y}},
     \end{dmath*}
-    With similar reasoning about plug-in Monte-Carlo estimator, we get the
-    proof.
+    %With similar reasoning about plug-in Monte-Carlo estimator, we get the
+    %proof.
+    Eventually apply \cref{cr:ORFF-kernel} to obtain the convergence of the
+    Monte-Carlo plug-in estimator to the true kernel $K$.
 \end{proof}
 \begin{remark}
     We find a decomposition such that
@@ -1049,9 +1086,50 @@ constructing \acs{ORFF} from an operator valued kernel.
         \caption{Construction of \acs{ORFF} from \acs{OVK}}
     \end{algorithm2e}
 \end{center}
+\paragraph{}
+We give a numerical illustration of different $\tilde{K}$ built from different
+\acs{iid} samples $(\omega_1, \ldots, \omega_D)$. In \cref{fig:not_Mercer}, we
+represent the approximation of  a reference function (black line) defined as
+$(y_1, y_2)^\transpose = f(x_i)=\sum_{j=1}^{250}\mathbf{K}_{ij}u_j$ where
+$u_j\sim\mathcal{N}(0,I_2)$ and $K$ is a Gaussian decomposable kernel defined
+as
+\begin{dmath*}
+    \mathbf{K}_{ij}=\exp\left(-\frac{1}{2(0.1)^2(x_i - x_j)^2}\right)\Gamma
+    \condition{for $i$, $j\in\mathbb{N}^*_{250}$.}
+\end{dmath*}
+We took $\Gamma=.5 I_2 +.5 1_2$ such that the outputs $y_1$ and $y_2$ share
+some similarities.  We generated $250$ points equally separated on the segment
+$(-1;1)$.
+\begin{pycode}[not_mercer]
+sys.path.append('./src/')
+import not_mercer
+
+not_mercer.main()
+\end{pycode}
+\begin{figure}[htb]
+    \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./not_Mercer.pgf}}')}
+    \caption[Approximation of a function in a vv-RKHS using different
+    realizations of Operator Random Fourier Feature]{Approximation of a
+    function in a VV-RKHS using different realizations of Operator Random
+    Fourier Feature.
+    Top row and bottom row correspond to two different realizations of
+    $\tildeK{\omega}$, which are \emph{different} \acl{OVK}. However when $D$
+    tends to infinity, the different realizations of $\tildeK{\omega}$ yield
+    the same \acs{OVK}.}
+    \label{fig:not_Mercer}
+\end{figure}
+Then we computed an approximate kernel matrix $\tilde{\mathbf{K}}\approx
+\mathbf{K}$ for $25$ increasing values of $D$ ranging from $1$ to $10^4$. The
+two graphs in \cref{fig:not_Mercer} on the top row shows that the more the
+number of features increases the closer the model
+$\widetilde{f}(x_i)=\sum_{j=1}^{250}\tilde{\mathbf{K}}_{ij}u_j$ is to $f$.
+The bottom row shows the same experiment but for a different realization of
+$\tilde{\mathbf{K}}$. When $D$ is small the curves of the bottom and top rows are
+very dissimilar --and sine wave like-- while they both converge to $f$ when
+$D$ increase.
 \subsection{From Operator Random Fourier Feature maps to OVK}
 It is also interesting to notice that we can go the other way and define from
-the general form of an \acl{ORFF}, an operator-valeued kernel.
+the general form of an \acl{ORFF}, an operator-valued kernel.
 \begin{proposition}[Operator Random Fourier Feature map]
     \label{pr:ORFF-map} Let $\mathcal{Y}$ and $\mathcal{Y}'$ be two Hilbert
     spaces. If one defines an operator-valued function on the dual of a LCA
@@ -1060,24 +1138,33 @@ the general form of an \acl{ORFF}, an operator-valeued kernel.
     $\probability_{\dual{\Haar},\rho}$ on $\mathcal{B}(\dual{\mathcal{X}})$,
     such that for all $y\in\mathcal{Y}$ and all $y'\in\mathcal{Y}'$, $\inner{y,
     B(\cdot)y'} \in L^2(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho})$,
-    assuming $\omega = (\omega_1, \ldots, \omega_D)$ is a \acs{iid} D-sample
-    drawn from $\probability_{\dual{\Haar},\rho}$, then the operator-valued
-    function $\tildePhi{\omega}: \mathcal{X} \to   \mathcal{L}(\mathcal{Y},
-    \vect_{j=1}^D\mathcal{Y}')$ defined for all $x \in \mathcal{X}$ and for all
-    $y\in\mathcal{Y}$ by
+    then the operator-valued function 
+    \begin{dmath*}
+        \tildePhi{\omega}: \mathcal{X} \hiderel{\to}
+        \mathcal{L}\left(\mathcal{Y}, \vect_{j=1}^D\mathcal{Y}'\right)
+    \end{dmath*}
+    defined for all $x \in \mathcal{X}$ and for all $y\in\mathcal{Y}$ by
     \begin{dmath}
         \label{eq:phitilde}
         \tildePhi{\omega}(x)y
         = \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x,
-        \omega_j}B(\omega_j)^\adjoint y,
+        \omega_j}B(\omega_j)^\adjoint y\condition{$\omega_j \sim
+        \probability_{\dual{\Haar, \rho}}$, \acs{iid}, }
     \end{dmath}
-    is an approximated feature map\mpar{\acs{ie}~it satisfies
-    $\tildePhi{\omega}(x)^\adjoint
-    \tildePhi{\omega}(z)\converges{\acs{asurely}}{D\to\infty}K(x,z)$ where $K$
-    is a $\mathcal{Y}$-Mercer \acs{OVK}}.
+    is an approximated feature map of some operator-valued
+    kernel\mpar{\acs{ie}~it satisfies $\tildePhi{\omega}(x)^\adjoint
+    \tildePhi{\omega}(z)\converges{\acs{asurely}}{D\to\infty}K(x,z)$ in the
+    weak operator topology, where $K$ is a $\mathcal{Y}$-Mercer \acs{OVK}}.
 \end{proposition}
 \begin{proof}
-    Similarly to the proof of \cref{cr:ORFF-map-kernel}, we get
+    Similarly to the proof of \cref{cr:ORFF-map-kernel}, we have
+    \begin{dmath*}
+        \inner*{\tildePhi{\omega}(x)u,\tildePhi{\omega}(z)v}_{\Vect_{j=1}^D
+        \mathcal{Y}'} = 
+        \frac{1}{D} \sum_{j=1}^D
+        \conj{\pairing{x\groupop\inv{z},\omega_j}} A(\omega_j)
+    \end{dmath*}
+    and by the strong law of large numbers,
     \begin{dmath*}
         \frac{1}{D} \sum_{j=1}^D
         \conj{\pairing{x\groupop\inv{z},\omega_j}} A(\omega_j)
@@ -1086,10 +1173,11 @@ the general form of an \acl{ORFF}, an operator-valeued kernel.
         z^{-1}, \omega} }A(\omega)]
     \end{dmath*}
     where the integral converges in the weak operator topology.  Now  from
-    \cref{pr:mercer_kernel_bochner}, $\expectation_{\rho}[\conj{\pairing{x
-    \groupop z^{-1}, \omega} }A(\omega)]$ is the image by $K_e$ of
-    $(x\groupop\inv{z})$, $K_e$ being the kernel signature of some
-    shift-invariant $\mathcal{Y}-Mercer$.
+    \cref{pr:mercer_kernel_bochner} with
+    $\dual{\mu}=\probability_{\dual{\Haar}, \rho}$ we obtain
+    $\expectation_{\rho}[\conj{\pairing{x \groupop z^{-1}, \omega} }A(\omega)]
+    = K_e(x\groupop\inv{z})$, $K_e$ being the signature of some shift-invariant
+    $\mathcal{Y}$-Mercer kernel.
 \end{proof}
 %\begin{remark}
 %    The approximate feature map proposed in \cref{pr:ORFF-map} has direct link
@@ -1171,7 +1259,14 @@ the general form of an \acl{ORFF}, an operator-valeued kernel.
 %$y\in\mathcal{Y}$, $S_D\Phi_x y \in \tildeH{\omega}$. Thus
 %$\tildeK{\omega}(x,z) \colonequals (S_D\Phi_x)^\adjoint (S_D\Phi_z)$ is a
 %proper random shift-invariant \acl{OVK} as shown in the following proposition.
+We conclude by showing that any approximate feature map gives a proper
+operator valued kernel. Hence we can always view $\tilde{K}(x,
+z)=\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z)$ ---where
+$\tildePhi{\omega}$ is defined as in \cref{cr:ORFF-kernel} (construction from
+an \acs{OVK}) or \cref{pr:ORFF-map}--- as a $\mathcal{Y}$-Mercer and thus apply
+all the classic results of the \acl{OVK} theory on $\tilde{K}$.
 \begin{proposition}
+    \label{pr:orff_defines_kernel}
     Let $\seq{\omega}\in\dual{\mathcal{X}}^D$. If for all $y$,
     $y'\in\mathcal{Y}$
     \begin{dmath*}
@@ -1191,6 +1286,8 @@ the general form of an \acl{ORFF}, an operator-valeued kernel.
     \acs{OVK}. Then \cref{pr:kernel_signature} shows that $\tildeK{\omega}$ is
     shift-invariant since
     $\tildeK{\omega}(x,z)=\tildeK{\omega}_e\left(x\groupop z^{-1}\right)$.
+    Since $B(\omega)$ is a bounded operator, $\widetilde{K}$ is
+    $\mathcal{Y}$-Mercer because all the functions in the sum are continuous.
 \end{proof}
 %We stress out that if $\seq{\omega}=(\omega_j)_{j=1}^D\sim
 %\probability_{\dual{\Haar},\rho}$ \ac{iid}~is a \emph{random sequence} then
@@ -1240,48 +1337,9 @@ the general form of an \acl{ORFF}, an operator-valeued kernel.
 %very dissimilar --and sine wave like-- while they both converge to $f$ when $D$
 %increase.
 \paragraph{}
-We give a numerical illustration of different $\tilde{K}$ built from different
-samples $(\omega_1, \ldots, \omega_D)$ In \cref{fig:not_Mercer}, we represent
-the approximation of  a reference function (black line) defined as $(y_1,
-y_2)^\transpose = f(x_i)=\sum_{j=1}^{250}K(x_i,x_j)u_j$ where
-$u_j\sim\mathcal{N}(0,1)$ and $K$ is a Gaussian decomposable kernel defined as:
-\begin{dmath*}
-    K(x,z)_{ij}=\exp\left(-\frac{1}{2(0.1)^2(x_i - x_j)^2}\right)\Gamma
-    \condition{for $i$, $j\in\mathbb{N}^*_{250}$.}
-\end{dmath*}
-We took $\Gamma=.5 I_2 +.5 1_2$ such that the outputs $y_1$ and $y_2$ share
-some similarities.  We generated $250$ points equally separated on the segment
-$(-1;1)$.
-\begin{pycode}[not_mercer]
-sys.path.append('./src/')
-import not_mercer
-
-not_mercer.main()
-\end{pycode}
-\begin{figure}[htb]
-    \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./not_Mercer.pgf}}')}
-    \caption[Approximation of a function in a vv-RKHS using different
-    realizations of Operator Random Fourier Feature]{Approximation of a
-    function in a VV-RKHS using different realizations of Operator Random
-    Fourier Feature.
-    Top row and bottom row correspond to two different realizations of
-    $\tildeK{\omega}$, which are \emph{different} \acl{OVK}. However when $D$
-    tends to infinity, the different realizations of $\tildeK{\omega}$ yield
-    the same \acs{OVK}.}
-    \label{fig:not_Mercer}
-\end{figure}
- Then we computed an approximate kernel matrix $\tildeK{\omega}\approx K$ for
- $25$ increasing values of $D$ ranging from $1$ to $10^4$. The two graphs in
- \cref{fig:not_Mercer} on the top row shows that the more the number of
- features increases the closer the model
- $\widetilde{f}(x_i)=\sum_{j=1}^{250}\tildeK{\omega}(x_i,x_j)u_j$ is to $f$.
- The bottom row shows the same experiment but for a different realization of
- $\tildeK{\omega}$. When $D$ is small the curves of the bottom and top rows are
- very dissimilar --and sine wave like-- while they both converge to $f$ when
- $D$ increase.
-\paragraph{}
-In the same way we defined an \acs{ORFF}, we can define an approximate feature
-operator $\tildeW{\omega}$ which maps $\tildeH{\omega}$ onto
+Indeed, as a results of \cref{pr:orff_defines_kernel}, in the same way we
+defined an \acs{ORFF}, we can define an approximate feature operator
+$\tildeW{\omega}$ which maps $\tildeH{\omega}$ onto
 $\mathcal{H}_{\tildeK{\omega}}$, where 
 \begin{dmath*}
     \tildeK{\omega}(x,z)=
@@ -1390,11 +1448,11 @@ map is presented in \cref{fig:rel_features}.
 % \mathcal{H}_K$.
 % \paragraph{}
 We write $\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(x)\approx K(x,z)$
-when $\tildePhi{\omega}(x)^\adjoint
-\tildePhi{\omega}(x)\converges{\acs{asurely}}{} K(x,z)$ in the weak operator
-topology when $D$ tends to infinity. With mild abuse of notation we say that
-$\tildePhi{\omega}(x)$ is an approximate feature map of $\Phi_x$
-\acs{ie}~$\tildePhi{\omega}(x)\approx \Phi_x$, when for all $y'$,
+when $\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(x)
+\converges{\acs{asurely}}{} K(x,z)$ in the weak operator topology when $D$
+tends to infinity. With mild abuse of notation we say that
+$\tildePhi{\omega}(x)$ is an approximate feature map of the functional feature
+map $\Phi_x$ \acs{ie}~$\tildePhi{\omega}(x)\approx \Phi_x$, when for all $y'$,
 $y\in\mathcal{Y}$,
 \begin{dmath*}
     \inner{y, K(x,z)y'}_{\mathcal{Y}}=\inner{\Phi_x y, \Phi_z
@@ -1403,88 +1461,37 @@ $y\in\mathcal{Y}$,
     \tildePhi{\omega}(x)y'}_{\tildeH{\omega}}\colonequals \inner{y,
     \tilde{K}(x,z)y'}_{\mathcal{Y}}
 \end{dmath*}
-where $\Phi_x$ is defined in the sense of \cref{pr:fourier_feature_map}. Then
-\cref{cr:ORFF-map-kernel} exhibit a construction of an \acs{ORFF} directly from
-an \acs{OVK}.
-\begin{corollary}
-    \label{cr:ORFF-map-kernel} If $K(x,z)$ is a shift-invariant
-    $\mathcal{Y}$-Mercer kernel such that for all $y$, $y'\in\mathcal{Y}$,
-    $\inner{y', K_e(\cdot)y}\in L^1(\mathcal{X},\Haar)$. Then
-    \begin{dmath*}
-        \tildePhi{\omega}(x)y
-        = \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x,
-        \omega_j}B(\omega_j)^\adjoint y \condition{$\omega_j \sim
-        \probability_{\dual{\Haar},\rho}$ \ac{iid},}
-    \end{dmath*}
-    where $\inner{y, B(\omega)B(\omega)^\adjoint y'}\rho(\omega)=\FT{\inner{y',
-    K_e(\cdot)y}}(\omega)$, is an approximated feature map of $K$.
-\end{corollary}
-\begin{proof}
-    Find $(A, \probability_{\dual{\Haar},\rho})$ from \cref{pr:spectral}. Then
-    find a decomposition of
-    \begin{dmath*}
-        A(\omega)=B(\omega)B(\omega)^*
-    \end{dmath*}
-    for $\probability_{\dual{\Haar},\rho}$-almost all $\omega$ and apply
-    \cref{pr:ORFF-map}.
-\end{proof}
-\begin{remark}
-    We find a decomposition such that
-    $A(\omega_j)=B(\omega_j)B(\omega_j)^\adjoint $ for all $j\in\mathbb{N}^*_D$
-    either by exhibiting a closed-form or using a numerical decomposition.
-\end{remark}
-\Cref{cr:ORFF-map-kernel} allows us to define \cref{alg:ORFF_construction} for
-constructing \acs{ORFF} from an operator valued kernel.
-\SetKwInOut{Input}{Input}
-\SetKwInOut{Output}{Output}
-\begin{center}
-    \begin{algorithm2e}[H]\label{alg:ORFF_construction}
-        \SetAlgoLined
-        \Input{$K(x, z)=K_e(\delta)$ a $\mathcal{Y}$-shift-invariant Mercer
-        kernel such that $\forall y,y'\in\mathcal{Y},$ $\inner{y',
-        K_e(\cdot)y}\in L^1(\mathbb{R}^d, \Haar)$ and $D$ the number of
-        features.}
-        \Output{A random feature $\tildePhi{\omega}(x)$ such that
-        $\tildePhi{\omega}(x)^\adjoint \tildePhi{\omega}(z) \approx K(x,z)$}
-        \BlankLine
-        Define the pairing $\pairing{x, \omega}$ from the \acs{LCA} group
-        $(\mathcal{X}, \groupop)$\; Find a decomposition
-        $(B(\omega),\probability_{\dual{\Haar},\rho})$ such that
-        \begin{dmath*}
-            B(\omega)B(\omega)^\adjoint \rho(\omega)=\IFT{K_e}(\omega)\text{\;}
-        \end{dmath*}
-        \nl Draw $D$ random vectors $(\omega_j)_{j=1}^D$ \ac{iid}~from the
-        probability law $\probability_{\dual{\Haar},\rho}$\;
-        \nl \Return
-        $\begin{cases}
-            \tildePhi{\omega}(x) \in \mathcal{L}(\mathcal{Y}, \tildeH{\omega})
-            &: y \mapsto \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x,
-            \omega_j}B(\omega_j)^\adjoint y \\ 
-            \tildePhi{\omega}(x)^\adjoint \in\mathcal{L}(\tildeH{\omega},
-            \mathcal{Y}) &: \theta \mapsto \frac{1}{\sqrt{D}} \sum_{j=1}^D
-            \pairing{x, \omega_j}B(\omega_j)\theta_j 
-        \end{cases}$\;
-        \caption{Construction of \acs{ORFF} from \acs{OVK}}
-    \end{algorithm2e}
-\end{center}
-
-\afterpage{%
-\begin{landscape}
-    \begin{figure}[htb]
-        \centering
-        \input{./gfx/feature_relationship.tikz}
-        \caption[Relationships between feature-maps.]{Relationships between
-        feature-maps. For any realization of
-        $\omega_j\sim\probability_{\dual{\Haar},\rho}$ \ac{iid},
-        $\tildeH{\omega} = \Vect_{j=1}^D \mathcal{Y}'$.}
-        \label{fig:rel_features}
-    \end{figure}
-\end{landscape}}
+where $\Phi_x$ is defined in the sense of \cref{pr:fourier_feature_map}. 
+%Then
+%\cref{cr:ORFF-map-kernel} exhibit a construction of an \acs{ORFF} directly from
+%an \acs{OVK}.
+%\begin{corollary}
+    %\label{cr:ORFF-map-kernel} If $K(x,z)$ is a shift-invariant
+    %$\mathcal{Y}$-Mercer kernel such that for all $y$, $y'\in\mathcal{Y}$,
+    %$\inner{y', K_e(\cdot)y}\in L^1(\mathcal{X},\Haar)$. Then
+    %\begin{dmath*}
+        %\tildePhi{\omega}(x)y
+        %= \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x,
+        %\omega_j}B(\omega_j)^\adjoint y \condition{$\omega_j \sim
+        %\probability_{\dual{\Haar},\rho}$ \ac{iid},}
+    %\end{dmath*}
+    %where $\inner{y, B(\omega)B(\omega)^\adjoint y'}\rho(\omega)=\FT{\inner{y',
+    %K_e(\cdot)y}}(\omega)$, is an approximated feature map of $K$.
+%\end{corollary}
+%\begin{proof}
+    %Find $(A, \probability_{\dual{\Haar},\rho})$ from \cref{pr:spectral}. Then
+    %find a decomposition of
+    %\begin{dmath*}
+        %A(\omega)=B(\omega)B(\omega)^*
+    %\end{dmath*}
+    %for $\probability_{\dual{\Haar},\rho}$-almost all $\omega$ and apply
+    %\cref{pr:ORFF-map}.
+%\end{proof}
 
 \subsection{Examples of Operator Random Fourier Feature maps}
 \label{subsec:examples_ORFF} We now give two examples of operator-valued random
-Fourier feature map. First we introduce the general form of an
-approximated feature map for a matrix-valued kernel on the additive group
+Fourier feature map. First we introduce the general form of an approximated
+feature map for a matrix-valued kernel on the additive group
 $(\mathbb{R}^d,+)$.
 \begin{example}[Matrix-valued kernel on the additive group]
     \label{ex:additive_group} In the following let $K(x,z)=K_0(x-z)$ be a
@@ -1497,8 +1504,8 @@ $(\mathbb{R}^d,+)$.
             \cos{\inner{x,\omega_j}_2}B(\omega_j)^\adjoint y \\ 
             \sin{\inner{x,\omega_j}_2}B(\omega_j)^\adjoint y
         \end{pmatrix}
-        \condition{$\omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho}$
-        \ac{iid}.}
+        \condition{$\omega_j \sim \probability_{\dual{\Haar},\rho}$
+        \acs{iid}.}
     \end{dmath*}
     for all $y\in\mathcal{Y}$.
 \end{example}

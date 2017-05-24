@@ -320,7 +320,7 @@ where $\widetilde{f}_{x}(\tau)=\tildephi{\omega}_{\mathcal{X}}(x)^\adjoint
 \end{dmath*}
 \subsubsection{Some results}
 We minimize the quantity $J_{\lambda_1, \lambda_2}(\Theta)$ on a toy dataset: a
-since wave with some heteroscedastic noise. First we compare our methodology to
+sine wave with some heteroscedastic noise. First we compare our methodology to
 the joint quantile regression proposed in \citet{sangnier2016joint}. We
 generate $N=2500$ for the train set and $N'=1000$ points for the test set and
 use a gaussian kernel for both $k_{\mathcal{X}}$ and $k_{\mathcal{T}}$. We
@@ -367,9 +367,13 @@ called outlier class.  We turn our attention to the \acs{OCSVM}
 We recall that given an hyperparameter $\nu\in [0,1]$ that controls the
 proportion of inlier, given as scalar kernel $k$, the \acs{OCSVM} problem reads
 \begin{dmath*}
-    \argmin_{f\in\mathcal{H}_k, \rho \in \mathbb{R}} \frac{1}{2}
-    \norm{f}_{\mathcal{H}_k}^2 - \nu \rho + \frac{1}{N} \sum_{i=1}^N \max(\rho
+    \argmin_{f\in\mathcal{H}_k, \tau \in \mathbb{R}} \frac{1}{2}
+    \norm{f}_{\mathcal{H}_k}^2 - \nu \tau + \frac{1}{N} \sum_{i=1}^N \max(\tau
     - f(x_i), 0)
+\end{dmath*}
+The decision function is then
+\begin{dmath*}
+    h(x, \tau) = \mathds{1}_{[\tau, \infty)}\left( f(x) \right).
 \end{dmath*}
 As in \cref{subsec:quantile_regression} we can rewrite the optimization problem
 as an integral over all the value of $\nu$ and suppose that $f$ is
@@ -383,8 +387,8 @@ define the continuous one-class SVM problem as
     \argmin_{f
     \in\mathcal{H}_K,\tau\in\mathcal{H}_{k_{\mathcal{\tau}}}}\frac{1}{N}
     \sum_{i=1}^N\int_{[0,1]}\max\left(0, \tau(\nu) - f_{x_i}(\nu)\right)d\nu +
-    \int_{[0,1]}\frac{\nu
-    \norm{f_{\cdot}(\nu)}_{\mathcal{H}_{k_{\mathcal{X}}}}^2}{2}d\nu -
+    \frac{1}{2}\int_{[0,1]}\nu
+    \norm{f_{\cdot}(\nu)}_{\mathcal{H}_{k_{\mathcal{X}}}}^2d\nu -
     \int_{[0,1]}\nu\tau(\nu)d\nu.
 \end{dmath*}
 Again we can compute the integral by Monte-Carlo sampling and replace $f$ and
@@ -394,15 +398,88 @@ should match the \acs{RKHS} of the output space of $f_K$. Hence
     \argmin_{\Theta
     \in\mathcal{M}_{D, D'}(\mathbb{R}),\tau\in\mathbb{R}^D}\frac{1}{NT}
     \sum_{i=1}^N\sum_{t=1}^T\max\left(0, \widetilde{\tau}(\nu_t) -
-    \widetilde{f}_{x_i}(\nu_t)\right) + \frac{1}{T}\sum_{t=1}^T\frac{\nu_t
-    \norm{\widetilde{f}_{\cdot}(\nu_t)}_{2}^2}{2} -
+    \widetilde{f}_{x_i}(\nu_t)\right) + \frac{1}{2T}\sum_{t=1}^T\nu_t
+    \norm{\widetilde{f}_{\cdot}(\nu_t)}_{2}^2 -
     \frac{1}{T}\sum_{t=1}^T\nu_t\widetilde{\tau}(\nu_t),
 \end{dmath*}
 where $\nu_t \sim \mathcal{U}([0, 1])$ \acs{iid}, $\widetilde{\tau}(\nu) =
 \tildephi{\omega}_{\mathcal{T}}(\nu)$ and $\widetilde{f}_x(\nu) =
 \tildephi{\omega}(x)^\adjoint \Theta \tildephi{\omega}_{\mathcal{T}}(\nu)$. We
 also deduce that $\widetilde{f}_{\cdot}(\nu) = \Theta
-\tildephi{\omega}_{\mathcal{T}}(\nu)$.
+\tildephi{\omega}_{\mathcal{T}}(\nu)$. Here the natural decision function is
+\begin{dmath}
+    \label{eq:continuous_decision}
+    h(x, \nu) = \mathds{1}_{\left[\widetilde{\tau}(\nu),\infty\right)}
+    \left(\widetilde{f}_x(\nu)\right).
+\end{dmath}
+\begin{figure}
+    {\centering
+    \resizebox{2\textwidth}{!}{\input{./gfx/nu_gamma100.pgf}} \\
+    \resizebox{2\textwidth}{!}{\input{./gfx/nu_gamma1.pgf}} \\
+    \resizebox{2\textwidth}{!}{\input{./gfx/nu_gamma001.pgf}}}
+    \caption[Continuous OCSVM: proportion of inlier with respect to
+    nu]{Continuous OCSVVM: proportion of inlier with respect to $\nu$.
+    Top figure corresponds to $\gamma_{\mathcal{T}} = 100$, middle to $1$ and
+    bottom to $0.01$. \label{fig:inlier_proportion}}
+\end{figure}
+
+\subsubsection{Proof of concept}
+First we ensure that the variable $\nu$ is a good proxy for the proportion of
+inlier. For this we generate a dataset of points in $\mathcal{X}=\mathbb{R}^2$
+from a mixture of three Gaussians. One gaussian is located at $\mu_1=(0, 0)$,
+the second at $\mu_2=(5, 5)$ and th third at $\mu_3 = (10, 10)$. Each gaussian
+has unit variance and we draw $250$ points from the first and third one and
+$100$ from the second one, so that we have $600$ points in the dataset.  We
+take $k_{\mathcal{X}}$ as a Gaussian kenrel with scale parameter
+$\gamma_{\mathcal{X}}=2$ and $k_{\mathcal{T}}$ another gaussian kernel with
+scale parameter $\gamma_{\mathcal{T}}$ (see \cref{subsubsec:skewedchi2}). After
+training we apply the decision function to the train test to which we add $100$
+points generated from a uniform distribution to model the novelty detection
+setting. We refer to this new augmented set as the test set.
+In \Cref{fig:inlier_proportion} we show the proportion of inliner with respect
+to $\nu$. The top figure shows the result for a model trained with
+$\gamma_{\mathcal{T}}=100$ the middle figure for $\gamma_{\mathcal{T}}=1$ and
+the bottomg figure for $\gamma_{\mathcal{T}}=0.01$. We see that when
+$\gamma_{\mathcal{T}}=0.01$, the proportion of inlier on the train and test set
+does not follows the theoretical black curve, because the algorithm regularize
+too much between the level sets. When $\gamma_{\mathcal{T}}=1$ or $100$ the
+proportion of inliers almost follows the theoretical black curve. We see that
+when $\gamma_{\mathcal{T}}=100$ the curves are less stable than when
+$\gamma_{\mathcal{T}}=0$ especially around $\nu=0$. The gap between the train
+curve (orange) and test curve (blue) corresponds to the \say{novel} points that
+are not distributed according to the mixture of Gaussians.
+
+\paragraph{}
+We can give an interpretation to $k_{\mathcal{T}}$ and $k_{\mathcal{X}}$.
+$k_{\mathcal{X}}$ control the complexity of the boundary of each level set and
+$k_{\mathcal{T}}$ tells how much each level set differ from the neighbour level
+sets.
+\begin{figure}
+    {\centering\includegraphics[width=\textwidth]{./gfx/ocsvm.eps}}
+    \caption[Continuous OCSVM for outlier detection]{Continuous OCSVM for
+    outlier detection. \label{fig:ocsvm_outlier}}
+\end{figure}
+\paragraph{}
+We propose a second experiment in a context of outlier detection. This time 
+the train set is polluted with outliers. We replicate the example given in
+the documentations of Scikit-Learn at
+\url{http://scikit-learn.org/stable/auto_examples/covariance/plot_outlier_detection.html}
+We compare our method to three other well known outlier detection methods
+from the litterature: Isolation Forest \citep{Liu2008}, \acs{OCSVM}
+\citep{Scholkopf2001} and a Robust Covariance estimator
+\citep{campbell1980robust, pedregosa2011scikit} on \cref{fig:ocsvm_outlier}.
+Our method achieve the state of the art on this simple example which is
+encouraging. However the computation time of our continuous \acs{OCSVM} is
+higher than the other methods. It took circa $0.25$ second for the \acs{OCSVM}.
+$10$ seconds for our method, $5$ seconds for isolation forest and $0.1$ second
+for the Robust covariance estimator. This can be due to the implentation since we used
+a (sub-optimal) hand-crafted full gradient descent. Notice that however our
+method is able to retrieve all the level sets after training, not only the one
+presented in \cref{fig:ocsvm_outlier}.  When one is interested in a specific
+level set or range of level set one could sample the $\nu_t$ from another
+distribution than the uniform distribution $\mathcal{U}[0, 1]$ to give more
+importance to the desire range of level sets.
+
 % %----------------------------------------------------------------------------
 % \section{The Nystr\"om method}
 % \label{sec:the_nystrom_method}

@@ -1,17 +1,5 @@
 % Encoding: UTF-8
-@Book{Berlinet2003,
-title= {Reproducing Kernel Hilbert Spaces in Probability and Statistics},
-author={Berlinet, A. and Thomas-Agnan, C.},
-publisher = {Springer},
-year = {2003}
-}
 
-@Book{Shawe-TaylorBook,
-title= {Kernel Methods for Pattern Analysis},
-author={Shawe-Taylor, J. and Cristianini, N.},
-publisher = {Cambridge press},
-year = {2004}
-}
 @InProceedings{Aslan2014,
   author    = {{\"{O}}zlem Aslan and Xinhua Zhang and Dale Schuurmans},
   title     = {Convex Deep Learning via Normalized Kernels},
@@ -25,6 +13,15 @@ year = {2004}
   timestamp = {Wed, 10 Dec 2014 21:34:12 +0100},
   url       = {http://papers.nips.cc/paper/5496-convex-deep-learning-via-normalized-kernels},
 }
+
+@article{abadi2016tensorflow,
+  title={Tensorflow: Large-scale machine learning on heterogeneous distributed systems},
+  author={Abadi, Mart{\'\i}n and Agarwal, Ashish and Barham, Paul and Brevdo, Eugene and Chen, Zhifeng and Citro, Craig and Corrado, Greg S and Davis, Andy and Dean, Jeffrey and Devin, Matthieu and others},
+  journal={arXiv preprint arXiv:1603.04467},
+  year={2016},
+  keywords={ovks},
+}
+
 
 @InProceedings{Bach2011,
   author    = {Francis R. Bach and Eric Moulines},
@@ -328,14 +325,6 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   year     = {1966},
   keywords = {ovks},
 }
-@INPROCEEDINGS{Boser1992,
-    author = {Bernhard E. Boser and et al.},
-    title = {A training algorithm for optimal margin classifiers},
-    booktitle = {proc.  of the 5th COLT workshop},
-    year = {1992},
-    pages = {144--152},
-    publisher = {ACM Press}
-}
 % data covertype
 
 @Misc{Blackard99comparativeaccuracies,
@@ -409,15 +398,6 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   keywords = {ovks},
 }
 % Universality
-@Article{caponnetto2007-consistency,
-  author   = {Caponnetto, A. and De Vito E.},
-  title    = {Optimal Rates for Regularized Least-Squares Algorithm},
-  journal  = {Foundations of Computational Mathematics}, 
-  year = {2007},
-  volume= {7(3)},
-  pages = {331–368},
-  keywords = {ovks},
-}
 
 @Article{Carmeli2010,
   author   = {Carmeli, C. and De Vito, E. and Toigo, A. and Umanit\`a, V.},
@@ -497,17 +477,6 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   year      = {2011},
   pages     = {161--170},
   keywords  = {ovks},
-}
-@article{christmann2007,
-author = "Christmann, Andreas and Steinwart, Ingo",
-journal = "Bernoulli",
-month = "08",
-number = "3",
-pages = "799--819",
-publisher = "Bernoulli Society for Mathematical Statistics and Probability",
-title = "Consistency and robustness of kernel-based regression in convex risk minimization",
-volume = "13",
-year = "2007"
 }
 
 @Book{conway2013course,
@@ -845,17 +814,7 @@ year = "2007"
   pages    = {191-198},
   keywords = {ovks},
 }
-%%% K
-@article{KIMELDORF1971,
-  title = "Some results on Tchebycheffian spline functions",
-  journal = "Journal of Mathematical Analysis and Applications",
-  volume = "33",
-  number = "1",
-  pages = "82 - 95",
-  year = "1971",
-  author = "George Kimeldorf and Grace Wahba",
-  keywords = {ovks},
-}
+
 %%% I
 
 @Article{Ito_pnas00,
@@ -974,6 +933,27 @@ year = "2007"
   pages    = {D277--D280},
   keywords = {ovks},
 }
+
+@article{koenker1978regression,
+  title={Regression quantiles},
+  author={Koenker, Roger and Bassett Jr, Gilbert},
+  journal={Econometrica: journal of the Econometric Society},
+  pages={33--50},
+  year={1978},
+  publisher={JSTOR},
+  keywords={ovks},
+}
+
+@book{koenker2005quantile,
+  title={Quantile regression},
+  author={Koenker, Roger},
+  number={38},
+  year={2005},
+  publisher={Cambridge university press},
+  keywords={ovks},
+}
+
+
 
 @InProceedings{Kondor_icml02,
   author    = {Kondor, R. I. and Lafferty, J. D.},
@@ -1178,13 +1158,6 @@ year = "2007"
   pages    = {1--72},
   keywords = {ovks},
 }
-@Book{Mohri2012,
-  title = {Foundations of Machine Learning},
-  author= {Mohri, M. and Rostamizadeh, A. and Talwalkar, A.},
-  publisher = {The MIT press},
-  year = {2012},
-  keywords = {ovks},
-}
 
 @InProceedings{minh2013unifying,
   author    = {Minh, Ha Quang and Bazzani, Loris and Murino, Vittorio},
@@ -1373,16 +1346,6 @@ year = "2007"
   pages    = {490--500},
   keywords = {ovks},
 }
-
-@article{platt199912,
-  title={12 fast training of support vector machines using sequential minimal optimization},
-  author={Platt, John C},
-  journal={Advances in kernel methods},
-  pages={185--208},
-  year={1999},
-  keywords={ovks},
-}
-
 
 @Article{Qi_bioinfo10,
   author    = {Qi, Y. and Tastan, O. and Carbonell, J. G. and Klein-Seetharaman, J. and Weston, J.},
@@ -1716,6 +1679,15 @@ year = "2007"
   keywords  = {ovks},
 }
 
+@article{tieleman2012lecture,
+  title={Lecture 6.5-RMSProp, COURSERA: Neural networks for machine learning},
+  author={Tieleman, Tijmen and Hinton, G},
+  journal={University of Toronto, Tech. Rep},
+  year={2012},
+  keywords={ovks}
+}
+
+
 @Misc{tornier2014haar,
   author       = {Tornier, Stephan},
   title        = {Haar measures},
@@ -2009,17 +1981,6 @@ year = "2007"
   publisher = {arXiv},
 }
 
-@inproceedings{boser1992training,
-  title={A training algorithm for optimal margin classifiers},
-  author={Boser, Bernhard E and Guyon, Isabelle M and Vapnik, Vladimir N},
-  booktitle={Proceedings of the fifth annual workshop on Computational learning theory},
-  pages={144--152},
-  year={1992},
-  organization={ACM},
-  keywords={ovks},
-}
-
-
 @InProceedings{dai2014scalable,
   author    = {Dai, Bo and Xie, Bo and He, Niao and Liang, Yingyu and Raj, Anant and Balcan, Maria-Florina F and Song, Le},
   title     = {Scalable kernel methods via doubly stochastic gradients},
@@ -2124,17 +2085,6 @@ year = "2007"
   keywords  = {ovks},
   publisher = {IBM},
 }
-
-@inproceedings{shalev2007pegasos,
-  title={Pegasos: Primal estimated sub-gradient solver for svm},
-  author={Shalev-Shwartz, Shai and Singer, Yoram and Srebro, Nathan},
-  booktitle={Proceedings of the 24th international conference on Machine learning},
-  pages={807--814},
-  year={2007},
-  organization={ACM},
-  keywords={ovks},
-}
-
 
 @Book{cornuejols2011apprentissage,
   title     = {Apprentissage artificiel: concepts et algorithmes},
@@ -2300,6 +2250,105 @@ year = "2007"
   volume   = {3361},
   number   = {10},
   pages    = {1995},
+  keywords = {ovks},
+}
+
+@Book{Mohri2012,
+  title     = {Foundations of Machine Learning},
+  publisher = {The MIT press},
+  year      = {2012},
+  author    = {Mohri, M. and Rostamizadeh, A. and Talwalkar, A.},
+  keywords  = {ovks},
+}
+
+@InProceedings{shalev2007pegasos,
+  author       = {Shalev-Shwartz, Shai and Singer, Yoram and Srebro, Nathan},
+  title        = {Pegasos: Primal estimated sub-gradient solver for svm},
+  booktitle    = {Proceedings of the 24th international conference on Machine learning},
+  year         = {2007},
+  pages        = {807--814},
+  organization = {ACM},
+  keywords     = {ovks},
+}
+
+@Article{christmann2007,
+  author    = {Christmann, Andreas and Steinwart, Ingo},
+  title     = {Consistency and robustness of kernel-based regression in convex risk minimization},
+  journal   = {Bernoulli},
+  year      = {2007},
+  volume    = {13},
+  number    = {3},
+  pages     = {799--819},
+  month     = {08},
+  keywords  = {ovks},
+  publisher = {Bernoulli Society for Mathematical Statistics and Probability},
+}
+% Universality
+
+@Article{caponnetto2007-consistency,
+  author   = {Caponnetto, A. and De Vito E.},
+  title    = {Optimal Rates for Regularized Least-Squares Algorithm},
+  journal  = {Foundations of Computational Mathematics},
+  year     = {2007},
+  volume   = {7(3)},
+  pages    = {331–368},
+  keywords = {ovks},
+}
+
+@Book{Shawe-TaylorBook,
+  title     = {Kernel Methods for Pattern Analysis},
+  publisher = {Cambridge press},
+  year      = {2004},
+  author    = {Shawe-Taylor, J. and Cristianini, N.},
+  keywords  = {ovks},
+}
+
+@Book{Berlinet2003,
+  title     = {Reproducing Kernel Hilbert Spaces in Probability and Statistics},
+  publisher = {Springer},
+  year      = {2003},
+  author    = {Berlinet, A. and Thomas-Agnan, C.},
+  keywords  = {ovks},
+}
+
+@Article{platt199912,
+  author   = {Platt, John C},
+  title    = {12 fast training of support vector machines using sequential minimal optimization},
+  journal  = {Advances in kernel methods},
+  year     = {1999},
+  pages    = {185--208},
+  keywords = {ovks},
+}
+
+@InProceedings{boser1992training,
+  author       = {Boser, Bernhard E and Guyon, Isabelle M and Vapnik, Vladimir N},
+  title        = {A training algorithm for optimal margin classifiers},
+  booktitle    = {Proceedings of the fifth annual workshop on Computational learning theory},
+  year         = {1992},
+  pages        = {144--152},
+  organization = {ACM},
+  keywords     = {ovks},
+}
+
+@InProceedings{Boser1992,
+  author    = {Bernhard E. Boser and et al.},
+  title     = {A training algorithm for optimal margin classifiers},
+  booktitle = {proc. of the 5th COLT workshop},
+  year      = {1992},
+  pages     = {144--152},
+  publisher = {ACM Press},
+  keywords  = {ovks},
+}
+%%% K
+
+@Article{KIMELDORF1971,
+  author   = {George Kimeldorf and Grace Wahba},
+  title    = {Some results on Tchebycheffian spline functions},
+  journal  = {Journal of Mathematical Analysis and Applications},
+  year     = {1971},
+  volume   = {33},
+  number   = {1},
+  pages    = {82 - 95},
   keywords = {ovks},
 }
 

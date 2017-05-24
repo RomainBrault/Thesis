@@ -88,7 +88,14 @@ ed43174f588b66c9d6739102d73f1285 ../bin/gfx/kernel_reconstruction.pgf
 a02ec2e7bad845b269fee78b1ca245f8 ../bin/gfx/logoEgrey.png
 b23638e334a87eb687a7e2e87c97cf23 ../bin/gfx/nested_circle.pgf
 467e017a445f5bafd516c843f0704c1f ../bin/gfx/nestedtwomoons.pdf
+ffd023df18b0a2d80912c4846ac30965 ../bin/gfx/nu_gamma001.pgf
+51ae250e5538477974e8b7f2c0dd3edd ../bin/gfx/nu_gamma1.pgf
+faf91b9605ebe62686cd82a86ffed28d ../bin/gfx/nu_gamma100 2.pgf
+1302de9e95c12d5cc4990f7473c9c1e7 ../bin/gfx/nu_gamma100.pgf
+cc9977db2193c3ac42934c2faf01a28e ../bin/gfx/ocsvm.eps
+2bf5fc86915fec9851a478639741fbb4 ../bin/gfx/ocsvm.pdf
 87829e133a167f26eb3f7c83d83d7018 ../bin/gfx/oneclassrf.png
+fab61ebae10711236af7d5102e0ed654 ../bin/gfx/quantile_continuous-img0.png
 33cdbba12d2eec99f21e8eae287ee20c ../bin/gfx/quantile_continuous.pgf
 9554d67e950af5e47bd29007d11daf7e ../bin/gfx/quantile_joint.eps
 94ba5357bb31a0e9d04de89186232df6 ../bin/gfx/quantile_joint.pdf
@@ -130,6 +137,7 @@ a67a455e5eea8a602bf318e4cf67b93d ../bin/src/approximation.py
 73e8fbdafb2003601eb512f31113d66e ../bin/src/efficient_decomposable_gaussian.py
 06e805acccef14d2853ee9ca9d2ccc93 ../bin/src/efficient_divfree_gaussian.py
 a31ee06e8dda96c8dba5f5d90a8a7c97 ../bin/src/not_mercer.py
+b824a09131570022dcd90616894173da ../bin/src/quantile.py
 855ddb770dc00953cd0e1cca43dcc88d ../bin/src/representer.py
 280018d91d93657fad676d0682d25c50 ../bin/src/representer2.py
 3bfc5d0f90a071de001563881f0ff451 CMakeFiles/ThesisRomainBrault

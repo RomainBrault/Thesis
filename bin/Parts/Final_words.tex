@@ -20,5 +20,41 @@
 
 
 \chapter{Conlusions}
+\bigskip
+\begin{justify}
+    In machine learning, many algorithm focus on learning function that model
+    dependencies in a dataset, where the the ouputs are real numbers. However
+    in many applications such as biology, economics, physics, etc.~the
+    target~data are not reals: they can be a collection of reals, present
+    complex structures or can even be functions. To overcome this difficulty
+    and take into account the structure of the data, a common approach is to
+    see them as \emph{vectors} of some abstract space.
+    \paragraph{}
+    From this observation, in this thesis we took interrest in learning
+    vector-valued functions to learn mathematical models that takes into
+    account the possible structure of the data. Looking at the litterature we
+    focus on mathematical objects called \aclp{OVK} to learn such functions.
+    In a nutshell an \acs{OVK} is a non-linear operator-valued function for
+    which the action on a vector depends on the similarity between two given
+    input points.
+    \paragraph{}
+    \acsp{OVK} naturally extend the celebrated kernel method used to learn
+    scalar-valued functions, to the case of learning vector-valued functions.
+    Yet, although \acsp{OVK} are appealing from a theoretical aspect, these
+    methods scale poorly in terms of computation time when the number of data
+    is high. Indeed, to evaluate the value of function with an \acl{OVK}, it
+    requires to evaluate an \acl{OVK} on all the point in the given dataset.
+    Hence naive learning with kernels usually scales cubicly in time with the
+    number of data. In the context of large-scale learning such scaling is not
+    acceptable. Through this work we propose a methodology to tackle this
+    difficulty.
+    \paragraph{}
+    Enlighted by the litterature on large-scale learning with
+    \emph{scalar}-valued kernel, in particular the work of Rahimi and Recht,
+    we propose to replace an \acs{OVK} by a feature map. A feature map is a
+    mathematical object that takes a input data and maps it into an abstract
+    where the computations are easily conducted. Specifically we show how to
+    construct from any continuous \acs{OVK}
+\end{justify}
 \label{ch:conclusion}
 \include{Parts/Final_words/Conclusions}

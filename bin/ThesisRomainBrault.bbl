@@ -1066,6 +1066,30 @@
       \range{pages}{19}
       \keyw{ovks}
     \endentry
+    \entry{campbell1980robust}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7fb2a1d7528f6d288a9787108667f45d}{%
+           family={Campbell},
+           family_i={C\bibinitperiod},
+           given={Norm\bibnamedelima A},
+           given_i={N\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {JSTOR}%
+      }
+      \strng{namehash}{7fb2a1d7528f6d288a9787108667f45d}
+      \strng{fullhash}{7fb2a1d7528f6d288a9787108667f45d}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Applied statistics}
+      \field{title}{Robust procedures in multivariate analysis I: Robust covariance estimation}
+      \field{year}{1980}
+      \field{pages}{231\bibrangedash 237}
+      \range{pages}{7}
+      \keyw{extrems}
+    \endentry
     \entry{caponnetto2008}{article}{}
       \name{author}{4}{}{%
         {{hash=1ba3db56025a69ac6c5168e37b4890ef}{%

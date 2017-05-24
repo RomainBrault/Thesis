@@ -140,6 +140,7 @@ print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_divfree_gaussian.
 =>PYTHONTEX#PYGpython#EXT:./src/efficient_decomposable_gaussian.py#defaultverb#0#verbatim####Code.tex#14#
 =>PYTHONTEX#PYGpython#EXT:./src/efficient_curlfree_gaussian.py#defaultverb#0#verbatim####Code.tex#19#
 =>PYTHONTEX#PYGpython#EXT:./src/efficient_divfree_gaussian.py#defaultverb#0#verbatim####Code.tex#24#
+=>PYTHONTEX#PYGpython#EXT:./src/quantile.py#defaultverb#0#verbatim####Code.tex#29#
 =>PYTHONTEX:SETTINGS#
 version=0.14
 outputdir=pythontex-files-ThesisRomainBrault

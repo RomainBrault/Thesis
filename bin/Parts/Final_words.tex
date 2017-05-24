@@ -19,25 +19,20 @@
 
 
 
-\chapter{Conlusions}
+\chapter{Conclusion}
 \bigskip
 \begin{justify}
-    In machine learning, many algorithm focus on learning function that model
+    In machine learning, many algorithm focus on learning functions that model
     dependencies in a dataset, where the the ouputs are real numbers. However
-    in many applications such as biology, economics, physics, etc.~the
-    target~data are not reals: they can be a collection of reals, present
+    in numerous applications such as biology, economics, physics, etc.~the
+    output data are not reals: they can be a collection of reals, present
     complex structures or can even be functions. To overcome this difficulty
     and take into account the structure of the data, a common approach is to
-    see them as \emph{vectors} of some abstract space.
-    \paragraph{}
-    From this observation, in this thesis we took interrest in learning
-    vector-valued functions to learn mathematical models that takes into
-    account the possible structure of the data. Looking at the litterature we
-    focus on mathematical objects called \aclp{OVK} to learn such functions.
-    In a nutshell an \acs{OVK} is a non-linear operator-valued function for
-    which the action on a vector depends on the similarity between two given
-    input points.
-    \paragraph{}
+    see them as \emph{vectors} of some Hilbert space. From this observation, in
+    this thesis, we took interrest in vector-valued functions. Looking at the
+    litterature we focused on mathematical objects called \aclp{OVK} to learn
+    such functions.
+    \section{Contributions}
     \acsp{OVK} naturally extend the celebrated kernel method used to learn
     scalar-valued functions, to the case of learning vector-valued functions.
     Yet, although \acsp{OVK} are appealing from a theoretical aspect, these
@@ -50,11 +45,30 @@
     difficulty.
     \paragraph{}
     Enlighted by the litterature on large-scale learning with
-    \emph{scalar}-valued kernel, in particular the work of Rahimi and Recht,
-    we propose to replace an \acs{OVK} by a feature map. A feature map is a
-    mathematical object that takes a input data and maps it into an abstract
-    where the computations are easily conducted. Specifically we show how to
-    construct from any continuous \acs{OVK}
+    \emph{scalar}-valued kernel, in particular the work of Rahimi and Recht
+    \citep{Rahimi2007}, we propose to replace an \acs{OVK} by a random feature
+    map that we called \acl{ORFF}. Our contribution start with the formal
+    mathematical construction of this feature from an \acs{OVK}. Then we show
+    that it is also possible to obtain a kernel from an \acs{ORFF}. Eventually
+    we analyse the regularization properties in terms of \acl{FT} of
+    $\mathcal{Y}$-Mercer kernels. Then we moved on giving a bound on the error
+    due to the random approximation of the \acs{OVK} with high probability.
+    We showed that it is possible to bound the error eventhough the \acs{ORFF}
+    estimator of an \acs{OVK} is not a bounded random variable. Moreover we
+    also give a bound when the dimension of the ouput data infinite.
+    \paragraph{}
+    After ensuring that an \acs{ORFF} is a good approximation of a kernel, we
+    moved on giving a framework to learn with \aclp{OVK}. We showed that
+    learning with a feature map is equivalent to learn with the reconstructed
+    \acs{OVK} under some mild conditions. Then we focused on a efficient
+    implementation of \acs{ORFF} by viewing them as linear operator rather than
+    matrices and using matrix-free (iterative) solvers and conclued with some
+    numerical experiments. Eventually we gave a generalization bound for
+    \acs{ORFF} learning that suggest that the number of features sampled in an
+    \acs{ORFF} should be proportional to the number of data. We concluded our
+    contribution by applying the \acs{ORFF} framework to learning vector-valued
+    time series.
+    \section{Perspectives}
 \end{justify}
 \label{ch:conclusion}
 \include{Parts/Final_words/Conclusions}

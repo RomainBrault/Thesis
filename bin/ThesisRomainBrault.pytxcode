@@ -1,0 +1,169 @@
+=>PYTHONTEX#py#default#default#0#c####Motivations.tex#237#
+print(r'\centering\resizebox{\textwidth}{!}{\input{./gfx/nested_circle.pgf}}')
+=>PYTHONTEX#py#not_mercer#default#0#code####Construction.tex#1103#
+sys.path.append('./src/')
+import not_mercer
+
+not_mercer.main()
+=>PYTHONTEX#py#default#default#1#c####Construction.tex#1110#
+print(r'\centering\resizebox{\textwidth}{!}{\input{./not_Mercer.pgf}}')
+=>PYTHONTEX#py#approximation#default#0#code####Concentration.tex#31#
+sys.path.append('./src/')
+import approximation
+
+err = approximation.main()
+=>PYTHONTEX#py#default#default#2#c####Concentration.tex#40#
+print(r'\centering\resizebox{\textwidth}{!}{\input{./approximation.pgf}}')
+=>PYTHONTEX#py#representer#default#0#code####Learning.tex#487#
+sys.path.append('./src/')
+import representer
+
+err = representer.main()
+=>PYTHONTEX#py#representer2#default#0#code####Learning.tex#494#
+sys.path.append('./src/')
+import representer2
+
+err = representer2.main()
+=>PYTHONTEX#py#default#default#3#c####Learning.tex#555#
+print(r'\centering \resizebox {\textheight }{!}{\input {./representer.pgf}}')
+=>PYTHONTEX#py#default#default#4#c####Learning.tex#555#
+print(r'\centering \resizebox {\textheight }{!}{\input {./representer2.pgf}}')
+=>PYTHONTEX#py#efficient_linop#default#0#code####Learning.tex#845#
+r"""Example of efficient implementation of Gaussian decomposable ORFF."""
+
+from time import time
+
+from numpy.linalg import svd
+from numpy.random import rand, seed
+from numpy import (dot, diag, sqrt, kron, zeros,
+                   logspace, log10, matrix, eye, int)
+from scipy.sparse.linalg import LinearOperator
+from sklearn.kernel_approximation import RBFSampler
+from matplotlib.pyplot import savefig, subplots
+=>PYTHONTEX#py#efficient_linop#default#1#block####Learning.tex#880#
+def NaiveDecomposableGaussianORFF(X, A, gamma=1.,
+                                  D=100, eps=1e-5, random_state=0):
+    r"""Return the Naive ORFF map associated with the data X.
+
+    Parameters
+    ----------
+    X : {array-like}, shape = [n_samples, n_features]
+        Samples.
+    A : {array-like}, shape = [n_targets, n_targets]
+        Operator of the Decomposable kernel (positive semi-definite)
+    gamma : {float},
+        Gamma parameter of the RBF kernel.
+    D : {integer}
+        Number of random features.
+    eps : {float}
+        Cutoff threshold for the singular values of A.
+    random_state : {integer}
+        Seed of the generator.
+
+    Returns
+    -------
+    \tilde{\Phi}(X) : array
+    """
+    # Decompose A=BB^\transpose
+    u, s, v = svd(A, full_matrices=False, compute_uv=True)
+    B = dot(diag(sqrt(s[s > eps])), v[s > eps, :])
+
+    # Sample a RFF from the scalar Gaussian kernel
+    phi_s = RBFSampler(gamma=gamma, n_components=D, random_state=random_state)
+    phiX = phi_s.fit_transform(X)
+
+    # Create the ORFF linear operator
+    return matrix(kron(phiX, B))
+=>PYTHONTEX#py#efficient_linop#default#2#block####Learning.tex#973#
+def EfficientDecomposableGaussianORFF(X, A, gamma=1.,
+                                      D=100, eps=1e-5, random_state=0):
+    r"""Return the efficient ORFF map associated with the data X.
+
+    Parameters
+    ----------
+    X : {array-like}, shape = [n_samples, n_features]
+        Samples.
+    A : {array-like}, shape = [n_targets, n_targets]
+        Operator of the Decomposable kernel (positive semi-definite)
+    gamma : {float},
+        Gamma parameter of the RBF kernel.
+    D : {integer}
+        Number of random features.
+    eps : {float}
+        Cutoff threshold for the singular values of A.
+    random_state : {integer}
+        Seed of the generator.
+
+    Returns
+    -------
+    \tilde{\Phi}(X) : Linear Operator, callable
+    """
+    # Decompose A=BB^\transpose
+    u, s, v = svd(A, full_matrices=False, compute_uv=True)
+    B = dot(diag(sqrt(s[s > eps])), v[s > eps, :])
+
+    # Sample a RFF from the scalar Gaussian kernel
+    phi_s = RBFSampler(gamma=gamma, n_components=D, random_state=random_state)
+    phiX = phi_s.fit_transform(X)
+
+    # Create the ORFF linear operator
+    cshape = (D, B.shape[0])
+    rshape = (X.shape[0], B.shape[1])
+    return LinearOperator((phiX.shape[0] * B.shape[1], D * B.shape[0]),
+                          matvec=lambda b: dot(phiX, dot(b.reshape(cshape),
+                                               B)),
+                          rmatvec=lambda r: dot(phiX.T, dot(r.reshape(rshape),
+                                                B.T)))
+=>PYTHONTEX#py#efficient_linop#default#3#code####Learning.tex#1239#
+sys.path.append('./src/')
+import efficient_decomposable_gaussian
+
+efficient_decomposable_gaussian.main()
+=>PYTHONTEX#py#default#default#5#c####Learning.tex#1246#
+print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_decomposable_gaussian.pgf}}')
+=>PYTHONTEX#py#efficient_linop#default#4#code####Learning.tex#1268#
+sys.path.append('./src/')
+import efficient_curlfree_gaussian
+
+efficient_curlfree_gaussian.main()
+=>PYTHONTEX#py#default#default#6#c####Learning.tex#1275#
+print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_curlfree_gaussian.pgf}}')
+=>PYTHONTEX#py#efficient_linop#default#5#code####Learning.tex#1298#
+sys.path.append('./src/')
+import efficient_divfree_gaussian
+
+efficient_divfree_gaussian.main()
+=>PYTHONTEX#py#default#default#7#c####Learning.tex#1305#
+print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_divfree_gaussian.pgf}}')
+=>PYTHONTEX#PYGpython#EXT:./src/not_mercer.py#defaultverb#0#verbatim####Code.tex#5#
+=>PYTHONTEX#PYGpython#EXT:./src/representer.py#defaultverb#0#verbatim####Code.tex#9#
+=>PYTHONTEX#PYGpython#EXT:./src/efficient_decomposable_gaussian.py#defaultverb#0#verbatim####Code.tex#14#
+=>PYTHONTEX#PYGpython#EXT:./src/efficient_curlfree_gaussian.py#defaultverb#0#verbatim####Code.tex#19#
+=>PYTHONTEX#PYGpython#EXT:./src/efficient_divfree_gaussian.py#defaultverb#0#verbatim####Code.tex#24#
+=>PYTHONTEX#PYGpython#EXT:./src/quantile.py#defaultverb#0#verbatim####Code.tex#29#
+=>PYTHONTEX:SETTINGS#
+version=0.14
+outputdir=pythontex-files-ThesisRomainBrault
+workingdir=.
+workingdirset=false
+gobble=none
+rerun=default
+hashdependencies=default
+makestderr=false
+stderrfilename=full
+keeptemps=none
+pyfuture=default
+pyconfuture=none
+pygments=true
+pygglobal=:GLOBAL||
+fvextfile=-1
+pyconbanner=none
+pyconfilename=stdin
+depythontex=false
+pygfamily=py|python|
+pygfamily=pycon|pycon|
+pygfamily=sympy|python|
+pygfamily=sympycon|pycon|
+pygfamily=pylab|python|
+pygfamily=pylabcon|pycon|
+pygfamily=PYGpython|python|

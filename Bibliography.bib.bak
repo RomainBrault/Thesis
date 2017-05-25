@@ -14,14 +14,15 @@
   url       = {http://papers.nips.cc/paper/5496-convex-deep-learning-via-normalized-kernels},
 }
 
-@article{abadi2016tensorflow,
-  title={Tensorflow: Large-scale machine learning on heterogeneous distributed systems},
-  author={Abadi, Mart{\'\i}n and Agarwal, Ashish and Barham, Paul and Brevdo, Eugene and Chen, Zhifeng and Citro, Craig and Corrado, Greg S and Davis, Andy and Dean, Jeffrey and Devin, Matthieu and others},
-  journal={arXiv preprint arXiv:1603.04467},
-  year={2016},
+@inproceedings{amblard2015operator,
+  title={Operator-valued kernel recursive least squares algorithm},
+  author={Amblard, Pierre-Olivier and Kadri, Hachem},
+  booktitle={Signal Processing Conference (EUSIPCO), 2015 23rd European},
+  pages={2376--2380},
+  year={2015},
+  organization={IEEE},
   keywords={ovks},
 }
-
 
 @InProceedings{Bach2011,
   author    = {Francis R. Bach and Eric Moulines},
@@ -741,6 +742,19 @@ ci!TEX root = ../../ThesisRomainbrault.tex
 
 %%% H
 
+@article{ha2010image,
+  title={Image and video colorization using vector-valued reproducing kernel Hilbert spaces},
+  author={Ha Quang, Minh and Kang, Sung Ha and Le, Triet M},
+  journal={Journal of Mathematical Imaging and Vision},
+  volume={37},
+  number={1},
+  pages={49--65},
+  year={2010},
+  publisher={Springer},
+  keywords={ovks}
+}
+
+
 @Article{minh2016operator,
   author   = {Minh, Ha Quang},
   title    = {Operator-Valued Bochner Theorem, Fourier Feature Maps for Operator-Valued Kernels, and Vector-Valued Learning},
@@ -934,27 +948,6 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   keywords = {ovks},
 }
 
-@article{koenker1978regression,
-  title={Regression quantiles},
-  author={Koenker, Roger and Bassett Jr, Gilbert},
-  journal={Econometrica: journal of the Econometric Society},
-  pages={33--50},
-  year={1978},
-  publisher={JSTOR},
-  keywords={ovks},
-}
-
-@book{koenker2005quantile,
-  title={Quantile regression},
-  author={Koenker, Roger},
-  number={38},
-  year={2005},
-  publisher={Cambridge university press},
-  keywords={ovks},
-}
-
-
-
 @InProceedings{Kondor_icml02,
   author    = {Kondor, R. I. and Lafferty, J. D.},
   title     = {Diffusion Kernels on Graphs and Other Discrete Input Spaces},
@@ -1145,6 +1138,17 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   pages        = {3--17},
   organization = {Springer},
   keywords     = {ovks},
+}
+
+
+@inproceedings{micchelli2004kernels,
+  title={Kernels for Multi--task Learning.},
+  author={Micchelli, Charles A and Pontil, Massimiliano},
+  booktitle={NIPS},
+  volume={86},
+  pages={89},
+  year={2004},
+  keywords={ovks},
 }
 
 
@@ -1679,15 +1683,6 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   keywords  = {ovks},
 }
 
-@article{tieleman2012lecture,
-  title={Lecture 6.5-RMSProp, COURSERA: Neural networks for machine learning},
-  author={Tieleman, Tijmen and Hinton, G},
-  journal={University of Toronto, Tech. Rep},
-  year={2012},
-  keywords={ovks}
-}
-
-
 @Misc{tornier2014haar,
   author       = {Tornier, Stephan},
   title        = {Haar measures},
@@ -1980,6 +1975,19 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   keywords  = {ovks},
   publisher = {arXiv},
 }
+
+@article{brouard2016fast,
+  title={Fast metabolite identification with input output Kernel regression},
+  author={Brouard, C{\'e}line and Shen, Huibin and D{\"u}hrkop, Kai and d'Alch{\'e}-Buc, Florence and B{\"o}cker, Sebastian and Rousu, Juho},
+  journal={Bioinformatics},
+  volume={32},
+  number={12},
+  pages={i28--i36},
+  year={2016},
+  publisher={Oxford Univ Press},
+  keywords={ovks}
+}
+
 
 @InProceedings{dai2014scalable,
   author    = {Dai, Bo and Xie, Bo and He, Niao and Liang, Yingyu and Raj, Anant and Balcan, Maria-Florina F and Song, Le},
@@ -2350,6 +2358,41 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   number   = {1},
   pages    = {82 - 95},
   keywords = {ovks},
+}
+
+@Article{abadi2016tensorflow,
+  author   = {Abadi, Mart{\'\i}n and Agarwal, Ashish and Barham, Paul and Brevdo, Eugene and Chen, Zhifeng and Citro, Craig and Corrado, Greg S and Davis, Andy and Dean, Jeffrey and Devin, Matthieu and others},
+  title    = {Tensorflow: Large-scale machine learning on heterogeneous distributed systems},
+  journal  = {arXiv preprint arXiv:1603.04467},
+  year     = {2016},
+  keywords = {ovks},
+}
+
+@Article{tieleman2012lecture,
+  author   = {Tieleman, Tijmen and Hinton, G},
+  title    = {Lecture 6.5-RMSProp, COURSERA: Neural networks for machine learning},
+  journal  = {University of Toronto, Tech. Rep},
+  year     = {2012},
+  keywords = {ovks},
+}
+
+@Book{koenker2005quantile,
+  title     = {Quantile regression},
+  publisher = {Cambridge university press},
+  year      = {2005},
+  author    = {Koenker, Roger},
+  number    = {38},
+  keywords  = {ovks},
+}
+
+@Article{koenker1978regression,
+  author    = {Koenker, Roger and Bassett Jr, Gilbert},
+  title     = {Regression quantiles},
+  journal   = {Econometrica: journal of the Econometric Society},
+  year      = {1978},
+  pages     = {33--50},
+  keywords  = {ovks},
+  publisher = {JSTOR},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

@@ -5,7 +5,7 @@
 \section{Introduction}
 Time series are ubiquitous in various fields such as climate, biomedical signal
 processing, videos understanding to name but a few. When linear models are not
-appropriate, a generic nonparametric approach to modeling is relevant. In this
+appropriate, a generic nonparametric approach to modelling is relevant. In this
 work we build on a recent work about Vector Autoregressive models using
 \aclp{OVK} \cite{Lim2013,Lim2015}. Vector autoregression is
 addressed in a \acl{vv-RKHS} with the important property to allow for couplings
@@ -54,7 +54,7 @@ autoregression problem consists in learning a model $\hat{h}:\mathbb{R}^d \to
     \seq{s} = ((x_{1},x_{2}),\dots,(x_{N-1},x_{N}))\hiderel{\in}
     \left(\mathbb{R}^d\times\mathbb{R}^d\right)^N.
 \end{dmath*}
-In the literature, a standard approach to vector autoregressive modeling is to
+In the literature, a standard approach to vector autoregressive modelling is to
 fit a \ac{VAR} model. The \ac{VAR}(1) model reads $h(x_t) = Ax_t$ where $A$
 is an $d\times d$ matrix whose structure encodes the temporal relationships
 among the $d$ state variables.
@@ -114,7 +114,7 @@ fercoq2015accelerated} for proximal block coordinate descent.} under sparsity
 constraints. In the following, we will not consider the kernel learning problem
 and will use a simple ridge loss. We will also illustrate our approach to a
 well known class of \acs{OVK}, called \emph{decomposable} or \emph{separable}
-matrix-valued kernels \citep{Micchelli2005,caponnetto2008}, and intance of
+matrix-valued kernels \citep{Micchelli2005,caponnetto2008}, and instance of
 Decomposable \acs{OVK} that were originally introduced to solve multi-task
 learning problems \citep{Evgeniou2005}.  Other kernels may also be considered
 as developed in \cref{subsec:ovk-ex}.
@@ -149,7 +149,7 @@ with $\lambda \ge 0$ and $\norm{h}_{\mathcal{H}_K}^2 =
 solved using a \acs{L-BFGS-B} \citep{byrd1995limited} which is well suited for
 optimization problems with a large number of parameters, and is wildly used as
 a training algorithm on small/medium-scale problems. However, like standard
-kernel methods, \acs{OKVAR} suffers from unfavorable computational complexity
+kernel methods, \acs{OKVAR} suffers from unfavourable computational complexity
 both in time and memory since it needs to store the full Gram matrix,
 preventing its ability to scale to large data sets and making it really slow on
 medium scale problem. We argue that this obstacle can be effectively overcome:

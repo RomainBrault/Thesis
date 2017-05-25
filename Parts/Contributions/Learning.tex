@@ -4,13 +4,13 @@
 \section{Learning with {OVK}}
 \label{sec:learning_with_operator-valued_random-fourier_features} Before
 focusing on learning function with an ORFF model, we briefly review the context
-of supervised lerning in \acs{vv-RKHS}.  model.
+of supervised learning in \acs{vv-RKHS}.  model.
 \subsection{Supervised learning within \acs{vv-RKHS}} 
 \subsubsection{General results}
 Let $\seq{s} = (x_i,y_i)_{i=1}^N\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$
 be a sequence of training samples. Given a local loss function $L:
 \mathcal{X}\times\mathcal{F}\times\mathcal{Y}\to \overline{\mathbb{R}}$ such
-that $L$ is proper, convex and lower semi-continous in $\mathcal{F}$, we are
+that $L$ is proper, convex and lower semi-continuous in $\mathcal{F}$, we are
 interested in finding a \emph{vector-valued function}
 $f_{\seq{s}}:\mathcal{X}\to\mathcal{Y}$, that lives in a \acs{vv-RKHS} and
 minimize a tradeoff between a data fitting term $L$ and a regularization term
@@ -92,7 +92,7 @@ Minh_icml13,minh2016unifying,sangnier2016joint,kadri2015operator,Micchelli2005,
 Brouard2016_jmlr}, and a cornerstone of learning in \acs{vv-RKHS} is the
 representer theorem\mpar{Sometimes referred to as minimal norm interpolation
 theorem.}, which allows to replace the search of a minimizer in a infinite
-dimensional \acs{vv-RKHS} by a finite number of paramaters $(u_i)_{i=1}^N$,
+dimensional \acs{vv-RKHS} by a finite number of parameters $(u_i)_{i=1}^N$,
 $u_i\in\mathcal{Y}$. 
 \paragraph{}
 In the following we suppose we are given a cost function
@@ -137,7 +137,7 @@ The first representer theorem was introduced by~\citet{Wahba90} in the
 case where $\mathcal{Y}=\mathbb{R}$. The extension to an arbitrary Hilbert
 space $\mathcal{Y}$ has been proved by many authors in different
 forms~\citep{Brouard2011,kadri2015operator,Micchelli2005}. The idea behind the
-representer theorem is that eventhough we minimize over the whole space
+representer theorem is that even though we minimize over the whole space
 $\mathcal{H}_K$, when $\lambda>0$, the solution of
 \cref{eq:learning_rkhs_gen} falls inevitably into the set
 \begin{dmath*}
@@ -146,7 +146,7 @@ $\mathcal{H}_K$, when $\lambda>0$, the solution of
 \end{dmath*}
 Therefore the result can be expressed as a finite linear combination of basis
 functions of the form $K(\cdot,x_k)$. Remark that we can perform the kernel
-expansion of $f_{\seq{s}}=\sum_{j=1}^{N}K(\cdot,x_j)u_{\seq{s},j}$ eventhough
+expansion of $f_{\seq{s}}=\sum_{j=1}^{N}K(\cdot,x_j)u_{\seq{s},j}$ even though
 $\lambda=0$. However $f_{\seq{s}}$ is no longer the solution of
 \cref{eq:learning_rkhs_gen} over the whole space $\mathcal{H}_K$ but a
 projection on the subspace $\mathcal{H}_{K, \seq{s}}$. While this is in general
@@ -423,7 +423,7 @@ do not study the link between these spaces.
         y_i\right) + \frac{\lambda}{2}\norm{\theta}^2_{\tildeH{\omega}}. \qed
     \end{dmath*}
 \end{proof} 
-In the aforemention theorem, we use the notation $\widetilde{K}$ and
+In the aforementioned theorem, we use the notation $\widetilde{K}$ and
 $\tildePhi{\omega}$ because our main subject of interest is the \acs{ORFF} map.
 However this theorem works for \emph{any} feature maps $\Phi(x):
 \mathcal{L}(\mathcal{Y}, \mathcal{H})$ even when $\mathcal{H}$ is infinite
@@ -475,7 +475,7 @@ from the \acs{RFF} map. The left column represents the fit of the model to the
 points for four different valued of $\lambda$ (top to bottom: $10^{-2}$,
 $10^{-5}$, $10e^{10}$, $0$). The middle column shows if the \acs{RFF} solution
 $\theta_{\seq{s}}$ is in $(\Ker \tilde{W})^\perp$.  This is true for all values
-of $\lambda$. The right column shows that eventhough $\theta_{\seq{s}}$ is in
+of $\lambda$. The right column shows that even though $\theta_{\seq{s}}$ is in
 $(\Ker \tilde{W})^\perp$, when $\lambda\to0$ learning with \acs{RFF} is
 different from learning with the kernel constructed from the \acs{RFF} maps
 since the coefficients of $\theta^{\parallel}$ are all different from $0$.
@@ -838,7 +838,7 @@ $\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \ac{iid}.
 
 \subsection{Case of study: the decomposable kernel}
 \label{subsec:fast_decomposable}
-Troughout this section we show how the mathematical formulation relates to a
+Throughout this section we show how the mathematical formulation relates to a
 concrete (Python) implementation. We propose a Python implementation based on
 NumPy~\citep{oliphant2006guide}, SciPy~\citep{jones2014scipy} and
 Scikit-learn~\citep{pedregosa2011scikit}. Following \cref{eq:matrix_orff}, the
@@ -914,7 +914,7 @@ def NaiveDecomposableGaussianORFF(X, A, gamma=1.,
     return matrix(kron(phiX, B))
 \end{pyblock}
 Let $\theta\in\mathbb{R}^{2Dp'}$ and $y\in\mathbb{R^p}$. With such
-imlementation evaluating a matrix vector product such as
+implementation evaluating a matrix vector product such as
 $\tildePhi{\omega}(x)^\transpose \theta$ or $\tildePhi{\omega}(x)y$ have
 $O_t(2Dp'p)$ time complexity and $O_s(2Dp'p)$ of space complexity, which is
 utterly inefficient. Indeed, recall that if
@@ -1024,7 +1024,7 @@ points in $\mathbb{R}^d$. We note
     x_N\end{pmatrix}\hiderel{\in}\mathcal{M}_{d,N}
 \end{dmath*}
 the data matrix where each column represents a data point\footnote{In many
-programing language, such as Python, C, C{}\verb!++! or Java each data point is
+programming language, such as Python, C, C{}\verb!++! or Java each data point is
 traditionally represented by a row in the data matrix (row major formulation).
 While this is more natural when parsing a data file, it is less common in
 mathematical formulations. In this document we adopt the \emph{column major}
@@ -1050,7 +1050,7 @@ and
     \end{pmatrix}\hiderel{\in}\mathcal{M}_{u, N}.
 \end{dmath*}
 Given a matrix $X\in\mathcal{M}_{m,n}(\mathbb{R})$, we note $X_{\bullet i}$ the
-\emph{column} vector coresponding to the $i$-th column of the matrix $X$ and
+\emph{column} vector corresponding to the $i$-th column of the matrix $X$ and
 $X_{i \bullet}$ the \emph{row} vector (covector) corresponding to the $i$-th
 line of the matrix $X$. With these notations, if $X\in\mathcal{M}_{m,n}$ and
 $Z\in\mathcal{M}_{n,m'}$, $X_{i\bullet}Z_{\bullet j}\in\mathbb{R}$ is the inner
@@ -1195,7 +1195,7 @@ given in \cref{table:efficient-complexity}.
 \end{landscape}}
 \paragraph{}
 It is worth mentioning that the same strategy can be applied in many different
-language. For instance in C{}\verb!++!, the libray Eigen~\citep{eigenweb}
+language. For instance in C{}\verb!++!, the library Eigen~\citep{eigenweb}
 allows to wrap a sparse matrix with a custom type, where the user overloads the
 transpose and dot product operator (as in Python). Then the custom user
 operator behaves as a (sparse) matrix --see

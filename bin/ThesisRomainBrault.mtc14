@@ -22,28 +22,28 @@
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 216}{table.D.2}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {D.3}Benchmarks}{\reset@font\mtcSfont 217}{section.D.3}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.3.1}Default parameters of OneClassRF}{\reset@font\mtcSSfont 217}{subsection.D.3.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 219}{subsection.D.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.3.2}Results}{\reset@font\mtcSSfont 219}{subsection.D.3.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {D.4}Theoretical analysis}{\reset@font\mtcSfont 219}{section.D.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.4.1}Underlying model}{\reset@font\mtcSSfont 219}{subsection.D.4.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {D.4.1.1}Existing Two-Class Model (n, $\boldsymbol {\alpha }$).}{\reset@font\mtcSSSfont 219}{subsubsection.D.4.1.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 218}{subsection.D.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.3.2}Results}{\reset@font\mtcSSfont 218}{subsection.D.3.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {D.4}Theoretical analysis}{\reset@font\mtcSfont 218}{section.D.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.4.1}Underlying model}{\reset@font\mtcSSfont 218}{subsection.D.4.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {D.4.1.1}Existing Two-Class Model (n, $\boldsymbol {\alpha }$).}{\reset@font\mtcSSSfont 220}{subsubsection.D.4.1.1}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {D.4.1.2}One-Class-Model ($n$, $\boldsymbol {\alpha }$).}{\reset@font\mtcSSSfont 220}{subsubsection.D.4.1.2}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 220}{subsubsection.D.4.1.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.4.2}Adaptive approach}{\reset@font\mtcSSfont 221}{subsection.D.4.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {D.5}Conclusion}{\reset@font\mtcSfont 222}{section.D.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {D.5}Conclusion}{\reset@font\mtcSfont 223}{section.D.5}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {D.6}Further insights on the algorithm}{\reset@font\mtcSfont 223}{section.D.6}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.6.1}Interpretation of parameter gamma}{\reset@font\mtcSSfont 223}{subsection.D.6.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.6.2}Alternative scoring functions}{\reset@font\mtcSSfont 223}{subsection.D.6.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.6.3}Alternative stopping criteria}{\reset@font\mtcSSfont 223}{subsection.D.6.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.6.3}Alternative stopping criteria}{\reset@font\mtcSSfont 224}{subsection.D.6.3}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.6.4}Variable importance}{\reset@font\mtcSSfont 224}{subsection.D.6.4}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {D.7}Hyper-parameters of tested algorithms}{\reset@font\mtcSfont 224}{section.D.7}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 224}{section.D.7}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 224}{section.D.7}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 225}{section.D.7}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 225}{section.D.7}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 225}{section.D.7}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 225}{section.D.7}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 225}{section.D.7}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 225}{section.D.7}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 225}{section.D.7}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 226}{section.D.7}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 226}{section.D.7}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {D.8}Description of the datasets}{\reset@font\mtcSfont 226}{section.D.8}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 226}{section.D.8}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {D.9}Further details on benchmarks and outlier detection results}{\reset@font\mtcSfont 227}{section.D.9}}

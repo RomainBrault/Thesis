@@ -3462,6 +3462,33 @@
       \range{pages}{28}
       \keyw{ovks}
     \endentry
+    \entry{micchelli2004kernels}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=2086626c35efb840643897477a77422f}{%
+           family={Micchelli},
+           family_i={M\bibinitperiod},
+           given={Charles\bibnamedelima A},
+           given_i={C\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=8b5942a7f10e47d565321b3dce4730d3}{%
+           family={Pontil},
+           family_i={P\bibinitperiod},
+           given={Massimiliano},
+           given_i={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{153192796db0b3f7d7cfb0b673052f89}
+      \strng{fullhash}{153192796db0b3f7d7cfb0b673052f89}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{NIPS}
+      \field{title}{Kernels for Multi--task Learning.}
+      \field{volume}{86}
+      \field{year}{2004}
+      \field{pages}{89}
+      \range{pages}{1}
+      \keyw{ovks}
+    \endentry
     \entry{Micheli2013}{report}{}
       \name{author}{2}{}{%
         {{hash=76ec38163aae65849b843ab0af078773}{%
@@ -5856,7 +5883,6 @@
       \keyw{ovks}
     \endentry
   \endsortlist
-  \missing{Pontil}
 \endrefsection
 \endinput
 

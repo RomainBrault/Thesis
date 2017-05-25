@@ -182,19 +182,31 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{41}{definition.3.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Shift-Invariant \acs {OVK} on \acs {LCA} groups}{42}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.2}Some applications of Operator-valued kernels}{42}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{42}{mparcnt.4}
+\contentsline {paragraph}{}{42}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{43}{proof.13}
+\contentsline {paragraph}{}{43}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.3}Examples of \aclp {OVK}}{44}{subsection.3.3.3}
+\contentsline {paragraph}{}{43}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{44}{subsection.3.3.3}
+\contentsline {paragraph}{}{43}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{45}{proposition.3.8}
+\contentsline {paragraph}{}{43}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{46}{mparcnt.7}
+\contentsline {subsection}{\numberline {3.3.3}Shift-Invariant \acs {OVK} on \acs {LCA} groups}{43}{subsection.3.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{43}{mparcnt.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{44}{proof.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.4}Examples of \aclp {OVK}}{45}{subsection.3.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{45}{subsection.3.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{46}{proposition.3.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{47}{mparcnt.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {part}{\numberline {ii}\spacedlowsmallcaps {Contributions}}{49}{part.2}
 \defcounter {refsection}{0}\relax 

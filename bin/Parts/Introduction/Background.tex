@@ -1338,6 +1338,44 @@ consequence is that if $K$ is a $\mathcal{Y}$-Mercer and $\mathcal{X}$ and
 $\mathcal{Y}$ are separable then $\mathcal{H}_K$ and any resdescription is
 isometrically isomorphic to $\ell^2$.
 
+\subsection{Some applications of Operator-valued kernels}
+We give here a non exhaustive list of work concerning \aclp{OVK}.  A good
+review of \aclp{OVK} has been conducted in \citet{Alvarez2012}.
+Operator-valued Kernel Regression has first been studied in the context of
+Ridge Regression by Micchelli and Pontil in \cite{Micchelli2005}. For a
+theoretical introduction to \acsp{OVK} we refer the interrested reader to the
+papers \citet{carmeli2006vector, caponnetto2008, Carmeli2010}. Generalization
+bounds for \acs{OVK} have been studied in \citet{Sindhwani2013,
+kadri2015operator, rudi2016generalization}.
+\paragraph{}
+Multi-task regression and structured classification are undoubtedly the first
+target application for working in \acl{vv-RKHS} and has been studied by
+\citet{Evgeniou2005, minh2013unifying}. Applications cover various subjects
+such as drug activity prediction \citet{Brouard2016_jmlr} or link prediction in
+graphs \citep{Brouard2011, Kadri_icml2013} as well as image colorization
+\citep{ha2010image}. \Citet{mroueh2012multiclass} showed how to use
+operator-valued kernels for multiclass classification.
+\paragraph{}
+\citet{Macedo2008, Baldassare2012} showed the interest of spectral algorithms
+in Ridge regression and introduced vector field learning as a new multiple
+output task in Machine Learning community. \citet{Wahlstrom2013} applied vector
+field learning with \acs{OVK}-based Gaussian processes to the reconstruction of
+magnetic fields (which are curl-free).
+\paragraph{}
+\citet{kadri2015operator} have been the precursors of  regression with
+functional values, opening a new avenue of applications.
+\paragraph{}
+\citet{sangnier2016joint} recently explored the minimization of
+a pinball loss under regularizing constraints induced by a well chosen
+decomposable kernel in order to handle joint quantile regression.
+\paragraph{}
+\citet{Dinuzzo2011, dinuzzo2011learning} suggest that it is possible to learn
+an operator-valued kernel from the data. \citet{liu2010learning, Sindhwani2013,
+lim2013okvar, lim2015operator} proposed to learn an \acs{OVK} from
+vector-valued time series to recover a causal graph of interraction.
+\citet{audiffren2013online}. \citet{Zhang2012} proposed \acl{OVK} refinement to
+prevent from underfitting or overfitting.
+
 %------------------------------------------------------------------------------
 \subsection{Shift-Invariant \acs{OVK} on \acs{LCA}
 groups}

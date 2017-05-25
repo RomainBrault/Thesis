@@ -1525,6 +1525,32 @@
       \field{year}{2011}
       \keyw{ovks}
     \endentry
+    \entry{dinuzzo2011learning}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=3f865e4b330453d82444d90040b3c60d}{%
+           family={Dinuzzo},
+           family_i={D\bibinitperiod},
+           given={Francesco},
+           given_i={F\bibinitperiod}}}%
+        {{hash=e9c11e7f6e771dbb75fdfa98f94e91a0}{%
+           family={Fukumizu},
+           family_i={F\bibinitperiod},
+           given={Kenji},
+           given_i={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{f7f25fa03772a47cda795d587dd17da1}
+      \strng{fullhash}{f7f25fa03772a47cda795d587dd17da1}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{ACML}
+      \field{title}{Learning low-rank output kernels.}
+      \field{year}{2011}
+      \field{pages}{181\bibrangedash 196}
+      \range{pages}{16}
+      \keyw{ovks}
+    \endentry
     \entry{Diaz2006}{article}{}
       \name{author}{2}{}{%
         {{hash=03faa49f82e60dcf463a71763f6ae2b2}{%
@@ -2091,6 +2117,42 @@
       \endverb
       \keyw{ovks}
     \endentry
+    \entry{ha2010image}{article}{}
+      \name{author}{3}{}{%
+        {{hash=7ce8ab05270235c9b94210ad89b1441d}{%
+           family={Ha\bibnamedelima Quang},
+           family_i={H\bibinitperiod\bibinitdelim Q\bibinitperiod},
+           given={Minh},
+           given_i={M\bibinitperiod}}}%
+        {{hash=b39a8abbcf562c3eed8b7e77bad057f7}{%
+           family={Kang},
+           family_i={K\bibinitperiod},
+           given={Sung\bibnamedelima Ha},
+           given_i={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=6f934710efe5a9afbea2e30836d0b6b4}{%
+           family={Le},
+           family_i={L\bibinitperiod},
+           given={Triet\bibnamedelima M},
+           given_i={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{2e6f4fa4bc7221c5ccc77729859a6869}
+      \strng{fullhash}{2e6f4fa4bc7221c5ccc77729859a6869}
+      \field{sortinit}{H}
+      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Mathematical Imaging and Vision}
+      \field{number}{1}
+      \field{title}{Image and video colorization using vector-valued reproducing kernel Hilbert spaces}
+      \field{volume}{37}
+      \field{year}{2010}
+      \field{pages}{49\bibrangedash 65}
+      \range{pages}{17}
+      \keyw{ovks}
+    \endentry
     \entry{hamid2014compact}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=97523c167025b3d5cde2aeddb510ef1f}{%
@@ -2274,6 +2336,35 @@
       \field{title}{Nonlinear functional regression: a functional RKHS approach}
       \field{volume}{9}
       \field{year}{2010}
+      \keyw{ovks}
+    \endentry
+    \entry{Kadri_icml2013}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=a6b3a96ed161dd268b1174c8733ba8a9}{%
+           family={Kadri},
+           family_i={K\bibinitperiod},
+           given={H.},
+           given_i={H\bibinitperiod}}}%
+        {{hash=a381de9ca61c7b7f3731055802078bc3}{%
+           family={Ghavamzadeh},
+           family_i={G\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+        {{hash=79b18dbdb7736e5a19150c719cf2f291}{%
+           family={Preux},
+           family_i={P\bibinitperiod},
+           given={P.},
+           given_i={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{43bf8b2eba6817aa6cc3a0bf98a5725d}
+      \strng{fullhash}{43bf8b2eba6817aa6cc3a0bf98a5725d}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proc. of the 30th International Conference on Machine Learning}
+      \field{title}{A generalized kernel approach to structured output learning}
+      \field{year}{2013}
       \keyw{ovks}
     \endentry
     \entry{kadri2015operator}{article}{}

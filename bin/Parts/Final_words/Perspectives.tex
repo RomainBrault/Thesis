@@ -14,7 +14,7 @@ $(X,Y)\sim\probability$ with some function belonging to a hypothesis space
 $f\in\mathcal{F}$. Yet, many sensitive applications need more than the expected
 valued of the relationship between random variables. To control the
 \say{quality} of the predicted value from an input $x$, fields such as
-economics, medicine, physics or social science require to have acces to the
+economics, medicine, physics or social science require to have access to the
 different quantile to model the distribution around the mean
 $f(x)\in\mathbb{R}$ and strengthen their analysis.
 \paragraph{}
@@ -31,7 +31,7 @@ In a nutshell, this loss has been introduced by noticing that finding the
 optimal location parameter $\mu = f(x)$ in the $\ell_1$ loss $L(x, f,
 y)=\abs{f(x) - y}$ yields an estimator of the unconditional median
 \citep{koenker1978regression}. Recently \citet{sangnier2016joint} proposed to
-learn simultaneously many quantiles by minimizing the multiquantile loss
+learn simultaneously many quantiles by minimizing the multi-quantile loss
 function. Given a vector of quantiles $\boldsymbol{\tau} = (\tau_1, \dots
 \tau_p)\in\mathbb{R}^p$
 \begin{dmath*}
@@ -51,7 +51,7 @@ we note $f(x)=f_x$ and introduce the generalized the pinball loss
 
 \subsection{Functional output data}
 Pioneer work on learning function valued function has been done by
-\citet{kadri2015operator}. Inspired by them we developp an \acs{ORFF}
+\citet{kadri2015operator}. Inspired by them we develop an \acs{ORFF}
 methodology to learn functional data where the outputs are functions that we
 suppose living in a \acs{RKHS}.
 \paragraph{}
@@ -344,7 +344,7 @@ $0.5$, $0.775$ and $0.95$ using the \acs{ORFF} methodology.
 \end{landscape}}
 \Cref{fig:quantile_joint} shows the joint quantile regression of
 \citet{sangnier2016joint} on the same dataset. Not only our method matches the
-the performaces of \citet{sangnier2016joint}\footnote{We reported an error
+the performances of \citet{sangnier2016joint}\footnote{We reported an error
 computed with the pinball loss on the test set of $0.818$ for our method and
 $0.817$ for joint regression (note that we don't report here an average on many
 experiments to avoid randomness introduced by the random features, but the
@@ -361,7 +361,7 @@ amongst all objects, by learning from a training set containing only the
 objects of that class.  In this framework, we assume that we only observe
 examples of one class (referred to as the inlier class).  The second class is
 called outlier class.  We turn our attention to the \acs{OCSVM}
-\citet{Scholkopf2001} which extends the \ac{SVM} methodology
+of \citet{Scholkopf2001} which extends the \ac{SVM} methodology
 \citep{Cortes1995,Shawe2004} to handle training using only inliers. 
 \paragraph{}
 We recall that given an hyperparameter $\nu\in [0,1]$ that controls the
@@ -439,7 +439,7 @@ setting. We refer to this new augmented set as the test set.
 In \Cref{fig:inlier_proportion} we show the proportion of inliner with respect
 to $\nu$. The top figure shows the result for a model trained with
 $\gamma_{\mathcal{T}}=100$ the middle figure for $\gamma_{\mathcal{T}}=1$ and
-the bottomg figure for $\gamma_{\mathcal{T}}=0.01$. We see that when
+the bottom figure for $\gamma_{\mathcal{T}}=0.01$. We see that when
 $\gamma_{\mathcal{T}}=0.01$, the proportion of inlier on the train and test set
 does not follows the theoretical black curve, because the algorithm regularize
 too much between the level sets. When $\gamma_{\mathcal{T}}=1$ or $100$ the
@@ -465,14 +465,14 @@ the train set is polluted with outliers. We replicate the example given in
 the documentations of Scikit-Learn at
 \url{http://scikit-learn.org/stable/auto_examples/covariance/plot_outlier_detection.html}
 We compare our method to three other well known outlier detection methods
-from the litterature: Isolation Forest \citep{Liu2008}, \acs{OCSVM}
+from the literature: Isolation Forest \citep{Liu2008}, \acs{OCSVM}
 \citep{Scholkopf2001} and a Robust Covariance estimator
 \citep{campbell1980robust, pedregosa2011scikit} on \cref{fig:ocsvm_outlier}.
 Our method achieve the state of the art on this simple example which is
 encouraging. However the computation time of our continuous \acs{OCSVM} is
 higher than the other methods. It took circa $0.25$ second for the \acs{OCSVM}.
 $10$ seconds for our method, $5$ seconds for isolation forest and $0.1$ second
-for the Robust covariance estimator. This can be due to the implentation since we used
+for the Robust covariance estimator. This can be due to the implementation since we used
 a (sub-optimal) hand-crafted full gradient descent. Notice that however our
 method is able to retrieve all the level sets after training, not only the one
 presented in \cref{fig:ocsvm_outlier}.  When one is interested in a specific
@@ -507,7 +507,7 @@ optimisation algorithms, while keeping efficient computations thanks to the
 methodology presented in \cref{subsec:efficient_learning} (\acs{ie} by seeing
 operator-valued kernels as operators along with matrix-free solver rather than
 plain matrices). We designed the library in order to have a close compatibility
-with scikit-learn. Code and documentation are publicly available at
+with Scikit-learn. Code and documentation are publicly available at
 \url{https://github.com/operalib/operalib}. In a near future we plan to add the
 work of \citet{lim2015operator} for vector-autoregression with \acsp{OVK}. We
 hope to expand with more algorithms from various authors if the \acs{OVK}

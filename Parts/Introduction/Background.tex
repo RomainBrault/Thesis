@@ -1339,22 +1339,15 @@ $\mathcal{Y}$ are separable then $\mathcal{H}_K$ and any resdescription is
 isometrically isomorphic to $\ell^2$.
 
 \subsection{Some applications of Operator-valued kernels}
-We give here a non exhaustive list of work concerning \aclp{OVK}.  A good
-review of \aclp{OVK} has been conducted in \citet{Alvarez2012}.
-Operator-valued Kernel Regression has first been studied in the context of
-Ridge Regression by Micchelli and Pontil in \cite{Micchelli2005}. For a
-theoretical introduction to \acsp{OVK} we refer the interrested reader to the
+We give here a non exhaustive list of works concerning \aclp{OVK}.  A good
+review of \aclp{OVK} has been conducted in \citet{Alvarez2012}. For a
+theoretical introduction to \acsp{OVK} the interested reader can refer to the
 papers \citet{carmeli2006vector, caponnetto2008, Carmeli2010}. Generalization
 bounds for \acs{OVK} have been studied in \citet{Sindhwani2013,
-kadri2015operator, rudi2016generalization}.
+kadri2015operator,sangnier2016joint, maurer2016vector}.
 \paragraph{}
-Multi-task regression and structured classification are undoubtedly the first
-target application for working in \acl{vv-RKHS} and has been studied by
-\citet{Evgeniou2005, minh2013unifying}. Applications cover various subjects
-such as drug activity prediction \citet{Brouard2016_jmlr} or link prediction in
-graphs \citep{Brouard2011, Kadri_icml2013} as well as image colorization
-\citep{ha2010image}. \Citet{mroueh2012multiclass} showed how to use
-operator-valued kernels for multiclass classification.
+Operator-valued Kernel Regression has first been studied in the context of
+Ridge Regression and Multi-task learning by \citet{Micchelli2005}. 
 \paragraph{}
 \citet{Macedo2008, Baldassare2012} showed the interest of spectral algorithms
 in Ridge regression and introduced vector field learning as a new multiple
@@ -1362,19 +1355,35 @@ output task in Machine Learning community. \citet{Wahlstrom2013} applied vector
 field learning with \acs{OVK}-based Gaussian processes to the reconstruction of
 magnetic fields (which are curl-free).
 \paragraph{}
-\citet{kadri2015operator} have been the precursors of  regression with
-functional values, opening a new avenue of applications.
+Multi-task regression \citet{Pontil}  and structured multi-class classification
+\citep{Dinuzzo2011,minh2013unifying,mroueh2012multiclass} are undoubtedly the
+first target application for working in \acl{vv-RKHS}.  \aclp{OVK} have been
+shown useful to provide a general framework for structured output prediction
+in \citet{Brouard2011,Brouard2016_jmlr} with a link to Output Kernel Regression
+and in \citet{Kadri_icml2013}. Beyond structured classification, other
+various applications such as link prediction, drug activity prediction or
+recently metabolite identification \citep{brouard2016fast} and  image
+colorization \citep{ha2010image} have been developed.
+\paragraph{}
+The works of \citet{Kadri_aistat10,kadri2015operator} have been the precursors
+of  regression with functional values, opening a new avenue of applications.
+Appropriate algorithms devoted to on-line learning have been also derived  by
+\citet{audiffren2013online}.
+\paragraph{}
+Kernel learning was addressed at least in two ways: first with using Multiple
+Kernel Learning in \citet{Kadri_nips2012} and second, using various penalties,
+smooth ones in \citet{Dinuzzo2011, ciliberto2015} for decomposable kernels
+and non smooth ones in \citet{lim2015operator} using proximal methods in the
+case of decomposable and transformable kernels.
+\paragraph{}
+Dynamical modeling was tackled in the context of multivariate time series
+modelling in \citet{lim2013okvar,Sindhwani2013,lim2015operator} and as a
+generalization of Recursive Least Square Algorithm in
+\citet{amblard2015operator}.
 \paragraph{}
 \citet{sangnier2016joint} recently explored the minimization of
 a pinball loss under regularizing constraints induced by a well chosen
 decomposable kernel in order to handle joint quantile regression.
-\paragraph{}
-\citet{Dinuzzo2011, dinuzzo2011learning} suggest that it is possible to learn
-an operator-valued kernel from the data. \citet{liu2010learning, Sindhwani2013,
-lim2013okvar, lim2015operator} proposed to learn an \acs{OVK} from
-vector-valued time series to recover a causal graph of interraction.
-\citet{audiffren2013online}. \citet{Zhang2012} proposed \acl{OVK} refinement to
-prevent from underfitting or overfitting.
 
 %------------------------------------------------------------------------------
 \subsection{Shift-Invariant \acs{OVK} on \acs{LCA}
@@ -1501,7 +1510,7 @@ fields such as structured classification when classes belong to a hierarchy for
 instance. Instead of solving independently $p$ single output regression task,
 one would like to take advantage of the relationships between output variables
 when learning and making a decision.
-\begin{definition}[Decomposable kernel \citep{Micheli2013}]
+\begin{proposition}[Decomposable kernel \citep{Micheli2013}]
     \label{dec-kernel}
     Let $\Gamma$ be a non-negative operator of $\mathcal{L}_+(\mathcal{Y})$.
     $K$ is said to be a \emph{decomposable}
@@ -1511,7 +1520,7 @@ when learning and making a decision.
         K(x,z) \colonequals k(x,z)\Gamma,
     \end{dmath*}
     where $k$ is a \emph{scalar} kernel.
-\end{definition}
+\end{proposition}
 When $\mathcal{Y}=\mathbb{R}^p$, the matrix $\Gamma$ is
 interpreted as encoding the relationships between the outputs coordinates.
 % This can easily be seen as a consequence of \cref{eq:reg_L2}.
@@ -1589,7 +1598,7 @@ orthogonal of the curl-free field.
     \includegraphics[trim=1.8cm 1cm 2cm 1cm,width=\textwidth,clip=true]{./gfx/div_field.eps}
     \caption{Synthetic $2D$ divergence-free field \label{fig:div-field}.}
 \end{figure}
-\begin{definition}[Curl-free and Div-free kernel \citep{Macedo2008}]
+\begin{proposition}[Curl-free and Div-free kernel \citep{Macedo2008}]
     \label{curl-div-free}
     Assume $\mathcal{X}=(\mathbb{R}^d, +)$ and $\mathcal{Y}=\mathbb{R}^p$ with
     $d=p$. The \emph{divergence-free} kernel is defined as
@@ -1606,14 +1615,14 @@ orthogonal of the curl-free field.
     \cref{subsec:gradient_methods} for a formal definition of the operator
     $\nabla$.}, $\nabla\nabla^\transpose $ is the Hessian operator and $\Delta$
     is the Laplacian operator.
-\end{definition}
+\end{proposition}
 Although taken separately these kernels are not universal, a convex combination
 of the curl-free and divergence-free kernels allows to learn any vector field
 that satisfies the Helmholtz decomposition theorem~\citep{Macedo2008,
 Baldassare2012}. The next class of kernel we present are transformable kernels,
 whose action on each coordinate of an outputs vector is determined by a
 \say{views} of an input data.
-\begin{definition}[Transformable kernel\citep{caponnetto2008}]
+\begin{proposition}[Transformable kernel\citep{caponnetto2008}]
     Let $k:\mathcal{X}'\times\mathcal{X}'\to\mathbb{R}$ be a scalar-valued
     kernels and $\psi_1, \dots, \psi_p$ be a collection functions from
     $\mathcal{X}\to\mathcal{X}'$. Then the transformable kernel is defined for
@@ -1623,7 +1632,7 @@ whose action on each coordinate of an outputs vector is determined by a
         k(\psi_i(x), \psi_j(z)),
     \end{dmath*}
     for all $x$, $z\in\mathcal{X}$.
-\end{definition}
+\end{proposition}
 Transformable kernels have successfully used for network inference from time
 series by means of autoregressive models (\citet{lim2013okvar,
 lim2015operator}), and by \citet{vazquez2003multi} for cokriging the
@@ -1632,7 +1641,7 @@ into account the correlations between the outputs.
 \paragraph{}
 We also introduce an example of \acl{OVK} acting on a function space which
 found applications in \citet{kadri2015operator}.
-\begin{definition}[Hilbert Schmidt Integral kernel \citep{kadri2015operator}]
+\begin{proposition}[Hilbert Schmidt Integral kernel \citep{kadri2015operator}]
     \label{def:hilbert_schmidt_integral_kernel}
     Let $k_{\mathcal{X}}:\mathcal{X}\times\mathcal{X}\to\mathbb{R}$ be a scalar
     valued kernel acting on the inputs and
@@ -1647,7 +1656,7 @@ found applications in \citet{kadri2015operator}.
             (x, z) &\mapsto k_{\mathcal{X}}(x, z) L_{\mathcal{T}}.
         \end{cases}
     \end{dmath*}
-\end{definition}
+\end{proposition}
 This kernel is useful to learn functions $f$ that are function valued. In other
 words, $f\in\mathcal{F}(\mathcal{X}; \mathcal{F}(\mathcal{T}; \mathbb{R}))$ and
 the \acl{OVK} $K$ act on a function $g$ in the following way.

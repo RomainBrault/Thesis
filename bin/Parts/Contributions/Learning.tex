@@ -87,6 +87,7 @@ Hence for all positive $\lambda$, $f_{\seq{s}} =
 
 \subsubsection{Representer theorem and Feature equivalence}
 Regression in \acl{vv-RKHS} has been well studied~\citep{Alvarez2012,
+Argyriou_jmlr09,
 Minh_icml13,minh2016unifying,sangnier2016joint,kadri2015operator,Micchelli2005,
 Brouard2016_jmlr}, and a cornerstone of learning in \acs{vv-RKHS} is the
 representer theorem\mpar{Sometimes referred to as minimal norm interpolation
@@ -1563,16 +1564,19 @@ operator-valued kernel with a good prior on the data improves the performances
 important the more data are available.
 
 %------------------------------------------------------------------------------
-\section{Conclusions}
-We introduced \acs{ORFF}, a general and versatile framework for shift-invariant
-\acs{OVK} approximation. We proved the uniform convergence of the approximation
-error for bounded and unbounded \acsp{ORFF}. The complexity in time of these
-approximations together with the linear learning algorithm make this
-implementation scalable with the data size and thus appealing compared to
-\acs{OVK} regression as shown in numerical experiments. Further work concerns
-generalization bounds and consistency for \acs{ORFF}-regression. Finally this
-work opens the door to building deeper architectures by stacking vector-valued
-functions while keeping a kernel view for large datasets.
-\label{sec:conclusions_learning}
+\section{Conclusion}
+\acs{ORFF} approximations open the door to learn linear models. We described in
+this chapter how learning with \acsp{OVK} is converted into learning a linear
+(parametric) model based on \acs{ORFF}.
+%We introduced \acs{ORFF}, a general and versatile framework for shift-invariant
+%\acs{OVK} approximation. We proved the uniform convergence of the approximation
+%error for bounded and unbounded \acsp{ORFF}. 
+The complexity in time of these approximations together with the linear
+learning algorithm make this implementation scalable with the data size and
+thus appealing compared to \acs{OVK} regression as shown in numerical
+experiments. Further work concerns generalization bounds and consistency for
+\acs{ORFF}-regression. Finally this work opens the door to building deeper
+architectures by stacking vector-valued functions while keeping a kernel view
+for large datasets.  \label{sec:conclusions_learning}
 
 \chapterend

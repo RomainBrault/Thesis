@@ -1,8 +1,0 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.1}Proof of the error bound with high probability of the ORFF estimator}{\reset@font\mtcSfont 166}{section.A.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.1.1}Epsilon-net}{\reset@font\mtcSSfont 166}{subsection.A.1.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 166}{subsection.A.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.1.2}Bounding the Lipschitz constant}{\reset@font\mtcSSfont 167}{subsection.A.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.1.3}Bounding the error on a given anchor point}{\reset@font\mtcSSfont 168}{subsection.A.1.3}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 170}{theorem.A.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.1.4}Union Bound and examples}{\reset@font\mtcSSfont 172}{subsection.A.1.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.2}Proof of the ORFF estimator variance bound}{\reset@font\mtcSfont 177}{section.A.2}}

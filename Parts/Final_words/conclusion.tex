@@ -1,11 +1,11 @@
 In machine learning, many algorithm focus on learning functions that model
-dependencies in a dataset, where the the ouputs are real numbers. However
+dependencies in a dataset, where the the outputs are real numbers. However
 in numerous applications such as biology, economics, physics, etc.~the
 output data are not reals: they can be a collection of reals, present
 complex structures or can even be functions. To overcome this difficulty
 and take into account the structure of the data, a common approach is to
 see them as \emph{vectors} of some Hilbert space. From this observation, in
-this thesis, we took interrest in vector-valued functions. Looking at the
+this thesis, we took interest in vector-valued functions. Looking at the
 litterature we focused on mathematical objects called \aclp{OVK} to learn
 such functions.
 
@@ -21,7 +21,7 @@ number of data. In the context of large-scale learning such scaling is not
 acceptable. Through this work we propose a methodology to tackle this
 difficulty.
 \paragraph{}
-Enlighted by the litterature on large-scale learning with
+Enlighted by the literature on large-scale learning with
 \emph{scalar}-valued kernel, in particular the work of Rahimi and Recht
 \citep{Rahimi2007}, we propose to replace an \acs{OVK} by a random feature
 map that we called \acl{ORFF}. Our contribution start with the formal
@@ -30,9 +30,9 @@ that it is also possible to obtain a kernel from an \acs{ORFF}. Eventually
 we analyse the regularization properties in terms of \acl{FT} of
 $\mathcal{Y}$-Mercer kernels. Then we moved on giving a bound on the error
 due to the random approximation of the \acs{OVK} with high probability.
-We showed that it is possible to bound the error eventhough the \acs{ORFF}
+We showed that it is possible to bound the error even though the \acs{ORFF}
 estimator of an \acs{OVK} is not a bounded random variable. Moreover we
-also give a bound when the dimension of the ouput data infinite.
+also give a bound when the dimension of the output data infinite.
 \paragraph{}
 After ensuring that an \acs{ORFF} is a good approximation of a kernel, we
 moved on giving a framework to learn with \aclp{OVK}. We showed that
@@ -67,13 +67,13 @@ learn functions of the hyperparameters.
 \paragraph{}
 Another nice extension would be to be able to learn the structure of an
 \acs{ORFF} \acs{ie} the spectral distribution and the operator from the data,
-as in \citet{Yang2015} so that we avoid to inject directly ourselve a prior on
+as in \citet{Yang2015} so that we avoid to inject directly ourselves a prior on
 the data by the mean of an \acl{OVK}.
 \paragraph{}
-On the implementation level, we are really enthousiast about Operalib, a
+On the implementation level, we are really enthusiast about Operalib, a
 library for learning with \aclp{OVK} started during this thesis as a project of
-Paris-Saclay Center for Datascience, and will extend the library with other
-\acs{OVK}-based algorithms. Moreover may work is remaning concerning the
+Paris-Saclay Center for Data Science, and will extend the library with other
+\acs{OVK}-based algorithms. Moreover may work is remaining concerning the
 implementation of efficient algorithms based on (O)\acsp{RFF}. We could extend
 the Multiple Kernel learning setting to \acsp{OVK} to see if we can match the
 performances of Deep Neural Networks as in \citet{lu2014scale}.

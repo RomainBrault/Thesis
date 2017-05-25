@@ -360,7 +360,7 @@ I_N)^{-1}(y_i)_{i=1}^N$. This is an $O\left(N^3\right)$ algorithm.
 Another way of describing positive definite kernels and \acs{RKHS} consists in
 Then any functions in $\mathcal{H}_k$ can be written $f(x)=\inner{\phi(x),
 \theta}_{\mathcal{H}}$ In a nutshell the function $\phi$ is called feature map
-because it \say{extracts charateristic elements from a vector}. Usually a
+because it \say{extracts characteristic elements from a vector}. Usually a
 feature map takes a vector in an input space with low dimension and maps it to
 a higher dimensional space. Put it differently, any function in $\mathcal{H}_k$
 is the composition of linear functional $\theta^\transpose$ with a non linear
@@ -614,14 +614,14 @@ decrease. However the bounds of \citet{rahimi2009weighted} are suboptimal and
 very recently (end of 2016) \citet{rudi2016generalization} proved that in the
 case of ridge regression (\cref{eq:ridge_regression}), the generalization error
 is $O(N^{-1/2} + D^{-1})$ meaning that $D=O(\sqrt{N})$ random features are
-required for good generalization with \acsp{RFF}. We refer the interrested
+required for good generalization with \acsp{RFF}. We refer the interested
 reader to \citet{Yang2012} for an empirical comparison between the Nystr\"om
 method and the \acs{RFF} method.
 
 \subsubsection{Extensions of the RFF method}
 \paragraph{}
-The seminal idea of \citet{Rahimi2007} has open a large litterature on random
-features. Nowaday, many classes of kernels other than translation invariant are
+The seminal idea of \citet{Rahimi2007} has open a large literature on random
+features. Nowadays, many classes of kernels other than translation invariant are
 now proved to have an efficient random feature representation.
 \citet{kar2012random} proposed random feature maps for dot product kernels
 (rotation invariant) and \citet{hamid2014compact} improved the rate of

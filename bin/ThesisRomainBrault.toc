@@ -456,79 +456,75 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {10}\spacedlowsmallcaps {Conclusion}}{159}{chapter.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.1}Contributions}{159}{section.10.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{159}{section.10.1}
+\contentsline {section}{\numberline {10.1}Contributions}{160}{section.10.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{160}{section.10.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.2}Perspectives}{160}{section.10.2}
+\contentsline {paragraph}{}{160}{section.10.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\numberline {iv}\spacedlowsmallcaps {Appendix}}{161}{part.4}
+\contentsline {section}{\numberline {10.2}Perspectives}{161}{section.10.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}\spacedlowsmallcaps {Proofs of theorems}}{163}{appendix.A}
+\contentsline {paragraph}{}{161}{section.10.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Proof of the error bound with high probability of the ORFF estimator}{164}{section.A.1}
+\contentsline {paragraph}{}{161}{section.10.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1.1}Epsilon-net}{164}{subsection.A.1.1}
+\contentsline {paragraph}{}{161}{section.10.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{164}{subsection.A.1.1}
+\contentsline {paragraph}{}{161}{section.10.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1.2}Bounding the Lipschitz constant}{165}{subsection.A.1.2}
+\contentsline {part}{\numberline {iv}\spacedlowsmallcaps {Appendix}}{163}{part.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1.3}Bounding the error on a given anchor point}{166}{subsection.A.1.3}
+\contentsline {chapter}{\numberline {A}\spacedlowsmallcaps {Proofs of theorems}}{165}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{168}{theorem.A.2}
+\contentsline {section}{\numberline {A.1}Proof of the error bound with high probability of the ORFF estimator}{166}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1.4}Union Bound and examples}{170}{subsection.A.1.4}
+\contentsline {subsection}{\numberline {A.1.1}Epsilon-net}{166}{subsection.A.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Proof of the ORFF estimator variance bound}{175}{section.A.2}
+\contentsline {paragraph}{}{166}{subsection.A.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}\spacedlowsmallcaps {Miscellaneous}}{177}{appendix.B}
+\contentsline {subsection}{\numberline {A.1.2}Bounding the Lipschitz constant}{167}{subsection.A.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.1}Learning with semi-supervision}{178}{section.B.1}
+\contentsline {subsection}{\numberline {A.1.3}Bounding the error on a given anchor point}{168}{subsection.A.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.1}Representer theorem and feature equivalence}{178}{subsection.B.1.1}
+\contentsline {paragraph}{}{170}{theorem.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{178}{theorem.B.1}
+\contentsline {subsection}{\numberline {A.1.4}Union Bound and examples}{172}{subsection.A.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{178}{theorem.B.1}
+\contentsline {section}{\numberline {A.2}Proof of the ORFF estimator variance bound}{177}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{180}{theorem.B.2}
+\contentsline {chapter}{\numberline {B}\spacedlowsmallcaps {Miscellaneous}}{179}{appendix.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{180}{theorem.B.2}
+\contentsline {section}{\numberline {B.1}Learning with semi-supervision}{180}{section.B.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.2}Gradients}{183}{subsection.B.1.2}
+\contentsline {subsection}{\numberline {B.1.1}Representer theorem and feature equivalence}{180}{subsection.B.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.3}Complexity}{185}{subsection.B.1.3}
+\contentsline {paragraph}{}{180}{theorem.B.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {C}\spacedlowsmallcaps {Relevant piece of code}}{189}{appendix.C}
+\contentsline {paragraph}{}{180}{theorem.B.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.1}Python code for figure 3.1}{190}{section.C.1}
+\contentsline {paragraph}{}{182}{theorem.B.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.2}Python code for figure 5.1}{191}{section.C.2}
+\contentsline {paragraph}{}{182}{theorem.B.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.3}Python code for figure 5.3}{193}{section.C.3}
+\contentsline {subsection}{\numberline {B.1.2}Gradients}{185}{subsection.B.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.4}Python code for figure 5.4}{195}{section.C.4}
+\contentsline {subsection}{\numberline {B.1.3}Complexity}{187}{subsection.B.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.5}Python code for figure 5.5}{198}{section.C.5}
+\contentsline {chapter}{\numberline {C}\spacedlowsmallcaps {Relevant piece of code}}{191}{appendix.C}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.6}Python (tensorflow) code for continuous quantile regression}{201}{section.C.6}
+\contentsline {section}{\numberline {C.1}Python code for figure 3.1}{192}{section.C.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {D}\spacedlowsmallcaps {One Class Splitting Criteria for Random Forests}}{205}{appendix.D}
+\contentsline {section}{\numberline {C.2}Python code for figure 5.1}{193}{section.C.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{206}{appendix.D}
+\contentsline {section}{\numberline {C.3}Python code for figure 5.3}{195}{section.C.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{206}{appendix.D}
+\contentsline {section}{\numberline {C.4}Python code for figure 5.4}{197}{section.C.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{206}{appendix.D}
+\contentsline {section}{\numberline {C.5}Python code for figure 5.5}{200}{section.C.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{207}{appendix.D}
+\contentsline {section}{\numberline {C.6}Python (tensorflow) code for continuous quantile regression}{203}{section.C.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{207}{appendix.D}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{208}{appendix.D}
+\contentsline {chapter}{\numberline {D}\spacedlowsmallcaps {One Class Splitting Criteria for Random Forests}}{207}{appendix.D}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{208}{appendix.D}
 \defcounter {refsection}{0}\relax 
@@ -536,94 +532,106 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{208}{appendix.D}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D.1}Background on decision trees}{208}{section.D.1}
+\contentsline {paragraph}{}{209}{appendix.D}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{209}{section.D.1}
+\contentsline {paragraph}{}{209}{appendix.D}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D.2}Adaptation to the one-class setting}{210}{section.D.2}
+\contentsline {paragraph}{}{210}{appendix.D}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.2.1}One-class splitting criterion}{210}{subsection.D.2.1}
+\contentsline {paragraph}{}{210}{appendix.D}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {D.2.1.1}Naive approach}{210}{subsubsection.D.2.1.1}
+\contentsline {paragraph}{}{210}{appendix.D}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {D.2.1.2}Adaptive approach}{211}{subsubsection.D.2.1.2}
+\contentsline {paragraph}{}{210}{appendix.D}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{211}{figure.caption.48}
+\contentsline {section}{\numberline {D.1}Background on decision trees}{210}{section.D.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{211}{figure.caption.48}
+\contentsline {paragraph}{}{211}{section.D.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {D.2.1.3}Resulting outlier distribution}{212}{subsubsection.D.2.1.3}
+\contentsline {section}{\numberline {D.2}Adaptation to the one-class setting}{212}{section.D.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.2.2}Prediction: scoring function of the forest}{213}{subsection.D.2.2}
+\contentsline {subsection}{\numberline {D.2.1}One-class splitting criterion}{212}{subsection.D.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.2.3}OneClassRF: a Generic One-Class Random Forest algorithm}{214}{subsection.D.2.3}
+\contentsline {subsubsection}{\numberline {D.2.1.1}Naive approach}{212}{subsubsection.D.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{214}{table.D.2}
+\contentsline {subsubsection}{\numberline {D.2.1.2}Adaptive approach}{213}{subsubsection.D.2.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{214}{table.D.2}
+\contentsline {paragraph}{}{213}{figure.caption.48}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D.3}Benchmarks}{215}{section.D.3}
+\contentsline {paragraph}{}{213}{figure.caption.48}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.3.1}Default parameters of OneClassRF}{215}{subsection.D.3.1}
+\contentsline {subsubsection}{\numberline {D.2.1.3}Resulting outlier distribution}{214}{subsubsection.D.2.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{216}{subsection.D.3.1}
+\contentsline {subsection}{\numberline {D.2.2}Prediction: scoring function of the forest}{215}{subsection.D.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.3.2}Results}{216}{subsection.D.3.2}
+\contentsline {subsection}{\numberline {D.2.3}OneClassRF: a Generic One-Class Random Forest algorithm}{216}{subsection.D.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D.4}Theoretical analysis}{216}{section.D.4}
+\contentsline {paragraph}{}{216}{table.D.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.4.1}Underlying model}{216}{subsection.D.4.1}
+\contentsline {paragraph}{}{216}{table.D.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {D.4.1.1}Existing Two-Class Model (n, $\boldsymbol {\alpha }$).}{218}{subsubsection.D.4.1.1}
+\contentsline {section}{\numberline {D.3}Benchmarks}{217}{section.D.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {D.4.1.2}One-Class-Model ($n$, $\boldsymbol {\alpha }$).}{218}{subsubsection.D.4.1.2}
+\contentsline {subsection}{\numberline {D.3.1}Default parameters of OneClassRF}{217}{subsection.D.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{218}{subsubsection.D.4.1.2}
+\contentsline {paragraph}{}{218}{subsection.D.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.4.2}Adaptive approach}{219}{subsection.D.4.2}
+\contentsline {subsection}{\numberline {D.3.2}Results}{218}{subsection.D.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D.5}Conclusion}{221}{section.D.5}
+\contentsline {section}{\numberline {D.4}Theoretical analysis}{218}{section.D.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D.6}Further insights on the algorithm}{221}{section.D.6}
+\contentsline {subsection}{\numberline {D.4.1}Underlying model}{218}{subsection.D.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.6.1}Interpretation of parameter gamma}{221}{subsection.D.6.1}
+\contentsline {subsubsection}{\numberline {D.4.1.1}Existing Two-Class Model (n, $\boldsymbol {\alpha }$).}{220}{subsubsection.D.4.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.6.2}Alternative scoring functions}{221}{subsection.D.6.2}
+\contentsline {subsubsection}{\numberline {D.4.1.2}One-Class-Model ($n$, $\boldsymbol {\alpha }$).}{220}{subsubsection.D.4.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.6.3}Alternative stopping criteria}{222}{subsection.D.6.3}
+\contentsline {paragraph}{}{220}{subsubsection.D.4.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.6.4}Variable importance}{222}{subsection.D.6.4}
+\contentsline {subsection}{\numberline {D.4.2}Adaptive approach}{221}{subsection.D.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D.7}Hyper-parameters of tested algorithms}{222}{section.D.7}
+\contentsline {section}{\numberline {D.5}Conclusion}{223}{section.D.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{222}{section.D.7}
+\contentsline {section}{\numberline {D.6}Further insights on the algorithm}{223}{section.D.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{222}{section.D.7}
+\contentsline {subsection}{\numberline {D.6.1}Interpretation of parameter gamma}{223}{subsection.D.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{223}{section.D.7}
+\contentsline {subsection}{\numberline {D.6.2}Alternative scoring functions}{223}{subsection.D.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{223}{section.D.7}
+\contentsline {subsection}{\numberline {D.6.3}Alternative stopping criteria}{224}{subsection.D.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{223}{section.D.7}
+\contentsline {subsection}{\numberline {D.6.4}Variable importance}{224}{subsection.D.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.7}Hyper-parameters of tested algorithms}{224}{section.D.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{224}{section.D.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{224}{section.D.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D.8}Description of the datasets}{224}{section.D.8}
+\contentsline {paragraph}{}{225}{section.D.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{224}{section.D.8}
+\contentsline {paragraph}{}{225}{section.D.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D.9}Further details on benchmarks and outlier detection results}{225}{section.D.9}
+\contentsline {paragraph}{}{225}{section.D.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{226}{section.D.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{226}{section.D.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.8}Description of the datasets}{226}{section.D.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{226}{section.D.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.9}Further details on benchmarks and outlier detection results}{227}{section.D.9}
 \defcounter {refsection}{0}\relax 
 \vspace {\beforebibskip }
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\spacedlowsmallcaps {Bibliography}}{235}{dummy.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{251}{chapter*.74}
+\contentsline {part}{\spacedlowsmallcaps {Bibliography}}{237}{dummy.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{253}{chapter*.74}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{254}{chapter*.74}
+\contentsline {paragraph}{}{255}{chapter*.74}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{254}{chapter*.74}
+\contentsline {paragraph}{}{256}{chapter*.74}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{256}{chapter*.74}

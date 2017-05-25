@@ -255,64 +255,64 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {conjecture}{{Conjecture}{9.{1}}{}}{151}{conjecture.9.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{A.{1}}{}}{164}{lemma.A.1}
+\contentsline {lemma}{{Lemma}{A.{1}}{}}{166}{lemma.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{37}{}}{165}{proof.37}
+\contentsline {proof}{{Proof}{37}{}}{167}{proof.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{A.{2}}{}}{165}{lemma.A.2}
+\contentsline {lemma}{{Lemma}{A.{2}}{}}{167}{lemma.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{38}{}}{165}{proof.38}
+\contentsline {proof}{{Proof}{38}{}}{167}{proof.38}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{A.1}{Bounded non-commutative Bernstein}}{166}{theorem.A.1}
+\contentsline {theorem}{{Theorem}{A.1}{Bounded non-commutative Bernstein}}{168}{theorem.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{A.{1}}{}}{167}{definition.A.1}
+\contentsline {definition}{{Definition}{A.{1}}{}}{169}{definition.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{A.2}{Bounded non-commutative Bernstein with intrinsic dimension \citep {minsker2011some, tropp2015introduction}}}{167}{theorem.A.2}
+\contentsline {theorem}{{Theorem}{A.2}{Bounded non-commutative Bernstein with intrinsic dimension \citep {minsker2011some, tropp2015introduction}}}{169}{theorem.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{A.{2}}{Orlicz norm}}{168}{definition.A.2}
+\contentsline {definition}{{Definition}{A.{2}}{Orlicz norm}}{170}{definition.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{A.{3}}{}}{168}{lemma.A.3}
+\contentsline {lemma}{{Lemma}{A.{3}}{}}{170}{lemma.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{39}{}}{168}{proof.39}
+\contentsline {proof}{{Proof}{39}{}}{170}{proof.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{A.{4}}{}}{168}{lemma.A.4}
+\contentsline {lemma}{{Lemma}{A.{4}}{}}{170}{lemma.A.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{40}{}}{168}{proof.40}
+\contentsline {proof}{{Proof}{40}{}}{170}{proof.40}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{A.3}{Unbounded non-commutative Bernstein with intrinsic dimension}}{168}{theorem.A.3}
+\contentsline {theorem}{{Theorem}{A.3}{Unbounded non-commutative Bernstein with intrinsic dimension}}{170}{theorem.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{A.{1}}{}}{170}{proposition.A.1}
+\contentsline {proposition}{{Proposition}{A.{1}}{}}{172}{proposition.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{41}{}}{171}{proof.41}
+\contentsline {proof}{{Proof}{41}{}}{173}{proof.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{A.{2}}{}}{172}{proposition.A.2}
+\contentsline {proposition}{{Proposition}{A.{2}}{}}{174}{proposition.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {corollary}{{Corollary}{A.{1}}{}}{172}{corollary.A.1}
+\contentsline {corollary}{{Corollary}{A.{1}}{}}{174}{corollary.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{42}{}}{173}{proof.42}
+\contentsline {proof}{{Proof}{42}{}}{175}{proof.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {corollary}{{Corollary}{A.{2}}{}}{175}{corollary.A.2}
+\contentsline {corollary}{{Corollary}{A.{2}}{}}{177}{corollary.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{A.{3}}{Bounding the \emph {variance} of $\tilde {K}$}}{175}{proposition.A.3}
+\contentsline {proposition}{{Proposition}{A.{3}}{Bounding the \emph {variance} of $\tilde {K}$}}{177}{proposition.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{43}{}}{176}{proof.43}
+\contentsline {proof}{{Proof}{43}{}}{178}{proof.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{B.1}{Representer theorem, \citet {minh2016unifying}}}{178}{theorem.B.1}
+\contentsline {theorem}{{Theorem}{B.1}{Representer theorem, \citet {minh2016unifying}}}{180}{theorem.B.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{44}{}}{179}{proof.44}
+\contentsline {proof}{{Proof}{44}{}}{181}{proof.44}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{B.2}{Feature equivalence}}{180}{theorem.B.2}
+\contentsline {theorem}{{Theorem}{B.2}{Feature equivalence}}{182}{theorem.B.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{45}{}}{181}{proof.45}
+\contentsline {proof}{{Proof}{45}{}}{183}{proof.45}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{B.{1}}{Naive closed form for the squared error cost}}{183}{example.B.1}
+\contentsline {example}{{Example}{B.{1}}{Naive closed form for the squared error cost}}{185}{example.B.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{D.{1}}{}}{211}{example.D.1}
+\contentsline {example}{{Example}{D.{1}}{}}{213}{example.D.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{D.{1}}{}}{212}{remark.D.1}
+\contentsline {remark}{{Remark}{D.{1}}{}}{214}{remark.D.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{D.{2}}{}}{213}{remark.D.2}
+\contentsline {remark}{{Remark}{D.{2}}{}}{215}{remark.D.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{D.{3}}{Direct link with the two-class framework}}{219}{remark.D.3}
+\contentsline {remark}{{Remark}{D.{3}}{Direct link with the two-class framework}}{221}{remark.D.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{D.{4}}{}}{220}{remark.D.4}
+\contentsline {remark}{{Remark}{D.{4}}{}}{222}{remark.D.4}

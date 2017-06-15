@@ -50,7 +50,7 @@ inequalities devoted to random matrices~\citep{Boucheron}. The concentration
 phenomenon can be summarized in the following sentence of
 \citet{ledoux2005concentration}. \say{A random variable that depends (in a
 smooth way) on the influence of many random variables (but not too much on any
-of them) is essentially constant}. 
+of them) is essentially constant}.
 \paragraph{}
 A typical application is the study of the deviation of the empirical mean of
 \acl{iid} random variables to their expectation. This means that given an error
@@ -66,7 +66,7 @@ $z\in\mathcal{X}$ we look for a bound on
 \begin{dmath*}
     \probability_{\rho} \Set{(\omega_j)_{j=1}^D | \norm{\tildeK{\omega}(x, z) -
     K(x, z)}_{\mathcal{Y}, \mathcal{Y}} \ge \epsilon }
-    = 
+    =
     \probability_{\rho} \Set{(\omega_j)_{j=1}^D | \sup_{0\neq y\in\mathcal{Y}}
     \frac{\norm{(\tildeK{\omega}(x, z) - K(x,
     z))y}_{\mathcal{Y}}}{\norm{y}_{\mathcal{Y}}} \ge \epsilon}
@@ -122,7 +122,7 @@ by~\citet{Rahimi2007} and other authors~\citep{sutherland2015, sriper2015}.
     Let $\mathcal{C}$ be a compact of subset of $\mathbb{R}^d$ of diameter
     $\abs{\mathcal{C}}$. Let $k$ be a shift invariant kernel, differentiable
     with a bounded second derivative and $\probability_{\rho}$ its normalized
-    \acl{IFT} such that it defines a probability measure. Let 
+    \acl{IFT} such that it defines a probability measure. Let
     \begin{dmath*}
         \widetilde{k}=\sum_{j=1}^D\cos{\inner{\cdot, \omega_j}}
         \hiderel{\approx} k(x,z) \enskip\text{and}\enskip
@@ -231,7 +231,7 @@ which gives a proxy-bound on the norm of subexponential random variables.
 Here, the function $\psi$ is chosen as $\psi(u)=\psi_{\alpha}(u)$ where
 $\psi_{\alpha}(u) \colonequals e^{u^{\alpha}}-1$. When $\alpha=1$, a random
 variable with finite Orlicz norm is called a \emph{subexponential variable}
-because its tails decrease at an exponential rate. Let $X$ be a self-adjoint 
+because its tails decrease at an exponential rate. Let $X$ be a self-adjoint
 random operator. Given a scalar-valued measure $\mu$, we call \emph{variance}
 of an operator $X$ the quantity $\variance_{\mu}[X]=\expectation_
 {\mu}[X-\expectation_{\mu}[X]]^2$. With this convention if $X$ is a $p\times
@@ -286,7 +286,7 @@ Hilbert-Schmidt ($p\le\infty$).
     \begin{dmath*}
         m \ge \int_{\dual{\mathcal{X}}} H_\omega
         \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}} d\probability_{\dual{\Haar},
-        \rho} \hiderel{<} \infty
+        \rho}(\omega) \hiderel{<} \infty
     \end{dmath*}
     and
     \begin{dmath*}
@@ -303,7 +303,7 @@ Hilbert-Schmidt ($p\le\infty$).
     \intdim(V(\delta))$, then for all $0 < \epsilon \le m \abs{C}$,
     \begin{dmath*}
         \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D |
-        \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}} \ge \epsilon} 
+        \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}} \ge \epsilon}
         \le 8\sqrt{2} \left( \frac{m\abs{\mathcal{C}}}{\epsilon}
         \right)
         {\left(p_{int}r_{v/D}(\epsilon)\right)}^{\frac{1}{d + 1}}
@@ -415,7 +415,7 @@ Hilbert-Schmidt ($p\le\infty$).
         Then $\forall i\in\Set{1, \hdots, T}$,
         \begin{dmath*}
             \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D |
-            \norm{F(\delta_i)}_{\mathcal{Y}, \mathcal{Y}} \ge \epsilon } \le 
+            \norm{F(\delta_i)}_{\mathcal{Y}, \mathcal{Y}} \ge \epsilon } \le
             \begin{cases}
                 4 \intdim(v_i)\exp\left(-D\frac{\epsilon^2}{2
                 \norm{v_i}_{\mathcal{Y},\mathcal{Y}}\left(1 +
@@ -434,7 +434,7 @@ Hilbert-Schmidt ($p\le\infty$).
             p\right)+\log\left(\frac{u_i^2}{\norm{v_i}_{\mathcal{Y},
             \mathcal{Y}}}\right)
         \end{dmath*}
-        and 
+        and
         \begin{dmath*}
             r_{v_i/D}= 1 + \frac{3}{\epsilon^2\log^2(1 + D \epsilon /
             \norm{v_i}_{\mathcal{Y},\mathcal{Y}})}.
@@ -444,7 +444,7 @@ Hilbert-Schmidt ($p\le\infty$).
     applying the lemma and taking the union bound over the centers of the
     $\epsilon$-net yields
     \begin{dmath*}
-        \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D | 
+        \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D |
         \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}} \ge \epsilon}
         \le 4\left(\frac{r m}{\epsilon} + p_{int} \left(\frac{2\abs{C}}{r}
         \right)^d r_{v/D}(\epsilon) \\
@@ -485,7 +485,7 @@ Hilbert-Schmidt ($p\le\infty$).
     hence
     \begin{dmath*}
         \probability_{\dual{\Haar,\rho}}\Set{(\omega_j)_{j=1}^D |
-        \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}} \ge \epsilon} 
+        \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}} \ge \epsilon}
         \le 8\sqrt{2} \left( \frac{m\abs{\mathcal{C}}}{\epsilon}
         \right)
         {\left(p_{int}r_{v/D}(\epsilon)\right)}^{\frac{1}{d + 1}}
@@ -510,7 +510,7 @@ concentration inequality for unbounded symmetric matrices
 \label{remark:infinite_dimension}
 We studied the concentration of \acsp{ORFF} under the assumption that
 $\mathcal{Y}$ is finite dimensional. Indeed a $d$ term characterizing the
-dimension of the input space $\mathcal{X}$ appears in the bound proposed in 
+dimension of the input space $\mathcal{X}$ appears in the bound proposed in
 \cref{corr:unbounded_consistency}, and when $d$ tends to infinity, the
 exponential part goes to zero so that the probability is bounded by a
 constant greater than one. Unfortunately, considering unbounded random
@@ -530,8 +530,8 @@ valued random variables. Following the same proof than
     \label{corr:bounded_infinite_dim_consistency}
     Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ be a
     shift-invariant $\mathcal{Y}$-Mercer kernel, where $\mathcal{Y}$ is a
-    Hilbert space and $\mathcal{X}$ a finite dimensional Banach space of 
-    dimension $D$. Moreover, let $\mathcal{C}$ be a closed ball of 
+    Hilbert space and $\mathcal{X}$ a finite dimensional Banach space of
+    dimension $D$. Moreover, let $\mathcal{C}$ be a closed ball of
     $\mathcal{X}$ centered at the origin of diameter $\abs{\mathcal{C}}$,
     subset of $\mathcal{X}$, $A:\dual{\mathcal{X}}\to\mathcal{L}(\mathcal{Y})$
     and $\probability_{\dual{\Haar},\rho}$ a pair such that
@@ -550,11 +550,11 @@ valued random variables. Following the same proof than
         $\delta\in\mathcal{D}_{\mathcal{C}}$}
     \end{dmath*}
     and $H_\omega$ be the Lipschitz constant of the function $h: x\mapsto
-    \pairing{x,\omega}$. If the three following constant exists
+    \pairing{x,\omega}$. If the three following constants exists
     \begin{dmath*}
         m \ge\int_{\dual{\mathcal{X}}} H_{\omega}
         \norm{A (\omega)}_{\mathcal{Y},\mathcal{Y}}
-        d\probability_{\dual{\Haar}, \rho} \hiderel{<} \infty{}
+        d\probability_{\dual{\Haar}, \rho}(\omega) \hiderel{<} \infty{}
     \end{dmath*}
     and
     \begin{dmath*}
@@ -666,13 +666,13 @@ three \acsp{ORFF} we took as examples.
 \subsubsection{Decomposable kernel}
 notice that in the case of the Gaussian decomposable kernel, \acs{ie}
 $A(\omega)=A$, $e=0$, $K_0(\delta)= Ak_0(\delta)$, $k_0(\delta) \geq 0$ and
-$k_0(\delta)=1$, then we have 
-\begin{equation*} 
+$k_0(\delta)=1$, then we have
+\begin{equation*}
     D\norm{\variance_\mu \left[ \tilde{K}_0(\delta)
     \right]}_{\mathcal{Y},\mathcal{Y}}\leq
     (1+k_0(2\delta))\norm{A}_{\mathcal{Y},\mathcal{Y}}/2 + k_0(\delta)^2.
 \end{equation*}
-\subsubsection{Curl-free and divergence-free kernels:} 
+\subsubsection{Curl-free and divergence-free kernels:}
 recall that in this case $p=d$. For the (Gaussian) curl-free kernel,
 $A(\omega)=\omega\omega^*$ where $\omega\in\mathbb{R}^d\sim\mathcal{N}(0,
 \sigma^{-2}I_d)$ thus $\expectation_\mu [A(\omega)] = I_d/\sigma^2$ and
@@ -723,7 +723,7 @@ operator norm with high probability
 (\cref{sec:consistency_of_the_ORFF_estimator}). We studied the case of
 unbounded finite dimensional \acsp{OVK} and bounded potentially infinite
 dimensional \acsp{OVK}. The current lack of concentration inequalities working
-for both unbounded and infinite dimensional with the operator norm (Banach
+for both unbounded and infinite dimensional with the operator norm (Ba\-nach
 space) in the literature provides us to unify these bounds.
 
 \chapterend

@@ -3545,6 +3545,30 @@
       \field{year}{2013}
       \keyw{ovks}
     \endentry
+    \entry{Quang_icml11}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=e7206afa60c0457ecb6c7c363b2b270e}{%
+           family={Minh},
+           family_i={M\bibinitperiod},
+           given={H.\bibnamedelimi Q.},
+           given_i={H\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
+        {{hash=9548eaeb6960213d65c75b9a7a75ef70}{%
+           family={Sindhwani},
+           family_i={S\bibinitperiod},
+           given={V.},
+           given_i={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{70ca8a0a23f2ce62014d51fc8d40e392}
+      \strng{fullhash}{70ca8a0a23f2ce62014d51fc8d40e392}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proc. of the 28th International Conference on Machine Learning}
+      \field{title}{Vector-valued Manifold Regularization}
+      \field{year}{2011}
+      \keyw{ovks}
+    \endentry
     \entry{minh2016operator}{article}{}
       \name{author}{1}{}{%
         {{hash=0f5873e387946288ce0af9af20be9e18}{%
@@ -4360,14 +4384,14 @@
            family_i={F\bibinitperiod},
            given={Olivier},
            given_i={O\bibinitperiod}}}%
-        {{hash=ea89d03cb098546199588d0ea9aa0382}{%
-           family={D'Alché-Buc},
-           family_i={D\bibinithyphendelim B\bibinitperiod},
+        {{hash=7baa420315d9f9b2e82e06febf765d35}{%
+           family={d'Alché-Buc},
+           family_i={d\bibinithyphendelim B\bibinitperiod},
            given={Florence},
            given_i={F\bibinitperiod}}}%
       }
-      \strng{namehash}{7ddcace22ebea2c61e6dccd26083f397}
-      \strng{fullhash}{7ddcace22ebea2c61e6dccd26083f397}
+      \strng{namehash}{32007e430b8f057bbd690160d4128d7f}
+      \strng{fullhash}{32007e430b8f057bbd690160d4128d7f}
       \field{sortinit}{S}
       \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
       \field{labelnamesource}{author}

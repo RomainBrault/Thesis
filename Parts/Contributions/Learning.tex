@@ -5,7 +5,7 @@
 \label{sec:learning_with_operator-valued_random-fourier_features} Before
 focusing on learning function with an ORFF model, we briefly review the context
 of supervised learning in \acs{vv-RKHS}.  model.
-\subsection{Supervised learning within \acs{vv-RKHS}} 
+\subsection{Supervised learning within \acs{vv-RKHS}}
 \subsubsection{General results}
 Let $\seq{s} = (x_i,y_i)_{i=1}^N\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$
 be a sequence of training samples. Given a local loss function $L:
@@ -54,7 +54,7 @@ This is easily verified for Ridge regression. Define
 $\lambda\in\mathbb{R}_{>0}$, and all the summands of $J_\lambda$ are positive.
 Hence for all positive $\lambda$, $f_{\seq{s}} =
 \argmin_{f\in\mathcal{H}_K}J_\lambda(f)$ exists, is unique and attained.
-\begin{remark}
+\begin{remark}[\citet{kadri2015operator}]
     \label{rk:rkhs_bound} We consider the optimization problem proposed in
     \cref{eq:ridge} where $L:(x_i, f, y_i) \mapsto
     \norm{f(x_i)-y_i}_{\mathcal{Y}}^2$. If given a training sample $\seq{s}$,
@@ -93,7 +93,7 @@ Brouard2016_jmlr}, and a cornerstone of learning in \acs{vv-RKHS} is the
 representer theorem\mpar{Sometimes referred to as minimal norm interpolation
 theorem.}, which allows to replace the search of a minimizer in a infinite
 dimensional \acs{vv-RKHS} by a finite number of parameters $(u_i)_{i=1}^N$,
-$u_i\in\mathcal{Y}$. 
+$u_i\in\mathcal{Y}$.
 \paragraph{}
 In the following we suppose we are given a cost function
 $c:\mathcal{Y}\times\mathcal{Y}\to\overline{\mathbb{R}}$, such that $c(f(x),y)$
@@ -130,7 +130,7 @@ $(x,y)\in\mathcal{X}\times\mathcal{Y}$.
         \argmin_{u\in\Vect_{i=1}^{N}\mathcal{U}}\frac{1}{N}
         \displaystyle\sum_{i=1}^N c\left(\sum_{k=1}^{N}K(x_i,x_j)u_j,
         y_i\right) + \frac{\lambda}{2}\sum_{k=1}^{N}u_i^\adjoint
-        K(x_i,x_k)u_k. 
+        K(x_i,x_k)u_k.
     \end{dmath}
 \end{theorem}
 The first representer theorem was introduced by~\citet{Wahba90} in the
@@ -164,7 +164,7 @@ solution given in \cref{th:orff_representer}.
         \frac{1}{N}\displaystyle\sum_{i=1}^N c(K_{x_i}^\adjoint f, y_i) +
         \frac{\lambda}{2}\norm{f}^2_{K}
     \end{dmath*}
-    Let $W_{\seq{s}}:\mathcal{H}_K\to\Vect_{i=1}^N\mathcal{Y}$ be the 
+    Let $W_{\seq{s}}:\mathcal{H}_K\to\Vect_{i=1}^N\mathcal{Y}$ be the
     restriction\footnote{$W_{\seq{s}}$ is sometimes called the sampling or
     evaluation operator as in \citet{minh2016unifying}. However we prefer
     calling it \say{restriction operator} as in \citet{rosasco2010learning}
@@ -403,7 +403,7 @@ do not study the link between these spaces.
         \frac{\lambda}{2}\norm{\theta^\perp}^2_{\tildeH{\omega}} +
         \underbrace{\frac{\lambda}{2} \norm{\theta^{\parallel} }^2_{%
         \tildeH{\omega}} }_{=0 \enskip\text{only if}\enskip
-        \theta^{\parallel}=0} \\ 
+        \theta^{\parallel}=0} \\
     \end{dmath*}
     Thus
     \begin{dmath*}
@@ -422,7 +422,7 @@ do not study the link between these spaces.
         \frac{1}{N}\sum_{i=1}^Nc\left(\tildePhi{\omega}(x_i)^\adjoint \theta,
         y_i\right) + \frac{\lambda}{2}\norm{\theta}^2_{\tildeH{\omega}}. \qed
     \end{dmath*}
-\end{proof} 
+\end{proof}
 In the aforementioned theorem, we use the notation $\widetilde{K}$ and
 $\tildePhi{\omega}$ because our main subject of interest is the \acs{ORFF} map.
 However this theorem works for \emph{any} feature maps $\Phi(x):
@@ -436,16 +436,16 @@ closed operator.}.  This shows that when $\lambda>0$ the solution of
 the same than the solution of \cref{eq:argmin_theta} up to a linear
 transformation. Namely, if $u_{\seq{s}}$ is the solution of \cref{eq:argmin_u},
 $\theta_{\seq{s}}$ is the solution of \cref{eq:argmin_theta} and $\lambda>0$ we
-have 
+have
 \begin{dmath*}
     \theta_{\seq{s}} = \sum_{i=1}^{N} \tildePhi{\omega}(x_i) (u_{\seq{s}})_i
     \hiderel{\in} (\Ker W)^{\perp} \hiderel{\subseteq} \tildeH{\omega}.
-\end{dmath*} 
+\end{dmath*}
 If $\lambda_K=0$ we can still find a solution $u_{\seq{s}}$ of
 \cref{eq:argmin_u}. By construction of the kernel expansion, we have
 $u_{\seq{s}}\in(\Ker W)^\bot$. However looking at the proof of
 \cref{th:orff_representer} we see that $\theta_{\seq{s}}$ might \emph{not}
-belong to $(\Ker W)^\bot$. We can compute a residual vector 
+belong to $(\Ker W)^\bot$. We can compute a residual vector
 \begin{dmath*}
     r_{\seq{s}} = \sum_{i=1}^{N} \tildePhi{\omega}(x_i)
     (u_{\seq{s}})_i - \theta_{\seq{s}}.
@@ -526,7 +526,7 @@ attention to gradient descent methods. In the following we let
     \frac{1}{N}\sum_{i=1}^Nc\left(\tildePhi{\omega}(x_i)^\adjoint \theta,
     y_i\right) + \frac{\lambda}{2}\norm{\theta}^2_{\tildeH{\omega}}
 \end{dmath}
-Then, we study the complexity in time of the proposed algorithm. 
+Then, we study the complexity in time of the proposed algorithm.
 \subsection{Gradient descent methods}\label{subsec:gradient_methods}
 Since the solution of \cref{eq:argmin_theta} is
 unique when $\lambda>0$, a sufficient and necessary condition is that the
@@ -1128,10 +1128,10 @@ given in \cref{table:efficient-complexity}.
             \acs{ORFF}.]{Efficient linear-operator (in matrix form) for
             different Feature maps. \label{table:efficient-op}}
             \begin{tabularx}{\textheight}{Xcc}
-                \toprule 
+                \toprule
                     Kernel & $\tildePhi{\omega}(X)^\adjoint$ &
-                    $\tildePhi{\omega}(X)$ \\ 
-                \midrule 
+                    $\tildePhi{\omega}(X)$ \\
+                \midrule
                     Decomposable\tnote{1} &$\Theta\mapsto B\left(\Theta
                     \tildephi{\omega}(X)\right)$ & $Y\mapsto B^\transpose
                     \left(Y\tildephi{\omega}(X)^\transpose \right)$ \\ Gaussian
@@ -1149,7 +1149,7 @@ given in \cref{table:efficient-complexity}.
                     j}\right)\tildephi{\omega}^{s}(X)_{j\bullet}$ & $Y \mapsto
                     \Theta^e_{\bullet
                     j}=B(\omega_j)\left(Y\tildephi{\omega}^{e}(X)_{\bullet
-                    j}^\transpose \right)$ \\ 
+                    j}^\transpose \right)$ \\
                 \bottomrule
             \end{tabularx}
             \begin{tablenotes}
@@ -1341,9 +1341,9 @@ First we scaled the inputs such that they take values in $[-1,1]^{784}$. Then
 we binarize the targets such that each number is represented by a unique binary
 vector of dimension $10$. The vector $y_i$ is zero everywhere except on the
 dimension corresponding to the class where it is one.  For instance the class
-$4$ is encoded 
+$4$ is encoded
 \begin{dmath*}
-    \begin{pmatrix} 
+    \begin{pmatrix}
         0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0
     \end{pmatrix}^\transpose.
 \end{dmath*}
@@ -1355,19 +1355,19 @@ in the $B$ matrix of the decomposable kernel $K_0(\delta)=B B^* k_0(\delta)$
 where $k_0$ is a Gaussian kernel. The matrix $B$ is computed via the recursion
 \begin{dmath*}
     B_{p+1} \hiderel{=}
-    \begin{pmatrix} 
+    \begin{pmatrix}
         1 & u^T \\
         0_{p-1} & \sqrt{1-p^{-2}}B_p
-    \end{pmatrix}, 
-    \qquad B_2 \hiderel{=} 
+    \end{pmatrix},
+    \qquad B_2 \hiderel{=}
     \begin{pmatrix}
-        1 & -1 
+        1 & -1
     \end{pmatrix},
 \end{dmath*}
 where $u=\begin{pmatrix} -p^{-2} & \hdots & -p^{-2}
 \end{pmatrix}^T\in\mathbb{R}^{p-1}$ and $0_{p-1} = \begin{pmatrix} 0 & \hdots &
 0 \end{pmatrix}^T \in\mathbb{R}^{p-1}$. For \aclp{OVK} we project the binarized
-targets on the simplex as a preprocessing step, before learning with the 
+targets on the simplex as a preprocessing step, before learning with the
 decomposable $K_0(\delta)=I_p k_0(\delta)$, where $k_0$ is a scalar Gaussian
 kernel.
 \paragraph{}
@@ -1401,12 +1401,12 @@ use this dataset with $p=4$, $10^5$ instances and for the train set and also
 $10^5$ instances for the test set.
 
 \subsubsection{Results}
-\textbf{Performance of ORFF regression on the first dataset.} 
+\textbf{Performance of ORFF regression on the first dataset.}
 We trained both \acs{ORFF} and \acs{OVK} models on \textsc{MNIST} dataset with
 a decomposable Gaussian kernel with signature
 \begin{dmath*}
     K_0(\delta)=\exp\left(-\norm{\delta}/(2\sigma^2)\right)\Gamma.
-\end{dmath*} 
+\end{dmath*}
 To apply $\cref{alg:close_form}$ after noticing that in the case of the
 decomposable kernel with $\lambda_M=0$, it boilds down to a Stein equation
 \citep[section 5.1]{brault2016scaling}, we use an off-the-shelf
@@ -1432,7 +1432,7 @@ features increases.
     $N$.\label{fig:learning_accuracy}}
 \end{figure}
 \paragraph{}
-\textbf{Performance of ORFF regression on the second dataset.} 
+\textbf{Performance of ORFF regression on the second dataset.}
 We perform a similar experiment on the second dataset ($5$D-vector field with
 structure). We use a Gaussian curl-free kernel with bandwidth equal to the
 median of the pairwise distances and tune the hyperparameter $\lambda$ on a
@@ -1570,7 +1570,7 @@ this chapter how learning with \acsp{OVK} is converted into learning a linear
 (parametric) model based on \acs{ORFF}.
 %We introduced \acs{ORFF}, a general and versatile framework for shift-invariant
 %\acs{OVK} approximation. We proved the uniform convergence of the approximation
-%error for bounded and unbounded \acsp{ORFF}. 
+%error for bounded and unbounded \acsp{ORFF}.
 The complexity in time of these approximations together with the linear
 learning algorithm make this implementation scalable with the data size and
 thus appealing compared to \acs{OVK} regression as shown in numerical

@@ -10,13 +10,14 @@ scalar case, we are mainly interested on explicit approximated feature maps
 because they open the door to learning linear models. Our final goal is to come
 up with the definition of $\tildePhi{\omega}: \mathcal{X} \to
 \mathcal{L}(\mathcal{Y},\mathcal{H})$ for some Hilbert spaces $\mathcal{Y}$ and
-$\mathcal{H}$\mpar{In the finite dimension case, $\mathcal{H}=
-\mathbb{R}^p$.}, a feature map of some approximation $\tilde{K}$ of a given
-\acs{OVK} $\mathcal{K}$.  This chapter is devoted to the construction of these
+$\mathcal{H}$, a feature map of some approximation $\widetilde{K}$ of a given
+\acs{OVK} $K$.  This chapter is devoted to the construction of these
 approximations based on Random Fourier Feature principles. It is followed by a
 non asymptotical study of the error of approximation (chapter 4) and the
 development of learning tools based on Operator Random Fourier Feature maps
-with practical and theoretical insights. 
+with practical and theoretical insights.
+
+
 \paragraph{}
 We present in this chapter a construction methodology devoted to
 shift-invariant $\mathcal{Y}$-Mercer operator-valued kernels defined on any
@@ -30,6 +31,7 @@ scalar-valued kernels and derive a general methodology to build \acf{ORFF} when
 operator-valued kernels are shift-invariant according to the chosen group
 operation. Elements of this chapter have been developped
 in~\citet{brault2016random}.
+
 \paragraph{}
 We present a construction of feature maps called \acf{ORFF}, such that $f:
 x\mapsto \tildePhi{\omega}(x)^\adjoint \theta$ is a continuous function that
@@ -55,8 +57,8 @@ neeb1998operator}]
     exists a unique positive projection-valued measure $\dual{Q}:
     \mathcal{B}(\mathcal{X}) \to
     \mathcal{L}_+(\mathcal{Y})$ such that for all $x$, $z \in \mathcal{X}$,
-    \begin{dmath} 
-        \label{eq:bochner-gen} 
+    \begin{dmath}
+        \label{eq:bochner-gen}
         K(x, z) = \int_{\dual{\mathcal{X}}} \conj{\pairing{x \groupop \inv{z},
         \omega}} d\dual{Q}(\omega),
     \end{dmath}
@@ -175,7 +177,7 @@ solution, and also provides a sufficient condition for
     Then
     \begin{propenum}
         \item $C(\omega)$ is a bounded non-negative operator for all $\omega
-        \in \dual{\mathcal{X}}$, 
+        \in \dual{\mathcal{X}}$,
         \item $\inner{y, C(\cdot)y'}_{\mathcal{Y}}\in
         L^1\left(\dual{\mathcal{X}},\dual{\Haar}\right)$ for all
         $y,y'\in\mathcal{X}$,
@@ -228,14 +230,14 @@ of \acs{ORFF}.
     For any shift invariant $\mathcal{Y}$-Mercer kernel and for all
     $\delta\in\mathcal{X}$,
     $K_e(\delta)=K_e\left(\inv{\delta}\right)^\adjoint$. Indeed from the
-    definition of a shift-invariant kernel, 
+    definition of a shift-invariant kernel,
     \begin{dmath*}
         K_e\left(\inv{\delta}\right)=K\left(\inv{\delta},e\right)
         \hiderel{=}K\left(e,\delta\right)
         \hiderel{=}K\left(\delta,e\right)^\adjoint
         \hiderel{=}K_e\left(\delta\right)^\adjoint.
     \end{dmath*}
-    \Cref{lm:C_characterization_1}: taking the \acl{FT} yields, 
+    \Cref{lm:C_characterization_1}: taking the \acl{FT} yields,
     \begin{dmath*}
         \inner{y',C(\omega)y}_{\mathcal{Y}}=\IFT{\inner{y',
         K_e(\cdot)y}_{\mathcal{Y}}}(\omega)
@@ -374,7 +376,7 @@ It follows that for all $i$ and $j$ in $\mathbb{N}^*_{p}$,
     function $C(\cdot)$, the decomposition of $C(\cdot)$ into
     $A(\cdot)\rho(\cdot)$ is again not unique. The choice of the decomposition
     may be justified by the computational cost.
-    %Later, when we will focus on Monte-Carlo approximation of these integrals, 
+    %Later, when we will focus on Monte-Carlo approximation of these integrals,
 \end{remark}
 
 Another difficulty arises from the fact that the quantity
@@ -385,7 +387,7 @@ the unboundedness of $\norm{A(\cdot)}_{\mathcal{Y},\mathcal{Y}}$ that forbids
 the use of the most simple concentrations inequalities that require the
 boundedness of the random variable to be controlled. Therefore in the context
 of \acl{OVK} concentration inequalities for unbounded random operators should
-be used. 
+be used.
 
 However, as pointed out by~\citet{minh2016operator}, under some
 condition on the trace of $K_e(\delta)$, it is possible to turn $A(\cdot)$ into
@@ -671,7 +673,7 @@ Making the change of variable $t_k=(\delta_k+c_k)^{-1}$ yields
 Since $k^{\text{skewed}}_{1-c}\in L^1$ and $\Gamma$ is bounded, it is possible
 to apply \cref{pr:spectral}, and obtain
 \begin{dmath*}
-    C^{dec,skewed}(\omega) 
+    C^{dec,skewed}(\omega)
     =\FT{k_{1-c}^{skewed}}(\omega)\Gamma
     =\underbrace{\sqrt{2\pi}^d\prod_{k=1}^d\sech(\pi \omega_k)}_{\rho(\cdot) =
     \mathcal{S}(0, 2^{-1})^d\sqrt{2 \pi}^d}\underbrace{\Gamma}_{A(\cdot)}.
@@ -851,7 +853,7 @@ the normalized Lebesgue measure being
 \end{dgroup}
 
 \subsection{Functional Fourier feature map}
-We introduce a \emph{functional} feature map, we call \emph{Fourier 
+We introduce a \emph{functional} feature map, we call \emph{Fourier
 Feature map}, defined by the following proposition as a direct consequence of
 \cref{pr:mercer_kernel_bochner}.
 \begin{proposition}[Functional Fourier feature map]
@@ -896,7 +898,7 @@ L^2(\dual{\mathcal{X}}, \dual{\mu}; \mathcal{Y}'))$ such that $\Phi_x\in
 where $\Phi_x\colonequals\Phi(x)$.
 
 \section{Operator-valued Random Fourier Features}
-\label{sec:building_ORFF} 
+\label{sec:building_ORFF}
 \subsection{Building Operator-valued Random Fourier Features}
 
 As shown in \cref{pr:spectral,pr:trace_measure} it is
@@ -971,7 +973,7 @@ is a feature map of $\tilde{K}$ defined in \cref{cr:ORFF-kernel} and an approxim
         \omega_j}B(\omega_j)^\adjoint u\right), \Vect_{j=1}^D\left(\pairing{z,
         \omega_j}B(\omega_j)^\adjoint v\right)}
             \end{dmath*}
-      By definition of the inner product in direct sum of Hilbert spaces, 
+      By definition of the inner product in direct sum of Hilbert spaces,
           \begin{dmath*}
            \frac{1}{D}\inner*{\Vect_{j=1}^D \left(\pairing{x,
         \omega_j}B(\omega_j)^\adjoint u\right), \Vect_{j=1}^D\left(\pairing{z,
@@ -1016,10 +1018,10 @@ constructing \acs{ORFF} from an operator valued kernel.
         $\begin{cases}
             \tildePhi{\omega}(x) \in \mathcal{L}(\mathcal{Y}, \tildeH{\omega})
             &: y \mapsto \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x,
-            \omega_j}B(\omega_j)^\adjoint y \\ 
+            \omega_j}B(\omega_j)^\adjoint y \\
             \tildePhi{\omega}(x)^\adjoint \in\mathcal{L}(\tildeH{\omega},
             \mathcal{Y}) &: \theta \mapsto \frac{1}{\sqrt{D}} \sum_{j=1}^D
-            \pairing{x, \omega_j}B(\omega_j)\theta_j 
+            \pairing{x, \omega_j}B(\omega_j)\theta_j
         \end{cases}$\;
         \caption{Construction of \acs{ORFF} from \acs{OVK}}
     \end{algorithm2e}
@@ -1053,7 +1055,7 @@ Similarly to the proof of \cref{cr:ORFF-map-kernel}, we get
         \converges{\acs{asurely}}{D \to \infty}
         \expectation_{\rho}[\conj{\pairing{x \groupop
         z^{-1}, \omega} }A(\omega)]
-      
+
     \end{dmath*}
     where the integral converges in the weak operator topology.
      Now  from \cref{pr:mercer_kernel_bochner}, $\expectation_{\rho}[\conj{\pairing{x \groupop
@@ -1064,10 +1066,10 @@ Similarly to the proof of \cref{cr:ORFF-map-kernel}, we get
 %    with the functional Fourier feature map defined in
  %   \cref{pr:fourier_feature_map} since we have for all $y\in\mathcal{Y}$
  %   \begin{dmath}
-  %      \tildePhi{\omega}(x)y 
+  %      \tildePhi{\omega}(x)y
    %     = \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x,
  %       \omega_j}B(\omega_j)^\adjoint y \condition{$\omega_j \hiderel{\sim}
-  %      \probability_{\dual{\Haar},\rho}$ \ac{iid}~} 
+  %      \probability_{\dual{\Haar},\rho}$ \ac{iid}~}
   %      = \frac{1}{\sqrt{D}} \Vect_{j=1}^D (\Phi_x y)(\omega_j).
   %  \end{dmath}
  %   In other word, we can view~$\tilde{}$ as the restriction operator
@@ -1105,7 +1107,7 @@ Similarly to the proof of \cref{cr:ORFF-map-kernel}, we get
      %   S_D^\adjoint \theta = \frac{1}{\sqrt{D}} \sum_{j=1}^D
         % \frac{\delta(\cdot - \omega_j)}{\rho(\cdot)} \theta_j.
    %  \end{dmath*}
-    % One can verify that 
+    % One can verify that
    %  \begin{dmath*}
     %     \inner{S_D^\adjoint \theta,
      %   g}_{L^2\left(\dual{\mathcal{X}}, \probability_{\dual{\Haar}, \rho};
@@ -1210,7 +1212,7 @@ increase.
 \paragraph{}
 In the same way we defined an \acs{ORFF}, we can define an approximate feature
 operator $\tildeW{\omega}$ which maps $\tildeH{\omega}$ onto
-$\mathcal{H}_{\tildeK{\omega}}$, where 
+$\mathcal{H}_{\tildeK{\omega}}$, where
 \begin{dmath*}
     \tildeK{\omega}(x,z)=
     \tildePhi{\omega}(x)^\adjoint\tildePhi{\omega}(z)\condition{for
@@ -1235,7 +1237,7 @@ $\mathcal{H}_{\tildeK{\omega}}$, where
     $\theta=\Vect_{j=1}^D\theta_j \in\tildeH{\omega}$.
     Then from \cref{pr:feature_operator},
     \begin{dmath*}
-        \left(\Ker \tildeW{\omega}\right)^\perp 
+        \left(\Ker \tildeW{\omega}\right)^\perp
         = \lspan\Set{\tildePhi{\omega}(x)y | \forall x\in\mathcal{X},\enskip
         \forall y\in\mathcal{Y}} \hiderel{\subseteq} \tildeH{\omega}.
     \end{dmath*}
@@ -1285,8 +1287,8 @@ $WS_D^\adjoint$ since $(\tildeW{\omega}\theta)(x)=\tildePhi{\omega}(x)^\adjoint
         \text{\ac{iid}~} \\
         \converges{\acs{asurely}}{D\to\infty}
         \int_{\dual{\mathcal{X}}} \conj{\pairing{x,\omega}} B(\omega) g(\omega)
-        d\probability_{\dual{\Haar}, \rho}(\omega) 
-        = (Wg)(x) 
+        d\probability_{\dual{\Haar}, \rho}(\omega)
+        = (Wg)(x)
         \hiderel{\colonequals} \Phi_x^\adjoint g.\qquad\ensuremath{\Box}
     \end{dmath*}
 \end{proof}
@@ -1387,10 +1389,10 @@ constructing \acs{ORFF} from an operator valued kernel.
         $\begin{cases}
             \tildePhi{\omega}(x) \in \mathcal{L}(\mathcal{Y}, \tildeH{\omega})
             &: y \mapsto \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x,
-            \omega_j}B(\omega_j)^\adjoint y \\ 
+            \omega_j}B(\omega_j)^\adjoint y \\
             \tildePhi{\omega}(x)^\adjoint \in\mathcal{L}(\tildeH{\omega},
             \mathcal{Y}) &: \theta \mapsto \frac{1}{\sqrt{D}} \sum_{j=1}^D
-            \pairing{x, \omega_j}B(\omega_j)\theta_j 
+            \pairing{x, \omega_j}B(\omega_j)\theta_j
         \end{cases}$\;
         \caption{Construction of \acs{ORFF} from \acs{OVK}}
     \end{algorithm2e}
@@ -1422,7 +1424,7 @@ $(\mathbb{R}^d,+)$.
     \begin{dmath*}
         \tildePhi{\omega}(x)y=\frac{1}{\sqrt{D}}\Vect_{j=1}^D
         \begin{pmatrix}
-            \cos{\inner{x,\omega_j}_2}B(\omega_j)^\adjoint y \\ 
+            \cos{\inner{x,\omega_j}_2}B(\omega_j)^\adjoint y \\
             \sin{\inner{x,\omega_j}_2}B(\omega_j)^\adjoint y
         \end{pmatrix}
         \condition{$\omega_j \hiderel{\sim} \probability_{\dual{\Haar},\rho}$
@@ -1498,7 +1500,7 @@ In particular we deduce the following features maps for the kernels proposed in
             \cos{\inner{x,\omega_j}_2}\frac{\omega_j^\transpose
             }{\norm{\omega_j}} y \\
             \sin{\inner{x,\omega_j}_2}\frac{\omega_j^\transpose
-            }{\norm{\omega_j}} y 
+            }{\norm{\omega_j}} y
         \end{pmatrix}
         \condition{$\omega_j \hiderel{\sim} \probability_{\rho}$ \ac{iid}.}
     \end{dmath*}
@@ -1625,9 +1627,9 @@ In other words, what is the norm in $L^2(\dual{\mathcal{X}}, \dual{\Haar};
     $f\in\mathcal{H}$ and for all $x\in\mathcal{X}$
     \begin{dgroup*}
         \begin{dmath*}
-            \FT{\IFT{f}}(x) 
+            \FT{\IFT{f}}(x)
             \hiderel{=} \int_{\dual{\mathcal{X}}} \conj{\pairing{x, \omega}}
-            \IFT{f}(\omega) d\dual{\Haar}(\omega) 
+            \IFT{f}(\omega) d\dual{\Haar}(\omega)
             = f(x)
         \end{dmath*}
         \begin{dmath*}
@@ -1647,7 +1649,7 @@ In other words, what is the norm in $L^2(\dual{\mathcal{X}}, \dual{\Haar};
         \norm{g(\omega)}^2_{\mathcal{Y}'}d\probability_{\dual{\Haar},\rho}
         (\omega) | \forall g\hiderel{\in}\mathcal{H},\enskip \IFT{f}
         \hiderel{=}\rho(\cdot)B(\cdot)g(\cdot)}.
-    \end{dmath*} 
+    \end{dmath*}
     The pseudo inverse of the operator $B(\omega)$ -- noted $B(\omega)^\dagger$
     -- is the unique solution of the system
     $\IFT{f}(\omega)=\rho(\omega)B(\omega)g(\omega)$ \acs{wrt}~$g(\omega)$ with
@@ -1734,7 +1736,7 @@ in \cref{alg:ORFF2_construction}.
         \begin{cases}
             \tildePhi{\omega}(x) \in\mathcal{L}(\mathcal{Y}, \tildeH{\omega})
             &: y \mapsto \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x,
-            \omega_j}B(\omega_j)^\adjoint y \\ 
+            \omega_j}B(\omega_j)^\adjoint y \\
             \tildePhi{\omega}(x)^\adjoint \in\mathcal{L}(\tildeH{\omega},
             \mathcal{Y}) &: \theta \mapsto \frac{1}{\sqrt{D}} \sum_{j=1}^D
             \pairing{x, \omega_j}B(\omega_j)\theta_j

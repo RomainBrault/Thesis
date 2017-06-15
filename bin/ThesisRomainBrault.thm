@@ -5,13 +5,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {proposition}{{Proposition}{2.{1}}{\acs {SPSD} matrix}}{11}{proposition.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{2.1}{\citet {Aronszajn1950}}}{11}{theorem.2.1}
+\contentsline {theorem}{{Theorem}{2.1}{\citet {Aronszajn1950}}}{12}{theorem.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {proposition}{{Proposition}{2.{2}}{Feature map}}{12}{proposition.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {remark}{{Remark}{2.{1}}{}}{12}{remark.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Theorem}{2.2}{Representer theorem, \citet {Wahba90}}}{12}{theorem.2.2}
+\contentsline {theorem}{{Theorem}{2.2}{Representer theorem, \citet {Wahba90}}}{13}{theorem.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {theorem}{{Theorem}{2.3}{Bochner's theorem}}{15}{theorem.2.3}
 \defcounter {refsection}{0}\relax 
@@ -27,7 +27,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {proof}{{Proof}{1}{}}{30}{proof.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{3.{1}}{}}{31}{example.3.1}
+\contentsline {example}{{Example}{3.{1}}{\citet {folland1994course}}}{31}{example.3.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {proof}{{Proof}{2}{}}{31}{proof.2}
 \defcounter {refsection}{0}\relax 
@@ -37,15 +37,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {proposition}{{Proposition}{3.{1}}{}}{32}{proposition.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{4}{}}{32}{proof.4}
+\contentsline {proof}{{Proof}{4}{}}{33}{proof.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {theorem}{{Theorem}{3.1}{Fourier inversion}}{33}{theorem.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{5}{}}{33}{proof.5}
+\contentsline {proof}{{Proof}{5}{}}{34}{proof.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {corollary}{{Corollary}{3.{1}}{\acl {FT} injectivity}}{34}{corollary.3.1}
+\contentsline {corollary}{{Corollary}{3.{1}}{\acl {FT} injectivity}}{35}{corollary.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{6}{}}{34}{proof.6}
+\contentsline {proof}{{Proof}{6}{}}{35}{proof.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {definition}{{Definition}{3.{5}}{\acl {vv-RKHS}~\citep {carmeli2006vector,Micchelli2005}}}{36}{definition.3.5}
 \defcounter {refsection}{0}\relax 
@@ -59,7 +59,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {proposition}{{Proposition}{3.{3}}{\citep {carmeli2006vector}}}{38}{proposition.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{8}{}}{38}{proof.8}
+\contentsline {proof}{{Proof}{8}{}}{39}{proof.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {proposition}{{Proposition}{3.{4}}{Feature Operator~\citep {Carmeli2010}}}{40}{proposition.3.4}
 \defcounter {refsection}{0}\relax 
@@ -121,9 +121,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {proposition}{{Proposition}{4.{7}}{}}{65}{proposition.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{18}{}}{67}{proof.18}
+\contentsline {proof}{{Proof}{18}{}}{65}{proof.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{4.{8}}{}}{67}{proposition.4.8}
+\contentsline {proposition}{{Proposition}{4.{8}}{}}{67}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
 \contentsline {proof}{{Proof}{19}{}}{67}{proof.19}
 \defcounter {refsection}{0}\relax 
@@ -191,7 +191,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {theorem}{{Theorem}{6.1}{Mazur-Schauder}}{92}{theorem.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{6.{1}}{}}{92}{remark.6.1}
+\contentsline {remark}{{Remark}{6.{1}}{\citet {kadri2015operator}}}{92}{remark.6.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {theorem}{{Theorem}{6.2}{Representer theorem}}{93}{theorem.6.2}
 \defcounter {refsection}{0}\relax 
@@ -305,7 +305,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {proof}{{Proof}{45}{}}{183}{proof.45}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{B.{1}}{Naive closed form for the squared error cost}}{185}{example.B.1}
+\contentsline {example}{{Example}{B.{1}}{Naive closed form for the squared error cost}}{187}{example.B.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {example}{{Example}{D.{1}}{}}{213}{example.D.1}
 \defcounter {refsection}{0}\relax 

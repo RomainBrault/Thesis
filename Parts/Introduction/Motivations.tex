@@ -9,38 +9,39 @@ $\mathcal{X}$, an \emph{input space} and $\mathcal{Y}$, the \emph{output
 space}.  In this chapter, $\mathcal{Y} \subseteq \mathbb{R}$. When
 $\mathcal{Y}=\Set{1, \ldots, C}$, we talk about \emph{supervised
 classification}.  When $\mathcal{Y}=\mathbb{R}$, supervised learning
-corresponds to  usual \emph{regression}. We are given an \acs{iid} sample of
-size $N$, $\seq{s}=(x_i, y_i)_{i=1}^N$, drawn from a unknown but fixed
-joint probability law $\probability(X,Y)$. We call {\emph learning algorithm},
-a function $\mathcal{A}$ that takes a class of functions $\mathcal{F}$, a
-training sample $\seq{s}$ and returns a function in $\mathcal{F}$. The learning
-algorithm can be studied through many angles, from a computational pint of view
-to a statistical point of view.
-%function $f_{\seq{s}}$ in $\mathcal{F}$. 
+corresponds to  usual \emph{regression}. We are given an \acf{iid} sample of
+size $N$ of traning data $\seq{s}=(x_i, y_i)_{i=1}^N$, drawn from a unknown but
+fixed joint probability law $\probability(X,Y)$. We call \emph{learning
+algorithm}, a function $\mathcal{A}$ that takes a class of functions
+$\mathcal{F}$, a training sample $\seq{s}$ and returns a function in
+$\mathcal{F}$. The learning algorithm can be studied through many angles, from
+a computational point of view to a statistical point of view.
+%function $f_{\seq{s}}$ in $\mathcal{F}$.
 \paragraph{}
-Although we have only a limited number of observations, we wish to build a
-function that captures the relationship between the two random variables $X$
-and $Y$. More specifically, we search for a function $f$ in some class of
-functions, denoted $\mathcal{F}$ and called the \emph{hypotheses class} such
-that $f$ make good predictions for the pair $(X,Y)$ distributed according
-$\probability(X,Y)$. To convert this abstract goal into a mathematical
-definition, we define a local loss function
+From a limited number of observations, we wish to build a function that
+captures the relationship between the two random variables $X$ and $Y$. More
+specifically, we search for a function $f$ in some class of functions, denoted
+$\mathcal{F}$ and called the \emph{hypotheses class} such that the
+$f\in\mathcal{F}$ make good predictions for the pair $(X,Y)$ distributed
+according $\probability(X,Y)$. To convert this abstract goal into a
+mathematical definition, we define a local loss function
 $L:\mathcal{X}\times\mathcal{F}\times\mathcal{Y} \to \mathbb{R}_+$ that
 evaluates the capacity of a function $f$ to predict the outcome $y$ from an
 input $x$.
 \paragraph{}
-The goal of supervised learning is to find a function $f \in \mathcal{F}$ that
-minimizes the following criteria, called the true risk associated to $L$:
+Hence, the goal of supervised learning is to find a function $f \in
+\mathcal{F}$ that minimizes the following criteria, called the true risk
+associated to $L$:
 \begin{equation}\label{eq:true-risk}
     \risk{f}=\expectation_{\probability}[L(X,f,Y)],
 \end{equation}
 using the training dataset. However, this definition comes with an important
-issue: we do not know $\probability(X,Y)$ and thus we cannot compute this risk
-nor minimize it.  A first proposition is to replace this true risk by its
+issue: we do not know $\probability(X,Y)$ and thus we cannot compute this
+risk nor minimize it.  A first proposition is to replace this true risk by its
 empirical counterpart, the \emph{empirical risk}, \acs{ie} the empirical mean
 of the loss computed on the training data:
 \begin{dmath*}
-    \riskemp{f, \seq{s}} = \frac{1}{N}\sum_{i=1}^N L(x_i, f, y_i)
+    \riskemp{f, \seq{s}} = \frac{1}{N}\sum_{i=1}^N L(x_i, f, y_i).
 \end{dmath*}
 Since the training data are usually supposed to be \acs{iid}, the celebrated
 strong law of large numbers tells us that for any given function $f$ in
@@ -49,9 +50,9 @@ risk.
 \paragraph{}
 Intuitively the empirical risk measure the performance of a model on the
 training data, while the risk measure the performances of a model with respect
-to all the possible experiments (event the one not present in the training
-set). Although the convergence of the empirical risk to the true risk is
-guaranteed by the strong law of large number, for a given value of $N$, the
+to all the possible experiments (even the one that are not present in the
+training set). Although the convergence of the empirical risk to the true risk
+is guaranteed by the strong law of large number, for a given value of $N$, the
 function produced by minimization of the empirical risk may suffer from
 overfitting, \acs{ie} being too much adapted to the training data and having a
 poor behavior on new unseen data.
@@ -70,9 +71,9 @@ capacity $d$:
     \risk{f} \le \riskemp{f,\seq{s}} + C(\delta, N,d)
 \end{dmath*}
 Especially for the functions of interest $f_{\seq{s}}$ returned by a learning
-algorithm, we have 
+algorithm, we have
 \begin{dmath*}
-    \risk{f_{\seq{s}}} \le \riskemp{f_{\seq{s}},\seq{s}} + C(\delta, N,d), 
+    \risk{f_{\seq{s}}} \le \riskemp{f_{\seq{s}},\seq{s}} + C(\delta, N,d),
 \end{dmath*}
 which suggest to control the complexity of the hypothesis class while
 minimizing the empirical risk.
@@ -96,7 +97,7 @@ data). This can be illustrated by an intuitive example adapted from
     \caption{Borel's strong law of large numbers.}
 \end{figure}
 \begin{example}
-    Suppose we have a recruiter (a learning algorithm) whose task is to select 
+    Suppose we have a recruiter (a learning algorithm) whose task is to select
     the best students from a pool of candidates (the class of functions).
     Given ten students the recruiter make them pass a test with $N$ questions.
     If the exam is well constructed and there are enough questions the
@@ -111,7 +112,9 @@ data). This can be illustrated by an intuitive example adapted from
     Intuitively we see that when the capacity of the class of function grows
     (the number of students and random monkeys), the performance of the best
     element \emph{a posteriori} (minimizing the empirical risk) is not linked
-    to the future performance (minimizing the true risk).
+    to the future performance (minimizing the true risk). In the present
+    example we see that the capacity of the class of function is too large with
+    respect to the number of data and thus presents a risk of overfitting.
     \paragraph{}
     On the contrary the generalization property ensure that the difference
     between the empirical risk and the true risk is controlled because the bound
@@ -120,9 +123,9 @@ data). This can be illustrated by an intuitive example adapted from
     N, d)$ will blow-up, resulting in a poor generalization property.
 \end{example}
 \paragraph{}
-A slightly stronger requirement is the {\emph consistency} of learning algorithm.
-Given a loss function $L$ and a class of function $\mathcal{F}$ there exists an
-optimal solution that minimizes the true risk.
+A slightly stronger requirement is the {\emph consistency} of learning
+algorithm.  Given a loss function $L$ and a class of function $\mathcal{F}$
+there exists an optimal solution that minimizes the true risk.
 \begin{dmath*}
     f_* = \argmin_{f\in\mathcal{F}} \risk{f}.
 \end{dmath*}
@@ -139,7 +142,7 @@ all
 %\end{dmath*}
 %holds with probability $1 - \delta$, for all $\delta \in (0, 1)$  and
 %$C(\delta, \seq{s}, \mathcal{F}) \to 0$ when the number of training data $N$ in
-%$\seq{s}$ goes to infinity. 
+%$\seq{s}$ goes to infinity.
 %\paragraph{}
 %To identify the best model in $\mathcal{F}$ an intuitive loss function would be
 %the $0-1$ loss defined as
@@ -175,7 +178,7 @@ all
 %In the next section we discuss the choice of the class of functions
 %$\mathcal{F}$.
 %=======
-the solutions returned by a learning algorithm. 
+the solutions returned by a learning algorithm.
 
 %\paragraph{}
 %To identify the best model in $\mathcal{F}$ an intuitive loss function would be
@@ -216,15 +219,15 @@ the solutions returned by a learning algorithm.
 %------------------------------------------------------------------------------
 \subsection{Introduction to kernel methods}\label{subsec:kernels}
 \subsubsection{Kernels and Reproducing Kernel Hilbert Spaces}
-A fair simple choice for $\mathcal{F}$ is the set of all linear functions where
-we focus on defining learning algorithm picking up the \say{best} function in
-the class
+A fair simple choice for $\mathcal{F}$ is the set of all linear functions. In
+this case we focus on defining learning algorithm picking up the \say{best}
+function in the class
 \begin{dmath*}
     \mathcal{F}_{lin.} = \Set{f | f(x) = \inner{w, x} + b, \enskip \forall w \in
     \mathbb{R}^d, \enskip \forall x \in \mathbb{R}^d, \enskip \forall b \in
     \mathbb{R}}.
 \end{dmath*}
-Although this class of function has been well studied and has good
+Although this class of functions has been well studied and has good
 generalization properties (as long as the norm of $w$ is not too big), it has a
 rather low capacity.  For instance in $\mathbb{R}^2$ it is impossible to
 separate two nested circle with a line (see \cref{fig:nested_circle}). On the
@@ -254,19 +257,19 @@ to a well chosen positive definite and symmetric function (\emph{a kernel}).
     \begin{dmath*}
         \mathbf{K} =
         \begin{pmatrix}
-            k(x_i,x_j) 
+            k(x_i,x_j)
         \end{pmatrix}_{i = 1, j = 1}^{i = N, j = N} \hiderel{\in}
-        \mathcal{M}_{N, N}(\mathbb{R}) 
+        \mathcal{M}_{N, N}(\mathbb{R})
     \end{dmath*}
     is \acf{SPSD}.
 \end{definition}
-The following proposition gives sufficient conditions to get a SPSD matrix:
+The following proposition gives sufficient conditions to obtain a SPSD matrix:
 \begin{proposition}[\acs{SPSD} matrix]
     $K$ is SPSD if it is symmetric and one of the following conditions holds:
     \begin{itemize}
         \item The eigenvalues of $\mathbf{K}$ are non-negative
         \item for any column vector $c= (c_1, \ldots, c_N)^\transpose \in
-        \mathcal{M}_{N, 1}(\mathbb{R})$, 
+        \mathcal{M}_{N, 1}(\mathbb{R})$,
         \begin{dmath*}
             c^\transpose\mathbf{K}c=\sum_{i,j=1}^N c_ic_jK(x_i,x_i)
             \hiderel{\geq} 0.
@@ -274,7 +277,8 @@ The following proposition gives sufficient conditions to get a SPSD matrix:
     \end{itemize}
 \end{proposition}
 One of the most important property of PDS kernels \citep{Mohri2012} is that a
-PSD kernel defines a unique \acs{RKHS}. Note that the converse is also true. 
+\acs{PSD} kernel defines a unique \acs{RKHS}. Note that the converse is also
+true.
 \begin{theorem}[\citet{Aronszajn1950}]
     Suppose $k$ is a symmetric, positive definite kernel on a set
     $\mathcal{X}$. Then there is a unique Hilbert space of functions
@@ -293,7 +297,7 @@ PSD kernel defines a unique \acs{RKHS}. Note that the converse is also true.
     associated to $k$, and will be denoted, $\mathcal{H}_k$.
 \end{theorem}
 Another way to use Aronszajn's results is to state the feature map property for
-the PDS kernels.
+the \acs{PSD} kernels.
 \begin{proposition}[Feature map]
      Suppose $k$ is a symmetric, positive definite kernel on a set
      $\mathcal{X}$. Then, there exists a Hilbert space $\mathcal{H}$ and a
@@ -308,7 +312,7 @@ the PDS kernels.
 \begin{remark}
     Aronszajn's theorem tells us that there always exists at least one feature
     map, the so-called \emph{canonical feature map} and the feature space
-    associate, the \acl{RKHS} $\mathcal{H}_k$ 
+    associate, the \acl{RKHS} $\mathcal{H}_k$
     \begin{dmath*}
         \phi_{canonical}(x)= k(\cdot, x)
     \end{dmath*}
@@ -317,7 +321,7 @@ the PDS kernels.
 \end{remark}
 \subsubsection{Learning in Reproducing Kernel Hilbert Spaces}
 Now, back to learning and minimizing the empirical risk, a fair question is
-how do I find a function in an infinite dimensional set $\mathcal{H}_k$ in 
+how do I pick-up a function in an infinite dimensional set $\mathcal{H}_k$ in
 polynomial time? The answer comes from the regularization and interpolation
 theory. To limit the size of the space in which we search of the function
 minimizing the empirical risk we add a regularization term to the empirical
@@ -336,20 +340,22 @@ the following.
     \end{dmath*}
     where $\lambda > 0$ then $f_{\seq{s}}=\sum_{i=1}^N k(\cdot, x_i) \alpha_i$.
 \end{theorem}
-We note the vector $\alpha = (\alpha_i)_{i=1}^N$ and the matrix
+We note the vector $\boldsymbol{\alpha} = (\alpha_i)_{i=1}^N$ and the matrix
 $\mathbf{K}=(k(x_i, x_k))_{i, k = 1}^N$. Then we can rewrite
 \begin{dmath*}
     \mathcal{J}_{\lambda}(\alpha) = \frac{1}{N} \sum_{i=1}^N L(x_i, \alpha,
-    y_i) + \lambda \inner{\alpha, \mathbf{K}\alpha}_2 / 2
+    y_i) + \lambda \inner{\boldsymbol{\alpha}, \mathbf{K}\boldsymbol{\alpha}}_2
+    / 2
 \end{dmath*}
-where $f(x_i) = (\mathbf{K}\alpha)_i$ for any $x_i \in \seq{s}$. If we suppose
-that $L$ is convex in $f(x)$, then it is possible to derive a polynomial time
-(in $N$) algorithm minimizing $\mathcal{J}_{\lambda}$. For instance if we
-choose $L$ to be the least square loss, then
+where $f(x_i) = (\mathbf{K}\boldsymbol{\alpha})_i$ for any $x_i \in \seq{s}$.
+If we suppose that $L$ is convex in $f(x)$, then it is possible to derive a
+polynomial time (in $N$) algorithm minimizing $\mathcal{J}_{\lambda}$. For
+instance if we choose $L$ to be the least square loss, then
 \begin{dmath}
     \label{eq:ridge_regression}
     \mathcal{J}_{\lambda}(\alpha) = \frac{1}{2N}\norm{\mathbf{K}\alpha -
-    (y_i)_{i=1}^N}_2^2 + \lambda \inner{\alpha, \mathbf{K}\alpha}_2 / 2.
+    (y_i)_{i=1}^N}_2^2 + \lambda \inner{\boldsymbol{\alpha},
+    \mathbf{K}\boldsymbol{\alpha}}_2 / 2.
 \end{dmath}
 This problem is called \emph{Ridge regression}.  By strict convexity and
 coercivity of $\mathcal{J}_{\lambda}$, and because $K + \lambda I_N$ is
@@ -363,10 +369,10 @@ Then any functions in $\mathcal{H}_k$ can be written $f(x)=\inner{\phi(x),
 because it \say{extracts characteristic elements from a vector}. Usually a
 feature map takes a vector in an input space with low dimension and maps it to
 a higher dimensional space. Put it differently, any function in $\mathcal{H}_k$
-is the composition of linear functional $\theta^\transpose$ with a non linear
-feature map $\phi$. Thus is the feature map $\phi$ is fixed (which is
+is the composition of linear functional $\theta^\adjoint$ with a non linear
+feature map $\phi$. Thus if the feature map $\phi$ is fixed (which is
 equivalent to fixing the kernel), it is possible to \say{learn} with a linear
-class of function $\theta\in\mathcal{H}$ (see \cref{fig:feature_map}). 
+class of function $\theta\in\mathcal{H}$ (see \cref{fig:feature_map}).
 \begin{figure}
     %\centering\resizebox{\textwidth}{!}{%
     %\begin{tikzpicture}
@@ -403,7 +409,7 @@ point $x_i$ with $1 \le i \le N$, the the regularized risk minimization with
 the least square loss reads
 \begin{dmath*}
     \mathcal{J}_{\lambda} = \frac{1}{2N}\norm{\boldsymbol{\phi}^\transpose
-    \theta - (y_i)_{i=1}^N }_2^2 + \frac{\lambda}{2}\norm{\theta}_2^2.
+    \theta - (y_i)_{i=1}^N }_{fro}^2 + \frac{\lambda}{2}\norm{\theta}_2^2.
 \end{dmath*}
 and the unique solution is $\theta_{\seq{s}} =
 \left(\boldsymbol{\phi}\boldsymbol{\phi}^\transpose/N + \lambda
@@ -428,7 +434,7 @@ proposed to approximate kernels and feature maps. This subsection briefly
 reminds the main approaches based on  Random Fourier Features and Nystr\"om
 techniques. Notice that another line of research concerns online learning
 method such as \acs{NORMA} developed in \cite{kivinen2004online}, later
-extended to the operator-valued kernel case by \cite{audiffren2013online}.  We
+extended to the operator-valued kernel case by \citet{audiffren2013online}.  We
 start with the seminal work of \citet{Rahimi2007} who show that given a
 continuous shift-invariant kernel ($\forall x, z, t \in \mathcal{X}$, $k(x + t,
 z + t) = k(x, z)$), it is possible to obtain a feature map called \acs{RFF}
@@ -444,11 +450,11 @@ general framework of operator-valued kernels.
 Denote $k: \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}$ a positive
 definite kernel on $\mathbb{R}^d$. A kernel $k$ is said to be
 \emph{shift-invariant} or \emph{translation-invariant} for the addition if for
-any $a \in \mathbb{R}^d$, and for all $(x,z,t) \in \left(\mathbb{R}^d\right)^3$
-we have $k(x+t,z+t) = k(x,z)$.  Then, we define $k_0: \mathbb{R}^d \to
-\mathbb{R}$ the function such that $k(x,z)= k_0(x-z)$. $k_0$ is called the
-\emph{signature} of kernel $k$. Bochner's theorem \citep{folland1994course} is
-the theoretical result that leads to the Random Fourier Features.
+for all $(x,z,t) \in \left(\mathbb{R}^d\right)^3$ we have $k(x+t,z+t) =
+k(x,z)$.  Then, we define $k_0: \mathbb{R}^d \to \mathbb{R}$ the function such
+that $k(x,z)= k_0(x-z)$. $k_0$ is called the \emph{signature} of kernel $k$.
+Bochner's theorem \citep{folland1994course} is the theoretical result that
+leads to the Random Fourier Features.
 \begin{theorem}[Bochner's theorem]\label{th:bochner-scalar}
     Any continuous positive definite complex function is the \acl{FT} of a
     non-negative measure.
@@ -470,7 +476,7 @@ is a probability measure, \acs{ie} $\int_{\mathbb{R}^d} d\mu(\omega)=1$ by
 renormalizing the kernel since
 \begin{dmath*}
     \int_{\mathbb{R}^d}d\mu(\omega)= \int_{\mathbb{R}^d}\exp{-\iu
-    \inner{\omega, 0}}d\mu(\omega)\hiderel{=}k_0(0). 
+    \inner{\omega, 0}}d\mu(\omega)\hiderel{=}k_0(0).
 \end{dmath*}
 and we can write \cref{bochner-scalar} as an expectation over $\mu$. For all
 $x$,
@@ -478,7 +484,7 @@ $z\in\mathbb{R}^d$
 \begin{dmath*}
     k_0(x-z) = \expectation_{\mu}\left[e^{-\iu \inner{\omega,x - z}}\right].
 \end{dmath*}
-Eventuallt, if $k$ is real valued we only write the real part, 
+Eventuallt, if $k$ is real valued we only write the real part,
 \begin{dmath*}
     k(x,z) = \expectation_{\mu}[\cos \inner{\omega,x - z}] =
     \expectation_{\mu}[ \cos \inner{\omega,z} \cos \inner{\omega,x} + \sin
@@ -486,11 +492,11 @@ Eventuallt, if $k$ is real valued we only write the real part,
 \end{dmath*}
 Let $\Vect_{j=1}^D x_j$ denote the $Dd$-length column
 vector obtained by stacking vectors $x_j \in \mathbb{R}^d$.  The feature map
-$\tilde{\phi}: \mathbb{R}^d \rightarrow \mathbb{R}^{2D}$ defined as
+$\widetilde{\phi}: \mathbb{R}^d \rightarrow \mathbb{R}^{2D}$ defined as
 \begin{dmath}
 \label{eq:rff}
-    \tilde{\phi}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D
-    \begin{pmatrix} 
+    \widetilde{\phi}(x)=\frac{1}{\sqrt{D}}\Vect_{j=1}^D
+    \begin{pmatrix}
         \cos{\inner{x,\omega_j}} \\
         \sin{\inner{x,\omega_j}}
     \end{pmatrix}\condition{$\omega_j \hiderel{\sim} \IFT{k_0}$ \acs{iid}}
@@ -498,13 +504,13 @@ $\tilde{\phi}: \mathbb{R}^d \rightarrow \mathbb{R}^{2D}$ defined as
 is called a \emph{Random Fourier Feature} (map). Each $\omega_{j}, j=1, \ldots,
 D$ is independently and identically sampled from the inverse Fourier transform
 $\mu$ of $k_0$. This Random Fourier Feature map provides the following
-Monte-Carlo estimator of the kernel: $\tilde{k}(x, z) = \tilde{\phi}(x)^*
-\tilde{\phi}(z)$. Using trigonometric identities, \citet{Rahimi2007} showed
-that the same feature map can also be written
+Monte-Carlo estimator of the kernel: $\widetilde{k}(x, z) =
+\widetilde{\phi}(x)^* \widetilde{\phi}(z)$. Using trigonometric identities,
+\citet{Rahimi2007} showed that the same feature map can also be written
 \begin{dmath}
     \label{eq:rff2}
     \tilde{\phi}(x)=\frac{2}{\sqrt{D}}\Vect_{j=1}^D
-    \begin{pmatrix} 
+    \begin{pmatrix}
         \cos(\inner{x,\omega_j} + b_j)
     \end{pmatrix},
 \end{dmath}
@@ -514,7 +520,7 @@ been compared in \citet{sutherland2015} where they give the condition under
 wich \cref{eq:rff} has lower variance than \cref{eq:rff2}. For instance for the
 gaussian kernel, \cref{eq:rff} has always lower variance. In practice,
 \cref{eq:rff2} is easier to program. In this manuscript we focus on random
-Fourier feature of the form \cref{eq:rff}.
+Fourier feature of the form given in \cref{eq:rff}.
 
 \paragraph{}
 The dimension $D$ governs the precision of this
@@ -544,12 +550,12 @@ resulting from the Nystr\"om method is data dependent. Let $k: \mathcal{X}^2
 \begin{dmath*}
     \seq{s} = (x_i)_{i=1}^N
 \end{dmath*}
-be the training data. We note a subsample fo the training data
+be the training data. We note a subsample of the training data
 \begin{dmath*}
     \seq{s}_M = (x_i)_{i=1}^M
 \end{dmath*}
-where $M \le N$ and $\seq{s}_M$ is a subsequence of $\seq{s}$. Then construct 
-the gram matrix $\mathbf{K}_M$ on the subsequence $\seq{s}_M$. Namely
+where $M \le N$ and $\seq{s}_M$ is a subsequence of $\seq{s}$. Then construct
+the Gram matrix $\mathbf{K}_M$ on the subsequence $\seq{s}_M$. Namely
 \begin{dmath*}
     \mathbf{K}_M =
     \begin{pmatrix}
@@ -560,11 +566,11 @@ Then perform the singular-valued decomposition $\mathbf{K}_M = U \Lambda
 U^\transpose$. The Nystr\"om feature map is given by
 \begin{dmath*}
     \tilde{\phi}(x) = \Lambda^{-1/2} U^\transpose\left( \vect_{i=1}^M k(x, x_i)
-    \right). 
+    \right).
 \end{dmath*}
 Here $M$ plays the same role than $D$ in the \acs{RFF} case: it controls the
 quality of the approximation. Let $\mathbf{K}$ be the full Gram matrix on the
-traing data $\seq{s}$, let 
+traing data $\seq{s}$, let
 \begin{dmath*}
     \mathbf{K}_b =
     \begin{pmatrix}
@@ -631,35 +637,27 @@ the capacity of the projected feature  space  effectively. \Citet{pham2013fast}
 proposed fast random feature maps for polynomial kernels.
 \paragraph{}
 \Citet{li2010random} generalized the original \acs{RFF} of \citet{Rahimi2007}.
-Instead of computing feature maps for shift-invariant kenrels on the additive
-group $(\mathbb{R}^d, +)$, they used the generalized Fourier transform on any
-locally compact abelian group to derive random features on the multiplicative
-group $(\mathbb{R}^d, *)$. In the same spirit \citet{yang2014random} noticed
-that an theorem equivalent to Bochner's theorem exists on the semi-group
-$(\mathbb{R}_+^d, +)$. From this they derived \say{Random Laplace} features and
-used them to approximate kernels adapted to learn on histograms.
+Instead of computing feature maps for shift-in\-va\-riant kernels on the
+additive group $(\mathbb{R}^d, +)$, they used the generalized Fourier transform
+on any locally compact abelian group to derive random features on the
+multiplicative group $(\mathbb{R}^d, *)$. In the same spirit
+\citet{yang2014random} noticed that an theorem equivalent to Bochner's theorem
+exists on the semi-group $(\mathbb{R}_+^d, +)$. From this they derived
+\say{Random Laplace} features and used them to approximate kernels adapted to
+learn on histograms.
 \paragraph{}
 To speed-up the convergence rate of the random features approximation,
 \citet{yang2014quasi} proposed to sample the random variable from a quasi
 Monte-Carlo sequence instead of \acs{iid}~random variables. \Citet{Le2013}
 proposed the \say{Fastfood} algorithm to reduce the complexity of computing a
-\acs{RFF}, using structured matrices and a fast Walsh-Hadarmard transform, from
-$O(Dd)$ to $O(D\log(d))$. More recently \citet{felix2016orthogonal} proposed
-also an algorithm \say{SORF} to compute Gaussian \acs{RFF} in $O(D\log(d))$ but
-with better convergence rates than \say{Fastfood} \citep{Le2013}.
-\Citet{mukuta2016kernel} proposed a data dependent features map (comparable to
-the Nystro\"m method) by estimating the distribution of the input data, and
-then finding the eigenfunction decomposition of Mercer's integral operator
-associated to the kernel.
-\paragraph{}
-\Citet{li2010random} generalized the original \acs{RFF} of \citet{Rahimi2007}.
-Instead of computing feature maps for shift-invariant kernels on the additive
-group $(\mathbb{R}^d, +)$, they used the generalized Fourier transform on any
-locally compact abelian group to derive random features on the multiplicative
-group $(\mathbb{R}^d, *)$. In the same spirit \citet{yang2014random} noticed
-that an theorem equivalent to Bochner's theorem exists on the semi-group
-$(\mathbb{R}_+^d, +)$. From this they derived \say{Random Laplace} features and
-used them to approximate kernels adapted to learn on histograms.
+\acs{RFF} --using structured matrices and a fast Walsh-Hadarmard transform--
+from $O(Dd)$ to $O(D\log(d))$. More recently \citet{felix2016orthogonal}
+proposed also an algorithm \say{SORF} to compute Gaussian \acs{RFF} in
+$O(D\log(d))$ but with better convergence rates than \say{Fastfood}
+\citep{Le2013}.  \Citet{mukuta2016kernel} proposed a data dependent features
+map (comparable to the Nystro\"m method) by estimating the distribution of the
+input data, and then finding the eigenfunction decomposition of Mercer's
+integral operator associated to the kernel.
 \paragraph{}
 In the context of large scale learning and deep learning, \citet{lu2014scale}
 showed that \acsp{RFF} can achieve performances comparable to deep-learning
@@ -667,7 +665,7 @@ methods by combining multiple kernel learning and composition of kernels along
 with a scalable parallel implementation. \Citet{dai2014scalable} and
 \citet{xie2015scale} combined \acsp{RFF} and stochastic gradient descent to
 defined an online learning algorithm called \say{Doubly stochastic gradient
-descent} adapted to large scale learning. \Citet{yang2015deep} proposed an
+descent} adapted to large scale learning. \Citet{yang2015deep} proposed and
 studied the idea of replacing the last fully interconnected layer of a deep
 convolutional neural network \citep{lecun1995convolutional} by the
 \say{Fastfood} implementation of \acsp{RFF}.

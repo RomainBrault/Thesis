@@ -18,7 +18,7 @@ In this thesis we study scalable methods to perform regression with
 \paragraph{}
 When data present structure, or relations between them or their different
 components, a common approach is to treat the data as a vector living in an
-appropriate vector space rather than a collection of real numbers. This
+appropriate Hilbert space rather than a collection of real numbers. This
 representation allows to take into account the structure of the data by
 defining an appropriate space embbeding the underlying structure. Thus many
 problems in machine learning can be cast into learning vector-valued functions.
@@ -26,14 +26,14 @@ Operator-Valued Kernels \emph{\acl{OVK}s} and \emph{vector-valued Reproducing
 Kernel Hilbert Spaces} provide a theoretical and practical framework to address
 the issue of learning vector-valued functions by naturally extending the
 well-known framework of scalar-valued kernels. In the context of scalar-valued
-function learning;~a scalar-valued kernel can be seen a a similarity measure
+functions learning;~a scalar-valued kernel can be seen a a similarity measure
 between two data points. A solution of the learning problem has the form of a
-linear combination of theses similarities with respect to weights to determine
-in order to have the best \say{fit} of the data. When dealing with \acl{OVK}s,
-the evalution of the kernel is no longer a scalar similarity, but a function
-acting on vectors. A solution is then a linear combination of operators with
-respect to vector weights.
-\paragraph{} 
+linear combination of theses similarities with respect to weights (to
+determine), in order to have the best \say{fit} of the data. When dealing with
+\acl{OVK}s, the evalution of the kernel is no longer a scalar similarity, but a
+function (an operator) acting on vectors. A solution is then a linear
+combination of operators with respect to vector weights.
+\paragraph{}
 Although \acl{OVK}s generalize strictly scalar-valued kernels,
 large scale applications are usually not affordable with these tools that
 require an important computational power along with a large memory capacity. In

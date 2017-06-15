@@ -1,12 +1,12 @@
-In machine learning, many algorithm focus on learning functions that model
-dependencies in a dataset, where the the outputs are real numbers. However
-in numerous applications such as biology, economics, physics, etc.~the
+In Machine Learning, many algorithm focus on learning functions that model
+dependencies between inputs and outputs where outputs are real numbers. However
+in numerous application fields such as biology, economics, physics, etc.~the
 output data are not reals: they can be a collection of reals, present
 complex structures or can even be functions. To overcome this difficulty
 and take into account the structure of the data, a common approach is to
 see them as \emph{vectors} of some Hilbert space. From this observation, in
 this thesis, we took interest in vector-valued functions. Looking at the
-litterature we focused on mathematical objects called \aclp{OVK} to learn
+literature we focused on mathematical objects called \aclp{OVK} to learn
 such functions.
 
 \section{Contributions}
@@ -21,7 +21,7 @@ number of data. In the context of large-scale learning such scaling is not
 acceptable. Through this work we propose a methodology to tackle this
 difficulty.
 \paragraph{}
-Enlighted by the literature on large-scale learning with
+Enlightened by the literature on large-scale learning with
 \emph{scalar}-valued kernel, in particular the work of Rahimi and Recht
 \citep{Rahimi2007}, we propose to replace an \acs{OVK} by a random feature
 map that we called \acl{ORFF}. Our contribution start with the formal
@@ -35,57 +35,58 @@ estimator of an \acs{OVK} is not a bounded random variable. Moreover we
 also give a bound when the dimension of the output data infinite.
 \paragraph{}
 After ensuring that an \acs{ORFF} is a good approximation of a kernel, we
-moved on giving a framework to learn with \aclp{OVK}. We showed that
-learning with a feature map is equivalent to learn with the reconstructed
-\acs{OVK} under some mild conditions. Then we focused on a efficient
-implementation of \acs{ORFF} by viewing them as linear operator rather than
-matrices and using matrix-free (iterative) solvers and conclued with some
-numerical experiments. Eventually we gave a generalization bound for
-\acs{ORFF} learning that suggest that the number of features sampled in an
-\acs{ORFF} should be proportional to the number of data. We concluded our
-contribution by applying the \acs{ORFF} framework to learning vector-valued
+moved on giving a framework for supervised learnin with \aclp{OVK}. We showed
+that learning with a feature map is equivalent to learn with the reconstructed
+\acs{OVK} under some mild conditions. Then we focused on an efficient
+implementation of \acs{ORFF} by viewing them as linear operators rather than
+matrices and using matrix-free (iterative) solvers and concluded with some
+numerical experiments. Eventually we gave a generalization bound for \acs{ORFF}
+learning that suggest that the number of features sampled in an \acs{ORFF}
+should be proportional to the number of data. We concluded our contribution by
+applying the \acs{ORFF} framework to learning vector-valued
 time series.
 
 \section{Perspectives}
-To start with the theoretical Perspectives, following Rahimi and Recht we
-give a generalization bound for \acs{ORFF} kernel ridge that suggest that
-the number of feature to draw is proportional to the number of data.
-However new results of \citet{rudi2016generalization} suggest that the
-number of feature should be proportional to the \emph{square root} of the
-number of data. We shall investigate this results and extend it to
-\acs{ORFF}.
+To start with the theoretical Perspectives, following Rahimi and Recht we gave
+a generalization bound for \acs{ORFF} kernel ridge that suggest that the number
+of feature to draw is proportional to the number of data.  However new results
+of \citet{rudi2016generalization} suggest that the number of feature should be
+proportional to the \emph{square root} of the number of data. In a future work,
+we shall investigate this results and extend it to \acs{ORFF}.
 \paragraph{}
-On the methodological perspectives we gave an intuition on how operator-valued
-kernels can be used to learn outputs that are functions. We used the \acs{ORFF}
-framework to speed up quantile regression and at the same time retrieved the
-full quantile function. We applied the same methodology to the anomaly
-detection setting and showed that it is possible to learn jointly all the level
-sets of a distribution with an extension of a \acl{OCSVM}. We are convinced
-that this will open the door to many new applications. Given a problem with
-some hyperparameters, the combination of \acs{ORFF} and \aclp{OVK} allow to
-learn functions of the hyperparameters.
+On the methodological perspectives we gave an intuition on how \aclp{OVK} can
+be used to learn outputs that are functions. We used the \acs{ORFF} framework
+to speed up quantile regression and at the same time retrieved the full
+quantile function. We applied the same methodology to the anomaly detection
+setting and showed that it is possible to learn jointly all the level sets of a
+distribution with an extension of a \acl{OCSVM}. We are convinced that this
+will open the door to many new applications. Given a problem with some
+hyperparameters, the combination of \acs{ORFF} and \aclp{OVK} allow to learn
+functions of the hyperparameters.
 \paragraph{}
 Another nice extension would be to be able to learn the structure of an
 \acs{ORFF} \acs{ie} the spectral distribution and the operator from the data,
 as in \citet{Yang2015} so that we avoid to inject directly ourselves a prior on
 the data by the mean of an \acl{OVK}.
 \paragraph{}
-On the implementation level, we are really enthusiast about Operalib, a
+On the implementation level, we are really enthusiastic about Operalib, a
 library for learning with \aclp{OVK} started during this thesis as a project of
-Paris-Saclay Center for Data Science, and will extend the library with other
-\acs{OVK}-based algorithms. Moreover may work is remaining concerning the
-implementation of efficient algorithms based on (O)\acsp{RFF}. We could extend
-the Multiple Kernel learning setting to \acsp{OVK} to see if we can match the
-performances of Deep Neural Networks as in \citet{lu2014scale}.
-We could also improve the Doubly Stochastic Gradient descent in the light of
-the recent results of \citet{rudi2016generalization} on generalization.
+Paris-Saclay Center for Data Science\footnote{As a collaboration with
+Alexandre Gramfort}, and will extend the library with other \acs{OVK}-based
+algorithms. Moreover much work is remaining to do concerning the implementation
+of efficient algorithms based on (O)\acsp{RFF}. We could extend the Multiple
+Kernel learning setting to \acsp{OVK} to see if we can match the performances
+of Deep Neural Networks as in \citet{lu2014scale}.  We could also improve the
+Doubly Stochastic Gradient descent in the light of the recent results of
+\citet{rudi2016generalization} on generalization.
 \paragraph{}
-Eventually during this three years, we witnessed the rise of deep-learning
+Eventually during this three years, we have witnessed the rise of deep-learning
 methods with neural network. As pointed out by many authors, random features
-share deep connections with neural networks, as a neural network can be seen as
+share deep connections with neural networks: an ORFF-based shallow architecture
+can be seen as a one-layer  neural architecture. Conversely, a neural network
+can be seen as
 a compositional feature map. As in the work of \citet{yang2015deep} we could
 replace the last layer of a convolutional neural network
-\citep{lecun1995convolutional} with an \acs{ORFF} map to see if it can improve
-its performances.
-
-\chapterend
+\citep{lecun1995convolutional} with an \acs{ORFF} map in order to open these
+architectures to the setting offered by OVK to deal with structured and
+functional outputs.

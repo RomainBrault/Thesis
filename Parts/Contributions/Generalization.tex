@@ -13,7 +13,7 @@ $N\in\mathbb{N^*}$ drawn \acs{iid}~from an unknown probability law
 $\probability$. We suppose we are given a cost function
 $c:\mathcal{X}\times\mathcal{Y}\to\mathbb{R}$, such that $c(f(x),y)$ returns
 the error of the prediction $f(x)$ \acs{wrt}~the ground truth $y$. We define
-the true risk the sum of the cost over all possible training examples drawn
+the true risk as the sum of the cost over all possible training examples drawn
 from a latent probability law $\probability$,
 \begin{dmath*}
     \risk{f}=\int_{\mathcal{X}\times\mathcal{Y}}L(x,f,y)d\probability(x,y)
@@ -22,13 +22,13 @@ from a latent probability law $\probability$,
 Thus given a class of functions $\mathcal{F}$, the goal of a learning algorithm
 is to find an optimal model $f_*$ that minimizes the true risk. Namely
 \begin{dmath*}
-    f_* = \argmin_{f\in\mathcal{F}} \risk{f}
+    f_* \in \argmin_{f\in\mathcal{F}} \risk{f}
     \hiderel{=}\argmin_{f\in\mathcal{F}}\int_{\mathcal{X} \times
     \mathcal{Y}}c(f(x), y)d\probability(x,y).
 \end{dmath*}
-Since in practice we do not have access to the joint probability law of (X,Y),
-we define its empirical counterpart as the empirical mean estimate, where the
-sequence $\seq{s}=(x_i,y_i)_{i=1}^N$ is made of
+Since in practice we do not have access to the joint probability law of
+$(X,Y)$, we define its empirical counterpart as the empirical mean estimate,
+where the sequence $\seq{s}=(x_i,y_i)_{i=1}^N$ is made of
 ($\mathcal{X}\times\mathcal{Y})$-valued random vectors drawn \acs{iid}~from
 some law
 $\probability$.
@@ -42,11 +42,11 @@ The empirical risk then reads
 As a result, in practice we seek a function $f_{\seq{s}}$ such that
 \begin{dmath}
     \label{eq:argmin_empirical}
-    f_{\seq{s}} = \argmin_{f\in\mathcal{F}} \riskemp{f,\seq{s}} \hiderel{=}
+    f_{\seq{s}} \in \argmin_{f\in\mathcal{F}} \riskemp{f,\seq{s}} \hiderel{=}
     \argmin_{f\in\mathcal{F}}\frac{1}{N}\sum_{i=1}^Nc\left(f(x_i), y_i\right).
 \end{dmath}
 The basic requirement for any learning algorithm is the generalization
-property: the empir- ical error must be a good proxy of the expected error,
+property: the empirical error must be a good proxy of the expected error,
 that is the difference between the two must be \say{small} when $N$ is large. A
 generalization bound allows to study, for any $f\in\mathcal{F}$ the difference
 between its true risk $\risk{f}$ and its empirical risk, $\risk{f,\seq{s}}$.
@@ -56,30 +56,28 @@ being the empirical risk and the other depends on the dataset size as well as
 some capacity notion that reflects the richness of the family of functions
 $\mathcal{F}$ considered. First generalization bounds proved by Vapnik and
 Chervonenkis involve the dimension of Vapnik-Chervonenkis dimension of
-$\mathcal{F}$.  In practice, generalization bounds are usually not enough tight
-to provide direct recommendations for choosing the appropriate family of
-functions to work with when $N$ is fixed.  However as the bias-variance
-dilemma, it suggests that when learning a function from a finite dataset,  it
-is necessary to control the richness of the functions family $\mathcal{F}$.  In
-practise, a regularizer is added to the data-fitting term in order to maintain
-the solution $f_{\seq{s}}$ of \cref{eq:argmin_empirical} in a ball of
-$\mathcal{F}$.  As a result if
-$\mathcal{F}$ is a Banach space, it is common to find $f_{\seq{s}}$ such that
+$\mathcal{F}$.  In practice, generalization bounds suggest that when learning a
+function from a finite dataset,  it is necessary to control the size (richness)
+of the class of functions $\mathcal{F}$.  Hence, a regularizer is added to the
+data-fitting term in order to maintain the solution $f_{\seq{s}}$ of
+\cref{eq:argmin_empirical} unique and belong to a ball of $\mathcal{F}$. As a
+result if $\mathcal{F}$ is a Banach space, it is common to find $f_{\seq{s}}$
+such that
 \begin{dmath*}
     f_{\seq{s}} = \argmin_{f\in\mathcal{F}} \riskemp{f,\seq{s}} +
-    \lambda\norm{f}_{\mathcal{F}}^2.
+    \frac{\lambda}{2}\norm{f}_{\mathcal{F}}^2.
 \end{dmath*}
 (Tychonov regularization) or
 \begin{dmath*}
-    f_{\seq{s}} = 
+    f_{\seq{s}} =
     \begin{cases}
         \argmin_{f\in\mathcal{F}} & \riskemp{f,\seq{s}} \\
         \text{subject to} & \norm{f}_{\mathcal{F}} < C \in \mathbb{R}_{>0}
     \end{cases}
 \end{dmath*}
-(Ivanov regularization) or 
+(Ivanov regularization) or
 \begin{dmath*}
-    f_{\seq{s}} = 
+    f_{\seq{s}} =
     \begin{cases}
         \argmin_{f\in\mathcal{F}} & \riskemp{f,\seq{s}} \\
         \text{subject to} & \norm{f}_{\infty} < C \in \mathbb{R}_{>0}.
@@ -107,11 +105,12 @@ $\tildeK{\omega}$).
     \end{dmath}
     \label{pr:ovk_gen}
 \end{proposition}
+The following proof is due to \citet{maurer2016vector} generalizing the work of
+\citet[section 4.3]{bartlett2002rademacher}: we do not claim any originality
+for this proof.
 \begin{proof}
-    This proof is due to \citet{maurer2016vector} generalizing the work of
-    \citet[section 4.3]{bartlett2002rademacher}: we do not claim any
-    originality for this proof. First let us introduce the notion of Rademacher
-    complexity of a class of function $\mathcal{F}$. We recall that the
+    First let us introduce the notion of Rademacher
+    complexity of a class of functions $\mathcal{F}$. We recall that the
     probability mass function of a uniformly distributed Rademacher random
     variable is given for any $k\in\Set{-1,1}$ by
     \begin{dmath*}
@@ -136,18 +135,19 @@ $\tildeK{\omega}$).
     \end{definition}
     In a few words the Rademacher complexity measures the richness of a class a
     function by its capacity to be correlated to noise. In generalization
-    bounds, the Rademacher complexity of a class of function often involves a
+    bounds, the Rademacher complexity of a class of functions often involves a
     composition between a target function to be learn and a cost function, part
     of the risk we want to minimize. The idea is to bound the Rademacher
     complexity with a term that does not depends on the cost function, but only
     on the target function.
     \begin{proposition}[\citet{maurer2016vector}]
         \label{pr:radswap}
-        Let $\mathcal{X}$ be any set, $x_1, \hdots, x_N$ in $\mathcal{X}$, let
-        $\mathcal{F}$ be a class of function $f:~\mathcal{X}\to\mathcal{Y}$ and for i=1, \ldots, N, 
-        each function $h_i:~\mathcal{Y}\to\mathbb{R}$ be a $L$-Lipschitz function, where
-        $\mathcal{Y}$ is a separable Hilbert space endowed with
-        euclidean inner product. Then
+        Let $\mathcal{X}$ be any set and $(x_1, \hdots, x_N)$ in
+        $\mathcal{X}^N$ and let $\mathcal{F}$ be a class of functions
+        $f:~\mathcal{X}\to\mathcal{Y}$ and for i=1, \ldots, N, each function
+        $h_i:~\mathcal{Y}\to\mathbb{R}$ be a $L$-Lipschitz function, where
+        $\mathcal{Y}$ is a separable Hilbert space endowed with Euclidean inner
+        product. Then
         \begin{dmath*}
             \expectation\left[ \sup_{f\in \mathcal{F}} \sum_{i=1}^N \epsilon_i
             h_i(f(x_i)) \;\middle|\; x_1, \dots, x_N \right] \le
@@ -155,10 +155,12 @@ $\tildeK{\omega}$).
             \epsilon_{ik}f_k(x_i) \;\middle|\; x_1, \dots, x_N \right],
         \end{dmath*}
         where $\epsilon_{ik}$ is a doubly indexed independent Rademacher
-        sequence and $f_k(x_i)$ is the $k$-th component of $f(x_i)$.
+        sequence and $f_k(x_i)$ is the $k$-th component of $f(x_i)$. We use the
+        shortcut notation $\sum_{i=1,k}^N$ which stands for
+        $\sum_{i=1}^N\sum_k$.
     \end{proposition}
-    From now on, we consider functions $f\in\mathcal{H}_K$ a \acl{vv-RKHS}. Then
-    there exists an induced feature-map $\Phi:~\mathcal{X}\to
+    From now on, we consider functions $f\in\mathcal{H}_K$ a \acl{vv-RKHS}.
+    Then there exists an induced feature-map $\Phi:~\mathcal{X}\to
     \mathcal{L}(\mathcal{Y}, \mathcal{H})$ such that for all $y,
     y'\in\mathcal{Y}$ the kernel is given by
     \begin{dmath*}
@@ -168,7 +170,7 @@ $\tildeK{\omega}$).
     $\mathcal{H}_K$ by means of the \emph{feature operator}
     $(W\theta)(x)\colonequals(\Phi_x^*\theta)$. Indeed $W$ defines a partial
     isometry between $\mathcal{H}$ and $\mathcal{H}_K$. Suppose that
-    $\mathcal{Y}$ a is separable Hilbert space and let the class of
+    $\mathcal{Y}$ is a separable Hilbert space and let the class of
     $\mathcal{Y}$-valued functions $F$ be
     \begin{dmath*}
         \mathcal{F}=\Set{f | f:~x \mapsto (W \theta)(x), \enskip
@@ -178,7 +180,7 @@ $\tildeK{\omega}$).
     \cref{pr:radswap} and if $K$ is trace class, we have
     \begin{dmath*}
         \expectation \sup_{\norm{\theta}_{\mathcal{H}}<B} \sum_{i=1}^N
-        \epsilon_i c_{y_i}(\Phi_{x_i}^\adjoint \theta) 
+        \epsilon_i c_{y_i}(\Phi_{x_i}^\adjoint \theta)
         \le \sqrt{2}L\expectation \sup_{\norm{\theta}_{\mathcal{H}}<B}
         \sum_{i=1,k}^{i=N}\epsilon_{ik}\inner{\Phi_{x_i}^\adjoint \theta, e_k}
         = \sqrt{2}L\expectation \sup_{\norm{\theta}_{\mathcal{H}}<B}
@@ -189,7 +191,7 @@ $\tildeK{\omega}$).
     \begin{dmath}
         \label{eq:ker_bound}
         \expectation \sup_{\norm{\theta}_{\mathcal{H}}<B} \sum_{i=1}^N
-        \epsilon_i c_{y_i}(\Phi_{x_i}^\adjoint \theta) 
+        \epsilon_i c_{y_i}(\Phi_{x_i}^\adjoint \theta)
         \le \sqrt{2}LB\expectation
         \norm{\sum_{i=1,k}^{i=N}\epsilon_{ik}\Phi_{x_i}e_k}_{\mathcal{Y}}
         \le \sqrt{2}LB\sqrt{\sum_{i=1,k}^{i=N}
@@ -198,9 +200,10 @@ $\tildeK{\omega}$).
         \le \sqrt{2}LB\sqrt{N}\sqrt{\sup_{x\in\mathcal{X}}\Tr\left[ K(x,
         x)\right]}.
     \end{dmath}
-    From \citet{maurer2016vector, bartlett2002rademacher},
+    Then we apply the following theorem (\cref{th:gen_rad_bound}) from
+    \citet{maurer2016vector, bartlett2002rademacher} to conclude.
     \begin{theorem}
-        \label{th:gen_rad_bound} 
+        \label{th:gen_rad_bound}
         Let $\mathcal{X}$ be any set, $\mathcal{F}$ a class of functions
         $f:~\mathcal{X}\to[0, C]$ and let $X_1, \hdots, X_N$ be a sequence of
         \acs{iid} random variables with value in $\mathcal{X}$. Then for
@@ -253,9 +256,9 @@ $\norm{f}_{\mathcal{H}_K}\le \sqrt{\frac{2}{\lambda}}\sigma_y$, where
     \frac{1}{N}\sum_{i=1}^N\norm{y_i}_{\mathcal{Y}}^2 \le \sigma_y^2
     \hiderel{\le} C^2.
 \end{dmath*}
-Thus we straight away see that it is possible to choose
+Thus we see straight away that it is possible to choose
 $B=\sqrt{\frac{2}{\lambda}} C$. Let $\kappa =
-\norm{\tildeK{\omega}_e(e)}_{\mathcal{Y}, \mathcal{Y}}$ The Lipschitz constant
+\norm{\tildeK{\omega}_e(e)}_{\mathcal{Y}, \mathcal{Y}}$ the Lipschitz constant
 of the least square loss $c(f_{\seq{s}}(x), y)=\frac{1}{2}\norm{f_{\seq{s}}(x)
 - y}_{\mathcal{Y}}^2$ with respect to $f_{\seq{s}}(x)$ is
 $L=\max\left(\sqrt{\frac{2\kappa}{\lambda}}C, C\right)$ and the loss takes
@@ -264,12 +267,13 @@ $\lambda < 2\kappa$ and \cref{ass:bounded_trace}, and
 \cref{ass:bounded_outputs}, \cref{pr:ovk_gen} applies especially that  for any
 $f_{\seq{s}}\in\mathcal{H}_K$, solution of \cref{alg:close_form},
 \begin{dmath}
+    \label{eq:rademacher}
     \risk{f_{\seq{s}}} \le \riskemp{f_{\seq{s}}, \seq{s}}  +
     8\frac{C^2}{\lambda}\sqrt{\frac{\kappa}{N}}\left( T^{1/2} +
     \sqrt{\frac{\kappa\ln(1/\delta)}{2}}\right).
 \end{dmath}
 This bound is to be compared to the results of \citet{kadri2015operator} in the
-context of $\beta$-stability. 
+context of $\beta$-stability.
 \subsection{Algorithm stability}
 \label{sec:algorithm_stability}
 The approach to generalization bounds presented in
@@ -280,17 +284,17 @@ the hypothesis space\mpar{Other methods using covering numbers
 of the hypothesis space.} using Ra\-de\-ma\-cher complexity. On the other hand,
 the idea of stability is that a reliable algorithm should not change its
 solution too much if we modify slightly the training data. Given a training
-sequence 
+sequence
 \begin{dmath*}
     \seq{s}=\left((x_1, y_1), \dots (x_N, y_N)\right) \hiderel{\in}
     (\mathcal{X}\times\mathcal{Y})^N,
 \end{dmath*}
-we note $\seq{s}^{\setminus i}$ the training sequence 
+we note $\seq{s}^{\setminus i}$ the training sequence
 \begin{dmath*}
-    \seq{s}^{\setminus i}=\left((x_1, y_1), \dots, (x_{i-1}, y_{i-1}), \dots,
-    (x_{i+1}, y_{i+1}) (x_N, y_N)\right) \hiderel{\in}
+    \seq{s}^{\setminus i}=\left((x_1, y_1), \dots, (x_{i-1}, y_{i-1}),
+    (x_{i+1}, y_{i+1}), \dots, (x_N, y_N)\right) \hiderel{\in}
     (\mathcal{X}\times\mathcal{Y})^N,
-\end{dmath*} 
+\end{dmath*}
 the subsequence of $\seq{s}$ from which we removed the $i$-th element.
 \begin{definition}[Uniform stability {\citet[definition
 6]{bousquet2002stability}}]
@@ -312,9 +316,9 @@ with generalization. Indeed if an algorithm has $\beta$-stability, and a
     stability $\beta$ with respect to a loss $L$ that satisfies
     \cref{ass:bounded_loss}. Then $\forall N\in\mathbb{N}^*$, $\forall \delta
     \in (0, 1)$, the following bound holds with probability at least $1-\delta$
-    over the \acs{iid} drawn training smaples $\seq{s}$.
+    over the \acs{iid} drawn training samples $\seq{s}$.
     \begin{dmath*}
-        \risk{f_{\seq{S}}} \le \riskemp{f_{\seq{s}}, \seq{s}} + 2\beta +
+        \risk{f_{\seq{s}}} \le \riskemp{f_{\seq{s}}, \seq{s}} + 2\beta +
         (4N\beta + \xi) \sqrt{\frac{\ln(1/\delta)}{2N}}.
     \end{dmath*}
 \end{theorem}
@@ -326,11 +330,25 @@ Moreover \cref{ass:bounded_loss} holds with $\xi=\sigma^2 / 2$, where
 $\sigma=\sigma_y(1 + \kappa/\sqrt{\lambda})$.  Thus another generalization bound
 for \cref{alg:close_form} is
 \begin{dmath}
+    \label{eq:stability}
     \risk{f_{\seq{s}}} \le \riskemp{f_{\seq{s}}, \seq{s}}  + \frac{\kappa^2 C^2
     \left(1 + \frac{\kappa}{\sqrt{\lambda}} \right)^2 }{\lambda N} + C^2\left(
     1 + \frac{\kappa}{\sqrt{\lambda}} \right)^2\left( \frac{4\kappa^2}{\lambda}
     + 1 \right)\sqrt{\frac{\ln(1/\delta)}{2N}}.
 \end{dmath}
+Although both bounds have a convergence rate in $O(N^{1/2})$, an importance
+difference between the bound \cref{eq:rademacher} and the bound
+\cref{eq:stability} is that in \cref{eq:stability} $C$, $\kappa$ and $\lambda$
+play a role, while \cref{eq:rademacher} add also the trace constant $T$. This
+means that \cref{eq:rademacher} is less general than \cref{eq:rademacher}
+because when $\mathcal{Y}$ is infinite dimensional, $\kappa$ is always well
+defined, while the trace $T$ can be possibly infinite. On the other hand
+\cref{eq:rademacher} is a simpler bound, with a better behaviour in $\lambda$
+when $\lambda<1$. Indeed \cref{eq:rademacher} is a bound in $O(\lambda^{-1})$
+while \cref{eq:stability} is in $O((\lambda\sqrt{\lambda})^{-1})$. Thus the
+choice between \cref{eq:stability} and \cref{eq:rademacher} has to be done
+according the the kind of \acs{OVK} used, as well as the regularization
+parameter $\lambda$.
 
 %------------------------------------------------------------------------------
 \section{Consistency of learning with ORFF}
@@ -340,10 +358,10 @@ the function class $\mathcal{F}$.  The quantity of interest is:
 \begin{dmath*}
     \risk{\widetilde{f}_{\seq{s}}} - \min_{f\in\mathcal{F}} \risk{f}.
 \end{dmath*}
-In other words, we quantify the difference between risk of the optimal solution
-belonging to a given class of function $\mathcal{F}$, and the risk given a
-solution $f_{\seq{s}}$ returned by some learning algorithm.  Here to derive a
-consistency result, we study an algorithm slightly different from
+In other words, we quantify the difference between the risk of the optimal
+solution belonging to a given class of functions $\mathcal{F}$, and the risk
+given a solution $f_{\seq{s}}$ returned by some learning algorithm.  Here to
+derive a consistency result, we study an algorithm slightly different from
 \cref{alg:close_form}.  Given a loss function
 $L:\mathcal{X}\times\mathcal{F}\times\mathcal{Y}\to\mathbb{R}_+$ and its
 canonical cost function $c(f(x),y)\colonequals L(x, f, y)$ such that $c$ is
@@ -352,7 +370,7 @@ $\tildePhi{\omega}(x):\mathcal{Y} \to \Vect_{j=1}^D \mathcal{Y}'$ thanks to the
 algorithm
 \begin{dmath}
     \label{eq:alg_generalization}
-    \theta_{\seq{s}} = 
+    \theta_{\seq{s}} =
     \begin{cases}
         \argmin_{\theta\in\Vect_{j=1}^D\mathcal{Y}'} & \frac{1}{N} \sum_{i=1}^N
         c(\tildePhi{\omega}(x)^\adjoint \theta) \\
@@ -368,14 +386,14 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
 \begin{proposition}
     \label{pr:consistency_algorithm_generalization}
     Let $\Phi_x=\pairing{x, \cdot}B(\cdot)$ be a Fourier feature such that
-    there exists a constant $T\in\mathbb{R}_+$ such that 
+    there exists a constant $T\in\mathbb{R}_+$ such that
     \begin{dmath*}
         \esssup_{\omega\in\dual{\mathcal{X}}} \Tr\left[A(\omega)\right] < T
     \end{dmath*}
     and a constant $u\in\mathbb{R}_+$ such that
     \begin{dmath*}
-        \esssup_{\omega\in\dual{\mathcal{X}}} \norm{A(\omega)}^2_{\mathcal{Y},
-        \mathcal{Y}} < u.
+        \esssup_{\omega\in\dual{\mathcal{X}}}
+        \sqrt{\norm{A(\omega)}^2_{\mathcal{Y}, \mathcal{Y}}} < u.
     \end{dmath*}
     where $A(\omega)=B(\omega)B(\omega)^\adjoint$.  Let $\rho$ be the density
     of a probability distribution with respect to the Haar measure $\Haar$ and
@@ -402,9 +420,9 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
     vectors $(\omega_j)_{j=1}^D$.
 \end{proposition}
 \begin{proof}
-    We follow the proof idea of \citet{rahimi2009weighted} in the scalar case and adapt it to the vector-valued case
-    in the light of the results of \citet{maurer2016vector}. We first define 
-    the two following sets.
+    We follow the proof idea of \citet{rahimi2009weighted} in the scalar case
+    and adapt it to the vector-valued case in the light of the results of
+    \citet{maurer2016vector}. We first define the two following sets.
     \begin{dmath*}
         \mathcal{F} = \Set{f | f: x\mapsto \int_{\dual{\mathcal{X}}}
         \Phi_x(\omega)^\adjoint\theta(\omega)d\dual{\Haar}(\omega), \enskip
@@ -437,7 +455,7 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
         $f_*(x)=\int_{\mathcal{X}}\conj{\pairing{x,
         \omega}}B(\omega)\theta(\omega)d\dual{\Haar}(\omega)$. Construct the
         functions $f_j=\pairing{\cdot, \omega_j}B(\omega_j)\beta_j$ with
-        $\beta_k\colonequals \frac{\theta(\omega_j)}{\rho(\omega)}$, so that
+        $\beta_j\colonequals \frac{\theta(\omega_j)}{\rho(\omega)}$, so that
         $\expectation_{\rho, \dual{\Haar}} f_j = f_*$ pointwise. Let
         \begin{dmath*}
             \widetilde{f}(x) = \sum_{j=1}^D\Phi_x(\omega_j)^\adjoint
@@ -452,7 +470,7 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
             \norm{\conj{\pairing{\cdot,
             \omega_j}}B(\omega_j)\beta_j}_{L^2(\mathcal{X},\mu;\mathcal{Y})} \le
             \esssup_{\omega\in\dual{\mathcal{X}}}
-            \norm{B(\omega)B(\omega)^\adjoint}^2_{\mathcal{Y},\mathcal{Y}} B.
+            \norm{B(\omega)}_{\mathcal{Y},\mathcal{Y}} B.
         \end{dmath*}
         We introduce the following technical lemma of
         \citet{rahimi2009weighted} for concentration of random variable in
@@ -481,11 +499,11 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
         $u\in\mathbb{R}_+$ such that
         \begin{dmath*}
             \esssup_{\omega\in\dual{\mathcal{X}}}
-            \norm{A(\omega)}^2_{\mathcal{Y}, \mathcal{Y}} \le u.
+            \sqrt{\norm{A(\omega)}_{\mathcal{Y}, \mathcal{Y}}} \le u.
         \end{dmath*}
         If $(\omega_j)_{j=1}^D$ are \acs{iid} random variables
         drawn from a probability distribution of density $\rho$, then for any
-        $\delta\in(0, 1)$ there exits, with probability $1-\delta$ over
+        $\delta\in(0, 1)$ there exists, with probability $1-\delta$ over
         $(\omega_j)_{j=1}^D$, a function $\widetilde{f} \in
         \widetilde{\mathcal{F}}$ such that
         \begin{dmath*}
@@ -503,8 +521,8 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
             \le L\expectation_{\mu} \norm{f(x) - g(x)}_{\mathcal{Y}}
             \le L \sqrt{\expectation_{\mu} \norm{f(x) - g(x)}^2_{\mathcal{Y}}}.
         \end{dmath*}
+        apply \cref{pr:existence_approx} to conclude.
     \end{proof}
-    apply \cref{pr:existence_approx} to conclude.
     \begin{proposition}[Bound on the estimation error]
         \label{pr:estimation_bound}
         Let $c_y:\mathcal{Y} \to [0; C]$ be a $L$-Lipschitz cost function
@@ -545,13 +563,14 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
         \risk{\widetilde{f}} - \risk{f_*} = \risk{\widetilde{f}} -
         \risk{\widetilde{f}_*} + \risk{\widetilde{f}_*} - \risk{f_*}.
     \end{dmath}
-    The first difference in the right hand side of the equation is The
+    The first difference in the right hand side of the equation is the
     estimation error. By \cref{pr:estimation_bound}, with probability
-    $1-\delta$, $\risk{\widetilde{f}_*} - \riskemp{\widetilde{f}_*}\le
+    $1-\delta$, $\risk{\widetilde{f}_*} - \riskemp{\widetilde{f}_*, \seq{s}}\le
     \epsilon_{est}$ and simultaneously, $\risk{\widetilde{f}} -
-    \riskemp{\widetilde{f}} \le \epsilon_{est}$. By optimality of
-    $\widetilde{f}$, $\riskemp{\widetilde{f}} \le \risk{\widetilde{f}_*}$.
-    Combining these facts, with probability $1 - \delta$,
+    \riskemp{\widetilde{f}, \seq{s}} \le \epsilon_{est}$. By optimality of
+    $\widetilde{f}$, $\riskemp{\widetilde{f}, \seq{s}} \le
+    \risk{\widetilde{f}_*}$.  Combining these facts, with probability $1 -
+    \delta$,
     \begin{dmath*}
         \risk{\widetilde{f}} - \risk{\widetilde{f}_*} \le
         4\sqrt{\frac{2}{N}}\left( LBT^{1/2} + C\sqrt{\ln(2/\delta)}\right)
@@ -590,13 +609,13 @@ vector $\theta$ such that $\norm{\theta_j}_{\mathcal{Y}} <
 \sqrt{\frac{2}{\lambda D}} \sigma_y$, where $\sigma_y^2=\frac{1}{N}\sum_{i=1}^N
 \norm{y_i}^2_{\mathcal{Y}}$. Thus if $\widetilde{f}_{\seq{s}}$ is a solution of
 \cref{alg:close_form}, we do not have
-$\widetilde{f}_{\seq{s}}\in\widetilde{\mathcal{F}}$. \acs{ie} the Tichonov
-regularization is not \say{powerfull} enough to guarantee that
+$\widetilde{f}_{\seq{s}}\in\widetilde{\mathcal{F}}$, \acs{ie} the Tychonov
+regularization is not \say{powerful} enough to guarantee that
 $\widetilde{f}_{\seq{s}}$ belongs to $\widetilde{\mathcal{F}}$. One could argue
 that we could choose $\lambda = O(\sqrt{D})$ to obtain consistency with
 Tychonov regularization, however this makes little sense since in this case if
 $D\to\infty$ then $\lambda \to \infty$ the \cref{alg:close_form} will always
-return $\widetilde{f}_{\seq{s}}=0$. 
+return $\widetilde{f}_{\seq{s}}=0$.
 \paragraph{}
 While the bound in \cref{pr:consistency_algorithm_generalization} shows the
 consistency of learning with \acs{ORFF} it still has low and possibly
@@ -611,12 +630,12 @@ suggests that the number of features $D$ to guarantee an error below some
 constant is linked to the decrease rate of the eigenvalues of the Mercer
 decomposition of scalar-valued kernel $k$. If the eigenvalues decrease in
 $O(m^{-2s})$ then the error is in $O\left(\log(D)^s D^{-s}\right)$. Lastly the
-new results of \citet{rudi2016generalization} shows that for scalar-valued
+new results of \citet{rudi2016generalization} show that for scalar-valued
 kernels, the kernel ridge regression algorithm (which is \cref{alg:close_form}
 with $A = 1$) generalizes optimality with a number of features $D=O(\sqrt{N})$.
 Thus the time complexity required for optimal generalization with \acsp{RFF} in
 the case of kernel ridge regression is $O(ND^2)=O(N^{2})$ and the space
 complexity is in $O(N^{1.5})$, if the random features are all stored and not
-computed in an online fashion\mpar{See \cref{subsec:complexity}.}.
+computed, on the fly, in an online fashion\mpar{See \cref{subsec:complexity}.}.
 
 \chapterend

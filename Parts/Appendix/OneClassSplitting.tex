@@ -100,8 +100,8 @@ Isolation Forest algorithm isolates anomalies, instead of profiling the inlier
 behavior which is the usual approach. It avoids adapting splitting rules to
 the one-class setting by using extremely randomized trees, also named extra
 trees \citep{Geurts2006}: isolation trees are built completely randomly,
-without any splitting rule. 
-% chosing one feature and one uniform value over this feature to split on. 
+without any splitting rule.
+% chosing one feature and one uniform value over this feature to split on.
 Therefore, Isolation Forest is not really based on \acp{RF}, the base
 estimators being extra trees instead of classical decision trees. Isolation
 Forest performs very well in practice with low memory and time complexities.
@@ -182,7 +182,7 @@ tree structure (designed to allow a statistical study) which differs then
 significantly from the general structure of the base estimators in \ac{RF}. The
 price to pay is the flexibility of the model, and its ability to capture
 complex broader patterns or structural characteristics from the data.
-\paragraph{} 
+\paragraph{}
 In this paper, we make the choice to stick to the \ac{RF} framework. We
 do not assume any structure for the binary decision trees. The price to pay is
 the lack of statistical guaranties --the consistency of \acp{RF} has only been
@@ -195,9 +195,9 @@ adaptive way during the tree building process.
 \paragraph{}
 To the best of our knowledge, no algorithm structurally extends (without second
 class sampling and without alternative base estimators) \acp{RF} to one-class
-classification. %, as OCSVM does for standard SVM.  Here we precisely % 
+classification. %, as OCSVM does for standard SVM.  Here we precisely %
 The main purpose of this work is to introduce such a methodology. It builds on
-a natural adaptation of two-class 
+a natural adaptation of two-class
 % Gini improvement proxy, yielding a one-class
 Gini-based criterion specially designed for splitting criteria to the one-class
 setting, as well as an adaptation of the two-class majority vote.
@@ -284,7 +284,7 @@ In a two-class classification setup, the Gini index is
 \begin{dmath}
     \label{ocrf:eq:gini}
     i_G(t) = 2\left(\frac{n_t}{n_t + n_t'}\right) \left( \frac{n_t'}{n_t +
-    n_t'}\right) 
+    n_t'}\right)
     %= 1 - \frac{n_t^2 + n_t'^2}{(n_t + n_t')^2},
 \end{dmath}
 where $n_t$ (respectively $n_t'$) stands for the number of observations with
@@ -315,7 +315,7 @@ corresponding proxy of the impurity decrease is
 \end{dmath}
 %
 In the one-class setting, no label is available, hence the impurity measure
-$i(t)$ 
+$i(t)$
 % \Cref{ocrf:eq:impurity_measure_decrease}
 does not apply to this setup. The standard splitting criterion which consists
 in minimizing the latter cannot be used anymore.
@@ -449,7 +449,7 @@ a one-class version of the majority vote.
 
   %% splits
   \draw[color=orange,thick] (-7.9,1.5) -- (-1.65,1.5);
-  
+
   \node[color=orange] at (-7.2,1.8){G};
   \node[color=niceblue] at (-4.8,3){F};
 
@@ -575,7 +575,7 @@ number of --hidden-- outliers.
 In the adaptive approach hereafter, it is defined as $n_t' \colonequals \gamma
 n_t$, with typically $\gamma=1$. Thus, the class ratio $\gamma_t \colonequals
 n_t'/n_t$ is well defined in both approaches and in the naive approach, goes to
-$0$ when $\Leb(\mathcal{X}_t) \to 0$ while it is maintained constant 
+$0$ when $\Leb(\mathcal{X}_t) \to 0$ while it is maintained constant
 % $\gamma_t \equiv$ to
 to $\gamma$ in the adaptive one.
 
@@ -611,7 +611,7 @@ nodes produces a child containing (almost) all the data (see
 \cref{sec:ocrf:theory}).
 %
 \begin{example}
-    To illustrate the fact that the volume proportion 
+    To illustrate the fact that the volume proportion
     \begin{dmath*}
         L_t\colonequals \frac{\Leb(\mathcal{X}_t)}{\Leb(\mathcal{X})}
     \end{dmath*}
@@ -627,7 +627,7 @@ nodes produces a child containing (almost) all the data (see
     problem of unbalanced classes appears on nodes with small depth.
 \end{example}
 
-\subsubsection{Adaptive approach} 
+\subsubsection{Adaptive approach}
 Our solution is to remove the uniform assumption on
 the outliers, and to choose their distribution adaptively in such a way it is
 tightly concentrated around the inlier distribution. Formally, the idea is to
@@ -776,7 +776,7 @@ optimal splits).
 the dataset under study and the underlying density.  The node $\mathcal{X}_t$
 obtained after some splits is illustrated in the right part of this figure:
 without the proposed adaptive approach, the class ratio $\gamma_t$ becomes too
-small and yields poor splits 
+small and yields poor splits
 %(normal data are condensed on a very small volume)
 (all the data are in the \say{inlier side} of the split, which thus does not
 discriminate at all).  Contrariwise, setting $\gamma$ to one, \acs{ie}~using
@@ -849,7 +849,7 @@ discriminate $F$ from itself (a perfect approximation, $\epsilon \to 0$).
 %\begin{remark}({\sc By-product: Efficiently generating outliers})
 \begin{remark}({Consistency with the two-class framework})
     Consider the following method to generate outliers --tightly concentrated
-    around the support of the inlier distribution. 
+    around the support of the inlier distribution.
     % it suffices to generate them as described above, recursively during the
     % tree building process.
     Sample uniformly $n'= \gamma n$ outliers on the rectangular cell containing
@@ -858,7 +858,7 @@ discriminate $F$ from itself (a perfect approximation, $\epsilon \to 0$).
     three following steps: for each node $t$, remove the potential outliers
     inside  $\mathcal{X}_t$, re-sample $n_t'=\gamma n_t$ uniform outliers on
     $\mathcal{X}_t$, and use the latter to find the best split using
-    \Cref{ocrf:tc_proxy}. 
+    \Cref{ocrf:tc_proxy}.
     %, and start again on $\mathcal{X}_{t_L}$ and $\mathcal{X}_{t_R}$.
     Then, each optimization problem \cref{ocrf:tc_proxy} we have solved is
     equivalent (in expectation) to its one-class version
@@ -922,8 +922,8 @@ splits the input space into inlier/normal and outlier/abnormal regions.
 %We propose three natural scoring functions of a forest.
 The scoring function $s(x)$ we use is the one defined in \citet{Liu2008} in
 view of its established high performance. It is a decreasing function of the
-average depth of the leaves containing $x$ in the forest. 
-%, `if the trees were fully grown': 
+average depth of the leaves containing $x$ in the forest.
+%, `if the trees were fully grown':
 An average term is added to each node containing more than one sample, say
 containing $N$ samples. This term $c(N)$ is the average depth of an extremely
 randomized tree \citep{Geurts2006} (\acs{ie}~built without minimizing any
@@ -1015,9 +1015,9 @@ Remarks on alternative stopping criteria and variable importances are available
 in \cref{supp:stopping_criteria}.
 \paragraph{}
 \Cref{ocrf:fig:oneclassrf} represents the level sets of the scoring function
-produced by \ac{OneClassRF}, with only one tree 
+produced by \ac{OneClassRF}, with only one tree
 % ($n\textunderscore trees$$=1$)
-of maximal depth $4$, 
+of maximal depth $4$,
 % $max\textunderscore depth$=4
 without sub-sampling, and using the Gini-based one-class splitting criterion
 with $\gamma=1$.
@@ -1099,7 +1099,7 @@ The default parameters taken for our algorithm are the followings.
     \item \texttt{max\textunderscore depth} is fixed to $\log_2$ (logarithm in
     base $2$) of the training sample size as in \citet{Liu2008};
     \item \texttt{n\textunderscore trees} is fixed to $100$ as in the previous
-    reference. 
+    reference.
 \end{itemize}
 %and parameter $s_i$ is set to $s_3$ as defined in \eqref{ocrf:eq:scoring3}.
 \paragraph{}
@@ -1167,7 +1167,7 @@ literature (see \cref{supp:dataset_description}).
             0.995 & 0.890 & 0.782 & 0.996    & 0.956     & \acs{NA} & \acs{NA}
             \\ smtp         &        0.922 & 0.499 & 0.907 & 0.005 & \acs{NA} &
             \acs{NA} & 0.881 & \textbf{0.656} & \textbf{0.924} & 0.149 & 0.782
-            & 0.142 &  0.877    & 0.381     & \acs{NA} & \acs{NA} \\ 
+            & 0.142 &  0.877    & 0.381     & \acs{NA} & \acs{NA} \\
             spambase &        \textbf{0.850} & 0.373 & 0.824 & 0.372 & 0.797 &
             \textbf{0.485} & 0.737 & 0.208 & 0.746 & 0.160 & 0.631 & 0.252 &
             0.806 & 0.330     & 0.723 & 0.151 \\
@@ -1192,7 +1192,7 @@ literature (see \cref{supp:dataset_description}).
 \subsection{Results}
 All the code is available at \url{https://github.com/ngoix/OCRF}. The
 experiments are performed in the novelty detection framework, where the
-training set consists of inliers only. 
+training set consists of inliers only.
 %We removed anomalies from the training data.
 No significance level test are given, but experiements or each algorithm are
 repeated $10$ times on random training and testing datasets are performed,
@@ -1219,7 +1219,7 @@ terms of \acs{ROC} \acsp{AUC}, and is also the best in average.
 %\footnote{Precision-Recall AUCs have also been computed and are
 %available in the supplementary material.},
 Computation times (training plus testing) of \ac{OneClassRF} are also very
-competitive. 
+competitive.
 % (see supplementary material).
 %In the unsupervised settings, OneClassRF and iForest have similar performances
 %in terms of AUCs (ROC and PR), but OneClassRF still uses less computation
@@ -1255,7 +1255,7 @@ into training and testing sets).
 %
 %
 %
-\section{Theoretical analysis} 
+\section{Theoretical analysis}
 %justification for the one-class splitting criterion}
 \label{sec:ocrf:theory}
 This section aims at recovering \cref{ocrf:oc_proxy_ad2} from a natural
@@ -1274,7 +1274,7 @@ space $(\Omega, \mathcal{F}, \probability)$. The law of $X$ depends on another
 \acs{rv}~$y \in \{0,1\}$, verifying
 $\probability\Set{y=1}=1-\probability\Set{y=0}=\alpha$.  We assume that
 conditionally on $y=0$, $ X$ follows a law $F$, and conditionally on $y=1$ a
-law $G$; 
+law $G$;
 %To summarize:
 \begin{dgroup*}
 \begin{dmath*}
@@ -1292,7 +1292,7 @@ Then, considering
 \end{dmath*}
 and
 \begin{dmath*}
-    p(t_R | t) = \probability\Set{X\in \mathcal{X}_{t_R} | X\in \mathcal{X}_t}, 
+    p(t_R | t) = \probability\Set{X\in \mathcal{X}_{t_R} | X\in \mathcal{X}_t},
 \end{dmath*}
 the population version (probabilistic version) of
 \Cref{ocrf:eq:impurity_measure_decrease} is
@@ -1333,7 +1333,7 @@ distribution with parameters $(n, p)$.  As outliers are not observed, it is
 natural to assume that $G$ follows a uniform distribution on the
 hyper-rectangle $\mathcal{X}$ containing all the observations, so that $G$ has
 a constant density $g(\cdot) = 1 / \Leb(\mathcal{X})$ on $\mathcal{X}$.
-%laisser une ligne car fin du model one class 
+%laisser une ligne car fin du model one class
 Note that this assumption \emph{will be removed} in the adaptive approach
 described below -- which aims at maintaining a non-negligible proportion of
 (hidden) outliers in every nodes.
@@ -1421,10 +1421,10 @@ $\gamma_t=n_t'/n_t$ is then equal to
 %\frac{\alpha n L_{t_R}}{1 + \gamma_{t_R}} ~~\simeq~~ \alpha n L_{t_L} + \alpha
 %n L_{t_R} ~~=~~ \alpha n L_{t}, \end{align} $\alpha n L_{t}$ being constant
 %when the split varies. We have used the notation %$\gamma_t$ is
-\begin{align}
+\begin{dmath}
     \label{ocrf:def:gamma_t}
     \gamma_t = \alpha n L_t / n_t.
-\end{align}
+\end{dmath}
 This class ratio is close to $0$ for lots of nodes $t$, which makes the Gini
 criterion unable to discriminate accurately between the --hidden-- outliers and
 the inliers.
@@ -1483,7 +1483,7 @@ considering One-Class-Model($n(L_t)$, $\alpha(L_t)$) \emph{before searching the
 best split}. We still consider the $N$ inliers as a realization of this model.
 When growing the tree, using One-Class-Model($n(L_t)$, $\alpha(L_t)$) allows to
 maintain a non-negligible expected proportion of outliers in the node to be
-split, 
+split,
 % minimizing \eqref{ocrf:oc_proxy_ad1}
 despite $L_t$ becomes close to zero.  Of course, constraints have to be imposed
 to ensure consistency between these models.
@@ -1496,7 +1496,7 @@ natural constraint on $\left(n(L_t), \alpha(L_t)\right)$ is
     (1-\alpha)n = \left(1-\alpha(L_t)\right) \cdot n(L_t) \condition{for all
     $t$,}
 \end{dmath}
-so that the expectation of $\mathbf{N}$ remains unchanged. 
+so that the expectation of $\mathbf{N}$ remains unchanged.
 % when our new model depending on $t$ varies. %\ie~$\mathbb{E}(\mb N(L_t)) =
 % \mathbb{E}(N) $ , %denoting $\mb N(L_t) \sim \text{Bin}(1-\alpha(L_t),
 % n(L_t))$ .
@@ -1517,7 +1517,7 @@ so that the expectation of $\mathbf{N}$ remains unchanged.
     outliers have been hidden.
 \end{remark}
 A second natural constraint on $\big(\alpha(L_t), n(L_t)\big)$ is related to
-the class ratio $\gamma_t$. 
+the class ratio $\gamma_t$.
 % defined in \Cref{ocrf:def:gamma_t}, $\mathbb{P}(y = 1~|~X \in \mathcal{X}_t)
 % = \alpha(L_t) n(L_t)  L_t / (n_t + \alpha(L_t) n(L_t)  L_t)$, the ratio
 % between the expected number of (hidden) outliers in node $t$ and the number
@@ -1526,11 +1526,11 @@ the class ratio $\gamma_t$.
 As explained in \cref{sec:one-class-crit}, we do not want $\gamma_t$ to go to
 zero when $L_t$ does.  Let us say we want $\gamma_t$ to be constant for all
 node $t$, equal to $\gamma>0$. From the constraint $\gamma_t = \gamma$ and
-\cref{ocrf:def:gamma_t}, we get 
+\cref{ocrf:def:gamma_t}, we get
 % $n_t'/n(L_t)$, so that
 \begin{dmath}
     \label{ocrf:constraint2}
-    \alpha(L_t) n(L_t) L_t 
+    \alpha(L_t) n(L_t) L_t
     % = \gamma_t n_t
     = \gamma n_t \colonequals n_t'.
 \end{dmath}
@@ -1739,7 +1739,7 @@ $s(x) = \sum_{t \text{~leaves}} \mathds{1}_{\Set{x \in t}}
 \frac{n_t}{\Leb(\mathcal{X}_t)}$.
 % \end{align}
 In such a case, each tree of the forest yields a piece-wise density estimate on
-its induced partition. 
+its induced partition.
 % However, we are only interested in the order induced by this density
 % estimate, and if the average of density estimates should be a good density
 % estimate, this does not remains true for the average of order: in general,
@@ -1793,7 +1793,7 @@ outliers). These options are not discussed in this work.
 In the multiclass setting, \citet{Breiman2001} proposed to evaluate the
 importance of a feature $j \in \Set{1,\ldots d}$ for prediction by
 %computing the following quantity. XXX
-adding up the weighted impurity decreases 
+adding up the weighted impurity decreases
 % $p(t) \Delta I(s_t, t)$
 for all nodes $t$ where $X_j$ is used, averaged over all the trees. The
 analogue quantity can be computed with respect to the one-class impurity
@@ -2007,7 +2007,7 @@ the pairwise median trick by default \citep{jaakkola1999using})
 The characteristics of the twelve reference datasets considered here are
 summarized in \cref{ocrf:table:data}. They are all available on the \acs{UCI}
 repository \citep{Lichman2013} and the preprocessing is done in a classical
-way. 
+way.
 %, excepting for the \emph{adult} dataset. For the latter, we considered the 6
 %continuous features.
 In anomaly detection, we typically have data from two class (inliers/outliers)
@@ -2019,7 +2019,7 @@ class.
 \paragraph{}
 We removed all categorial attributes. Indeed, our method is designed to handle
 data whose distribution is absolutely continuous \acs{wrt}~the Lebesgue
-measure. 
+measure.
 % If this is not the case but there is still a suffiently large number of
 % different values (say, greater than 10), it is still worth testing our method
 % with this kind of data.
@@ -2032,10 +2032,10 @@ background). They are classically obtained as described in
 \emph{scikit-learn} library \citep{pedregosa2011scikit}. The \emph{shuttle}
 dataset is the fusion of the training and testing datasets available in the
 \acs{UCI} repository. As in \citet{Liu2008}, we use instances from all
-different classes but class $4$. 
+different classes but class $4$.
 %, which yields an anomaly ratio (class 1) of $7.17\%$.
 In the \emph{forestcover} data, the inliers are the instances from class~$2$
-while instances from class $4$ are anomalies (as in \citet{Liu2008}). 
+while instances from class $4$ are anomalies (as in \citet{Liu2008}).
 %, which yields an anomaly ratio of $0.9\%$.
 The \emph{ionosphere} dataset differentiates \say{good} from \say{bad} radars,
 considered here as abnormal. A \say{good} radar shows evidence of some type of
@@ -2435,7 +2435,7 @@ to $10\%$ max (before splitting data into training and testing sets).
             0.929 & 0.917   & 0.915 & 0.773       & 0.943 & 0.725 \\
             pendigits             & 0.453 & 0.085   & 0.463 & 0.077   &
             \textbf{0.999} & 0.993   & 0.366 & 0.066   & 0.491 & 0.086   &
-            0.495 & 0.086   & 0.513 & 0.091       & \acs{NA}   & \acs{NA}   \\ 
+            0.495 & 0.086   & 0.513 & 0.091       & \acs{NA}   & \acs{NA}   \\
             pima & 0.708 & 0.229   & 0.743 & 0.205   & \textbf{0.790} & 0.296 &
             0.706 & 0.226   & 0.670 & 0.137   & 0.585 & 0.170   & 0.686 & 0.190
             & 0.505 & 0.091 \\

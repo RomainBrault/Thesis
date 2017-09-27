@@ -6,17 +6,16 @@ We are now interested in a non-asymptotic analysis of the \ac{ORFF}
 approximation of shift-invariant $\mathcal{Y}$-Mercer kernels on \acs{LCA}
 group $\mathcal{X}$ endowed with the operation group $\groupop$ where
 $\mathcal{X}$ is a Banach space (The more general case where $\mathcal{X}$ is
-a Polish space is discussed in the appendix \cref{subsec:concentration_proof}).
-For a given $D$, we study how close is the
-approximation $\tilde{K}(x,z)=\tildePhi{1:D}(x)^*\tildePhi{1:D}(z)$ to the
-target kernel $K(x,z)$ for any $x,z$ in $\mathcal{X}$.
+a Polish space is discussed in \cref{subsec:concentration_proof}).  For a given
+$D$, we study how close is the approximation
+$\tilde{K}(x,z)=\tildePhi{1:D}(x)^*\tildePhi{1:D}(z)$ to the target kernel
+$K(x,z)$ for any $x,z$ in $\mathcal{X}$.
 \paragraph{}
 If $A\in\mathcal{L}_+(\mathcal{Y})$ we denote
-$\norm{A}_{\mathcal{Y},\mathcal{Y}}$ its operator norm, which amounts to the
-square root of the largest eigenvalue of $A$ when $\mathcal{Y}=\mathbb{R}^p$ is
-finite dimensional. For $x$ and $z$ in some non-empty compact $\mathcal{C}
-\subset \mathbb{R}^d$, we consider: $F(x \groupop \inv{z})
-=\tilde{K}(x,z)-K(x,z)$ and study how the uniform norm
+$\norm{A}_{\mathcal{Y},\mathcal{Y}}$ its operator norm (the induced norm). For
+$x$ and $z$ in some non-empty compact $\mathcal{C} \subset \mathbb{R}^d$, we
+consider: $F(x \groupop \inv{z}) =\tilde{K}(x,z)-K(x,z)$ and study how the
+uniform norm
 \begin{dmath}\label{eq:norm_inf}
     \norm{\tilde{K}-K}_{\mathcal{C}\times\mathcal{C}}
     = \sup_{(x,z)\in\mathcal{C}\times\mathcal{C}}
@@ -47,7 +46,7 @@ err = approximation.main()
 \paragraph{}
 In order to bound the error with high probability, we turn to concentration
 inequalities devoted to random matrices~\citep{Boucheron}. The concentration
-phenomenon can be summarized in the following sentence of
+phenomenon can be summarized by the following sentence of
 \citet{ledoux2005concentration}. \say{A random variable that depends (in a
 smooth way) on the influence of many random variables (but not too much on any
 of them) is essentially constant}.
@@ -59,10 +58,10 @@ kernel $K$, if we are given enough samples to construct $\tildeK{\omega}$, the
 probability of measuring an error greater than $\epsilon$ is essentially zero
 (it drops at an exponential rate with respect to the number of samples $D$). To
 measure the error between the kernel approximation and the true kernel at a
-given point many metrics are possible. \acs{eg} any matrix norm such as the
-Hilbert-Schmidt norm, trace norm, the operator norm or Schatten norms. In this
-work we focus on measuring the error in terms of operator norm. For all $x$,
-$z\in\mathcal{X}$ we look for a bound on
+given point, many metrics are possible. For instance, any matrix norm such as
+the Hilbert-Schmidt norm, trace norm, the operator norm or Schatten norms. In
+this work we focus on measuring the error in terms of operator norm. For all
+$x$, $z\in\mathcal{X}$ we look for a bound on
 \begin{dmath*}
     \probability_{\rho} \Set{(\omega_j)_{j=1}^D | \norm{\tildeK{\omega}(x, z) -
     K(x, z)}_{\mathcal{Y}, \mathcal{Y}} \ge \epsilon }
@@ -76,7 +75,7 @@ operator $\tildeK{\omega} - K$ is able to send $y$ to zero. We believe that
 this way of measuring the \say{error} to be more intuitive. Moreover, on
 contrary to an error measure with the Hilbert-Schmidt norm, the operator norm
 error does not grows linearly with the dimension of the output space as the
-Hilbert-Schmidt norm does. On the other hand the Hilbert-schmidt norm makes the
+Hilbert-Schmidt norm does. On the other hand the Hilbert-Schmidt norm makes the
 studied random variables Hilbert space valued, for which it is much easier to
 derive concentration inequalities \citep{smale2007learning, pinelis1994optimum,
 naor2012banach}. Note that in the scalar case ($A(\omega)= 1$) the
@@ -102,7 +101,7 @@ worst case scenario on all the points in a subset $\mathcal{C}$ of
 $\mathcal{X}$. This bound depends on the covering number
 $\mathcal{N}(\mathcal{C}, r)$ of $\mathcal{X}$ with ball of radius $r$. When
 $\mathcal{X}$ is a Banach space, the covering number is proportional to the
-diameter of the diameter of $\mathcal{C}\subseteq\mathcal{X}$.
+diameter of $\mathcal{C}\subseteq\mathcal{X}$.
 \paragraph{}
 Prior to the presentation of general results, we briefly recall the uniform
 convergence of \acs{RFF} approximation for a scalar shift invariant kernel on
@@ -119,7 +118,7 @@ by~\citet{Rahimi2007} and other authors~\citep{sutherland2015, sriper2015}.
 
 \begin{theorem}[Uniform error bound for \ac{RFF},~\citet{Rahimi2007}]
     \label{rff-scalar-bound}
-    Let $\mathcal{C}$ be a compact of subset of $\mathbb{R}^d$ of diameter
+    Let $\mathcal{C}$ be a compact subset of $\mathbb{R}^d$ of diameter
     $\abs{\mathcal{C}}$. Let $k$ be a shift invariant kernel, differentiable
     with a bounded second derivative and $\probability_{\rho}$ its normalized
     \acl{IFT} such that it defines a probability measure. Let
@@ -144,10 +143,10 @@ We recall that for a given pair $x$, $z$ in $\mathcal{C}$, $\tilde{K}(x,z)=
 $K_0(x-z)=\Gamma \expectation_{\dual{\Haar},\rho}[\tilde{k}(x,z)]$.
 \begin{corollary}[Uniform error bound for decomposable \acs{ORFF}]
     \label{c:dec-bound}
-    Let $\mathcal{C}$ be a compact of subset of $\mathbb{R}^d$ of diameter
+    Let $\mathcal{C}$ be a compact subset of $\mathbb{R}^d$ of diameter
     $\abs{\mathcal{C}}$. Let $K$ be a decomposable kernel built from a positive
-    operator self-adjoint $\Gamma$, and $k$ a shift invariant kernel with bounded
-    second derivative such that
+    operator self-adjoint $\Gamma$, and $k$ a shift invariant kernel with
+    bounded second derivative such that
     \begin{dmath*}
         \widetilde{K}=\sum_{j=1}^D\cos{\inner{\cdot, \omega_j}}\Gamma
         \hiderel{\approx} K \enskip\text{and}\enskip
@@ -165,16 +164,17 @@ $K_0(x-z)=\Gamma \expectation_{\dual{\Haar},\rho}[\tilde{k}(x,z)]$.
 \end{corollary}
 \begin{proof}
     The proof directly extends \cref{rff-scalar-bound} given
-    by~\cite{Rahimi2007}. Let $\tilde{k}$ the Random Fourier approximation for
-    the scalar-valued kernel $k$. Since
+    by~\cite{Rahimi2007}. Let $\tilde{k}$ be the Random Fourier approximation
+    for the scalar-valued kernel $k$. Since
     \begin{dmath*}
         \sup_{(x,z)\in\mathcal{C}\times\mathcal{C}}\norm{\widetilde{K}(x,z) -
         K(x,z)}_{\mathcal{Y},\mathcal{Y}} =
         \sup_{(x,z)\in\mathcal{C}\times\mathcal{C}}
-        \norm{\Gamma}_{\mathcal{Y},\mathcal{Y}} \abs{\widetilde{K}(x,z) - k(x,z)},
+        \norm{\Gamma}_{\mathcal{Y},\mathcal{Y}} \abs{\widetilde{k}(x,z) -
+        k(x,z)},
     \end{dmath*}
-    taking $\epsilon' = \norm{\Gamma}_{\mathcal{Y},\mathcal{Y}} \epsilon$ gives the
-    following result for all positive $\epsilon'$:
+    taking $\epsilon' = \norm{\Gamma}_{\mathcal{Y},\mathcal{Y}} \epsilon$ gives
+    the following result for all positive $\epsilon'$:
     \begin{dmath*}
         \probability_{%
         \rho}\Set{(\omega_j)_{j=1}^D|\sup_{x,z\in\mathcal{C}}\norm{\Gamma
@@ -186,15 +186,15 @@ $K_0(x-z)=\Gamma \expectation_{\dual{\Haar},\rho}[\tilde{k}(x,z)]$.
     \end{dmath*}
     which concludes the proof.
 \end{proof}
-Please note that a similar corollary could have been obtained for the recent
-result of~\citet{sutherland2015} who refined the bound proposed by Rahimi and
-Recht by using a Bernstein concentration inequality instead of the Hoeffding
-inequality. More recently~\citet{sriper2015} showed an optimal bound for
-\acl{RFF}. The improvement of~\citet{sriper2015} is mainly in the constant
-factors where the bound does not depend linearly on the diameter
-$\abs{\mathcal{C}}$ of $\mathcal{C}$ but exhibit a logarithmic dependency
-$\log\left(\abs{\mathcal{C}}\right)$, hence requiring significantly less
-random features to reach a desired uniform error with high probability. Moreover,
+Note that a similar corollary could have been obtained for the recent result
+of~\citet{sutherland2015} who refined the bound proposed by Rahimi and Recht by
+using a Bernstein concentration inequality instead of the Hoeffding inequality.
+More recently~\citet{sriper2015} showed an optimal bound for \acl{RFF}. The
+improvement of~\citet{sriper2015} is mainly in the constant factors where the
+bound does not depend linearly on the diameter $\abs{\mathcal{C}}$ of
+$\mathcal{C}$ but exhibit a logarithmic dependency
+$\log\left(\abs{\mathcal{C}}\right)$, hence requiring significantly less random
+features to reach a desired uniform error with high probability. Moreover,
 \citet{sutherland2015} also considered a bound on the expected max error
 $\expectation_{\dual{\Haar}, \rho} \norm{\widetilde{K}-K}_{\infty}$, which is
 obtained using Dudley's entropy integral~\citep{dudley1967sizes, Boucheron} as
@@ -211,10 +211,11 @@ approximation in the general case. It relies on two main ideas:
 \begin{enumerate}
     \item a matrix-Bernstein concentration inequality for random matrices need
     to be used instead of concentration inequality for scalar random variables,
-    \item a general theorem valid for random matrices with bounded norms such
-    as decomposable kernel \acs{ORFF} approximation as well as un\-bound\-ed
-    norms such as the \acs{ORFF} approximation we proposed for curl and
-    divergence-free kernels that behave as subexponential random variables.
+    \item a general theorem, valid for random matrices with bounded norms (such
+    as decomposable kernel \acs{ORFF} approximation) as well as un\-bound\-ed
+    norms (such as the \acs{ORFF} approximation we proposed for curl and
+    divergence-free kernels, for which the norm behave as subexponential random
+    variables).
 \end{enumerate}
 Before introducing the new theorem, we give the definition of the Orlicz norm
 which gives a proxy-bound on the norm of subexponential random variables.
@@ -329,9 +330,9 @@ Hilbert-Schmidt ($p\le\infty$).
     supposed compact, so is $\mathcal{D}_{\mathcal{C}}$. Its diameter is at
     most $2\abs{\mathcal{C}}$ where $\abs{\mathcal{C}}$ is the diameter of
     $\mathcal{C}$. Since $\mathcal{C}$ is supposed to be a closed ball of a
-    Bochner space tt is then possible to find an $\epsilon$-net covering
-    $\mathcal {C}_{\Delta}$ with at most $T=(4\abs{\mathcal{C}}/r)^d$ balls of
-    radius $r$ \citep{cucker2001mathematical}. We call $\delta_i$ for
+    Banach space it is then possible to find an $\epsilon$-net covering
+    $\mathcal {D}_{\mathcal{C}}$ with at most $T=(4\abs{\mathcal{C}}/r)^d$
+    balls of radius $r$ \citep{cucker2001mathematical}. We call $\delta_i$ for
     $i\inrange{1}{T}$ the center of the $i$-th ball, called \emph{anchors} of
     the $\epsilon$-net. Denote $L_{F}$ the Lipschitz constant of $F$. We
     introduce the following lemma proved in~\cite{Rahimi2007}.
@@ -348,7 +349,8 @@ Hilbert-Schmidt ($p\le\infty$).
             \le\frac{\epsilon}{2}\condition{for all $i\in\mathbb{N}^*_T$}
             \label{condition2_main}
         \end{dmath}
-        then $\norm{F(\delta)}_{\mathcal{Y},\mathcal{Y}} \leq \epsilon$.
+        then $\norm{F(\delta)}_{\mathcal{Y},\mathcal{Y}} \leq \epsilon$ for all
+        $\delta\in\mathcal{D}_{\mathcal{C}}$.
     \end{lemma}
     To apply the lemma, we must check assumptions \cref{condition1_main} and
     \cref{condition2_main}.
@@ -499,6 +501,7 @@ Hilbert-Schmidt ($p\le\infty$).
             p)}\right)\condition{otherwise,}
         \end{cases}
     \end{dmath*}
+    which concludes the sketch of the proof. \hfill\ensuremath{\qed}
 \end{sproof}
 We give a comprehensive full proof of the theorem in
 \cref{subsec:concentration_proof}. It follows the usual scheme derived
@@ -514,7 +517,7 @@ dimension of the input space $\mathcal{X}$ appears in the bound proposed in
 \cref{corr:unbounded_consistency}, and when $d$ tends to infinity, the
 exponential part goes to zero so that the probability is bounded by a
 constant greater than one. Unfortunately, considering unbounded random
-operators \citet{minsker2011some} doesn't give any tighter solution.
+operators \citep{minsker2011some} does not give any tighter solution.
 \paragraph{}
 In our first bound presented at \acs{ACML}, we presented a bound based on a
 matrix concentration inequality for unbounded random variable. Compared to this
@@ -524,8 +527,8 @@ dimension of the operator $A(\omega)$. However to remove the dependency in $p$
 in the exponential part, we must turn our attention to operator concentration
 inequalities for bounded random variable. To the best of our knowledge we are
 not aware of concentration inequalities working for \say{unbounded} operator-
-valued random variables. Following the same proof than
-\cref{corr:unbounded_consistency} we obtain
+valued random variables acting on infinite dimensional spaces. Following the
+same proof than \cref{corr:unbounded_consistency} we obtain
 \begin{corollary}
     \label{corr:bounded_infinite_dim_consistency}
     Let $K:\mathcal{X}\times\mathcal{X}\to\mathcal{L}(\mathcal{Y})$ be a
@@ -586,7 +589,7 @@ of the appendix. Notice that in this result, The dimension
 $p=\dim{\mathcal{Y}}$ does not appear. Only the intrinsic dimension of the
 variance of the estimator. Moreover when $d$ is large, the term
 $p_{int}^{\frac{1}{d + 1}}$ goes to one, so that the impact of the intrinsic
-dimension on the bound is limited.
+dimension on the bound vanish when the dimension of the input space is large.
 
 \subsection{Variance of the \acpdfstring{ORFF} approximation}
 We now provide a bound on the norm of the variance of $\tilde{K}$, required to
@@ -594,7 +597,8 @@ apply \cref{corr:unbounded_consistency,corr:bounded_infinite_dim_consistency}.
 This is an extension of the proof of \citet{sutherland2015} to the
 operator-valued case, and we recover their results in the scalar case when
 $A(\omega)=1$. An illustration of the bound is provided in
-\cref{fig:approximation_error_var} for the decomposable and the curl-free
+\cref{fig:approximation_error_var1,fig:approximation_error_var2} for the
+decomposable and the curl-free
 \acs{OVK}.
 \begin{proposition}[Bounding the \emph{variance} of $\tilde{K}$]
     \label{pr:variance_bound}
@@ -628,7 +632,7 @@ $A(\omega)=1$. An illustration of the bound is provided in
     \caption[decomposable ORFF variance bound]{Comparison between an empirical
     bound on the norm of the variance of the decomposable ORFF obtained and the
     theoretical bound proposed in \cref{pr:variance_bound} versus $D$
-    \label{fig:approximation_error_var}}
+    \label{fig:approximation_error_var1}}
 \end{figure}
 \begin{figure}
     \centering
@@ -636,7 +640,7 @@ $A(\omega)=1$. An illustration of the bound is provided in
     \caption[Curl-free ORFF variance bound]{Comparison between an empirical
     bound on the norm of the variance of the curl-free ORFF obtained and the
     theoretical bound proposed in \cref{pr:variance_bound} versus $D$
-    \label{fig:approximation_error_var}}
+    \label{fig:approximation_error_var2}}
 \end{figure}
 \subsection{Application on decomposable, curl-free and divergence-free
 \acpdfstring{OVK}}
@@ -664,7 +668,7 @@ of the gradient of $h_{\omega}$.
 Now we compute upper bounds on the norm of the variance and Orlicz norm of the
 three \acsp{ORFF} we took as examples.
 \subsubsection{Decomposable kernel}
-notice that in the case of the Gaussian decomposable kernel, \acs{ie}
+Notice that in the case of the Gaussian decomposable kernel, \acs{ie}
 $A(\omega)=A$, $e=0$, $K_0(\delta)= Ak_0(\delta)$, $k_0(\delta) \geq 0$ and
 $k_0(\delta)=1$, then we have
 \begin{equation*}
@@ -697,7 +701,7 @@ $A(\omega)=I\norm{\omega}_2^2-\omega\omega^*$, thus $\expectation_\mu
 To conclude, we ensure that the random variable $\norm{A(\omega)}_{\mathcal{Y},
 \mathcal{Y}}$ has a finite Orlicz norm with $\psi=\psi_1$ in these three cases.
 \subsubsection{Computing the Orlicz norm}
-for a random variable with strictly monotonic moment generating function (MGF),
+For a random variable with strictly monotonic moment generating function (MGF),
 one can characterize its inverse $\psi_1$ Orlicz norm by taking the functional
 inverse of the MGF evaluated at 2 (see \cref{lm:orlicz_mgf} of the
 appendix). In other words
@@ -708,7 +712,7 @@ divergence-free kernel,
     \norm{A^{curl}(\omega)}_{\mathcal{Y},\mathcal{Y}} \hiderel{=}
     \norm{\omega}_{2}^2,
 \end{dmath*}
-where$\omega\sim\mathcal{N}(0,I_d/\sigma^2)$, hence $\norm{A(\omega)}_2\sim
+where $\omega\sim\mathcal{N}(0,I_d/\sigma^2)$, hence $\norm{A(\omega)}_2\sim
 \Gamma(p/2,2/\sigma^2)$. The MGF of this gamma distribution is
 $\MGF(x)(t)=(1-2t/\sigma^2)^{-(p/2)}$. Eventually
 \begin{equation*}
@@ -724,7 +728,7 @@ operator norm with high probability
 unbounded finite dimensional \acsp{OVK} and bounded potentially infinite
 dimensional \acsp{OVK}. The current lack of concentration inequalities working
 for both unbounded and infinite dimensional with the operator norm (Ba\-nach
-space) in the literature provides us to unify these bounds.
+space) in the literature prevents us to unify these bounds.
 
 \chapterend
 % \clearpage

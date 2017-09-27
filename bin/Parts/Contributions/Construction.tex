@@ -11,11 +11,12 @@ open the door to learning linear models. Our final goal is to come up with the
 definition of $\tildePhi{\omega}: \mathcal{X} \to
 \mathcal{L}(\mathcal{Y},\mathcal{H})$ for some Hilbert spaces $\mathcal{Y}$ and
 $\mathcal{H}$, a feature map of some approximation $\widetilde{K}$ of a given
-\acs{OVK} $K$.  This chapter is devoted to the construction of these
+\acs{OVK}, $K$.  This chapter is devoted to the construction of these
 approximations based on Random Fourier Feature principles. It is followed by a
-non asymptotical study of the error of approximation (chapter 4) and the
-development of learning tools based on Operator Random Fourier Feature maps
-with practical and theoretical insights.
+non asymptotical study of the error of approximation
+(\cref{ch:concistency_and_generalization}) and the development of learning
+tools based on Operator Random Fourier Feature maps with practical and
+theoretical insights.
 \paragraph{}
 We present in this chapter a construction methodology devoted to
 shift-invariant $\mathcal{Y}$-Mercer operator-valued kernels defined on any
@@ -43,8 +44,8 @@ probability on \emph{compact} subsets of the \acs{LCA} $\mathcal{X}$.
 %------------------------------------------------------------------------------
 \section{Theoretical study}
 \label{sec:theoretical_study}
-The following proposition of~\citet{Zhang2012,Carmeli2010} extends Bochner's
-theorem to any shift-invariant $\mathcal{Y}$-Mercer kernel.
+The following proposition of~\citet{Zhang2012,neeb1998operator} extends
+Bochner's theorem to any shift-invariant $\mathcal{Y}$-Mercer kernel.
 \begin{proposition}[Operator-valued Bochner's theorem~\citep{Zhang2012,
 neeb1998operator}]
     \label{pr:operator_valued_bochner}
@@ -73,8 +74,8 @@ a \emph{real-valued} positive measure on $\dual{\mathcal{X}}$ (instead of a
 operator-valued measure as in \cref{pr:operator_valued_bochner}). Note that
 obviously such a pair is not unique and the choice of this paper may have an
 impact on theoretical properties as well as practical computations.  Secondly
-it also states that any \acs{OVK} have such a spectral decomposition when
-$\mathcal{Y}$ is finite dimensional or $\mathcal{X}$.
+it also states that any \acs{OVK} has such a spectral decomposition when
+$\mathcal{Y}$ is finite dimensional or $\mathcal{X}$ is compact.
 
 \begin{proposition}[\citet{Carmeli2010}]
     \label{pr:mercer_kernel_bochner}
@@ -110,10 +111,10 @@ is still a bounded positive measure and we retrieve the Bochner theorem applied
 to the scalar case (\cref{th:bochner-scalar}).
 \paragraph{}
 \Cref{pr:mercer_kernel_bochner} shows that a pair $(A,\dual{\mu})$ entirely
-characterize an \acs{OVK}. Namely a given measure $\dual{\mu}$ and a function
+characterizes an \acs{OVK}. Namely a given measure $\dual{\mu}$ and a function
 $A$ such that $\inner{y', A(.)y}\in L^1(\mathcal{X},\dual{\mu})$ for all $y$,
 $y'\in\mathcal{Y}$ and $A(\omega)\succcurlyeq 0$ for $\dual{\mu}$-almost all
-$\omega$, give rise to an \acs{OVK}. Since $(A,\dual{\mu})$ determine a unique
+$\omega$, give rise to an \acs{OVK}. Since $(A,\dual{\mu})$ determines a unique
 kernel we can write
 $\mathcal{H}_{(A,\dual{\mu})}{\scriptstyle\implies}\mathcal{H}_K$ where $K$ is
 defined as in \cref{eq:AK0}. However the converse is not true: Given a
@@ -123,7 +124,7 @@ pairs $(A,\dual{\mu})$ that characterize an \acs{OVK}.
 The main difference between \cref{eq:bochner-gen} and
 \cref{eq:AK0} is that the first one characterizes an \acs{OVK}
 by a unique \acf{POVM}, while the second one shows that the \acs{POVM} that
-uniquely characterize a $\mathcal{Y}$-Mercer \acs{OVK} has an operator-valued
+uniquely characterizes a $\mathcal{Y}$-Mercer \acs{OVK} has an operator-valued
 density with respect to a \emph{scalar} measure $\dual{\mu}$; and that this
 operator-valued density is not unique.
 \paragraph{}
@@ -148,6 +149,20 @@ When the reference measure $\dual{\Haar}$ is the Lebesgue measure, we note
     \probability_{\dual{\Haar},\rho}=\probability_{\Leb,
     \rho}=\probability_{\rho}.
 \end{dmath*}
+For any function
+$f:\mathcal{X}\times\dual{\mathcal{X}}\times\mathcal{Y}\to\mathbb{R}$, we also
+use the notation
+\begin{dmath*}
+    \expectation_{\dual{\Haar}, \rho}\left[f(x, \omega, y)\right]
+    =\expectation_{\omega\sim\probability_{\dual{\Haar},\rho}}\left[f(x,
+    \omega, y)\right]
+    =\int_{\dual{\mathcal{X}}} f(x, \omega, y) d\probability_{\dual{\Haar},
+    \rho}(\omega)
+    =\int_{\dual{\mathcal{X}}} f(x, \omega, y)\rho(\omega)
+    d\dual{\Haar}(\omega).
+\end{dmath*}
+where the two last equalities hold by the transfer theorem and the fact that
+$\probability_{\dual{\Haar}, \rho}$ has density $\rho$.
 
 \subsection{Sufficient conditions of existence}
 \label{subsec:sufficient_conditions}
@@ -163,11 +178,12 @@ solution, and also provides a sufficient condition for
     Suppose that for all $z \in \mathcal{X}$ and for all $y$, $y'
     \in\mathcal{Y}$, the function
     \begin{dmath*}
-        \inner{K_e(.)y,y'}_{\mathcal{Y}}\in L^1(\mathcal{X},\Haar)
+        \inner{K_e(.)y,y'}_{\mathcal{Y}}\in L^1(\mathcal{X},\Haar),
     \end{dmath*}
     where $\mathcal{X}$ is endowed with the group law $\groupop$. Denote $C:
-    \dual{X} \to \mathcal{L}(Y)$, the function defined for all $\omega \in
-    \dual{\mathcal{X}}$ that satisfies for all $y$, $y'$ in $\mathcal{Y}$:
+    \dual{\mathcal{X}} \to \mathcal{L}(Y)$, the function defined for all
+    $\omega \in \dual{\mathcal{X}}$ that satisfies for all $y$, $y'$ in
+    $\mathcal{Y}$:
     \begin{dmath}\label{eq:CK0}
         \inner{y',C(\omega)y}_{\mathcal{Y}}= \int_{\mathcal{X}}
         \pairing{\delta, \omega}\inner{y',
@@ -265,6 +281,7 @@ of \acs{ORFF}.
         =\inner{y, C\left(\omega\right) y'}.
     \end{dmath*}
     Hence $C(\omega)$ is self-adjoint and thus $C$ is even.
+    \paragraph{}
     Item 2: simply, for all $y$, $y'\in\mathcal{Y}$,
     $\inner{y, C(\inv{\omega})y'}$ $=$ $\inner{y', C(\omega)y}$ thus
     \begin{dmath*}
@@ -274,6 +291,7 @@ of \acs{ORFF}.
         K_e(\cdot)y}_{\mathcal{Y}}}(\omega)=\FT{\inner{y',
         K_e(\cdot)y}_{\mathcal{Y}}}(\omega).
     \end{dmath*}
+    \paragraph{}
     Item 3: from Item 2 we have
     $\IFT{\inner{y', K_e(\cdot)y}}$ $=$ $\mathcal{F}^{-1}\mathcal{R}{\inner{y',
     K_e(\cdot)y}}$. By injectivity of the \acl{FT}, $K_e$ is even. Since
@@ -297,7 +315,7 @@ decomposition]
     Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer
     kernel. If for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in
     L^1(\mathcal{X},\Haar)$ then there exists a positive probability measure
-    $\probability_{\dual{\Haar},\rho}$ and an operator-valued function $A$ an
+    $\probability_{\dual{\Haar},\rho}$ and an operator-valued function $A$
     such that for all $y,$ $y'\in\mathcal{Y}$,
     \begin{dmath}
         \label{eq:expectation_spec} \inner{y', K_e(\delta)y}
@@ -345,7 +363,7 @@ decomposition]
     \end{dmath*}
     Since for all $y$, $y'\in\mathcal{Y}$, $\inner{y',C(\cdot)y}\in
     L^1(\dual{\mathcal{X}},\dual{\Haar})$ and $\mathcal{Y}$ is a separable
-    Hilbert space, by pettis measurability theorem, $\int_{\dual{\mathcal{X}}}
+    Hilbert space, by Pettis measurability theorem, $\int_{\dual{\mathcal{X}}}
     \norm{C(\omega)}_{\mathcal{Y},\mathcal{Y}} d\dual{\Haar}(\omega)$ is finite
     and so is $\norm{C(\omega)}_{\mathcal{Y},\mathcal{Y}}$ for all
     $\omega\in\dual{\mathcal{X}}$.  Therefore $\rho(\omega)$ is the density of
@@ -360,7 +378,7 @@ decomposition]
 \paragraph{}
 In the case where $\mathcal{Y}=\mathbb{R}^p$, we rewrite \cref{eq:comega}
 coefficient-wise by choosing an orthonormal basis
-$\Set{e_j}_{j\in\mathbb{N}^*_p}$ of $\mathbb{R}^p$.
+$(e_j)_{j\in\mathbb{N}^*_p}$ of $\mathbb{R}^p$.
 \begin{dmath}
     \label{eq:operator_identification_real}
     A(\omega)_{ij}\rho(\omega)\hiderel{=}\FT{K_e(\cdot)_{ij}}(\omega).
@@ -380,7 +398,10 @@ It follows that for all $i$ and $j$ in $\mathbb{N}^*_{p}$,
 \end{remark}
 
 Another difficulty arises from the fact that the quantity
-$\sup_{\omega\in\dual{\mathcal{X}}} \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}$
+\begin{dmath*}
+    \sup_{\omega\in\dual{\mathcal{X}}}
+    \norm{A(\omega)}_{\mathcal{Y},\mathcal{Y}}
+\end{dmath*}
 obtained in \cref{pr:spectral} might not be bounded. Later, when we will focus
 on Monte-Carlo approximation of these integrals, we will have to take care of
 the unboundedness of $\norm{A(\cdot)}_{\mathcal{Y},\mathcal{Y}}$ that forbids
@@ -552,9 +573,9 @@ $\mathcal{Z}\in\mathcal{B}\left(\mathbb{R}^d\right)$,
 Then the \acl{FT} on $(\mathbb{R}^d,+)$ is
 \begin{dmath*}
     \FT{f}(\omega)
-    =\int_{\mathbb{R}^d} \exp\left(-\iu\inner{\delta, \omega}\right) f(x)
+    =\int_{\mathbb{R}^d} \exp\left(-\iu\inner{\delta, \omega}\right) f(\delta)
     d\Haar(\delta)
-    =\int_{\mathbb{R}^d} \exp\left(-\iu\inner{\delta, \omega}\right) f(x)
+    =\int_{\mathbb{R}^d} \exp\left(-\iu\inner{\delta, \omega}\right) f(\delta)
     \frac{d\Leb(\delta)}{\sqrt{2\pi}^d}.
 \end{dmath*}
 Since $k^{\text{gauss}}_0\in L^1$ and $\Gamma$ is bounded, it is possible to
@@ -567,7 +588,7 @@ apply \cref{pr:spectral}, and obtain for all $y$ and $y'\in\mathcal{Y}$,
 Thus
 \begin{dmath*}
     C^{dec,gauss}(\omega)
-    =\int_{\mathbb{R}^d}\exp\left(-\iu\inner{\omega, x} -
+    =\int_{\mathbb{R}^d}\exp\left(-\iu\inner{\omega, \delta} -
     \frac{\norm{\delta}^2_2}{2\sigma^2}\right)
     \frac{d\Leb(\delta)}{\sqrt{2\pi}^d} \Gamma.
 \end{dmath*}
@@ -965,15 +986,16 @@ shift-invariant \acl{OVK}. % \paragraph{}
     \begin{dmath*}
         \frac{1}{D} \sum_{j=1}^D \conj{\pairing{x\groupop\inv{z},\omega_j}}
         A(\omega_j) \converges{\acs{asurely}}{D \to \infty}
-        \expectation_{\rho}[\conj{\pairing{x \groupop z^{-1}, \omega_j}
-        }A(\omega)]
+        \expectation_{\dual{\Haar}, \rho}[\conj{\pairing{x \groupop z^{-1},
+        \omega_j} }A(\omega)]
     \end{dmath*}
     where the integral converges in the weak operator topology. Then by
     \cref{pr:spectral},
     \begin{dmath*}
-        \expectation_{\rho}[\conj{\pairing{x \groupop z^{-1},
+        \expectation_{\dual{\Haar}, \rho}[\conj{\pairing{x \groupop z^{-1},
         \omega_j}}A(\omega)] =K_e(x\groupop\inv{z}).
     \end{dmath*}
+    \hfill\ensuremath{\qed}
 \end{proof}
 Now, for efficient computations as motivated in the introduction, we are
 interested in finding an approximated \emph{feature map} instead of a kernel
@@ -1059,7 +1081,7 @@ constructing \acs{ORFF} from an operator valued kernel.
 \begin{center}
     \begin{algorithm2e}[H]\label{alg:ORFF_construction}
         \SetAlgoLined
-        \Input{$K(x, z)=K_e(\delta)$ a $\mathcal{Y}$-shift-invariant Mercer
+        \Input{$K(x, z)=K_e(\delta)$ a shift-invariant $\mathcal{Y}$-Mercer
         kernel such that $\forall y,y'\in\mathcal{Y},$ $\inner{y',
         K_e(\cdot)y}\in L^1(\mathbb{R}^d, \Haar)$ and $D$ the number of
         features.}
@@ -1095,12 +1117,12 @@ $(y_1, y_2)^\transpose = f(x_i)=\sum_{j=1}^{250}\mathbf{K}_{ij}u_j$ where
 $u_j\sim\mathcal{N}(0,I_2)$ and $K$ is a Gaussian decomposable kernel defined
 as
 \begin{dmath*}
-    \mathbf{K}_{ij}=\exp\left(-\frac{1}{2(0.1)^2(x_i - x_j)^2}\right)\Gamma
+    \mathbf{K}_{ij}=\exp\left(-\frac{(x_i - x_j)^2}{2(0.1)^2}\right)\Gamma
     \condition{for $i$, $j\in\mathbb{N}^*_{250}$.}
 \end{dmath*}
 We took $\Gamma=.5 I_2 +.5 1_2$ such that the outputs $y_1$ and $y_2$ share
-some similarities.  We generated $250$ points equally separated on the segment
-$(-1;1)$.
+some similarities.  We generated $250$ points $(x_i)_{i=1}^N$, equally
+separated on the segment $(-1;1)$.
 \begin{pycode}[not_mercer]
 sys.path.append('./src/')
 import not_mercer
@@ -1121,14 +1143,14 @@ not_mercer.main()
 \end{figure}
 Then we computed an approximate kernel matrix $\tilde{\mathbf{K}}\approx
 \mathbf{K}$ for $25$ increasing values of $D$ ranging from $1$ to $10^4$. The
-two graphs in \cref{fig:not_Mercer} on the top row shows that the more the
+top row of the two graphs in \cref{fig:not_Mercer} shows that the more the
 number of features increases the closer the model
-$\widetilde{f}(x_i)=\sum_{j=1}^{250}\tilde{\mathbf{K}}_{ij}u_j$ is to $f$.
-The bottom row shows the same experiment but for a different realization of
-$\tilde{\mathbf{K}}$. When $D$ is small the curves of the bottom and top rows are
-very dissimilar --and sine wave like-- while they both converge to $f$ when
-$D$ increase.
-\subsection{From Operator Random Fourier Feature maps to OVK}
+$\widetilde{f}(x_i)=\sum_{j=1}^{250}\tilde{\mathbf{K}}_{ij}u_j$ is to $f$.  The
+bottom row shows the same experiment but for a different realization of
+$\tilde{\mathbf{K}}$. When $D$ is small the curves of the bottom and top rows
+are very dissimilar --and sine wave like-- while they both converge to $f$ when
+$D$ increases.
+\subsection{From Operator Random Fourier Feature maps to OVKs}
 It is also interesting to notice that we can go the other way and define from
 the general form of an \acl{ORFF}, an operator-valued kernel.
 \begin{proposition}[Operator Random Fourier Feature map]
@@ -1160,25 +1182,24 @@ the general form of an \acl{ORFF}, an operator-valued kernel.
 \begin{proof}
     Similarly to the proof of \cref{cr:ORFF-map-kernel}, we have
     \begin{dmath*}
-        \inner*{\tildePhi{\omega}(x)u,\tildePhi{\omega}(z)v}_{\Vect_{j=1}^D
+        \inner*{\tildePhi{\omega}(x)y,\tildePhi{\omega}(z)y'}_{\Vect_{j=1}^D
         \mathcal{Y}'} =
-        \frac{1}{D} \sum_{j=1}^D
-        \conj{\pairing{x\groupop\inv{z},\omega_j}} A(\omega_j)
+        \inner{y, \frac{1}{D} \sum_{j=1}^D
+        \conj{\pairing{x\groupop\inv{z},\omega_j}} A(\omega_j)y'}
     \end{dmath*}
     and by the strong law of large numbers,
     \begin{dmath*}
         \frac{1}{D} \sum_{j=1}^D
         \conj{\pairing{x\groupop\inv{z},\omega_j}} A(\omega_j)
         \converges{\acs{asurely}}{D \to \infty}
-        \expectation_{\rho}[\conj{\pairing{x \groupop
+        \expectation_{\dual{\Haar}, \rho}[\conj{\pairing{x \groupop
         z^{-1}, \omega} }A(\omega)]
     \end{dmath*}
-    where the integral converges in the weak operator topology.  Now  from
-    \cref{pr:mercer_kernel_bochner} with
-    $\dual{\mu}=\probability_{\dual{\Haar}, \rho}$ we obtain
-    $\expectation_{\rho}[\conj{\pairing{x \groupop z^{-1}, \omega} }A(\omega)]
-    = K_e(x\groupop\inv{z})$, $K_e$ being the signature of some shift-invariant
-    $\mathcal{Y}$-Mercer kernel.
+    in the weak operator topology. Now  from \cref{pr:mercer_kernel_bochner}
+    with $\dual{\mu}=\probability_{\dual{\Haar}, \rho}$ we obtain
+    $\expectation_{\dual{\Haar}, \rho}[\conj{\pairing{x \groupop z^{-1},
+    \omega} }A(\omega)] = K_e(x\groupop\inv{z})$, $K_e$ being the signature of
+    some shift-invariant $\mathcal{Y}$-Mercer kernel.
 \end{proof}
 The difference between \cref{pr:ORFF-map} and \cref{cr:ORFF-map-kernel} is that
 in \cref{pr:ORFF-map} we do not assume that $A(\omega)$ and
@@ -1293,11 +1314,11 @@ all the classic results of the \acl{OVK} theory on $\tilde{K}$.
     Since $B(\omega)$ is a bounded operator, $\widetilde{K}$ is
     $\mathcal{Y}$-Mercer because all the functions in the sum are continuous.
 \end{proof}
-Note that the above theorem does not considers the $\omega_j$'s as random
-variables and therefore does not shows the convergence of the kernel
-$\widetilde{K}$ to some target kernel $K$. However is shows that any
-realization of $\widetilde{K}$ when $\omega_j$'s  are random variables yields
-a valid $\mathcal{Y}$-Mercer operator-valued kernel.
+Note that the above theorem does not consider the $\omega_j$'s as random
+variables and therefore does not show the convergence of the kernel
+$\widetilde{K}$ to some target kernel $K$. However it shows that any
+realization of $\widetilde{K}$ when $\omega_j$'s  are random variables yields a
+valid $\mathcal{Y}$-Mercer operator-valued kernel.
 %We stress out that if $\seq{\omega}=(\omega_j)_{j=1}^D\sim
 %\probability_{\dual{\Haar},\rho}$ \ac{iid}~is a \emph{random sequence} then
 %\begin{dmath*}
@@ -1346,7 +1367,7 @@ a valid $\mathcal{Y}$-Mercer operator-valued kernel.
 %very dissimilar --and sine wave like-- while they both converge to $f$ when $D$
 %increase.
 \paragraph{}
-Indeed, as a results of \cref{pr:orff_defines_kernel}, in the same way we
+Indeed, as a result of \cref{pr:orff_defines_kernel}, in the same way we
 defined an \acs{ORFF}, we can define an approximate feature operator
 $\tildeW{\omega}$ which maps $\tildeH{\omega}$ onto
 $\mathcal{H}_{\tildeK{\omega}}$, where
@@ -1426,7 +1447,7 @@ map is presented in \cref{fig:rel_features}.
         \int_{\dual{\mathcal{X}}} \conj{\pairing{x,\omega}} B(\omega) g(\omega)
         d\probability_{\dual{\Haar}, \rho}(\omega)
         = (Wg)(x)
-        \hiderel{\colonequals} \Phi_x^\adjoint g.\qquad\ensuremath{\Box}
+        \hiderel{\colonequals} \Phi_x^\adjoint g.\hfill\ensuremath{\Box}
     \end{dmath*}
 \end{proof}
 
@@ -1447,7 +1468,7 @@ map is presented in \cref{fig:rel_features}.
         \rho}(\omega) \\
         = \norm{g}_{L^2\left(\dual{\mathcal{X}},
         \probability_{\dual{\Haar},\rho};
-        \mathcal{Y}'\right)}^2.\qquad\ensuremath{\Box}
+        \mathcal{Y}'\right)}^2.\hfill\ensuremath{\Box}
     \end{dmath*}
 \end{proof}
 % Hence the sequence of function $\tildef{D}_j\colonequals
@@ -1539,15 +1560,15 @@ $(\mathbb{R}^d,+)$.
     \begin{dmath*}
         \expectation_{\rho}\left[\cos{\inner{x-z,\omega}_2}A(\omega)\right]
         = \expectation_{\rho}
-        \left[\exp(-i\inner{x-z,\omega}_2)A(\omega)\right]
+        \left[\exp(-\iu\inner{x-z,\omega}_2)A(\omega)\right]
         \hiderel{=}K(x,z).
     \end{dmath*}
     Hence $\tilde{K}(x,z)\converges{\acs{asurely}}{D\to\infty}K(x,z)$.
 \end{proof}
-In particular we deduce the following features maps for the kernels proposed in
+In particular we deduce the following feature maps for the kernels proposed in
 \cref{subsec:dec_examples}.
 \begin{itemize}
-    \item For the decomposable gaussian kernel
+    \item For the decomposable Gaussian kernel
     $K_0^{dec,gauss}(\delta)=k_0^{gauss}(\delta)\Gamma$ for all
     $\delta\in\mathbb{R}^d$, let $BB^\adjoint=\Gamma$. A bounded --and
     unbounded-- \acs{ORFF} map is
@@ -1568,7 +1589,7 @@ In particular we deduce the following features maps for the kernels proposed in
         \sin{\inner{x,\omega_j}_2}
     \end{pmatrix}$ is a scalar \acs{RFF}
     map~\citep{Rahimi2007}.
-    \item For the curl-free gaussian kernel,
+    \item For the curl-free Gaussian kernel,
     $K_0^{curl,gauss}=-\nabla\nabla^\transpose k_0^{gauss}$ an unbounded
     \acs{ORFF} map is
     \begin{dmath}
@@ -1593,7 +1614,7 @@ In particular we deduce the following features maps for the kernels proposed in
     \end{dmath*}
     where $\rho(\omega) = \frac{\sigma^2\norm{\omega}^2}{d} \mathcal{N}(0,
     \sigma^{-2} I_d)(\omega)$ for all $\omega\in\mathbb{R}^d$.
-    \item For the divergence-free gaussian kernel
+    \item For the divergence-free Gaussian kernel
     $K_0^{div,gauss}(x,z)=(\nabla\nabla^\transpose -\Delta I_d)
     k_0^{gauss}(x,z)$ an unbounded \acs{ORFF} map is
     \begin{dmath}
@@ -1653,7 +1674,7 @@ multiplicative group --described in \cref{subsec:character} and
     \end{dmath*}
     which converges almost surely to
     \begin{dmath*}
-        \expectation_{\rho}\left[\exp\left(-i\inner*{\log(x\odot
+        \expectation_{\rho}\left[\exp\left(-\iu\inner*{\log(x\odot
         z^{-1}+c)}_2\right)A(\omega) \right] \hiderel{=}
         \expectation_{\rho}[\conj{\pairing{x\odot
         z^{-1},\omega}}A(\omega)]
@@ -1708,7 +1729,7 @@ In other words, what is the norm in $L^2(\dual{\mathcal{X}}, \dual{\Haar};
 \end{proposition}
 \begin{proof}
     We first show how the \acl{FT} relates to the feature operator. Since
-    $\mathcal{H}_K$ is embed into $\mathcal{H}=L^2(\dual{\mathcal{X}},
+    $\mathcal{H}_K$ is embedded into $\mathcal{H}=L^2(\dual{\mathcal{X}},
     \probability_{\dual{\Haar},\rho}; \mathcal{Y}')$ by means of the feature
     operator $W$, we have for all $f\in\mathcal{H}_k$, for all
     $f\in\mathcal{H}$ and for all $x\in\mathcal{X}$
@@ -1742,10 +1763,7 @@ In other words, what is the norm in $L^2(\dual{\mathcal{X}}, \dual{\Haar};
     $\IFT{f}(\omega)=\rho(\omega)B(\omega)g(\omega)$ \acs{wrt}~$g(\omega)$ with
     minimal norm\footnote{Note that since $B(\omega)$ is bounded the pseudo
     inverse of $B(\omega)$ is well defined for $\dual{\Haar}$-almost all
-    $\omega$. However if $B(\omega)$ is infinite dimensional, the pseudo
-    inverse is continuous if and only if $B(\omega)$ has closed range in
-    $\mathcal{Y}'$. This is always true if $B(\omega)$ is surjective, via the
-    open mapping theorem.}. Eventually,
+    $\omega$}. Eventually,
     \begin{dmath*}
         \norm{f}^2_K = \int_{\dual{\mathcal{X}}}
         \frac{\norm{B(\omega)^\dagger
@@ -1769,8 +1787,9 @@ In other words, what is the norm in $L^2(\dual{\mathcal{X}}, \dual{\Haar};
         = \displaystyle\int_{\dual{\mathcal{X}}}
         \frac{\inner{\FT{f}(\omega),
         A(\omega)^\dagger\FT{f}(\omega)}_{\mathcal{Y}}}{\rho(\omega)}
-        d\dual{\Haar}(\omega)
+        d\dual{\Haar}(\omega).
     \end{dmath*}
+    \hfill\ensuremath{\qed}
 \end{proof}
 Note that if $K(x,z)=k(x,z)$ is a scalar kernel then for all $\omega$ in
 $\dual{\mathcal{X}}$, $A(\omega)=1$. Therefore we recover the well known result
@@ -1784,17 +1803,6 @@ $A(\omega)=\Gamma\in\mathcal{L}_+(\mathbb{R}^p)$,
     \norm{f}_K = \sum_{i,j=1}^p
     \left(\Gamma^\dagger\right)_{ij}\inner{f_i,f_j}_k
 \end{dmath}
-We also note that the regularization property in $\mathcal{H}_K$ does not
-depends (as expected) on the decomposition of $A(\omega)$ into
-$B(\omega)B(\omega)^\adjoint $.  Therefore the decomposition should be chosen
-such that it optimizes the computation cost. For instance if
-$A(\omega)\in\mathcal{L}(\mathbb{R}^p)$ has rank $r$, one could find an
-operator $B(\omega)\in\mathcal{L}(\mathbb{R}^p, \mathbb{R}^r)$ such that
-$A(\omega)=B(\omega)B(\omega)^\adjoint$. Moreover, in light of
-\cref{pr:regularization} the regularization property of the kernel with respect
-to the \acl{FT}, it is also possible to define an approximate feature map of an
-\acl{OVK} from its regularization properties in the \acs{vv-RKHS} as proposed
-in \cref{alg:ORFF2_construction}.
 \SetKwInOut{Input}{Input}
 \SetKwInOut{Output}{Output}
 \begin{center}
@@ -1831,6 +1839,17 @@ in \cref{alg:ORFF2_construction}.
         \caption{Construction of \acs{ORFF}}
     \end{algorithm2e}
 \end{center}
+We also note that the regularization property in $\mathcal{H}_K$ does not
+depends (as expected) on the decomposition of $A(\omega)$ into
+$B(\omega)B(\omega)^\adjoint $.  Therefore the decomposition should be chosen
+such that it optimizes the computation cost. For instance if
+$A(\omega)\in\mathcal{L}(\mathbb{R}^p)$ has rank $r$, one could find an
+operator $B(\omega)\in\mathcal{L}(\mathbb{R}^p, \mathbb{R}^r)$ such that
+$A(\omega)=B(\omega)B(\omega)^\adjoint$. Moreover, in light of
+\cref{pr:regularization} the regularization property of the kernel with respect
+to the \acl{FT}, it is also possible to define an approximate feature map of an
+\acl{OVK} from its regularization properties in the \acs{vv-RKHS} as proposed
+in \cref{alg:ORFF2_construction}.
 %\section{Operator Random Feature engineering}
 %As in the scalar case, it is possible to construct. We list some examples in
 %the following.
@@ -1863,7 +1882,7 @@ in \cref{alg:ORFF2_construction}.
 %----------------------------------------------------------------------------------------
 \section{Conclusions}
 \label{sec:conclusions_construction} We have presented a generic framework that
-generalize scalar-valued \acsp{RFF} presented in \cref{ch:motivations}.  We
+generalizes scalar-valued \acsp{RFF} presented in \cref{ch:motivations}.  We
 first showed how to construct an \acs{ORFF} from an \acs{OVK} in the very
 general case when $\mathcal{X}$ is an \acs{LCA} group and $\mathcal{Y}$ is an
 infinite dimensional space. Then, conversely, how to use the regularization

@@ -151,6 +151,7 @@ natbib=true % natbib compatibility mode (\citep and \citet still work)
 %	FLOATS: TABLES, FIGURES AND CAPTIONS SETUP
 %------------------------------------------------------------------------------
 \usepackage{ltablex}
+\usepackage{tabularx}
 \usepackage{threeparttablex}
 \setlength{\extrarowheight}{3pt} % Increase table row height
 \newcommand{\tableheadline}[1]{\multicolumn{1}{c}{\spacedlowsmallcaps{#1}}}
@@ -208,7 +209,7 @@ pdfpagelayout=TwoColumnRight,
 breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,
 plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,
 hypertexnames=true, pdfhighlight=/O, nesting=true, %frenchlinks,%
-urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen, 
+urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen,
 %pagecolor=Black,%
 }
 
@@ -273,8 +274,12 @@ floatperchapter, linedheaders}{classicthesis}
 \Crefname{chapter}{Chapter}{Chapters}
 \crefname{section}{Section}{Sections}
 \Crefname{section}{Section}{Sections}
+\crefname{appendix}{Appendix}{Appendices}
+\Crefname{appendix}{Appendix}{Appendices}
 \crefname{subsection}{Subsection}{Subsections}
 \Crefname{subsection}{Subsection}{Subsections}
+\crefname{subsubsection}{Subsubsection}{Subsubsections}
+\Crefname{subsubsection}{Subsubsection}{Subsubsections}
 \crefname{theorem}{Theorem}{Theorems}
 \Crefname{theorem}{Theorem}{Theorems}
 \crefname{proposition}{Proposition}{Propositions}
@@ -335,14 +340,14 @@ floatperchapter, linedheaders}{classicthesis}
 
 %\linespread{1.0} % a bit more for Palatino
 % 686 (factor 2.2) + 33 head + 42 head \the\footskip
-%\areaset[current]{312pt}{761pt} 
+%\areaset[current]{312pt}{761pt}
 %\setlength{\marginparwidth}{7em}%
 %\setlength{\marginparsep}{2em}%
 
 %------------------------------------------------------------------------------
 % Include printonlyused in the first bracket to only show acronyms used in the
 % text
-\usepackage{acro} 
+\usepackage{acro}
 % Nice macros for handling all acronyms in the thesis
 %\renewcommand*{\acsfont}[1]{\textssc{#1}} % For MinionPro
 % \newcommand*{\aclabelfont}[1]{\acsfont{#1}}
@@ -355,7 +360,7 @@ floatperchapter, linedheaders}{classicthesis}
 \setmathfont(Digits,Latin)[
     Numbers={Lining,Proportional},
     Mapping=tex-text,
-    Ligatures={Common, Rare, Historic},
+    Ligatures={Required, Common},
 ]{Hoefler Text}
 \setmathfont(Greek)[
     Mapping=tex-text,
@@ -364,5 +369,5 @@ floatperchapter, linedheaders}{classicthesis}
 ]{Hoefler Text}
 \setmainfont[
     Mapping=tex-text,
-    Ligatures={TeX, Common, Rare, Historic}
+    Ligatures={Required, Common}
 ]{Hoefler Text}

@@ -22,7 +22,7 @@ problems.
 To scale up standard algorithms, we define an approximated operator-valued
 feature map $\tilde{\Phi}:\mathbb{R}^d\to\mathbb{R}^D$ that allows to
 approximate the aforementioned model $h$ in the \ac{RKHS} by the following
-function 
+function
 \begin{dmath*}
     \tilde{h}(x_t) = \tilde{\Phi}(x_t)^*\theta \hiderel{\approx} h(x_t).
 \end{dmath*}
@@ -46,10 +46,10 @@ $x_{t}=h(x_{t-p},\dots,x_{t-1}) + u_{t}$ where $t$ is a discrete
 measure of time and $u_t$ is a zero-mean noise random vector. %
 % of possibly correlated innovation shocks.
 Then $h$ is usually referred to as a vector autoregressive model of order $p$.
-In the remainder of the paper, we consider first-order vector autoregressive
+In the remainder of the chapter, we consider first-order vector autoregressive
 models, that is $p=1$. In a supervised learning setting, the vector
 autoregression problem consists in learning a model $\hat{h}:\mathbb{R}^d \to
-\mathbb{R}^d$ from a given training set 
+\mathbb{R}^d$ from a given training set
 \begin{dmath*}
     \seq{s} = ((x_{1},x_{2}),\dots,(x_{N-1},x_{N}))\hiderel{\in}
     \left(\mathbb{R}^d\times\mathbb{R}^d\right)^N.
@@ -60,9 +60,9 @@ is an $d\times d$ matrix whose structure encodes the temporal relationships
 among the $d$ state variables.
 \paragraph{}
 However, due to their intrinsically linear nature, \acs{VAR} models fail to
-capture the nonlinearities underlying realistic dynamical systems. This paper
-builds upon the work of \citet{Lim2015} where the authors introduced a
-family of nonparametric nonlinear autoregressive models called \ac{OKVAR}.
+capture the nonlinearities underlying realistic dynamical systems. In this
+chapter we builds upon the work of \citet{Lim2015} where the authors introduced
+a family of nonparametric nonlinear autoregressive models called \ac{OKVAR}.
 \ac{OKVAR} models rely on the theory of operator-valued kernels
 \cite{Pedrick57, Senkene73}, which provides a versatile framework for learning
 vector-valued functions \citep{Micchelli2005,Carmeli2010,Alvarez2012}. Those
@@ -72,7 +72,7 @@ case.
 Next, we recall key elements of the theory of \ac{vv-RKHS} of functions from
 $\mathbb{R}^d$ to $\mathbb{R}^d$ (see \cref{sec:theoretical_study} for the
 detailed construction). We first introduced the matrix-valued kernel which
-is an instance of \acsp{OVK}s.
+is an instance of \acsp{OVK}.
 \begin{definition} [Matrix-valued kernels] A function
     $K:\mathbb{R}^d\times\mathbb{R}^d\to\mathbb{R}^{d\times d}$ is said to be a
     positive $\mathbb{R}^{d\times d}$-valued kernel  if :
@@ -125,29 +125,34 @@ as developed in \cref{subsec:ovk-ex}.
     $K:\mathbb{R}^d\times\mathbb{R}^d\to\mathbb{R}^{d\times d}$ defined for all
     $(x,z)\in\mathbb{R}^d\times\mathbb{R}^d$ as $K(x,z) = k(x,z) \Gamma$ is a
     decomposable matrix-valued kernel.
-\end{proposition} 
+\end{proposition}
 A common choice for the scalar-valued kernel is the Gaussian kernel
 \begin{dmath*}
-    k_{\text{Gauss}}(x,z)=\exp(-\norm{x-z}_2^2/(2\sigma^2))
+    k_{\text{Gauss}}(x,z)=\exp(-\frac{1}{2\sigma^2}\norm{x-z}_2^2)
 \end{dmath*}
-for any $x$, $z\in\mathbb{R}^d$ and $\sigma\in\mathbb{R}_+$. The corresponding
-decomposable kernel is referred to as $K_{\text{dec}}$ and is as
-$K_{\text{dec}}(x,z) = k_{\text{Gauss}}(x,z) \Gamma$ with $\Gamma$ a positive
-semidefinite matrix.
+for any $x$, $z\in\mathbb{R}^d$ and $\sigma\in\mathbb{R}_+$. Notice that
+$k_{\text{Gauss}}$ can equivalently be written with an hyperparameter
+$\gamma\in\mathbb{R}_+$:
+\begin{dmath*}
+    k_{\text{Gauss}}(x,z)=\exp(-\gamma\norm{x-z}_2^2),
+\end{dmath*}
+with $\sigma=(2\gamma)^{-1/2}$. The corresponding decomposable kernel is
+referred to as $K_{\text{dec}}$ and is as $K_{\text{dec}}(x,z) =
+k_{\text{Gauss}}(x,z) \Gamma$ with $\Gamma$ a positive semidefinite matrix.
 \paragraph{}
 While the model parameters $c_\ell$'s are estimated under sparsity constraints
 in \citet{Lim2015}, here we consider the classic kernel ridge regression
 setting where the loss function to minimize is
 \begin{dmath}
     \label{eq:rkhs_okvar}
-    \mathcal{J}_{\lambda}(h) =
+    \mathfrak{R}_{\lambda}(h, \seq{s}) =
     \frac{1}{N-1}\sum_{\ell=2}^{N}\norm{h(x_{\ell-1})-x_\ell}_2^2 +
     \lambda\norm{h}_{\mathcal{H}_K}^2
 \end{dmath}
 with $\lambda \ge 0$ and $\norm{h}_{\mathcal{H}_K}^2 =
 \sum_{t,\ell=1}^{N-1}c_t^*K(x_t,x_\ell)c_\ell$. The optimization problem is
 solved using a \acs{L-BFGS-B} \citep{byrd1995limited} which is well suited for
-optimization problems with a large number of parameters, and is wildly used as
+optimization problems with a large number of parameters, and is widely used as
 a training algorithm on small/medium-scale problems. However, like standard
 kernel methods, \acs{OKVAR} suffers from unfavourable computational complexity
 both in time and memory since it needs to store the full Gram matrix,
@@ -163,7 +168,7 @@ K_0(x-z)$. The idea is to use a generalization of Bochner's theorem for the
 \acs{OVK} family that states that any translation-invariant OVK can be written
 as the Fourier transform of a positive operator-valued measure. More precisely,
 we build on the following proposition first proved in \cite{Carmeli2010}. More
-details can be found in \cref{sec:theoretical_study}. 
+details can be found in \cref{sec:theoretical_study}.
 \paragraph{}
 In the following, suppose that $K_0=k_0(\cdot) A$ is a decomposable kernel.
 Decomposable kernels belong to the family of translation-invariant \acsp{OVK}.
@@ -188,7 +193,7 @@ $\tilde{\Phi}^{dec}(x) = \tilde{\phi}(x)\otimes B^\adjoint$ where
 \begin{dmath*}
     \tilde{\phi}(x) = \frac{1}{\sqrt{D}}\Vect_{j=1}^D
     \begin{pmatrix}
-        \cos{\inner{x,\omega_j}} \\ 
+        \cos{\inner{x,\omega_j}} \\
         \sin{\inner{x,\omega_j}}
     \end{pmatrix}\condition{$\omega_j \sim \IFT{k_0}$}
 \end{dmath*}
@@ -204,7 +209,7 @@ to as \ac{ORFFVAR} in the remainder of the section. Now, given the
 operator-valued feature map, we get a linear model, and we want to minimize the
 regularized risk
 \begin{dmath*}
-    \mathcal{J}_{\lambda}(\theta) =
+    \mathfrak{R}_{\lambda}(\theta, \seq{s}) =
     \frac{1}{N-1}\sum_{\ell=2}^{N}\norm{(\tilde{\phi}(x_{\ell-1})^*\otimes
     B)\theta-x_\ell}_2^2 + \lambda\norm{\theta}_2^2
 \end{dmath*}
@@ -231,7 +236,7 @@ $\gamma_t$ the learning rate (see \citet{dai2014scalable} for a discussion on
 the selection of a proper learning rate), $T$ the number of iterations, $n$ the
 size of data batch, $b$ the size of the feature batch, and $D$ the maximum
 number of features. Note that if $K_0$ is a scalar kernel, $D=T$, $b=1$ and
-$n=1$, we retrieve the algorithm formulated in \citet{dai2014scalable}.
+$n=1$, we recover the algorithm formulated in \citet{dai2014scalable}.
 \begin{center}
     \begin{algorithm2e}
         \KwData{$\mathcal{X}$, $\mathcal{Y}$, $K_e$, $\gamma_t$, $\lambda$,
@@ -287,7 +292,7 @@ is available at \url{https://github.com/RomainBrault/OV2SGD}.
 \end{center}
 \subsection{Numerical Performance}
 We now apply \cref{alg:doubly_sgd} to toy and real datasets.
-\subsection{Simulated data} 
+\subsection{Simulated data}
 To assess the performance of our models, we start our investigation by
 generating discrete $d$-dimensional time series $(x_t)_{t\geq 1}$ as follows
 \begin{dmath}
@@ -343,7 +348,7 @@ time of \acs{VAR}(1).
 \begin{table}[htb]
     \centering
     \resizebox{\textwidth}{!}{%
-    \begin{tabular}{ccccccccccc} 
+    \begin{tabular}{ccccccccccc}
         \toprule
             \multicolumn{2}{c}{Setting} & \multicolumn{3}{c}{1} &
             \multicolumn{3}{c}{2} & \multicolumn{3}{c}{3} \\
@@ -355,7 +360,7 @@ time of \acs{VAR}(1).
             & 0.009534 & 0.006003 & \textbf{0.001697(s)} \\
             & Toeplitz & \textbf{1.091096} & \textbf{1.267880} & 0.004822(s) &
             0.017014 & 0.013498 & \textbf{0.002050(s)} & \textbf{0.116901} &
-            0.127396 & 0.001702(s) \\ 
+            0.127396 & 0.001702(s) \\
              & & & & & & & & & & \\
             \multirow{2}{*}{ORFFVAR} & White & 0.919663 & 0.572936 & \textbf{%
             0.000994(s)} & \textbf{0.001003} & \textbf{0.000647} & \textbf{%
@@ -397,7 +402,7 @@ expected the error decreases with the number of random features $D$
             variance & 0.008639 &0.000793 & 0.000660 & 0.000618 & 0.000608 &
             0.000605 & 0.001363\\
             time & 0.001191(s) & 0.002384(s) & 0.003614(s) & 0.018469(s) &
-            0.038229(s) & 0.069294(s) & 0.019634(s) \\ 
+            0.038229(s) & 0.069294(s) & 0.019634(s) \\
         \bottomrule
     \end{tabular}
     }
@@ -422,7 +427,7 @@ pre-processing is applied before learning. We measure \acs{SCV-MSE} using a
 window of $25$ years ($50$ points). We instantiated \cref{alg:doubly_sgd} as
 follows: $\gamma_t = 1$, $\lambda = 10^{-3}$, $D=100$, $T=2$ and $b=50$ for
 ORFF and $\lambda=0.00025$ and $\sigma=11.18$ for \acs{OKVAR}.
-\paragraph{Gesture phase.} 
+\paragraph{Gesture phase.}
 This dataset\footnote{%
 \url{https://archive.ics.uci.edu/ml/datasets/Gesture+Phase+Segmentation}} is
 constructed using features extracted from seven videos with people
@@ -431,7 +436,7 @@ $1069$ data points and $31$ features. Data are normalized prior to learning. We
 measure \acs{SCV-MSE} using a time window of $200$ points. We implemented
 \acs{ORFFVAR} with $\gamma_t = 1$, $\lambda = 10^{-3}$, $D=100$, $T=2$ and
 $b=50$.
-\paragraph{Climate.} 
+\paragraph{Climate.}
 This dataset \citep{liu2010learning} contains monthly meteorological
 measurements of $18$ variables (temperature, CO2 concentration,\,$\dots$)
 collected at 135 different locations throughout the USA and recorded over $13$
@@ -452,13 +457,13 @@ for the sequential cross-validation (corresponding to $2$ minutes of
 observations).
 \begin{table}[htb]
     \resizebox{\textwidth}{!}{%
-    \begin{tabular}{l c c ccc ccc ccc} 
+    \begin{tabular}{l c c ccc ccc ccc}
         \toprule
             &  &  & \multicolumn{3}{c}{\acs{ORFFVAR}} &
             \multicolumn{3}{c}{\acs{VAR}(1)} & \multicolumn{3}{c}{\acs{OKVAR}}
             \\ Dataset & $N$ & $d$ & \acs{SCV-MSE} & variance & time &
             \acs{SCV-MSE} & variance & time & \acs{SCV-MSE} & variance & time
-            \\ 
+            \\
         \midrule
             Macrodata & \#203 & \#12 & \textbf{445.9} & 84.5 & 0.014(s) &
             449.1 & 1021 & 0.0005(s) & 499.8 & 793.0 & 0.641(s) \\

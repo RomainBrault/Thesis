@@ -29,9 +29,9 @@
 \BOOKMARK [2][-]{subsection.3.2.6}{3.2.6\040Representations\040of\040Groups}{section.3.2}% 29
 \BOOKMARK [1][-]{section.3.3}{3.3\040On\040Operator-Valued\040Kernels}{chapter.3}% 30
 \BOOKMARK [2][-]{subsection.3.3.1}{3.3.1\040Definitions\040and\040properties}{section.3.3}% 31
-\BOOKMARK [2][-]{subsection.3.3.2}{3.3.2\040Some\040applications\040of\040Operator-valued\040kernels}{section.3.3}% 32
-\BOOKMARK [2][-]{subsection.3.3.3}{3.3.3\040Shift-Invariant\040OVK\040on\040LCA\040groups}{section.3.3}% 33
-\BOOKMARK [2][-]{subsection.3.3.4}{3.3.4\040Examples\040of\040OVKs}{section.3.3}% 34
+\BOOKMARK [2][-]{subsection.3.3.2}{3.3.2\040Shift-Invariant\040OVK\040on\040LCA\040groups}{section.3.3}% 32
+\BOOKMARK [2][-]{subsection.3.3.3}{3.3.3\040Examples\040of\040Operator-Valued\040Kernels}{section.3.3}% 33
+\BOOKMARK [2][-]{subsection.3.3.4}{3.3.4\040Some\040use\040of\040Operator-valued\040kernels}{section.3.3}% 34
 \BOOKMARK [-1][]{part.2}{Contributions}{}% 35
 \BOOKMARK [0][]{chapter.4}{4\040Operator-valued\040Random\040Fourier\040Features}{part.2}% 36
 \BOOKMARK [1][-]{section.4.1}{4.1\040Motivation}{chapter.4}% 37
@@ -41,7 +41,7 @@
 \BOOKMARK [2][-]{subsection.4.2.3}{4.2.3\040Functional\040Fourier\040feature\040map}{section.4.2}% 41
 \BOOKMARK [1][-]{section.4.3}{4.3\040Operator-valued\040Random\040Fourier\040Features}{chapter.4}% 42
 \BOOKMARK [2][-]{subsection.4.3.1}{4.3.1\040Building\040Operator-valued\040Random\040Fourier\040Features}{section.4.3}% 43
-\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2\040From\040Operator\040Random\040Fourier\040Feature\040maps\040to\040OVK}{section.4.3}% 44
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2\040From\040Operator\040Random\040Fourier\040Feature\040maps\040to\040OVKs}{section.4.3}% 44
 \BOOKMARK [2][-]{subsection.4.3.3}{4.3.3\040Examples\040of\040Operator\040Random\040Fourier\040Feature\040maps}{section.4.3}% 45
 \BOOKMARK [2][-]{subsection.4.3.4}{4.3.4\040Regularization\040property}{section.4.3}% 46
 \BOOKMARK [1][-]{section.4.4}{4.4\040Conclusions}{chapter.4}% 47
@@ -61,7 +61,7 @@
 \BOOKMARK [2][-]{subsection.6.2.1}{6.2.1\040Gradient\040descent\040methods}{section.6.2}% 61
 \BOOKMARK [2][-]{subsection.6.2.2}{6.2.2\040Complexity\040analysis}{section.6.2}% 62
 \BOOKMARK [1][-]{section.6.3}{6.3\040Efficient\040learning\040with\040ORFF}{chapter.6}% 63
-\BOOKMARK [2][-]{subsection.6.3.1}{6.3.1\040Case\040of\040study:\040the\040decomposable\040kernel}{section.6.3}% 64
+\BOOKMARK [2][-]{subsection.6.3.1}{6.3.1\040Case\040of\040study:\040the\040decosubmposable\040kernel}{section.6.3}% 64
 \BOOKMARK [2][-]{subsection.6.3.2}{6.3.2\040Linear\040operators\040in\040matrix\040form}{section.6.3}% 65
 \BOOKMARK [2][-]{subsection.6.3.3}{6.3.3\040Curl-free\040kernel}{section.6.3}% 66
 \BOOKMARK [2][-]{subsection.6.3.4}{6.3.4\040Divergence-free\040kernel}{section.6.3}% 67
@@ -84,7 +84,7 @@
 \BOOKMARK [2][-]{subsection.8.3.3}{8.3.3\040Influence\040of\040the\040number\040of\040random\040features}{section.8.3}% 84
 \BOOKMARK [2][-]{subsection.8.3.4}{8.3.4\040Real\040datasets}{section.8.3}% 85
 \BOOKMARK [1][-]{section.8.4}{8.4\040Discussion}{chapter.8}% 86
-\BOOKMARK [-1][]{part.3}{Work\040in\040progress\040and\040final\040words}{}% 87
+\BOOKMARK [-1][]{part.3}{Conclusion\040and\040work\040in\040progress}{}% 87
 \BOOKMARK [0][]{chapter.9}{9\040Work\040in\040progress}{part.3}% 88
 \BOOKMARK [1][-]{section.9.1}{9.1\040Learning\040function-valued\040functions}{chapter.9}% 89
 \BOOKMARK [2][-]{subsection.9.1.1}{9.1.1\040Quantile\040regression}{section.9.1}% 90

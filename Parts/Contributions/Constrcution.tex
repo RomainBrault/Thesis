@@ -911,7 +911,7 @@ order to obtain an approximation of $K$ from a decomposition $(A,
 \probability_{\dual{\Haar},\rho})$ we turn our attention to a Monte-Carlo
 estimation of the expectations in \cref{eq:expectation_tr} and
 \cref{eq:expectation_spec} characterizing a $\mathcal{Y}$-Mercer
-shift-invariant \acl{OVK}. In the following, for sake of simplicity, we will assume that $\mathcal{Y}$ and $\mathcal{Y}$ are finite dimensional Hilbert spaces.
+shift-invariant \acl{OVK}.
 \paragraph{}
 %  \probability_{\dual{\Haar},\rho}
 \begin{proposition}
@@ -920,10 +920,10 @@ shift-invariant \acl{OVK}. In the following, for sake of simplicity, we will ass
     $\inner{y', K_e(\cdot)y}\in L^1(\mathcal{X},\Haar)$. Assume one can find a pair $(A, \probability_{\dual{\Haar},\rho})$ that satisfies \cref{pr:spectral}:   for $\probability_{\dual{\Haar},\rho}$-almost all $\omega$, $y, y'\in\mathcal{Y}, \inner{y, A(\omega)y'}\rho(\omega)=\FT{\inner{y',
     K_e(\cdot)y}}(\omega)$. If $(\omega_j)_{j=1}^D$ be a sequence of $D\in\mathbb{N}^*$
     \ac{iid}~realizations drawn from $\probability_{\dual{\Haar},\rho}$ then the operator-valued function $\tilde{K}$ defined as follows, for $(x,z) \in \mathcal{X}\time \mathcal{X}$ :
-       \begin{dmath*}
-       \tilde{K}(x,z)= \frac{1}{D} \sum_{j=1}^D
+    \begin{dmath*}
+        \tilde{K}(x,z)= \frac{1}{D} \sum_{j=1}^D
         \conj{\pairing{x\groupop\inv{z},\omega_j}} A(\omega_j)
-        \end{dmaths*}
+    \end{dmath*}
         is an approximation of $K$.
 \end{proposition}
 

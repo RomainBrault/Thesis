@@ -4,7 +4,7 @@
 \section{Learning with {OVK}}
 \label{sec:learning_with_operator-valued_random-fourier_features} Before
 focusing on learning function with an ORFF model, we briefly review the context
-of supervised learning in \acs{vv-RKHS}.  model.
+of supervised learning in \acs{vv-RKHS}.
 \subsection{Supervised learning within \acs{vv-RKHS}}
 \subsubsection{General results}
 Let $\seq{s} = (x_i,y_i)_{i=1}^N\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$
@@ -13,7 +13,7 @@ be a sequence of training samples. Given a local loss function $L:
 that $L$ is proper, convex and lower semi-continuous in $\mathcal{F}$, we are
 interested in finding a \emph{vector-valued function}
 $f_{\seq{s}}:\mathcal{X}\to\mathcal{Y}$, that lives in a \acs{vv-RKHS} and
-minimize a tradeoff between a data fitting term $L$ and a regularization term
+minimizes a tradeoff between a data fitting term and a regularization term
 to prevent from overfitting. Namely finding $f_{\seq{s}}\in\mathcal{H}_K$ such
 that
 \begin{dmath}
@@ -23,37 +23,40 @@ that
     \label{eq:learning_rkhs}
 \end{dmath}
 where $\lambda\in\mathbb{R}_+$ is a regularization\mpar{Tychonov
-regularization.} parameter. We call the quantity
+regularization.} parameter. We recall that the quantity
 \begin{dmath*}
-    \mathcal{R}_{\seq{s}}(f)=\frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f, y_i)
+    \mathfrak{R}_{\text{emp}}(f,
+    \seq{s})=\frac{1}{N}\displaystyle\sum_{i=1}^NL(x_i, f, y_i)
     \condition{$\forall f\in\mathcal{H}_K$, $\forall
-    \seq{s}\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$.-,}
+    \seq{s}\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$.}
 \end{dmath*}
-the empirical risk of the model $f\in\mathcal{H}_K$ according the
+is called the empirical risk of the model $f\in\mathcal{H}_K$ according the
 local loss $L$. A common choice for $L$ is the quadratic loss $L:(x,
 f, y) \mapsto \norm{f(x)-y}_{\mathcal{Y}}^2$.  We introduce a corollary from
-Mazur and Schauder proposed in 1936 (see~\citet{kurdila2006convex,
-gorniewicz1999topological}) showing that \cref{eq:learning_rkhs} --and
-\cref{eq:learning_rkhs_gen}-- attains a unique mimimizer.
+Mazur and Schauder proposed in 1936 showing that \cref{eq:learning_rkhs} --and
+\cref{eq:learning_rkhs_gen}-- attains a unique mimimizer
+(see~\citet{kurdila2006convex, gorniewicz1999topological}).
 \begin{theorem}[Mazur-Schauder]
     \label{cor:unique_minimizer}
-    Let $\mathcal{H}$ be a Hilbert space and $J:\mathcal{H}\to
+    Let $\mathcal{H}$ be a Hilbert space and $\mathfrak{R}:\mathcal{H}\to
     \overline{\mathbb{R}}$ be a proper, convex, lower semi-continuous and
-    coercive function. Then $J$ is bounded from below and attains a minimizer.
-    Moreover if $J$ is strictly convex the minimizer is unique.
+    coercive function. Then $\mathfrak{R}$ is bounded from below and attains a
+    minimizer.  Moreover if $\mathfrak{R}$ is strictly convex the minimizer is
+    unique.
 \end{theorem}
 This is easily verified for Ridge regression. Define
-\begin{dmath}
-    \label{eq:ridge}
-    J_\lambda(f)=\frac{1}{N}\sum_{i=1}^N\norm{f(x_i)-y_i}_{\mathcal{Y}}^2+
-    \frac{\lambda}{2}\norm{f}_K^2, \end{dmath} where $f\in\mathcal{H}_K$ and
-    $\lambda\in\mathbb{R}_{>0}$. $J_\lambda$ is continuous\mpar{Reminder, if
-    $f\in\mathcal{H}_k, \text{ev}_x : f\mapsto f(x)$ is continuous, see
-    \cref{pr:unique_rkhs}.} and strictly convex. Additionally $J_\lambda$ is
-    coercive since $\norm{f}_K$ is coercive,
-$\lambda\in\mathbb{R}_{>0}$, and all the summands of $J_\lambda$ are positive.
-Hence for all positive $\lambda$, $f_{\seq{s}} =
-\argmin_{f\in\mathcal{H}_K}J_\lambda(f)$ exists, is unique and attained.
+\begin{dmath} \label{eq:ridge}
+    \mathfrak{R}_\lambda(f, \seq{s})=\frac{1}{N}\sum_{i=1}^N\norm{f(x_i) -
+    y_i}_{\mathcal{Y}}^2 + \frac{\lambda}{2}\norm{f}_K^2,
+\end{dmath}
+where $f\in\mathcal{H}_K$ and $\lambda\in\mathbb{R}_{>0}$.
+$\mathfrak{R}_\lambda$ is continuous\mpar{Reminder, if $f\in\mathcal{H}_k,
+\text{ev}_x : f\mapsto f(x)$ is continuous, see \cref{pr:unique_rkhs}.} and
+strictly convex. Additionally $\mathfrak{R}_\lambda$ is coercive since
+$\norm{f}_K$ is coercive, $\lambda\in\mathbb{R}_{>0}$, and all the summands of
+$\mathfrak{R}_\lambda$ are positive.  Hence for all positive $\lambda$,
+$f_{\seq{s}} = \argmin_{f\in\mathcal{H}_K}\mathfrak{R}_\lambda(f)$ exists, is
+unique and attained.
 \begin{remark}[\citet{kadri2015operator}]
     \label{rk:rkhs_bound} We consider the optimization problem proposed in
     \cref{eq:ridge} where $L:(x_i, f, y_i) \mapsto
@@ -110,12 +113,12 @@ $(x,y)\in\mathcal{X}\times\mathcal{Y}$.
     corresponding $\mathcal{Y}$-Reproducing Kernel Hilbert space.
     \paragraph{}
     Let $c:\mathcal{Y}\times\mathcal{Y}\to\overline{\mathbb{R}}$ be a cost
-    function such that $L(x, f, y)=c(Vf(x), y)$ is a proper convex lower
+    function such that $L(x, f, y)=c(f(x), y)$ is a proper convex lower
     semi-continuous function in $f$ for all $x\in\mathcal{X}$ and all
     $y\in\mathcal{Y}$.
     \paragraph{}
     Eventually let $\lambda\in\mathbb{R}_{>0}$ be the Tychonov regularization
-    hyperparameters The solution $f_{\seq{s}}\in\mathcal{H}_K$ of the
+    hyperparameter. The solution $f_{\seq{s}}\in\mathcal{H}_K$ of the
     regularized optimization problem
     \begin{dmath}
         f_{\seq{s}} = \argmin_{f\in\mathcal{H}_K}
@@ -124,13 +127,13 @@ $(x,y)\in\mathcal{X}\times\mathcal{Y}$.
         \label{eq:learning_rkhs_gen}
     \end{dmath}
     has the form $f_{\seq{s}}=\sum_{j=1}^{N}K(\cdot,x_j)u_{\seq{s},j}$ where
-    $u_{\seq{s},j}\in\mathcal{Y}$ and
+    $(u_{\seq{s}})_j\in\mathcal{Y}$ and
     \begin{dmath}
         \label{eq:argmin_u} u_{\seq{s}} =
-        \argmin_{u\in\Vect_{i=1}^{N}\mathcal{U}}\frac{1}{N}
-        \displaystyle\sum_{i=1}^N c\left(\sum_{k=1}^{N}K(x_i,x_j)u_j,
-        y_i\right) + \frac{\lambda}{2}\sum_{k=1}^{N}u_i^\adjoint
-        K(x_i,x_k)u_k.
+        \argmin_{u\in\Vect_{i=1}^{N}\mathcal{Y}}\frac{1}{N}
+        \displaystyle\sum_{i=1}^N c\left(\sum_{j=1}^{N}K(x_i,x_j)u_j,
+        y_i\right) + \frac{\lambda}{2}\sum_{j,k=1}^{N}u_j^\adjoint
+        K(x_j,x_k)u_k.
     \end{dmath}
 \end{theorem}
 The first representer theorem was introduced by~\citet{Wahba90} in the
@@ -195,76 +198,68 @@ solution given in \cref{th:orff_representer}.
     \end{dmath*}
     Let
     \begin{dmath*}
-        J_{\lambda}(f) = \underbrace{\frac{1}{N}\displaystyle\sum_{i=1}^N
-        c(f(x_i), y_i)}_{=J_c} + \frac{\lambda}{2}\norm{f}^2_{K}
+        \mathfrak{R}_{\lambda}(f, \seq{s}) =
+        \underbrace{\frac{1}{N}\displaystyle\sum_{i=1}^N c(f(x_i),
+        y_i)}_{=\mathfrak{R}_c} + \frac{\lambda}{2}\norm{f}^2_{K}
     \end{dmath*}
-    To ensure that $J_{\lambda}$ has a global minimizer we need the following
+    To ensure that $\mathfrak{R}_{\lambda}$ has a global minimizer we need the following
     technical lemma (which is a consequence of the Hahn-Banach theorem for
     lower-semicontimuous functional, see~\citet{kurdila2006convex}).
     \begin{lemma}
-        \label{lm:strongly_convex_is_coercive} Let $J$ be a proper, convex,
+        \label{lm:strongly_convex_is_coercive} Let $\mathfrak{R}$ be a proper, convex,
         lower semi-continuous functional, defined on a Hilbert space
-        $\mathcal{H}$. If $J$ is strongly convex, then $J$ is coercive.
+        $\mathcal{H}$. If $\mathfrak{R}$ is strongly convex, then $\mathfrak{R}$ is coercive.
     \end{lemma}
     \begin{proof}
         Consider the convex function $G(f)\colonequals
-        J(f)-\lambda\norm{f}^2$, for some $\lambda>0$. Since $J$ is by
-        assumption proper, lower semi-continuous and strongly convex with
-        parameter $\lambda$, $G$ is proper, lower semi-continuous and convex.
-        Thus Hahn-Banach theorem apply, stating that $G$ is bounded by below by
-        an affine functional. \acs{ie}~there exists $f_0$ and
-        $f_1\in\mathcal{H}$ such that
+        \mathfrak{R}(f)-\lambda\norm{f}^2$, for some $\lambda>0$. Since
+        $\mathfrak{R}$ is by assumption proper, lower semi-continuous and
+        strongly convex with parameter $\lambda$, $G$ is proper, lower
+        semi-continuous and convex.  Thus Hahn-Banach theorem apply, stating
+        that $G$ is bounded by below by an affine functional. \acs{ie}~there
+        exists $f_0$ and $f_1\in\mathcal{H}$ such that
         \begin{dmath*}
             G(f)\ge G(f_0) + \inner{f - f_0, f_1} \condition{for all
             $f\in\mathcal{H}$.}
         \end{dmath*}
         Then substitute the definition of $G$ to obtain
         \begin{dmath*}
-            J(f)\ge J(f_0) + \lambda\left(\norm{f}-\norm{f_0}\right) + \inner{f
-            - f_0, f_1}.
+            \mathfrak{R}(f)\ge \mathfrak{R}(f_0) +
+            \lambda\left(\norm{f}-\norm{f_0}\right) + \inner{f - f_0, f_1}.
         \end{dmath*}
         By the Cauchy-Schwartz inequality, $\inner{f, f_1}\ge -
         \norm{f}\norm{f_1}$, thus
         \begin{dmath*}
-            J(f)\ge J(f_0) + \lambda\left(\norm{f}-\norm{f_0}\right) -
-            \norm{f}\norm{f_1} - \inner{f_0, f_1},
+            \mathfrak{R}(f)\ge \mathfrak{R}(f_0) +
+            \lambda\left(\norm{f}-\norm{f_0}\right) - \norm{f}\norm{f_1} -
+            \inner{f_0, f_1},
         \end{dmath*}
-        which tends to infinity as $f$ tends to infinity. Hence $J$ is coercive
+        which tends to infinity as $f$ tends to infinity. Hence $\mathfrak{R}$
+        is coercive
     \end{proof}
     Since $c$ is proper, lower semi-continuous and convex by assumption, thus
-    the term $J_c$ is also proper, lower semi-continuous and convex. Moreover
-    the term $J_M$ is always positive for any $f\in\mathcal{H}_K$ and
-    $\frac{\lambda}{2}\norm{f}^2_{K}$ is strongly convex. Thus $J_{\lambda}$
-    is strongly convex. Apply \cref{lm:strongly_convex_is_coercive} to obtain
-    the coercivity of $J_{\lambda}$, and then \cref{cor:unique_minimizer} to
-    show that $J_{\lambda}$ has a unique minimizer and is attained. Then let
+    the term $\mathfrak{R}_c$ is also proper, lower semi-continuous and convex.
+    Moreover the term $\frac{\lambda}{2}\norm{f}^2_{K}$ is strongly
+    convex. Thus $\mathfrak{R}_{\lambda}$ is strongly convex. Apply
+    \cref{lm:strongly_convex_is_coercive} to obtain the coercivity of
+    $\mathfrak{R}_{\lambda}$, and then \cref{cor:unique_minimizer} to show that
+    $\mathfrak{R}_{\lambda}$ has a unique minimizer and is attained. Then let
     \begin{dmath*}
         \mathcal{H}_{K, \seq{s}}=\Set{\sum_{j=1}^{N}K_{x_j}u_j| \forall
         (u_i)_{i=1}^{N} \in\mathcal{Y}^{N}}.
     \end{dmath*}
     For $f\in\mathcal{H}_{K, \seq{s}}^\perp$\mpar{$\mathcal{H}_{K,
-    \seq{s}}^\perp\oplus\mathcal{H}_{K, \seq{s}}=\mathcal{H_K}$.}, the operator
-    $W_{\seq{s}}$ satisfies
+    \seq{s}}^\perp\oplus\mathcal{H}_{K, \seq{s}}=\mathcal{H}_K$ because
+    $W_{\seq{s}}$ is bounded.}, the operator $W_{\seq{s}}$ satisfies
     \begin{dmath*}
         \inner{Y, W_{\seq{s}}f}_{\Vect_{i=1}^N\mathcal{Y}} =
         \inner{\underbrace{f}_{\in\mathcal{H}_{K, \seq{s}}^\perp},
-        \underbrace{\sum_{i=1}^{N}K_{x_i}V^\adjoint y_i}_{\in\mathcal{H}_{K,
+        \underbrace{\sum_{i=1}^{N}K_{x_i} y_i}_{\in\mathcal{H}_{K,
         \seq{s}}}}_{\mathcal{H}_K} \hiderel{=} 0
     \end{dmath*}
     for all sequences $(y_i)_{i=1}^N$, since $y_i\in\mathcal{Y}$.  Hence,
     \begin{dmath}
         \label{eq:null1} (f(x_i))_{i=1}^{N}=0
-    \end{dmath}
-    In the same way,
-    \begin{dmath*}
-        \sum_{i=1}^{N}\inner{K_{x_i}^* f, u_i}_{\mathcal{Y}} \hiderel{=}
-        \inner{\underbrace{f}_{\in\mathcal{H}_{K, \seq{s}}^\perp},
-        \underbrace{\sum_{j=1}^{N}K_{x_j}u_j}_{\in\mathcal{H}_{K,
-        \seq{s}}}}_{\mathcal{H}_K} \hiderel{=} 0.
-    \end{dmath*}
-    for all sequences $(u_i)_{i=1}^{N}\in\mathcal{Y}^{N}$. As a result,
-    \begin{dmath}
-        \label{eq:null2} (f(x_i))_{i=1}^{N}=0.
     \end{dmath}
     Now for an arbitrary $f\in\mathcal{H_K}$, consider the orthogonal
     decomposition $f = f^{\perp} + f^{\parallel}$, where $f^{\perp} \in
@@ -274,23 +269,25 @@ solution given in \cref{th:orff_representer}.
     \norm{f^{\parallel}}_{\mathcal{H}_K}^2$, \cref{eq:null1} and
     \cref{eq:null2} shows that if $\lambda > 0$, clearly then
     \begin{dmath*}
-        J_{\lambda}(f)=J_{\lambda_K}\left(f^{\perp}+f^{\parallel}\right)
-        \hiderel{\ge} J_{\lambda}\left(f^{\parallel}\right)
+        \mathfrak{R}_{\lambda}(f, \seq{s}) =
+        \mathfrak{R}_{\lambda}\left(f^{\perp} + f^{\parallel}, \seq{s}\right)
+        \hiderel{\ge} \mathfrak{R}_{\lambda}\left(f^{\parallel}, \seq{s}\right)
     \end{dmath*}
     The last inequality holds only when $\norm{f^{\perp}}_{\mathcal{H}_K}=0$,
     that is when $f^{\perp}=0$. As a result since the minimizer of
-    $J_{\lambda}$is unique and attained, it must lies in $\mathcal{H}_{K,
-    \seq{s}}$.
+    $\mathfrak{R}_{\lambda}$is unique and attained, it must lies in
+    $\mathcal{H}_{K, \seq{s}}$.
 \end{proof}
-The representer theorem show that minimizing a functional in a \acs{vv-RKHS}
+The representer theorem shows that minimizing a functional in a \acs{vv-RKHS}
 yields a solution which depends on all the points in the training set. Assuming
 that for all $x_i$, $x\in\mathcal{X}$ and for all $u_i\in\mathcal{Y}$ it takes
-time $O(P)$, to compute $K(x_i, x)u_i$, making a prediction using the
-representer theorem take $O(2P)$. Obviously If $\mathcal{Y}=\mathbb{R}^p$, Then
-$P=O(p^2)$ thus making a prediction cost $O(2p^2)$ operations.
+time $P$, to compute $K(x_i, x)u_i$, making a prediction using the
+representer theorem takes $NP$. If $\mathcal{Y}=\mathbb{R}^p$, we can view
+$K(x_i, x)$ as a matrix and then $P=O(p^2)$ thus making a prediction cost
+$O(Np^2)$ operations.
 %% on commence la partie approchée
 \subsection{Learning with Operator Random Fourier Feature maps}
-Instead learning a model $f$ that depends on all the points of the training
+Instead of learning a model $f$ that depends on all the points of the training
 set, we would like to learn a parametric model of the form
 $\tildef{\omega}(x) = \tildePhi{\omega}(x)^\adjoint \theta$, where $\theta$
 lives in some space $\tildeH{\omega}$. We are interested in
@@ -305,11 +302,16 @@ The following theorem states that when $\lambda > 0$ then learning with a
 feature map is equivalent to learn with a kernel. Moreover if
 $f_{\seq{s}}\in\mathcal{H}_K$ is a solution of \cref{eq:argmin_RKHS_rand} and
 $\theta_{\seq{s}}\in\mathcal{H}$ is the solution of
-\cref{eq:argmin_RKHS_rand}, then $f_{\seq{s}}=\Phi(\cdot)^\adjoint
-\theta_{\seq{s}}$. To the best of our knowledge no such results exist in the
-litterature even for scalar-valued kernel. Usually the author suppose that
-the class of function $\mathcal{H}_K$ can be replace with $\mathcal{H}$ but
-do not study the link between these spaces.
+\cref{eq:argmin_RKHS_theta}, then $f_{\seq{s}}=\Phi(\cdot)^\adjoint
+\theta_{\seq{s}}$. This equivalence could have been obtained by means of
+Lagrange duality. However in this proof we do not use such tool: we only
+focus on the representer theorem and the fact that there exist a partial
+isometry $W$ between the \acs{vv-RKHS} and a feature space $\mathcal{H}$. We
+show that if $\theta_{\seq{s}}$ is a solution of $\cref{eq:argmin_RKHS_theta}$,
+then theta belongs to $(\Ker W)^\bot$, thus there is an isometry between
+$\theta_{\seq{s}}\in\tilde{\mathcal{H}}$ and $\mathcal{H}_{\widetilde{K}}$:
+namely $W$.
+
 \begin{theorem}[Feature equivalence]
     \label{th:orff_representer} Let $\tildeK{\omega}$ be an \acl{OVK} such that
     for all $x$, $z\in\mathcal{X}$, $\tildePhi{\omega}(x)^\adjoint
@@ -338,6 +340,7 @@ do not study the link between these spaces.
     \theta_{\seq{s}}$, where $\theta_{\seq{s}} \in (\Ker
     \tildeW{\omega})^{\perp}$ and
     \begin{dmath}
+        \label{eq:argmin_RKHS_theta}
         \theta_{\seq{s}}=\argmin_{\theta\in \tildeH{\omega}}
         \frac{1}{N}\sum_{i=1}^Nc\left(\tildePhi{\omega}(x_i)^\adjoint \theta,
         y_i\right) + \frac{\lambda}{2}\norm{\theta}^2_{\tildeH{\omega}}
@@ -411,7 +414,7 @@ do not study the link between these spaces.
         \tildeW{\omega}\right)^\perp}
         \frac{1}{N}\sum_{i=1}^Nc\left( \left( \tildeW{\omega} \theta^{\perp}
         \right)(x), y_i \right) + \frac{\lambda}{2}
-        \norm{\theta^\perp}^2_{\tildeH{\omega}}
+        \norm{\theta^\perp}^2_{\tildeH{\omega}}.
     \end{dmath*}
     Hence minimizing over $\left(\Ker \tildeW{\omega}\right)^\perp$ or
     $\tildeH{\omega}$ is the same when $\lambda > 0$. Eventually,
@@ -420,20 +423,21 @@ do not study the link between these spaces.
     \begin{dmath*}
         \theta_{\seq{s}}=\argmin_{\theta\in\tildeH{\omega}}
         \frac{1}{N}\sum_{i=1}^Nc\left(\tildePhi{\omega}(x_i)^\adjoint \theta,
-        y_i\right) + \frac{\lambda}{2}\norm{\theta}^2_{\tildeH{\omega}}. \qed
+        y_i\right) + \frac{\lambda}{2}\norm{\theta}^2_{\tildeH{\omega}}.
     \end{dmath*}
+    \hfill\ensuremath{\qed}
 \end{proof}
 In the aforementioned theorem, we use the notation $\widetilde{K}$ and
 $\tildePhi{\omega}$ because our main subject of interest is the \acs{ORFF} map.
-However this theorem works for \emph{any} feature maps $\Phi(x):
+However this theorem works for \emph{any} feature maps $\Phi(x)\in
 \mathcal{L}(\mathcal{Y}, \mathcal{H})$ even when $\mathcal{H}$ is infinite
 dimensional.\footnote{If $\Phi(x): \mathcal{L}(\mathcal{Y}, \mathcal{H})$ and
 $\dim(\mathcal{H})=\infty$, the decomposition $\mathcal{H}=(\Ker W) \oplus
 (\Ker W)^\perp$ holds since $\mathcal{H}$ is a Hilbert space and $W$ is a
-closed operator.}.  This shows that when $\lambda>0$ the solution of
+bounded operator.}.  This shows that when $\lambda>0$ the solution of
 \cref{eq:argmin_u} with the approximated kernel $K(x,z) \approx
 \tildeK{\omega}(x,z) = \tildePhi{\omega}(x)^\adjoint\tildePhi{\omega}(z)$ is
-the same than the solution of \cref{eq:argmin_theta} up to a linear
+the same than the solution of \cref{eq:argmin_applied} up to a linear
 transformation. Namely, if $u_{\seq{s}}$ is the solution of \cref{eq:argmin_u},
 $\theta_{\seq{s}}$ is the solution of \cref{eq:argmin_theta} and $\lambda>0$ we
 have
@@ -465,15 +469,15 @@ equivalence theorem fails to apply. Since $r_{\seq{s}} = \sum_{i=1}^N
 \tildePhi{\omega}(x_i)(u_{\seq{s}})_i - \theta_{\seq{s}}^\perp -
 \theta_{\seq{s}}^\parallel$ and $\sum_{i=1}^N
 \tildePhi{\omega}(x_i)(u_{\seq{s}})_i$ is in $(\Ker W)^\perp$, with mild abuse
-of notation we write $r_{\seq{s}}=\theta^\perp$. This remark is illustrated in
-\cref{fig:representer,fig:representer2}.
+of notation we write $r_{\seq{s}}=\theta^\parallel$. This remark is illustrated
+in \cref{fig:representer,fig:representer2}.
 \paragraph{}
-In \cref{fig:representer}, we generated the data from a since wave to which we
-add some gaussian noise. We learned a gaussian kernel based \ac{RFF} model
+In \cref{fig:representer}, we generated the data from a sine wave to which we
+add some Gaussian noise. We learned a Gaussian kernel based \ac{RFF} model
 (blue curve) and a kernel model (yellow curve) where the kernel is obtained
 from the \acs{RFF} map. The left column represents the fit of the model to the
 points for four different valued of $\lambda$ (top to bottom: $10^{-2}$,
-$10^{-5}$, $10e^{10}$, $0$). The middle column shows if the \acs{RFF} solution
+$10^{-5}$, $10e^{-10}$, $0$). The middle column shows if the \acs{RFF} solution
 $\theta_{\seq{s}}$ is in $(\Ker \tilde{W})^\perp$.  This is true for all values
 of $\lambda$. The right column shows that even though $\theta_{\seq{s}}$ is in
 $(\Ker \tilde{W})^\perp$, when $\lambda\to0$ learning with \acs{RFF} is
@@ -481,7 +485,7 @@ different from learning with the kernel constructed from the \acs{RFF} maps
 since the coefficients of $\theta^{\parallel}$ are all different from $0$.
 \paragraph{}
 \cref{fig:representer2} is the same setting than \cref{fig:representer} except
-that we decreased the scale parameter $\sigma$ of the gaussian kernel to make
+that we decreased the scale parameter $\sigma$ of the Gaussian kernel to make
 it overfit, and emphasize that when $\lambda=0$, $\theta_{\seq{s}}$ might not
 belong to $(\Ker \tilde{W})^\perp$, as represented on the middle column.
 
@@ -522,7 +526,7 @@ err = representer2.main()
 In order to find a solution to \cref{eq:argmin_theta}, we first turn our
 attention to gradient descent methods. In the following we let
 \begin{dmath}
-    \label{eq:cost_functional} J_{\lambda}(\theta) =
+    \label{eq:cost_functional} \mathfrak{R}_{\lambda}(\theta) =
     \frac{1}{N}\sum_{i=1}^Nc\left(\tildePhi{\omega}(x_i)^\adjoint \theta,
     y_i\right) + \frac{\lambda}{2}\norm{\theta}^2_{\tildeH{\omega}}
 \end{dmath}
@@ -530,13 +534,13 @@ Then, we study the complexity in time of the proposed algorithm.
 \subsection{Gradient descent methods}\label{subsec:gradient_methods}
 Since the solution of \cref{eq:argmin_theta} is
 unique when $\lambda>0$, a sufficient and necessary condition is that the
-gradient of $J_{\lambda}$ at the minimizer $\theta_{\seq{s}}$ is zero. We use
+gradient of $\mathfrak{R}_{\lambda}$ at the minimizer $\theta_{\seq{s}}$ is zero. We use
 the Frechet derivative, the strongest notion of derivative in Banach
 spaces\mpar{Here we view the Hilbert space $\mathcal{H}$ (feature space) as a
 reflexive Banach space.}~\citep{conway2013course, kurdila2006convex} which
 directly generalizes the notion of gradient to Banach spaces. A function
 $f:\mathcal{H}_0\to\mathcal{H}_1$ is call Frechet differentiable at
-$\theta_0\in \mathcal{H}_0$ if there exist a bounded linear operator
+$\theta_0\in \mathcal{H}_0$ if there exists a bounded linear operator
 $A\in\mathcal{L}(\mathcal{H}_0,\mathcal{H}_1)$ such that
 \begin{dmath*}
     \lim_{\norm{h}_{\mathcal{H}_0}\to 0} \frac{\norm{f(\theta_0 + h) -
@@ -617,11 +621,11 @@ have
     \end{dmath*}
 \end{dgroup*}
 Provided that $c(y,y_i)$ is Frechet differentiable \acs{wrt}~$y$, for all $y$
-and $y_i\in\mathcal{Y}$ we have $\nabla_{\theta} J_{\lambda}(\theta) \in
+and $y_i\in\mathcal{Y}$ we have $\nabla_{\theta} \mathfrak{R}_{\lambda}(\theta) \in
 \tildeH{\omega}$ and
 \begin{dmath}
     \label{eq:grad_final}
-    \nabla_{\theta} J_{\lambda}(\theta) = \frac{1}{N}\sum_{i=1}^N
+    \nabla_{\theta} \mathfrak{R}_{\lambda}(\theta) = \frac{1}{N}\sum_{i=1}^N
     \tildePhi{\omega}(x_i) \left(\lderivativeat{c\left(y,
     y_i\right)}{y}{\tildePhi{\omega}(x_i)^\adjoint \theta}\right)^\adjoint +
     \lambda\theta
@@ -635,7 +639,7 @@ and $y_i\in\mathcal{Y}$ we have $\nabla_{\theta} J_{\lambda}(\theta) \in
         = \left(\tildePhi{\omega}(x_i)^\adjoint \theta-y_i\right).
     \end{dmath*}
     Thus, since the optimal solution $\theta_{\seq{s}}$ verifies
-    $\nabla_{\theta_{\seq{s}}} J_{\lambda}(\theta_{\seq{s}}) = 0$ we have
+    $\nabla_{\theta_{\seq{s}}} \mathfrak{R}_{\lambda}(\theta_{\seq{s}}) = 0$ we have
     \begin{dmath*}
         \frac{1}{N}\sum_{i=1}^N
         \tildePhi{\omega}(x_i)\left(\tildePhi{\omega}(x_i)^\adjoint
@@ -671,10 +675,10 @@ calculations shows that given an operator $A\in\mathcal{L}(\mathcal{Y})$,
 Thus $A^\adjoint=\Sigma^{-1}\conj{A}^{\transpose}\Sigma$.
 \begin{remark}
     \label{rq:mahalanobis} Notice that the evaluation of each operator
-    $\nabla_{\theta} J_{\lambda}(\theta)$, $V^*$,
-    $\tildePhi{\omega}(x_i)^*$'s and $M_{ik}$'s depends on the inner product of
-    the respective spaces in which they are defined. Namely $\mathcal{Y}$,
-    and $\tildeH{\omega}$. For instance if one chooses
+    $\nabla_{\theta} \mathfrak{R}_{\lambda}(\theta)$, $V^*$,
+    $\tildePhi{\omega}(x_i)^*$'s depends on the inner product of the respective
+    spaces in which they are defined. Namely $\mathcal{Y}$, and
+    $\tildeH{\omega}$. For instance if one chooses
     $\tildeH{\omega}=\vect_{j=1}^D \mathcal{Y}'$,
     $\mathcal{Y}'=\mathbb{R}^{u'}$ endowed with the Euclidean inner product
     $\inner{\theta',\theta}_{\mathcal{Y}'}=\inner{\theta', \theta}_2$,
@@ -687,7 +691,7 @@ Thus $A^\adjoint=\Sigma^{-1}\conj{A}^{\transpose}\Sigma$.
         e_j}_2 \hiderel{=} (\Sigma\tildePhi{\omega}(x)^\adjoint)_{ji}.
     \end{dmath*}
     Thus $\tildePhi{\omega}(x)^\adjoint =
-    \Sigma^{-1}\tildePhi{\omega}(x)^\transpose$ Tthen \cref{eq:iff_solution}
+    \Sigma^{-1}\tildePhi{\omega}(x)^\transpose$ and then \cref{eq:iff_solution}
     reads
     \begin{dmath*}
         \left(\frac{1}{N}\sum_{i=1}^N \tildePhi{\omega}(x_i) \Sigma^{-1}
@@ -734,9 +738,9 @@ while the space complexity is $O_s(r^2)$.
             x\mapsto\tildePhi{\omega}(x)^\transpose
             \theta_{\seq{s}},\end{cases} %
         \end{dmath*} %
-        such that $\theta_{\seq{s}}$ minimize \cref{eq:cost_functional}, where
+        such that $\theta_{\seq{s}}$ minimizes \cref{eq:cost_functional}, where
         $c(y,y')=\norm{y-y'}_2^2$ and $\mathbb{R}^r$ and
-        $\mathbb{R}^p$ are Hilbert spaces endowed with the euclidean inner
+        $\mathbb{R}^p$ are Hilbert spaces endowed with the Euclidean inner
         product.}
         $\mathbf{P} \gets \frac{1}{N}\sum_{i=1}^N
         \tildePhi{\omega}(x_i) \tildePhi{\omega}(x_i)^\transpose
@@ -776,25 +780,25 @@ kernelized solution $u_{\seq{s}}$ of \cref{th:representer} is
 which has time complexity $O\left(N^3p^3\right)$ and space complexity
 $O_s\left(N^2p^2\right)$. Suppose we are given a generic \acs{ORFF} map (see
 \cref{subsec:examples_ORFF}). Then $r=2Dp$, where $D$ is the number of samples.
-Hence \cref{alg:close_form} is better that its kernelized counterpart when
+Hence \cref{alg:close_form} is better than its kernelized counterpart when
 $r=2Dp$ is small compared to $Np$. Thus, roughly speaking it is better to use
 \cref{alg:close_form} when the number of features, $r$, required is small
 compared to the number of training points. Notice that \cref{alg:close_form}
 has a linear complexity with respect to the number of supervised training
-points $N$ so it is better suited to large scale learning provided that $D$
-does not grows linearly with $N$.
+points $N$, thus it is more suitable for large scale learning provided that $D$
+does not grow linearly with $N$.
 \paragraph{}
 Yet naive learning with \cref{alg:close_form} by viewing all the operators as
 matrices is still problematic. Indeed learning $p$ independent models with
 scalar Random Fourier Features would cost $O_t\left(D^2p^3(N + D)\right)$ since
-$r=2Dp$. This Means that learning vector-valued function has increased the
+$r=2Dp$. This means that learning a vector-valued function has increased the
 (expected) complexity from $p$ to $p^3$. However in some cases we can
 drastically reduce the complexity by viewing the feature-maps as linear
 operators rather than matrices.
 
 \section{Efficient learning with ORFF}
 \label{subsec:efficient_learning}
-When developping \cref{alg:close_form} we considered that the feature map
+When developing \cref{alg:close_form} we considered that the feature map
 $\tildePhi{\omega}(x)$ was a matrix from $\mathbb{R}^p$ to $\mathbb{R}^{r}$ for
 all $x\in\mathcal{X}$, and therefore that computing
 $\tildePhi{\omega}(x)\tildephi{\omega}(z)^\transpose$ has a time complexity of
@@ -805,7 +809,7 @@ given by \cref{alg:ORFF_construction}, developped in \cref{sec:building_ORFF}
 and \cref{subsec:examples_ORFF} and treat the decomposable kernel, the
 curl-free kernel and the divergence-free kernel as an example. We recall that
 if $\mathcal{Y}'=\mathbb{R}^{p'}$ and $\mathcal{Y}=\mathbb{R}^p$, then
-$\tildeH{\omega}=\mathbb{R}^{2Dp'}$ thus the \acl{ORFF}s given in
+$\tildeH{\omega}=\mathbb{R}^{2Dp'}$ thus the \aclp{ORFF} given in
 \cref{ch:operator-valued_random_fourier_features} have the form
 \begin{dmath*}
     \begin{cases}
@@ -836,7 +840,7 @@ matrix
 \end{dmath}
 $\omega_j\sim\probability_{\dual{\Haar}, \rho}$ \ac{iid}.
 
-\subsection{Case of study: the decomposable kernel}
+\subsection{Case of study: the decosubmposable kernel}
 \label{subsec:fast_decomposable}
 Throughout this section we show how the mathematical formulation relates to a
 concrete (Python) implementation. We propose a Python implementation based on
@@ -942,35 +946,36 @@ vectorization property of the Kronecker product. In the following we consider
 $\Theta \in \mathcal{M}_{2D,u'}(\mathbb{R})$ and the operator $\vectorize:
 \mathcal{M}_{p',2D}(\mathbb{R}) \to \mathbb{R}^{2Dp'}$ which turns a matrix
 into a vector (\acs{ie}~$\theta_{p'i+j} = \vectorize(\Theta_{ij})$,
-$i\in\mathbb{N}_{2D}$ and $j\in\mathbb{N}^*_{p'}$). Then
+$i\in\mathbb{N}_{(2D-1)}$ and $j\in\mathbb{N}^*_{p'}$). Then
 \begin{dmath*}
     \left(\tildephi{\omega}(x) \otimes B^\transpose \right)^\transpose  \theta
     \hiderel{=} \left(\tildephi{\omega}(x)^\transpose  \otimes B\right)
     \vectorize(\Theta) \hiderel{=} \vectorize\left(B \Theta
     \tildephi{\omega}(x) \right).
 \end{dmath*}
-with this trick, many authors \citep{Sindhwani2013, brault2016scaling,
+with this trick, many authors \citep{Sindhwani2013, brault2016random,
 rosasco2010learning}
 notice that the decomposable kernel usually yields a Stein equation
 \citep{penzl1998numerical}.  Indeed rewriting step 3 of \cref{alg:close_form}
 gives a system to solve of the form
 \begin{dmath*}
     \tildephi{\omega}(X)\tildephi{\omega}(X)^\transpose \Theta B^\transpose B +
-    \lambda \Theta - Y \hiderel{=} 0.
+    \lambda \Theta - Y \hiderel{=} 0
     \Leftrightarrow
-    \left(\tildephi(X) \tildephi(X)^\transpose \hiderel{\otimes} B^\transpose
-    B \hiderel{+} \lambda I_{2Dp'}\right) \theta \hiderel{-} Y \hiderel{=} 0
+    \left(\tildephi{\omega}(X) \tildephi{\omega}(X)^\transpose
+    \hiderel{\otimes} B^\transpose B \hiderel{+} \lambda I_{2Dp'}\right) \theta
+    \hiderel{-} Y \hiderel{=} 0.
 \end{dmath*}
-Many solvers exists to solve efficiently this kind of systems\mpar{for instance
-\citet{sleijpen2010bi}}, but most of them share the particularity that they are
-not just restricted to handle Stein equations. Broadly speaking, iterative
-solvers (or matrix free solvers) are designed to solve any systems of equation
-of ther form $PX=C$, where $P$ is a linear operator (not a matrix). This is
-exacly our case where $\tildephi{\omega}(x)\otimes B^T$ is the matrix form of
-the operator $\Theta \mapsto \vectorize(B\Theta\tildephi{\omega}X)$.
+Many solvers exist to solve efficiently this kind of systems\mpar{See for
+instance \citet{sleijpen2010bi}.}, but most of them share the particularity
+that they are not just restricted to handle Stein equations. Broadly speaking,
+iterative solvers (or matrix-free solvers) are designed to solve any system of
+equation of the form $PX=C$, where $P$ is a linear operator (not a matrix).
+This is exactly our case where $\tildephi{\omega}(x)\otimes B^T$ is the matrix
+form of the operator $\Theta \mapsto \vectorize(B\Theta\tildephi{\omega}X)$.
 \paragraph{}
 This leads us to the following (more efficient) Python implementation of the
-Decomposable \acs{ORFF} \say{operator} to be feed to a matrix-free solvers.
+Decomposable \acs{ORFF} \say{operator} to be fed to a matrix-free solvers.
 \begin{pyblock}[efficient_linop][fontsize=\scriptsize]
 def EfficientDecomposableGaussianORFF(X, A, gamma=1.,
                                       D=100, eps=1e-5, random_state=0):
@@ -1046,7 +1051,7 @@ and
 \end{dmath*}
 and
 \begin{dmath*}
-    U=\begin{pmatrix} u_1 & \hdots&  u_N
+    Y=\begin{pmatrix} y_1 & \hdots&  y_N
     \end{pmatrix}\hiderel{\in}\mathcal{M}_{u, N}.
 \end{dmath*}
 Given a matrix $X\in\mathcal{M}_{m,n}(\mathbb{R})$, we note $X_{\bullet i}$ the
@@ -1201,11 +1206,11 @@ transpose and dot product operator (as in Python). Then the custom user
 operator behaves as a (sparse) matrix --see
 \url{https://eigen.tuxfamily.org/dox/group__MatrixfreeSolverExample.html}. With
 this implementation the time complexity of $\tildePhi{\omega}(x)^\transpose
-\theta$ and $\tildePhi{\omega}(x)y$ falls down to $O_t(2Dp'+p'[)$ and the same
+\theta$ and $\tildePhi{\omega}(x)y$ falls down to $O_t(Dp'+p'p)$ and the same
 holds for space complexity.
 \begin{table}[th]
     \centering
-    \caption[Complexity of efficient linear-operators for different
+    \caption[Time complexity of efficient linear-operators for different
     \acs{ORFF}.]{Complexity of efficient linear-operator (in matrix form) for
     different Feature maps given in \cref{table:efficient-op}.
     \label{table:efficient-complexity}}
@@ -1245,8 +1250,8 @@ efficient_decomposable_gaussian.main()
 \end{pycode}
 \begin{figure}[htb]
     \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_decomposable_gaussian.pgf}}')}
-    \caption[Efficient decomposable gaussian \acs{ORFF}]{Efficient decomposable
-    gaussian ORFF (lower is better).}
+    \caption[Efficient decomposable Gaussian \acs{ORFF}]{Efficient decomposable
+    Gaussian ORFF (lower is better).}
     \label{fig:efficient_decomposable_gaussian}
 \end{figure}
 The left plot reports the execution time in seconds of the construction of the
@@ -1274,8 +1279,8 @@ efficient_curlfree_gaussian.main()
 \end{pycode}
 \begin{figure}[h]
     \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_curlfree_gaussian.pgf}}')}
-    \caption[Efficient curl-free gaussian \acs{ORFF}]{Efficient curl-free
-    gaussian ORFF (lower is better).}
+    \caption[Efficient curl-free Gaussian \acs{ORFF}]{Efficient curl-free
+    Gaussian ORFF (lower is better).}
     \label{fig:efficient_curlfree_gaussian}
 \end{figure}
 The left plot reports the execution time in seconds of the construction of the
@@ -1304,8 +1309,8 @@ efficient_divfree_gaussian.main()
 \end{pycode}
 \begin{figure}[h]
     \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_divfree_gaussian.pgf}}')}
-    \caption[Efficient divergence-free gaussian \acs{ORFF}]{Efficient
-    divergence-free gaussian ORFF (lower is better).}
+    \caption[Efficient divergence-free Gaussian \acs{ORFF}]{Efficient
+    divergence-free Gaussian ORFF (lower is better).}
     \label{fig:efficient_divfree_gaussian}
 \end{figure}
 The left plot reports the execution time in seconds of the construction of the
@@ -1323,11 +1328,12 @@ operator rather than staking matrices leads to more efficient computations.
 %------------------------------------------------------------------------------
 \section{Experiments}
 We present a set of experiments to complete the theoretical contribution and
-illustrate the behavior of ORFF-regression. First we study how well the ORFF
-regression recover the result of operator-valued kernel regression. Second we
-show the advantages of ORFF regression over independent RFF regression. A code
-implementing ORFF is available at \url{https://github.com/operalib/operalib} a
-framework for OVK Learning.
+illustrate the behavior of \acs{ORFF}-regression. First we study how well the
+\acs{ORFF} regression recover the result of operator-valued kernel regression.
+Second we show the advantages of \acs{ORFF} regression over independent
+\acs{RFF} regression. A code implementing \acs{ORFF} is available in Operalib,
+a framework for machine learning with \acsp{OVK}, at
+\url{https://github.com/operalib/operalib}
 
 \subsection{Learning with {ORFF} vs learning with {OVK}}
 \subsubsection{Datasets}
@@ -1335,7 +1341,7 @@ The \emph{first dataset} considered is the handwritten digits recognition
 dataset \textsc{MNIST} available at \url{http://yann.lecun.com/exdb/mnist}. We
 select a training set of $12,000$ images and a test set of $10,000$ images. The
 inputs are images represented as a vector $x_i\in[0,255]^{784}$ and the targets
-$y_i\in\mathbb{N}_9$are integers between $0$ and $9$.
+$y_i\in\mathbb{N}_9$ are integers between $0$ and $9$.
 \paragraph{}
 First we scaled the inputs such that they take values in $[-1,1]^{784}$. Then
 we binarize the targets such that each number is represented by a unique binary
@@ -1409,7 +1415,7 @@ a decomposable Gaussian kernel with signature
 \end{dmath*}
 To apply $\cref{alg:close_form}$ after noticing that in the case of the
 decomposable kernel with $\lambda_M=0$, it boilds down to a Stein equation
-\citep[section 5.1]{brault2016scaling}, we use an off-the-shelf
+\citep[section 5.1]{brault2016random}, we use an off-the-shelf
 solver\footnote{Available at
 \url{http://ta.twi.tudelft.nl/nw/users/gijzen/IDR.html}} able to handle Stein's
 equation. For both methods we choose $\sigma=20$ and use a $2$-fold cross
@@ -1441,7 +1447,7 @@ grid. Here we optimize \cref{eq:argmin_theta} using Scipy's \acs{L-BFGS-B}
 \url{http://docs.scipy.org/doc/scipy/reference/optimize.html}} with the
 gradients given in \cref{eq:grad_final} and the efficient linear operator
 described in \cref{subsec:efficient_linop}.  \Cref{fig:curl_experiment} (bottom
-row) reports the $R2$ score on the test set versus the number of
+row) reports the $R^2$ score on the test set versus the number of
 curl-\acs{ORFF} $D$ with a comparison with curl-\acs{OVK}.  In this experiment,
 we see that curl-\acs{ORFF} can even be better than curl-\acs{OVK}, suggesting
 that \acs{ORFF} might play an additional regularizing role. It also shows the
@@ -1457,8 +1463,8 @@ does. When $N>10^4$, \acs{OVK} regression exceeds memory capacity.
 \end{figure}
 \paragraph{}
 \textbf{Structured prediction vs Independent (RFF) prediction.}
-On the second dataset, \cref{fig:curl_experiment} (top row) compares R2 score
-and time of \acs{ORFF} regression using the trivial identity decomposable
+On the second dataset, \cref{fig:curl_experiment} (top row) compares $R^2$
+score and time of \acs{ORFF} regression using the trivial identity decomposable
 kernel, \acs{eg} independent \acsp{RFF}, to curl-free \acs{ORFF} regression.
 Curl-free \acs{ORFF} outperforms independent \acsp{RFF}, as expected, since the
 dataset involves structured outputs.
@@ -1467,7 +1473,7 @@ dataset involves structured outputs.
 In this setting we solved the optimisation problem for both \acs{ORFF} and
 \acs{OVK} using a \acs{L-BFGS-B}. \Cref{fig:ORFFvsOVK_dec} top row shows that
 for a fixed number of instance in the train set, \acs{OVK} performs better than
-\acs{ORFF} in terms of accuracy ($R2$). However \acs{ORFF} scales better than
+\acs{ORFF} in terms of accuracy ($R^2$). However \acs{ORFF} scales better than
 \acs{OVK} \acs{wrt} the number of data. \acs{ORFF} is able to process more data
 than \acs{OVK} in the same time and thus reach a better accuracy for a given
 amount of time. Bottom row shows that \acs{ORFF} tends to reach \acs{OVK}'s
@@ -1476,14 +1482,14 @@ accuracy for a fixed number of data when the number of features increase.
     \centering
     \resizebox{\textwidth}{!}{%
     \input{./gfx/ORFFvsOVK.pgf}}
-    \caption{Decomposable kernel on the third dataset: $R2$ score vs number of
+    \caption{Decomposable kernel on the third dataset: $R^2$ score vs number of
     data in the train set ($N$) \label{fig:ORFFvsOVK_dec}}
 \end{figure}
 \begin{figure}
     \centering
     \resizebox{\textwidth}{!}{%
     \input{./gfx/ORFFvsOVK_Dvariation.pgf}}
-    \caption{Decomposable kernel on the third dataset: $R2$ score vs number of
+    \caption{Decomposable kernel on the third dataset: $R^2$ score vs number of
     data in the train set ($N$) for different number for different number of
     random samples ($D$). \label{fig:ORFFvsOVK}}
 \end{figure}
@@ -1516,21 +1522,21 @@ and not all the tasks.). We optimise the regularized risk
     \frac{\lambda}{2N}||{h}||_{\mathcal{H}}^2
 \end{dmath*}
 We used a model $h$ based on the decomposable kernel
-\begin{equation}
+\begin{dmath*}
     h(x)= (\phi(x)^T \otimes B) \theta
-\end{equation}
+\end{dmath*}
 we chose $B$ such that $BB^T=A$, where $A$ is the inverse graph Laplacian $L$
 of the similarities between the tasks, parametrized by an hyperparameter
-$\gamma \in \mathbb{R}_+$.
-\begin{equation}
+$\gamma \in \mathbb{R}_+$. Namely:
+\begin{dmath*}
     L_{kl}=\exp\left(-\gamma\sqrt{\sum_{i=1}^N \left(y_i^k -
     y_i^l\right)^2}\right).
-\end{equation}
+\end{dmath*}
 We draw $N$ data randomly for each task, hence creating a dataset of $N\times
 7$ data and computed the nMSE on the proposed test set ($4.5$K points). We
-repeated the experiments $80$ times to avoid randomness. We choose $D=\frac{N
-\lor 500}{2}$ features, and optimized the problem with a second order batch
-gradient.
+repeated the experiments $80$ times to avoid randomness. We choose
+$D=\frac{\max(N, 500)}{2}$ features, and optimized the problem with a second
+order batch gradient.
 \begin{table}[!h]
     \centering
     \begin{tabular}{c|cccc}
@@ -1565,12 +1571,16 @@ important the more data are available.
 
 %------------------------------------------------------------------------------
 \section{Conclusion}
-\acs{ORFF} approximations open the door to learn linear models. We described in
-this chapter how learning with \acsp{OVK} is converted into learning a linear
-(parametric) model based on \acs{ORFF}.
+\acs{ORFF} approximations open the door to the literature of efficient learning
+with linear models: the feature map can be seen as a function that linearize
+non linear functions by embedding them in a high dimensional feature space in
+which we can learn with linear models. Indeed, we described in this chapter how
+learning a non linear, non parametric model with \acsp{OVK} is converted into
+learning a linear and parametric model based on \acs{ORFF}.
 %We introduced \acs{ORFF}, a general and versatile framework for shift-invariant
 %\acs{OVK} approximation. We proved the uniform convergence of the approximation
 %error for bounded and unbounded \acsp{ORFF}.
+\paragraph{}
 The complexity in time of these approximations together with the linear
 learning algorithm make this implementation scalable with the data size and
 thus appealing compared to \acs{OVK} regression as shown in numerical

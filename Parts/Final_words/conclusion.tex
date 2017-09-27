@@ -1,4 +1,4 @@
-In Machine Learning, many algorithm focus on learning functions that model
+In Machine Learning, many algorithms focus on learning functions that model
 dependencies between inputs and outputs where outputs are real numbers. However
 in numerous application fields such as biology, economics, physics, etc.~the
 output data are not reals: they can be a collection of reals, present
@@ -10,21 +10,21 @@ literature we focused on mathematical objects called \aclp{OVK} to learn
 such functions.
 
 \section{Contributions}
-\acsp{OVK} naturally extend the celebrated kernel method used to learn
+\acsp{OVK} naturally extend the celebrated kernel methods used to learn
 scalar-valued functions, to the case of learning vector-valued functions.
 Yet, although \acsp{OVK} are appealing from a theoretical aspect, these
 methods scale poorly in terms of computation time when the number of data
-is high. Indeed, to evaluate the value of function with an \acl{OVK}, it
-requires to evaluate an \acl{OVK} on all the point in the given dataset.
-Hence naive learning with kernels usually scales cubicly in time with the
-number of data. In the context of large-scale learning such scaling is not
-acceptable. Through this work we propose a methodology to tackle this
-difficulty.
+is high. Indeed, in order to evaluate a \emph{function} on a unknown point with
+an \acl{OVK}, it requires to evaluate an \acl{OVK} on all the point in the
+given dataset.  Hence naive learning with kernels usually scales cubicly in
+time with the number of data. In the context of large-scale learning such
+scaling is not acceptable. Through this work we propose a methodology to tackle
+this difficulty.
 \paragraph{}
 Enlightened by the literature on large-scale learning with
 \emph{scalar}-valued kernel, in particular the work of Rahimi and Recht
 \citep{Rahimi2007}, we propose to replace an \acs{OVK} by a random feature
-map that we called \acl{ORFF}. Our contribution start with the formal
+map that we called \acl{ORFF}. Our contributions start with the formal
 mathematical construction of this feature from an \acs{OVK}. Then we show
 that it is also possible to obtain a kernel from an \acs{ORFF}. Eventually
 we analyse the regularization properties in terms of \acl{FT} of
@@ -35,28 +35,28 @@ estimator of an \acs{OVK} is not a bounded random variable. Moreover we
 also give a bound when the dimension of the output data infinite.
 \paragraph{}
 After ensuring that an \acs{ORFF} is a good approximation of a kernel, we
-moved on giving a framework for supervised learnin with \aclp{OVK}. We showed
-that learning with a feature map is equivalent to learn with the reconstructed
-\acs{OVK} under some mild conditions. Then we focused on an efficient
-implementation of \acs{ORFF} by viewing them as linear operators rather than
-matrices and using matrix-free (iterative) solvers and concluded with some
-numerical experiments. Eventually we gave a generalization bound for \acs{ORFF}
-learning that suggest that the number of features sampled in an \acs{ORFF}
-should be proportional to the number of data. We concluded our contribution by
-applying the \acs{ORFF} framework to learning vector-valued
+moved on giving a framework for supervised learning with \aclp{OVK}. We showed
+that learning with a feature map is equivalent to learning with the
+reconstructed \acs{OVK} under some mild conditions. Then we focused on an
+efficient implementation of \acs{ORFF} by viewing them as linear operators
+rather than matrices and using matrix-free (iterative) solvers and concluded
+with some numerical experiments. Eventually we gave a generalization bound for
+\acs{ORFF} learning that suggests that the number of features sampled in an
+\acs{ORFF} should be proportional to the number of data. We concluded our
+contribution by applying the \acs{ORFF} framework to learning vector-valued
 time series.
 
 \section{Perspectives}
-To start with the theoretical Perspectives, following Rahimi and Recht we gave
-a generalization bound for \acs{ORFF} kernel ridge that suggest that the number
-of feature to draw is proportional to the number of data.  However new results
-of \citet{rudi2016generalization} suggest that the number of feature should be
-proportional to the \emph{square root} of the number of data. In a future work,
-we shall investigate this results and extend it to \acs{ORFF}.
+To start with the theoretical perspectives, following Rahimi and Recht we gave
+a generalization bound for \acs{ORFF} kernel ridge that suggests that the
+number of features to draw is proportional to the number of data.  However new
+results of \citet{rudi2016generalization} suggest that the number of feature
+should be proportional to the \emph{square root} of the number of data. In a
+future work, we shall investigate this result and extend it to \acs{ORFF}.
 \paragraph{}
 On the methodological perspectives we gave an intuition on how \aclp{OVK} can
 be used to learn outputs that are functions. We used the \acs{ORFF} framework
-to speed up quantile regression and at the same time retrieved the full
+to speed up quantile regression and at the same time obtain the full
 quantile function. We applied the same methodology to the anomaly detection
 setting and showed that it is possible to learn jointly all the level sets of a
 distribution with an extension of a \acl{OCSVM}. We are convinced that this
@@ -80,8 +80,8 @@ of Deep Neural Networks as in \citet{lu2014scale}.  We could also improve the
 Doubly Stochastic Gradient descent in the light of the recent results of
 \citet{rudi2016generalization} on generalization.
 \paragraph{}
-Eventually during this three years, we have witnessed the rise of deep-learning
-methods with neural network. As pointed out by many authors, random features
+Eventually during these three years, we have witnessed the rise of deep-learning
+methods with neural networks. As pointed out by many authors, random features
 share deep connections with neural networks: an ORFF-based shallow architecture
 can be seen as a one-layer  neural architecture. Conversely, a neural network
 can be seen as

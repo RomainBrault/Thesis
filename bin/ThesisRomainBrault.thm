@@ -53,9 +53,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {proposition}{{Proposition}{3.{2}}{\citet {carmeli2006vector}}}{37}{proposition.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{7}{}}{37}{proof.7}
+\contentsline {proof}{{Proof}{7}{}}{38}{proof.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{3.{3}}{\citet {carmeli2006vector}}}{38}{proposition.3.3}
+\contentsline {proposition}{{Proposition}{3.{3}}{\citet {carmeli2006vector}}}{39}{proposition.3.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {proof}{{Proof}{8}{}}{39}{proof.8}
 \defcounter {refsection}{0}\relax 
@@ -109,7 +109,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {remark}{{Remark}{4.{1}}{}}{58}{remark.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{4.{5}}{Bounded shift-invariant $\mathcal {Y}$-Mercer kernel spectral decomposition (adaptation of a result from \citet {minh2016operator}}}{58}{proposition.4.5}
+\contentsline {proposition}{{Proposition}{4.{5}}{Bounded shift-invariant $\mathcal {Y}$-Mercer kernel spectral decomposition (adaptation of \citet {minh2016operator}}}{58}{proposition.4.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {proof}{{Proof}{16}{}}{59}{proof.16}
 \defcounter {refsection}{0}\relax 
@@ -127,29 +127,29 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {remark}{{Remark}{4.{2}}{}}{68}{remark.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{4.{9}}{Operator Random Fourier Feature map}}{70}{proposition.4.9}
+\contentsline {proposition}{{Proposition}{4.{9}}{Operator Random Fourier Feature map}}{69}{proposition.4.9}
 \defcounter {refsection}{0}\relax 
 \contentsline {proof}{{Proof}{20}{}}{70}{proof.20}
 \defcounter {refsection}{0}\relax 
 \contentsline {proposition}{{Proposition}{4.{10}}{}}{70}{proposition.4.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{21}{}}{70}{proof.21}
+\contentsline {proof}{{Proof}{21}{}}{71}{proof.21}
 \defcounter {refsection}{0}\relax 
 \contentsline {definition}{{Definition}{4.{1}}{Random Fourier feature operator}}{71}{definition.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{4.{11}}{}}{71}{proposition.4.11}
+\contentsline {proposition}{{Proposition}{4.{11}}{}}{72}{proposition.4.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{22}{of \cref {pr:cv_feature_map_1}}}{71}{proof.22}
+\contentsline {proof}{{Proof}{22}{of \cref {pr:cv_feature_map_1}}}{72}{proof.22}
 \defcounter {refsection}{0}\relax 
 \contentsline {proof}{{Proof}{23}{of \cref {pr:cv_feature_map_2}}}{72}{proof.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{4.{1}}{Matrix-valued kernel on the additive group}}{72}{example.4.1}
+\contentsline {example}{{Example}{4.{1}}{Matrix-valued kernel on the additive group}}{73}{example.4.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {proof}{{Proof}{24}{}}{73}{proof.24}
 \defcounter {refsection}{0}\relax 
 \contentsline {example}{{Example}{4.{2}}{Matrix-valued kernel on the skewed multiplicative group}}{74}{example.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Proof}{25}{}}{74}{proof.25}
+\contentsline {proof}{{Proof}{25}{}}{75}{proof.25}
 \defcounter {refsection}{0}\relax 
 \contentsline {proposition}{{Proposition}{4.{12}}{}}{75}{proposition.4.12}
 \defcounter {refsection}{0}\relax 
@@ -165,7 +165,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {definition}{{Definition}{5.{2}}{}}{84}{definition.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {corollary}{{Corollary}{5.{2}}{}}{84}{corollary.5.2}
+\contentsline {corollary}{{Corollary}{5.{2}}{}}{85}{corollary.5.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {sproof}{{Sketch of the proof}{1}{}}{85}{sproof.1}
 \defcounter {refsection}{0}\relax 
@@ -183,9 +183,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {proof}{{Proof}{28}{}}{89}{proof.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{5.{1}}{Additive group}}{90}{example.5.1}
+\contentsline {example}{{Example}{5.{1}}{Additive group}}{91}{example.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{5.{2}}{Skewed-multiplicative group}}{90}{example.5.2}
+\contentsline {example}{{Example}{5.{2}}{Skewed-multiplicative group}}{91}{example.5.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {theorem}{{Theorem}{6.1}{Mazur-Schauder}}{94}{theorem.6.1}
 \defcounter {refsection}{0}\relax 
@@ -203,7 +203,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {proof}{{Proof}{31}{}}{99}{proof.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Example}{6.{1}}{Naive closed form for the squared error cost}}{104}{example.6.1}
+\contentsline {example}{{Example}{6.{1}}{Naive closed form for the squared error cost}}{105}{example.6.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {remark}{{Remark}{6.{2}}{}}{105}{remark.6.2}
 \defcounter {refsection}{0}\relax 
@@ -211,7 +211,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {proof}{{Proof}{32}{}}{125}{proof.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{7.{1}}{\citet {bartlett2002rademacher}}}{125}{definition.7.1}
+\contentsline {definition}{{Definition}{7.{1}}{\citet {bartlett2002rademacher}}}{126}{definition.7.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {proposition}{{Proposition}{7.{2}}{\citet {maurer2016vector}}}{126}{proposition.7.2}
 \defcounter {refsection}{0}\relax 
@@ -307,7 +307,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {example}{{Example}{D.{1}}{}}{215}{example.D.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {remark}{{Remark}{D.{1}}{}}{216}{remark.D.1}
+\contentsline {remark}{{Remark}{D.{1}}{}}{217}{remark.D.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {remark}{{Remark}{D.{2}}{}}{217}{remark.D.2}
 \defcounter {refsection}{0}\relax 

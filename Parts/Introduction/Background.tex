@@ -1244,11 +1244,11 @@ functions $g\in\mathcal{H}$, the redescription space, such that $Wg=f$ where
 $f$ is a function of the \ac{vv-RKHS} $\mathcal{H}_K$. However
 \cref{eq:norm_relation_w} shows that there is a unique function
 $g\in\mathcal{H}$ such that $Wg=f$, \emph{and}
-$\norm{g}_{\mathcal{H}}=\norm{f}_{\mathcal{H}_K}$. Among all functions
-$g\in\mathcal{H}$ such that $Wg=f$, the only one making the norm in the
-\ac{vv-RKHS} and the redescription space is the one with minimal norm.
+$\norm{g}_{\mathcal{H}}=\norm{f}_{\mathcal{H}_K}=\norm{f}_K$. Among all
+functions $g\in\mathcal{H}$ such that $Wg=f$, the only one making the norm in
+the \ac{vv-RKHS} and the redescription space is the one with minimal norm.
 \paragraph{}
-In this work we mainly focus on the class kernels inducing a \ac{vv-RKHS} of
+In this work we mainly focus on the class of kernels inducing a \ac{vv-RKHS} of
 continuous functions. Such kernels are named $\mathcal{Y}$-Mercer kernels.
 \begin{definition}[$\mathcal{Y}$-Mercer kernel~(\citet{Carmeli2010})]
     \label{def:mercer_kernel}
@@ -1273,16 +1273,20 @@ kernel~(\citet{Carmeli2010})]
     $x\in\mathcal{X}$ and all $y\in\mathcal{Y}$, $K_xy$ is an element of
     $\mathcal{C}(\mathcal{X};\mathcal{Y})$ (see \cref{eq:span_RKHS}). In
     addition for all $f\in\mathcal{H}_K$, $\norm{K_x^\adjoint
-    f}$=$\norm{f(x)}\le \norm{f}_{\infty}$. Hence there exists a constant
-    $M\in\mathbb{R}_+$ such that for all $x\in\mathcal{X}$, $\norm{K_x}\le M$.
+    f}_{\mathcal{Y}}$=$\norm{f(x)}_{\mathcal{Y}}\le \norm{f}_{\infty}$. Hence
+    there exists a constant $M\in\mathbb{R}_+$ such that for all
+    $x\in\mathcal{X}$, $\norm{K_x}_{\mathcal{Y}, K}\le M$.
     Therefore from \cref{eq:kernel_operator_product}, for all
-    $x\in\mathcal{X}$, $\norm{K(x, x)}=\norm{K_x^\adjoint}^2\le M^2$.
-    Conversely assume that the function $x\mapsto\norm{K(x,x)}$ is locally
-    bounded and $K_xy\in\mathcal{C}(\mathcal{X};\mathcal{Y})$. For all
-    $f\in\mathcal{H}_K$ and all $x\in\mathcal{X}$,
+    $x\in\mathcal{X}$, $\norm{K(x, x)}_{\mathcal{Y},
+    \mathcal{Y}}=\norm{K_x^\adjoint}_{K, \mathcal{Y}}^2\le M^2$.
+    Conversely assume that the function $x\mapsto\norm{K(x,x)}_{\mathcal{Y},
+    \mathcal{Y}}$ is locally bounded and
+    $K_xy\in\mathcal{C}(\mathcal{X};\mathcal{Y})$. For all $f\in\mathcal{H}_K$
+    and all $x\in\mathcal{X}$,
     \begin{dmath*}
-        \norm{f(x)}\hiderel{=}\norm{f}_K\sqrt{\norm{K(x,x)}}\hiderel{\le} M
-        \norm{f}_K.
+        \norm{f(x)}_{\mathcal{Y}} \hiderel{=}
+        \norm{f}_K\sqrt{\norm{K(x,x)}_{\mathcal{Y}, \mathcal{Y}}}\hiderel{\le}
+        M \norm{f}_K.
     \end{dmath*}
     Thus convergence in $\mathcal{H}_K$ implies uniform convergence. Since by
     assumption
@@ -1396,12 +1400,13 @@ studied mathematical objects.
     is unitary and
     \begin{dgroup}
         \begin{dmath}
-            K(x,z)=K_e^\adjoint\lambda_{\inv{x}\groupop z}K_e \qquad \forall
-            (x,z)\hiderel{\in}\mathcal{X}^2,
+            K(x,z)=K_e^\adjoint\lambda_{\inv{x}\groupop z}K_e \condition{%
+            $\forall (x,z)\hiderel{\in}\mathcal{X}^2$},
         \end{dmath}
         \begin{dmath}
-            \label{pr:kernel_signature_4} \norm{K(x,x)}=\norm{K_e(e)} \qquad
-            \forall x\hiderel{\in}\mathcal{X}.
+            \label{pr:kernel_signature_4} \norm{K(x,x)}_{\mathcal{Y},
+            \mathcal{Y}}=\norm{K_e(e)}_{\mathcal{Y}, \mathcal{Y}}
+            \condition{$\forall x\hiderel{\in}\mathcal{X}$}.
         \end{dmath}
     \end{dgroup}
 \end{proposition}
@@ -1433,7 +1438,8 @@ studied mathematical objects.
     \begin{dmath*}
         \inner{\lambda_xK_ty, \lambda_xK_{t'}y'}_K=\inner{K_{x\groupop t}y,
         K_{x \groupop t'}y'}_K\hiderel{=}\inner{K(x \groupop t', x \groupop
-        t)y,y'}=\inner{K(t',t)y, y'}\hiderel{=}\inner{K_ty, K_{t'}y'}_K
+        t)y,y'}_{\mathcal{Y}, \mathcal{Y}}=\inner{K(t',t)y, y'}_{\mathcal{Y},
+        \mathcal{Y}}\hiderel{=}\inner{K_ty, K_{t'}y'}_K
     \end{dmath*}
     This means that $\lambda$ leaves the set $\Set{K_xy|\forall
     x\in\mathcal{X}, \forall y\in\mathcal{Y}}$ invariant. Since
@@ -1529,8 +1535,9 @@ $\Gamma$ acts as a regularizer between the components of the outputs $f_k =
         \norm{f}_K = \sum_{i,j=1}^p
         \left(\Gamma^\dagger\right)_{ij}\inner{f_i,f_j}_k
     \end{dmath}
-    where $f_i=\inner{f,e_i}$ (resp $f_j=\inner{f,e_j}$), denotes the $i$-th
-    (resp $j$-th) component of $f$.
+    where $f_i=\inner{f(\cdot),e_i}_{\mathcal{Y}}$ 
+    (resp $f_j=\inner{f(\cdot),e_j}_{\mathcal{Y}}$), denotes the $i$-th 
+    (resp $j$-th) component of $f(\cdot)$.
 \end{proposition}
 We prove a generalized version of \cref{pr:kernel_reg} to any \acl{OVK} in
 \cref{subsec:regularization_property}.

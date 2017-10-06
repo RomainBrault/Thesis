@@ -21,10 +21,10 @@
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.3}Functional Fourier feature map}{\reset@font\mtcSSfont 65}{subsection.4.2.3}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Operator-valued Random Fourier Features}{\reset@font\mtcSfont 65}{section.4.3}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}Building Operator-valued Random Fourier Features}{\reset@font\mtcSSfont 65}{subsection.4.3.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 67}{proposition.4.7}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 69}{algocf.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 67}{figure.caption.16}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 68}{algocf.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}From Operator Random Fourier Feature maps to OVKs}{\reset@font\mtcSSfont 69}{subsection.4.3.2}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 71}{proof.21}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.3}Examples of Operator Random Fourier Feature maps}{\reset@font\mtcSSfont 72}{subsection.4.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.3}Examples of Operator Random Fourier Feature maps}{\reset@font\mtcSSfont 73}{subsection.4.3.3}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.4}Regularization property}{\reset@font\mtcSSfont 75}{subsection.4.3.4}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Conclusions}{\reset@font\mtcSfont 77}{section.4.4}}

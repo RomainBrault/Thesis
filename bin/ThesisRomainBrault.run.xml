@@ -44,7 +44,8 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>ThesisRomainBrault.bcf</file>
+      <file>ThesisRomainBrault.aux</file>
+      <file>ThesisRomainBrault-blx.bib</file>
     </provides>
     <requires type="dynamic">
       <file>ThesisRomainBrault.bbl</file>
@@ -52,6 +53,7 @@
     <requires type="static">
       <file>blx-dm.def</file>
       <file>blx-compat.def</file>
+      <file>blx-bibtex.def</file>
       <file>biblatex.def</file>
       <file>blx-natbib.def</file>
       <file>numeric-comp.bbx</file>
@@ -64,13 +66,15 @@
     </requires>
   </internal>
   <external package="biblatex" priority="5" active="0">
-    <generic>biber</generic>
+    <generic>bibtex</generic>
     <cmdline>
-      <binary>biber</binary>
+      <binary>bibtex8</binary>
+      <option>--wolfgang</option>
+      <option>--min_crossrefs 2</option>
       <infile>ThesisRomainBrault</infile>
     </cmdline>
     <input>
-      <file>ThesisRomainBrault.bcf</file>
+      <file>ThesisRomainBrault.aux</file>
     </input>
     <output>
       <file>ThesisRomainBrault.bbl</file>
@@ -79,12 +83,16 @@
       <file>ThesisRomainBrault.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>ThesisRomainBrault.bcf</file>
+      <file>ThesisRomainBrault.aux</file>
+      <file>ThesisRomainBrault-blx.bib</file>
     </requires>
     <requires type="editable">
       <file>Bibliography.bib</file>
       <file>MVExtrem.bib</file>
       <file>Selfpublication.bib</file>
+    </requires>
+    <requires type="static">
+      <file>biblatex.bst</file>
     </requires>
   </external>
 </requests>

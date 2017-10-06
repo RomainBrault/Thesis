@@ -87,7 +87,7 @@
  
  
  
- <prism:coverDisplayDate>September 11, 2017</prism:coverDisplayDate>
+ <prism:coverDisplayDate>October 6, 2017</prism:coverDisplayDate>
  <prism:coverDate>2017</prism:coverDate>
  
  
@@ -105,9 +105,9 @@
       </rdf:Description> 
       <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
          <xmp:CreatorTool>XeTeX + classicthesis.sty</xmp:CreatorTool> 
-         <xmp:ModifyDate>2017-09-11T10:56:30+02:00</xmp:ModifyDate> 
-         <xmp:CreateDate>2017-09-11T10:56:30+02:00</xmp:CreateDate> 
-         <xmp:MetadataDate>2017-09-11T10:56:30+02:00</xmp:MetadataDate> 
+         <xmp:ModifyDate>2017-10-06T17:19:33+02:00</xmp:ModifyDate> 
+         <xmp:CreateDate>2017-10-06T17:19:33+02:00</xmp:CreateDate> 
+         <xmp:MetadataDate>2017-10-06T17:19:33+02:00</xmp:MetadataDate> 
       </rdf:Description> 
       <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
          <xmpRights:Marked>True</xmpRights:Marked>
@@ -117,7 +117,7 @@
       </rdf:Description> 
       <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
          <xmpMM:DocumentID>uuid:86B0A80E-4F14-E782-157C-46D0B1E42FC7</xmpMM:DocumentID> 
-         <xmpMM:InstanceID>uuid:FED8121E-4DE2-A8CF-BB92-1A00C0277840</xmpMM:InstanceID> 
+         <xmpMM:InstanceID>uuid:0AACD675-8380-1C97-AF66-67DAD29060A0</xmpMM:InstanceID> 
       </rdf:Description> 
    </rdf:RDF> 
 </x:xmpmeta> 

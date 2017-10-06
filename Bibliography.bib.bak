@@ -1,8 +1,8 @@
 % Encoding: UTF-8
 
 @InProceedings{Aslan2014,
-  author    = {{\"{O}}zlem Aslan and Xinhua Zhang and Dale Schuurmans},
-  title     = {Convex Deep Learning via Normalized Kernels},
+  author    = {\"Ozlem Aslan and Xinhua Zhang and Dale Schuurmans},
+  title     = {{C}onvex {D}eep {L}earning via {N}ormalized {K}ernels},
   booktitle = {Advances in NIPS 27: Annual Conference on NIPS 2014, December 8-13 2014, Montreal, Quebec, Canada},
   year      = {2014},
   pages     = {3275--3283},
@@ -14,37 +14,14 @@
   url       = {http://papers.nips.cc/paper/5496-convex-deep-learning-via-normalized-kernels},
 }
 
-@inproceedings{amblard2015operator,
-  title={Operator-valued kernel recursive least squares algorithm},
-  author={Amblard, Pierre-Olivier and Kadri, Hachem},
-  booktitle={Signal Processing Conference (EUSIPCO), 2015 23rd European},
-  pages={2376--2380},
-  year={2015},
-  organization={IEEE},
-  keywords={ovks},
-}
-
 @InProceedings{Bach2011,
   author    = {Francis R. Bach and Eric Moulines},
-  title     = {Non-Asymptotic Analysis of Stochastic Approximation Algorithms for Machine Learning},
-  booktitle = {Advances in NIPS 24: 25th Annual Conference on NIPS 2011. .},
+  title     = {{Non-Asymptotic Analysis of Stochastic Approximation Algorithms for Machine Learning}},
+  booktitle = {Advances in NIPS 24: 25th Annual Conference on NIPS 2011.},
   year      = {2011},
   pages     = {451--459},
   crossref  = {DBLP:conf/nips/2011},
   keywords  = {ovks},
-}
-
-@InProceedings{DBLP:conf/icml/Kontorovich14,
-  author    = {Aryeh Kontorovich},
-  title     = {Concentration in unbounded metric spaces and algorithmic stability},
-  booktitle = {Proc. of the 31th International Conference on Machine Learning, {ICML} 2014, Beijing, China, 21-26 June 2014},
-  year      = {2014},
-  pages     = {28--36},
-  bibsource = {dblp computer science bibliography, http://dblp.org},
-  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/icml/Kontorovich14},
-  crossref  = {DBLP:conf/icml/2014},
-  keywords  = {ovks},
-  timestamp = {Fri, 07 Nov 2014 20:42:30 +0100},
 }
 
 @InProceedings{Sindhwani2013,
@@ -57,6 +34,18 @@
   crossref  = {UAI2013},
   keywords  = {ovks},
   timestamp = {Fri, 26 Sep 2014 15:12:28 +0200},
+}
+
+@InProceedings{DBLP:conf/icml/Kontorovich14,
+  author    = {Aryeh Kontorovich},
+  title     = {Concentration in unbounded metric spaces and algorithmic stability},
+  booktitle = {Proc. of the 31th International Conference on Machine Learning, {ICML} 2014, Beijing, China, 21-26 June 2014},
+  year      = {2014},
+  pages     = {28--36},
+  bibsource = {dblp computer science bibliography, http://dblp.org},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/icml/Kontorovich14},
+  keywords  = {ovks},
+  timestamp = {Fri, 07 Nov 2014 20:42:30 +0100},
 }
 
 @Article{tewari1learning,
@@ -222,16 +211,12 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   keywords = {ovks},
 }
 
-
-
 @Book{book:321071,
   title     = {Harmonic analysis of operators on Hilbert space},
   publisher = {Springer-Verlag New York},
   year      = {2010},
-  author    = {Béla Sz.-Nagy, Ciprian Foias, Hari Bercovici, László Kérchy (auth.)},
+  author    = {B\'ela Sz.-Nagy and Ciprian Foias and Hari Bercovici and L\'aszl\'o K\'erchy},
   series    = {Universitext},
-  edition   = {2},
-  isbn      = {1441960937,9781441960931,9781441960948},
   keywords  = {ovks},
   url       = {http://gen.lib.rus.ec/book/index.php?md5=E43C938E5EB4809F231DBF9CCFFA0932},
 }
@@ -363,7 +348,7 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   title    = {Inf\'erence de r\'eseaux d'interaction prot\'eine-prot\'eine par apprentissage statistique},
   school   = {University of Evry, France},
   year     = {2013},
-  month    = {feb},
+  month    = feb,
   keywords = {ovks},
 }
 
@@ -657,6 +642,15 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   year     = {2006},
   keywords = {ovks},
 }
+
+@Misc{fukumizu2008elements,
+  author    = {Fukumizu, Kenji},
+  title     = {Elements of Positive Definite Kernel and Reproducing Kernel Hilbert Space},
+  year      = {2008},
+  publisher = {Institute of Statistical Mathematics, ROIS, Graduate University for Advanced Studies},
+}
+
+
 %%% G
 
 @Misc{eigenweb,
@@ -735,25 +729,12 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   title     = {Topological fixed point theory of multivalued mappings},
   publisher = {Springer},
   year      = {1999},
-  author    = {G{\'o}rniewicz, Lech},
+  author    = {G{\'o}r\-nie\-wicz, Lech},
   volume    = {495},
   keywords  = {ovks},
 }
 
 %%% H
-
-@article{ha2010image,
-  title={Image and video colorization using vector-valued reproducing kernel Hilbert spaces},
-  author={Ha Quang, Minh and Kang, Sung Ha and Le, Triet M},
-  journal={Journal of Mathematical Imaging and Vision},
-  volume={37},
-  number={1},
-  pages={49--65},
-  year={2010},
-  publisher={Springer},
-  keywords={ovks}
-}
-
 
 @Article{minh2016operator,
   author   = {Minh, Ha Quang},
@@ -770,7 +751,7 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   year                = {1963},
   volume              = {58},
   number              = {301},
-  pages               = {pp. 13-30},
+  pages               = {13-30},
   jstor_formatteddate = {Mar.,},
   keywords            = {ovks},
 }
@@ -787,13 +768,13 @@ ci!TEX root = ../../ThesisRomainbrault.tex
 }
 
 @Article{Huang2015,
-  author   = {Huang, G. and Huang, G.B. and and Song, S. and You, K.},
-  title    = {Trends in extreme learning machines: a review},
-  journal  = {Neural networks},
-  year     = {2015},
-  volume   = {61},
-  pages    = {32-48},
-  keywords = {ovks},
+  author       = {Huang, G. and Huang, G.B. and Song, S. and You, K.},
+  title        = {Trends in extreme learning machines: a review},
+  volume       = {61},
+  pages        = {32--48},
+  date         = {2015},
+  journaltitle = {Neural networks},
+  keywords     = {ovks},
 }
 
 @Article{hunter2007matplotlib,
@@ -936,6 +917,14 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   keywords  = {ovks},
   publisher = {Oxford University Press},
 }
+
+@Article{kawaguchi2017deep,
+  author  = {Kawaguchi, Kenji and Xie, Bo and Song, Le},
+  title   = {Deep Semi-Random Features for Nonlinear Function Approximation},
+  journal = {arXiv preprint arXiv:1702.08882},
+  year    = {2017},
+}
+
 
 @Article{KEGG,
   author   = {Kanehisa, M. and Goto, S. and Kawashima, S. and Okuno, Y. and Hattori, M.},
@@ -1141,17 +1130,6 @@ ci!TEX root = ../../ThesisRomainbrault.tex
 }
 
 
-@inproceedings{micchelli2004kernels,
-  title={Kernels for Multi--task Learning.},
-  author={Micchelli, Charles A and Pontil, Massimiliano},
-  booktitle={NIPS},
-  volume={86},
-  pages={89},
-  year={2004},
-  keywords={ovks},
-}
-
-
 @Article{minh2016unifying,
   author   = {Minh, Ha Quang and Bazzani, Loris and Murino, Vittorio},
   title    = {A unifying framework in vector-valued reproducing kernel Hilbert spaces for manifold regularization and co-regularized multi-view learning},
@@ -1258,6 +1236,16 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   publisher = {Springer},
 }
 
+@InProceedings{nejib2016identification,
+  author       = {Nejib, Hamza and Taouali, Okba and Bouguila, Nasreddine},
+  title        = {Identification of nonlinear systems with kernel methods},
+  booktitle    = {Systems, Man, and Cybernetics (SMC), 2016 IEEE},
+  year         = {2016},
+  pages        = {000577--000581},
+  organization = {IEEE},
+}
+
+
 %%% O
 
 @Article{oliveira2009concentration,
@@ -1337,7 +1325,7 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   volume   = {60},
   number   = {3},
   pages    = {233-240},
-  month    = {august},
+  month    = aug,
   keywords = {ovks},
 }
 
@@ -1445,7 +1433,7 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   year       = {2004},
   volume     = {5},
   pages      = {361--397},
-  month      = {Dec},
+  month      = dec,
   issn       = {1532-4435},
   issue_date = {12/1/2004},
   keywords   = {ovks},
@@ -1470,7 +1458,7 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   year     = {2008},
   number   = {9},
   pages    = {2803--2846},
-  month    = {Dec},
+  month    = dec,
   keywords = {ovks},
 }
 
@@ -1485,7 +1473,7 @@ ci!TEX root = ../../ThesisRomainbrault.tex
 %%% S
 
 @Article{sangnier2016joint,
-  author    = {Sangnier, Maxime and Fercoq, Olivier and D'Alch{\'e}-Buc, Florence},
+  author    = {Sangnier, Maxime and Fercoq, Olivier and d'Alch{\'e}-Buc, Florence},
   title     = {Joint quantile regression in vector-valued RKHSs},
   journal   = {Neural Information Processing Systems},
   year      = {2016},
@@ -1976,19 +1964,6 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   publisher = {arXiv},
 }
 
-@article{brouard2016fast,
-  title={Fast metabolite identification with input output Kernel regression},
-  author={Brouard, C{\'e}line and Shen, Huibin and D{\"u}hrkop, Kai and d'Alch{\'e}-Buc, Florence and B{\"o}cker, Sebastian and Rousu, Juho},
-  journal={Bioinformatics},
-  volume={32},
-  number={12},
-  pages={i28--i36},
-  year={2016},
-  publisher={Oxford Univ Press},
-  keywords={ovks}
-}
-
-
 @InProceedings{dai2014scalable,
   author    = {Dai, Bo and Xie, Bo and He, Niao and Liang, Yingyu and Raj, Anant and Balcan, Maria-Florina F and Song, Le},
   title     = {Scalable kernel methods via doubly stochastic gradients},
@@ -2287,7 +2262,7 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   volume    = {13},
   number    = {3},
   pages     = {799--819},
-  month     = {08},
+  month     = aug,
   keywords  = {ovks},
   publisher = {Bernoulli Society for Mathematical Statistics and Probability},
 }
@@ -2299,7 +2274,7 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   journal  = {Foundations of Computational Mathematics},
   year     = {2007},
   volume   = {7(3)},
-  pages    = {331–368},
+  pages    = {331-368},
   keywords = {ovks},
 }
 
@@ -2393,6 +2368,52 @@ ci!TEX root = ../../ThesisRomainbrault.tex
   pages     = {33--50},
   keywords  = {ovks},
   publisher = {JSTOR},
+}
+
+@Article{brouard2016fast,
+  author    = {Brouard, C{\'e}line and Shen, Huibin and D{\"u}hrkop, Kai and d'Alch{\'e}-Buc, Florence and B{\"o}cker, Sebastian and Rousu, Juho},
+  title     = {Fast metabolite identification with input output Kernel regression},
+  journal   = {Bioinformatics},
+  year      = {2016},
+  volume    = {32},
+  number    = {12},
+  pages     = {i28--i36},
+  keywords  = {ovks},
+  publisher = {Oxford Univ Press},
+}
+
+@InProceedings{amblard2015operator,
+  author       = {Amblard, Pierre-Olivier and Kadri, Hachem},
+  title        = {Operator-valued kernel recursive least squares algorithm},
+  booktitle    = {Signal Processing Conference (EUSIPCO), 2015 23rd European},
+  year         = {2015},
+  pages        = {2376--2380},
+  organization = {IEEE},
+  keywords     = {ovks},
+}
+
+%%% H
+
+@Article{ha2010image,
+  author    = {Ha Quang, Minh and Kang, Sung Ha and Le, Triet M},
+  title     = {Image and video colorization using vector-valued reproducing kernel Hilbert spaces},
+  journal   = {Journal of Mathematical Imaging and Vision},
+  year      = {2010},
+  volume    = {37},
+  number    = {1},
+  pages     = {49--65},
+  keywords  = {ovks},
+  publisher = {Springer},
+}
+
+@InProceedings{micchelli2004kernels,
+  author    = {Micchelli, Charles A and Pontil, Massimiliano},
+  title     = {Kernels for Multi--task Learning.},
+  booktitle = {NIPS},
+  year      = {2004},
+  volume    = {86},
+  pages     = {89},
+  keywords  = {ovks},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

@@ -39,11 +39,11 @@
 \BOOKMARK [2][-]{subsection.4.2.1}{4.2.1\040Sufficient\040conditions\040of\040existence}{section.4.2}% 39
 \BOOKMARK [2][-]{subsection.4.2.2}{4.2.2\040Examples\040of\040spectral\040decomposition}{section.4.2}% 40
 \BOOKMARK [2][-]{subsection.4.2.3}{4.2.3\040Functional\040Fourier\040feature\040map}{section.4.2}% 41
-\BOOKMARK [1][-]{section.4.3}{4.3\040Operator-valued\040Random\040Fourier\040Features}{chapter.4}% 42
-\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1\040Building\040Operator-valued\040Random\040Fourier\040Features}{section.4.3}% 43
-\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2\040From\040Operator\040Random\040Fourier\040Feature\040maps\040to\040OVKs}{section.4.3}% 44
-\BOOKMARK [2][-]{subsection.4.3.3}{4.3.3\040Examples\040of\040Operator\040Random\040Fourier\040Feature\040maps}{section.4.3}% 45
-\BOOKMARK [2][-]{subsection.4.3.4}{4.3.4\040Regularization\040property}{section.4.3}% 46
+\BOOKMARK [1][-]{figure.caption.16}{4.3\040Operator-valued\040Random\040Fourier\040Features}{chapter.4}% 42
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1\040Building\040Operator-valued\040Random\040Fourier\040Features}{figure.caption.16}% 43
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2\040From\040Operator\040Random\040Fourier\040Feature\040maps\040to\040OVKs}{figure.caption.16}% 44
+\BOOKMARK [2][-]{subsection.4.3.3}{4.3.3\040Examples\040of\040Operator\040Random\040Fourier\040Feature\040maps}{figure.caption.16}% 45
+\BOOKMARK [2][-]{subsection.4.3.4}{4.3.4\040Regularization\040property}{figure.caption.16}% 46
 \BOOKMARK [1][-]{section.4.4}{4.4\040Conclusions}{chapter.4}% 47
 \BOOKMARK [0][]{chapter.5}{5\040Bounding\040the\040error\040of\040the\040ORFF\040approximation}{part.2}% 48
 \BOOKMARK [1][-]{section.5.1}{5.1\040Convergence\040with\040high\040probability\040of\040the\040ORFF\040estimator}{chapter.5}% 49

@@ -1,5 +1,5 @@
 project(ThesisRomainBrault NONE)
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.7)
 
 message(STATUS "LATEX_OUTPUT_PATH: " ${LATEX_OUTPUT_PATH})
 message(STATUS "PDFLATEX_COMPILER: " ${PDFLATEX_COMPILER})

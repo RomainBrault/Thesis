@@ -1,5 +1,5 @@
 %!TEX root = ./ThesisRomainbrault.tex
-%!TeX program = xelatex
+%!TeX program = pdflatex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Classicthesis Typographic Thesis
@@ -79,8 +79,8 @@
 \usepackage{csquotes}
 \PassOptionsToPackage{%
 backend=biber, % Instead of bibtex
-% backend=bibtex8, %
-bibencoding=ascii,%
+%backend=bibtex8, %
+bibencoding=utf8,%
 language=auto,%
 style=numeric-comp,%
 firstinits=true, %
@@ -223,10 +223,15 @@ urlcolor=PSaclay, linkcolor=RoyalBlue, citecolor=webgreen,
 \usepackage{braket}
 \usepackage{dirtytalk}
 \usepackage{numprint}
+
+
+\usepackage[sc]{mathpazo}    % Palatino with smallcaps
+\usepackage[scaled]{helvet}  % Helvetica, scaled 95%
+
 % Remove drafting to get rid of the '[ Date - classicthesis version 4.0 ]' text
 % at the bottom of every page
 \PassOptionsToPackage{eulerchapternumbers, listings, subfig, parts,
-floatperchapter, linedheaders}{classicthesis}
+floatperchapter, eulermath, linedheaders}{classicthesis}
 % Available options: drafting parts nochapters linedheaders eulerchapternumbers
 % beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc
 % manychapters listings floatperchapter subfig
@@ -355,19 +360,19 @@ floatperchapter, linedheaders}{classicthesis}
 %------------------------------------------------------------------------------
 %	USING DIFFERENT FONTS
 %------------------------------------------------------------------------------
-\usepackage[quiet]{mathspec}
-\usepackage{xltxtra} %also loads xunicode
-\setmathfont(Digits,Latin)[
-    Numbers={Lining,Proportional},
-    Mapping=tex-text,
-    Ligatures={Required, Common},
-]{Hoefler Text}
-\setmathfont(Greek)[
-    Mapping=tex-text,
-    Lowercase=Regular,
-    Uppercase=Regular
-]{Hoefler Text}
-\setmainfont[
-    Mapping=tex-text,
-    Ligatures={Required, Common}
-]{Hoefler Text}
+%\usepackage[quiet]{mathspec}
+%\usepackage{xltxtra} %also loads xunicode
+%\setmathfont(Digits,Latin)[
+    %Numbers={Lining,Proportional},
+    %Mapping=tex-text,
+    %Ligatures={Required, Common},
+%]{palatino}
+%\setmathfont(Greek)[
+    %Mapping=tex-text,
+    %Lowercase=Regular,
+    %Uppercase=Regular
+%]{palatino}
+%\setmainfont[
+    %Mapping=tex-text,
+    %Ligatures={Required, Common}
+%]{palatino}

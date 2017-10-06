@@ -9,10 +9,10 @@
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 10}{example.2.1}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 10}{example.2.1}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 10}{example.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.1}Introduction to kernel methods}{\reset@font\mtcSSfont 10}{subsection.2.1.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.1.1.1}Kernels and Reproducing Kernel Hilbert Spaces}{\reset@font\mtcSSSfont 10}{subsubsection.2.1.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.1}Introduction to kernel methods}{\reset@font\mtcSSfont 11}{subsection.2.1.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.1.1.1}Kernels and Reproducing Kernel Hilbert Spaces}{\reset@font\mtcSSSfont 11}{subsubsection.2.1.1.1}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 11}{figure.caption.8}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.1.1.2}Learning in Reproducing Kernel Hilbert Spaces}{\reset@font\mtcSSSfont 12}{subsubsection.2.1.1.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.1.1.2}Learning in Reproducing Kernel Hilbert Spaces}{\reset@font\mtcSSSfont 13}{subsubsection.2.1.1.2}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 14}{theorem.2.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.2}Towards large scale learning with kernels}{\reset@font\mtcSSfont 14}{subsection.2.1.2}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.1.2.1}Random Fourier Features map}{\reset@font\mtcSSSfont 16}{subsubsection.2.1.2.1}}
@@ -26,5 +26,5 @@
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 19}{subsubsection.2.1.2.4}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 19}{subsubsection.2.1.2.4}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 19}{subsubsection.2.1.2.4}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 19}{subsubsection.2.1.2.4}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 20}{subsubsection.2.1.2.4}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 20}{subsubsection.2.1.2.4}}

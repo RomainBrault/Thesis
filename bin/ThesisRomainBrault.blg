@@ -1,25 +1,91 @@
-[0] Config.pm:354> INFO - This is Biber 2.7
-[0] Config.pm:357> INFO - Logfile is 'ThesisRomainBrault.blg'
-[57] biber-darwin:303> INFO - === Mon Sep 11, 2017, 10:53:01
-[94] Biber.pm:359> INFO - Reading 'ThesisRomainBrault.bcf'
-[279] Biber.pm:835> INFO - Found 194 citekeys in bib section 0
-[298] Biber.pm:3670> INFO - Processing section 0
-[319] Biber.pm:3840> INFO - Looking for bibtex format file 'Bibliography.bib' for section 0
-[333] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
-[357] bibtex.pm:1292> INFO - Found BibTeX data source 'Bibliography.bib'
-[646] Utils.pm:164> WARN - BibTeX subsystem: /var/folders/1z/rxxv8yys6c7gnmf28bdz5m8c0000gn/T/NmOH74at8R/Bibliography.bib_11746.utf8, line 88, warning: 39 characters of junk seen at toplevel
-[646] Utils.pm:164> WARN - BibTeX subsystem: /var/folders/1z/rxxv8yys6c7gnmf28bdz5m8c0000gn/T/NmOH74at8R/Bibliography.bib_11746.utf8, line 1596, warning: 18 characters of junk seen at toplevel
-[647] Biber.pm:3840> INFO - Looking for bibtex format file 'MVExtrem.bib' for section 0
-[656] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
-[667] bibtex.pm:1292> INFO - Found BibTeX data source 'MVExtrem.bib'
-[759] Utils.pm:164> WARN - BibTeX subsystem: /var/folders/1z/rxxv8yys6c7gnmf28bdz5m8c0000gn/T/NmOH74at8R/MVExtrem.bib_11746.utf8, line 10, warning: 235 characters of junk seen at toplevel
-[760] Biber.pm:3840> INFO - Looking for bibtex format file 'Selfpublication.bib' for section 0
-[761] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
-[762] bibtex.pm:1292> INFO - Found BibTeX data source 'Selfpublication.bib'
-[1019] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1019] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1019] Biber.pm:3499> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-US'
-[1019] Biber.pm:3505> INFO - No sort tailoring available for locale 'en-US'
-[1296] bbl.pm:608> INFO - Writing 'ThesisRomainBrault.bbl' with encoding 'UTF-8'
-[1330] bbl.pm:712> INFO - Output to ThesisRomainBrault.bbl
-[1331] Biber.pm:109> INFO - WARNINGS: 3
+This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: ThesisRomainBrault.aux
+The style file: biblatex.bst
+A level-1 auxiliary file: FrontBackMatter/Titlepage.aux
+A level-1 auxiliary file: FrontBackMatter/Titleback.aux
+A level-1 auxiliary file: FrontBackMatter/Dedication.aux
+A level-1 auxiliary file: FrontBackMatter/Abstract.aux
+A level-1 auxiliary file: FrontBackMatter/Acknowledgments.aux
+A level-1 auxiliary file: FrontBackMatter/Contents.aux
+A level-1 auxiliary file: Parts/Introduction/Outline.aux
+A level-1 auxiliary file: Parts/Introduction/Motivations.aux
+A level-1 auxiliary file: Parts/Introduction/Background.aux
+A level-1 auxiliary file: Parts/Contributions/Construction.aux
+A level-1 auxiliary file: Parts/Contributions/Concentration.aux
+A level-1 auxiliary file: Parts/Contributions/Learning.aux
+A level-1 auxiliary file: Parts/Contributions/Generalization.aux
+A level-1 auxiliary file: Parts/Contributions/Applications.aux
+A level-1 auxiliary file: Parts/Final_words/Perspectives.aux
+A level-1 auxiliary file: Parts/Final_words/conclusion.aux
+A level-1 auxiliary file: Parts/Appendix/Proofs.aux
+A level-1 auxiliary file: Parts/Appendix/Misc.aux
+A level-1 auxiliary file: Parts/Appendix/Code.aux
+A level-1 auxiliary file: Parts/Appendix/OneClassSplitting.aux
+A level-1 auxiliary file: FrontBackMatter/Bibliography.aux
+A level-1 auxiliary file: FrontBackMatter/Declaration.aux
+A level-1 auxiliary file: FrontBackMatter/Colophon.aux
+A level-1 auxiliary file: FrontBackMatter/Blurb.aux
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated field_info (elt_size=4) to 32105 items from 5000.
+Database file #1: ThesisRomainBrault-blx.bib
+Database file #2: Bibliography.bib
+Database file #3: MVExtrem.bib
+Database file #4: Selfpublication.bib
+Biblatex version: 3.3
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 195 entries,
+            6256 wiz_defined-function locations,
+            2241 strings with 39339 characters,
+and the built_in function-call counts, 1108559 in all, are:
+= -- 74632
+> -- 22699
+< -- 6613
++ -- 28369
+- -- 8456
+* -- 81922
+:= -- 109720
+add.period$ -- 0
+call.type$ -- 195
+change.case$ -- 194
+chr.to.int$ -- 36
+cite$ -- 388
+duplicate$ -- 125070
+empty$ -- 101247
+format.name$ -- 14111
+if$ -- 228056
+int.to.chr$ -- 0
+int.to.str$ -- 511
+missing$ -- 0
+newline$ -- 6572
+num.names$ -- 9751
+pop$ -- 67327
+preamble$ -- 1
+purify$ -- 4498
+quote$ -- 0
+skip$ -- 39018
+stack$ -- 0
+substring$ -- 116057
+swap$ -- 30468
+text.length$ -- 5524
+text.prefix$ -- 200
+top$ -- 1
+type$ -- 6613
+warning$ -- 0
+while$ -- 13932
+width$ -- 0
+write$ -- 6378

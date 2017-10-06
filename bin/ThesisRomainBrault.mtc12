@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.1}Learning with semi-supervision}{\reset@font\mtcSfont 184}{section.B.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.1.1}Representer theorem and feature equivalence}{\reset@font\mtcSSfont 184}{subsection.B.1.1}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 184}{theorem.B.1}}
@@ -6,3 +7,13 @@
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 187}{theorem.B.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.1.2}Gradients}{\reset@font\mtcSSfont 189}{subsection.B.1.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.1.3}Complexity}{\reset@font\mtcSSfont 191}{subsection.B.1.3}}
+=======
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.1}Learning with semi-supervision}{\reset@font\mtcSfont 182}{section.B.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.1.1}Representer theorem and feature equivalence}{\reset@font\mtcSSfont 182}{subsection.B.1.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 182}{theorem.B.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 182}{theorem.B.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 184}{theorem.B.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 184}{theorem.B.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.1.2}Gradients}{\reset@font\mtcSSfont 187}{subsection.B.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.1.3}Complexity}{\reset@font\mtcSSfont 189}{subsection.B.1.3}}
+>>>>>>> ef45f6d17f41d3cb4dd9816ff919ae5f69e7c879

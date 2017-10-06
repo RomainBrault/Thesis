@@ -188,7 +188,7 @@ solution, and also provides a sufficient condition for
         \inner{y',C(\omega)y}_{\mathcal{Y}}= \int_{\mathcal{X}}
         \pairing{\delta, \omega}\inner{y',
         K_e(\delta)y}_{\mathcal{Y}}d\Haar(\delta) = \IFT{\inner{y',
-        K_e(\cdot)y}}_{\mathcal{Y}}(\omega).
+        K_e(\cdot)y}_{\mathcal{Y}}}(\omega).
     \end{dmath}
     Then
     \begin{propenum}
@@ -275,26 +275,27 @@ of \acs{ORFF}.
     $\FT{f}(\omega)=\conj{\FT{f}\left(\inv{\omega}\right)}$. Therefore since
     $C(\omega)$ is non-negative for all $\omega\in\dual{\mathcal{X}}$,
     \begin{dmath*}
-        \inner{y', C(\omega)y}
-        = \conj{\inner{y', C\left(\inv{\omega}\right)y}}
-        \hiderel{=}\inner{y, C\left(\inv{\omega}\right)^* y'}
-        =\inner{y, C\left(\omega\right) y'}.
+        \inner{y', C(\omega)y}_{\mathcal{Y}}
+        = \conj{\inner{y', C\left(\inv{\omega}\right)y}_{\mathcal{Y}}}
+        \hiderel{=}\inner{y, C\left(\inv{\omega}\right)^* y'}_{\mathcal{Y}}
+        =\inner{y, C\left(\omega\right) y'}_{\mathcal{Y}}.
     \end{dmath*}
     Hence $C(\omega)$ is self-adjoint and thus $C$ is even.
     \paragraph{}
     Item 2: simply, for all $y$, $y'\in\mathcal{Y}$,
-    $\inner{y, C(\inv{\omega})y'}$ $=$ $\inner{y', C(\omega)y}$ thus
+    $\inner{y, C(\inv{\omega})y'}_{\mathcal{Y}}$ $=$ $\inner{y',
+    C(\omega)y}_{\mathcal{Y}}$ thus
     \begin{dmath*}
         \IFT{\inner{y', K_e(\cdot)y}_{\mathcal{Y}}}(\omega)=\inner{y',
-        C(\omega)y}\hiderel{=}\mathcal{R}\inner{y',
-        C(\cdot)y}(\omega)=\mathcal{R}\IFT{\inner{y',
+        C(\omega)y}_{\mathcal{Y}}\hiderel{=}\mathcal{R}\inner{y',
+        C(\cdot)y}_{\mathcal{Y}}(\omega)=\mathcal{R}\IFT{\inner{y',
         K_e(\cdot)y}_{\mathcal{Y}}}(\omega)=\FT{\inner{y',
         K_e(\cdot)y}_{\mathcal{Y}}}(\omega).
     \end{dmath*}
     \paragraph{}
     Item 3: from Item 2 we have
-    $\IFT{\inner{y', K_e(\cdot)y}}$ $=$ $\mathcal{F}^{-1}\mathcal{R}{\inner{y',
-    K_e(\cdot)y}}$. By injectivity of the \acl{FT}, $K_e$ is even. Since
+    $\IFT{\inner{y', K_e(\cdot)y}_{\mathcal{Y}}}$ $=$ $\mathcal{F}^{-1}\mathcal{R}{\inner{y',
+    K_e(\cdot)y}_{\mathcal{Y}}}$. By injectivity of the \acl{FT}, $K_e$ is even. Since
     $K_e(\delta)=K_e(\inv{\delta})^\adjoint $, we must have
     $K_e(\delta)=K_e(\delta)^\adjoint $.
 \end{proof}
@@ -313,44 +314,47 @@ measure, by extracting a scalar probability density function from $C(\cdot)$.
 decomposition]
 \label{pr:spectral}
     Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer
-    kernel. If for all $y$, $y' \in\mathcal{Y}$, $\inner{K_e(.)y,y'}\in
-    L^1(\mathcal{X},\Haar)$ then there exists a positive probability measure
-    $\probability_{\dual{\Haar},\rho}$ and an operator-valued function $A$
-    such that for all $y,$ $y'\in\mathcal{Y}$,
+    kernel. If for all $y$, $y' \in\mathcal{Y}$,
+    $\inner{K_e(.)y,y'}_{\mathcal{Y}}\in L^1(\mathcal{X},\Haar)$ then there
+    exists a positive probability measure $\probability_{\dual{\Haar},\rho}$
+    and an operator-valued function $A$ such that for all $y,$
+    $y'\in\mathcal{Y}$,
     \begin{dmath}
-        \label{eq:expectation_spec} \inner{y', K_e(\delta)y}
+        \label{eq:expectation_spec} \inner{y', K_e(\delta)y}_{\mathcal{Y}}
         =\expectation_{\dual{\Haar},\rho}\left[\conj{\pairing{\delta,
-        \omega}}\inner{y', A(\omega)y}\right],
+        \omega}}\inner{y', A(\omega)y}_{\mathcal{Y}}\right],
     \end{dmath}
     with
     \begin{dmath}
-        \label{eq:comega} \inner{y', A(\omega)y}\rho(\omega) = \FT{\inner{y',
-        K_e(\cdot)y}}(\omega).
+        \label{eq:comega} \inner{y', A(\omega)y}_{\mathcal{Y}}\rho(\omega) =
+        \FT{\inner{y', K_e(\cdot)y}_{\mathcal{Y}}}(\omega).
     \end{dmath}
     Moreover
     \begin{propenum}
-        \item for all $y,$ $y'\in\mathcal{Y}$, $\inner{A(.)y,y'}\in
-        L^1(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho})$,
-        \item $A(\omega)$ is non-negative for
-        $\probability_{\dual{\Haar},\rho}$-almost all
+        \item for all $y,$ $y'\in\mathcal{Y}$,
+        $\inner{A(\cdot)y,y'}_{\mathcal{Y}}\in L^1\left(\dual{\mathcal{X}},
+        \probability_{\dual{\Haar},\rho}\right)$, \item $A(\omega)$ is
+        non-negative for $\probability_{\dual{\Haar},\rho}$-almost all
         $\omega\in\dual{\mathcal{X}}$,
         \item $A(\cdot)$ and $\rho(\cdot)$ are even functions.
     \end{propenum}
 \end{proposition}
 \begin{proof}
     This is a simple consequence of \cref{pr:inverse_ovk_Fourier_decomposition}
-    and \cref{lm:C_characterization}. By taking $\inner{y',C(\omega)y} =
-    \IFT{\inner{y', K_e(\cdot)y}}(\omega)=\FT{\inner{y', K_e(\cdot)y}}(\omega)$
-    we can write the following equality concerning the \acs{OVK} signature
-    $K_e$.
+    and \cref{lm:C_characterization}. By taking
+    $\inner{y',C(\omega)y}_{\mathcal{Y}} = \IFT{\inner{y',
+    K_e(\cdot)y}_{\mathcal{Y}}}(\omega)=\FT{\inner{y',
+    K_e(\cdot)y}_{\mathcal{Y}}}(\omega)$ we can write the following equality
+    concerning the \acs{OVK} signature $K_e$.
     % Suppose that $\mu$ is absolutely continuous \acs{wrt}~$d\omega$. Then for
     % all $\delta \in \mathcal{X}$ and for all $y,$ $y'$ in $\mathcal{Y}$
     \begin{dmath*}
         \inner{y', K_e(\delta)y}(\omega)=
         \int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner{y',
-        C(\omega)y}d\dual{\Haar}(\omega)
+        C(\omega)y}_{\mathcal{Y}}d\dual{\Haar}(\omega)
         =\int_{\dual{\mathcal{X}}}\conj{\pairing{\delta, \omega}}\inner*{y',
-        \frac{1}{\rho(\omega)}C(\omega)y}\rho(\omega)d\dual{\Haar}(\omega).
+        \frac{1}{\rho(\omega)}C(\omega)y}_{\mathcal{Y}}
+        \rho(\omega)d\dual{\Haar}(\omega).
     \end{dmath*}
     It is always possible to choose $\rho(\omega)$ such that
     $\int_{\dual{\mathcal{X}}}\rho(\omega)d\dual{\Haar}(\omega)=1$. For
@@ -361,7 +365,8 @@ decomposition]
         \mathcal{Y}}}{\int_{\dual{\mathcal{X}}} \norm{C(\omega)}_{\mathcal{Y},
         \mathcal{Y}} d\dual{\Haar}(\omega)}
     \end{dmath*}
-    Since for all $y$, $y'\in\mathcal{Y}$, $\inner{y',C(\cdot)y}\in
+    Since for all $y$, $y'\in\mathcal{Y}$,
+    $\inner{y',C(\cdot)y}_{\mathcal{Y}}\in
     L^1(\dual{\mathcal{X}},\dual{\Haar})$ and $\mathcal{Y}$ is a separable
     Hilbert space, by Pettis measurability theorem, $\int_{\dual{\mathcal{X}}}
     \norm{C(\omega)}_{\mathcal{Y},\mathcal{Y}} d\dual{\Haar}(\omega)$ is finite
@@ -423,21 +428,23 @@ of~\citet{minh2016operator} which requires
 $\int_{\mathcal{X}}\abs{\Tr{K_e(\delta)}}d\Haar(\delta)$ to be well defined. We
 only require $\Tr{K_e(e)}$ to be well defined.
 \begin{proposition}[Bounded shift-invariant $\mathcal{Y}$-Mercer kernel
-spectral decomposition (adaptation of a result from \citet{minh2016operator}]
+spectral decomposition (adaptation of \citet{minh2016operator}]
     \label{pr:trace_measure}
-    Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer
-    kernel. If for all $y$ and $y'$ in $\mathcal{Y}$, $\inner{K_e(.)y,y'}\in
-    L^1(\mathcal{X},\Haar)$ and $\Tr K_e(e)\in\mathbb{R}$, then
+    Let $K_e$ be the signature of a shift-invariant $\mathcal{Y}$-Mercer kernel
+    ($\mathcal{Y}$ separable). If for all $y$ and $y'$ in $\mathcal{Y}$,
+    $\inner{K_e(.)y,y'}_{\mathcal{Y}}\in L^1(\mathcal{X},\Haar)$ and $\Tr
+    K_e(e)\in\mathbb{R}$, then
     \begin{dmath}
         \label{eq:expectation_tr}
-        \inner{y', K_e(\delta)y}
+        \inner{y', K_e(\delta)y}_{\mathcal{Y}}
         =\expectation_{\dual{\Haar},\rho_{\Tr}}\left[\conj{\pairing{\delta,
-        \omega}}\inner{y, A_{\Tr}(\omega)y'}\right].
+        \omega}}\inner{y, A_{\Tr}(\omega)y'}_{\mathcal{Y}}\right].
     \end{dmath}
     with
     \begin{dgroup}
         \begin{dmath}
-            \inner{y', C(\cdot)y}=\FT{\inner{y', K_e(\cdot)y}}
+            \inner{y', C(\cdot)y}_{\mathcal{Y}} = \FT{\inner{y',
+            K_e(\cdot)y}_{\mathcal{Y}}}
         \end{dmath}
         \begin{dmath}
             c_{\Tr}=\Tr\left[K_e(e)\right]
@@ -463,22 +470,23 @@ spectral decomposition (adaptation of a result from \citet{minh2016operator}]
     \end{propenum}
 \end{proposition}
 \begin{proof}
-    Let $\Set{e_j}_{j\in\mathbb{N}^*}$ be an orthonormal basis of
-    $\mathcal{Y}$. Notice that
+    Let $\Set{e_j}_{j\in\mathbb{N}^*}$ be a basis of $\mathcal{Y}$. Notice that
     \begin{dmath*}
-        \int_{\dual{\mathcal{X}}}\inner{e_j,C(\omega)e_j}d\dual{\Haar}(\omega)
+        \int_{\dual{\mathcal{X}}} \inner{e_j,C(\omega)e_j}_{\mathcal{Y}}
+        d\dual{\Haar}(\omega)
         =\int_{\dual{\mathcal{X}}} \underbrace{\conj{\pairing{e,
         \omega}}}_{=1}\inner{e_j, C(\omega) e_j} d\dual{\Haar}(\omega)
-        =\inner{e_j,K_e(e)e_j}.
+        =\inner{e_j,K_e(e)e_j}_{\mathcal{Y}}.
     \end{dmath*}
-    Since $C(\omega)$ is non-negative, all the $\inner{e_j,C(\omega)e_j}$. Thus
-    using the monotone convergence theorem,
+    Since $C(\omega)$ is non-negative, all the
+    $\inner{e_j,C(\omega)e_j}_{\mathcal{Y}}$. Thus using the monotone
+    convergence theorem,
     \begin{dmath*}
         \int_{\dual{\mathcal{X}}}\Tr\left[C(\omega)\right]
         d\dual{\Haar}(\omega)
         =\int_{\dual{\mathcal{X}}} \sum_{j \in \mathbb{N}^*} \inner{e_j,
-        C(\omega) e_j} d\dual{\Haar}(\omega)
-        =\sum_{k\in\mathbb{N}^*}\inner{e_j,K_e(e)e_j}
+        C(\omega) e_j}_{\mathcal{Y}} d\dual{\Haar}(\omega)
+        =\sum_{k\in\mathbb{N}^*}\inner{e_j,K_e(e)e_j}_{\mathcal{Y}}
         =\Tr\left[K_e(e)\right]\hiderel{=}c_{\Tr}\hiderel{<}\infty.
     \end{dmath*}
     Let $A_{\Tr}(\omega)$ and $\rho_{\Tr}(\omega)$ be defined as in
@@ -573,17 +581,17 @@ $\mathcal{Z}\in\mathcal{B}\left(\mathbb{R}^d\right)$,
 Then the \acl{FT} on $(\mathbb{R}^d,+)$ is
 \begin{dmath*}
     \FT{f}(\omega)
-    =\int_{\mathbb{R}^d} \exp\left(-\iu\inner{\delta, \omega}\right) f(\delta)
-    d\Haar(\delta)
-    =\int_{\mathbb{R}^d} \exp\left(-\iu\inner{\delta, \omega}\right) f(\delta)
-    \frac{d\Leb(\delta)}{\sqrt{2\pi}^d}.
+    =\int_{\mathbb{R}^d} \exp\left(-\iu\inner{\delta, \omega}_2\right)
+    f(\delta) d\Haar(\delta)
+    =\int_{\mathbb{R}^d} \exp\left(-\iu\inner{\delta, \omega}_2\right)
+    f(\delta) \frac{d\Leb(\delta)}{\sqrt{2\pi}^d}.
 \end{dmath*}
 Since $k^{\text{gauss}}_0\in L^1$ and $\Gamma$ is bounded, it is possible to
 apply \cref{pr:spectral}, and obtain for all $y$ and $y'\in\mathcal{Y}$,
 \begin{dmath*}
     \inner*{y',C^{dec,gauss}(\omega)y}
-    =\FT{\inner*{y',K^{dec,gauss}_0(\cdot)y}}(\omega)
-    =\FT{k_0^{gauss}}(\omega)\inner*{y', \Gamma y}.
+    =\FT{\inner*{y',K^{dec,gauss}_0(\cdot)y}_{\mathcal{Y}}}(\omega)
+    =\FT{k_0^{gauss}}(\omega)\inner*{y', \Gamma y}_{\mathcal{Y}}.
 \end{dmath*}
 Thus
 \begin{dmath*}
@@ -752,9 +760,9 @@ $\omega\in\mathbb{R}^d$
     \end{dmath}
 \end{dgroup}
 Notice that in this case
-$\norm{A^{curl,gauss}(\cdot)}_{\mathbb{R}^d,\mathbb{R}^d}$ is not bounded.
+$\norm{A^{curl,gauss}(\cdot)}_{2, 2}$ is not bounded.
 However applying \cref{pr:trace_measure} yields a different decomposition where
-the quantity $\norm{A^{curl,gauss}_{\Tr}(\cdot)}_{\mathbb{R}^d,\mathbb{R}^d}$
+the quantity $\norm{A^{curl,gauss}_{\Tr}(\cdot)}_{2, 2}$
 is bounded. First we have for all $\delta\in\mathbb{R}^d$ and for all $i$,
 $j\in\mathbb{N}^*_d$
 \begin{dmath*}
@@ -961,8 +969,8 @@ shift-invariant \acl{OVK}. % \paragraph{}
     $\probability_{\dual{\Haar},\rho}$-almost all $\omega$, and all $y,
     y'\in\mathcal{Y}$,
     \begin{dmath*}
-        \inner{y, A(\omega)y'}\rho(\omega)=\FT{\inner{y',
-        K_e(\cdot)y}}(\omega).
+        \inner{y, A(\omega)y'}_{\mathcal{Y}}\rho(\omega)=\FT{\inner{y',
+        K_e(\cdot)y}}_{\mathcal{Y}}(\omega).
     \end{dmath*}
     \paragraph{}
     If $(\omega_j)_{j=1}^D$ be a sequence of
@@ -987,13 +995,13 @@ shift-invariant \acl{OVK}. % \paragraph{}
         \frac{1}{D} \sum_{j=1}^D \conj{\pairing{x\groupop\inv{z},\omega_j}}
         A(\omega_j) \converges{\acs{asurely}}{D \to \infty}
         \expectation_{\dual{\Haar}, \rho}[\conj{\pairing{x \groupop z^{-1},
-        \omega_j} }A(\omega)]
+        \omega} }A(\omega)]
     \end{dmath*}
     where the integral converges in the weak operator topology. Then by
     \cref{pr:spectral},
     \begin{dmath*}
-        \expectation_{\dual{\Haar}, \rho}[\conj{\pairing{x \groupop z^{-1},
-        \omega_j}}A(\omega)] =K_e(x\groupop\inv{z}).
+        \expectation_{\dual{\Haar}, \rho}\left[\conj{\pairing{x \groupop
+        z^{-1}, \omega}}A(\omega)\right] =K_e(x\groupop\inv{z}).
     \end{dmath*}
     \hfill\ensuremath{\qed}
 \end{proof}
@@ -1010,16 +1018,17 @@ map construction.
     %$y\in\mathcal{Y}$ and all $y' \in\mathcal{Y}'$,
     %%$\inner{y, B(\cdot)y'} \in
     %L^2(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho})$,  and for
-    $\probability_{\dual{\Haar},\rho}$-almost all $\omega$, and all $u,
-    v\in\mathcal{Y}$,
+    $\probability_{\dual{\Haar},\rho}$-almost all $\omega$, and all $y,
+    y'\in\mathcal{Y}$,
     \begin{dmath*}
-        \inner{u, B(\omega)B(\omega)^\adjoint v}\rho(\omega)= \inner{u,
-        A(\omega)v}\rho(\omega) \hiderel{=} \FT{\inner{u, K_e(\cdot)v}}(\omega),
+        \inner{y, B(\omega)B(\omega)^\adjoint y'}_{\mathcal{Y}}\rho(\omega)=
+        \inner{y, A(\omega)y'}_{\mathcal{Y}}\rho(\omega) \hiderel{=}
+        \FT{\inner{u, K_e(\cdot)v}_{\mathcal{Y}}}(\omega),
     \end{dmath*}
-    then the function $\tildePhi{\omega}:\dual{\mathcal{X}} \to
-    \mathcal{L}(\mathcal{Y}, \Vect_{j=1}^D \mathcal{Y'})$ defined for all $y
-    \in \mathcal{Y}$ as
-    follows: \begin{dmath*}
+    then the (random operator-valued) function whose realization are
+    $\tildePhi{\omega}:\mathcal{X} \to \mathcal{L}(\mathcal{Y}, \Vect_{j=1}^D
+    \mathcal{Y'})$ defined for all $y \in \mathcal{Y}$ as follows:
+    \begin{dmath*}
         \tildePhi{\omega}(x)y
         = \frac{1}{\sqrt{D}}\Vect_{j=1}^D\pairing{x,
         \omega_j}B(\omega_j)^\adjoint y \condition{$\omega_j \sim
@@ -1035,19 +1044,19 @@ map construction.
     Let $(\omega_j)_{j=1}^D$ be a sequence of $D\in\mathbb{N}^*$
     \ac{iid}~random variables following the law
     $\probability_{\dual{\Haar},\rho}$. For all $x$, $z \in \mathcal{X}$ and
-    all $u$, $v \in \mathcal{Y}$,
+    all $y$, $y' \in \mathcal{Y}$,
     \begin{dmath*}
-        \inner*{\tildePhi{\omega}(x)u,\tildePhi{\omega}(z)v}_{\Vect_{j=1}^D
+        \inner*{\tildePhi{\omega}(x)y,\tildePhi{\omega}(z)y'}_{\Vect_{j=1}^D
         \mathcal{Y}'}
         =\frac{1}{D}\inner*{\Vect_{j=1}^D \left(\pairing{x,
-        \omega_j}B(\omega_j)^\adjoint u\right), \Vect_{j=1}^D\left(\pairing{z,
-        \omega_j}B(\omega_j)^\adjoint v\right)}
+        \omega_j}B(\omega_j)^\adjoint y\right), \Vect_{j=1}^D\left(\pairing{z,
+        \omega_j}B(\omega_j)^\adjoint y'\right)}_{\vect_{j=1}^d\mathcal{Y}'}
     \end{dmath*}
     By definition of the inner product in direct sum of Hilbert spaces,
     \begin{dmath*}
         \frac{1}{D}\inner*{\Vect_{j=1}^D \left(\pairing{x,
         \omega_j}B(\omega_j)^\adjoint u\right), \Vect_{j=1}^D\left(\pairing{z,
-        \omega_j}B(\omega_j)^\adjoint v\right)}
+        \omega_j}B(\omega_j)^\adjoint v\right)}_{\vect_{j=1}^D \mathcal{Y}'}
         = \frac{1}{D} \sum_{j=1}^D \inner*{u, \conj{\pairing{x,
         \omega_j}}B(\omega_j)\pairing{z, \omega_j}B(\omega_j)^\adjoint
         v}_{\mathcal{Y}}
@@ -1079,7 +1088,7 @@ constructing \acs{ORFF} from an operator valued kernel.
 \SetKwInOut{Input}{Input}
 \SetKwInOut{Output}{Output}
 \begin{center}
-    \begin{algorithm2e}[H]\label{alg:ORFF_construction}
+    \begin{algorithm2e}[htb]\label{alg:ORFF_construction}
         \SetAlgoLined
         \Input{$K(x, z)=K_e(\delta)$ a shift-invariant $\mathcal{Y}$-Mercer
         kernel such that $\forall y,y'\in\mathcal{Y},$ $\inner{y',
@@ -1148,8 +1157,8 @@ number of features increases the closer the model
 $\widetilde{f}(x_i)=\sum_{j=1}^{250}\tilde{\mathbf{K}}_{ij}u_j$ is to $f$.  The
 bottom row shows the same experiment but for a different realization of
 $\tilde{\mathbf{K}}$. When $D$ is small the curves of the bottom and top rows
-are very dissimilar --and sine wave like-- while they both converge to $f$ when
-$D$ increases.
+are very dissimilar~--~and sine wave like~---~while they both converge to $f$
+when $D$ increases.
 \subsection{From Operator Random Fourier Feature maps to OVKs}
 It is also interesting to notice that we can go the other way and define from
 the general form of an \acl{ORFF}, an operator-valued kernel.
@@ -1161,7 +1170,7 @@ the general form of an \acl{ORFF}, an operator-valued kernel.
     $\probability_{\dual{\Haar},\rho}$ on $\mathcal{B}(\dual{\mathcal{X}})$,
     such that for all $y\in\mathcal{Y}$ and all $y'\in\mathcal{Y}'$, $\inner{y,
     B(\cdot)y'} \in L^2(\dual{\mathcal{X}}, \probability_{\dual{\Haar},\rho})$,
-    then the operator-valued function
+    then the (random operator-valued) function with realizations in
     \begin{dmath*}
         \tildePhi{\omega}: \mathcal{X} \hiderel{\to}
         \mathcal{L}\left(\mathcal{Y}, \vect_{j=1}^D\mathcal{Y}'\right)
@@ -1184,8 +1193,9 @@ the general form of an \acl{ORFF}, an operator-valued kernel.
     \begin{dmath*}
         \inner*{\tildePhi{\omega}(x)y,\tildePhi{\omega}(z)y'}_{\Vect_{j=1}^D
         \mathcal{Y}'} =
-        \inner{y, \frac{1}{D} \sum_{j=1}^D
-        \conj{\pairing{x\groupop\inv{z},\omega_j}} A(\omega_j)y'}
+        \inner*{y, \frac{1}{D} \sum_{j=1}^D
+        \conj{\pairing{x\groupop\inv{z},\omega_j}} A(\omega_j)y'}_{\mathcal{Y},
+        \mathcal{Y}}
     \end{dmath*}
     and by the strong law of large numbers,
     \begin{dmath*}
@@ -1724,8 +1734,9 @@ In other words, what is the norm in $L^2(\dual{\mathcal{X}}, \dual{\Haar};
         \FT{f}(\omega)}_{\mathcal{Y}}}{\rho(\omega)} d\dual{\Haar}(\omega).
         \label{eq:reg_L2}
     \end{dmath}
-    where $\inner{y', A(\omega)y}\rho(\omega)\colonequals\FT{\inner{y',
-    K_e(\cdot)y}}(\omega)$.  \label{pr:regularization}
+    where $\inner{y',
+    A(\omega)y}_{\mathcal{Y}}\rho(\omega)\colonequals\FT{\inner{y',
+    K_e(\cdot)y}_{\mathcal{Y}}}(\omega)$.  \label{pr:regularization}
 \end{proposition}
 \begin{proof}
     We first show how the \acl{FT} relates to the feature operator. Since
@@ -1763,7 +1774,7 @@ In other words, what is the norm in $L^2(\dual{\mathcal{X}}, \dual{\Haar};
     $\IFT{f}(\omega)=\rho(\omega)B(\omega)g(\omega)$ \acs{wrt}~$g(\omega)$ with
     minimal norm\footnote{Note that since $B(\omega)$ is bounded the pseudo
     inverse of $B(\omega)$ is well defined for $\dual{\Haar}$-almost all
-    $\omega$}. Eventually,
+    $\omega$.}. Eventually,
     \begin{dmath*}
         \norm{f}^2_K = \int_{\dual{\mathcal{X}}}
         \frac{\norm{B(\omega)^\dagger
@@ -1806,7 +1817,7 @@ $A(\omega)=\Gamma\in\mathcal{L}_+(\mathbb{R}^p)$,
 \SetKwInOut{Input}{Input}
 \SetKwInOut{Output}{Output}
 \begin{center}
-    \begin{algorithm2e}\label{alg:ORFF2_construction}
+    \begin{algorithm2e}[htb]\label{alg:ORFF2_construction}
         \SetAlgoLined
         \Input{%
         \begin{itemize}

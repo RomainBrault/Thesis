@@ -515,23 +515,25 @@ $\mathcal{Y}$-Mercer kernels, based on \cref{pr:spectral} and
 \cref{pr:trace_measure}.
 
 \subsubsection{Gaussian decomposable kernel}
-\label{par:gaussian_dec} Recall that a decomposable $\mathbb{R}^p$-Mercer introduced in the Background section has
-the form $K(x,z)=k(x,z)\Gamma$, where $k(x,z)$ is a scalar Mercer kernel and
-$\Gamma\in\mathcal{L}(\mathbb{R}^p)$ is a non-negative operator. Let us focus on
+\label{par:gaussian_dec} Recall that a decomposable $\mathbb{R}^p$-Mercer
+introduced in the Background section has the form $K(x,z)=k(x,z)\Gamma$, where
+$k(x,z)$ is a scalar Mercer kernel and $\Gamma\in\mathcal{L}(\mathbb{R}^p)$ is
+a non-negative operator. Let us focus on
 $K^{dec,gauss}_e(\cdot)=k_e^{gauss}(\cdot)\Gamma$, the Gaussian decomposable
-kernel where $K_e^{dec, gauss}$ and $k_e^{gauss}$ are respectively the signature of $K$ and $k$ on
-the additive group $\mathcal{X}=(\mathbb{R}^d,+)$ -- $\acs{ie}~\delta=x-z$ and
-$e=0$. The well known Gaussian kernel is defined for all $\delta\in\mathbb{R}^d$ as follows
+kernel where $K_e^{dec, gauss}$ and $k_e^{gauss}$ are respectively the
+signature of $K$ and $k$ on the additive group
+$\mathcal{X}=(\mathbb{R}^d,+)$~---~$\acs{ie}~\delta=x-z$ and $e=0$. The well
+known Gaussian kernel is defined for all $\delta\in\mathbb{R}^d$ as follows:
 \begin{dmath*}
     k^{\text{gauss}}_0(\delta)\hiderel{=}\exp\left(
-    -\frac{1}{2\sigma^2}\norm{\delta}^2_2\right)
+    -\frac{1}{2\sigma^2}\norm{\delta}^2_2\right),
 \end{dmath*}
 where $\sigma \in \mathbb{R}_+$ is an hyperparameter corresponding to the
 bandwith of the kernel. The --Pontryagin-- dual group of
 $\mathcal{X}=(\mathbb{R}^d,+)$ is $\dual{\mathcal{X}}\cong(\mathbb{R}^d,+)$
 with the pairing
 \begin{dmath*}
-    \pairing{\delta,\omega}=\exp\left(\iu\inner{\delta,\omega}\right)
+    \pairing{\delta,\omega}=\exp\left(\iu\inner{\delta,\omega}\right),
 \end{dmath*}
 where $\delta$ and $\omega\in\mathbb{R}^d$. In this case the Haar measures on
 $\mathcal{X}$ and $\dual{\mathcal{X}}$ are in both cases the Lebesgue measure.

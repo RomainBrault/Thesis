@@ -41,7 +41,7 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="0">
+  <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
       <file>ThesisRomainBrault.aux</file>
@@ -65,8 +65,13 @@
       <file>english.lbx</file>
     </requires>
   </internal>
+<<<<<<< HEAD
   <external package="biblatex" priority="5" active="0">
     <generic>bibtex</generic>
+=======
+  <external package="biblatex" priority="5" active="1">
+    <generic>biber</generic>
+>>>>>>> ef45f6d17f41d3cb4dd9816ff919ae5f69e7c879
     <cmdline>
       <binary>bibtex8</binary>
       <option>--wolfgang</option>

@@ -36,22 +36,35 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Relationships between feature-maps.}}{68}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Approximation of a function in a vv-RKHS using different realizations of Operator Random Fourier Feature}}{72}{figure.caption.17}
+=======
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Approximation of a function in a vv-RKHS using different realizations of Operator Random Fourier Feature}}{70}{figure.caption.18}
+>>>>>>> ef45f6d17f41d3cb4dd9816ff919ae5f69e7c879
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \contentsline {xchapter}{\spacedlowsmallcaps {Bounding the error of the ORFF approximation}}{81}{chapter.5}
 \defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {5.1}{\ignorespaces \acs {ORFF} reconstruction error}}{82}{figure.caption.19}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.2}{\ignorespaces decomposable ORFF variance bound}}{92}{figure.caption.20}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Curl-free ORFF variance bound}}{92}{figure.caption.21}
+=======
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \acs {ORFF} reconstruction error}}{80}{figure.caption.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces decomposable ORFF variance bound}}{90}{figure.caption.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Curl-free ORFF variance bound}}{90}{figure.caption.22}
+>>>>>>> ef45f6d17f41d3cb4dd9816ff919ae5f69e7c879
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \contentsline {xchapter}{\spacedlowsmallcaps {Learning with Feature maps}}{95}{chapter.6}
 \defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {6.1}{\ignorespaces \acs {ORFF} equivalence theorem.}}{104}{figure.caption.22}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6.2}{\ignorespaces \acs {ORFF} equivalence theorem with overfitting.}}{105}{figure.caption.23}
@@ -69,6 +82,25 @@
 \contentsline {figure}{\numberline {6.8}{\ignorespaces Decomposable kernel on the third dataset: $R^2$ score vs number of data in the train set ($N$) \relax }}{122}{figure.caption.32}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6.9}{\ignorespaces Decomposable kernel on the third dataset: $R^2$ score vs number of data in the train set ($N$) for different number for different number of random samples ($D$). \relax }}{123}{figure.caption.33}
+=======
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \acs {ORFF} equivalence theorem.}}{102}{figure.caption.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \acs {ORFF} equivalence theorem with overfitting.}}{103}{figure.caption.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Efficient decomposable Gaussian \acs {ORFF}}}{114}{figure.caption.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Efficient curl-free Gaussian \acs {ORFF}}}{114}{figure.caption.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Efficient divergence-free Gaussian \acs {ORFF}}}{115}{figure.caption.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Prediction Error in percent on the MNIST dataset versus $D$, the number of Fourier features}}{117}{figure.caption.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Empirical comparison between curl-free ORFF, curl-free OVK, independent ORFF, independent OVK on a synthetic vector field regression task. \relax }}{118}{figure.caption.32}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Decomposable kernel on the third dataset: $R^2$ score vs number of data in the train set ($N$) \relax }}{119}{figure.caption.33}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Decomposable kernel on the third dataset: $R^2$ score vs number of data in the train set ($N$) for different number for different number of random samples ($D$). \relax }}{120}{figure.caption.34}
+>>>>>>> ef45f6d17f41d3cb4dd9816ff919ae5f69e7c879
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
@@ -82,6 +114,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {xchapter}{\spacedlowsmallcaps {Work in progress}}{149}{chapter.9}
 \defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {9.1}{\ignorespaces Learning a continuous quantile function with ORFF regression. \relax }}{152}{figure.caption.40}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {9.2}{\ignorespaces Learning many quantile with joint OVK regression. \relax }}{153}{figure.caption.41}
@@ -91,6 +124,17 @@
 \contentsline {figure}{\numberline {9.4}{\ignorespaces Continuous OCSVM: proportion of inlier with respect to nu}}{159}{figure.caption.43}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {9.5}{\ignorespaces Continuous OCSVM for outlier detection}}{161}{figure.caption.44}
+=======
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Learning a continuous quantile function with ORFF regression. \relax }}{150}{figure.caption.41}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Learning many quantile with joint OVK regression. \relax }}{151}{figure.caption.42}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Learning a continuous quantile function with ORFF regression. \relax }}{154}{figure.caption.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Continuous OCSVM: proportion of inlier with respect to nu}}{157}{figure.caption.44}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {9.5}{\ignorespaces Continuous OCSVM for outlier detection}}{159}{figure.caption.45}
+>>>>>>> ef45f6d17f41d3cb4dd9816ff919ae5f69e7c879
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
@@ -104,9 +148,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {xchapter}{\spacedlowsmallcaps {Miscellaneous}}{183}{appendix.B}
 \defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {B.1}{\ignorespaces \acs {ORFF} equivalence theorem (semi-supervised)}}{190}{figure.caption.45}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {B.2}{\ignorespaces \acs {ORFF} multiclass semi-supervised}}{192}{figure.caption.46}
+=======
+\contentsline {figure}{\numberline {B.1}{\ignorespaces \acs {ORFF} equivalence theorem (semi-supervised)}}{188}{figure.caption.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.2}{\ignorespaces \acs {ORFF} multiclass semi-supervised}}{190}{figure.caption.47}
+>>>>>>> ef45f6d17f41d3cb4dd9816ff919ae5f69e7c879
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
@@ -116,6 +166,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {xchapter}{\spacedlowsmallcaps {One Class Splitting Criteria for Random Forests}}{213}{appendix.D}
 \defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {D.1}{\ignorespaces Outliers distribution $G$ in the naive and adaptive approach. }}{218}{figure.caption.47}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {D.2}{\ignorespaces Adaptative splitting criteria}}{220}{figure.caption.48}
@@ -159,3 +210,48 @@
 \contentsline {figure}{\numberline {D.21}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {RFC} (novelty detection framework)\relax }}{240}{figure.caption.69}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {D.22}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {RFC} (outlier detection framework)\relax }}{241}{figure.caption.70}
+=======
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Outliers distribution $G$ in the naive and adaptive approach. }}{214}{figure.caption.48}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Adaptative splitting criteria}}{216}{figure.caption.49}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.3}{\ignorespaces One Class Random Forest level-sets}}{218}{figure.caption.50}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.4}{\ignorespaces Illustration of the standard splitting criterion on two modes when the proportion $\gamma $ varies. \relax }}{226}{figure.caption.53}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.5}{\ignorespaces Performances of the novelety detection algorithms}}{229}{figure.caption.54}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.6}{\ignorespaces Performances of the outlier detection algorithms}}{230}{figure.caption.55}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.7}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OneClassRF} (novelty detection framework)\relax }}{230}{figure.caption.56}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.8}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OneClassRF} (outlier detection framework)\relax }}{231}{figure.caption.57}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.9}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {iForest} (novelty detection framework)\relax }}{231}{figure.caption.58}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.10}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {iForest} (outlier detection framework)\relax }}{231}{figure.caption.59}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.11}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OCRFsampling} (novelty detection framework)\relax }}{232}{figure.caption.60}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.12}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OCRFsampling} (outlier detection framework)\relax }}{232}{figure.caption.61}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.13}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OCSVM} (novelty detection framework)\relax }}{232}{figure.caption.62}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.14}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {OCSVM} (outlier detection framework)\relax }}{233}{figure.caption.63}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.15}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {LOF} (novelty detection framework)\relax }}{233}{figure.caption.64}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.16}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {LOF} (outlier detection framework)\relax }}{233}{figure.caption.65}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.17}{\ignorespaces \acs {ROC} and \acs {PR} curves for Orca (novelty detection framework)\relax }}{234}{figure.caption.66}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.18}{\ignorespaces \acs {ROC} and \acs {PR} curves for Orca (outlier detection framework)\relax }}{234}{figure.caption.67}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.19}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {LSAD} (novelty detection framework)\relax }}{234}{figure.caption.68}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.20}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {LSAD} (outlier detection framework)\relax }}{235}{figure.caption.69}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.21}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {RFC} (novelty detection framework)\relax }}{235}{figure.caption.70}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.22}{\ignorespaces \acs {ROC} and \acs {PR} curves for \acs {RFC} (outlier detection framework)\relax }}{235}{figure.caption.71}
+>>>>>>> ef45f6d17f41d3cb4dd9816ff919ae5f69e7c879

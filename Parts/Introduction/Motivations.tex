@@ -10,8 +10,8 @@ space}.  In this chapter, $\mathcal{Y} \subseteq \mathbb{R}$. When
 $\mathcal{Y}=\Set{1, \ldots, C}$, we talk about \emph{supervised
 classification}.  When $\mathcal{Y}=\mathbb{R}$, supervised learning
 corresponds to  usual \emph{regression}. We are given an \acf{iid} sample of
-size $N$ of traning data $\seq{s}=(x_i, y_i)_{i=1}^N$, drawn from a unknown but
-fixed joint probability law $\probability(X,Y)$. We call \emph{learning
+size $N$ of traning data $\seq{s}=(x_i, y_i)_{i=1}^N$, drawn from an unknown
+but fixed joint probability law $\probability$. We call \emph{learning
 algorithm}, a function $\mathcal{A}$ that takes a class of functions
 $\mathcal{F}$, a training sample $\seq{s}$ and returns a function in
 $\mathcal{F}$. The learning algorithm can be studied through many angles, from
@@ -23,7 +23,7 @@ captures the relationship between the two random variables $X$ and $Y$. More
 specifically, we search for a function $f$ in some class of functions, denoted
 $\mathcal{F}$ and called the \emph{hypothesis class} such that the
 $f\in\mathcal{F}$ makes good predictions for the pair $(X,Y)$ distributed
-according $\probability(X,Y)$. To convert this abstract goal into a
+according $\probability$. To convert this abstract goal into a
 mathematical definition, we define a local loss function
 $L:\mathcal{X}\times\mathcal{F}\times\mathcal{Y} \to \mathbb{R}_+$ that
 evaluates the capacity of a function $f$ to predict the outcome $y$ from an
@@ -352,11 +352,9 @@ and we minimize $\mathfrak{R}_{\lambda}$ instead of
 $\mathfrak{R}_{\text{emp}}$. Then the representer theorem (also called minimal
 norm interpolation theorem) states the following.
 \begin{theorem}[Representer theorem, \citet{Wahba90}]
-    If $f_{\seq{s}}$ is a solution of
-    \begin{dmath*}
-        \argmin_{f\in\mathcal{H}_k} \mathfrak{R}_{\lambda}(f. \seq{s}),
-    \end{dmath*}
-    where $\lambda > 0$ then $f_{\seq{s}}=\sum_{i=1}^N k(\cdot, x_i) \alpha_i$.
+    If $f_{\seq{s}}$ is a solution of $\argmin_{f\in\mathcal{H}_k}
+    \mathfrak{R}_{\lambda}(f, \seq{s})$, where $\lambda > 0$ then
+    $f_{\seq{s}}=\sum_{i=1}^N k(\cdot, x_i) \alpha_i$.
 \end{theorem}
 We note the vector $\boldsymbol{\alpha} = (\alpha_i)_{i=1}^N$ and the matrix
 $\mathbf{K}=(k(x_i, x_k))_{i, k = 1}^N$. Because of the representer theorem,
@@ -399,8 +397,8 @@ convexity and coercivity of $\mathfrak{R}_{\lambda}$, and because $\mathbf{K} +
 \lambda I_N$ is invertible\footnote{Note that although $\mathbf{K} + \lambda
 I_N$ is always invertible if $\lambda>0$, choosing a too small value of
 $\lambda$ can leads to an ill-conditioned system if the eigenvalues of
-$\mathbf{K}+\lambda I_N$ are too small.} for any $\lambda > 0$, the unique
-solution is $\alpha_{\seq{s}} = \argmin_{\boldsymbol{\alpha}\in\mathbb{R}^N}
+$\mathbf{K}+\lambda I_N$ are too small.} for any $\lambda > 0$, a solution is
+$\alpha_{\seq{s}} = \argmin_{\boldsymbol{\alpha}\in\mathbb{R}^N}
 \mathfrak{R}_{\lambda}(\boldsymbol{\alpha}, \seq{s}) = (\mathbf{K}/N + \lambda
 I_N)^{-1}(y_i)_{i=1}^N$. This is an $O\left(N^3\right)$ algorithm.
 \paragraph{}
@@ -460,7 +458,7 @@ least square loss reads
     \frac{1}{2N}\norm{\boldsymbol{\phi}^\transpose \theta - (y_i)_{i=1}^N
     }_{2}^2 + \frac{\lambda}{2}\norm{\theta}_2^2.
 \end{dmath*}
-and the unique solution is $\theta_{\seq{s}} =
+and if $\lambda > 0$ the unique minimizer is $\theta_{\seq{s}} =
 \left(\boldsymbol{\phi}\boldsymbol{\phi}^\transpose/N + \lambda
 I_{\mathcal{H}}\right)^{-1}\boldsymbol{\phi}$. This is an
 \begin{dmath*}

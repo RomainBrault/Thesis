@@ -1,11 +1,11 @@
 =>PYTHONTEX#py#default#default#0#c####Motivations.tex#250#
 print(r'\centering\resizebox{\textwidth}{!}{\input{./gfx/nested_circle.pgf}}')
-=>PYTHONTEX#py#not_mercer#default#0#code####Construction.tex#1126#
+=>PYTHONTEX#py#not_mercer#default#0#code####Construction.tex#1135#
 sys.path.append('./src/')
 import not_mercer
 
 not_mercer.main()
-=>PYTHONTEX#py#default#default#1#c####Construction.tex#1133#
+=>PYTHONTEX#py#default#default#1#c####Construction.tex#1142#
 print(r'\centering\resizebox{\textwidth}{!}{\input{./not_Mercer.pgf}}')
 =>PYTHONTEX#py#approximation#default#0#code####Concentration.tex#30#
 sys.path.append('./src/')
@@ -24,9 +24,15 @@ sys.path.append('./src/')
 import representer2
 
 err = representer2.main()
+<<<<<<< HEAD
 =>PYTHONTEX#py#default#default#3#c####Learning.tex#545#
 print(r'\centering \resizebox {\textheight }{!}{\input {./representer.pgf}}')
 =>PYTHONTEX#py#default#default#4#c####Learning.tex#545#
+=======
+=>PYTHONTEX#py#default#default#3#c####Learning.tex#554#
+print(r'\centering \resizebox {\textheight }{!}{\input {./representer.pgf}}')
+=>PYTHONTEX#py#default#default#4#c####Learning.tex#554#
+>>>>>>> ef45f6d17f41d3cb4dd9816ff919ae5f69e7c879
 print(r'\centering \resizebox {\textheight }{!}{\input {./representer2.pgf}}')
 =>PYTHONTEX#py#efficient_linop#default#0#code####Learning.tex#850#
 r"""Example of efficient implementation of Gaussian decomposable ORFF."""

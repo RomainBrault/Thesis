@@ -1511,19 +1511,18 @@ If a graph coding for the proximity between tasks is known, then it is shown
 in~\citet{Evgeniou2005,Baldassare2010,Alvarez2012} that $\Gamma$ can be chosen
 equal to the pseudo inverse $L^{\dagger}$ of the graph Laplacian such that the
 norm in $\mathcal{H}_K$ is a graph-regularizing penalty for the outputs
-(tasks).  When no prior knowledge is available, $\Gamma$ can be set to the
-empirical covariance of the output training data or learned with one of the
-algorithms proposed in the literature~\citep{Dinuzzo2011, Sindhwani2013,
-Lim2015}. Another interesting property of the decomposable kernel is its
-universality (a kernel which may approximate an arbitrary continuous target
-function uniformly on any compact subset of the input space). A reproducing
-kernel $K$ is said \emph{universal} if the associated \ac{vv-RKHS}
-$\mathcal{H}_K$ is \emph{dense} in the space of continuous functions
-$\mathcal{C}(\mathcal{X},\mathcal{Y})$.  The conditions for a kernel to be
-universal have been discussed in~\citet{caponnetto2008,Carmeli2010}. In
+(tasks).  When no prior knowledge is available, $\Gamma$ can be learned with
+one of the algorithms proposed in the literature~\citep{Dinuzzo2011,
+Sindhwani2013, Lim2015}. Another interesting property of the decomposable
+kernel is its universality (a kernel which may approximate an arbitrary
+continuous target function uniformly on any compact subset of the input space).
+A reproducing kernel $K$ is said \emph{universal} if the associated
+\ac{vv-RKHS} $\mathcal{H}_K$ is \emph{dense} in the space of continuous
+functions $\mathcal{C}(\mathcal{X},\mathcal{Y})$.  The conditions for a kernel
+to be universal have been discussed in~\citet{caponnetto2008,Carmeli2010}. In
 particular they show that a decomposable kernel is universal provided that the
-scalar kernel $k$ is universal and the operator $\Gamma$ is injective.
-Given $(e_k)_{k=1}^p$ a basis of $\mathcal{Y}$, we recall here how the matrix
+scalar kernel $k$ is universal and the operator $\Gamma$ is injective.  Given
+$(e_k)_{k=1}^p$ a basis of $\mathcal{Y}$, we recall here how the matrix
 $\Gamma$ acts as a regularizer between the components of the outputs $f_k =
 \inner{f(\cdot), e_k}_{\mathcal{Y}}$ of a function $f\in\mathcal{H}_K$.
 \begin{proposition}[Kernels and Regularizers~(\citet{Alvarez2012})]

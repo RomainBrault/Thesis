@@ -73,7 +73,7 @@
          
          <dc:rights><rdf:Alt><rdf:li xml:lang="x-default">Public Domain</rdf:li>
      <rdf:li>©{Romain Raymond Brault}</rdf:li></rdf:Alt></dc:rights>
-         <dc:description><rdf:Alt><rdf:li xml:lang="x-default">Large-scale Operator-Valued Kernel Regression</rdf:li></rdf:Alt></dc:description>
+         <dc:description><rdf:Alt><rdf:li xml:lang="x-default">Large-Scale Operator-Valued Kernel Regression</rdf:li></rdf:Alt></dc:description>
          <dc:subject><rdf:Bag><rdf:li>Noyaux à Valeurs Opérateurs</rdf:li>
      <rdf:li>Passage à l'échelle</rdf:li>
      <rdf:li>Random Fourier Features</rdf:li>
@@ -87,7 +87,7 @@
  
  
  
- <prism:coverDisplayDate>October 6, 2017</prism:coverDisplayDate>
+ <prism:coverDisplayDate>October 11, 2017</prism:coverDisplayDate>
  <prism:coverDate>2017</prism:coverDate>
  
  
@@ -105,15 +105,9 @@
       </rdf:Description> 
       <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
          <xmp:CreatorTool>XeTeX + classicthesis.sty</xmp:CreatorTool> 
-<<<<<<< HEAD
-         <xmp:ModifyDate>2017-10-06T17:19:33+02:00</xmp:ModifyDate> 
-         <xmp:CreateDate>2017-10-06T17:19:33+02:00</xmp:CreateDate> 
-         <xmp:MetadataDate>2017-10-06T17:19:33+02:00</xmp:MetadataDate> 
-=======
-         <xmp:ModifyDate>2017-10-06T17:24:25+02:00</xmp:ModifyDate> 
-         <xmp:CreateDate>2017-10-06T17:24:25+02:00</xmp:CreateDate> 
-         <xmp:MetadataDate>2017-10-06T17:24:25+02:00</xmp:MetadataDate> 
->>>>>>> ef45f6d17f41d3cb4dd9816ff919ae5f69e7c879
+         <xmp:ModifyDate>2017-10-11T21:07:24+02:00</xmp:ModifyDate> 
+         <xmp:CreateDate>2017-10-11T21:07:24+02:00</xmp:CreateDate> 
+         <xmp:MetadataDate>2017-10-11T21:07:24+02:00</xmp:MetadataDate> 
       </rdf:Description> 
       <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
          <xmpRights:Marked>True</xmpRights:Marked>
@@ -123,11 +117,7 @@
       </rdf:Description> 
       <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
          <xmpMM:DocumentID>uuid:86B0A80E-4F14-E782-157C-46D0B1E42FC7</xmpMM:DocumentID> 
-<<<<<<< HEAD
-         <xmpMM:InstanceID>uuid:0AACD675-8380-1C97-AF66-67DAD29060A0</xmpMM:InstanceID> 
-=======
-         <xmpMM:InstanceID>uuid:5927434C-CB55-5D71-0B99-A18FF1E231DC</xmpMM:InstanceID> 
->>>>>>> ef45f6d17f41d3cb4dd9816ff919ae5f69e7c879
+         <xmpMM:InstanceID>uuid:0FCBD739-CFB9-D509-6184-AAD38D9CDF7F</xmpMM:InstanceID> 
       </rdf:Description> 
    </rdf:RDF> 
 </x:xmpmeta> 

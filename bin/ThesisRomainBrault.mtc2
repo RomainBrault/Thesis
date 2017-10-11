@@ -12,15 +12,10 @@
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.1}Introduction to kernel methods}{\reset@font\mtcSSfont 11}{subsection.2.1.1}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.1.1.1}Kernels and Reproducing Kernel Hilbert Spaces}{\reset@font\mtcSSSfont 11}{subsubsection.2.1.1.1}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 11}{figure.caption.8}}
-<<<<<<< HEAD
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.1.1.2}Learning in Reproducing Kernel Hilbert Spaces}{\reset@font\mtcSSSfont 13}{subsubsection.2.1.1.2}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 14}{theorem.2.2}}
-=======
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.1.1.2}Learning in Reproducing Kernel Hilbert Spaces}{\reset@font\mtcSSSfont 12}{subsubsection.2.1.1.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 13}{theorem.2.2}}
->>>>>>> ef45f6d17f41d3cb4dd9816ff919ae5f69e7c879
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.2}Towards large scale learning with kernels}{\reset@font\mtcSSfont 14}{subsection.2.1.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.1.2.1}Random Fourier Features map}{\reset@font\mtcSSSfont 14}{subsubsection.2.1.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.1.2.1}Random Fourier Features map}{\reset@font\mtcSSSfont 16}{subsubsection.2.1.2.1}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 16}{subsubsection.2.1.2.1}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 17}{theorem.2.3}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode }{\reset@font\mtcPfont 17}{theorem.2.3}}

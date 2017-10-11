@@ -10,73 +10,73 @@
     \PYG@it{\PYG@bf{\PYG@ff{#1}}}}}}}
 \def\PYG#1#2{\PYG@reset\PYG@toks#1+\relax+\PYG@do{#2}}
 
-\expandafter\def\csname PYG@tok@nb\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYG@tok@nn\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\expandafter\def\csname PYG@tok@s2\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PYG@tok@dl\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PYG@tok@nd\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
-\expandafter\def\csname PYG@tok@mb\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PYG@tok@ge\endcsname{\let\PYG@it=\textit}
-\expandafter\def\csname PYG@tok@gs\endcsname{\let\PYG@bf=\textbf}
-\expandafter\def\csname PYG@tok@fm\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\expandafter\def\csname PYG@tok@no\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
-\expandafter\def\csname PYG@tok@o\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PYG@tok@gh\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
-\expandafter\def\csname PYG@tok@sc\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYG@tok@w\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
 \expandafter\def\csname PYG@tok@c\endcsname{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PYG@tok@err\endcsname{\def\PYG@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
-\expandafter\def\csname PYG@tok@gt\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
-\expandafter\def\csname PYG@tok@gp\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
-\expandafter\def\csname PYG@tok@kr\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYG@tok@mf\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PYG@tok@kn\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYG@tok@cs\endcsname{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PYG@tok@nt\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYG@tok@sd\endcsname{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PYG@tok@s1\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PYG@tok@c1\endcsname{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PYG@tok@bp\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYG@tok@mo\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PYG@tok@nf\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\expandafter\def\csname PYG@tok@ne\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
-\expandafter\def\csname PYG@tok@vg\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PYG@tok@cp\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PYG@tok@k\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYG@tok@kp\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYG@tok@kt\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PYG@tok@o\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
 \expandafter\def\csname PYG@tok@ow\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
-\expandafter\def\csname PYG@tok@sb\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYG@tok@nb\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYG@tok@nf\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PYG@tok@nc\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PYG@tok@nn\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PYG@tok@ne\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PYG@tok@nv\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PYG@tok@no\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PYG@tok@nl\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PYG@tok@ni\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PYG@tok@na\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PYG@tok@nt\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYG@tok@nd\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PYG@tok@s\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYG@tok@sd\endcsname{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYG@tok@si\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PYG@tok@se\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PYG@tok@sr\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PYG@tok@ss\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PYG@tok@sx\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYG@tok@m\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYG@tok@gh\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PYG@tok@gu\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
 \expandafter\def\csname PYG@tok@gd\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
 \expandafter\def\csname PYG@tok@gi\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
-\expandafter\def\csname PYG@tok@gu\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
-\expandafter\def\csname PYG@tok@cpf\endcsname{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PYG@tok@si\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
-\expandafter\def\csname PYG@tok@m\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PYG@tok@kp\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYG@tok@k\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYG@tok@nc\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\expandafter\def\csname PYG@tok@ss\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\expandafter\def\csname PYG@tok@sh\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PYG@tok@mh\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PYG@tok@ch\endcsname{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PYG@tok@go\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
 \expandafter\def\csname PYG@tok@gr\endcsname{\def\PYG@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
-\expandafter\def\csname PYG@tok@na\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
-\expandafter\def\csname PYG@tok@se\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
-\expandafter\def\csname PYG@tok@ni\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
-\expandafter\def\csname PYG@tok@kd\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYG@tok@w\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PYG@tok@ge\endcsname{\let\PYG@it=\textit}
+\expandafter\def\csname PYG@tok@gs\endcsname{\let\PYG@bf=\textbf}
+\expandafter\def\csname PYG@tok@gp\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PYG@tok@go\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PYG@tok@gt\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PYG@tok@err\endcsname{\def\PYG@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
 \expandafter\def\csname PYG@tok@kc\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYG@tok@mi\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PYG@tok@vi\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\expandafter\def\csname PYG@tok@nl\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
-\expandafter\def\csname PYG@tok@cp\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
-\expandafter\def\csname PYG@tok@s\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYG@tok@kd\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYG@tok@kn\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYG@tok@kr\endcsname{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYG@tok@bp\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYG@tok@fm\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
 \expandafter\def\csname PYG@tok@vc\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\expandafter\def\csname PYG@tok@nv\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\expandafter\def\csname PYG@tok@sr\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
-\expandafter\def\csname PYG@tok@sx\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYG@tok@sa\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PYG@tok@kt\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
-\expandafter\def\csname PYG@tok@cm\endcsname{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PYG@tok@vg\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PYG@tok@vi\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
 \expandafter\def\csname PYG@tok@vm\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PYG@tok@sa\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYG@tok@sb\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYG@tok@sc\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYG@tok@dl\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYG@tok@s2\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYG@tok@sh\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYG@tok@s1\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYG@tok@mb\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYG@tok@mf\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYG@tok@mh\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYG@tok@mi\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
 \expandafter\def\csname PYG@tok@il\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYG@tok@mo\endcsname{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYG@tok@ch\endcsname{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PYG@tok@cm\endcsname{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PYG@tok@cpf\endcsname{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PYG@tok@c1\endcsname{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PYG@tok@cs\endcsname{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
 
 \def\PYGZbs{\char`\\}
 \def\PYGZus{\char`\_}
@@ -110,73 +110,73 @@
     \PYGdefault@it{\PYGdefault@bf{\PYGdefault@ff{#1}}}}}}}
 \def\PYGdefault#1#2{\PYGdefault@reset\PYGdefault@toks#1+\relax+\PYGdefault@do{#2}}
 
-\expandafter\def\csname PYGdefault@tok@nb\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@nn\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@s2\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PYGdefault@tok@dl\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PYGdefault@tok@nd\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@mb\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PYGdefault@tok@ge\endcsname{\let\PYGdefault@it=\textit}
-\expandafter\def\csname PYGdefault@tok@gs\endcsname{\let\PYGdefault@bf=\textbf}
-\expandafter\def\csname PYGdefault@tok@fm\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@no\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@o\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PYGdefault@tok@gh\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
-\expandafter\def\csname PYGdefault@tok@sc\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@w\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
 \expandafter\def\csname PYGdefault@tok@c\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PYGdefault@tok@err\endcsname{\def\PYGdefault@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
-\expandafter\def\csname PYGdefault@tok@gt\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
-\expandafter\def\csname PYGdefault@tok@gp\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
-\expandafter\def\csname PYGdefault@tok@kr\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@mf\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PYGdefault@tok@kn\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@cs\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PYGdefault@tok@nt\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@sd\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PYGdefault@tok@s1\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PYGdefault@tok@c1\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PYGdefault@tok@bp\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@mo\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PYGdefault@tok@nf\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@ne\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
-\expandafter\def\csname PYGdefault@tok@vg\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PYGdefault@tok@cp\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@k\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@kp\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@kt\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PYGdefault@tok@o\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
 \expandafter\def\csname PYGdefault@tok@ow\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@sb\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@nb\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@nf\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@nc\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@nn\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@ne\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PYGdefault@tok@nv\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PYGdefault@tok@no\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@nl\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@ni\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PYGdefault@tok@na\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PYGdefault@tok@nt\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@nd\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@s\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@sd\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@si\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PYGdefault@tok@se\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@sr\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PYGdefault@tok@ss\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PYGdefault@tok@sx\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@m\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYGdefault@tok@gh\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PYGdefault@tok@gu\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
 \expandafter\def\csname PYGdefault@tok@gd\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
 \expandafter\def\csname PYGdefault@tok@gi\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@gu\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
-\expandafter\def\csname PYGdefault@tok@cpf\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PYGdefault@tok@si\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
-\expandafter\def\csname PYGdefault@tok@m\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PYGdefault@tok@kp\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@k\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@nc\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@ss\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\expandafter\def\csname PYGdefault@tok@sh\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PYGdefault@tok@mh\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PYGdefault@tok@ch\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PYGdefault@tok@go\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
 \expandafter\def\csname PYGdefault@tok@gr\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@na\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
-\expandafter\def\csname PYGdefault@tok@se\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
-\expandafter\def\csname PYGdefault@tok@ni\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
-\expandafter\def\csname PYGdefault@tok@kd\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@w\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PYGdefault@tok@ge\endcsname{\let\PYGdefault@it=\textit}
+\expandafter\def\csname PYGdefault@tok@gs\endcsname{\let\PYGdefault@bf=\textbf}
+\expandafter\def\csname PYGdefault@tok@gp\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PYGdefault@tok@go\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PYGdefault@tok@gt\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PYGdefault@tok@err\endcsname{\def\PYGdefault@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
 \expandafter\def\csname PYGdefault@tok@kc\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@mi\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PYGdefault@tok@vi\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\expandafter\def\csname PYGdefault@tok@nl\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@cp\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@s\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@kd\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@kn\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@kr\endcsname{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@bp\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PYGdefault@tok@fm\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
 \expandafter\def\csname PYGdefault@tok@vc\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\expandafter\def\csname PYGdefault@tok@nv\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\expandafter\def\csname PYGdefault@tok@sr\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
-\expandafter\def\csname PYGdefault@tok@sx\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PYGdefault@tok@sa\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PYGdefault@tok@kt\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
-\expandafter\def\csname PYGdefault@tok@cm\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PYGdefault@tok@vg\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PYGdefault@tok@vi\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
 \expandafter\def\csname PYGdefault@tok@vm\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PYGdefault@tok@sa\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@sb\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@sc\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@dl\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@s2\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@sh\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@s1\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PYGdefault@tok@mb\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYGdefault@tok@mf\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYGdefault@tok@mh\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYGdefault@tok@mi\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
 \expandafter\def\csname PYGdefault@tok@il\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYGdefault@tok@mo\endcsname{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PYGdefault@tok@ch\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PYGdefault@tok@cm\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PYGdefault@tok@cpf\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PYGdefault@tok@c1\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PYGdefault@tok@cs\endcsname{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
 
 \def\PYGdefaultZbs{\char`\\}
 \def\PYGdefaultZus{\char`\_}
@@ -198,48 +198,6 @@
 \def\PYGdefaultZlb{[}
 \def\PYGdefaultZrb{]}
 \makeatother
-\begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@py@efficient_linop@default@2}
-\PYG{k}{def} \PYG{n+nf}{EfficientDecomposableGaussianORFF}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{A}\PYG{p}{,} \PYG{n}{gamma}\PYG{o}{=}\PYG{l+m+mf}{1.}\PYG{p}{,}
-                                      \PYG{n}{D}\PYG{o}{=}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{n}{eps}\PYG{o}{=}\PYG{l+m+mf}{1e\PYGZhy{}5}\PYG{p}{,} \PYG{n}{random\PYGZus{}state}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{:}
-    \PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Return the efficient ORFF map associated with the data X.}
-
-\PYG{l+s+sd}{    Parameters}
-\PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
-\PYG{l+s+sd}{    X : \PYGZob{}array\PYGZhy{}like\PYGZcb{}, shape = [n\PYGZus{}samples, n\PYGZus{}features]}
-\PYG{l+s+sd}{        Samples.}
-\PYG{l+s+sd}{    A : \PYGZob{}array\PYGZhy{}like\PYGZcb{}, shape = [n\PYGZus{}targets, n\PYGZus{}targets]}
-\PYG{l+s+sd}{        Operator of the Decomposable kernel (positive semi\PYGZhy{}definite)}
-\PYG{l+s+sd}{    gamma : \PYGZob{}float\PYGZcb{},}
-\PYG{l+s+sd}{        Gamma parameter of the RBF kernel.}
-\PYG{l+s+sd}{    D : \PYGZob{}integer\PYGZcb{}}
-\PYG{l+s+sd}{        Number of random features.}
-\PYG{l+s+sd}{    eps : \PYGZob{}float\PYGZcb{}}
-\PYG{l+s+sd}{        Cutoff threshold for the singular values of A.}
-\PYG{l+s+sd}{    random\PYGZus{}state : \PYGZob{}integer\PYGZcb{}}
-\PYG{l+s+sd}{        Seed of the generator.}
-
-\PYG{l+s+sd}{    Returns}
-\PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
-\PYG{l+s+sd}{    \PYGZbs{}tilde\PYGZob{}\PYGZbs{}Phi\PYGZcb{}(X) : Linear Operator, callable}
-\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
-    \PYG{c+c1}{\PYGZsh{} Decompose A=BB\PYGZca{}\PYGZbs{}transpose}
-    \PYG{n}{u}\PYG{p}{,} \PYG{n}{s}\PYG{p}{,} \PYG{n}{v} \PYG{o}{=} \PYG{n}{svd}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{full\PYGZus{}matrices}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{,} \PYG{n}{compute\PYGZus{}uv}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
-    \PYG{n}{B} \PYG{o}{=} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{diag}\PYG{p}{(}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{s}\PYG{p}{[}\PYG{n}{s} \PYG{o}{\PYGZgt{}} \PYG{n}{eps}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n}{v}\PYG{p}{[}\PYG{n}{s} \PYG{o}{\PYGZgt{}} \PYG{n}{eps}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}\PYG{p}{)}
-
-    \PYG{c+c1}{\PYGZsh{} Sample a RFF from the scalar Gaussian kernel}
-    \PYG{n}{phi\PYGZus{}s} \PYG{o}{=} \PYG{n}{RBFSampler}\PYG{p}{(}\PYG{n}{gamma}\PYG{o}{=}\PYG{n}{gamma}\PYG{p}{,} \PYG{n}{n\PYGZus{}components}\PYG{o}{=}\PYG{n}{D}\PYG{p}{,} \PYG{n}{random\PYGZus{}state}\PYG{o}{=}\PYG{n}{random\PYGZus{}state}\PYG{p}{)}
-    \PYG{n}{phiX} \PYG{o}{=} \PYG{n}{phi\PYGZus{}s}\PYG{o}{.}\PYG{n}{fit\PYGZus{}transform}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)}
-
-    \PYG{c+c1}{\PYGZsh{} Create the ORFF linear operator}
-    \PYG{n}{cshape} \PYG{o}{=} \PYG{p}{(}\PYG{n}{D}\PYG{p}{,} \PYG{n}{B}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}
-    \PYG{n}{rshape} \PYG{o}{=} \PYG{p}{(}\PYG{n}{X}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{B}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}
-    \PYG{k}{return} \PYG{n}{LinearOperator}\PYG{p}{(}\PYG{p}{(}\PYG{n}{phiX}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{*} \PYG{n}{B}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,} \PYG{n}{D} \PYG{o}{*} \PYG{n}{B}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}
-                          \PYG{n}{matvec}\PYG{o}{=}\PYG{k}{lambda} \PYG{n}{b}\PYG{p}{:} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiX}\PYG{p}{,} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{b}\PYG{o}{.}\PYG{n}{reshape}\PYG{p}{(}\PYG{n}{cshape}\PYG{p}{)}\PYG{p}{,}
-                                               \PYG{n}{B}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
-                          \PYG{n}{rmatvec}\PYG{o}{=}\PYG{k}{lambda} \PYG{n}{r}\PYG{p}{:} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiX}\PYG{o}{.}\PYG{n}{T}\PYG{p}{,} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{r}\PYG{o}{.}\PYG{n}{reshape}\PYG{p}{(}\PYG{n}{rshape}\PYG{p}{)}\PYG{p}{,}
-                                                \PYG{n}{B}\PYG{o}{.}\PYG{n}{T}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}
-\end{pytx@SaveVerbatim}
-
 \begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@PYGpython@EXT:./src/not_mercer.py@defaultverb@0}
 \PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Plot figure: Different outcomes of a Gaussian kernel approximation.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
 
@@ -332,6 +290,297 @@
 
     \PYG{n}{createColorbar}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{D}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{axes}\PYG{p}{)}
     \PYG{n}{plt}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{not\PYGZus{}Mercer.pgf}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{bbox\PYGZus{}inches}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{tight}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:}
+    \PYG{n}{main}\PYG{p}{(}\PYG{p}{)}
+\end{pytx@SaveVerbatim}
+
+\begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@PYGpython@EXT:./src/representer.py@defaultverb@0}
+\PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Plot figure: ORFF Representer theorem pt.1.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k+kn}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k+kn}{as} \PYG{n+nn}{plt}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}
+
+
+\PYG{k}{def} \PYG{n+nf}{phi}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{w}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)}\PYG{p}{:}
+    \PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}RFF map.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{Z} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{w}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{hstack}\PYG{p}{(}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{Z}\PYG{p}{)}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{Z}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)} \PYG{o}{/} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{D}\PYG{p}{)}
+
+
+\PYG{k}{def} \PYG{n+nf}{main}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Plot figure: ORFF Representer theorem pt.1.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{d} \PYG{o}{=} \PYG{l+m+mi}{1}  \PYG{c+c1}{\PYGZsh{} dimensionality of the inputs}
+    \PYG{n}{D} \PYG{o}{=} \PYG{l+m+mi}{50}  \PYG{c+c1}{\PYGZsh{} number of random features}
+
+    \PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{50}
+    \PYG{n}{Nt} \PYG{o}{=} \PYG{l+m+mi}{200}
+
+    \PYG{c+c1}{\PYGZsh{} N training points in (0,1)}
+    \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{seed}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}
+    \PYG{n}{x} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(}\PYG{n}{N}\PYG{p}{,} \PYG{n}{d}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}
+    \PYG{n}{y} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{l+m+mi}{10} \PYG{o}{*} \PYG{n}{x}\PYG{p}{)}
+    \PYG{n}{y} \PYG{o}{+}\PYG{o}{=} \PYG{o}{.}\PYG{l+m+mi}{5} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{randn}\PYG{p}{(}\PYG{n}{y}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{y}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mf}{2.} \PYG{o}{*} \PYG{n}{x} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2}
+
+    \PYG{c+c1}{\PYGZsh{} Nt testing points in (0,1)}
+    \PYG{n}{xt} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{Nt}\PYG{p}{)}\PYG{o}{.}\PYG{n}{reshape}\PYG{p}{(}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{yt} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{l+m+mi}{10} \PYG{o}{*} \PYG{n}{xt}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mf}{2.} \PYG{o}{*} \PYG{n}{xt} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2}
+    \PYG{n}{yt} \PYG{o}{+}\PYG{o}{=} \PYG{o}{.}\PYG{l+m+mi}{5} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{randn}\PYG{p}{(}\PYG{n}{yt}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{yt}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}
+
+    \PYG{n}{sigma} \PYG{o}{=} \PYG{o}{.}\PYG{l+m+mi}{3}
+    \PYG{n}{w} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{randn}\PYG{p}{(}\PYG{n}{d}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)} \PYG{o}{/} \PYG{n}{sigma}  \PYG{c+c1}{\PYGZsh{} Realization of (\PYGZbs{}omega\PYGZus{}j)\PYGZus{}\PYGZob{}j=1\PYGZcb{}\PYGZca{}D}
+
+    \PYG{n}{phiX} \PYG{o}{=} \PYG{n}{phi}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{w}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Train RFF}
+    \PYG{n}{phiXt} \PYG{o}{=} \PYG{n}{phi}\PYG{p}{(}\PYG{n}{xt}\PYG{p}{,} \PYG{n}{w}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Test RFF}
+
+    \PYG{c+c1}{\PYGZsh{} Create plot}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{close}\PYG{p}{(}\PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{rc}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{text}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{usetex}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{rc}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{font}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{family}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{serif}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{f}\PYG{p}{,} \PYG{n}{axis} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplots}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{n}{gridspec\PYGZus{}kw}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{width\PYGZus{}ratios}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mf}{1.5}\PYG{p}{]}\PYG{p}{\PYGZcb{}}\PYG{p}{,}
+                           \PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{16}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{)}\PYG{p}{,} \PYG{n}{sharex}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{col}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{sharey}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{col}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{f}\PYG{o}{.}\PYG{n}{subplots\PYGZus{}adjust}\PYG{p}{(}\PYG{n}{hspace}\PYG{o}{=}\PYG{o}{.}\PYG{l+m+mi}{25}\PYG{p}{)}
+    \PYG{n}{formatter} \PYG{o}{=} \PYG{n}{matplotlib}\PYG{o}{.}\PYG{n}{ticker}\PYG{o}{.}\PYG{n}{ScalarFormatter}\PYG{p}{(}\PYG{p}{)}
+    \PYG{n}{formatter}\PYG{o}{.}\PYG{n}{set\PYGZus{}powerlimits}\PYG{p}{(}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{)}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} For different hyperparameters \PYGZbs{}lambda}
+    \PYG{k}{for} \PYG{n}{k}\PYG{p}{,} \PYG{n}{lbda} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mf}{1e\PYGZhy{}2}\PYG{p}{,} \PYG{l+m+mf}{5e\PYGZhy{}6}\PYG{p}{,} \PYG{l+m+mf}{1e\PYGZhy{}10}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} Train with ORFF with kernel approximation (dual)}
+        \PYG{n}{ck} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{lstsq}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiX}\PYG{p}{,} \PYG{n}{phiX}\PYG{o}{.}\PYG{n}{T}\PYG{p}{)} \PYG{o}{+} \PYG{n}{lbda} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{eye}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}\PYG{p}{,}
+                             \PYG{n}{y}\PYG{p}{,} \PYG{n}{rcond}\PYG{o}{=}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+        \PYG{c+c1}{\PYGZsh{} Train with ORFF without kernel approximation (primal)}
+        \PYG{n}{c} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{lstsq}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiX}\PYG{o}{.}\PYG{n}{T}\PYG{p}{,} \PYG{n}{phiX}\PYG{p}{)} \PYG{o}{+} \PYG{n}{lbda} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{eye}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{D}\PYG{p}{)}\PYG{p}{,}
+                            \PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiX}\PYG{o}{.}\PYG{n}{T}\PYG{p}{,} \PYG{n}{y}\PYG{p}{)}\PYG{p}{,} \PYG{n}{rcond}\PYG{o}{=}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+        \PYG{n}{cc} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{(}\PYG{n}{phi}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{w}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)} \PYG{o}{*} \PYG{n}{ck}\PYG{p}{)}\PYG{p}{,} \PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} Link dual coefficient with primal coefficients}
+        \PYG{n}{cr} \PYG{o}{=} \PYG{p}{(}\PYG{n}{cc} \PYG{o}{\PYGZhy{}} \PYG{n}{c}\PYG{o}{.}\PYG{n}{ravel}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)} \PYG{o}{/} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{norm}\PYG{p}{(}\PYG{n}{c}\PYG{p}{)} \PYG{o}{*} \PYG{l+m+mi}{100}
+        \PYG{n}{err} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{p}{[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{norm}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiXt}\PYG{p}{,} \PYG{n}{c}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{yt}\PYG{p}{)} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2} \PYG{o}{/} \PYG{n}{Nt}\PYG{p}{,}
+                        \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{norm}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiXt}\PYG{p}{,}
+                                                     \PYG{n}{phiX}\PYG{o}{.}\PYG{n}{T}\PYG{p}{)}\PYG{p}{,}
+                                              \PYG{n}{ck}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{yt}\PYG{p}{)} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2} \PYG{o}{/} \PYG{n}{Nt}\PYG{p}{,}
+                        \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{norm}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiXt}\PYG{p}{,} \PYG{n}{cr}\PYG{p}{)}\PYG{p}{)} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2} \PYG{o}{/} \PYG{n}{Nt}\PYG{p}{,}
+                        \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{norm}\PYG{p}{(}\PYG{n}{cr}\PYG{p}{)}\PYG{p}{]}\PYG{p}{)}
+
+        \PYG{c+c1}{\PYGZsh{} Plot}
+        \PYG{n}{lmin} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.8}
+        \PYG{n}{lmax} \PYG{o}{=} \PYG{l+m+mf}{3.}
+        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlim}\PYG{p}{(}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.5}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}
+        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylim}\PYG{p}{(}\PYG{p}{[}\PYG{n}{lmin}\PYG{p}{,} \PYG{n}{lmax}\PYG{p}{]}\PYG{p}{)}
+        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{xt}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiXt}\PYG{p}{,} \PYG{n}{c}\PYG{p}{)}\PYG{p}{,}
+                        \PYG{n}{label}\PYG{o}{=}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{widetilde\PYGZob{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{Phi\PYGZcb{}\PYGZca{}* }\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{theta\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{xt}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiXt}\PYG{p}{,} \PYG{n}{phiX}\PYG{o}{.}\PYG{n}{T}\PYG{p}{)}\PYG{p}{,} \PYG{n}{ck}\PYG{p}{)}\PYG{p}{,}
+                        \PYG{n}{label}\PYG{o}{=}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{widetilde\PYGZob{}K\PYGZcb{}u\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{linestyle}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}.}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{c}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{marker}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{+}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{train}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{lw}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)}
+        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{xt}\PYG{p}{,} \PYG{n}{yt}\PYG{p}{,} \PYG{n}{c}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{k}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{marker}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{.}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{test}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{(}\PYG{n}{loc}\PYG{o}{=}\PYG{l+m+mi}{3}\PYG{p}{)}
+        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{y}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{k} \PYG{o}{==} \PYG{l+m+mi}{3}\PYG{p}{:}
+            \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{x}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+        \PYG{n}{lmin} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.8}
+        \PYG{n}{lmax} \PYG{o}{=} \PYG{l+m+mf}{3.}
+        \PYG{n}{pred} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phi}\PYG{p}{(}\PYG{n}{xt}\PYG{p}{,} \PYG{n}{w}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)}\PYG{p}{,} \PYG{n}{cr}\PYG{p}{)}
+        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlim}\PYG{p}{(}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.5}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}
+        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylim}\PYG{p}{(}\PYG{p}{[}\PYG{n}{lmin}\PYG{p}{,} \PYG{n}{lmax}\PYG{p}{]}\PYG{p}{)}
+        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{xt}\PYG{p}{,} \PYG{n}{pred}\PYG{p}{,}
+                        \PYG{n}{label}\PYG{o}{=}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{widetilde\PYGZob{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{Phi\PYGZcb{}\PYGZca{}* }\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{theta\PYGZca{}\PYGZob{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{parallel\PYGZcb{}\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{c}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{marker}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{+}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{train}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{lw}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)}
+        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{xt}\PYG{p}{,} \PYG{n}{yt}\PYG{p}{,} \PYG{n}{c}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{k}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{marker}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{.}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{test}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{(}\PYG{n}{loc}\PYG{o}{=}\PYG{l+m+mi}{3}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{k} \PYG{o}{==} \PYG{l+m+mi}{3}\PYG{p}{:}
+            \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{x}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+        \PYG{n}{xs} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n}{cr}\PYG{o}{.}\PYG{n}{size}\PYG{p}{)}
+        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{barh}\PYG{p}{(}\PYG{n}{xs}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{cr}\PYG{p}{)}\PYG{p}{,} \PYG{n}{edgecolor}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{none}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{log}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
+        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}j\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{k} \PYG{o}{==} \PYG{l+m+mi}{3}\PYG{p}{:}
+            \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}
+                \PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}|}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{theta\PYGZca{}\PYGZob{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{parallel\PYGZcb{}\PYGZus{}j|\PYGZdl{}, }\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+si}{\PYGZpc{} o}\PYG{l+s+s1}{f relative error}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{representer.pgf}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{bbox\PYGZus{}inches}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{tight}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+    \PYG{k}{return} \PYG{n}{err}
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:}
+    \PYG{n}{main}\PYG{p}{(}\PYG{p}{)}
+\end{pytx@SaveVerbatim}
+
+\begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@PYGpython@EXT:./src/efficient_decomposable_gaussian.py@defaultverb@0}
+\PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Efficient implementation of the Gaussian ORFF decomposable kernel.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{k+kn}{from} \PYG{n+nn}{time} \PYG{k+kn}{import} \PYG{n}{time}
+
+\PYG{k+kn}{from} \PYG{n+nn}{pympler.asizeof} \PYG{k+kn}{import} \PYG{n}{asizeof}
+
+\PYG{k+kn}{from} \PYG{n+nn}{numpy.linalg} \PYG{k+kn}{import} \PYG{n}{svd}
+\PYG{k+kn}{from} \PYG{n+nn}{numpy.random} \PYG{k+kn}{import} \PYG{n}{rand}\PYG{p}{,} \PYG{n}{seed}
+\PYG{k+kn}{from} \PYG{n+nn}{numpy} \PYG{k+kn}{import} \PYG{p}{(}\PYG{n}{dot}\PYG{p}{,} \PYG{n}{diag}\PYG{p}{,} \PYG{n}{sqrt}\PYG{p}{,} \PYG{n}{kron}\PYG{p}{,} \PYG{n}{zeros}\PYG{p}{,}
+                   \PYG{n}{logspace}\PYG{p}{,} \PYG{n}{log10}\PYG{p}{,} \PYG{n}{matrix}\PYG{p}{,} \PYG{n}{eye}\PYG{p}{,} \PYG{n+nb}{int}\PYG{p}{,} \PYG{n+nb}{float}\PYG{p}{)}
+\PYG{k+kn}{from} \PYG{n+nn}{scipy.sparse.linalg} \PYG{k+kn}{import} \PYG{n}{LinearOperator}
+\PYG{k+kn}{from} \PYG{n+nn}{sklearn.kernel\PYGZus{}approximation} \PYG{k+kn}{import} \PYG{n}{RBFSampler}
+\PYG{k+kn}{from} \PYG{n+nn}{matplotlib.pyplot} \PYG{k+kn}{import} \PYG{n}{savefig}\PYG{p}{,} \PYG{n}{subplots}\PYG{p}{,} \PYG{n}{tight\PYGZus{}layout}
+
+
+\PYG{k}{def} \PYG{n+nf}{NaiveDecomposableGaussianORFF}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{A}\PYG{p}{,} \PYG{n}{gamma}\PYG{o}{=}\PYG{l+m+mf}{1.}\PYG{p}{,}
+                                  \PYG{n}{D}\PYG{o}{=}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{n}{eps}\PYG{o}{=}\PYG{l+m+mf}{1e\PYGZhy{}5}\PYG{p}{,} \PYG{n}{random\PYGZus{}state}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{:}
+    \PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Return the Naive ORFF map associated with the data X.}
+
+\PYG{l+s+sd}{    Parameters}
+\PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{l+s+sd}{    X : \PYGZob{}array\PYGZhy{}like\PYGZcb{}, shape = [n\PYGZus{}samples, n\PYGZus{}features]}
+\PYG{l+s+sd}{        Samples.}
+\PYG{l+s+sd}{    A : \PYGZob{}array\PYGZhy{}like\PYGZcb{}, shape = [n\PYGZus{}targets, n\PYGZus{}targets]}
+\PYG{l+s+sd}{        Operator of the Decomposable kernel (positive semi\PYGZhy{}definite)}
+\PYG{l+s+sd}{    gamma : \PYGZob{}float\PYGZcb{},}
+\PYG{l+s+sd}{        Gamma parameter of the RBF kernel.}
+\PYG{l+s+sd}{    D : \PYGZob{}integer\PYGZcb{},}
+\PYG{l+s+sd}{        Number of random features.}
+\PYG{l+s+sd}{    eps : \PYGZob{}float\PYGZcb{},}
+\PYG{l+s+sd}{        Cutoff threshold for the singular values of A.}
+\PYG{l+s+sd}{    random\PYGZus{}state : \PYGZob{}integer\PYGZcb{},}
+\PYG{l+s+sd}{        Seed of the generator.}
+
+\PYG{l+s+sd}{    Returns}
+\PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{l+s+sd}{    \PYGZbs{}tilde\PYGZob{}\PYGZbs{}Phi\PYGZcb{}(X) : array}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{c+c1}{\PYGZsh{} Decompose A=BB\PYGZca{}T}
+    \PYG{n}{u}\PYG{p}{,} \PYG{n}{s}\PYG{p}{,} \PYG{n}{v} \PYG{o}{=} \PYG{n}{svd}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{full\PYGZus{}matrices}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{,} \PYG{n}{compute\PYGZus{}uv}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
+    \PYG{n}{B} \PYG{o}{=} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{diag}\PYG{p}{(}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{s}\PYG{p}{[}\PYG{n}{s} \PYG{o}{\PYGZgt{}} \PYG{n}{eps}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n}{v}\PYG{p}{[}\PYG{n}{s} \PYG{o}{\PYGZgt{}} \PYG{n}{eps}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} Sample a RFF from the scalar Gaussian kernel}
+    \PYG{n}{phi\PYGZus{}s} \PYG{o}{=} \PYG{n}{RBFSampler}\PYG{p}{(}\PYG{n}{gamma}\PYG{o}{=}\PYG{n}{gamma}\PYG{p}{,} \PYG{n}{n\PYGZus{}components}\PYG{o}{=}\PYG{n}{D}\PYG{p}{,} \PYG{n}{random\PYGZus{}state}\PYG{o}{=}\PYG{n}{random\PYGZus{}state}\PYG{p}{)}
+    \PYG{n}{phiX} \PYG{o}{=} \PYG{n}{phi\PYGZus{}s}\PYG{o}{.}\PYG{n}{fit\PYGZus{}transform}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} Create the ORFF linear operator}
+    \PYG{k}{return} \PYG{n}{matrix}\PYG{p}{(}\PYG{n}{kron}\PYG{p}{(}\PYG{n}{phiX}\PYG{p}{,} \PYG{n}{B}\PYG{p}{)}\PYG{p}{)}
+
+
+\PYG{k}{def} \PYG{n+nf}{EfficientDecomposableGaussianORFF}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{A}\PYG{p}{,} \PYG{n}{gamma}\PYG{o}{=}\PYG{l+m+mf}{1.}\PYG{p}{,}
+                                      \PYG{n}{D}\PYG{o}{=}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{n}{eps}\PYG{o}{=}\PYG{l+m+mf}{1e\PYGZhy{}5}\PYG{p}{,} \PYG{n}{random\PYGZus{}state}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{:}
+    \PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Return the Efficient ORFF map associated with the data X.}
+
+\PYG{l+s+sd}{    Parameters}
+\PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{l+s+sd}{    X : \PYGZob{}array\PYGZhy{}like\PYGZcb{}, shape = [n\PYGZus{}samples, n\PYGZus{}features]}
+\PYG{l+s+sd}{        Samples.}
+\PYG{l+s+sd}{    A : \PYGZob{}array\PYGZhy{}like\PYGZcb{}, shape = [n\PYGZus{}targets, n\PYGZus{}targets]}
+\PYG{l+s+sd}{        Operator of the Decomposable kernel (positive semi\PYGZhy{}definite)}
+\PYG{l+s+sd}{    gamma : \PYGZob{}float\PYGZcb{},}
+\PYG{l+s+sd}{        Gamma parameter of the RBF kernel.}
+\PYG{l+s+sd}{    D : \PYGZob{}integer\PYGZcb{},}
+\PYG{l+s+sd}{        Number of random features.}
+\PYG{l+s+sd}{    eps : \PYGZob{}float\PYGZcb{},}
+\PYG{l+s+sd}{        Cutoff threshold for the singular values of A.}
+\PYG{l+s+sd}{    random\PYGZus{}state : \PYGZob{}integer\PYGZcb{},}
+\PYG{l+s+sd}{        Seed of the generator.}
+
+\PYG{l+s+sd}{    Returns}
+\PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{l+s+sd}{    \PYGZbs{}tilde\PYGZob{}\PYGZbs{}Phi\PYGZcb{}(X) : Linear Operator, callable}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{c+c1}{\PYGZsh{} Decompose A=BB\PYGZca{}T}
+    \PYG{n}{u}\PYG{p}{,} \PYG{n}{s}\PYG{p}{,} \PYG{n}{v} \PYG{o}{=} \PYG{n}{svd}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{full\PYGZus{}matrices}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{,} \PYG{n}{compute\PYGZus{}uv}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
+    \PYG{n}{B} \PYG{o}{=} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{diag}\PYG{p}{(}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{s}\PYG{p}{[}\PYG{n}{s} \PYG{o}{\PYGZgt{}} \PYG{n}{eps}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n}{v}\PYG{p}{[}\PYG{n}{s} \PYG{o}{\PYGZgt{}} \PYG{n}{eps}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} Sample a RFF from the scalar Gaussian kernel}
+    \PYG{n}{phi\PYGZus{}s} \PYG{o}{=} \PYG{n}{RBFSampler}\PYG{p}{(}\PYG{n}{gamma}\PYG{o}{=}\PYG{n}{gamma}\PYG{p}{,} \PYG{n}{n\PYGZus{}components}\PYG{o}{=}\PYG{n}{D}\PYG{p}{,} \PYG{n}{random\PYGZus{}state}\PYG{o}{=}\PYG{n}{random\PYGZus{}state}\PYG{p}{)}
+    \PYG{n}{phiX} \PYG{o}{=} \PYG{n}{phi\PYGZus{}s}\PYG{o}{.}\PYG{n}{fit\PYGZus{}transform}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} Create the ORFF linear operator}
+    \PYG{n}{cshape} \PYG{o}{=} \PYG{p}{(}\PYG{n}{D}\PYG{p}{,} \PYG{n}{B}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}
+    \PYG{n}{rshape} \PYG{o}{=} \PYG{p}{(}\PYG{n}{X}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{B}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{LinearOperator}\PYG{p}{(}\PYG{p}{(}\PYG{n}{phiX}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{*} \PYG{n}{B}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,} \PYG{n}{D} \PYG{o}{*} \PYG{n}{B}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}
+                          \PYG{n}{matvec}\PYG{o}{=}\PYG{k}{lambda} \PYG{n}{b}\PYG{p}{:} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiX}\PYG{p}{,} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{b}\PYG{o}{.}\PYG{n}{reshape}\PYG{p}{(}\PYG{n}{cshape}\PYG{p}{)}\PYG{p}{,}
+                                               \PYG{n}{B}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
+                          \PYG{n}{rmatvec}\PYG{o}{=}\PYG{k}{lambda} \PYG{n}{r}\PYG{p}{:} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiX}\PYG{o}{.}\PYG{n}{T}\PYG{p}{,} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{r}\PYG{o}{.}\PYG{n}{reshape}\PYG{p}{(}\PYG{n}{rshape}\PYG{p}{)}\PYG{p}{,}
+                                                \PYG{n}{B}\PYG{o}{.}\PYG{n}{T}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
+                          \PYG{n}{dtype}\PYG{o}{=}\PYG{n+nb}{float}\PYG{p}{)}
+
+
+\PYG{k}{def} \PYG{n+nf}{main}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Plot figure: Efficient decomposable gaussian ORFF.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{100}  \PYG{c+c1}{\PYGZsh{} Number of points}
+    \PYG{n}{pmax} \PYG{o}{=} \PYG{l+m+mi}{100}  \PYG{c+c1}{\PYGZsh{} Maximum output dimension}
+    \PYG{n}{d} \PYG{o}{=} \PYG{l+m+mi}{20}  \PYG{c+c1}{\PYGZsh{} Input dimension}
+    \PYG{n}{D} \PYG{o}{=} \PYG{l+m+mi}{100}  \PYG{c+c1}{\PYGZsh{} Number of random features}
+
+    \PYG{n}{seed}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}
+    \PYG{n}{X} \PYG{o}{=} \PYG{n}{rand}\PYG{p}{(}\PYG{n}{N}\PYG{p}{,} \PYG{n}{d}\PYG{p}{)}
+
+    \PYG{n}{R}\PYG{p}{,} \PYG{n}{T} \PYG{o}{=} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{10}
+    \PYG{n}{time\PYGZus{}Efficient}\PYG{p}{,} \PYG{n}{mem\PYGZus{}Efficient} \PYG{o}{=} \PYG{n}{zeros}\PYG{p}{(}\PYG{p}{(}\PYG{n}{R}\PYG{p}{,} \PYG{n}{T}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n}{zeros}\PYG{p}{(}\PYG{p}{(}\PYG{n}{R}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{time\PYGZus{}naive}\PYG{p}{,} \PYG{n}{mem\PYGZus{}naive} \PYG{o}{=} \PYG{n}{zeros}\PYG{p}{(}\PYG{p}{(}\PYG{n}{R}\PYG{p}{,} \PYG{n}{T}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n}{zeros}\PYG{p}{(}\PYG{p}{(}\PYG{n}{R}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{p}{)}
+
+    \PYG{k}{for} \PYG{n}{i}\PYG{p}{,} \PYG{n}{p} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n}{logspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{log10}\PYG{p}{(}\PYG{n}{pmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{A} \PYG{o}{=} \PYG{n}{rand}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)}\PYG{p}{,} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)}\PYG{p}{)}
+        \PYG{n}{A} \PYG{o}{=} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{A}\PYG{o}{.}\PYG{n}{T}\PYG{p}{,} \PYG{n}{A}\PYG{p}{)} \PYG{o}{+} \PYG{n}{eye}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)}\PYG{p}{)}
+
+        \PYG{c+c1}{\PYGZsh{} Perform \PYGZbs{}Phi(X)\PYGZca{}T \PYGZbs{}theta with Efficient implementation}
+        \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{R}\PYG{p}{)}\PYG{p}{:}
+            \PYG{n}{start} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)}
+            \PYG{n}{phiX1} \PYG{o}{=} \PYG{n}{EfficientDecomposableGaussianORFF}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{A}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)}
+            \PYG{n}{time\PYGZus{}Efficient}\PYG{p}{[}\PYG{n}{j}\PYG{p}{,} \PYG{n}{i}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{start}
+            \PYG{n}{theta} \PYG{o}{=} \PYG{n}{rand}\PYG{p}{(}\PYG{n}{phiX1}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+            \PYG{n}{start} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)}
+            \PYG{n}{phiX1} \PYG{o}{*} \PYG{n}{theta}
+            \PYG{n}{time\PYGZus{}Efficient}\PYG{p}{[}\PYG{n}{j}\PYG{p}{,} \PYG{n}{i}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{start}
+            \PYG{n}{mem\PYGZus{}Efficient}\PYG{p}{[}\PYG{n}{j}\PYG{p}{,} \PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{asizeof}\PYG{p}{(}\PYG{n}{phiX1}\PYG{p}{,} \PYG{n}{code}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
+
+        \PYG{c+c1}{\PYGZsh{} Perform \PYGZbs{}Phi(X)\PYGZca{}T \PYGZbs{}theta with naive implementation}
+        \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{R}\PYG{p}{)}\PYG{p}{:}
+            \PYG{n}{start} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)}
+            \PYG{n}{phiX2} \PYG{o}{=} \PYG{n}{NaiveDecomposableGaussianORFF}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{A}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)}
+            \PYG{n}{time\PYGZus{}naive}\PYG{p}{[}\PYG{n}{j}\PYG{p}{,} \PYG{n}{i}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{start}
+            \PYG{n}{theta} \PYG{o}{=} \PYG{n}{rand}\PYG{p}{(}\PYG{n}{phiX2}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+            \PYG{n}{start} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)}
+            \PYG{n}{phiX2} \PYG{o}{*} \PYG{n}{theta}
+            \PYG{n}{time\PYGZus{}naive}\PYG{p}{[}\PYG{n}{j}\PYG{p}{,} \PYG{n}{i}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{start}
+            \PYG{n}{mem\PYGZus{}naive}\PYG{p}{[}\PYG{n}{j}\PYG{p}{,} \PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{asizeof}\PYG{p}{(}\PYG{n}{phiX2}\PYG{p}{,} \PYG{n}{code}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} Plot}
+    \PYG{n}{f}\PYG{p}{,} \PYG{n}{axes} \PYG{o}{=} \PYG{n}{subplots}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{)}\PYG{p}{,} \PYG{n}{sharex}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{,} \PYG{n}{sharey}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{errorbar}\PYG{p}{(}\PYG{n}{logspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{log10}\PYG{p}{(}\PYG{n}{pmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{time\PYGZus{}Efficient}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{time\PYGZus{}Efficient}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Efficient decomposable ORFF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{errorbar}\PYG{p}{(}\PYG{n}{logspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{log10}\PYG{p}{(}\PYG{n}{pmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{time\PYGZus{}naive}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{time\PYGZus{}naive}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Naive decomposable ORFF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{errorbar}\PYG{p}{(}\PYG{n}{logspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{log10}\PYG{p}{(}\PYG{n}{pmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{time\PYGZus{}Efficient}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{time\PYGZus{}Efficient}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Efficient decomposable ORFF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{errorbar}\PYG{p}{(}\PYG{n}{logspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{log10}\PYG{p}{(}\PYG{n}{pmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{time\PYGZus{}naive}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{time\PYGZus{}naive}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Naive decomposable ORFF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{errorbar}\PYG{p}{(}\PYG{n}{logspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{log10}\PYG{p}{(}\PYG{n}{pmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{mem\PYGZus{}Efficient}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{mem\PYGZus{}Efficient}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Efficient decomposable ORFF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{errorbar}\PYG{p}{(}\PYG{n}{logspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{log10}\PYG{p}{(}\PYG{n}{pmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{mem\PYGZus{}naive}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{mem\PYGZus{}naive}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Naive decomposable ORFF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xscale}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{log}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}yscale}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{log}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xscale}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{log}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}yscale}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{log}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xscale}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{log}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}yscale}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{log}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}p=}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{dim(}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{mathcal\PYGZob{}Y\PYGZcb{})\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}p=}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{dim(}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{mathcal\PYGZob{}Y\PYGZcb{})\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}p=}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{dim(}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{mathcal\PYGZob{}Y\PYGZcb{})\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{time (s)}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{memory (bytes)}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}title}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Preprocessing time}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}title}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{widetilde\PYGZob{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{Phi\PYGZcb{}(X)\PYGZca{}T }\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{theta\PYGZdl{} computation time}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}title}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{widetilde\PYGZob{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{Phi\PYGZcb{}(X)\PYGZca{}T\PYGZdl{} required memory}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{(}\PYG{n}{loc}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)}
+    \PYG{n}{tight\PYGZus{}layout}\PYG{p}{(}\PYG{p}{)}
+    \PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{efficient\PYGZus{}decomposable\PYGZus{}gaussian.pgf}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{bbox\PYGZus{}inches}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{tight}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
 
 \PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:}
     \PYG{n}{main}\PYG{p}{(}\PYG{p}{)}
@@ -675,116 +924,6 @@
     \PYG{n}{main}\PYG{p}{(}\PYG{p}{)}
 \end{pytx@SaveVerbatim}
 
-\begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@PYGpython@EXT:./src/representer.py@defaultverb@0}
-\PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Plot figure: ORFF Representer theorem pt.1.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
-
-\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k+kn}{as} \PYG{n+nn}{np}
-\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k+kn}{as} \PYG{n+nn}{plt}
-\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}
-
-
-\PYG{k}{def} \PYG{n+nf}{phi}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{w}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)}\PYG{p}{:}
-    \PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}RFF map.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
-    \PYG{n}{Z} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{w}\PYG{p}{)}
-    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{hstack}\PYG{p}{(}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{Z}\PYG{p}{)}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{Z}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)} \PYG{o}{/} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{D}\PYG{p}{)}
-
-
-\PYG{k}{def} \PYG{n+nf}{main}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
-    \PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Plot figure: ORFF Representer theorem pt.1.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
-    \PYG{n}{d} \PYG{o}{=} \PYG{l+m+mi}{1}  \PYG{c+c1}{\PYGZsh{} dimensionality of the inputs}
-    \PYG{n}{D} \PYG{o}{=} \PYG{l+m+mi}{50}  \PYG{c+c1}{\PYGZsh{} number of random features}
-
-    \PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{50}
-    \PYG{n}{Nt} \PYG{o}{=} \PYG{l+m+mi}{200}
-
-    \PYG{c+c1}{\PYGZsh{} N training points in (0,1)}
-    \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{seed}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}
-    \PYG{n}{x} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(}\PYG{n}{N}\PYG{p}{,} \PYG{n}{d}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}
-    \PYG{n}{y} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{l+m+mi}{10} \PYG{o}{*} \PYG{n}{x}\PYG{p}{)}
-    \PYG{n}{y} \PYG{o}{+}\PYG{o}{=} \PYG{o}{.}\PYG{l+m+mi}{5} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{randn}\PYG{p}{(}\PYG{n}{y}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{y}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mf}{2.} \PYG{o}{*} \PYG{n}{x} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2}
-
-    \PYG{c+c1}{\PYGZsh{} Nt testing points in (0,1)}
-    \PYG{n}{xt} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{Nt}\PYG{p}{)}\PYG{o}{.}\PYG{n}{reshape}\PYG{p}{(}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{)}
-    \PYG{n}{yt} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{l+m+mi}{10} \PYG{o}{*} \PYG{n}{xt}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mf}{2.} \PYG{o}{*} \PYG{n}{xt} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2}
-    \PYG{n}{yt} \PYG{o}{+}\PYG{o}{=} \PYG{o}{.}\PYG{l+m+mi}{5} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{randn}\PYG{p}{(}\PYG{n}{yt}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{yt}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}
-
-    \PYG{n}{sigma} \PYG{o}{=} \PYG{o}{.}\PYG{l+m+mi}{3}
-    \PYG{n}{w} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{randn}\PYG{p}{(}\PYG{n}{d}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)} \PYG{o}{/} \PYG{n}{sigma}  \PYG{c+c1}{\PYGZsh{} Realization of (\PYGZbs{}omega\PYGZus{}j)\PYGZus{}\PYGZob{}j=1\PYGZcb{}\PYGZca{}D}
-
-    \PYG{n}{phiX} \PYG{o}{=} \PYG{n}{phi}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{w}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Train RFF}
-    \PYG{n}{phiXt} \PYG{o}{=} \PYG{n}{phi}\PYG{p}{(}\PYG{n}{xt}\PYG{p}{,} \PYG{n}{w}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Test RFF}
-
-    \PYG{c+c1}{\PYGZsh{} Create plot}
-    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{close}\PYG{p}{(}\PYG{p}{)}
-    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{rc}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{text}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{usetex}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
-    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{rc}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{font}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{family}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{serif}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{f}\PYG{p}{,} \PYG{n}{axis} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplots}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{n}{gridspec\PYGZus{}kw}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{width\PYGZus{}ratios}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mf}{1.5}\PYG{p}{]}\PYG{p}{\PYGZcb{}}\PYG{p}{,}
-                           \PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{16}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{)}\PYG{p}{,} \PYG{n}{sharex}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{col}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{sharey}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{col}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{f}\PYG{o}{.}\PYG{n}{subplots\PYGZus{}adjust}\PYG{p}{(}\PYG{n}{hspace}\PYG{o}{=}\PYG{o}{.}\PYG{l+m+mi}{25}\PYG{p}{)}
-    \PYG{n}{formatter} \PYG{o}{=} \PYG{n}{matplotlib}\PYG{o}{.}\PYG{n}{ticker}\PYG{o}{.}\PYG{n}{ScalarFormatter}\PYG{p}{(}\PYG{p}{)}
-    \PYG{n}{formatter}\PYG{o}{.}\PYG{n}{set\PYGZus{}powerlimits}\PYG{p}{(}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{)}\PYG{p}{)}
-
-    \PYG{c+c1}{\PYGZsh{} For different hyperparameters \PYGZbs{}lambda}
-    \PYG{k}{for} \PYG{n}{k}\PYG{p}{,} \PYG{n}{lbda} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mf}{1e\PYGZhy{}2}\PYG{p}{,} \PYG{l+m+mf}{5e\PYGZhy{}6}\PYG{p}{,} \PYG{l+m+mf}{1e\PYGZhy{}10}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}\PYG{p}{:}
-        \PYG{c+c1}{\PYGZsh{} Train with ORFF with kernel approximation (dual)}
-        \PYG{n}{ck} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{lstsq}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiX}\PYG{p}{,} \PYG{n}{phiX}\PYG{o}{.}\PYG{n}{T}\PYG{p}{)} \PYG{o}{+} \PYG{n}{lbda} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{eye}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}\PYG{p}{,}
-                             \PYG{n}{y}\PYG{p}{,} \PYG{n}{rcond}\PYG{o}{=}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
-        \PYG{c+c1}{\PYGZsh{} Train with ORFF without kernel approximation (primal)}
-        \PYG{n}{c} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{lstsq}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiX}\PYG{o}{.}\PYG{n}{T}\PYG{p}{,} \PYG{n}{phiX}\PYG{p}{)} \PYG{o}{+} \PYG{n}{lbda} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{eye}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{D}\PYG{p}{)}\PYG{p}{,}
-                            \PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiX}\PYG{o}{.}\PYG{n}{T}\PYG{p}{,} \PYG{n}{y}\PYG{p}{)}\PYG{p}{,} \PYG{n}{rcond}\PYG{o}{=}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
-        \PYG{n}{cc} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{(}\PYG{n}{phi}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{w}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)} \PYG{o}{*} \PYG{n}{ck}\PYG{p}{)}\PYG{p}{,} \PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}
-        \PYG{c+c1}{\PYGZsh{} Link dual coefficient with primal coefficients}
-        \PYG{n}{cr} \PYG{o}{=} \PYG{p}{(}\PYG{n}{cc} \PYG{o}{\PYGZhy{}} \PYG{n}{c}\PYG{o}{.}\PYG{n}{ravel}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)} \PYG{o}{/} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{norm}\PYG{p}{(}\PYG{n}{c}\PYG{p}{)} \PYG{o}{*} \PYG{l+m+mi}{100}
-        \PYG{n}{err} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{p}{[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{norm}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiXt}\PYG{p}{,} \PYG{n}{c}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{yt}\PYG{p}{)} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2} \PYG{o}{/} \PYG{n}{Nt}\PYG{p}{,}
-                        \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{norm}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiXt}\PYG{p}{,}
-                                                     \PYG{n}{phiX}\PYG{o}{.}\PYG{n}{T}\PYG{p}{)}\PYG{p}{,}
-                                              \PYG{n}{ck}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{yt}\PYG{p}{)} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2} \PYG{o}{/} \PYG{n}{Nt}\PYG{p}{,}
-                        \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{norm}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiXt}\PYG{p}{,} \PYG{n}{cr}\PYG{p}{)}\PYG{p}{)} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2} \PYG{o}{/} \PYG{n}{Nt}\PYG{p}{,}
-                        \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{norm}\PYG{p}{(}\PYG{n}{cr}\PYG{p}{)}\PYG{p}{]}\PYG{p}{)}
-
-        \PYG{c+c1}{\PYGZsh{} Plot}
-        \PYG{n}{lmin} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.8}
-        \PYG{n}{lmax} \PYG{o}{=} \PYG{l+m+mf}{3.}
-        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlim}\PYG{p}{(}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.5}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}
-        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylim}\PYG{p}{(}\PYG{p}{[}\PYG{n}{lmin}\PYG{p}{,} \PYG{n}{lmax}\PYG{p}{]}\PYG{p}{)}
-        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{xt}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiXt}\PYG{p}{,} \PYG{n}{c}\PYG{p}{)}\PYG{p}{,}
-                        \PYG{n}{label}\PYG{o}{=}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{widetilde\PYGZob{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{Phi\PYGZcb{}\PYGZca{}* }\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{theta\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{xt}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiXt}\PYG{p}{,} \PYG{n}{phiX}\PYG{o}{.}\PYG{n}{T}\PYG{p}{)}\PYG{p}{,} \PYG{n}{ck}\PYG{p}{)}\PYG{p}{,}
-                        \PYG{n}{label}\PYG{o}{=}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{widetilde\PYGZob{}K\PYGZcb{}u\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{linestyle}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}.}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{c}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{marker}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{+}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{train}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{lw}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)}
-        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{xt}\PYG{p}{,} \PYG{n}{yt}\PYG{p}{,} \PYG{n}{c}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{k}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{marker}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{.}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{test}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{(}\PYG{n}{loc}\PYG{o}{=}\PYG{l+m+mi}{3}\PYG{p}{)}
-        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{y}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-        \PYG{k}{if} \PYG{n}{k} \PYG{o}{==} \PYG{l+m+mi}{3}\PYG{p}{:}
-            \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{x}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-
-        \PYG{n}{lmin} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.8}
-        \PYG{n}{lmax} \PYG{o}{=} \PYG{l+m+mf}{3.}
-        \PYG{n}{pred} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{phi}\PYG{p}{(}\PYG{n}{xt}\PYG{p}{,} \PYG{n}{w}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)}\PYG{p}{,} \PYG{n}{cr}\PYG{p}{)}
-        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlim}\PYG{p}{(}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.5}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}
-        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylim}\PYG{p}{(}\PYG{p}{[}\PYG{n}{lmin}\PYG{p}{,} \PYG{n}{lmax}\PYG{p}{]}\PYG{p}{)}
-        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{xt}\PYG{p}{,} \PYG{n}{pred}\PYG{p}{,}
-                        \PYG{n}{label}\PYG{o}{=}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{widetilde\PYGZob{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{Phi\PYGZcb{}\PYGZca{}* }\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{theta\PYGZca{}\PYGZob{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{parallel\PYGZcb{}\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{c}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{marker}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{+}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{train}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{lw}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)}
-        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{xt}\PYG{p}{,} \PYG{n}{yt}\PYG{p}{,} \PYG{n}{c}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{k}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{marker}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{.}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{test}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{(}\PYG{n}{loc}\PYG{o}{=}\PYG{l+m+mi}{3}\PYG{p}{)}
-        \PYG{k}{if} \PYG{n}{k} \PYG{o}{==} \PYG{l+m+mi}{3}\PYG{p}{:}
-            \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{x}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-
-        \PYG{n}{xs} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n}{cr}\PYG{o}{.}\PYG{n}{size}\PYG{p}{)}
-        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{barh}\PYG{p}{(}\PYG{n}{xs}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{cr}\PYG{p}{)}\PYG{p}{,} \PYG{n}{edgecolor}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{none}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{log}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
-        \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}j\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-        \PYG{k}{if} \PYG{n}{k} \PYG{o}{==} \PYG{l+m+mi}{3}\PYG{p}{:}
-            \PYG{n}{axis}\PYG{p}{[}\PYG{n}{k}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}
-                \PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}|}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{theta\PYGZca{}\PYGZob{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{parallel\PYGZcb{}\PYGZus{}j|\PYGZdl{}, }\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+si}{\PYGZpc{} o}\PYG{l+s+s1}{f relative error}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{representer.pgf}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{bbox\PYGZus{}inches}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{tight}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-
-    \PYG{k}{return} \PYG{n}{err}
-
-\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:}
-    \PYG{n}{main}\PYG{p}{(}\PYG{p}{)}
-\end{pytx@SaveVerbatim}
-
 \begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@PYGpython@EXT:./src/quantile.py@defaultverb@0}
 \PYG{k+kn}{import} \PYG{n+nn}{tensorflow} \PYG{k+kn}{as} \PYG{n+nn}{tf}
 \PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k+kn}{as} \PYG{n+nn}{np}
@@ -961,60 +1100,10 @@
     \PYG{k}{return} \PYG{n}{matrix}\PYG{p}{(}\PYG{n}{kron}\PYG{p}{(}\PYG{n}{phiX}\PYG{p}{,} \PYG{n}{B}\PYG{p}{)}\PYG{p}{)}
 \end{pytx@SaveVerbatim}
 
-\begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@PYGpython@EXT:./src/efficient_decomposable_gaussian.py@defaultverb@0}
-\PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Efficient implementation of the Gaussian ORFF decomposable kernel.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
-
-\PYG{k+kn}{from} \PYG{n+nn}{time} \PYG{k+kn}{import} \PYG{n}{time}
-
-\PYG{k+kn}{from} \PYG{n+nn}{pympler.asizeof} \PYG{k+kn}{import} \PYG{n}{asizeof}
-
-\PYG{k+kn}{from} \PYG{n+nn}{numpy.linalg} \PYG{k+kn}{import} \PYG{n}{svd}
-\PYG{k+kn}{from} \PYG{n+nn}{numpy.random} \PYG{k+kn}{import} \PYG{n}{rand}\PYG{p}{,} \PYG{n}{seed}
-\PYG{k+kn}{from} \PYG{n+nn}{numpy} \PYG{k+kn}{import} \PYG{p}{(}\PYG{n}{dot}\PYG{p}{,} \PYG{n}{diag}\PYG{p}{,} \PYG{n}{sqrt}\PYG{p}{,} \PYG{n}{kron}\PYG{p}{,} \PYG{n}{zeros}\PYG{p}{,}
-                   \PYG{n}{logspace}\PYG{p}{,} \PYG{n}{log10}\PYG{p}{,} \PYG{n}{matrix}\PYG{p}{,} \PYG{n}{eye}\PYG{p}{,} \PYG{n+nb}{int}\PYG{p}{,} \PYG{n+nb}{float}\PYG{p}{)}
-\PYG{k+kn}{from} \PYG{n+nn}{scipy.sparse.linalg} \PYG{k+kn}{import} \PYG{n}{LinearOperator}
-\PYG{k+kn}{from} \PYG{n+nn}{sklearn.kernel\PYGZus{}approximation} \PYG{k+kn}{import} \PYG{n}{RBFSampler}
-\PYG{k+kn}{from} \PYG{n+nn}{matplotlib.pyplot} \PYG{k+kn}{import} \PYG{n}{savefig}\PYG{p}{,} \PYG{n}{subplots}\PYG{p}{,} \PYG{n}{tight\PYGZus{}layout}
-
-
-\PYG{k}{def} \PYG{n+nf}{NaiveDecomposableGaussianORFF}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{A}\PYG{p}{,} \PYG{n}{gamma}\PYG{o}{=}\PYG{l+m+mf}{1.}\PYG{p}{,}
-                                  \PYG{n}{D}\PYG{o}{=}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{n}{eps}\PYG{o}{=}\PYG{l+m+mf}{1e\PYGZhy{}5}\PYG{p}{,} \PYG{n}{random\PYGZus{}state}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{:}
-    \PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Return the Naive ORFF map associated with the data X.}
-
-\PYG{l+s+sd}{    Parameters}
-\PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
-\PYG{l+s+sd}{    X : \PYGZob{}array\PYGZhy{}like\PYGZcb{}, shape = [n\PYGZus{}samples, n\PYGZus{}features]}
-\PYG{l+s+sd}{        Samples.}
-\PYG{l+s+sd}{    A : \PYGZob{}array\PYGZhy{}like\PYGZcb{}, shape = [n\PYGZus{}targets, n\PYGZus{}targets]}
-\PYG{l+s+sd}{        Operator of the Decomposable kernel (positive semi\PYGZhy{}definite)}
-\PYG{l+s+sd}{    gamma : \PYGZob{}float\PYGZcb{},}
-\PYG{l+s+sd}{        Gamma parameter of the RBF kernel.}
-\PYG{l+s+sd}{    D : \PYGZob{}integer\PYGZcb{},}
-\PYG{l+s+sd}{        Number of random features.}
-\PYG{l+s+sd}{    eps : \PYGZob{}float\PYGZcb{},}
-\PYG{l+s+sd}{        Cutoff threshold for the singular values of A.}
-\PYG{l+s+sd}{    random\PYGZus{}state : \PYGZob{}integer\PYGZcb{},}
-\PYG{l+s+sd}{        Seed of the generator.}
-
-\PYG{l+s+sd}{    Returns}
-\PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
-\PYG{l+s+sd}{    \PYGZbs{}tilde\PYGZob{}\PYGZbs{}Phi\PYGZcb{}(X) : array}
-\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
-    \PYG{c+c1}{\PYGZsh{} Decompose A=BB\PYGZca{}T}
-    \PYG{n}{u}\PYG{p}{,} \PYG{n}{s}\PYG{p}{,} \PYG{n}{v} \PYG{o}{=} \PYG{n}{svd}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{full\PYGZus{}matrices}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{,} \PYG{n}{compute\PYGZus{}uv}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
-    \PYG{n}{B} \PYG{o}{=} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{diag}\PYG{p}{(}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{s}\PYG{p}{[}\PYG{n}{s} \PYG{o}{\PYGZgt{}} \PYG{n}{eps}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n}{v}\PYG{p}{[}\PYG{n}{s} \PYG{o}{\PYGZgt{}} \PYG{n}{eps}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}\PYG{p}{)}
-
-    \PYG{c+c1}{\PYGZsh{} Sample a RFF from the scalar Gaussian kernel}
-    \PYG{n}{phi\PYGZus{}s} \PYG{o}{=} \PYG{n}{RBFSampler}\PYG{p}{(}\PYG{n}{gamma}\PYG{o}{=}\PYG{n}{gamma}\PYG{p}{,} \PYG{n}{n\PYGZus{}components}\PYG{o}{=}\PYG{n}{D}\PYG{p}{,} \PYG{n}{random\PYGZus{}state}\PYG{o}{=}\PYG{n}{random\PYGZus{}state}\PYG{p}{)}
-    \PYG{n}{phiX} \PYG{o}{=} \PYG{n}{phi\PYGZus{}s}\PYG{o}{.}\PYG{n}{fit\PYGZus{}transform}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)}
-
-    \PYG{c+c1}{\PYGZsh{} Create the ORFF linear operator}
-    \PYG{k}{return} \PYG{n}{matrix}\PYG{p}{(}\PYG{n}{kron}\PYG{p}{(}\PYG{n}{phiX}\PYG{p}{,} \PYG{n}{B}\PYG{p}{)}\PYG{p}{)}
-
-
+\begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@py@efficient_linop@default@2}
 \PYG{k}{def} \PYG{n+nf}{EfficientDecomposableGaussianORFF}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{A}\PYG{p}{,} \PYG{n}{gamma}\PYG{o}{=}\PYG{l+m+mf}{1.}\PYG{p}{,}
                                       \PYG{n}{D}\PYG{o}{=}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{n}{eps}\PYG{o}{=}\PYG{l+m+mf}{1e\PYGZhy{}5}\PYG{p}{,} \PYG{n}{random\PYGZus{}state}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{:}
-    \PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Return the Efficient ORFF map associated with the data X.}
+    \PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Return the efficient ORFF map associated with the data X.}
 
 \PYG{l+s+sd}{    Parameters}
 \PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
@@ -1024,18 +1113,18 @@
 \PYG{l+s+sd}{        Operator of the Decomposable kernel (positive semi\PYGZhy{}definite)}
 \PYG{l+s+sd}{    gamma : \PYGZob{}float\PYGZcb{},}
 \PYG{l+s+sd}{        Gamma parameter of the RBF kernel.}
-\PYG{l+s+sd}{    D : \PYGZob{}integer\PYGZcb{},}
+\PYG{l+s+sd}{    D : \PYGZob{}integer\PYGZcb{}}
 \PYG{l+s+sd}{        Number of random features.}
-\PYG{l+s+sd}{    eps : \PYGZob{}float\PYGZcb{},}
+\PYG{l+s+sd}{    eps : \PYGZob{}float\PYGZcb{}}
 \PYG{l+s+sd}{        Cutoff threshold for the singular values of A.}
-\PYG{l+s+sd}{    random\PYGZus{}state : \PYGZob{}integer\PYGZcb{},}
+\PYG{l+s+sd}{    random\PYGZus{}state : \PYGZob{}integer\PYGZcb{}}
 \PYG{l+s+sd}{        Seed of the generator.}
 
 \PYG{l+s+sd}{    Returns}
 \PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
 \PYG{l+s+sd}{    \PYGZbs{}tilde\PYGZob{}\PYGZbs{}Phi\PYGZcb{}(X) : Linear Operator, callable}
 \PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
-    \PYG{c+c1}{\PYGZsh{} Decompose A=BB\PYGZca{}T}
+    \PYG{c+c1}{\PYGZsh{} Decompose A=BB\PYGZca{}\PYGZbs{}transpose}
     \PYG{n}{u}\PYG{p}{,} \PYG{n}{s}\PYG{p}{,} \PYG{n}{v} \PYG{o}{=} \PYG{n}{svd}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{full\PYGZus{}matrices}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{,} \PYG{n}{compute\PYGZus{}uv}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
     \PYG{n}{B} \PYG{o}{=} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{diag}\PYG{p}{(}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{s}\PYG{p}{[}\PYG{n}{s} \PYG{o}{\PYGZgt{}} \PYG{n}{eps}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n}{v}\PYG{p}{[}\PYG{n}{s} \PYG{o}{\PYGZgt{}} \PYG{n}{eps}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}\PYG{p}{)}
 
@@ -1050,95 +1139,6 @@
                           \PYG{n}{matvec}\PYG{o}{=}\PYG{k}{lambda} \PYG{n}{b}\PYG{p}{:} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiX}\PYG{p}{,} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{b}\PYG{o}{.}\PYG{n}{reshape}\PYG{p}{(}\PYG{n}{cshape}\PYG{p}{)}\PYG{p}{,}
                                                \PYG{n}{B}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
                           \PYG{n}{rmatvec}\PYG{o}{=}\PYG{k}{lambda} \PYG{n}{r}\PYG{p}{:} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{phiX}\PYG{o}{.}\PYG{n}{T}\PYG{p}{,} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{r}\PYG{o}{.}\PYG{n}{reshape}\PYG{p}{(}\PYG{n}{rshape}\PYG{p}{)}\PYG{p}{,}
-                                                \PYG{n}{B}\PYG{o}{.}\PYG{n}{T}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
-                          \PYG{n}{dtype}\PYG{o}{=}\PYG{n+nb}{float}\PYG{p}{)}
-
-
-\PYG{k}{def} \PYG{n+nf}{main}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
-    \PYG{l+s+sa}{r}\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Plot figure: Efficient decomposable gaussian ORFF.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
-    \PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{100}  \PYG{c+c1}{\PYGZsh{} Number of points}
-    \PYG{n}{pmax} \PYG{o}{=} \PYG{l+m+mi}{100}  \PYG{c+c1}{\PYGZsh{} Maximum output dimension}
-    \PYG{n}{d} \PYG{o}{=} \PYG{l+m+mi}{20}  \PYG{c+c1}{\PYGZsh{} Input dimension}
-    \PYG{n}{D} \PYG{o}{=} \PYG{l+m+mi}{100}  \PYG{c+c1}{\PYGZsh{} Number of random features}
-
-    \PYG{n}{seed}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}
-    \PYG{n}{X} \PYG{o}{=} \PYG{n}{rand}\PYG{p}{(}\PYG{n}{N}\PYG{p}{,} \PYG{n}{d}\PYG{p}{)}
-
-    \PYG{n}{R}\PYG{p}{,} \PYG{n}{T} \PYG{o}{=} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{10}
-    \PYG{n}{time\PYGZus{}Efficient}\PYG{p}{,} \PYG{n}{mem\PYGZus{}Efficient} \PYG{o}{=} \PYG{n}{zeros}\PYG{p}{(}\PYG{p}{(}\PYG{n}{R}\PYG{p}{,} \PYG{n}{T}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n}{zeros}\PYG{p}{(}\PYG{p}{(}\PYG{n}{R}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{p}{)}
-    \PYG{n}{time\PYGZus{}naive}\PYG{p}{,} \PYG{n}{mem\PYGZus{}naive} \PYG{o}{=} \PYG{n}{zeros}\PYG{p}{(}\PYG{p}{(}\PYG{n}{R}\PYG{p}{,} \PYG{n}{T}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n}{zeros}\PYG{p}{(}\PYG{p}{(}\PYG{n}{R}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{p}{)}
-
-    \PYG{k}{for} \PYG{n}{i}\PYG{p}{,} \PYG{n}{p} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n}{logspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{log10}\PYG{p}{(}\PYG{n}{pmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{p}{)}\PYG{p}{:}
-        \PYG{n}{A} \PYG{o}{=} \PYG{n}{rand}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)}\PYG{p}{,} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)}\PYG{p}{)}
-        \PYG{n}{A} \PYG{o}{=} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{A}\PYG{o}{.}\PYG{n}{T}\PYG{p}{,} \PYG{n}{A}\PYG{p}{)} \PYG{o}{+} \PYG{n}{eye}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)}\PYG{p}{)}
-
-        \PYG{c+c1}{\PYGZsh{} Perform \PYGZbs{}Phi(X)\PYGZca{}T \PYGZbs{}theta with Efficient implementation}
-        \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{R}\PYG{p}{)}\PYG{p}{:}
-            \PYG{n}{start} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)}
-            \PYG{n}{phiX1} \PYG{o}{=} \PYG{n}{EfficientDecomposableGaussianORFF}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{A}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)}
-            \PYG{n}{time\PYGZus{}Efficient}\PYG{p}{[}\PYG{n}{j}\PYG{p}{,} \PYG{n}{i}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{start}
-            \PYG{n}{theta} \PYG{o}{=} \PYG{n}{rand}\PYG{p}{(}\PYG{n}{phiX1}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
-            \PYG{n}{start} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)}
-            \PYG{n}{phiX1} \PYG{o}{*} \PYG{n}{theta}
-            \PYG{n}{time\PYGZus{}Efficient}\PYG{p}{[}\PYG{n}{j}\PYG{p}{,} \PYG{n}{i}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{start}
-            \PYG{n}{mem\PYGZus{}Efficient}\PYG{p}{[}\PYG{n}{j}\PYG{p}{,} \PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{asizeof}\PYG{p}{(}\PYG{n}{phiX1}\PYG{p}{,} \PYG{n}{code}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
-
-        \PYG{c+c1}{\PYGZsh{} Perform \PYGZbs{}Phi(X)\PYGZca{}T \PYGZbs{}theta with naive implementation}
-        \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{R}\PYG{p}{)}\PYG{p}{:}
-            \PYG{n}{start} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)}
-            \PYG{n}{phiX2} \PYG{o}{=} \PYG{n}{NaiveDecomposableGaussianORFF}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{A}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)}
-            \PYG{n}{time\PYGZus{}naive}\PYG{p}{[}\PYG{n}{j}\PYG{p}{,} \PYG{n}{i}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{start}
-            \PYG{n}{theta} \PYG{o}{=} \PYG{n}{rand}\PYG{p}{(}\PYG{n}{phiX2}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
-            \PYG{n}{start} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)}
-            \PYG{n}{phiX2} \PYG{o}{*} \PYG{n}{theta}
-            \PYG{n}{time\PYGZus{}naive}\PYG{p}{[}\PYG{n}{j}\PYG{p}{,} \PYG{n}{i}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{start}
-            \PYG{n}{mem\PYGZus{}naive}\PYG{p}{[}\PYG{n}{j}\PYG{p}{,} \PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{asizeof}\PYG{p}{(}\PYG{n}{phiX2}\PYG{p}{,} \PYG{n}{code}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
-
-    \PYG{c+c1}{\PYGZsh{} Plot}
-    \PYG{n}{f}\PYG{p}{,} \PYG{n}{axes} \PYG{o}{=} \PYG{n}{subplots}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{)}\PYG{p}{,} \PYG{n}{sharex}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{,} \PYG{n}{sharey}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{errorbar}\PYG{p}{(}\PYG{n}{logspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{log10}\PYG{p}{(}\PYG{n}{pmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{time\PYGZus{}Efficient}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{time\PYGZus{}Efficient}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Efficient decomposable ORFF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{errorbar}\PYG{p}{(}\PYG{n}{logspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{log10}\PYG{p}{(}\PYG{n}{pmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{time\PYGZus{}naive}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{time\PYGZus{}naive}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Naive decomposable ORFF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{errorbar}\PYG{p}{(}\PYG{n}{logspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{log10}\PYG{p}{(}\PYG{n}{pmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{time\PYGZus{}Efficient}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{time\PYGZus{}Efficient}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Efficient decomposable ORFF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{errorbar}\PYG{p}{(}\PYG{n}{logspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{log10}\PYG{p}{(}\PYG{n}{pmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{time\PYGZus{}naive}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{time\PYGZus{}naive}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Naive decomposable ORFF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{errorbar}\PYG{p}{(}\PYG{n}{logspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{log10}\PYG{p}{(}\PYG{n}{pmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{mem\PYGZus{}Efficient}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{mem\PYGZus{}Efficient}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Efficient decomposable ORFF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{errorbar}\PYG{p}{(}\PYG{n}{logspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{log10}\PYG{p}{(}\PYG{n}{pmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{T}\PYG{p}{)}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{mem\PYGZus{}naive}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{mem\PYGZus{}naive}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}
-                     \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Naive decomposable ORFF}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xscale}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{log}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}yscale}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{log}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xscale}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{log}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}yscale}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{log}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xscale}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{log}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}yscale}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{log}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}p=}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{dim(}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{mathcal\PYGZob{}Y\PYGZcb{})\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}p=}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{dim(}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{mathcal\PYGZob{}Y\PYGZcb{})\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}p=}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{dim(}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{mathcal\PYGZob{}Y\PYGZcb{})\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{time (s)}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{memory (bytes)}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}title}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Preprocessing time}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}title}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{widetilde\PYGZob{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{Phi\PYGZcb{}(X)\PYGZca{}T }\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{theta\PYGZdl{} computation time}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}title}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{widetilde\PYGZob{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{Phi\PYGZcb{}(X)\PYGZca{}T\PYGZdl{} required memory}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-    \PYG{n}{axes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{(}\PYG{n}{loc}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)}
-    \PYG{n}{tight\PYGZus{}layout}\PYG{p}{(}\PYG{p}{)}
-    \PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{efficient\PYGZus{}decomposable\PYGZus{}gaussian.pgf}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{bbox\PYGZus{}inches}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{tight}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-
-\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:}
-    \PYG{n}{main}\PYG{p}{(}\PYG{p}{)}
+                                                \PYG{n}{B}\PYG{o}{.}\PYG{n}{T}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}
 \end{pytx@SaveVerbatim}
 

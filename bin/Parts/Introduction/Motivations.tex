@@ -565,19 +565,18 @@ Gaussian kernel, \cref{eq:rff} has always lower variance. In practice,
 Fourier feature of the form given in \cref{eq:rff}.
 
 \paragraph{}
-The dimension $D$ governs the precision of this
-approximation, whose uniform convergence towards the target kernel (as defined
-in \cref{bochner-scalar}) can be found in \citet{Rahimi2007} and in more recent
-papers with some refinements proposed in \citet{sutherland2015} and
-\citet{sriper2015}.  Finally, it is important to notice that Random Fourier
-Features approach \emph{only} requires two steps before the application of a
-learning algorithm: (1) define the inverse Fourier transform of the given
-shift-invariant kernel, (2) compute the randomized feature map using the
-spectral distribution $\mu$.  \citet{Rahimi2007} show that for the Gaussian
-kernel $k_0(x-z) = \exp(-\gamma \norm{x - z}_2^2)$, the spectral distribution
-$\mu$ is a Gaussian distribution. For the Laplacian kernel $k_0(x-z) =
-\exp(-\gamma \norm{x - z}_1)$, the spectral distribution is a Cauchy
-distribution.
+The dimension $D$ governs the precision of this approximation, whose uniform
+convergence towards the target kernel (as defined in \cref{th:bochner-scalar})
+can be found in \citet{Rahimi2007} and in more recent papers with some
+refinements proposed in \citet{sutherland2015} and \citet{sriper2015}.
+Finally, it is important to notice that Random Fourier Features approach
+\emph{only} requires two steps before the application of a learning algorithm:
+(1) define the inverse Fourier transform of the given shift-invariant kernel,
+(2) compute the randomized feature map using the spectral distribution $\mu$.
+\citet{Rahimi2007} show that for the Gaussian kernel $k_0(x-z) = \exp(-\gamma
+\norm{x - z}_2^2)$, the spectral distribution $\mu$ is a Gaussian distribution.
+For the Laplacian kernel $k_0(x-z) = \exp(-\gamma \norm{x - z}_1)$, the
+spectral distribution is a Cauchy distribution.
 \paragraph{}
 We now focus on another famous way of obtaining feature maps for any scalar
 valued kernel called the Nystr\"om method.

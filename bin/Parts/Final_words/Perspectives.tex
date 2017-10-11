@@ -740,7 +740,8 @@ results in the following conjecture.
     is an \acs{RFF} for $\widetilde{k}_{\mathcal{T}}$, such that
     $\tildephi{\omega}(\tau)\in\mathbb{R}^{D'}$ then an \acs{ORFF} map for
     \begin{dmath*}
-        K(x, z) = k_{\mathcal{X}}(x, z) I_{\mathcal{H}_{k_{\mathcal{T}}}}
+        K(x, z) = k_{\mathcal{X}}(x, z)
+        I_{\mathcal{H}_{\tilde{k}_{\mathcal{T}}}}
     \end{dmath*}
     is given for all $x\in\mathbb{R}$, all $\tau\in\mathbb{R}$ and all
     $\Theta\in\mathcal{M}_{D,D'}(\mathbb{R})$ by
@@ -886,7 +887,7 @@ of \citet{Scholkopf2001} which extends the \ac{SVM} methodology
 We recall that given an hyperparameter $\nu\in [0,1]$ that controls the
 proportion of inlier, given as scalar kernel $k$, the \acs{OCSVM} problem reads
 \begin{dmath*}
-    \argmin_{f\in\mathcal{H}_k, \tau \in \mathbb{R}} \frac{1}{2}
+    \argmin_{f\in\mathcal{H}_k, \tau \in \mathbb{R}} \frac{\nu}{2}
     \norm{f}_{\mathcal{H}_k}^2 - \nu \tau + \frac{1}{N} \sum_{i=1}^N \max(\tau
     - f(x_i), 0)
 \end{dmath*}

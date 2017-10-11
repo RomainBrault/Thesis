@@ -89,7 +89,7 @@ Hahn-Banach theorem linking strong convexity to coercivity gives the solution.
         \frac{\lambda_M}{2}\sum_{i,k=1}^{N+U}\inner{K_{x_i}^\adjoint f,
         M_{ik}K_{x_k}^\adjoint f}_{\mathcal{U}}
     \end{dmath*}
-    Let $W_{V,\seq{s}}:\mathcal{H}_K\to\Vect_{i=1}^N\mathcal{Y}$ be the 
+    Let $W_{V,\seq{s}}:\mathcal{H}_K\to\Vect_{i=1}^N\mathcal{Y}$ be the
     restriction linear operator defined as
     \begin{dmath*}
         W_{V,\seq{s}}f = \Vect_{i=1}^N VK_{x_i}^\adjoint f,
@@ -470,8 +470,9 @@ so that
             \item $(M_{ik})_{i,k=1}^{N+U}$ a sequence of data dependent
             operators (see \cref{th:orff_representer_semi}),
             \item $V \in \mathcal{L}\left(\mathbb{R}^u, \mathbb{R}^p\right)$ a
-            combination operator, \item $\lambda_K \in\mathbb{R}_{>0}$ the
-            Tychonov regularization term,
+            combination operator,
+            \item $\lambda_K \in\mathbb{R}_{>0}$ the Tychonov regularization
+            term,
             \item $\lambda_M \in\mathbb{R}_+$ the manifold regularization term.
         \end{itemize}}
         \Output{A model %
@@ -509,16 +510,6 @@ so that
         \caption{Naive closed form for the squared error cost.}
     \end{algorithm2e}
 \end{center}}
-\begin{figure}
-    \centering
-    %\resizebox{\textwidth}{!}{\input{./gfx/representer_twomoons.eps}}
-    \includegraphics[width=\textwidth]{./gfx/nestedtwomoons.pdf}
-    \caption[\acs{ORFF} multiclass semi-supervised]{Semi-supervised learning
-    on a multiclass nested circle and two moons dataset. We performed an 
-    unsupervised spectral clustering \citep{von2007tutorial} step to construc
-    the matrices $M_{ik}$'s and, choose the matrix $B$ of the \acs{ORFF} using
-    the simplex coding \citep{mroueh2012multiclass}.}
-\end{figure}
 \subsection{Complexity}
 Suppose that $u=\dim(\mathcal{U})<+\infty$ and
 $u'=\dim(\mathcal{U}')<\infty$ and for all $x\in\mathcal{X}$,
@@ -601,3 +592,13 @@ $\lambda_M=0$, \cref{alg:close_form_semi} has a linear complexity with respect
 to the number of supervised training points $N$ while the complexity becomes
 quadratic in the number of supervised and unsupervised training points $N+U$
 when $\lambda_M>0$.
+\begin{figure}
+    \centering
+    %\resizebox{\textwidth}{!}{\input{./gfx/representer_twomoons.eps}}
+    \includegraphics[width=\textwidth]{./gfx/nestedtwomoons.pdf}
+    \caption[\acs{ORFF} multiclass semi-supervised]{Semi-supervised learning
+    on a multiclass nested circle and two moons dataset. We performed an
+    unsupervised spectral clustering \citep{von2007tutorial} step to construc
+    the matrices $M_{ik}$'s and, choose the matrix $B$ of the \acs{ORFF} using
+    the simplex coding \citep{mroueh2012multiclass}.}
+\end{figure}

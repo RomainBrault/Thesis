@@ -6,7 +6,6 @@
 focusing on learning function with an ORFF model, we briefly review the context
 of supervised learning in \acs{vv-RKHS}.
 \subsection{Supervised learning within \acs{vv-RKHS}}
-\subsubsection{General results}
 Let $\seq{s} = (x_i,y_i)_{i=1}^N\in\left(\mathcal{X}\times\mathcal{Y}\right)^N$
 be a sequence of training samples. Given a local loss function $L:
 \mathcal{X}\times\mathcal{F}\times\mathcal{Y}\to \overline{\mathbb{R}}$ such
@@ -266,8 +265,8 @@ solution given in \cref{th:orff_representer}.
     \mathcal{H}_{K, \seq{s}}^\perp$ and $f^{\parallel} \in \mathcal{H}_{K,
     \seq{s}}$. Then since $\norm{f^{\perp} + f^{\parallel}}_{\mathcal{H}_K}^2
     =\norm{f^{\perp}}_{\mathcal{H}_K}^2 +
-    \norm{f^{\parallel}}_{\mathcal{H}_K}^2$, \cref{eq:null1} and
-    \cref{eq:null2} shows that if $\lambda > 0$, clearly then
+    \norm{f^{\parallel}}_{\mathcal{H}_K}^2$, \cref{eq:null1} shows that if
+    $\lambda > 0$, clearly then
     \begin{dmath*}
         \mathfrak{R}_{\lambda}(f, \seq{s}) =
         \mathfrak{R}_{\lambda}\left(f^{\perp} + f^{\parallel}, \seq{s}\right)
@@ -283,8 +282,8 @@ yields a solution which depends on all the points in the training set. Assuming
 that for all $x_i$, $x\in\mathcal{X}$ and for all $u_i\in\mathcal{Y}$ it takes
 time $P$, to compute $K(x_i, x)u_i$, making a prediction using the
 representer theorem takes $NP$. If $\mathcal{Y}=\mathbb{R}^p$, we can view
-$K(x_i, x)$ as a matrix and then $P=O(p^2)$ thus making a prediction cost
-$O(Np^2)$ operations.
+$K(x_i, x)$ as a matrix and then $P=O_t(p^2)$ thus making a prediction cost
+$O_t(Np^2)$ operations.
 %% on commence la partie approchée
 \subsection{Learning with Operator Random Fourier Feature maps}
 Instead of learning a model $f$ that depends on all the points of the training
@@ -361,13 +360,13 @@ namely $W$.
         \tildeW{\omega}\right)^\perp \subset \tildeH{\omega}}.
     \end{dmath*}
     Let
-    \begin{dmath}
-        \label{eq:argmin_theta} \theta_{\seq{s}}=\argmin_{\theta\in\left(\Ker
+    \begin{dmath*}
+        \theta_{\seq{s}}=\argmin_{\theta\in\left(\Ker
         \tildeW{\omega}\right)^\perp}
         \frac{1}{N}\sum_{i=1}^Nc\left(\tildePhi{\omega}(x_i)^\adjoint \theta,
         y_i\right) + \frac{\lambda}{2}
         \norm{\tildePhi{\omega}(\cdot)^\adjoint \theta}^2_{\tildeK{\omega}}.
-    \end{dmath}
+    \end{dmath*}
     Since $\theta\in(\Ker \tildeW{\omega})^\perp$ and $W$ is an isometry from
     $(\Ker \tildeW{\omega})^\perp\subset \tildeH{\omega}$ onto
     $\mathcal{H}_{\tildeK{\omega}}$, we have
@@ -439,8 +438,8 @@ bounded operator.}.  This shows that when $\lambda>0$ the solution of
 \tildeK{\omega}(x,z) = \tildePhi{\omega}(x)^\adjoint\tildePhi{\omega}(z)$ is
 the same than the solution of \cref{eq:argmin_applied} up to a linear
 transformation. Namely, if $u_{\seq{s}}$ is the solution of \cref{eq:argmin_u},
-$\theta_{\seq{s}}$ is the solution of \cref{eq:argmin_theta} and $\lambda>0$ we
-have
+$\theta_{\seq{s}}$ is the solution of \cref{eq:argmin_applied} and $\lambda>0$
+we have
 \begin{dmath*}
     \theta_{\seq{s}} = \sum_{i=1}^{N} \tildePhi{\omega}(x_i) (u_{\seq{s}})_i
     \hiderel{\in} (\Ker W)^{\perp} \hiderel{\subseteq} \tildeH{\omega}.
@@ -523,16 +522,16 @@ err = representer2.main()
 \section{Solving ORFF-based regression}\label{subsec:gradient_methods}
 % We illustrate the ORFF representer theorem (\cref{cr:orff_representer}) on
 % two experiment involving scalar valued kernels.
-In order to find a solution to \cref{eq:argmin_theta}, we first turn our
+In order to find a solution to \cref{eq:argmin_applied}, we first turn our
 attention to gradient descent methods. In the following we let
-\begin{dmath}
-    \label{eq:cost_functional} \mathfrak{R}_{\lambda}(\theta) =
+\begin{dmath*}
+    \mathfrak{R}_{\lambda}(\theta) =
     \frac{1}{N}\sum_{i=1}^Nc\left(\tildePhi{\omega}(x_i)^\adjoint \theta,
     y_i\right) + \frac{\lambda}{2}\norm{\theta}^2_{\tildeH{\omega}}
-\end{dmath}
+\end{dmath*}
 Then, we study the complexity in time of the proposed algorithm.
 \subsection{Gradient descent methods}\label{subsec:gradient_methods}
-Since the solution of \cref{eq:argmin_theta} is
+Since the solution of \cref{eq:argmin_applied} is
 unique when $\lambda>0$, a sufficient and necessary condition is that the
 gradient of $\mathfrak{R}_{\lambda}$ at the minimizer $\theta_{\seq{s}}$ is zero. We use
 the Frechet derivative, the strongest notion of derivative in Banach
@@ -606,7 +605,7 @@ Hence
     \left(\jacobian_{\theta}f(\theta)\right)^\adjoint
     \nabla_{f(\theta)}g(f(\theta)).
 \end{dmath*}
-Thus by linearity and applying the chaine rule to \cref{eq:argmin_theta} we
+Thus by linearity and applying the chaine rule to \cref{eq:argmin_applied} we
 have
 \begin{dgroup*}
     \begin{dmath*}
@@ -656,7 +655,7 @@ and $y_i\in\mathcal{Y}$ we have $\nabla_{\theta} \mathfrak{R}_{\lambda}(\theta) 
     $x\in\mathcal{X}$, $\tildePhi{\omega}(x): \mathbb{R}^{r}\to\mathbb{R}^p$
     where all spaces are endowed with the euclidean inner product. From this we
     can derive \cref{alg:close_form} which returns the closed form solution of
-    \cref{eq:cost_functional} for $c(y,y')=\frac{1}{2}\norm{y-y'}_2^2$.
+    \cref{eq:argmin_applied} for $c(y,y')=\frac{1}{2}\norm{y-y'}_2^2$.
 \end{example}
 If one considers a Mahalanobis inner product, evaluation of operators has to be
 done with extra care since the adjoint operator is \emph{not} the classic
@@ -719,8 +718,7 @@ of the operator costs $O_t(r^3)$. Eventually the overall complexity of
 while the space complexity is $O_s(r^2)$.
 \afterpage{%
 \begin{center}
-    \begin{algorithm2e}[H]
-        \label{alg:close_form}
+    \begin{algorithm2e}[htb]\label{alg:close_form}
         \SetAlgoLined
         \Input{\begin{itemize}
             \item $\seq{s}=(x_i,
@@ -728,8 +726,8 @@ while the space complexity is $O_s(r^2)$.
             sequence of supervised training points,
             \item $\tildePhi{\omega}(x_i) \in \mathcal{L}\left(\mathbb{R}^p,
             \mathbb{R}^{r}\right)$ a feature map defined for all
-            $x_i\in\mathcal{X}$,
-            \item $\lambda \in\mathbb{R}_{>0}$ the
+            $x_i \in \mathcal{X}$,
+            \item $\lambda \in \mathbb{R}_{>0}$ the
             Tychonov regularization term,
         \end{itemize}}
         \Output{A model %
@@ -738,7 +736,7 @@ while the space complexity is $O_s(r^2)$.
             x\mapsto\tildePhi{\omega}(x)^\transpose
             \theta_{\seq{s}},\end{cases} %
         \end{dmath*} %
-        such that $\theta_{\seq{s}}$ minimizes \cref{eq:cost_functional}, where
+        such that $\theta_{\seq{s}}$ minimizes \cref{eq:argmin_applied}, where
         $c(y,y')=\norm{y-y'}_2^2$ and $\mathbb{R}^r$ and
         $\mathbb{R}^p$ are Hilbert spaces endowed with the Euclidean inner
         product.}
@@ -777,7 +775,7 @@ kernelized solution $u_{\seq{s}}$ of \cref{th:representer} is
     \left(\frac{1}{N} \mathbf{K}  + \lambda
     I_{\Vect_{i=1}^{N}\mathcal{Y}}\right)u_{\seq{s}}=\Vect_{i=1}^N y_i.
 \end{dmath*}
-which has time complexity $O\left(N^3p^3\right)$ and space complexity
+which has time complexity $O_t\left(N^3p^3\right)$ and space complexity
 $O_s\left(N^2p^2\right)$. Suppose we are given a generic \acs{ORFF} map (see
 \cref{subsec:examples_ORFF}). Then $r=2Dp$, where $D$ is the number of samples.
 Hence \cref{alg:close_form} is better than its kernelized counterpart when
@@ -802,7 +800,7 @@ When developing \cref{alg:close_form} we considered that the feature map
 $\tildePhi{\omega}(x)$ was a matrix from $\mathbb{R}^p$ to $\mathbb{R}^{r}$ for
 all $x\in\mathcal{X}$, and therefore that computing
 $\tildePhi{\omega}(x)\tildephi{\omega}(z)^\transpose$ has a time complexity of
-$O(r^2p)$.  While this holds true in the most generic senario, in many cases
+$O_t(r^2p)$.  While this holds true in the most generic senario, in many cases
 the feature maps present some structure or sparsity allowing to reduce the
 computational cost of evaluating the feature map. We focus on the \acl{ORFF}
 given by \cref{alg:ORFF_construction}, developped in \cref{sec:building_ORFF}
@@ -973,6 +971,80 @@ iterative solvers (or matrix-free solvers) are designed to solve any system of
 equation of the form $PX=C$, where $P$ is a linear operator (not a matrix).
 This is exactly our case where $\tildephi{\omega}(x)\otimes B^T$ is the matrix
 form of the operator $\Theta \mapsto \vectorize(B\Theta\tildephi{\omega}X)$.
+\afterpage{%
+\begin{landscape}
+    \begin{table}[htb]{}
+        \centering
+        \begin{threeparttable}
+            \caption[Efficient linear-operators for different
+            \acs{ORFF}.]{Efficient linear-operator (in matrix form) for
+            different Feature maps. \label{table:efficient-op}}
+            \begin{tabularx}{\textheight}{Xcc}
+                \toprule
+                    Kernel & $\tildePhi{\omega}(X)^\adjoint$ &
+                    $\tildePhi{\omega}(X)$ \\
+                \midrule
+                    Decomposable\tnote{1} &$\Theta\mapsto B\left(\Theta
+                    \tildephi{\omega}(X)\right)$ & $Y\mapsto B^\transpose
+                    \left(Y\tildephi{\omega}(X)^\transpose \right)$ \\ Gaussian
+                    curl-free\tnote{2} & $\Theta^c, \Theta^s\mapsto
+                    \displaystyle\sum_{j=1}^D \omega_j \left(\Theta_{j}^c
+                    \tildephi{\omega}^{c}(X)_{j\bullet} +
+                    \Theta_{j}^s\tildephi{\omega}^{s}(X)_{j\bullet}\right)$ &
+                    $Y\mapsto \Theta_j^e=\omega_j^\transpose
+                    \left(Y\tildephi{\omega}^{e}(X)_{\bullet j}^\transpose
+                    \right)$ \\ Gaussian divergence-free\tnote{2,3} &
+                    $\Theta^c, \Theta^s \mapsto \displaystyle\sum_{j=1}^D
+                    \left(B(\omega_j) \Theta^{c}_{\bullet j}\right)
+                    \tildephi{\omega}^{c}(X)_{j\bullet} +
+                    \left(B(\omega_j)\Theta^{s}_{\bullet
+                    j}\right)\tildephi{\omega}^{s}(X)_{j\bullet}$ & $Y \mapsto
+                    \Theta^e_{\bullet
+                    j}=B(\omega_j)\left(Y\tildephi{\omega}^{e}(X)_{\bullet
+                    j}^\transpose \right)$ \\
+                \bottomrule
+            \end{tabularx}
+            \begin{tablenotes}
+                \item[1] Where $\tildephi{\omega}(X)=\begin{pmatrix}
+                \tildephi{\omega}(X_{\bullet 1}) & \hdots &
+                \tildephi{\omega}(X_{\bullet N})
+                \end{pmatrix}\in\mathcal{M}_{r, N}$ is any design matrix, with
+                scalar feature map
+                $\tildephi{\omega}:\mathbb{R}^d\to\mathbb{R}^r$ such that
+                $\tildephi{\omega}(x)^\adjoint
+                \tildephi{\omega}(z)=k(x,z)\in\mathbb{R}$ for all $x$,
+                $z\in\mathcal{X}$. The input data
+                $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data
+                $U\in\mathcal{M}_{p,N}(\mathbb{R})$, the parameter matrices
+                $\Theta^c$ and $\Theta^s\in\mathcal{M}_{p', r}(\mathbb{R})$ and
+                the decomposable operator $B\in\mathcal{M}_{p,p'}(\mathbb{R})$.
+                \item[2] Where
+                $\tildephi{\omega}^{c}(X)_{ji}=\cos\inner{\omega_j, x_i}$ and
+                $\tildephi{\omega}^{s}(X)_{ji}=\sin\inner{\omega_j, x_i}$,
+                $j\in\mathbb{N}^*_D$ and $i\in\mathbb{N}^*_N$. Thus
+                $\tildephi{\omega}^{c}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$ and
+                $\tildephi{\omega}^{s}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$. The
+                input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data
+                $U\in\mathcal{M}_{d,N}(\mathbb{R})$, the parameter matrices
+                $\Theta^c$ and $\Theta^s\in\mathbb{R}^D$, $\omega_j\sim
+                \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$ \ac{iid}~for all
+                $j\in\mathbb{N}^*_D$. Eventually $e\in\Set{s,c}$, namely
+                $\Theta^c=\begin{pmatrix} \Theta^{e=c}_1 & \hdots &
+                \Theta^{e=c}_D \end{pmatrix}^\transpose $ and
+                $\Theta^s=\begin{pmatrix} \Theta^{e=s}_1 & \hdots &
+                \Theta^{e=s}_D\end{pmatrix}^\transpose $.
+                \item[3] Here,
+                $\Theta^c$ and $\Theta^s\in\mathcal{M}_{d,D}(\mathbb{R})$ thus
+                $\Theta^c=\begin{pmatrix}\Theta^{e=c}_{\bullet 1} & \hdots &
+                \Theta^{e=c}_{\bullet D}\end{pmatrix}$,
+                $\Theta^s=\begin{pmatrix}\Theta^{e=s}_{\bullet 1} & \hdots &
+                \Theta^{e=s}_{\bullet D}\end{pmatrix}$ and
+                $B(\omega)=\left(\norm{\omega}_2I_d-\frac{\omega\omega^\transpose
+                }{\norm{\omega}_2}\right)\in\mathcal{M}_{d,d}$.
+                \end{tablenotes}
+        \end{threeparttable}
+    \end{table}
+\end{landscape}}
 \paragraph{}
 This leads us to the following (more efficient) Python implementation of the
 Decomposable \acs{ORFF} \say{operator} to be fed to a matrix-free solvers.
@@ -1124,106 +1196,32 @@ Python/Matlab implementation with vectorization. With these notations, a
 summary of efficient linear operators in matrix form is given in
 \cref{table:efficient-op}. The complexity of evaluating all this operators is
 given in \cref{table:efficient-complexity}.
-\afterpage{%
-\begin{landscape}
-    \begin{table}[htb]{}
-        \centering
-        \begin{threeparttable}
-            \caption[Efficient linear-operators for different
-            \acs{ORFF}.]{Efficient linear-operator (in matrix form) for
-            different Feature maps. \label{table:efficient-op}}
-            \begin{tabularx}{\textheight}{Xcc}
-                \toprule
-                    Kernel & $\tildePhi{\omega}(X)^\adjoint$ &
-                    $\tildePhi{\omega}(X)$ \\
-                \midrule
-                    Decomposable\tnote{1} &$\Theta\mapsto B\left(\Theta
-                    \tildephi{\omega}(X)\right)$ & $Y\mapsto B^\transpose
-                    \left(Y\tildephi{\omega}(X)^\transpose \right)$ \\ Gaussian
-                    curl-free\tnote{2} & $\Theta^c, \Theta^s\mapsto
-                    \displaystyle\sum_{j=1}^D \omega_j \left(\Theta_{j}^c
-                    \tildephi{\omega}^{c}(X)_{j\bullet} +
-                    \Theta_{j}^s\tildephi{\omega}^{s}(X)_{j\bullet}\right)$ &
-                    $Y\mapsto \Theta_j^e=\omega_j^\transpose
-                    \left(Y\tildephi{\omega}^{e}(X)_{\bullet j}^\transpose
-                    \right)$ \\ Gaussian divergence-free\tnote{2,3} &
-                    $\Theta^c, \Theta^s \mapsto \displaystyle\sum_{j=1}^D
-                    \left(B(\omega_j) \Theta^{c}_{\bullet j}\right)
-                    \tildephi{\omega}^{c}(X)_{j\bullet} +
-                    \left(B(\omega_j)\Theta^{s}_{\bullet
-                    j}\right)\tildephi{\omega}^{s}(X)_{j\bullet}$ & $Y \mapsto
-                    \Theta^e_{\bullet
-                    j}=B(\omega_j)\left(Y\tildephi{\omega}^{e}(X)_{\bullet
-                    j}^\transpose \right)$ \\
-                \bottomrule
-            \end{tabularx}
-            \begin{tablenotes}
-                \item[1] Where $\tildephi{\omega}(X)=\begin{pmatrix}
-                \tildephi{\omega}(X_{\bullet 1}) & \hdots &
-                \tildephi{\omega}(X_{\bullet N})
-                \end{pmatrix}\in\mathcal{M}_{r, N}$ is any design matrix, with
-                scalar feature map
-                $\tildephi{\omega}:\mathbb{R}^d\to\mathbb{R}^r$ such that
-                $\tildephi{\omega}(x)^\adjoint
-                \tildephi{\omega}(z)=k(x,z)\in\mathbb{R}$ for all $x$,
-                $z\in\mathcal{X}$. The input data
-                $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data
-                $U\in\mathcal{M}_{p,N}(\mathbb{R})$, the parameter matrices
-                $\Theta^c$ and $\Theta^s\in\mathcal{M}_{p', r}(\mathbb{R})$ and
-                the decomposable operator $B\in\mathcal{M}_{p,p'}(\mathbb{R})$.
-                \item[2] Where
-                $\tildephi{\omega}^{c}(X)_{ji}=\cos\inner{\omega_j, x_i}$ and
-                $\tildephi{\omega}^{s}(X)_{ji}=\sin\inner{\omega_j, x_i}$,
-                $j\in\mathbb{N}^*_D$ and $i\in\mathbb{N}^*_N$. Thus
-                $\tildephi{\omega}^{c}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$ and
-                $\tildephi{\omega}^{s}(X)\in\mathcal{M}_{D,N}(\mathbb{R})$. The
-                input data $X\in\mathcal{M}_{d,N}(\mathbb{R})$, the output data
-                $U\in\mathcal{M}_{d,N}(\mathbb{R})$, the parameter matrices
-                $\Theta^c$ and $\Theta^s\in\mathbb{R}^D$, $\omega_j\sim
-                \probability_{\mathcal{N}(0,\sigma^{-2}I_d)}$ \ac{iid}~for all
-                $j\in\mathbb{N}^*_D$. Eventually $e\in\Set{s,c}$, namely
-                $\Theta^c=\begin{pmatrix} \Theta^{e=c}_1 & \hdots &
-                \Theta^{e=c}_D \end{pmatrix}^\transpose $ and
-                $\Theta^s=\begin{pmatrix} \Theta^{e=s}_1 & \hdots &
-                \Theta^{e=s}_D\end{pmatrix}^\transpose $.
-                \item[3] Here,
-                $\Theta^c$ and $\Theta^s\in\mathcal{M}_{d,D}(\mathbb{R})$ thus
-                $\Theta^c=\begin{pmatrix}\Theta^{e=c}_{\bullet 1} & \hdots &
-                \Theta^{e=c}_{\bullet D}\end{pmatrix}$,
-                $\Theta^s=\begin{pmatrix}\Theta^{e=s}_{\bullet 1} & \hdots &
-                \Theta^{e=s}_{\bullet D}\end{pmatrix}$ and
-                $B(\omega)=\left(\norm{\omega}_2I_d-\frac{\omega\omega^\transpose
-                }{\norm{\omega}_2}\right)\in\mathcal{M}_{d,d}$.
-                \end{tablenotes}
-        \end{threeparttable}
-    \end{table}
-\end{landscape}}
 \paragraph{}
 It is worth mentioning that the same strategy can be applied in many different
 language. For instance in C{}\verb!++!, the library Eigen~\citep{eigenweb}
 allows to wrap a sparse matrix with a custom type, where the user overloads the
 transpose and dot product operator (as in Python). Then the custom user
-operator behaves as a (sparse) matrix --see
+operator behaves as a (sparse) matrix~---~see
 \url{https://eigen.tuxfamily.org/dox/group__MatrixfreeSolverExample.html}. With
 this implementation the time complexity of $\tildePhi{\omega}(x)^\transpose
 \theta$ and $\tildePhi{\omega}(x)y$ falls down to $O_t(Dp'+p'p)$ and the same
 holds for space complexity.
-\begin{table}[th]
+\begin{table}
     \centering
     \caption[Time complexity of efficient linear-operators for different
-    \acs{ORFF}.]{Complexity of efficient linear-operator (in matrix form) for
-    different Feature maps given in \cref{table:efficient-op}.
+    \acs{ORFF}.]{Time complexity of efficient linear-operator (in matrix form)
+    for different Feature maps given in \cref{table:efficient-op}.
     \label{table:efficient-complexity}}
     \begin{tabularx}{\textwidth}{Xcc}
         \toprule
             Kernel & $\tildePhi{\omega}(X)^\adjoint$ & $\tildePhi{\omega}(X)$
             \\
         \midrule
-            Decomposable & $O\left((p'D+p'p)N\right)$ &
-            $O\left((pN+p'p)D\right)$ \\
-            Curl-free & $O\left(pND\right)$ & $O\left(pND\right)$ \\
-            Divergence-free & $O\left((p^2+pN)D\right)$ &
-            $O\left((p^2+pN)D\right)$ \\
+            Decomposable & $O_t\left((p'D+p'p)N\right)$ &
+            $O_t\left((pN+p'p)D\right)$ \\
+            Curl-free & $O_t\left(pND\right)$ & $O_t\left(pND\right)$ \\
+            Divergence-free & $O_t\left((p^2+pN)D\right)$ &
+            $O_t\left((p^2+pN)D\right)$ \\
         \bottomrule
     \end{tabularx}
 \end{table}
@@ -1248,7 +1246,7 @@ import efficient_decomposable_gaussian
 
 efficient_decomposable_gaussian.main()
 \end{pycode}
-\begin{figure}[htb]
+\begin{figure}
     \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_decomposable_gaussian.pgf}}')}
     \caption[Efficient decomposable Gaussian \acs{ORFF}]{Efficient decomposable
     Gaussian ORFF (lower is better).}
@@ -1277,7 +1275,7 @@ import efficient_curlfree_gaussian
 
 efficient_curlfree_gaussian.main()
 \end{pycode}
-\begin{figure}[h]
+\begin{figure}
     \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_curlfree_gaussian.pgf}}')}
     \caption[Efficient curl-free Gaussian \acs{ORFF}]{Efficient curl-free
     Gaussian ORFF (lower is better).}
@@ -1307,7 +1305,7 @@ import efficient_divfree_gaussian
 
 efficient_divfree_gaussian.main()
 \end{pycode}
-\begin{figure}[h]
+\begin{figure}
     \pyc{print(r'\centering\resizebox{\textwidth}{!}{\input{./efficient_divfree_gaussian.pgf}}')}
     \caption[Efficient divergence-free Gaussian \acs{ORFF}]{Efficient
     divergence-free Gaussian ORFF (lower is better).}
@@ -1319,11 +1317,6 @@ $\tildePhi{\omega}(x)^\transpose \theta$, and the right plot the memory used in
 bytes  to store $\tildePhi{\omega}(x)$ for all $x_i$'s. We averaged the results
 over ten runs. Full code is given in \cref{code:efficient_divfree_gaussian}. We
 draw the same conclusions as the curl-free kernel.
-
-\subsection{Iterative solvers using linear operators}
-We have shown in this section that viewing the \acl{ORFF} maps as linear
-operator rather than staking matrices leads to more efficient computations.
-
 
 %------------------------------------------------------------------------------
 \section{Experiments}
@@ -1427,7 +1420,7 @@ points.  Second, \cref{fig:learning_accuracy} shows the test prediction error
 versus the number of ORFFs $D$, when using $N=1000$ training points. As
 expected, the ORFF model converges toward the OVK model when the number of
 features increases.
-\begin{figure}[htb]
+\begin{figure}
     \centering
     \resizebox{\textwidth}{!}{\input{./gfx/learning_accuracy_MNIST.tikz}} \\
     \resizebox{\textwidth}{!}{\input{./gfx/learning_time_MNIST.tikz}}
@@ -1442,7 +1435,7 @@ features increases.
 We perform a similar experiment on the second dataset ($5$D-vector field with
 structure). We use a Gaussian curl-free kernel with bandwidth equal to the
 median of the pairwise distances and tune the hyperparameter $\lambda$ on a
-grid. Here we optimize \cref{eq:argmin_theta} using Scipy's \acs{L-BFGS-B}
+grid. Here we optimize \cref{eq:argmin_applied} using Scipy's \acs{L-BFGS-B}
 \citep{byrd1995limited} solver\footnote{Available at
 \url{http://docs.scipy.org/doc/scipy/reference/optimize.html}} with the
 gradients given in \cref{eq:grad_final} and the efficient linear operator

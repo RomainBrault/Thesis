@@ -2438,11 +2438,17 @@
     \field{year}{1912}
   \endentry
 
-  \entry{goix2016one}{article}{}
+  \entry{goix2016one}{inproceedings}{}
     \name{author}{4}{}{%
       {{hash=GN}{%
          family={Goix},
          familyi={G\bibinitperiod},
+         given={Nicolas},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=DN}{%
+         family={Drougard},
+         familyi={D\bibinitperiod},
          given={Nicolas},
          giveni={N\bibinitperiod},
       }}%
@@ -2452,12 +2458,6 @@
          given={Romain},
          giveni={R\bibinitperiod},
       }}%
-      {{hash=DN}{%
-         family={Drougard},
-         familyi={D\bibinitperiod},
-         given={Nicolas},
-         giveni={N\bibinitperiod},
-      }}%
       {{hash=CM}{%
          family={Chiapino},
          familyi={C\bibinitperiod},
@@ -2465,16 +2465,17 @@
          giveni={M\bibinitperiod},
       }}%
     }
-    \keyw{ownpubs-review}
+    \keyw{ownpubs}
     \strng{namehash}{GN+1}
-    \strng{fullhash}{GNBRDNCM1}
+    \strng{fullhash}{GNDNBRCM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{G}
     \field{sortinithash}{G}
+    \field{booktitle}{Proceedings of The 9th Asian Conference on Machine
+  Learning}
     \field{title}{One Class Splitting Criteria for Random Forests}
-    \field{journaltitle}{arXiv preprint arXiv:1611.01971}
-    \field{year}{2016}
+    \field{year}{2017}
   \endentry
 
   \entry{gorniewicz1999topological}{book}{}

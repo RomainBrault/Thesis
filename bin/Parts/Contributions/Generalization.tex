@@ -72,7 +72,7 @@ such that
     f_{\seq{s}} =
     \begin{cases}
         \argmin_{f\in\mathcal{F}} & \riskemp{f,\seq{s}} \\
-        \text{subject to} & \norm{f}_{\mathcal{F}} < C \in \mathbb{R}_{>0}
+        \text{subject to} & \norm{f}_{\mathcal{F}} < M \in \mathbb{R}_{>0}
     \end{cases}
 \end{dmath*}
 (Ivanov regularization) or
@@ -80,7 +80,7 @@ such that
     f_{\seq{s}} =
     \begin{cases}
         \argmin_{f\in\mathcal{F}} & \riskemp{f,\seq{s}} \\
-        \text{subject to} & \norm{f}_{\infty} < C \in \mathbb{R}_{>0}.
+        \text{subject to} & \norm{f}_{\infty} < M \in \mathbb{R}_{>0}.
     \end{cases}
 \end{dmath*}
 \subsection{Generalization by bounding the function space complexity}
@@ -93,7 +93,7 @@ $\tildeK{\omega}$).
     \begin{dmath*}
         \sup_{x\in\mathcal{X}} \Tr[K(x,x)] < T
     \end{dmath*}
-    and $\norm{f}_{\mathcal{H}_K}<B$. Moreover let $c:\mathcal{Y}\to[0, C]$ be
+    and $\norm{f}_{\mathcal{H}_K}<M$. Moreover let $c:\mathcal{Y}\to[0, C]$ be
     a $L$-Lipschitz cost function and $\mathcal{Y}$ a separable Hilbert space.
     Then if we are given $N$ \acs{iid} random variables with values in
     $\mathcal{X}$ (training samples, noted $\seq{s}$), then we have with at
@@ -101,7 +101,7 @@ $\tildeK{\omega}$).
     samples $\seq{s}$ that for any $f\in\mathcal{H}_K$,
     \begin{dmath}
         \risk{f} \le \riskemp{f, \seq{s}}  + 2\sqrt{\frac{2}{N}}\left(
-        LBT^{1/2} + C\sqrt{\ln(2/\delta)}\right).
+        LMT^{1/2} + C\sqrt{\ln(2/\delta)}\right).
     \end{dmath}
     \label{pr:ovk_gen}
 \end{proposition}
@@ -164,17 +164,18 @@ for this proof.
     \mathcal{L}(\mathcal{Y}, \mathcal{H})$ such that for all $y,
     y'\in\mathcal{Y}$ the kernel is given by
     \begin{dmath*}
-        \inner{y, K(x,z)y'} = \inner{\Phi_xy, \Phi_zy'}.
+        \inner{y, K(x,z)y'}_{\mathcal{Y}} = \inner{\Phi_xy,
+        \Phi_zy'}_{\mathcal{H}}.
     \end{dmath*}
     We say that the feature space $\mathcal{H}$ is embedded into the RKHS
     $\mathcal{H}_K$ by means of the \emph{feature operator}
     $(W\theta)(x)\colonequals(\Phi_x^*\theta)$. Indeed $W$ defines a partial
     isometry between $\mathcal{H}$ and $\mathcal{H}_K$. Suppose that
     $\mathcal{Y}$ is a separable Hilbert space and let the class of
-    $\mathcal{Y}$-valued functions $F$ be
+    $\mathcal{Y}$-valued functions $\mathcal{F}$ be
     \begin{dmath*}
         \mathcal{F}=\Set{f | f:~x \mapsto (W \theta)(x), \enskip
-        \norm{\theta}_{\mathcal{H}} < B } \hiderel{\subset} \mathcal{H}_K.
+        \norm{\theta}_{\mathcal{H}} < M } \hiderel{\subset} \mathcal{H}_K.
     \end{dmath*}
     Let $c_{y_i}=c(\cdot - y_i)$, for all $in\in\mathbb{N}_N$.  Then from
     \cref{pr:radswap} and if $K$ is trace class, we have
@@ -192,12 +193,12 @@ for this proof.
         \label{eq:ker_bound}
         \expectation \sup_{\norm{\theta}_{\mathcal{H}}<B} \sum_{i=1}^N
         \epsilon_i c_{y_i}(\Phi_{x_i}^\adjoint \theta)
-        \le \sqrt{2}LB\expectation
+        \le \sqrt{2}LM\expectation
         \norm{\sum_{i=1,k}^{i=N}\epsilon_{ik}\Phi_{x_i}e_k}_{\mathcal{Y}}
-        \le \sqrt{2}LB\sqrt{\sum_{i=1,k}^{i=N}
+        \le \sqrt{2}LM\sqrt{\sum_{i=1,k}^{i=N}
         \norm{\Phi_{x_i}e_k}_{\mathcal{Y}}^2 }
-        \le \sqrt{2}LB\sqrt{\sum_{i=1}^{N} \Tr\left[ K(x_i, x_i) \right] }
-        \le \sqrt{2}LB\sqrt{N}\sqrt{\sup_{x\in\mathcal{X}}\Tr\left[ K(x,
+        \le \sqrt{2}LM\sqrt{\sum_{i=1}^{N} \Tr\left[ K(x_i, x_i) \right] }
+        \le \sqrt{2}LM\sqrt{N}\sqrt{\sup_{x\in\mathcal{X}}\Tr\left[ K(x,
         x)\right]}.
     \end{dmath}
     Then we apply the following theorem (\cref{th:gen_rad_bound}) from
@@ -251,7 +252,7 @@ y_i)_{i=1}^N\in \mathcal{X}^N\times \mathcal{Y}^N$ be the training samples.
     \end{dmath*}
 \end{assumption}
 Under \cref{ass:bounded_outputs}, from \cref{rk:rkhs_bound}, we know that
-$\norm{f}_{\mathcal{H}_K}\le \sqrt{\frac{2}{\lambda}}\sigma_y$, where
+$\norm{f}_{\mathcal{H}_K}\le \sqrt{\frac{2}{\lambda}}\sigma_y = M$, where
 \begin{dmath*}
     \frac{1}{N}\sum_{i=1}^N\norm{y_i}_{\mathcal{Y}}^2 \le \sigma_y^2
     \hiderel{\le} C^2.
@@ -375,10 +376,11 @@ algorithm
         \argmin_{\theta\in\Vect_{j=1}^D\mathcal{Y}'} & \frac{1}{N} \sum_{i=1}^N
         c(\tildePhi{\omega}(x)^\adjoint \theta) \\
         \text{subject to} & \max_{j\in\mathbb{N}_D^*}
-        \norm{\theta_j}_{\mathcal{Y}} \le \frac{B}{D}.
+        \norm{\theta_j}_{\mathcal{Y}} \le \frac{M}{D},
     \end{cases}
 \end{dmath}
-Then the associated output function return is
+where $M\in\mathbb{R}_+$ is some regularization hyperparameter. Then the
+associated output function return is
 $\widetilde{f}_{\seq{s}}=\tildePhi{\omega}(\cdot)^\adjoint \theta_{\seq{s}}$.
 We suppose that the operator $A(\omega)$ used in the construction of
 $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
@@ -401,7 +403,7 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
     \begin{dmath*}
         \mathcal{F} = \Set{f | f: x\mapsto \int_{\dual{\mathcal{X}}}
         \Phi_x(\omega)\theta(\omega)^\adjoint d\dual{\Haar}(\omega), \enskip
-        \norm{\theta(\omega)}_{\mathcal{Y}} < B\rho(\omega)}
+        \norm{\theta(\omega)}_{\mathcal{Y}} < M\rho(\omega)}
         \hiderel{\subseteq} \mathcal{H}_K.
     \end{dmath*}
     Eventually let $c:\mathcal{Y}^2 \to [0, C]$ be a cost function
@@ -411,9 +413,9 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
     \cref{eq:alg_generalization} then we have
     \begin{dmath*}
         \risk{\widetilde{f}_{\seq{s}}} - \min_{f\in\mathcal{F}} \risk{f} \le
-        \underbrace{4\sqrt{\frac{2}{N}}\left( LBT^{1/2} +
+        \underbrace{4\sqrt{\frac{2}{N}}\left( LMT^{1/2} +
         C\sqrt{\ln(2/\delta)}\right)}_{\text{Estimation error.}} +
-        \underbrace{\frac{uLB}{\sqrt{D}}\left(1 + \sqrt{2\ln(1/\delta)}
+        \underbrace{\frac{uLM}{\sqrt{D}}\left(1 + \sqrt{2\ln(1/\delta)}
         \right)}_{\text{Approximation error.}}.
     \end{dmath*}
     with probability $1-2\delta$ over the training sequence and the random
@@ -426,13 +428,14 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
     \begin{dmath*}
         \mathcal{F} = \Set{f | f: x\mapsto \int_{\dual{\mathcal{X}}}
         \Phi_x(\omega)^\adjoint\theta(\omega)d\dual{\Haar}(\omega), \enskip
-        \norm{\theta(\omega)}_{\mathcal{Y}} < B\rho(\omega)}
+        \norm{\theta(\omega)}_{\mathcal{Y}} < M\rho(\omega), \forall
+        \omega\in\dual{\mathcal{X}}}
     \end{dmath*}
     and
     \begin{dmath*}
         \widetilde{\mathcal{F}} = \Set{f | f: x\mapsto \sum_{j=1}^D
         \Phi_x(\omega_j)^\adjoint \theta_j, \enskip \forall j\in
-        \mathbb{N}_D^*, \norm{\theta_j}_{\mathcal{Y}} < \frac{B}{D} }.
+        \mathbb{N}_D^*, \norm{\theta_j}_{\mathcal{Y}} < \frac{M}{D} }.
     \end{dmath*}
     \begin{proposition}[Existence of an approximate function]
         \label{pr:existence_approx}
@@ -446,7 +449,7 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
         $\widetilde{\mathcal{F}}$ such that
         \begin{dmath*}
             \sqrt{\int_{\mathcal{X}} \norm{\widetilde{f}(x) -
-            f_*(x)}_{\mathcal{Y}}^2d\mu(x)} \le \frac{uB}{\sqrt{D}}\left( 1 +
+            f_*(x)}_{\mathcal{Y}}^2d\mu(x)} \le \frac{uM}{\sqrt{D}}\left( 1 +
             \sqrt{2\ln(1/\delta)} \right).
         \end{dmath*}
     \end{proposition}
@@ -463,28 +466,29 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
         \end{dmath*}
         be the sample average of these functions. Then,
         $\widetilde{f}\in\widetilde{\mathcal{F}}$ because
-        $\norm{\beta_j}_{\mathcal{Y}} / D < B / D$.  Also, under the inner
+        $\norm{\beta_j}_{\mathcal{Y}} / D < M / D$.  Also, under the inner
         product $\int_{\mathcal{X}} \inner{f(x), g(x)}_{\mathcal{Y}} d\mu(x)$,
-        we have that
+        we have almost surely that
         \begin{dmath*}
             \norm{\conj{\pairing{\cdot,
             \omega_j}}B(\omega_j)\beta_j}_{L^2(\mathcal{X},\mu;\mathcal{Y})} \le
             \esssup_{\omega\in\dual{\mathcal{X}}}
-            \norm{B(\omega)}_{\mathcal{Y},\mathcal{Y}} B.
+            \norm{B(\omega)}_{\mathcal{Y},\mathcal{Y}} M \mu(\mathcal{X}).
         \end{dmath*}
-        We introduce the following technical lemma of
+        Since $\mu$ is a probability measure over $\mathcal{X}$,
+        $\mu(\mathcal{X})=1$.  We introduce the following technical lemma of
         \citet{rahimi2009weighted} for concentration of random variable in
         Hilbert spaces (similar to \citet{pinelis1994optimum}).
         \begin{lemma}
             \label{lm:concentration_hilbert}
             Let $X_1, \dots, X_D$ be \acs{iid} random variables with values in
-            a ball of radius $M$ centered at the origin in a Hilbert space
+            a ball of radius $R$ centered at the origin in a Hilbert space
             $\mathcal{H}$. Denote the sample average $\bar{X} =
             \frac{1}{D}\sum_{j=1}^D X_j$. Then for any $\delta\in(0, 1)$ with
             probability $1 - \delta$,
             \begin{dmath*}
                 \norm{\expectation\bar{X} - \bar{X}}_{\mathcal{Y}} \le
-                \frac{M}{\sqrt{D}}\left(1+\sqrt{2\ln(1/\delta)}\right).
+                \frac{R}{\sqrt{D}}\left(1+\sqrt{2\ln(1/\delta)}\right).
             \end{dmath*}
         \end{lemma}
         Eventually apply \cref{lm:concentration_hilbert} to $f_1, \dots, f_D$
@@ -507,7 +511,7 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
         $(\omega_j)_{j=1}^D$, a function $\widetilde{f} \in
         \widetilde{\mathcal{F}}$ such that
         \begin{dmath*}
-            \risk{\widetilde{f}} \le \risk{f_*} + \frac{uLB}{\sqrt{D}}\left(1 +
+            \risk{\widetilde{f}} \le \risk{f_*} + \frac{uLM}{\sqrt{D}}\left(1 +
             \sqrt{2\ln(1/\delta)} \right).
         \end{dmath*}
     \end{proposition}
@@ -534,14 +538,14 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
         \widetilde{\mathcal{F}}$ that
         \begin{dmath*}
             \risk{\widetilde{f}} \le \riskemp{\widetilde{f}, \seq{s}} +
-            2\sqrt{\frac{2}{N}}\left( LBT^{1/2} + C\sqrt{\ln(2/\delta)}\right).
+            2\sqrt{\frac{2}{N}}\left( LMT^{1/2} + C\sqrt{\ln(2/\delta)}\right).
         \end{dmath*}
         where $\Tr\left[ \widetilde{K}_e(e) \right] < T\in\mathbb{R}_+$.
     \end{proposition}
     \begin{proof}
         Since $\widetilde{f}\in\widetilde{\mathcal{F}}$ and forall
         $j\in\mathbb{N}^*_D$, $\norm{\theta_j}_{\mathcal{Y}} < B/D$, Thus
-        $\norm{\theta}_{\Vect_{j=1}^D\mathcal{Y}} < B/\sqrt{D}$. Moreover, if
+        $\norm{\theta}_{\Vect_{j=1}^D\mathcal{Y}} < M/\sqrt{D}$. Moreover, if
         we define $\tildePhi{\omega}(x)=\Vect_{j=1}^D\Phi_x(\omega_j)$, it
         gives birth to a \acs{RKHS} with kernel $D \Phi_x^\adjoint \Phi_z$ for
         all $x$, $z\in\mathcal{X}$. Thus with arguments similar to
@@ -573,12 +577,12 @@ $\tildePhi{\omega}(x)$ has bounded trace $\probability_{\rho,
     \delta$,
     \begin{dmath*}
         \risk{\widetilde{f}} - \risk{\widetilde{f}_*} \le
-        4\sqrt{\frac{2}{N}}\left( LBT^{1/2} + C\sqrt{\ln(2/\delta)}\right)
+        4\sqrt{\frac{2}{N}}\left( LMT^{1/2} + C\sqrt{\ln(2/\delta)}\right)
         \hiderel{=} 2\epsilon_{est}.
     \end{dmath*}
     Applying \cref{pr:approximation_bound} yields
     \begin{dmath*}
-        \risk{\widetilde{f}_*} - \risk{f_*} \le \frac{uLB}{\sqrt{D}}\left(1 +
+        \risk{\widetilde{f}_*} - \risk{f_*} \le \frac{uLM}{\sqrt{D}}\left(1 +
         \sqrt{2\ln(1/\delta)} \right) \hiderel{=} \epsilon_{app}.
     \end{dmath*}
     Conclude by the union bound with probability $1 - 2\delta$

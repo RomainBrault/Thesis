@@ -1,6 +1,2 @@
-<<<<<<< HEAD
-\edef\tempa{\string D:20171006171933}
-=======
-\edef\tempa{\string D:20171006172425}
->>>>>>> ef45f6d17f41d3cb4dd9816ff919ae5f69e7c879
+\edef\tempa{\string D:20171011210724}
 \def\tempb{+0200}

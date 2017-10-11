@@ -37,5 +37,5 @@ add_latex_document(ThesisRomainBrault.tex
     CONFIGURE classicthesis-config.tex
     IMAGE_DIRS gfx
     BIBFILES Bibliography.bib MVExtrem.bib Selfpublication.bib
-    USE_BIBLATEX
+    #USE_BIBLATEX
     FORCE_PDF)
